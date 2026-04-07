@@ -1102,6 +1102,14 @@ section > h2::after {
   margin-bottom: 0.35rem;
 }
 
+.route-forecast-row {
+  margin: 0.15rem 0 0;
+}
+
+.route-forecast-row .route-maps-link {
+  margin-bottom: 0.25rem;
+}
+
 .route-distance-note {
   margin: 0.35rem 0 0;
   font-size: 0.8rem;

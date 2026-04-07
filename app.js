@@ -338,8 +338,8 @@ function formatDayMetaLine(day) {
   if (day.date) bits.push(formatDate(day.date));
   if (day.googleDistanceKm != null) {
     const f = formatDistanceKmMi(day.googleDistanceKm);
-    let bit = f ? `~${f.primaryLine} · Google` : `~${day.googleDistanceKm} km · Google`;
-    if (day.googleDurationText) bit += ` · ${day.googleDurationText}`;
+    let bit = f ? `~${f.shortLine}` : `~${day.googleDistanceKm} km`;
+    if (day.googleDurationText) bit += ` · ~${day.googleDurationText}`;
     bits.push(bit);
   }
   if (day.seatTimeHours != null) bits.push(`~${day.seatTimeHours} h seat`);
@@ -358,7 +358,7 @@ function applyDayDistanceToDom(day) {
         day.googleDirectionsLegCount != null && day.googleDirectionsLegCount > 1
           ? `${day.googleDirectionsLegCount} legs (${day.googleDirectionsLegCount + 1} stops)`
           : "";
-      kmCell.title = [tip, legHint, day.googleDurationText, "Google Directions (driving)"]
+      kmCell.title = [tip, legHint, day.googleDurationText ? `~${day.googleDurationText}` : ""]
         .filter(Boolean)
         .join(" · ");
     } else if (day.googleDistanceError) {
@@ -377,26 +377,8 @@ function applyDayDistanceToDom(day) {
       const f = formatDistanceKmMi(day.googleDistanceKm);
       kmLine.innerHTML = "";
       kmLine.appendChild(el("strong", { text: f ? `≈ ${f.primaryLine}` : `≈ ${day.googleDistanceKm} km` }));
-      kmLine.appendChild(
-        document.createTextNode(
-          " — Google Directions (driving, metric): sums every driving leg in the link (origin → any waypoints → destination). Path + ?waypoints= are merged so middle stops are not dropped."
-        )
-      );
-      if (day.googleDirectionsLegCount != null && day.googleDirectionsLegCount > 1) {
-        kmLine.appendChild(
-          el("span", {
-            class: "route-multi-stop-hint",
-            text: ` ${day.googleDirectionsLegCount} legs · ${day.googleDirectionsLegCount + 1} stops.`,
-          })
-        );
-      }
       if (day.googleDurationText) {
-        kmLine.appendChild(
-          el("span", {
-            class: "route-duration-text",
-            text: ` Typical duration (traffic not applied): ${day.googleDurationText}.`,
-          })
-        );
+        kmLine.appendChild(el("span", { class: "muted" }, ` · ~${day.googleDurationText}`));
       }
     } else if (day.googleDistanceError) {
       kmLine.classList.add("muted");
@@ -817,7 +799,7 @@ function applyDayWeatherToDom(day, trip) {
   wrap.appendChild(
     el("p", {
       class: "day-weather-google__subhead muted",
-      text: `Google Weather for the end of this leg (same coordinates as driving distance). Calendar: ${formatDate(day.date)}.`,
+      text: `${place} · ${formatDate(day.date)}`,
     })
   );
 
@@ -874,9 +856,7 @@ function applyDayWeatherToDom(day, trip) {
     wrap.appendChild(
       el("p", {
         class: "day-weather-google__meta muted",
-        text: rideMatched
-          ? `Forecast date ${fcLabel} matches your ride day on the calendar.`
-          : `Forecast for ${fcLabel} at ${place} (may differ from your listed ride date).`,
+        text: rideMatched ? `Forecast ${fcLabel} (ride day)` : `Forecast ${fcLabel}`,
       })
     );
     wrap.appendChild(el("p", { class: "day-weather-google__body", text: parts.join(" · ") }));
@@ -898,7 +878,7 @@ function applyDayWeatherToDom(day, trip) {
     warn.appendChild(
       el("p", {
         class: "day-weather-warnings__intro muted",
-        text: "Review before you roll — especially wind, rain, and temperature.",
+        text: "Check wind, rain, and temperature before you ride.",
       })
     );
     const ul = el("ul", { class: "day-weather-warnings__list" });
@@ -948,20 +928,19 @@ function initRouteTotalsUI(phase) {
     if (hero) {
       hero.hidden = false;
       hero.classList.remove("hero-route-total--muted", "hero-route-total--setup");
-      hero.textContent = "Full route: calculating from Google Maps (sum of daily legs)…";
+      hero.textContent = "Full route: loading from Google Maps…";
     }
     if (overview) {
       overview.hidden = false;
       overview.className = "overview-route-total overview-route-total--loading muted";
-      overview.textContent =
-        "Calculating full route distance from Google Maps (adding each day’s driving leg)…";
+      overview.textContent = "Loading route totals…";
     }
     if (tfoot) tfoot.hidden = false;
     if (tkm) {
       tkm.textContent = "…";
       tkm.title = "";
     }
-    if (tnote) tnote.textContent = "Segments run in sequence; this row updates when all finish.";
+    if (tnote) tnote.textContent = "Updates when all legs finish.";
     return;
   }
 
@@ -970,18 +949,12 @@ function initRouteTotalsUI(phase) {
       hero.hidden = false;
       hero.classList.add("hero-route-total--muted", "hero-route-total--setup");
       hero.innerHTML = "";
-      hero.appendChild(el("strong", { text: "Route totals load from Google Directions" }));
+      hero.appendChild(el("strong", { text: "Route totals need GOOGLE_MAPS_API_KEY" }));
       const hint = el("div", { class: "hero-route-total-setup" });
       hint.appendChild(
         el("p", {
           class: "hero-route-total-setup__line",
-          text: "Local: add GOOGLE_MAPS_API_KEY to .env, then run npm run dev (builds config + serves on :8765).",
-        })
-      );
-      hint.appendChild(
-        el("p", {
-          class: "hero-route-total-setup__line",
-          text: "Vercel: set GOOGLE_MAPS_API_KEY for Production → Redeploy. Cloud Console: Maps JavaScript API + Directions API (Legacy) + Weather API + billing (one key).",
+          text: "Add the key in .env (npm run dev) or Vercel env. Enable Maps JavaScript, Directions (Legacy), and Weather; billing on.",
         })
       );
       hero.appendChild(hint);
@@ -992,7 +965,7 @@ function initRouteTotalsUI(phase) {
       overview.innerHTML = "";
       overview.appendChild(
         el("p", {
-          text: "Per-day km and weather use the same GOOGLE_MAPS_API_KEY. After the key is live, reload — totals and forecasts appear here and in the table footer.",
+          text: "Set GOOGLE_MAPS_API_KEY and reload for distances, totals, and weather.",
         })
       );
     }
@@ -1071,12 +1044,7 @@ function updateTotalRouteDistanceUI(days) {
         el("span", { class: "hero-route-total-duration", text: ` ${totalDurationLabel}` })
       );
     }
-    hero.appendChild(
-      el("span", {
-        class: "hero-route-total-note",
-        text: ` ${coverage} Sum of metric driving distance per leg (Directions API, no live traffic).`,
-      })
-    );
+    hero.appendChild(el("span", { class: "hero-route-total-note", text: ` ${coverage}` }));
   }
 
   if (overview && fmt) {
@@ -1087,9 +1055,7 @@ function updateTotalRouteDistanceUI(days) {
     const line = el("p", { class: "overview-route-total-km" });
     line.appendChild(el("strong", { text: fmt.primaryLine }));
     line.appendChild(
-      document.createTextNode(
-        " — total of each day’s Google driving distance for that day’s origin and destination. If you change a stop mid-trip, re-open Directions for affected days; a single continuous path can differ slightly from this sum."
-      )
+      document.createTextNode(" — sum of each day’s driving distance (no live traffic).")
     );
     overview.appendChild(line);
     if (totalDurationLabel) {
@@ -1103,7 +1069,7 @@ function updateTotalRouteDistanceUI(days) {
   if (tfoot && tkm) {
     tfoot.hidden = false;
     tkm.textContent = fmt ? fmt.shortLine : "—";
-    tkm.title = fmt ? `${fmt.primaryLine} — sum of Google legs` : "";
+    tkm.title = fmt ? fmt.primaryLine : "";
     if (tnote) {
       tnote.textContent = totalDurationLabel ? `${coverage} ${totalDurationLabel}` : coverage;
     }
@@ -1189,6 +1155,12 @@ function legDestinationPlaceLabel(day) {
     .filter(Boolean);
   if (!parts.length) return "this leg’s destination";
   return parts[parts.length - 1];
+}
+
+/** Opens a Google results page with a 10-day-style weather panel for the place. */
+function tenDayWeatherForecastSearchUrl(place) {
+  const q = `10 day weather forecast ${place}`;
+  return `https://www.google.com/search?q=${encodeURIComponent(q)}`;
 }
 
 function primarySleepName(day) {
@@ -1737,8 +1709,7 @@ function appendRouteMetrics(body, day) {
       : "Waiting for Google Maps…";
   } else {
     row.classList.add("muted");
-    row.textContent =
-      "Distances and weather load via Google Maps Platform (same GOOGLE_MAPS_API_KEY). Add the key to .env, run npm run build, or set it on Vercel — enable Maps JavaScript API + Directions API (Legacy) + Weather API. You can still open the link below.";
+    row.textContent = "Add GOOGLE_MAPS_API_KEY to load distance and weather. You can still open Maps below.";
   }
   wrap.appendChild(row);
   wrap.appendChild(
@@ -1747,22 +1718,22 @@ function appendRouteMetrics(body, day) {
       href: o.mapsDirectionsUrl,
       target: "_blank",
       rel: "noopener noreferrer",
-      text: "Open this leg in Google Maps (verify route, distance & time)",
+      text: "Open in Google Maps",
     })
+  );
+  const destPlace = legDestinationPlaceLabel(day);
+  wrap.appendChild(
+    el("p", { class: "route-forecast-row" }, [
+      el("a", {
+        class: "route-maps-link",
+        href: tenDayWeatherForecastSearchUrl(destPlace),
+        target: "_blank",
+        rel: "noopener noreferrer",
+        text: `10-day forecast: ${destPlace}`,
+      }),
+    ])
   );
   if (o.distanceNote) wrap.appendChild(el("p", { class: "route-distance-note", text: o.distanceNote }));
-  const attrib = el("p", { class: "maps-platform-attribution" });
-  attrib.appendChild(document.createTextNode("Route metrics from "));
-  attrib.appendChild(
-    el("a", {
-      href: "https://developers.google.com/maps/documentation/javascript/directions",
-      target: "_blank",
-      rel: "noopener noreferrer",
-      text: "Google Maps Platform — Directions",
-    })
-  );
-  attrib.appendChild(document.createTextNode("."));
-  wrap.appendChild(attrib);
   body.appendChild(wrap);
 }
 
