@@ -1,8 +1,8 @@
 /**
- * Copy this file to google-maps-config.js (same folder) and paste your browser API key.
- * That file is listed in .gitignore so keys are not pushed to GitHub.
+ * Optional: replace google-maps-config.js with your own key for local experiments.
+ * The repo ships google-maps-config.js so Pages works out of the box.
  *
  * Google Cloud: enable “Maps JavaScript API” + “Directions API”.
- * Key restrictions: HTTP referrers → e.g. http://localhost:8765/* and your live site origin.
+ * Restrict key: HTTP referrers (localhost + your GitHub Pages URL, e.g. https://sellaya.github.io/*).
  */
 window.__GOOGLE_MAPS_API_KEY__ = "YOUR_BROWSER_KEY_HERE";
