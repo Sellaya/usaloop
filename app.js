@@ -783,11 +783,8 @@ async function fetchAndRenderRouteWeather(days, trip) {
 
   for (const day of days || []) {
     attachWeatherToDay(day, cache);
-    applyDayWeatherToDom(day);
+    applyDayWeatherToDom(day, trip || {});
   }
-
-  renderHeroWeatherAlerts(days, trip);
-  renderOverviewLegWeather(days, trip);
 }
 
 function scheduleRouteWeatherFetch(days, trip) {
@@ -795,7 +792,7 @@ function scheduleRouteWeatherFetch(days, trip) {
   fetchAndRenderRouteWeather(days, trip || {}).catch((e) => console.error("[Weather]", e));
 }
 
-function applyDayWeatherToDom(day) {
+function applyDayWeatherToDom(day, trip) {
   const slot = document.querySelector(`[data-day-weather="${day.dayIndex}"]`);
   if (!slot) return;
   const gw = day.googleWeather;
@@ -805,19 +802,22 @@ function applyDayWeatherToDom(day) {
     return;
   }
 
+  const place = legDestinationPlaceLabel(day);
+  const bikeLabel = trip?.bike || "Suzuki DR650";
+
   slot.hidden = false;
   slot.innerHTML = "";
   const wrap = el("div", { class: "day-weather-google" });
   wrap.appendChild(
     el("h4", {
       class: "day-section-title",
-      text: "🌤 Google Weather — route destination",
+      text: `🌤 Weather at ${place}`,
     })
   );
   wrap.appendChild(
     el("p", {
-      class: "day-weather-google__window muted",
-      text: `Tour calendar: ride day ${formatDate(day.date)}. Below is live and/or outlook data at this leg’s end coordinates (not tied to that date).`,
+      class: "day-weather-google__subhead muted",
+      text: `Google Weather for the end of this leg (same coordinates as driving distance). Calendar: ${formatDate(day.date)}.`,
     })
   );
 
@@ -828,13 +828,19 @@ function applyDayWeatherToDom(day) {
     wrap.appendChild(
       el("p", {
         class: "day-weather-google__label",
-        text: `Now${obs ? ` · observed ${obs}` : ""}${tz ? ` · ${tz}` : ""}`,
+        text: `Current · ${place}`,
+      })
+    );
+    wrap.appendChild(
+      el("p", {
+        class: "day-weather-google__meta muted",
+        text: [obs ? `Observed ${obs}` : null, tz || null].filter(Boolean).join(" · "),
       })
     );
     wrap.appendChild(
       el("p", {
         class: "day-weather-google__body day-weather-google__body--current",
-        text: formatCurrentConditionsSummary(cc) || "Current conditions loaded — see raw details in Google Weather if needed.",
+        text: formatCurrentConditionsSummary(cc) || "—",
       })
     );
   }
@@ -844,7 +850,7 @@ function applyDayWeatherToDom(day) {
     const d = fd.daytimeForecast;
     const rideMatched = gw.rideDateMatched === true;
     const fcIso = forecastDayToIso(fd);
-    const fcLabel = fcIso ? formatDate(fcIso) : "near-term";
+    const fcLabel = fcIso ? formatDate(fcIso) : "next day";
     const desc = d?.weatherCondition?.description?.text || "—";
     const hi = fd.maxTemperature?.degrees;
     const lo = fd.minTemperature?.degrees;
@@ -862,9 +868,15 @@ function applyDayWeatherToDom(day) {
     wrap.appendChild(
       el("p", {
         class: "day-weather-google__label",
+        text: `Next-day outlook · ${place}`,
+      })
+    );
+    wrap.appendChild(
+      el("p", {
+        class: "day-weather-google__meta muted",
         text: rideMatched
-          ? `Next-day outlook · ${fcLabel} (matches your ride day)`
-          : `Next-day outlook · ${fcLabel} (at destination; tour calendar may differ)`,
+          ? `Forecast date ${fcLabel} matches your ride day on the calendar.`
+          : `Forecast for ${fcLabel} at ${place} (may differ from your listed ride date).`,
       })
     );
     wrap.appendChild(el("p", { class: "day-weather-google__body", text: parts.join(" · ") }));
@@ -872,166 +884,32 @@ function applyDayWeatherToDom(day) {
 
   const merged = mergeRidingRiskLines(cc, fd);
   if (merged?.length) {
-    wrap.appendChild(
+    const warn = el("div", {
+      class: "day-weather-warnings",
+      role: "region",
+      "aria-label": `Riding weather watch for ${place}`,
+    });
+    warn.appendChild(
       el("p", {
-        class: "day-weather-google__risk",
-        text: `DR650 / touring — watch: ${merged.join(" · ")}`,
+        class: "day-weather-warnings__title",
+        text: `⚠ When riding near ${place} (${bikeLabel})`,
       })
     );
+    warn.appendChild(
+      el("p", {
+        class: "day-weather-warnings__intro muted",
+        text: "Review before you roll — especially wind, rain, and temperature.",
+      })
+    );
+    const ul = el("ul", { class: "day-weather-warnings__list" });
+    merged.forEach((line) => {
+      ul.appendChild(el("li", { class: "day-weather-warnings__item", text: line }));
+    });
+    warn.appendChild(ul);
+    wrap.appendChild(warn);
   }
 
   slot.appendChild(wrap);
-}
-
-function renderHeroWeatherAlerts(days, trip) {
-  const box = document.getElementById("hero-weather");
-  if (!box) return;
-  const bikeLabel = trip?.bike || "Suzuki DR650";
-
-  const withCoords = (days || []).filter((d) => d.routeEndLat != null && d.routeEndLng != null);
-  const withWeather = (days || []).filter((d) => d.googleWeather?.current || d.googleWeather?.forecastDay);
-
-  const alerts = [];
-  for (const day of days || []) {
-    const gw = day.googleWeather;
-    if (!gw) continue;
-    const risks = mergeRidingRiskLines(gw.current, gw.forecastDay);
-    if (!risks) continue;
-    alerts.push({ day, risks });
-  }
-
-  box.hidden = false;
-  box.innerHTML = "";
-  box.classList.remove("hero-weather--alert", "hero-weather--muted", "hero-weather--ok");
-
-  if (!hasGoogleMapsApiKey()) {
-    box.hidden = true;
-    return;
-  }
-
-  if (!withCoords.length) {
-    box.classList.add("hero-weather--muted");
-    box.appendChild(
-      el("p", {
-        class: "hero-weather__text",
-        text: `Weather: after each leg resolves in Directions, we load current conditions plus the next 1-day outlook at that leg’s destination (${bikeLabel}). Tour dates do not change the live read.`,
-      })
-    );
-    return;
-  }
-
-  if (!withWeather.length) {
-    box.classList.add("hero-weather--muted");
-    box.appendChild(
-      el("p", {
-        class: "hero-weather__text",
-        text: `Could not load Google Weather for route ends (check Weather API + billing on your key, use Vercel or vercel dev for /api/weather, or watch the browser console).`,
-      })
-    );
-    return;
-  }
-
-  box.appendChild(
-    el("p", {
-      class: "hero-weather__text",
-      text: `Live conditions at each day’s route destination (${bikeLabel}) — reload for a fresh read. Below: rough riding flags from “now” + next-day outlook; open each day for details.`,
-    })
-  );
-
-  if (alerts.length) {
-    box.classList.add("hero-weather--alert");
-    box.appendChild(
-      el("p", {
-        class: "hero-weather__title",
-        text: `⚠ Riding weather watch (${bikeLabel})`,
-      })
-    );
-    const ul = el("ul", { class: "hero-weather__list" });
-    for (const { day, risks } of alerts.slice(0, 8)) {
-      ul.appendChild(
-        el("li", {
-          text: `Day ${day.dayIndex} (destination now / outlook): ${risks.join(" · ")}`,
-        })
-      );
-    }
-    if (alerts.length > 8) {
-      ul.appendChild(el("li", { text: `+${alerts.length - 8} more day(s) — see daily sections.` }));
-    }
-    box.appendChild(ul);
-    box.appendChild(
-      el("p", {
-        class: "hero-weather__sub",
-        text: "Current = Google currentConditions at route-end coordinates; outlook = next 1 day only. Re-check before you roll.",
-      })
-    );
-    return;
-  }
-
-  box.classList.add("hero-weather--ok");
-  box.appendChild(
-    el("p", {
-      class: "hero-weather__text",
-      text: `No high-priority riding flags in current + next-day outlook at route destinations (${bikeLabel}) — still verify wind, precip, and temperature yourself.`,
-    })
-  );
-}
-
-function renderOverviewLegWeather(days, trip) {
-  const mount = document.getElementById("overview-weather-mount");
-  if (!mount) return;
-  mount.innerHTML = "";
-  const bikeLabel = trip?.bike || "Suzuki DR650";
-
-  const byLeg = { 1: [], 2: [], 3: [] };
-  for (const day of days || []) {
-    const gw = day.googleWeather;
-    if (!gw?.current && !gw?.forecastDay) continue;
-    const risks = mergeRidingRiskLines(gw.current, gw.forecastDay) || [];
-    const leg = inferLeg(day.dayIndex);
-    const nowLine = gw.current ? formatCurrentConditionsSummary(gw.current) : "";
-    byLeg[leg].push({ day, risks, nowLine });
-  }
-
-  const any = Object.values(byLeg).some((a) => a.length);
-  if (!any) {
-    mount.hidden = true;
-    return;
-  }
-
-  mount.hidden = false;
-  mount.appendChild(
-    el("h3", { class: "overview-weather-heading", text: "Weather along legs (Google · DR650 notes)" })
-  );
-  const sub = el("p", {
-    class: "overview-weather-sub muted",
-    text: "Same route-end coordinates as driving distances. “Now” is currentConditions; concerns merge current + next 1-day outlook. Tour dates do not change the live read.",
-  });
-  mount.appendChild(sub);
-
-  ["1", "2", "3"].forEach((k) => {
-    const rows = byLeg[k];
-    if (!rows.length) return;
-    const card = el("div", { class: "overview-leg-weather" });
-    const title = trip?.legs?.[k] || `Leg ${k}`;
-    card.appendChild(el("h4", { class: "overview-leg-weather__title", text: `Leg ${k}: ${title}` }));
-    const ul = el("ul", { class: "overview-leg-weather__list" });
-    for (const { day, risks, nowLine } of rows) {
-      const bits = [`Day ${day.dayIndex}`];
-      if (nowLine) bits.push(`Now: ${nowLine}`);
-      if (risks.length) bits.push(`Watch: ${risks.join(" · ")}`);
-      else bits.push("No major riding flags in merged current + outlook");
-      ul.appendChild(el("li", { text: bits.join(" — ") }));
-    }
-    card.appendChild(ul);
-    mount.appendChild(card);
-  });
-
-  mount.appendChild(
-    el("p", {
-      class: "overview-weather-foot muted",
-      text: `${bikeLabel}: reduce exposure in strong gusts, heavy precip, and near-freezing temps; gear for visibility and traction.`,
-    })
-  );
 }
 
 function computeGoogleRouteTotals(days) {
@@ -1302,6 +1180,17 @@ function parseRouteEndpoints(title) {
   return { from: parts[0], to: parts.slice(1).join(" → ") };
 }
 
+/** Final stop name for this day’s title (weather applies to route end there). */
+function legDestinationPlaceLabel(day) {
+  if (!day?.title) return "this leg’s destination";
+  const parts = day.title
+    .split("→")
+    .map((s) => s.replace(/\s+/g, " ").trim())
+    .filter(Boolean);
+  if (!parts.length) return "this leg’s destination";
+  return parts[parts.length - 1];
+}
+
 function primarySleepName(day) {
   if (day.lodging?.name) return day.lodging.name;
   const a = day.lodgingAlternatives?.[0];
@@ -1402,14 +1291,6 @@ function renderHero(trip) {
     el("div", {
       class: "hero-route-total",
       id: "hero-route-total",
-      hidden: true,
-      "aria-live": "polite",
-    })
-  );
-  foot.appendChild(
-    el("div", {
-      class: "hero-weather",
-      id: "hero-weather",
       hidden: true,
       "aria-live": "polite",
     })
