@@ -40,6 +40,7 @@
         <div class="card card--overview">
           <p class="overview-lead" id="overview-lead"></p>
           <div class="overview-stats" id="overview-stats" aria-label="Trip stats"></div>
+          <div id="overview-route-total" class="overview-route-total" aria-live="polite" hidden></div>
           <div class="overview-legs" id="overview-legs"></div>
           <div class="overview-chips-block" id="overview-chips-block" hidden>
             <span class="overview-chips-label">Regions on this loop</span>
@@ -72,7 +73,7 @@
       <section id="glance">
         <h2>Calendar at a glance</h2>
         <p class="muted glance-hint">
-          Built from each day’s title, Google Maps driving distance (when an API key is set), first highlight, and primary stay.
+          Per-day km from Google Maps Directions; the footer row is the full-route total (sum of those legs). Highlights and stays summarize each row.
         </p>
         <div class="card card--table">
           <div class="table-scroll">
@@ -88,6 +89,16 @@
                 </tr>
               </thead>
               <tbody id="glance-body"></tbody>
+              <tfoot id="glance-tfoot" class="glance-tfoot" hidden>
+                <tr>
+                  <td colspan="3" class="glance-tfoot-label">
+                    <strong>Full route total</strong>
+                    <span class="muted glance-tfoot-sub">(Google Maps)</span>
+                  </td>
+                  <td class="num glance-tfoot-km" id="glance-tfoot-km">—</td>
+                  <td colspan="2" class="glance-tfoot-note muted" id="glance-tfoot-note"></td>
+                </tr>
+              </tfoot>
             </table>
           </div>
         </div>
@@ -127,6 +138,7 @@
     ></script>
     <script>
       window.__onGmInit = function () {
+        window.__googleMapsJsReady = true;
         window.dispatchEvent(new CustomEvent("googlemapsjsready"));
       };
       (function loadGoogleMapsJs() {

@@ -189,6 +189,35 @@ section > h2::after {
   border-left: 3px solid #ffb74d;
 }
 
+.hero-route-total {
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.hero-route-total strong {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.hero-route-total-note {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.4;
+}
+
+.hero-route-total--muted {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.82rem;
+}
+
 .glance-hint {
   margin: -0.25rem 0 0.65rem;
   font-size: 0.88rem;
@@ -220,6 +249,45 @@ section > h2::after {
   font-size: 1.02rem;
   line-height: 1.55;
   color: var(--text);
+}
+
+.overview-route-total {
+  padding: 0.85rem 0.95rem;
+  border-radius: 10px;
+  border: 1px solid #90caf9;
+  background: linear-gradient(135deg, #e3f2fd 0%, #f5f9fc 100%);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.overview-route-total--loading {
+  border-style: dashed;
+}
+
+.overview-route-total-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--doc-navy);
+  margin-bottom: 0.35rem;
+}
+
+.overview-route-total-km {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+}
+
+.overview-route-total-km strong {
+  font-size: 1.15rem;
+  color: var(--doc-navy);
+  font-variant-numeric: tabular-nums;
+}
+
+.overview-route-total-sub {
+  margin: 0;
+  font-size: 0.82rem;
 }
 
 .overview-stats {
@@ -498,6 +566,38 @@ section > h2::after {
 .glance-table .hint-cell {
   color: var(--muted);
   max-width: 12rem;
+}
+
+.glance-tfoot td {
+  border-top: 2px solid var(--doc-navy);
+  background: var(--surface2);
+  font-size: 0.82rem;
+  vertical-align: top;
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+}
+
+.glance-tfoot-label {
+  font-size: 0.85rem;
+}
+
+.glance-tfoot-sub {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 400;
+  margin-top: 0.2rem;
+}
+
+.glance-tfoot-km {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--doc-navy);
+  font-variant-numeric: tabular-nums;
+}
+
+.glance-tfoot-note {
+  font-size: 0.78rem;
+  line-height: 1.4;
 }
 
 .pill {

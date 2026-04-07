@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Per-day route metrics & ideas",
-    "disclaimer": "Each day links to Google Directions. Kilometers in the app are requested live from the Google Maps JavaScript API (driving mode) using the same origin/destination as that link — not from hand-entered numbers. You still need to confirm the route the morning you ride."
+    "disclaimer": "Each day links to Google Directions. The app requests driving distance live from the Google Maps JavaScript API using the same origin/destination as that link. The “full route” total is the sum of those daily legs (Google allows only limited waypoints per request, so one mega-route isn’t used). Re-check in Maps the morning you ride."
   },
   "byDay": {
     "1": {

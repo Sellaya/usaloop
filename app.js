@@ -8,6 +8,38 @@ const TYPE_LABEL = {
   other: "Stop",
 };
 
+/** @type {{ units: string }} */
+let tripDisplayMeta = { units: "metric" };
+
+const KM_PER_MI = 1.609344;
+
+function setTripDisplayMeta(meta) {
+  tripDisplayMeta = { units: meta?.units === "imperial" ? "imperial" : "metric" };
+}
+
+function formatIntLocale(n) {
+  if (n == null || Number.isNaN(n)) return "";
+  return new Intl.NumberFormat(undefined, { maximumFractionDigits: 0 }).format(Math.round(n));
+}
+
+/** Driving km from Google → locale-formatted km + mi (trip meta.units picks primary). */
+function formatDistanceKmMi(km) {
+  if (km == null || Number.isNaN(km)) return null;
+  const kmR = Math.round(km);
+  const miR = Math.round(km / KM_PER_MI);
+  const kmText = formatIntLocale(kmR);
+  const miText = formatIntLocale(miR);
+  const metricFirst = tripDisplayMeta.units !== "imperial";
+  return {
+    kmRounded: kmR,
+    miRounded: miR,
+    kmText,
+    miText,
+    primaryLine: metricFirst ? `${kmText} km (${miText} mi)` : `${miText} mi (${kmText} km)`,
+    shortLine: metricFirst ? `${kmText} km` : `${miText} mi`,
+  };
+}
+
 const CONTACT_HINTS = {
   email: "Contact: email works well.",
   text: "Contact: text/SMS preferred.",
@@ -26,7 +58,7 @@ function el(tag, attrs = {}, children = []) {
   Object.entries(attrs).forEach(([k, v]) => {
     if (k === "class") node.className = v;
     else if (k === "text") node.textContent = v;
-    else if (k.startsWith("data-")) node.setAttribute(k, v);
+    else if (k.startsWith("data-") || k.startsWith("aria-")) node.setAttribute(k, v);
     else if (["href", "target", "rel", "title", "type"].includes(k)) node.setAttribute(k, v);
     else node[k] = v;
   });
@@ -112,7 +144,10 @@ function googleTravelModeFromKey(key) {
 function formatDayMetaLine(day) {
   const bits = [];
   if (day.date) bits.push(formatDate(day.date));
-  if (day.googleDistanceKm != null) bits.push(`~${day.googleDistanceKm} km (Google)`);
+  if (day.googleDistanceKm != null) {
+    const f = formatDistanceKmMi(day.googleDistanceKm);
+    bits.push(f ? `~${f.primaryLine} · Google` : `~${day.googleDistanceKm} km · Google`);
+  }
   if (day.seatTimeHours != null) bits.push(`~${day.seatTimeHours} h seat`);
   if (day.terrain) bits.push(day.terrain);
   return bits.join(" · ");
@@ -121,8 +156,11 @@ function formatDayMetaLine(day) {
 function applyDayDistanceToDom(day) {
   const kmCell = document.querySelector(`td[data-glance-km="${day.dayIndex}"]`);
   if (kmCell && hasGoogleMapsApiKey()) {
-    if (day.googleDistanceKm != null) kmCell.textContent = String(day.googleDistanceKm);
-    else if (day.googleDistanceError) {
+    if (day.googleDistanceKm != null) {
+      const f = formatDistanceKmMi(day.googleDistanceKm);
+      kmCell.textContent = f ? f.shortLine : String(day.googleDistanceKm);
+      kmCell.title = f ? `${f.primaryLine} — Google Maps driving` : "";
+    } else if (day.googleDistanceError) {
       kmCell.textContent = "—";
       kmCell.title = day.googleDistanceError;
     }
@@ -135,10 +173,13 @@ function applyDayDistanceToDom(day) {
   if (kmLine) {
     kmLine.classList.remove("muted");
     if (day.googleDistanceKm != null) {
+      const f = formatDistanceKmMi(day.googleDistanceKm);
       kmLine.innerHTML = "";
-      kmLine.appendChild(el("strong", { text: `≈ ${day.googleDistanceKm} km` }));
+      kmLine.appendChild(el("strong", { text: f ? `≈ ${f.primaryLine}` : `≈ ${day.googleDistanceKm} km` }));
       kmLine.appendChild(
-        document.createTextNode(" — Google Maps driving distance (same endpoints as the link below).")
+        document.createTextNode(
+          " — Google Maps driving distance (same origin/destination as the link below; car routing, close to touring)."
+        )
       );
     } else if (day.googleDistanceError) {
       kmLine.classList.add("muted");
@@ -193,13 +234,212 @@ async function fetchGoogleDistancesForDays(days) {
   }
 }
 
-function scheduleGoogleDistanceFetch(days) {
-  if (!hasGoogleMapsApiKey()) return;
-  const run = () => {
-    fetchGoogleDistancesForDays(days).catch((err) => console.error("Google distance fetch:", err));
+function computeGoogleRouteTotals(days) {
+  let sumKm = 0;
+  let legsWithUrl = 0;
+  let legsOk = 0;
+  let legsFailed = 0;
+  for (const d of days || []) {
+    if (!d.routeOverlay?.mapsDirectionsUrl) continue;
+    legsWithUrl++;
+    if (d.googleDistanceKm != null) {
+      sumKm += d.googleDistanceKm;
+      legsOk++;
+    } else if (d.googleDistanceError) legsFailed++;
+  }
+  return {
+    sumKm,
+    legsWithUrl,
+    legsOk,
+    legsFailed,
+    allOk: legsWithUrl > 0 && legsOk === legsWithUrl,
   };
-  if (window.google?.maps?.DirectionsService) run();
-  else window.addEventListener("googlemapsjsready", run, { once: true });
+}
+
+function initRouteTotalsUI(phase) {
+  const hero = document.getElementById("hero-route-total");
+  const overview = document.getElementById("overview-route-total");
+  const tfoot = document.getElementById("glance-tfoot");
+  const tkm = document.getElementById("glance-tfoot-km");
+  const tnote = document.getElementById("glance-tfoot-note");
+
+  if (phase === "loading") {
+    if (hero) {
+      hero.hidden = false;
+      hero.classList.remove("hero-route-total--muted");
+      hero.textContent = "Full route: calculating from Google Maps (sum of daily legs)…";
+    }
+    if (overview) {
+      overview.hidden = false;
+      overview.className = "overview-route-total overview-route-total--loading muted";
+      overview.textContent =
+        "Calculating full route distance from Google Maps (adding each day’s driving leg)…";
+    }
+    if (tfoot) tfoot.hidden = false;
+    if (tkm) {
+      tkm.textContent = "…";
+      tkm.title = "";
+    }
+    if (tnote) tnote.textContent = "Segments run in sequence; this row updates when all finish.";
+    return;
+  }
+
+  if (phase === "nokey") {
+    if (hero) {
+      hero.hidden = false;
+      hero.classList.add("hero-route-total--muted");
+      hero.textContent =
+        "Full-route total: set google-maps-config.js to sum each day’s Google driving distance here.";
+    }
+    if (overview) {
+      overview.hidden = false;
+      overview.className = "overview-route-total muted";
+      overview.textContent =
+        "Full route total uses Google Maps when an API key is set (copy google-maps-config.example.js → google-maps-config.js).";
+    }
+    if (tfoot) tfoot.hidden = true;
+  }
+}
+
+function updateTotalRouteDistanceUI(days) {
+  const hero = document.getElementById("hero-route-total");
+  const overview = document.getElementById("overview-route-total");
+  const tfoot = document.getElementById("glance-tfoot");
+  const tkm = document.getElementById("glance-tfoot-km");
+  const tnote = document.getElementById("glance-tfoot-note");
+
+  if (!hasGoogleMapsApiKey()) {
+    initRouteTotalsUI("nokey");
+    return;
+  }
+
+  const { sumKm, legsWithUrl, legsOk, legsFailed, allOk } = computeGoogleRouteTotals(days);
+
+  if (legsWithUrl === 0) {
+    if (overview) {
+      overview.hidden = false;
+      overview.className = "overview-route-total muted";
+      overview.textContent = "No Directions URLs in route-overlays — nothing to sum.";
+    }
+    if (hero) hero.hidden = true;
+    if (tfoot) tfoot.hidden = true;
+    return;
+  }
+
+  if (legsOk === 0) {
+    const err =
+      "Google Maps returned no distances. Check API key, billing, and that Maps JavaScript API + Directions API are enabled.";
+    if (hero) {
+      hero.hidden = false;
+      hero.classList.add("hero-route-total--muted");
+      hero.textContent = err;
+    }
+    if (overview) {
+      overview.hidden = false;
+      overview.className = "overview-route-total muted";
+      overview.textContent = err;
+    }
+    if (tfoot) tfoot.hidden = false;
+    if (tkm) {
+      tkm.textContent = "—";
+      tkm.title = "";
+    }
+    if (tnote) tnote.textContent = `${legsFailed} leg(s) failed.`;
+    return;
+  }
+
+  const fmt = formatDistanceKmMi(sumKm);
+  const coverage = allOk
+    ? `All ${legsOk} segments with Directions links included.`
+    : `${legsOk} of ${legsWithUrl} segments summed${legsFailed ? `; ${legsFailed} failed` : ""} — open failed days in Maps.`;
+
+  if (hero && fmt) {
+    hero.hidden = false;
+    hero.classList.remove("hero-route-total--muted");
+    hero.innerHTML = "";
+    hero.appendChild(el("strong", { text: `Full route (Google Maps): ${fmt.primaryLine}` }));
+    hero.appendChild(
+      el("span", {
+        class: "hero-route-total-note",
+        text: ` ${coverage} Sum of car driving distance per leg (close to touring).`,
+      })
+    );
+  }
+
+  if (overview && fmt) {
+    overview.hidden = false;
+    overview.className = "overview-route-total";
+    overview.innerHTML = "";
+    overview.appendChild(el("div", { class: "overview-route-total-title", text: "Full route distance" }));
+    const line = el("p", { class: "overview-route-total-km" });
+    line.appendChild(el("strong", { text: fmt.primaryLine }));
+    line.appendChild(
+      document.createTextNode(
+        " — total of each day’s Google driving distance for that day’s origin and destination. If you change a stop mid-trip, re-open Directions for affected days; a single continuous path can differ slightly from this sum."
+      )
+    );
+    overview.appendChild(line);
+    overview.appendChild(el("p", { class: "overview-route-total-sub muted", text: coverage }));
+  }
+
+  if (tfoot && tkm) {
+    tfoot.hidden = false;
+    tkm.textContent = fmt ? fmt.shortLine : "—";
+    tkm.title = fmt ? `${fmt.primaryLine} — sum of Google legs` : "";
+    if (tnote) tnote.textContent = coverage;
+  }
+}
+
+function scheduleGoogleDistanceFetch(days) {
+  if (!hasGoogleMapsApiKey()) {
+    initRouteTotalsUI("nokey");
+    return;
+  }
+  initRouteTotalsUI("loading");
+
+  let fetchStarted = false;
+  const run = async () => {
+    if (fetchStarted) return;
+    fetchStarted = true;
+    try {
+      await fetchGoogleDistancesForDays(days);
+    } catch (err) {
+      console.error("Google distance fetch:", err);
+    } finally {
+      updateTotalRouteDistanceUI(days);
+    }
+  };
+
+  const tryStart = () => {
+    if (window.google?.maps?.DirectionsService) {
+      run();
+      return true;
+    }
+    return false;
+  };
+
+  /** Maps often finishes loading before trip.json fetch + render complete — event can fire with no listener yet. */
+  const startWhenMapsReady = () => {
+    if (tryStart()) return;
+    let attempts = 0;
+    const id = window.setInterval(() => {
+      if (tryStart()) {
+        window.clearInterval(id);
+        return;
+      }
+      if (++attempts > 80) {
+        window.clearInterval(id);
+        updateTotalRouteDistanceUI(days);
+      }
+    }, 50);
+  };
+
+  if (tryStart()) return;
+  if (window.__googleMapsJsReady) {
+    startWhenMapsReady();
+    return;
+  }
+  window.addEventListener("googlemapsjsready", startWhenMapsReady, { once: true });
 }
 
 function parseRouteEndpoints(title) {
@@ -270,6 +510,14 @@ function renderHero(trip) {
     });
     if (legs.childNodes.length) inner.appendChild(legs);
   }
+  inner.appendChild(
+    el("div", {
+      class: "hero-route-total",
+      id: "hero-route-total",
+      hidden: true,
+      "aria-live": "polite",
+    })
+  );
   root.appendChild(inner);
 }
 
@@ -759,6 +1007,7 @@ function appendDayRecommendations(body, day) {
 
 function renderTrip(data, babHostsMap, routeMeta) {
   const { meta, trip, links, days, checklists, emergency, beforeYouGo } = data;
+  setTripDisplayMeta(meta);
 
   document.title = meta?.title || trip?.name || "Trip";
 
