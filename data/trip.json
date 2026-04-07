@@ -1239,7 +1239,7 @@
   },
   "beforeYouGo": [
     "Replace placeholder start/end dates in trip.json with your real departure window.",
-    "Leg distances are queried from Google Maps (JavaScript Directions API). Put your browser API key in google-maps-config.js — see google-maps-config.example.js. Re-check each leg in Maps after you set exact pins.",
+    "Leg distances use Google Maps (Directions API). Copy google-maps-config.example.js to google-maps-config.js and add your browser API key (that file is gitignored). Re-check each leg in Maps after you set exact pins.",
     "Primary stays stay first on each day; Bunk a Biker backups are in data/bab-hosts.json (edit babAlternateIds per day if you trim the list).",
     "Confirm each host address, gate codes, and bike parking before arrival day.",
     "Arches NP: check timed-entry reservation rules for your dates.",
