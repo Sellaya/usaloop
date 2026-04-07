@@ -1058,7 +1058,8 @@
       "date": "2026-06-29",
       "title": "Yellowstone → Beartooth Highway",
       "distanceKm": 0,
-      "terrain": "High alpine — snow possible early season",
+      "routeLine": "Exit Yellowstone via Northeast Entrance → Cooke City, MT. Take US-212 (Beartooth Highway) over the pass to Red Lodge, MT — not WY-310 (Chief Joseph Scenic Byway toward Cody), which skips the Beartooth unless US-212 is closed. After Red Lodge, continue into the Bighorn Basin to Cowley, WY for the night; confirm last miles in Maps.",
+      "terrain": "US-212 high alpine — snow/ice possible early season; do not confuse with lower WY-310 corridor",
       "highlights": [
         "Beartooth Pass — one of the great US motorcycle roads"
       ],
@@ -1078,9 +1079,10 @@
         }
       ],
       "risks": [
-        "Ice / closure early season — verify pass status"
+        "Ice / closure early season — verify pass status",
+        "Google Maps often prefers WY-310 / Cody corridor from the park — manually select US-212 via Cooke City and Red Lodge for the Beartooth"
       ],
-      "planB": "Bighorn Basin lower route if Beartooth closed.",
+      "planB": "If US-212 is closed, use NPS/MDT detour guidance (may include lower basin roads — not the same ride as the Beartooth).",
       "babAlternateIds": [
         "daryn-engesser",
         "jolene-casper",

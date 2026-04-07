@@ -437,21 +437,25 @@
       ]
     },
     "29": {
-      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Old+Faithful%2C+Yellowstone&destination=Powell%2C+WY&travelmode=driving",
-      "distanceNote": "Via Yellowstone NE toward Cody/Powell; seasonal closures.",
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Old+Faithful%2C+Yellowstone+National+Park%2C+WY&destination=Cowley%2C+WY&waypoints=Cooke+City%2C+MT%7CRed+Lodge%2C+MT&travelmode=driving",
+      "distanceNote": "Waypoints lock US-212: Cooke City → Red Lodge (Beartooth) → Bighorn Basin to Cowley. Do not use WY-310 (Chief Joseph) as the Beartooth substitute — that bypasses 212 unless 212 is closed.",
       "recommendations": [
         {
           "text": "Beartooth Hwy (US-212) status — snow/weather.",
           "url": "https://www.nps.gov/yell/planyourvisit/beartoothhwy.htm"
         },
         {
-          "text": "Cody Buffalo Bill Center if overnight nearby.",
+          "text": "If Maps suggests WY-310 toward Cody — override: stay on US-212 from Cooke City through Red Lodge for the pass.",
+          "url": ""
+        },
+        {
+          "text": "Cody Buffalo Bill Center — optional only if you detour; not on the 212 Beartooth line.",
           "url": "https://centerofthewest.org/"
         }
       ]
     },
     "30": {
-      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Powell%2C+WY&destination=Gillette%2C+WY&travelmode=driving",
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Cowley%2C+WY&destination=Gillette%2C+WY&travelmode=driving",
       "distanceNote": "Bighorn Basin / I-90 style routing ~198 mi.",
       "recommendations": [
         {
