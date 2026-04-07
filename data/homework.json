@@ -1,0 +1,439 @@
+{
+  "meta": {
+    "title": "Homework",
+    "disclaimer": "Research snapshot for trip planning — not professional mechanic or legal advice. Verify every link, phone number, and procedure before you ride. Shops open/close; carry your insurance and roadside options.",
+    "lastReviewed": "2026-04-07"
+  },
+  "mechanics": {
+    "introduction": "Below: (1) a practical order of operations for DR650 care and learning, (2) where on the internet owners and manuals live, (3) how to find a mechanic anywhere on your loop, and (4) tools/spares that matter for this specific 35-day, heat-to-mountains route.",
+    "maintenanceSequence": [
+      {
+        "order": 1,
+        "title": "Baseline before you leave home (Toronto)",
+        "detail": "Cold engine: valve clearance per manual (intake 0.08–0.13 mm, exhaust 0.17–0.22 mm — confirm your year). Oil and filter; note DR650 oil capacity (~1.9 L is commonly cited — verify dipstick). Air filter clean (you will see fine desert dust later). Chain slack 30–45 mm; new sprockets/chain if worn. Brake pads, fluid, spokes, nipples, fork seals, swingarm bearings, cush drive. Torque critical fasteners (bars, triple, axle, luggage) to spec.",
+        "dr650Notes": "Carb vs FI depends on market/year; carry spare fuel filter (if applicable) and know your jetting/altitude plan for Rockies."
+      },
+      {
+        "order": 2,
+        "title": "Skills to rehearse in the garage (video + manual in hand)",
+        "detail": "Remove rear wheel and fix a tube puncture (DR is tubed). Adjust chain on the side stand or with a lift. Replace clutch cable and throttle cable routing. Clean air filter without tearing foam. Spark plug access and gap 0.7–0.8 mm (NGK CR10E class — verify manual). Electrical: locate fuse box, bypass a bad connector with spare wire.",
+        "dr650Notes": "Film yourself doing each step once — on the road you replay your own video."
+      },
+      {
+        "order": 3,
+        "title": "On-trip interval rhythm (adjust for mud/dust)",
+        "detail": "Chain clean/lube every ~500–800 km in dry states, more if rain or gravel. Check oil every fuel stop in extreme heat (Mojave, southern Utah). Air filter inspection shortened after dusty legs (NM, UT, WY gravel). After any hard off-pavement day: spokes, pinch bolts, rack bolts, mirror mounts.",
+        "dr650Notes": "Long slab days (Plains) are vibration days — re-torque luggage at Fort Worth or similar home stop."
+      },
+      {
+        "order": 4,
+        "title": "When something feels wrong — decision tree",
+        "detail": "New noise or smell: stop safely. Oil level / leak? Coolant (if fitted)? Tire pressure hot vs cold? Charging voltage if electrics dim? If unsure, limp to shade, call roadside, or tow to nearest dealer — do not guess on brakes or steering.",
+        "dr650Notes": "DR stator/regulator failures are a known long-term topic on forums — know symptoms (dim lights, dead battery while running)."
+      },
+      {
+        "order": 5,
+        "title": "Finding a human mechanic on the road",
+        "detail": "Search: “dual sport motorcycle repair” + city, then “Suzuki dealer” + city, then ADVRider or regional Facebook groups. Call ahead: ask if they service carb bikes, have metric tools, and can lift an ADV. National chains (Cycle Gear / RevZilla service partners, etc.) vary by store — always phone first.",
+        "dr650Notes": "Print or offline-save a one-page spec sheet: year, mods (exhaust, tank, jetting), tire type tube/tubeless, torque you care about."
+      }
+    ],
+    "onlineResources": [
+      {
+        "name": "DRRiders.com",
+        "url": "https://drriders.com/",
+        "useFor": "Long-running DR forum — maintenance threads, jetting, luggage, known issues."
+      },
+      {
+        "name": "r/dr650 (Reddit)",
+        "url": "https://www.reddit.com/r/dr650/",
+        "useFor": "Quick questions, packing, trip reports — cross-check answers."
+      },
+      {
+        "name": "Suzuki DR650SE manuals (ManualsLib)",
+        "url": "https://www.manualslib.com/manual/1055133/Suzuki-Dr650se.html",
+        "useFor": "Factory-style manual reference online — compare to your exact model year PDF if you have it."
+      },
+      {
+        "name": "Clymer DR650SE (1996–2019) — publisher / book retailers",
+        "url": "https://www.clymer.com/",
+        "useFor": "Often easier DIY prose than factory manual — buy paper for the trip or PDF legally if offered."
+      },
+      {
+        "name": "ProCycle / DR650 aftermarket ecosystem",
+        "url": "https://www.procycle.us/",
+        "useFor": "Parts you may already run (seats, tanks, guards) — compatibility and install notes."
+      },
+      {
+        "name": "ADVRider — Face to Face / regional forums",
+        "url": "https://www.advrider.com/",
+        "useFor": "“Anyone know a wrench in Moab / Spokane?” — real rider referrals."
+      },
+      {
+        "name": "Horizon Unlimited — HUBB / traveler community",
+        "url": "https://www.horizonsunlimited.com/",
+        "useFor": "Border, paperwork, and “mechanic in X town” traveler knowledge."
+      },
+      {
+        "name": "Suzuki dealer locator (USA)",
+        "url": "https://suzukicycles.com/dealers",
+        "useFor": "Official network — may refer you out for carb work; still a lifeline for parts numbers."
+      }
+    ],
+    "routeAnchorCities": [
+      { "area": "Fort Worth (home stop)", "hint": "Use for major service, tires, and mail-order parts pickup before the western push." },
+      { "area": "Albuquerque / Amarillo corridor", "hint": "Large metro + I-40 services — heat-related tire and battery checks." },
+      { "area": "Durango / Silverton / Farmington", "hint": "Mountain + tourist traffic — call ahead in season; dirt roads eat chains." },
+      { "area": "Moab", "hint": "Many ADV-oriented shops — summer booking and heat; know your tire choice." },
+      { "area": "St. George / Las Vegas", "hint": "Extreme heat — coolant, oil, fuel vapor lock awareness; early starts." },
+      { "area": "Los Angeles basin", "hint": "Lane-splitting culture — protect controls in traffic; theft awareness at stops." },
+      { "area": "Bay Area / NorCal coast", "hint": "Marine layer moisture + tar snakes — brake feel; some urban property crime." },
+      { "area": "Portland / Seattle", "hint": "Wet grip, ferry of parts, good dealer density." },
+      { "area": "Spokane / Missoula", "hint": "Long-distance slab exits — vibration checks." },
+      { "area": "Yellowstone gateway towns", "hint": "Seasonal overload — book or call; wildlife on roads more than mechanics." },
+      { "area": "Billings / Gillette / Rapid City", "hint": "Plains wind and construction — alignments and steering feel after hard crosswind days." },
+      { "area": "Twin Cities / Madison / Chicago approaches", "hint": "De-icing residue in shoulder season — rinse bike; good shop density." },
+      { "area": "London ON / Toronto", "hint": "Final service before storage or next tour." }
+    ],
+    "tripToolkit": {
+      "intro": "Tailored to: tubed dual-sport, 35 days, June–July, desert + mountains + long slabs + some dirt.",
+      "categories": [
+        {
+          "name": "Tire & wheel (highest failure rate)",
+          "items": [
+            "Tire irons / spoons you have practiced with",
+            "Spare tube(s) correct size + a few patches + small rubber cement",
+            "Pump: compact 12 V compressor or robust hand pump",
+            "Valve core tool, spare cores",
+            "Spoke wrench matching your wheels"
+          ]
+        },
+        {
+          "name": "Fasteners & drivetrain",
+          "items": [
+            "Tool roll: sizes that fit DR engine covers, axle, triple, bars, luggage (often 8, 10, 12, 14, 17 mm + JIS or good hex for JIS heads)",
+            "Torque wrench for small specs (valve covers, pinch bolts) if you open them",
+            "Chain lube matched to conditions; small brush",
+            "Master link compatible with your chain + pliers or tool",
+            "Blue threadlock for vibration-prone bolts (use sparingly)"
+          ]
+        },
+        {
+          "name": "Fluids & leaks",
+          "items": [
+            "Sealed bottle of correct engine oil (top-ups)",
+            "Small funnel; zip-top bags for waste oil until disposal",
+            "JB Weld or epoxy putty for case punctures (emergency only)",
+            "Brake fluid DOT spec on cap"
+          ]
+        },
+        {
+          "name": "Electrical",
+          "items": [
+            "Fuses matching bike",
+            "Small multimeter or test light",
+            "Jump pack or lithium jump (optional)",
+            "Spare phone cable; waterproof bag for phone"
+          ]
+        },
+        {
+          "name": "Controls & roadside",
+          "items": [
+            "Spare clutch/brake levers (shorties pack small)",
+            "Spare cables if still cable-operated",
+            "Zip ties, duct tape on a card, hose clamp assortment",
+            "Headlamp + gloves you can work in hot engines"
+          ]
+        },
+        {
+          "name": "This route specifically",
+          "items": [
+            "Extra air filter foam or quick-dry filter service kit — Utah / NM / TX dust",
+            "Hydration for you = fewer rider errors; not mechanical but saves the bike",
+            "Ratchet strap or soft loop if you need a tow or truck bed",
+            "Elevation: if carbureted, research jetting steps for 3 000 m passes (Beartooth, Lolo, Cascades)",
+            "Bear country: food odor management at camp — not mechanical but prevents bear encounters at bike"
+          ]
+        }
+      ]
+    }
+  },
+  "routeRisks": {
+    "introduction": "Second section: what can bite you by region — people, weather, machine, wildlife, and gaps your day-by-day plan may not stress. Cross-check with your daily itinerary, NPS alerts, and local news the week you ride.",
+    "regions": [
+      {
+        "id": "canada-border",
+        "name": "Ontario home & Canada–US border",
+        "people": [
+          "CBP/CBSA tone: calm, short answers; have vehicle registration and insurance ready.",
+          "Urban Toronto–London: theft of unsecured gear; don’t leave tools visible on the bike at dinner."
+        ],
+        "weather": [
+          "Sudden thunderstorms in June; bridge gusts near Great Lakes.",
+          "Construction on 401 — lane debris (nails, retread strips)."
+        ],
+        "bike": [
+          "After long US segment, verify headlight/aim and tires before Ontario high-speed return."
+        ],
+        "wildlife": [
+          "Deer at dawn/dusk near forested ON corridors — same risk as US."
+        ],
+        "other": [
+          "Holiday border queues (you planned around July 4) — heat while idling in gear."
+        ]
+      },
+      {
+        "id": "northeast-metro",
+        "name": "Finger Lakes, NYC approaches, DC, I-95 belt",
+        "people": [
+          "Toll roads and cashless systems — EZPass / plate tolls; Canadian plates may need manual pay or online settle.",
+          "Metro drivers less predictable than rural; filter only where legal (not here)."
+        ],
+        "weather": [
+          "Humid heat + full gear = dehydration; afternoon storms on I-95.",
+          "Hurricane-season humidity even inland — fogged shields."
+        ],
+        "bike": [
+          "Stop-and-go clutch heat; check free play daily in cities.",
+          "Expansion joints and steel deck bridges — slippery when wet."
+        ],
+        "wildlife": [
+          "Low vs rural, but deer still appear on parkways at night."
+        ],
+        "other": [
+          "Parking: garages with steep ramps — scrape panniers; height barriers."
+        ]
+      },
+      {
+        "id": "appalachia-smokies",
+        "name": "Virginia, Tennessee, Smokies approaches",
+        "people": [
+          "Tourism corridors — impatient passing on two-lanes.",
+          "Some areas politically visible; neutral demeanor reduces friction."
+        ],
+        "weather": [
+          "Micro-storms in mountains; fog in cuts; wet leaves = low grip.",
+          "Evening mountain chill after 30 °C valleys — layer strategy."
+        ],
+        "bike": [
+          "Hairpins with tar snakes and patch pavement; don’t hero-lean on unfamiliar compound.",
+          "Gravel on apex from trucks — mid-corner surprises."
+        ],
+        "wildlife": [
+          "Deer, black bear in/near parks — never feed; secure food at camp.",
+          "Turkeys and loose dogs on rural roads."
+        ],
+        "other": [
+          "Cell gaps — download offline maps; SOS may need satellite device."
+        ]
+      },
+      {
+        "id": "texas-plains",
+        "name": "Arkansas, Texas, Oklahoma Panhandle, I-40",
+        "people": [
+          "Remote stops — fewer witnesses; choose well-lit fuel stops at night.",
+          "Friendly small towns but also private-property signage; ask before drone or camp snaps of people."
+        ],
+        "weather": [
+          "Hail and lightning on plains; tornado season awareness (June can still produce storms).",
+          "Crosswinds that move a tall-loaded DR; relax grip.",
+          "Extreme heat — pavement softens; tire pressure rises."
+        ],
+        "bike": [
+          "Grooved pavement and bridge decks in TX/OK; fuel range — long empty segments.",
+          "Vibration fatigue on racks — check bolts at Fort Worth stop."
+        ],
+        "wildlife": [
+          "Feral hogs — do not swerve into oncoming; deer at crop edges.",
+          "Cattle guards — slick when wet."
+        ],
+        "other": [
+          "Roadside debris from trucks (thrown retreads) — scan far ahead."
+        ]
+      },
+      {
+        "id": "san-juan-desert",
+        "name": "New Mexico, San Juans, Silverton, Four Corners",
+        "people": [
+          "Tourist traffic around Durango/Silverton; respect one-lane mountain etiquette.",
+          "Indigenous land — obey photo and drone restrictions; buy local."
+        ],
+        "weather": [
+          "Altitude + afternoon thunderstorms; hail at elevation.",
+          "Dust storms in open desert — pull off, lights on, wait."
+        ],
+        "bike": [
+          "Brake fade on long mountain descents — lower gear, pulse brakes.",
+          "Dust in air filter — shorten cleaning interval.",
+          "Fuel at half tank — remote spans."
+        ],
+        "wildlife": [
+          "Elk and deer high country; marmots near parked bikes (chew hoses — check under bike).",
+          "Loose livestock on NM roads in places."
+        ],
+        "other": [
+          "Altitude sickness for you — headache = stop ascending; affects judgment riding."
+        ]
+      },
+      {
+        "id": "utah-canyon",
+        "name": "Utah — Moab, Bryce, desert heat",
+        "people": [
+          "Crowded parks — patience; timed entry chaos — don’t rush on hot asphalt.",
+          "Off-road culture clash — some trails are illegal for plated bikes; verify MVUM."
+        ],
+        "weather": [
+          "110 °F-class heat possible — early starts; water and electrolytes.",
+          "Flash flood risk in slots — check weather even if sky looks clear upstream."
+        ],
+        "bike": [
+          "Hot start issues; vapor lock rare on DR but fuel and battery stress in heat.",
+          "Soft sand spurs — standing riding, steady throttle; protect rad if fitted."
+        ],
+        "wildlife": [
+          "Snakes in rocks; scorpions in gear left on ground — shake boots.",
+          "Cattle on open range roads."
+        ],
+        "other": [
+          "Fine red dust in everything — electronics seals, zippers, air filter."
+        ]
+      },
+      {
+        "id": "mojave-socal",
+        "name": "Mojave, Barstow, Los Angeles, SoCal",
+        "people": [
+          "Lane splitting legal under California rules — study CHP guidance; drivers don’t always expect bikes in all lanes.",
+          "Property crime in cities — cover bike, alarm, parking in view.",
+          "Unhoused encampments near some freeway ramps — situational awareness, don’t stop in blind pockets."
+        ],
+        "weather": [
+          "Desert heat then marine layer at coast — huge swing same day.",
+          "Santa Ana wind events — extreme gusts, fire risk, smoke."
+        ],
+        "bike": [
+          "Long slab + heat = tire wear center strip; check pressures cold.",
+          "Clutch hand fatigue in traffic — rest stops."
+        ],
+        "wildlife": [
+          "Coyotes — mostly avoid humans; rattlesnakes in brush at stops."
+        ],
+        "other": [
+          "CHP enforcement — obey speed in construction; loud pipes draw attention."
+        ]
+      },
+      {
+        "id": "pch-norcal",
+        "name": "Big Sur, Coast Range, Redwoods",
+        "people": [
+          "Narrow road tourists stopping mid-lane for photos — expect irrational moves.",
+          "Some coastal towns sensitive to loud bikes late night."
+        ],
+        "weather": [
+          "Marine layer and damp pavement — tar snakes, reduced grip without rain.",
+          "Landslide / closure culture — always check Caltrans before committing."
+        ],
+        "bike": [
+          "Fog on visor + tight curves — anti-fog discipline.",
+          "Salt air metal corrosion after multi-day coast — rinse chain if camped near salt spray."
+        ],
+        "wildlife": [
+          "Elk in Redwood parks on/near road.",
+          "Bears in NorCal/OR — use bear boxes; never cook next to tent."
+        ],
+        "other": [
+          "No cell in long Big Sur stretches — tell someone your ETA."
+        ]
+      },
+      {
+        "id": "pnw",
+        "name": "Oregon, Columbia Gorge, Seattle, Cascades",
+        "people": [
+          "Seattle metro traffic and bridge grids; ferry schedules if you detour."
+        ],
+        "weather": [
+          "Gorge winds notorious — crosswind technique; debris.",
+          "North Cascades snow closure risk early season — SR-20 status.",
+          "Wildfire smoke + poor AQI — you already track this in the itinerary; reroute if red."
+        ],
+        "bike": [
+          "Rain: water in electrics — dielectric grease on connectors pre-trip.",
+          "After gravel forest roads: wheel weights knocked off (if balanced) — wobble check."
+        ],
+        "wildlife": [
+          "Deer, elk, black bear; cougar rare — don’t run if seen, back away.",
+          "Slugs on boots — silly but slippery on rocks at camp."
+        ],
+        "other": [
+          "Timed ferries and national-park-style crowding at viewpoints."
+        ]
+      },
+      {
+        "id": "rockies-yellowstone",
+        "name": "Montana, Wyoming, Yellowstone, Beartooth",
+        "people": [
+          "Park traffic psychology — people brake for any animal shape.",
+          "Rural WY/MT: help each other culture, but also private land — ask permission."
+        ],
+        "weather": [
+          "Snow possible on Beartooth in June; lightning above treeline.",
+          "Temperature drop 20 °C+ climbing passes — hypothermia risk if soaked."
+        ],
+        "bike": [
+          "Altitude + carb tuning; brake cooling on long descents.",
+          "Bison-jam clutch heat — watch temp, pull to shade."
+        ],
+        "wildlife": [
+          "Bison charge faster than they look — never close-pass on foot or bike.",
+          "Grizzly country — carry spray where legal/practical; bear-aware food storage.",
+          "Wolves and moose — moose more dangerous in close encounters than wolves."
+        ],
+        "other": [
+          "Thermal areas — off-trail = illegal and deadly; stick to boardwalks.",
+          "Park radio traffic — no insider channel; use official info only."
+        ]
+      },
+      {
+        "id": "plains-midwest",
+        "name": "Dakotas, Minnesota, Wisconsin, I-90 return",
+        "people": [
+          "Fatigue on long slab — you scheduled a 600 km day once; swap music/podcast for alertness breaks.",
+          "Small-town kindness; also occasional aggressive passing on two-lanes."
+        ],
+        "weather": [
+          "Severe thunderstorms, hail, derecho risk summer — seek shelter not under overpass (wind tunnel).",
+          "Crosswinds on exposed I-90 bridges."
+        ],
+        "bike": [
+          "Fuel every half tank — boredom ≠ empty tank discipline.",
+          "Headshake from crosswinds + luggage — load heavy low."
+        ],
+        "wildlife": [
+          "Deer explosions at dusk on plains — highest animal strike risk of the trip statistically."
+        ],
+        "other": [
+          "Crop dusting planes — low passes near fields; dust clouds on road."
+        ]
+      },
+      {
+        "id": "great-lakes",
+        "name": "Lake Michigan, Michigan, border re-entry",
+        "people": [
+          "July 4 corridor — impaired drivers late; your plan crosses holiday — extra vigilance.",
+          "Border officers on holiday volume — patience, documents ready."
+        ],
+        "weather": [
+          "Lake-effect pop-up storms; sudden side winds near bridges."
+        ],
+        "bike": [
+          "Steel bridge decks wet or grated — vertical grooves, stay neutral."
+        ],
+        "wildlife": [
+          "Deer, fox, raccoons near suburban edges."
+        ],
+        "other": [
+          "Toll and cashless plaza confusion — keep a card that works in US toll systems until re-entry."
+        ]
+      }
+    ]
+  }
+}

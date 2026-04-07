@@ -2078,10 +2078,127 @@ function renderContentCreation(ccData) {
   });
 }
 
+/** Homework tab: mechanics resources, trip toolkit, regional risk briefing. */
+function renderHomework(data) {
+  const root = document.getElementById("homework-root");
+  if (!root || !data) return;
+  root.innerHTML = "";
+
+  const meta = data.meta || {};
+  const mech = data.mechanics || {};
+  const risks = data.routeRisks || {};
+
+  root.appendChild(
+    el("div", { class: "homework-disclaimer", role: "note" }, [
+      el("p", {}, [el("strong", { text: "Important. " }), meta.disclaimer || ""]),
+    ])
+  );
+
+  root.appendChild(el("h3", { class: "homework-part-title", text: "Part 1 — Your bike, the internet, and this trip" }));
+  root.appendChild(el("p", { class: "muted homework-lead", text: mech.introduction || "" }));
+
+  const seqWrap = el("div", { class: "homework-seq" });
+  (mech.maintenanceSequence || []).forEach((step) => {
+    const card = el("article", { class: "homework-step" });
+    card.appendChild(el("h4", { class: "homework-step-title", text: `${step.order}. ${step.title}` }));
+    card.appendChild(el("p", { text: step.detail || "" }));
+    if (step.dr650Notes) {
+      card.appendChild(el("p", { class: "homework-dr-note", text: `DR650 focus: ${step.dr650Notes}` }));
+    }
+    seqWrap.appendChild(card);
+  });
+  root.appendChild(seqWrap);
+
+  root.appendChild(el("h4", { class: "homework-subh", text: "Online manuals, forums, and networks" }));
+  const resUl = el("ul", { class: "homework-link-list" });
+  (mech.onlineResources || []).forEach((r) => {
+    const li = document.createElement("li");
+    li.appendChild(el("a", { href: r.url, target: "_blank", rel: "noopener noreferrer", text: r.name || r.url }));
+    li.appendChild(document.createTextNode(` — ${r.useFor || ""}`));
+    resUl.appendChild(li);
+  });
+  root.appendChild(resUl);
+
+  root.appendChild(el("h4", { class: "homework-subh", text: "Finding a mechanic along your corridor" }));
+  root.appendChild(
+    el("p", {
+      class: "muted",
+      text: "No public database lists every independent shop; combine search, phone calls, and rider forums.",
+    })
+  );
+  const acUl = el("ul", { class: "homework-anchors" });
+  (mech.routeAnchorCities || []).forEach((a) => {
+    acUl.appendChild(
+      el("li", {}, [el("strong", { text: `${a.area}: ` }), document.createTextNode(a.hint || "")])
+    );
+  });
+  root.appendChild(acUl);
+
+  const tt = mech.tripToolkit || {};
+  root.appendChild(el("h4", { class: "homework-subh", text: "Trip toolkit & spares (this route)" }));
+  root.appendChild(el("p", { class: "muted", text: tt.intro || "" }));
+  (tt.categories || []).forEach((cat) => {
+    const det = el("details", { class: "homework-toolkit" });
+    det.appendChild(el("summary", { text: cat.name || "Kit" }));
+    const ul = el("ul", { class: "homework-bullets" });
+    (cat.items || []).forEach((item) => ul.appendChild(el("li", { text: item })));
+    det.appendChild(ul);
+    root.appendChild(det);
+  });
+
+  root.appendChild(
+    el("h3", {
+      class: "homework-part-title",
+      text: "Part 2 — Region by region: people, weather, bike, wildlife, gaps",
+    })
+  );
+  root.appendChild(el("p", { class: "muted homework-lead", text: risks.introduction || "" }));
+
+  (risks.regions || []).forEach((reg) => {
+    const det = el("details", { class: "homework-region" });
+    det.appendChild(el("summary", { class: "homework-region-sum", text: reg.name || "Region" }));
+    const body = el("div", { class: "homework-region-body" });
+
+    function sub(label, items) {
+      if (!items?.length) return;
+      body.appendChild(el("h5", { class: "homework-risk-h", text: label }));
+      const ul = el("ul", { class: "homework-bullets" });
+      items.forEach((t) => ul.appendChild(el("li", { text: t })));
+      body.appendChild(ul);
+    }
+
+    sub("People & social friction", reg.people);
+    sub("Weather & environment", reg.weather);
+    sub("Motorbike / machine", reg.bike);
+    sub("Wildlife & animals", reg.wildlife);
+    sub("Easily overlooked", reg.other);
+
+    det.appendChild(body);
+    root.appendChild(det);
+  });
+
+  root.appendChild(
+    el("p", {
+      class: "muted homework-foot",
+      text: `Last content review: ${meta.lastReviewed || "—"}. Layer in host advice, NPS alerts, and local news the week you ride.`,
+    })
+  );
+}
+
 /** Highlights jump nav to match current section hash (falls back to Overview). */
 function syncJumpNav() {
   const raw = window.location.hash.slice(1);
-  const sectionIds = new Set(["overview", "glance", "days", "content", "checklists", "before", "emergency", "links"]);
+  const sectionIds = new Set([
+    "overview",
+    "glance",
+    "days",
+    "content",
+    "homework",
+    "checklists",
+    "before",
+    "emergency",
+    "links",
+  ]);
   const active = raw && sectionIds.has(raw) ? raw : "overview";
   document.querySelectorAll("nav.jump a").forEach((a) => {
     const href = a.getAttribute("href") || "";
@@ -2093,11 +2210,12 @@ function syncJumpNav() {
 async function main() {
   const banner = document.getElementById("load-error");
   try {
-    const [tripRes, babRes, routeRes, ccRes] = await Promise.all([
+    const [tripRes, babRes, routeRes, ccRes, hwRes] = await Promise.all([
       fetch("data/trip.json", { cache: "no-store" }),
       fetch("data/bab-hosts.json", { cache: "no-store" }),
       fetch("data/route-overlays.json", { cache: "no-store" }),
       fetch("data/content-creation.json", { cache: "no-store" }),
+      fetch("data/homework.json", { cache: "no-store" }),
     ]);
     if (!tripRes.ok) throw new Error(`trip.json HTTP ${tripRes.status}`);
     const data = await tripRes.json();
@@ -2114,6 +2232,19 @@ async function main() {
     if (ccRes.ok) {
       const ccData = await ccRes.json();
       renderContentCreation(ccData);
+    }
+    if (hwRes.ok) {
+      try {
+        const hwData = await hwRes.json();
+        renderHomework(hwData);
+      } catch (hwErr) {
+        console.warn("homework.json parse failed", hwErr);
+        const hr = document.getElementById("homework-root");
+        if (hr) hr.appendChild(el("p", { class: "muted", text: "Homework data could not be read." }));
+      }
+    } else {
+      const hr = document.getElementById("homework-root");
+      if (hr) hr.appendChild(el("p", { class: "muted", text: "Homework data did not load (check data/homework.json)." }));
     }
     renderTrip(data, babHostsMap, routeMeta);
     scheduleGoogleDistanceFetch(data.days, data.trip);
