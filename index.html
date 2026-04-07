@@ -19,21 +19,29 @@
   </head>
   <body>
     <header class="site">
-      <div class="header-inner">
-        <div class="brand">
-          <h1 id="trip-name">Loading…</h1>
-          <p id="trip-sub"></p>
+      <div class="header-brand-row">
+        <div class="header-inner header-inner--brand">
+          <div class="brand">
+            <p class="brand-eyebrow">Itinerary</p>
+            <h1 id="trip-name">Loading…</h1>
+            <p id="trip-sub" class="brand-tagline"></p>
+          </div>
         </div>
-        <nav class="jump" aria-label="Section links">
-          <a href="#overview">Overview</a>
-          <a href="#glance">At a glance</a>
-          <a href="#days">Days</a>
-          <a href="#content">🎬 Content</a>
-          <a href="#homework">Homework</a>
-          <a href="#checklists">Packing</a>
-          <a href="#before">Before</a>
-          <a href="#emergency">Emergency</a>
-        </nav>
+      </div>
+      <div class="header-nav-row">
+        <div class="header-inner header-inner--nav">
+          <nav class="jump" aria-label="Jump to section">
+            <a href="#overview">Overview</a>
+            <a href="#links">Links</a>
+            <a href="#glance">Calendar</a>
+            <a href="#days">Days</a>
+            <a href="#content">Content</a>
+            <a href="#homework">Homework</a>
+            <a href="#checklists">Packing</a>
+            <a href="#before">Before</a>
+            <a href="#emergency">Emergency</a>
+          </nav>
+        </div>
       </div>
     </header>
 
@@ -79,7 +87,7 @@
 
       <section id="glance">
         <h2>Calendar at a glance</h2>
-        <p class="muted glance-hint">
+        <p class="muted section-intro">
           Per-day km and weather use Google (with API key). Table footer is the full-route total. Each day links to a 10-day forecast for that leg’s end.
         </p>
         <div class="card card--table">
@@ -113,7 +121,7 @@
 
       <section id="days">
         <h2>Daily plan</h2>
-        <p class="muted" style="margin-top: -0.35rem; margin-bottom: 0.75rem">
+        <p class="muted section-intro">
           Today’s day opens automatically when the date matches your device.
         </p>
         <div id="day-list"></div>
@@ -121,7 +129,7 @@
 
       <section id="content">
         <h2>🎬 YouTube Content Guide</h2>
-        <p class="muted" style="margin-top: -0.35rem; margin-bottom: 0.75rem">
+        <p class="muted section-intro">
           Per-day storytelling, hooks, shots, facts, and culture notes for your series. Each card is a full episode brief.
         </p>
         <div id="content-list"></div>
@@ -129,7 +137,7 @@
 
       <section id="homework">
         <h2>Homework</h2>
-        <p class="muted" style="margin-top: -0.35rem; margin-bottom: 0.75rem">
+        <p class="muted section-intro">
           DR650 mechanics &amp; learning resources, trip tools, and region-by-region risks (people, weather, bike, wildlife, gaps).
         </p>
         <div id="homework-root" class="homework-root card"></div>
