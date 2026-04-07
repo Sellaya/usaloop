@@ -65,9 +65,9 @@
   },
   "links": {
     "gpxFolder": "gpx/toronto-southwest-loop-2026.gpx",
-    "sharedMap": "",
-    "weather": "https://weather.gov",
-    "bookingFolder": ""
+    "sharedMap": "https://www.google.com/maps/d/u/0/",
+    "weather": "https://www.weather.gov/",
+    "bookingFolder": "https://drive.google.com/drive/"
   },
   "days": [
     {

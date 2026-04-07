@@ -1814,14 +1814,14 @@ function renderTrip(data, babHostsMap, routeMeta) {
   linkDefs.forEach(([label, url]) => {
     const row = el("div", { class: "link-row" });
     row.appendChild(el("span", { text: label }));
-    if (url) {
+    const href = typeof url === "string" ? url.trim() : "";
+    if (href) {
       row.appendChild(
-        el("a", { href: url, text: "Open", target: "_blank", rel: "noopener noreferrer" })
+        el("a", { href, text: "Open", target: "_blank", rel: "noopener noreferrer" })
       );
     } else {
-      row.appendChild(el("a", { class: "empty", text: "Add URL in trip.json" }));
+      row.appendChild(el("span", { class: "link-row-missing muted", text: "Add URL in trip.json (links)" }));
     }
-    linksEl.appendChild(row);
   });
 
   renderGlanceTable(days, trip);
