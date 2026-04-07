@@ -827,6 +827,37 @@ section > h2::after {
   line-height: 1.45;
 }
 
+.route-duration-text {
+  font-weight: 500;
+  color: var(--doc-slate);
+}
+
+.maps-platform-attribution {
+  margin: 0.5rem 0 0;
+  font-size: 0.72rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.maps-platform-attribution a {
+  color: var(--muted);
+}
+
+.hero-route-total-duration {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(255, 248, 225, 0.98);
+}
+
+.overview-route-total-duration {
+  margin: 0 0 0.5rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--doc-navy);
+}
+
 .day-recs .rec-list {
   margin: 0.25rem 0 0;
   padding-left: 1.2rem;

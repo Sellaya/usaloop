@@ -14,8 +14,8 @@
     "bike": "Adventure motorcycle (set in trip.json)",
     "statsChips": [
       "36 riding days",
-      "Leg km loaded from Google Maps (API key in google-maps-config.js)",
-      "Always re-check each leg in Maps the day you ride"
+      "Km & drive time: Google Maps Platform (Directions API via JS)",
+      "Re-check each leg in Maps the day you ride (traffic not applied in-app)"
     ],
     "legs": {
       "1": "Toronto → Fort Worth · Days 1–8",

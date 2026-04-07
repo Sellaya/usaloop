@@ -110,6 +110,17 @@ function hasGoogleMapsApiKey() {
   return Boolean(k && String(k).trim());
 }
 
+/** Decode origin/destination the same way Google’s share URLs intend (handles %2C etc.). */
+function decodeMapsDirectionsParam(raw) {
+  if (raw == null) return "";
+  const s = String(raw).replace(/\+/g, " ");
+  try {
+    return decodeURIComponent(s);
+  } catch {
+    return s;
+  }
+}
+
 /** Parse google.com/maps/dir URL for DirectionsService (same endpoints as the share link). */
 function parseGoogleMapsDirectionsUrl(href) {
   try {
@@ -120,13 +131,76 @@ function parseGoogleMapsDirectionsUrl(href) {
     if (!origin?.trim() || !destination?.trim()) return null;
     const tm = (u.searchParams.get("travelmode") || "driving").toUpperCase();
     return {
-      origin: origin.replace(/\+/g, " "),
-      destination: destination.replace(/\+/g, " "),
+      origin: decodeMapsDirectionsParam(origin),
+      destination: decodeMapsDirectionsParam(destination),
       travelModeKey: tm,
     };
   } catch {
     return null;
   }
+}
+
+/** Directions request aligned with Maps JS API: metric units, locale, Canada bias for this tour. */
+function buildDirectionsRequest(parsed, travelMode) {
+  const U = window.google.maps.UnitSystem;
+  const lang = (navigator.language || "en-CA").replace(/_/g, "-");
+  return {
+    origin: parsed.origin,
+    destination: parsed.destination,
+    travelMode,
+    unitSystem: U.METRIC,
+    language: lang,
+    region: "ca",
+  };
+}
+
+function directionsRouteOnce(svc, request) {
+  return new Promise((resolve, reject) => {
+    svc.route(request, (result, status) => {
+      const leg = result?.routes?.[0]?.legs?.[0];
+      const meters = leg?.distance?.value;
+      if (status === "OK" && leg && meters != null) {
+        resolve({
+          meters,
+          durationText: leg.duration?.text || "",
+          durationSeconds: leg.duration?.value ?? 0,
+        });
+      } else {
+        reject(new Error(status));
+      }
+    });
+  });
+}
+
+async function directionsRouteWithRetry(svc, request) {
+  const retryable = new Set(["OVER_QUERY_LIMIT", "UNKNOWN_ERROR"]);
+  let lastErr;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      return await directionsRouteOnce(svc, request);
+    } catch (e) {
+      lastErr = e;
+      const code = e?.message || "";
+      if (retryable.has(code) && attempt < 2) {
+        await new Promise((r) => setTimeout(r, 800 * (attempt + 1)));
+        continue;
+      }
+      throw e;
+    }
+  }
+  throw lastErr;
+}
+
+function formatTotalDriveDuration(sumSec) {
+  if (sumSec == null || sumSec <= 0) return null;
+  const h = Math.floor(sumSec / 3600);
+  const m = Math.floor((sumSec % 3600) / 60);
+  if (h >= 48) {
+    const d = Math.floor(h / 24);
+    const rh = h % 24;
+    return `~${d} d ${rh} h ${m} min combined driving (Google)`;
+  }
+  return `~${h} h ${m} min combined driving (Google)`;
 }
 
 function googleTravelModeFromKey(key) {
@@ -146,7 +220,9 @@ function formatDayMetaLine(day) {
   if (day.date) bits.push(formatDate(day.date));
   if (day.googleDistanceKm != null) {
     const f = formatDistanceKmMi(day.googleDistanceKm);
-    bits.push(f ? `~${f.primaryLine} · Google` : `~${day.googleDistanceKm} km · Google`);
+    let bit = f ? `~${f.primaryLine} · Google` : `~${day.googleDistanceKm} km · Google`;
+    if (day.googleDurationText) bit += ` · ${day.googleDurationText}`;
+    bits.push(bit);
   }
   if (day.seatTimeHours != null) bits.push(`~${day.seatTimeHours} h seat`);
   if (day.terrain) bits.push(day.terrain);
@@ -159,7 +235,8 @@ function applyDayDistanceToDom(day) {
     if (day.googleDistanceKm != null) {
       const f = formatDistanceKmMi(day.googleDistanceKm);
       kmCell.textContent = f ? f.shortLine : String(day.googleDistanceKm);
-      kmCell.title = f ? `${f.primaryLine} — Google Maps driving` : "";
+      const tip = f ? `${f.primaryLine}` : "";
+      kmCell.title = [tip, day.googleDurationText, "Google Directions (driving)"].filter(Boolean).join(" · ");
     } else if (day.googleDistanceError) {
       kmCell.textContent = "—";
       kmCell.title = day.googleDistanceError;
@@ -178,9 +255,17 @@ function applyDayDistanceToDom(day) {
       kmLine.appendChild(el("strong", { text: f ? `≈ ${f.primaryLine}` : `≈ ${day.googleDistanceKm} km` }));
       kmLine.appendChild(
         document.createTextNode(
-          " — Google Maps driving distance (same origin/destination as the link below; car routing, close to touring)."
+          " — Google Maps Platform, Directions (driving, metric). Same endpoints as the link below; typical car routing (close to touring)."
         )
       );
+      if (day.googleDurationText) {
+        kmLine.appendChild(
+          el("span", {
+            class: "route-duration-text",
+            text: ` Typical duration (traffic not applied): ${day.googleDurationText}.`,
+          })
+        );
+      }
     } else if (day.googleDistanceError) {
       kmLine.classList.add("muted");
       kmLine.textContent = `Google Maps could not route this leg (${day.googleDistanceError}). Use the link below.`;
@@ -194,6 +279,8 @@ async function fetchGoogleDistancesForDays(days) {
   const list = (days || []).filter((d) => d.routeOverlay?.mapsDirectionsUrl);
   for (const day of list) {
     const href = day.routeOverlay.mapsDirectionsUrl;
+    day.googleDurationText = null;
+    day.googleDurationSeconds = null;
     const parsed = parseGoogleMapsDirectionsUrl(href);
     if (!parsed) {
       day.googleDistanceKm = null;
@@ -209,33 +296,24 @@ async function fetchGoogleDistancesForDays(days) {
     }
 
     try {
-      const meters = await new Promise((resolve, reject) => {
-        svc.route(
-          {
-            origin: parsed.origin,
-            destination: parsed.destination,
-            travelMode,
-          },
-          (result, status) => {
-            const m = result?.routes?.[0]?.legs?.[0]?.distance?.value;
-            if (status === "OK" && m != null) resolve(m);
-            else reject(new Error(status));
-          }
-        );
-      });
+      const request = buildDirectionsRequest(parsed, travelMode);
+      const { meters, durationText, durationSeconds } = await directionsRouteWithRetry(svc, request);
       day.googleDistanceKm = Math.round(meters / 1000);
+      day.googleDurationText = durationText;
+      day.googleDurationSeconds = durationSeconds;
       day.googleDistanceError = null;
     } catch (e) {
       day.googleDistanceKm = null;
       day.googleDistanceError = e?.message || "REQUEST_DENIED";
     }
     applyDayDistanceToDom(day);
-    await new Promise((r) => setTimeout(r, 120));
+    await new Promise((r) => setTimeout(r, 180));
   }
 }
 
 function computeGoogleRouteTotals(days) {
   let sumKm = 0;
+  let sumDurationSec = 0;
   let legsWithUrl = 0;
   let legsOk = 0;
   let legsFailed = 0;
@@ -245,10 +323,12 @@ function computeGoogleRouteTotals(days) {
     if (d.googleDistanceKm != null) {
       sumKm += d.googleDistanceKm;
       legsOk++;
+      if (d.googleDurationSeconds != null) sumDurationSec += d.googleDurationSeconds;
     } else if (d.googleDistanceError) legsFailed++;
   }
   return {
     sumKm,
+    sumDurationSec,
     legsWithUrl,
     legsOk,
     legsFailed,
@@ -289,13 +369,13 @@ function initRouteTotalsUI(phase) {
       hero.hidden = false;
       hero.classList.add("hero-route-total--muted");
       hero.textContent =
-        "Full-route total: set google-maps-config.js to sum each day’s Google driving distance here.";
+        "Full-route total: set GOOGLE_MAPS_API_KEY in .env (or Vercel env), run npm run build, reload.";
     }
     if (overview) {
       overview.hidden = false;
       overview.className = "overview-route-total muted";
       overview.textContent =
-        "Full route total uses Google Maps when an API key is set (copy google-maps-config.example.js → google-maps-config.js).";
+        "Full route uses Google Maps Platform (Directions). Add GOOGLE_MAPS_API_KEY to .env or Vercel, then deploy / npm run build.";
     }
     if (tfoot) tfoot.hidden = true;
   }
@@ -313,7 +393,8 @@ function updateTotalRouteDistanceUI(days) {
     return;
   }
 
-  const { sumKm, legsWithUrl, legsOk, legsFailed, allOk } = computeGoogleRouteTotals(days);
+  const { sumKm, sumDurationSec, legsWithUrl, legsOk, legsFailed, allOk } = computeGoogleRouteTotals(days);
+  const totalDurationLabel = formatTotalDriveDuration(sumDurationSec);
 
   if (legsWithUrl === 0) {
     if (overview) {
@@ -358,10 +439,15 @@ function updateTotalRouteDistanceUI(days) {
     hero.classList.remove("hero-route-total--muted");
     hero.innerHTML = "";
     hero.appendChild(el("strong", { text: `Full route (Google Maps): ${fmt.primaryLine}` }));
+    if (totalDurationLabel) {
+      hero.appendChild(
+        el("span", { class: "hero-route-total-duration", text: ` ${totalDurationLabel}` })
+      );
+    }
     hero.appendChild(
       el("span", {
         class: "hero-route-total-note",
-        text: ` ${coverage} Sum of car driving distance per leg (close to touring).`,
+        text: ` ${coverage} Sum of metric driving distance per leg (Directions API, no live traffic).`,
       })
     );
   }
@@ -379,6 +465,11 @@ function updateTotalRouteDistanceUI(days) {
       )
     );
     overview.appendChild(line);
+    if (totalDurationLabel) {
+      overview.appendChild(
+        el("p", { class: "overview-route-total-duration", text: totalDurationLabel })
+      );
+    }
     overview.appendChild(el("p", { class: "overview-route-total-sub muted", text: coverage }));
   }
 
@@ -386,7 +477,9 @@ function updateTotalRouteDistanceUI(days) {
     tfoot.hidden = false;
     tkm.textContent = fmt ? fmt.shortLine : "—";
     tkm.title = fmt ? `${fmt.primaryLine} — sum of Google legs` : "";
-    if (tnote) tnote.textContent = coverage;
+    if (tnote) {
+      tnote.textContent = totalDurationLabel ? `${coverage} ${totalDurationLabel}` : coverage;
+    }
   }
 }
 
@@ -958,7 +1051,7 @@ function appendRouteMetrics(body, day) {
   } else {
     row.classList.add("muted");
     row.textContent =
-      "Distances are loaded only from Google Maps. Add your browser API key to google-maps-config.js (copy from google-maps-config.example.js), enable Maps JavaScript API + Directions API, or open the link below.";
+      "Distances load only via Google Maps Platform (Directions). Add GOOGLE_MAPS_API_KEY to .env, run npm run build, or set that variable on Vercel — then enable Maps JavaScript API + Directions API for the key. You can still open the link below.";
   }
   wrap.appendChild(row);
   wrap.appendChild(
@@ -971,6 +1064,18 @@ function appendRouteMetrics(body, day) {
     })
   );
   if (o.distanceNote) wrap.appendChild(el("p", { class: "route-distance-note", text: o.distanceNote }));
+  const attrib = el("p", { class: "maps-platform-attribution" });
+  attrib.appendChild(document.createTextNode("Route metrics from "));
+  attrib.appendChild(
+    el("a", {
+      href: "https://developers.google.com/maps/documentation/javascript/directions",
+      target: "_blank",
+      rel: "noopener noreferrer",
+      text: "Google Maps Platform — Directions",
+    })
+  );
+  attrib.appendChild(document.createTextNode("."));
+  wrap.appendChild(attrib);
   body.appendChild(wrap);
 }
 
