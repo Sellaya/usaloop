@@ -1804,25 +1804,28 @@ function renderTrip(data, babHostsMap, routeMeta) {
   }
 
   const linksEl = document.getElementById("quick-links");
-  linksEl.innerHTML = "";
+  if (linksEl) linksEl.innerHTML = "";
   const linkDefs = [
     ["GPX / tracks", links?.gpxFolder],
     ["Shared map", links?.sharedMap],
     ["Weather", links?.weather],
     ["Bookings", links?.bookingFolder],
   ];
-  linkDefs.forEach(([label, url]) => {
-    const row = el("div", { class: "link-row" });
-    row.appendChild(el("span", { text: label }));
-    const href = typeof url === "string" ? url.trim() : "";
-    if (href) {
-      row.appendChild(
-        el("a", { href, text: "Open", target: "_blank", rel: "noopener noreferrer" })
-      );
-    } else {
-      row.appendChild(el("span", { class: "link-row-missing muted", text: "Add URL in trip.json (links)" }));
-    }
-  });
+  if (linksEl) {
+    linkDefs.forEach(([label, url]) => {
+      const row = el("div", { class: "link-row" });
+      row.appendChild(el("span", { text: label }));
+      const href = typeof url === "string" ? url.trim() : "";
+      if (href) {
+        row.appendChild(
+          el("a", { href, text: "Open", target: "_blank", rel: "noopener noreferrer" })
+        );
+      } else {
+        row.appendChild(el("span", { class: "link-row-missing muted", text: "Add URL in trip.json (links)" }));
+      }
+      linksEl.appendChild(row);
+    });
+  }
 
   renderGlanceTable(days, trip);
 
