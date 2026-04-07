@@ -1239,7 +1239,7 @@
   },
   "beforeYouGo": [
     "Replace placeholder start/end dates in trip.json with your real departure window.",
-    "Leg distances use Google Maps (Directions API) via google-maps-config.js. Restrict that key by HTTP referrer in Google Cloud (include your GitHub Pages URL if you deploy there). Re-check each leg in Maps after you set exact pins.",
+    "Maps: set GOOGLE_MAPS_API_KEY in .env (see .env.example), run npm run build, then serve. On Vercel, add the same variable under Environment Variables — build generates google-maps-config.js. Restrict the key by HTTP referrer (localhost + your Vercel URL). Re-check each leg in Maps after you set exact pins.",
     "Primary stays stay first on each day; Bunk a Biker backups are in data/bab-hosts.json (edit babAlternateIds per day if you trim the list).",
     "Confirm each host address, gate codes, and bike parking before arrival day.",
     "Arches NP: check timed-entry reservation rules for your dates.",

@@ -1,0 +1,7 @@
+{
+  "name": "usaloop-itinerary",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/inject-maps-key.js"
+  }
+}

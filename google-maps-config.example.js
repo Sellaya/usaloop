@@ -1,8 +1,5 @@
 /**
- * Optional: replace google-maps-config.js with your own key for local experiments.
- * The repo ships google-maps-config.js so Pages works out of the box.
- *
- * Google Cloud: enable “Maps JavaScript API” + “Directions API”.
- * Restrict key: HTTP referrers (localhost + your GitHub Pages URL, e.g. https://sellaya.github.io/*).
+ * Deprecated for builds: use .env + npm run build instead (generates google-maps-config.js).
+ * Or set GOOGLE_MAPS_API_KEY only in Vercel → Environment Variables.
  */
 window.__GOOGLE_MAPS_API_KEY__ = "YOUR_BROWSER_KEY_HERE";
