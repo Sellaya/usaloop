@@ -4,7 +4,7 @@
  *
  * Query:
  *   - current=1 → currentConditions:lookup (live conditions at lat/lon)
- *   - else → forecast days:lookup (merges pages; default pageSize is 5 upstream)
+ *   - else → forecast days:lookup (days=1 default; merges pages if days > default pageSize)
  *
  * @see https://developers.google.com/maps/documentation/weather/current-conditions
  * @see https://developers.google.com/maps/documentation/weather/daily-forecast
@@ -24,7 +24,7 @@ module.exports = async (req, res) => {
 
   const lat = req.query.lat;
   const lon = req.query.lon;
-  const days = req.query.days || "10";
+  const days = req.query.days || "1";
   const key = process.env.GOOGLE_MAPS_API_KEY;
 
   if (lat == null || lon == null || !key) {

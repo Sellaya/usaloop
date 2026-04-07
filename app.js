@@ -13,6 +13,9 @@ let tripDisplayMeta = { units: "metric" };
 
 const KM_PER_MI = 1.609344;
 
+/** Google Weather API: only fetch this many daily forecast rows per location (plus current conditions). */
+const WEATHER_FORECAST_DAY_COUNT = 1;
+
 function setTripDisplayMeta(meta) {
   tripDisplayMeta = { units: meta?.units === "imperial" ? "imperial" : "metric" };
 }
@@ -22,16 +25,16 @@ function formatIntLocale(n) {
   return new Intl.NumberFormat(undefined, { maximumFractionDigits: 0 }).format(Math.round(n));
 }
 
-/** Driving km from Google → locale-formatted km + mi (trip meta.units picks primary). */
+/** Driving km from Google → locale-formatted km + mi (trip meta.units picks primary). Km shown to 0.1. */
 function formatDistanceKmMi(km) {
   if (km == null || Number.isNaN(km)) return null;
-  const kmR = Math.round(km);
-  const miR = Math.round(km / KM_PER_MI);
-  const kmText = formatIntLocale(kmR);
+  const kmNum = Math.round(km * 10) / 10;
+  const miR = Math.round(kmNum / KM_PER_MI);
+  const kmText = new Intl.NumberFormat(undefined, { maximumFractionDigits: 1 }).format(kmNum);
   const miText = formatIntLocale(miR);
   const metricFirst = tripDisplayMeta.units !== "imperial";
   return {
-    kmRounded: kmR,
+    kmRounded: kmNum,
     miRounded: miR,
     kmText,
     miText,
@@ -121,18 +124,67 @@ function decodeMapsDirectionsParam(raw) {
   }
 }
 
-/** Parse google.com/maps/dir URL for DirectionsService (same endpoints as the share link). */
+/** Waypoints from Maps `waypoints=` (pipe-separated; strips optional `via:` prefixes). */
+function parseWaypointsFromMapsParam(raw) {
+  if (raw == null || !String(raw).trim()) return [];
+  return String(raw)
+    .split("|")
+    .map((w) => {
+      let s = w.trim();
+      if (!s) return null;
+      if (/^via:/i.test(s)) s = s.replace(/^via:/i, "").trim();
+      return s ? { location: decodeMapsDirectionsParam(s), stopover: true } : null;
+    })
+    .filter(Boolean);
+}
+
+/**
+ * Path-style URLs: /maps/dir/Origin/Destination/ or /maps/dir/A/B/C/D with middle segments as waypoints.
+ */
+function parsePathStyleMapsDir(pathname) {
+  const parts = pathname.split("/").filter(Boolean);
+  const dirIdx = parts.indexOf("dir");
+  if (dirIdx < 0) return null;
+  const segs = parts.slice(dirIdx + 1);
+  if (segs.length < 2) return null;
+  const decoded = segs.map((s) => decodeMapsDirectionsParam(s));
+  const origin = decoded[0];
+  const destination = decoded[decoded.length - 1];
+  const waypoints = decoded.slice(1, -1).map((location) => ({ location, stopover: true }));
+  return { origin, destination, waypoints };
+}
+
+/** Parse google.com/maps/dir URL for DirectionsService (query or path form; includes waypoints). */
 function parseGoogleMapsDirectionsUrl(href) {
   try {
     const u = new URL(href);
-    if (!u.pathname.includes("maps/dir")) return null;
-    const origin = u.searchParams.get("origin");
-    const destination = u.searchParams.get("destination");
-    if (!origin?.trim() || !destination?.trim()) return null;
+    const hostOk =
+      u.hostname === "www.google.com" ||
+      u.hostname === "google.com" ||
+      u.hostname === "maps.google.com" ||
+      u.hostname.endsWith(".google.com");
+    if (!hostOk || !u.pathname.includes("/maps/dir")) return null;
+
     const tm = (u.searchParams.get("travelmode") || "driving").toUpperCase();
+    let origin = u.searchParams.get("origin")?.trim();
+    let destination = u.searchParams.get("destination")?.trim();
+    let waypoints = parseWaypointsFromMapsParam(u.searchParams.get("waypoints"));
+
+    if (origin && destination) {
+      return {
+        origin: decodeMapsDirectionsParam(origin),
+        destination: decodeMapsDirectionsParam(destination),
+        waypoints,
+        travelModeKey: tm,
+      };
+    }
+
+    const pathParsed = parsePathStyleMapsDir(u.pathname);
+    if (!pathParsed) return null;
     return {
-      origin: decodeMapsDirectionsParam(origin),
-      destination: decodeMapsDirectionsParam(destination),
+      origin: pathParsed.origin,
+      destination: pathParsed.destination,
+      waypoints: pathParsed.waypoints?.length ? pathParsed.waypoints : waypoints,
       travelModeKey: tm,
     };
   } catch {
@@ -140,18 +192,34 @@ function parseGoogleMapsDirectionsUrl(href) {
   }
 }
 
-/** Directions request aligned with Maps JS API: metric units, locale, Canada bias for this tour. */
+/** Directions request: metric, browser language — no fixed region bias (avoids mismatches vs Maps web). */
 function buildDirectionsRequest(parsed, travelMode) {
   const U = window.google.maps.UnitSystem;
-  const lang = (navigator.language || "en-CA").replace(/_/g, "-");
-  return {
+  const lang = (navigator.language || "en").replace(/_/g, "-");
+  const req = {
     origin: parsed.origin,
     destination: parsed.destination,
     travelMode,
     unitSystem: U.METRIC,
     language: lang,
-    region: "ca",
   };
+  if (parsed.waypoints?.length) {
+    req.waypoints = parsed.waypoints;
+  }
+  return req;
+}
+
+function formatCombinedDurationSeconds(totalSec) {
+  if (totalSec == null || totalSec <= 0) return "";
+  const h = Math.floor(totalSec / 3600);
+  const m = Math.floor((totalSec % 3600) / 60);
+  if (h >= 48) {
+    const d = Math.floor(h / 24);
+    const rh = h % 24;
+    return `${d} d ${rh} h ${m} min`;
+  }
+  if (h > 0) return `${h} h ${m} min`;
+  return `${m} min`;
 }
 
 const DIRECTIONS_CALL_TIMEOUT_MS = 20000;
@@ -172,20 +240,30 @@ function directionsRouteOnce(svc, request) {
     }, DIRECTIONS_CALL_TIMEOUT_MS);
     svc.route(request, (result, status) => {
       window.clearTimeout(timer);
-      const leg = result?.routes?.[0]?.legs?.[0];
-      const meters = leg?.distance?.value;
-      if (status === "OK" && leg && meters != null) {
-        const { endLat, endLng } = latLngFromEnd(leg.end_location);
-        resolve({
-          meters,
-          durationText: leg.duration?.text || "",
-          durationSeconds: leg.duration?.value ?? 0,
-          endLat,
-          endLng,
-        });
-      } else {
+      const legs = result?.routes?.[0]?.legs;
+      if (status !== "OK" || !legs?.length) {
         reject(new Error(status));
+        return;
       }
+      let meters = 0;
+      let durationSeconds = 0;
+      for (const leg of legs) {
+        if (leg.distance?.value != null) meters += leg.distance.value;
+        if (leg.duration?.value != null) durationSeconds += leg.duration.value;
+      }
+      const lastLeg = legs[legs.length - 1];
+      if (lastLeg?.distance?.value == null) {
+        reject(new Error(status));
+        return;
+      }
+      const { endLat, endLng } = latLngFromEnd(lastLeg.end_location);
+      resolve({
+        meters,
+        durationText: formatCombinedDurationSeconds(durationSeconds),
+        durationSeconds,
+        endLat,
+        endLng,
+      });
     });
   });
 }
@@ -273,7 +351,7 @@ function applyDayDistanceToDom(day) {
       kmLine.appendChild(el("strong", { text: f ? `≈ ${f.primaryLine}` : `≈ ${day.googleDistanceKm} km` }));
       kmLine.appendChild(
         document.createTextNode(
-          " — Google Maps Platform, Directions (driving, metric). Same endpoints as the link below; typical car routing (close to touring)."
+          " — Google Directions (driving, metric): full route distance including all legs and waypoints in the link. Matches Maps when origin, destination, and stops are the same."
         )
       );
       if (day.googleDurationText) {
@@ -330,7 +408,7 @@ async function fetchGoogleDistancesForDays(days) {
         svc,
         request
       );
-      day.googleDistanceKm = Math.round(meters / 1000);
+      day.googleDistanceKm = Math.round(meters / 100) / 10;
       day.googleDurationText = durationText;
       day.googleDurationSeconds = durationSeconds;
       day.googleDistanceError = null;
@@ -423,7 +501,7 @@ async function fetchWeatherForecastPages(buildUrl, nDaysIn) {
 }
 
 async function fetchDailyForecastFromGoogle(lat, lng, dayCount) {
-  const nDays = Math.min(10, Math.max(1, dayCount));
+  const nDays = Math.min(10, Math.max(1, dayCount ?? WEATHER_FORECAST_DAY_COUNT));
   const proxyParams = new URLSearchParams({
     lat: String(lat),
     lon: String(lng),
@@ -649,7 +727,7 @@ async function fetchAndRenderRouteWeather(days, trip) {
     await new Promise((r) => setTimeout(r, 120));
 
     try {
-      forecast = await fetchDailyForecastFromGoogle(lat, lng, 10);
+      forecast = await fetchDailyForecastFromGoogle(lat, lng, WEATHER_FORECAST_DAY_COUNT);
     } catch (e) {
       console.warn("[Weather] forecast failed for", lat, lng, e?.message || e);
       forecast = { forecastDays: [], timeZone: {}, error: String(e?.message || e) };
@@ -745,8 +823,8 @@ function applyDayWeatherToDom(day) {
       el("p", {
         class: "day-weather-google__label",
         text: rideMatched
-          ? `Daily outlook · ${fcLabel} (matches your ride day)`
-          : `Daily outlook · ${fcLabel} (next days at destination; ride day may differ)`,
+          ? `Next-day outlook · ${fcLabel} (matches your ride day)`
+          : `Next-day outlook · ${fcLabel} (at destination; tour calendar may differ)`,
       })
     );
     wrap.appendChild(el("p", { class: "day-weather-google__body", text: parts.join(" · ") }));
@@ -796,7 +874,7 @@ function renderHeroWeatherAlerts(days, trip) {
     box.appendChild(
       el("p", {
         class: "hero-weather__text",
-        text: `Weather: after Google Directions resolves each leg, we load current conditions plus a short daily outlook at that leg’s destination (${bikeLabel}). Tour dates on the calendar do not gate what you see.`,
+        text: `Weather: after each leg resolves in Directions, we load current conditions plus the next 1-day outlook at that leg’s destination (${bikeLabel}). Tour dates do not change the live read.`,
       })
     );
     return;
@@ -816,7 +894,7 @@ function renderHeroWeatherAlerts(days, trip) {
   box.appendChild(
     el("p", {
       class: "hero-weather__text",
-      text: `Live conditions at each day’s route destination (${bikeLabel}) — reload for a fresh read. Below: anything that looks rough for riding; open each day for full “now” + outlook.`,
+      text: `Live conditions at each day’s route destination (${bikeLabel}) — reload for a fresh read. Below: rough riding flags from “now” + next-day outlook; open each day for details.`,
     })
   );
 
@@ -843,7 +921,7 @@ function renderHeroWeatherAlerts(days, trip) {
     box.appendChild(
       el("p", {
         class: "hero-weather__sub",
-        text: "Current = Google currentConditions at route-end coordinates; outlook = daily model. Re-check before you roll.",
+        text: "Current = Google currentConditions at route-end coordinates; outlook = next 1 day only. Re-check before you roll.",
       })
     );
     return;
@@ -853,7 +931,7 @@ function renderHeroWeatherAlerts(days, trip) {
   box.appendChild(
     el("p", {
       class: "hero-weather__text",
-      text: `No high-priority riding flags in current + short outlook at route destinations (${bikeLabel}) — still verify wind, precip, and temperature yourself.`,
+      text: `No high-priority riding flags in current + next-day outlook at route destinations (${bikeLabel}) — still verify wind, precip, and temperature yourself.`,
     })
   );
 }
@@ -886,7 +964,7 @@ function renderOverviewLegWeather(days, trip) {
   );
   const sub = el("p", {
     class: "overview-weather-sub muted",
-    text: "Same route-end coordinates as driving distances. “Now” is currentConditions; concerns merge current + daily outlook. Tour dates do not change the live read.",
+    text: "Same route-end coordinates as driving distances. “Now” is currentConditions; concerns merge current + next 1-day outlook. Tour dates do not change the live read.",
   });
   mount.appendChild(sub);
 
@@ -1237,8 +1315,25 @@ function renderHero(trip) {
   inner.appendChild(el("p", { class: "hero-kicker", text: `🏍 ${trip.tagline || "Ride plan"}` }));
 
   const chips = el("div", { class: "hero-chips", "aria-label": "Trip summary tags" });
-  if (trip.bike) chips.appendChild(el("span", { class: "hero-chip", text: trip.bike }));
-  (trip.statsChips || []).forEach((c) => chips.appendChild(el("span", { class: "hero-chip", text: c })));
+  let chipIndex = 0;
+  function appendHeroChip(node) {
+    node.style.setProperty("--chip-i", String(chipIndex));
+    chipIndex += 1;
+    chips.appendChild(node);
+  }
+  if (trip.bike) {
+    appendHeroChip(el("span", { class: "hero-chip hero-chip--bike", text: trip.bike }));
+  }
+  const rawChips = trip.statsChips || [];
+  rawChips.forEach((c, i) => {
+    const isLast = i === rawChips.length - 1;
+    appendHeroChip(
+      el("span", {
+        class: isLast && rawChips.length > 0 ? "hero-chip hero-chip--motivate" : "hero-chip",
+        text: c,
+      })
+    );
+  });
   if (chips.childNodes.length) inner.appendChild(chips);
 
   if (trip.legs && typeof trip.legs === "object") {

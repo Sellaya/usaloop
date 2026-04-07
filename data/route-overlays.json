@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Per-day route metrics & ideas",
-    "disclaimer": "Each day links to Google Directions. The app calls the Maps JavaScript API Directions service (driving, metric units, locale from your browser, region bias ca) with the same origin/destination strings as that link. Full-route total = sum of those legs plus combined typical drive time (no live traffic). Waypoint limits prevent one 36-stop request. Re-check in Maps before you ride."
+    "disclaimer": "Each day links to Google Directions. The app calls the Maps JavaScript API Directions service (driving, metric, your browser language) using the same origin, destination, and waypoints as the link when present. Per-day km = sum of all legs in that route (multi-stop links are no longer shortened to the first segment). No Canada-only region bias. Full-route total sums those daily legs. No live traffic. Re-check in Maps before you ride."
   },
   "byDay": {
     "1": {
