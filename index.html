@@ -139,11 +139,18 @@
     <script>
       window.__onGmInit = function () {
         window.__googleMapsJsReady = true;
+        window.__googleMapsLoadIssue = undefined;
         window.dispatchEvent(new CustomEvent("googlemapsjsready"));
       };
       (function loadGoogleMapsJs() {
         var k = window.__GOOGLE_MAPS_API_KEY__;
         if (!k || !String(k).trim()) return;
+        function signalMapsLoaderDone(reason) {
+          if (reason && !window.__googleMapsJsReady) {
+            window.__googleMapsLoadIssue = reason;
+          }
+          window.dispatchEvent(new CustomEvent("googlemapsjsready"));
+        }
         var s = document.createElement("script");
         s.src =
           "https://maps.googleapis.com/maps/api/js?key=" +
@@ -151,7 +158,15 @@
           "&loading=async&callback=__onGmInit";
         s.async = true;
         s.defer = true;
+        s.onerror = function () {
+          signalMapsLoaderDone("script_error");
+        };
         document.head.appendChild(s);
+        window.setTimeout(function () {
+          if (!window.__googleMapsJsReady) {
+            signalMapsLoaderDone("load_timeout");
+          }
+        }, 25000);
       })();
     </script>
     <script src="app.js" type="module"></script>

@@ -43,7 +43,10 @@ fs.writeFileSync(outPath, content, "utf8");
 if (key) {
   console.log("google-maps-config.js written (Maps API key present).");
 } else {
+  const onVercel = process.env.VERCEL === "1";
   console.warn(
-    "GOOGLE_MAPS_API_KEY is empty. Add it to .env locally or to Vercel env vars, then run npm run build again."
+    onVercel
+      ? "GOOGLE_MAPS_API_KEY was empty during this Vercel build — distances will not load until you set it for Production (and Preview) and redeploy."
+      : "GOOGLE_MAPS_API_KEY is empty. Add it to .env locally or to Vercel env vars, then run npm run build again."
   );
 }

@@ -305,6 +305,14 @@ async function fetchGoogleDistancesForDays(days) {
     } catch (e) {
       day.googleDistanceKm = null;
       day.googleDistanceError = e?.message || "REQUEST_DENIED";
+      if (list.indexOf(day) === 0) {
+        console.warn(
+          "[Directions] First leg failed:",
+          day.googleDistanceError,
+          "— Enable Directions API (Legacy) + Maps JavaScript API, billing, and HTTP referrer for this origin:",
+          "https://console.cloud.google.com/apis/library/directions-backend.googleapis.com"
+        );
+      }
     }
     applyDayDistanceToDom(day);
     await new Promise((r) => setTimeout(r, 180));
@@ -408,8 +416,15 @@ function updateTotalRouteDistanceUI(days) {
   }
 
   if (legsOk === 0) {
+    const issue = window.__googleMapsLoadIssue;
     const err =
-      "Google Maps returned no distances. Check API key, billing, and that Maps JavaScript API + Directions API are enabled.";
+      issue === "script_error"
+        ? "Google Maps script did not load (blocked or network). Allow maps.googleapis.com and reload."
+        : issue === "load_timeout"
+          ? "Google Maps loaded too slowly. Check connection and ad blockers; ensure your API key allows this site’s referrer."
+          : !window.google?.maps?.DirectionsService
+            ? "Maps JavaScript API did not initialize. Verify the API key and HTTP referrer restrictions (127.0.0.1, localhost, your deploy URL)."
+            : "No driving distances returned. In Google Cloud enable Directions API (Legacy) for this project — same key as Maps JS — plus billing. See browser console for the first leg’s status.";
     if (hero) {
       hero.hidden = false;
       hero.classList.add("hero-route-total--muted");
@@ -520,7 +535,7 @@ function scheduleGoogleDistanceFetch(days) {
         window.clearInterval(id);
         return;
       }
-      if (++attempts > 80) {
+      if (++attempts > 300) {
         window.clearInterval(id);
         updateTotalRouteDistanceUI(days);
       }
