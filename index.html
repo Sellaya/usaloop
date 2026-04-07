@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trip itinerary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site">
+      <div class="header-inner">
+        <div class="brand">
+          <h1 id="trip-name">Loading…</h1>
+          <p id="trip-sub"></p>
+        </div>
+        <nav class="jump" aria-label="Section links">
+          <a href="#overview">Overview</a>
+          <a href="#glance">At a glance</a>
+          <a href="#days">Days</a>
+          <a href="#checklists">Packing</a>
+          <a href="#before">Before</a>
+          <a href="#emergency">Emergency</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div id="load-error" class="error-banner" role="alert" hidden></div>
+
+      <div id="hero-root" class="hero-doc" hidden></div>
+
+      <section id="overview">
+        <h2>Overview</h2>
+        <div class="card card--overview">
+          <p class="overview-lead" id="overview-lead"></p>
+          <div class="overview-stats" id="overview-stats" aria-label="Trip stats"></div>
+          <div class="overview-legs" id="overview-legs"></div>
+          <div class="overview-chips-block" id="overview-chips-block" hidden>
+            <span class="overview-chips-label">Regions on this loop</span>
+            <div class="overview-chips-scroll" id="overview-chips" role="list"></div>
+          </div>
+          <details class="overview-more">
+            <summary class="overview-more-summary">Planning notes &amp; full route outline</summary>
+            <div class="overview-more-body">
+              <ul class="overview-planning-list" id="overview-planning"></ul>
+              <p id="summary-text" class="overview-summary-text muted"></p>
+            </div>
+          </details>
+          <div
+            id="distance-disclaimer"
+            class="distance-disclaimer distance-disclaimer--compact"
+            role="note"
+            hidden
+          ></div>
+          <div class="overview-riders" id="riders"></div>
+        </div>
+      </section>
+
+      <section id="links">
+        <h2>Quick links</h2>
+        <div class="card">
+          <div id="quick-links" class="links-grid"></div>
+        </div>
+      </section>
+
+      <section id="glance">
+        <h2>Calendar at a glance</h2>
+        <p class="muted glance-hint">
+          Built from each day’s title, Google Maps driving distance (when an API key is set), first highlight, and primary stay.
+        </p>
+        <div class="card card--table">
+          <div class="table-scroll">
+            <table class="glance-table" id="glance-table" aria-label="Daily overview">
+              <thead>
+                <tr>
+                  <th>Day</th>
+                  <th>Leg</th>
+                  <th>From → To</th>
+                  <th class="num" title="Driving km from Google Maps Directions">km</th>
+                  <th>Highlight</th>
+                  <th>Sleep</th>
+                </tr>
+              </thead>
+              <tbody id="glance-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="days">
+        <h2>Daily plan</h2>
+        <p class="muted" style="margin-top: -0.35rem; margin-bottom: 0.75rem">
+          Today’s day opens automatically when the date matches your device.
+        </p>
+        <div id="day-list"></div>
+      </section>
+
+      <section id="checklists">
+        <h2>Packing & prep</h2>
+        <div class="card">
+          <div id="checklist-root"></div>
+        </div>
+      </section>
+
+      <section id="before">
+        <h2>Before you roll</h2>
+        <div class="card">
+          <ul id="before-you-go"></ul>
+        </div>
+      </section>
+
+      <section id="emergency">
+        <h2>Emergency</h2>
+        <div id="emergency-root"></div>
+      </section>
+    </main>
+
+    <script
+      src="google-maps-config.js"
+      onerror="window.__GOOGLE_MAPS_API_KEY__ = window.__GOOGLE_MAPS_API_KEY__ || ''"
+    ></script>
+    <script>
+      window.__onGmInit = function () {
+        window.dispatchEvent(new CustomEvent("googlemapsjsready"));
+      };
+      (function loadGoogleMapsJs() {
+        var k = window.__GOOGLE_MAPS_API_KEY__;
+        if (!k || !String(k).trim()) return;
+        var s = document.createElement("script");
+        s.src =
+          "https://maps.googleapis.com/maps/api/js?key=" +
+          encodeURIComponent(String(k).trim()) +
+          "&loading=async&callback=__onGmInit";
+        s.async = true;
+        s.defer = true;
+        document.head.appendChild(s);
+      })();
+    </script>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

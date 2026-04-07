@@ -1,0 +1,1249 @@
+{
+  "meta": {
+    "title": "Toronto ↔ Southwest loop — 36-day motorcycle itinerary",
+    "timezone": "America/Toronto",
+    "currency": "USD",
+    "units": "metric"
+  },
+  "trip": {
+    "name": "Toronto → Texas → West Coast → Rockies → Home (36 days)",
+    "tagline": "USA loop — ride planner (route locked in this file)",
+    "startDate": "2026-06-01",
+    "endDate": "2026-07-06",
+    "homeBase": "Toronto, ON",
+    "bike": "Adventure motorcycle (set in trip.json)",
+    "statsChips": [
+      "36 riding days",
+      "Leg km loaded from Google Maps (API key in google-maps-config.js)",
+      "Always re-check each leg in Maps the day you ride"
+    ],
+    "legs": {
+      "1": "Toronto → Fort Worth · Days 1–8",
+      "2": "Fort Worth → Seattle · Days 9–23",
+      "3": "Seattle → Toronto · Days 24–36"
+    },
+    "riders": [
+      {
+        "name": "You",
+        "bike": "",
+        "plate": ""
+      }
+    ],
+    "overviewLead": "36-day Canada ↔ USA motorcycle loop in three chapters: east → Texas home → west coast, Cascades, Yellowstone, and home through the plains. Includes a Finger Lakes → New York segment before DC and Luray.",
+    "regionChips": [
+      "Finger Lakes",
+      "New York / DC",
+      "Virginia / Appalachia",
+      "Smoky Mountains",
+      "Tennessee",
+      "Texas",
+      "Route 66",
+      "New Mexico",
+      "San Juan Mtn / Silverton",
+      "Four Corners / Utah",
+      "California coast",
+      "Redwoods",
+      "PNW & Gorge",
+      "Yellowstone",
+      "Beartooth",
+      "Plains run",
+      "Ontario home"
+    ],
+    "planningChecklist": [
+      "Confirm dates, host addresses, and camping fees before you roll.",
+      "Days marked TBD still need pins — use each day’s Google Maps link to lock distance.",
+      "Fill fuel / weather / key notes per day as you research (same idea as your Word plan)."
+    ],
+    "summary": "The ride strings together the Finger Lakes, a New York metro stop, Washington DC and Luray, southwest Virginia, Great Smoky approaches, Nashville–Memphis, Arkansas, a Fort Worth home stop, then the high plains and I-40 toward New Mexico. From there: San Juan Mountains and Million Dollar Highway, Utah (Mexican Hat, Page, Bryce, Moab, Arches, St. George), the California coast to the redwoods, Oregon and the Columbia River Gorge, Seattle, US-20 and Spokane, Lolo Pass, Yellowstone and the Beartooth corridor, and a long return through the Dakotas and Great Lakes to Ontario, with a final night in London before Toronto.",
+    "riderName": "Ali",
+    "riderEmail": "",
+    "riderPhone": ""
+  },
+  "links": {
+    "gpxFolder": "",
+    "sharedMap": "",
+    "weather": "https://weather.gov",
+    "bookingFolder": ""
+  },
+  "days": [
+    {
+      "dayIndex": 1,
+      "date": "2026-06-01",
+      "title": "Toronto → Finger Lakes (NY)",
+      "distanceKm": 0,
+      "difficulty": "MODERATE",
+      "routeLine": "Plan in your mapping app — typical: GTA → Niagara/Lewiston or Peace Bridge corridor → I-90 east into NY → Finger Lakes roads (verify crossing and tolls).",
+      "fuelNotes": "Fill in Ontario before the border if convenient; I-90 NY has frequent fuel after entry.",
+      "foodNotes": "Pack snacks for border queue; rural Finger Lakes — know dinner plan with hosts or town stop.",
+      "weatherNotes": "Lake breeze and frontal weather near Ontario / Erie — check wind on bridge approaches.",
+      "keyNotes": [
+        "Border: registration, insurance, declare tools/spares as needed; keep answers simple (touring).",
+        "Save offline maps for NY Thruway and last-mile to McGraw."
+      ],
+      "campingAccommodation": "See Stay & contacts below; keep a state-park backup in mind if plans slip.",
+      "terrain": "Highway / border crossing",
+      "highlights": [
+        "US entry documentation ready",
+        "Evening in McGraw area"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Stay options",
+        "priority": true,
+        "name": "Greg & Chris",
+        "address": "4177 Syrian Hill Road, McGraw, NY 13101",
+        "notes": "Confirm arrival time and parking for bikes."
+      },
+      "risks": [
+        "Border wait times",
+        "Weather over Lake Ontario corridor"
+      ],
+      "planB": "",
+      "babAlternateIds": [
+        "wayne-lawler",
+        "richard-honchar",
+        "mike-miller"
+      ]
+    },
+    {
+      "dayIndex": 2,
+      "date": "2026-06-02",
+      "title": "Finger Lakes → New York",
+      "distanceKm": 0,
+      "terrain": "NY Thruway / Hudson Valley approaches",
+      "highlights": [
+        "Shorter leg before DC → Luray segment"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Stay options",
+        "name": "Dan",
+        "address": "Southampton, NY 11968",
+        "notes": "Long Island — confirm full address and bike parking."
+      },
+      "lodgingAlternatives": [
+        {
+          "heading": "Stay option",
+          "name": "Courtney Schrader",
+          "address": "Washington, DC 20016",
+          "notes": "DC metro — useful if you route toward Luray via I-95."
+        }
+      ],
+      "risks": [
+        "Metro traffic near NYC / Long Island"
+      ],
+      "planB": "",
+      "babAlternateIds": [
+        "robert-baldwin",
+        "jay-massapequa",
+        "wayne-lawler",
+        "richard-honchar"
+      ]
+    },
+    {
+      "dayIndex": 3,
+      "date": "2026-06-03",
+      "title": "New York → Washington, DC → Luray (VA)",
+      "distanceKm": 0,
+      "terrain": "Interstate / Appalachian approaches",
+      "highlights": [
+        "Shenandoah approaches near Luray"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Stay",
+        "name": "Frank Allen Pence",
+        "address": "Luray, VA 22835",
+        "notes": "Confirm full street address before arrival."
+      },
+      "risks": [
+        "East Coast traffic corridors"
+      ],
+      "planB": "",
+      "babAlternateIds": [
+        "fred-christie-huger",
+        "arnab-sinha",
+        "mark-sabrina-catlett",
+        "robert-baldwin",
+        "jay-massapequa",
+        "genie-cane",
+        "jim-manchester-nj"
+      ]
+    },
+    {
+      "dayIndex": 4,
+      "date": "2026-06-04",
+      "title": "Luray → Pulaski (VA)",
+      "distanceKm": 0,
+      "terrain": "VA parkways / mountains",
+      "highlights": [
+        "Blue Ridge transitions toward SW Virginia"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Stay",
+        "name": "Shawna Rowe",
+        "address": "Lagrange Street, Pulaski, VA 24301",
+        "notes": "Confirm house number / GPS pin."
+      },
+      "risks": [],
+      "planB": "",
+      "babAlternateIds": [
+        "arnab-sinha",
+        "mark-sabrina-catlett",
+        "fred-christie-huger"
+      ]
+    },
+    {
+      "dayIndex": 5,
+      "date": "2026-06-05",
+      "title": "Pulaski → Smoky Mountains (TN)",
+      "distanceKm": 0,
+      "terrain": "Mountains into Tennessee",
+      "highlights": [
+        "Great Smoky Mountains approach",
+        "Sevierville / gateway towns"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Stay option",
+        "name": "Katherine Sharpe",
+        "address": "1444 Chapman Highway, Sevierville, TN 37876",
+        "notes": "Chapman Hwy — confirm bike parking.",
+        "babMergeId": "katherine-sharpe"
+      },
+      "lodgingAlternatives": [
+        {
+          "heading": "Stay option",
+          "name": "Scott David Middleton",
+          "address": "Knoxville, TN 37917",
+          "notes": "Knoxville alternative if pacing changes."
+        }
+      ],
+      "risks": [
+        "Tourism traffic near Smokies"
+      ],
+      "planB": "",
+      "babAlternateIds": [
+        "scott-middleton"
+      ]
+    },
+    {
+      "dayIndex": 6,
+      "date": "2026-06-06",
+      "title": "Smoky Mountains → Nashville → Memphis (TN)",
+      "distanceKm": 0,
+      "terrain": "Rolling TN highways",
+      "highlights": [
+        "Music City fuel/food stop if routed through Nashville"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Stay option",
+        "name": "Paul & Cindy Lasko",
+        "address": "585 Roundtree Lane, Beech Bluff, TN 38313",
+        "notes": "Near Jackson / Tennessee River corridor."
+      },
+      "lodgingAlternatives": [
+        {
+          "heading": "Stay option",
+          "name": "Bryan & Ann Smith",
+          "address": "Parsons, TN 38363",
+          "notes": "Alternate host location west of Nashville–Memphis run."
+        }
+      ],
+      "risks": [],
+      "planB": "",
+      "babAlternateIds": [
+        "shane-mt-juliet",
+        "daniel-fucella",
+        "harrison-hickok",
+        "dj-suter"
+      ]
+    },
+    {
+      "dayIndex": 7,
+      "date": "2026-06-07",
+      "title": "Memphis / Parsons → Little Rock (AR)",
+      "distanceKm": 0,
+      "terrain": "MS River plain / AR",
+      "highlights": [
+        "Crossing into central Arkansas"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Stay option",
+        "name": "Joe Maglie",
+        "address": "John Harden Drive, Jacksonville, AR 72076",
+        "notes": "Confirm street number on Harden Dr."
+      },
+      "lodgingAlternatives": [
+        {
+          "heading": "Stay option",
+          "name": "Marci Livingston",
+          "address": "897 Cedar Creek Road, Garland County, AR 71901",
+          "notes": "Near Hot Springs National Park area — good rest day option."
+        }
+      ],
+      "risks": [
+        "Heat / humidity — hydrate"
+      ],
+      "planB": "",
+      "babAlternateIds": [
+        "jeff-roberts-ozark",
+        "brian-cooper",
+        "connie-jeff-lackey"
+      ]
+    },
+    {
+      "dayIndex": 8,
+      "date": "2026-06-08",
+      "title": "Little Rock → Fort Worth (TX)",
+      "distanceKm": 0,
+      "terrain": "TX highways",
+      "highlights": [
+        "Home stop: rest, maintenance, repack"
+      ],
+      "stops": [],
+      "lodging": {
+        "name": "HOME — Fort Worth, TX",
+        "notes": "Garage tools, laundry, bike check before western push."
+      },
+      "risks": [],
+      "planB": "",
+      "babAlternateIds": []
+    },
+    {
+      "dayIndex": 9,
+      "date": "2026-06-09",
+      "title": "Fort Worth → Amarillo (TX)",
+      "distanceKm": 0,
+      "terrain": "North Texas plains",
+      "highlights": [
+        "Route 66 flavor toward Panhandle"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Stay option",
+        "name": "Kelly Snyder",
+        "address": "307 W Historic Route 66, Adrian, TX 79001",
+        "notes": "Historic 66 — iconic midpoint vibe.",
+        "babMergeId": "kelly-snyder"
+      },
+      "lodgingAlternatives": [
+        {
+          "heading": "Stay option",
+          "name": "Matt Moore",
+          "address": "Howardwick, TX 79226",
+          "notes": "Panhandle alternative north of Amarillo corridor."
+        }
+      ],
+      "risks": [
+        "Wind exposure on plains"
+      ],
+      "planB": "",
+      "babAlternateIds": []
+    },
+    {
+      "dayIndex": 10,
+      "date": "2026-06-10",
+      "title": "Amarillo → Albuquerque (NM)",
+      "distanceKm": 0,
+      "terrain": "High plains → NM high desert",
+      "highlights": [
+        "I-40 / 66 corridor"
+      ],
+      "stops": [
+        {
+          "label": "iOverlander — tent",
+          "place": "GPS camp (TX)",
+          "type": "camp",
+          "notes": "~$10 tenting; verify current use rules.",
+          "mapsUrl": "https://www.google.com/maps?q=35.27170,-102.66883"
+        },
+        {
+          "label": "Route 66 reference",
+          "place": "100 U.S. Route 66, Adrian, TX",
+          "type": "other",
+          "notes": "Landmark from your notes — verify pin.",
+          "mapsUrl": "https://www.google.com/maps?q=35.3297,-102.6675"
+        }
+      ],
+      "lodging": {
+        "heading": "Camping / motel options",
+        "name": "Motel (I-40 frontage)",
+        "address": "6030 W Interstate 40 Frontage Rd, Amarillo, TX area (~$50 CAD — verify)",
+        "notes": "~$50 CAD in your notes; verify property name, side of road, and book ahead."
+      },
+      "lodgingAlternatives": [
+        {
+          "heading": "Camping / boondock",
+          "name": "iOverlander — Adrian TX area",
+          "notes": "GPS 35.27170, -102.66883 — $10 tenting (verify)."
+        }
+      ],
+      "risks": [
+        "Desert temperature swing"
+      ],
+      "planB": "Motel in Amarillo or Albuquerque if weather turns.",
+      "babAlternateIds": [
+        "kelly-snyder"
+      ]
+    },
+    {
+      "dayIndex": 11,
+      "date": "2026-06-11",
+      "title": "Albuquerque → Million Dollar Highway (Silverton, CO)",
+      "distanceKm": 0,
+      "terrain": "Climb into San Juan Mountains — snow/ice risk off-season",
+      "highlights": [
+        "Silverton area; Million Dollar Hwy when conditions allow"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Camping",
+        "name": "iOverlander (FREE)",
+        "notes": "GPS 37.82022, -107.71362 — confirm MVUM / fire rules. Additional free dispersed camping along the route is possible — verify land status.",
+        "mapsUrl": "https://www.google.com/maps?q=37.82022,-107.71362"
+      },
+      "risks": [
+        "Altitude",
+        "Afternoon storms",
+        "Mud on forest roads"
+      ],
+      "planB": "Paid campground or Silverton lodging if dispersed full or weather bad.",
+      "babAlternateIds": [
+        "derek-duncan-denver",
+        "jim-wendy-conifer",
+        "cc-golden",
+        "travis-georgetown"
+      ]
+    },
+    {
+      "dayIndex": 12,
+      "date": "2026-06-12",
+      "title": "Silverton → Mexican Hat (UT)",
+      "distanceKm": 0,
+      "terrain": "Four Corners high desert",
+      "highlights": [
+        "Monument Valley approaches",
+        "San Juan River corridor"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Camping (~$22 + tax)",
+        "name": "Mexican Hat Rocks",
+        "url": "https://mexicanhatrocks.com/",
+        "notes": "Reserve or confirm same-day availability in season."
+      },
+      "risks": [
+        "Heat",
+        "Limited services"
+      ],
+      "planB": "",
+      "babAlternateIds": [
+        "good-adv-cortez",
+        "matt-burton-seligman"
+      ]
+    },
+    {
+      "dayIndex": 13,
+      "date": "2026-06-13",
+      "title": "Mexican Hat → Page → Bryce Canyon (~500 km)",
+      "distanceKm": 0,
+      "difficulty": "EPIC",
+      "routeLine": "US-163 toward Page → US-89 toward Kanab/Bryce corridor — pin exact path and breaks in your GPS (long mileage day).",
+      "fuelNotes": "Do not pass fuel under half tank; top off leaving Page or Kanab before climbing toward Bryce.",
+      "foodNotes": "Page has services; carry water — long hot segments possible.",
+      "weatherNotes": "Desert heat + isolated afternoon storms — start early; watch crosswinds on open mesas.",
+      "keyNotes": [
+        "Antelope Canyon: guided tours sell out — book ahead.",
+        "Horseshoe Bend: paid parking, short hike, brutal midday sun.",
+        "End goal: confirm dispersed pin is still legal same week."
+      ],
+      "campingAccommodation": "iOverlander pins in this file (options A/B) — verify road grade for your bike and fire restrictions.",
+      "terrain": "UT scenic highways — long day",
+      "highlights": [
+        "Page area icons",
+        "Escalante–Bryce transition"
+      ],
+      "stops": [
+        {
+          "label": "Horseshoe Bend",
+          "place": "Horseshoe Bend (Page, AZ)",
+          "type": "sight",
+          "notes": "Parking fee / short hike — heat and crowds.",
+          "mapsUrl": "https://www.google.com/maps?q=36.8792,-111.5108"
+        },
+        {
+          "label": "Antelope Canyon",
+          "place": "Antelope Canyon (tour required)",
+          "type": "sight",
+          "notes": "Book Navajo-guided tour slots in advance.",
+          "mapsUrl": "https://www.google.com/maps?q=36.8619,-111.3743"
+        }
+      ],
+      "lodging": {
+        "heading": "iOverlander camping",
+        "name": "Dispersed near Bryce (option A)",
+        "notes": "GPS 37.65553, -112.17089 — verify fees and road conditions.",
+        "mapsUrl": "https://www.google.com/maps?q=37.65553,-112.17089"
+      },
+      "lodgingAlternatives": [
+        {
+          "heading": "iOverlander camping",
+          "name": "Dispersed near Bryce (option B — scenic / fire pit)",
+          "notes": "GPS 37.67009, -112.17426",
+          "mapsUrl": "https://www.google.com/maps?q=37.67009,-112.17426"
+        }
+      ],
+      "risks": [
+        "Very long mileage day",
+        "Deer at dawn/dusk"
+      ],
+      "planB": "Shorten: skip one sight or book paid campground inside Bryce area.",
+      "babAlternateIds": [
+        "matt-burton-seligman",
+        "good-adv-cortez"
+      ]
+    },
+    {
+      "dayIndex": 14,
+      "date": "2026-06-14",
+      "title": "Bryce Canyon → Arches National Park (Moab, UT)",
+      "distanceKm": 0,
+      "terrain": "UT-12 / scenic byways — traffic in season",
+      "highlights": [
+        "Capitol Reef optional detour",
+        "Colorado River into Moab"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Stay (Moab)",
+        "name": "Robert VandenBroeke",
+        "address": "Moab, UT 84532",
+        "phone": "+1-435-220-0576",
+        "email": "rjvandenbroeke@gmail.com",
+        "notes": "Confirm full address / RV or bike parking.",
+        "babMergeId": "robert-vandenbroeke"
+      },
+      "lodgingAlternatives": [
+        {
+          "heading": "Camping (~$20/night)",
+          "name": "Camp area (GPS)",
+          "notes": "GPS 38.55729, -109.58466 — verify name, amenities, and booking.",
+          "mapsUrl": "https://www.google.com/maps?q=38.55729,-109.58466"
+        }
+      ],
+      "risks": [
+        "Moab heat",
+        "Crowds — Arches timed entry rules"
+      ],
+      "planB": "",
+      "babAlternateIds": []
+    },
+    {
+      "dayIndex": 15,
+      "date": "2026-06-15",
+      "title": "Arches → St. George (UT)",
+      "distanceKm": 0,
+      "terrain": "I-15 south — desert",
+      "highlights": [
+        "Zion outer approaches possible if time"
+      ],
+      "stops": [
+        {
+          "label": "Free camping ideas",
+          "place": "St. George area — Treks With Beks",
+          "type": "camp",
+          "notes": "Roundup of free camps near St. George.",
+          "mapsUrl": "https://trekswithbeks.com/the-best-free-camping-in-st-george-utah/"
+        }
+      ],
+      "lodging": {
+        "heading": "BLM / dispersed",
+        "name": "Sheep Bridge Park (BLM)",
+        "notes": "Confirm road suitability for your bike loadout."
+      },
+      "lodgingAlternatives": [
+        {
+          "heading": "Cove Wash",
+          "name": "GPS dispersed",
+          "notes": "37.12891, -113.66331",
+          "mapsUrl": "https://www.google.com/maps?q=37.12891,-113.66331"
+        }
+      ],
+      "risks": [
+        "Soft sand on BLM spurs"
+      ],
+      "planB": "Paid RV park or hotel in St. George.",
+      "babAlternateIds": []
+    },
+    {
+      "dayIndex": 16,
+      "date": "2026-06-16",
+      "title": "St. George → Barstow (CA)",
+      "distanceKm": 0,
+      "terrain": "Mojave Desert — heat and wind",
+      "highlights": [
+        "I-15 into California low desert"
+      ],
+      "stops": [],
+      "lodging": {
+        "name": "Montana Shaffer",
+        "address": "22060 Wren Street, Apple Valley, CA 92308",
+        "notes": "Apple Valley — near Barstow / Victorville; confirm ETA for late Mojave arrivals.",
+        "babMergeId": "montana-shaffer"
+      },
+      "risks": [
+        "Extreme heat mid-summer"
+      ],
+      "planB": "",
+      "babAlternateIds": [
+        "anais-redlands",
+        "layla-sisney"
+      ]
+    },
+    {
+      "dayIndex": 17,
+      "date": "2026-06-17",
+      "title": "Barstow → Hollywood → Los Angeles",
+      "distanceKm": 0,
+      "terrain": "CA freeways — lane filtering rules",
+      "highlights": [
+        "Coastal swim / day stop — TBD (pick beach or cove)"
+      ],
+      "stops": [
+        {
+          "label": "To plan",
+          "place": "Coastal swim / day stop",
+          "type": "sight",
+          "notes": "Choose PCH pull-out or state beach with day parking."
+        }
+      ],
+      "lodging": {
+        "heading": "Camping",
+        "name": "Leo Carrillo State Park",
+        "address": "35000 Pacific Coast Hwy, Malibu, CA 90265",
+        "notes": "Book camp spot; popular — PCH access.",
+        "mapsUrl": "https://www.google.com/maps?q=34.0480,-118.9327"
+      },
+      "risks": [
+        "LA traffic",
+        "PCH weekend parking pressure"
+      ],
+      "planB": "Inland motel if PCH camps full.",
+      "babAlternateIds": [
+        "layla-sisney",
+        "anais-redlands"
+      ]
+    },
+    {
+      "dayIndex": 18,
+      "date": "2026-06-18",
+      "title": "Leo Carrillo → Prewitt Ridge Campground",
+      "distanceKm": 0,
+      "terrain": "Big Sur coast — tight curves, fog",
+      "highlights": [
+        "Big Sur / Los Padres"
+      ],
+      "stops": [
+        {
+          "label": "Plan food resupply",
+          "place": "Groceries / meal stop (TBD)",
+          "type": "food",
+          "notes": "Limited services on Hwy 1 — fuel and food before ridge road."
+        }
+      ],
+      "lodging": {
+        "name": "Prewitt Ridge Campground",
+        "notes": "Confirm road conditions for loaded bikes; carry water."
+      },
+      "risks": [
+        "Cliff exposure",
+        "Private road / gate policies — verify"
+      ],
+      "planB": "State park camp lower on Hwy 1 if ridge inaccessible.",
+      "babAlternateIds": [
+        "darlene-morro",
+        "jeff-rothman"
+      ]
+    },
+    {
+      "dayIndex": 19,
+      "date": "2026-06-19",
+      "title": "Prewitt Ridge → Point Arena Lighthouse",
+      "distanceKm": 0,
+      "terrain": "Northern CA coast",
+      "highlights": [
+        "Mendocino coast"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Camping (verify fees)",
+        "name": "Dispersed / listed GPS",
+        "notes": "GPS 35.87322, -121.41850 — confirm land status and fees before paying/staying.",
+        "mapsUrl": "https://www.google.com/maps?q=35.87322,-121.41850"
+      },
+      "risks": [
+        "Fog",
+        "Cold marine layer"
+      ],
+      "planB": "",
+      "babAlternateIds": [
+        "darlene-morro",
+        "jeff-rothman"
+      ]
+    },
+    {
+      "dayIndex": 20,
+      "date": "2026-06-20",
+      "title": "Point Arena → Redwood National Park",
+      "distanceKm": 0,
+      "terrain": "US-101 redwood corridor",
+      "highlights": [
+        "Redwoods NP / state parks"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Camping (paid)",
+        "name": "Redwood area camp (GPS)",
+        "notes": "GPS 38.98170, -123.70057 — verify campground name and reservation rules.",
+        "mapsUrl": "https://www.google.com/maps?q=38.98170,-123.70057"
+      },
+      "risks": [
+        "Elk on roadway"
+      ],
+      "planB": "",
+      "babAlternateIds": [
+        "jeff-rothman",
+        "jim-haines-shasta"
+      ]
+    },
+    {
+      "dayIndex": 21,
+      "date": "2026-06-21",
+      "title": "Redwood → Crater Lake (Westfir, OR)",
+      "distanceKm": 0,
+      "terrain": "OR coastal range / I-5 or 199 options",
+      "highlights": [
+        "Crater Lake possible as detour if open and time allows"
+      ],
+      "stops": [],
+      "lodging": {
+        "name": "Deb & Dave B",
+        "address": "Westfir, OR 97492",
+        "notes": "Confirm exact address / directions into town."
+      },
+      "risks": [
+        "Smoke season (late summer) — check AQI"
+      ],
+      "planB": "",
+      "babAlternateIds": [
+        "lisa-blue-bend",
+        "suze-riley-maupin"
+      ]
+    },
+    {
+      "dayIndex": 22,
+      "date": "2026-06-22",
+      "title": "Westfir → Goldendale / Mosier",
+      "distanceKm": 0,
+      "terrain": "Columbia River Gorge — wind",
+      "highlights": [
+        "Gorge vistas",
+        "WSR-84 options"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Stay option",
+        "name": "Greg Wagner",
+        "address": "303 Fish Hatchery Road, Goldendale, WA 98620",
+        "notes": "WA side of gorge region."
+      },
+      "lodgingAlternatives": [
+        {
+          "heading": "Stay option",
+          "name": "Darin",
+          "address": "Mosier, OR 97040",
+          "notes": "OR side — good for gorge riding flow."
+        }
+      ],
+      "risks": [
+        "Gorge crosswinds"
+      ],
+      "planB": "",
+      "babAlternateIds": [
+        "mosko-moto",
+        "david-kishpaugh",
+        "dave-katherine-cashmere",
+        "angela-east-wenatchee"
+      ]
+    },
+    {
+      "dayIndex": 23,
+      "date": "2026-06-23",
+      "title": "Mosier → Seattle (WA)",
+      "distanceKm": 0,
+      "terrain": "Cascade approaches to Puget Sound",
+      "highlights": [
+        "Three host segments around Seattle metro"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Pre-Seattle",
+        "name": "Bob Combs",
+        "address": "North Bend, WA",
+        "notes": "Cascade foothills — good last resupply before metro."
+      },
+      "lodgingAlternatives": [
+        {
+          "heading": "Mid-Seattle",
+          "name": "Dave",
+          "address": "Seattle, WA",
+          "notes": "Urban parking plan for bikes."
+        },
+        {
+          "heading": "Post-Seattle (east side)",
+          "name": "Jennifer Long & Brian Forsyth",
+          "address": "Lake Stevens, WA",
+          "notes": "If routing north/east out of Seattle next day."
+        }
+      ],
+      "risks": [
+        "Seattle traffic",
+        "Splitting stays — pack light for moving between hosts"
+      ],
+      "planB": "Single hotel hub if multi-host logistics are tight.",
+      "babAlternateIds": [
+        "bob-combs",
+        "christe-smith-rainier",
+        "ob-graham",
+        "julie-lake-tapps",
+        "bill-darrington"
+      ]
+    },
+    {
+      "dayIndex": 24,
+      "date": "2026-06-24",
+      "title": "Seattle → US-20 (~400 km)",
+      "distanceKm": 0,
+      "terrain": "North Cascades Highway (if open) vs. I-90 fallback",
+      "highlights": [
+        "North Cascades if seasonal opening aligns"
+      ],
+      "stops": [
+        {
+          "label": "TBD",
+          "place": "Overnight / stop location",
+          "type": "other",
+          "notes": "Pick town based on North Cascades opening and weather."
+        }
+      ],
+      "lodging": {
+        "name": "TBD — book after route pinned",
+        "notes": "Options: Winthrop, Twisp, Omak, or I-90 corridor motels."
+      },
+      "risks": [
+        "Mountain pass closures / construction"
+      ],
+      "planB": "I-90 direct to eastern WA if SR-20 closed.",
+      "babAlternateIds": [
+        "bob-combs",
+        "dave-katherine-cashmere",
+        "mosko-moto",
+        "jeff-carrie-bob",
+        "david-rs-washougal"
+      ]
+    },
+    {
+      "dayIndex": 25,
+      "date": "2026-06-25",
+      "title": "US-20 → Spokane",
+      "distanceKm": 0,
+      "terrain": "Eastern WA / ID panhandle",
+      "highlights": [
+        "Columbia plateau riding"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Stay option",
+        "name": "David & Pita Ettenberg",
+        "address": "Spokane Valley, WA",
+        "notes": "Confirm address and garage access."
+      },
+      "lodgingAlternatives": [
+        {
+          "heading": "Stay option",
+          "name": "Rathdrum, ID",
+          "notes": "ID side alternative if pacing or lodging fits better."
+        }
+      ],
+      "risks": [],
+      "planB": "",
+      "babAlternateIds": [
+        "randy-rathdrum",
+        "betty-chewelah",
+        "dave-katherine-cashmere"
+      ]
+    },
+    {
+      "dayIndex": 26,
+      "date": "2026-06-26",
+      "title": "Spokane → Kooskia → Lolo Pass",
+      "distanceKm": 0,
+      "terrain": "ID panhandle — forested passes",
+      "highlights": [
+        "Clearwater / Lochsa River approaches to Lolo"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Stay option",
+        "name": "Dustin Patton",
+        "address": "Frenchtown, MT",
+        "notes": "Missoula west side alternative."
+      },
+      "lodgingAlternatives": [
+        {
+          "heading": "Stay option",
+          "name": "Karl & Angie",
+          "address": "Stevensville, MT",
+          "notes": "Bitterroot Valley option."
+        }
+      ],
+      "risks": [
+        "Wildlife",
+        "Loose gravel on forest roads"
+      ],
+      "planB": "US-12 services thin — fuel when you can.",
+      "babAlternateIds": [
+        "dustin-patton",
+        "karl-angie-stevensville",
+        "phyl-corvallis-mt"
+      ]
+    },
+    {
+      "dayIndex": 27,
+      "date": "2026-06-27",
+      "title": "Lolo Pass → Yellowstone",
+      "distanceKm": 0,
+      "terrain": "MT high country into Greater Yellowstone",
+      "highlights": [
+        "West Yellowstone or north entrance options depending on route"
+      ],
+      "stops": [],
+      "lodging": {
+        "name": "Deryk Hagey",
+        "address": "Gallatin Gateway, MT",
+        "notes": "Gateway to Yellowstone — confirm park entry timing and parking."
+      },
+      "risks": [
+        "Bison / elk on roadway",
+        "Altitude fatigue"
+      ],
+      "planB": "",
+      "babAlternateIds": [
+        "kevin-island-park",
+        "daryn-engesser"
+      ]
+    },
+    {
+      "dayIndex": 28,
+      "date": "2026-06-28",
+      "title": "Yellowstone National Park — full day",
+      "distanceKm": 0,
+      "terrain": "NP roads — congestion, wildlife jams",
+      "highlights": [
+        "Geysers, canyon, Lamar or Hayden if routing allows"
+      ],
+      "stops": [
+        {
+          "label": "Plan",
+          "place": "Yellowstone loop — prioritize north or south loop",
+          "type": "sight",
+          "notes": "Check NPS.gov for road closures and construction same season."
+        }
+      ],
+      "lodging": {
+        "name": "Same as Day 26 or move closer to NE exit",
+        "notes": "Book inside-park or Gardiner/Cooke if pushing toward Beartooth next day."
+      },
+      "risks": [
+        "Sudden weather",
+        "Thermal area foot traffic"
+      ],
+      "planB": "",
+      "babAlternateIds": [
+        "kevin-island-park",
+        "jolene-casper"
+      ]
+    },
+    {
+      "dayIndex": 29,
+      "date": "2026-06-29",
+      "title": "Yellowstone → Beartooth Highway",
+      "distanceKm": 0,
+      "terrain": "High alpine — snow possible early season",
+      "highlights": [
+        "Beartooth Pass — one of the great US motorcycle roads"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Stay option",
+        "name": "Jerry Bellmyer",
+        "address": "Cowley, WY",
+        "notes": "WY side pacing."
+      },
+      "lodgingAlternatives": [
+        {
+          "heading": "Stay option",
+          "name": "Daryn Engesser",
+          "address": "Powell, WY",
+          "notes": "Alternate east of Yellowstone loop."
+        }
+      ],
+      "risks": [
+        "Ice / closure early season — verify pass status"
+      ],
+      "planB": "Bighorn Basin lower route if Beartooth closed.",
+      "babAlternateIds": [
+        "daryn-engesser",
+        "jolene-casper",
+        "dave-van-gorkom"
+      ]
+    },
+    {
+      "dayIndex": 30,
+      "date": "2026-06-30",
+      "title": "Beartooth Highway → Gillette (WY)",
+      "distanceKm": 0,
+      "terrain": "WY plains — wind",
+      "highlights": [
+        "Powder River Basin"
+      ],
+      "stops": [],
+      "lodging": {
+        "name": "Sherry Smith",
+        "address": "Gillette, WY",
+        "notes": "Confirm street address."
+      },
+      "risks": [
+        "Crosswinds"
+      ],
+      "planB": "",
+      "babAlternateIds": [
+        "jolene-casper"
+      ]
+    },
+    {
+      "dayIndex": 31,
+      "date": "2026-07-01",
+      "title": "Gillette → Needles Highway → border camping",
+      "distanceKm": 0,
+      "terrain": "Black Hills — Needles / Iron Mountain Road traffic",
+      "highlights": [
+        "Custer State Park / Needles Highway — fees and traffic"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Free camping",
+        "name": "TBD — border / Black Hills dispersed",
+        "notes": "Pick legal dispersed or USFS after confirming MVUM; next leg starts Oacoma SD area."
+      },
+      "risks": [
+        "Bison herds on park roads",
+        "Tourist congestion"
+      ],
+      "planB": "Paid campground in Black Hills NF or Custer area.",
+      "babAlternateIds": [
+        "michelle-custer",
+        "dave-van-gorkom",
+        "lisa-redfield"
+      ]
+    },
+    {
+      "dayIndex": 32,
+      "date": "2026-07-02",
+      "title": "Oacoma → Rochester (MN) (~600 km)",
+      "distanceKm": 0,
+      "terrain": "Great Plains long haul — services spacing",
+      "highlights": [
+        "Missouri River crossing near Oacoma corridor"
+      ],
+      "stops": [
+        {
+          "label": "Fuel strategy",
+          "place": "I-90 / US-14 corridor",
+          "type": "fuel",
+          "notes": "Long day — top off whenever under half tank."
+        }
+      ],
+      "lodging": {
+        "heading": "Stay option",
+        "name": "Laurie Calhoon",
+        "address": "Byron, MN",
+        "notes": "Near Rochester."
+      },
+      "lodgingAlternatives": [
+        {
+          "heading": "Stay option",
+          "name": "Carol B",
+          "address": "Owatonna, MN",
+          "notes": "South of Rochester on I-35 corridor."
+        }
+      ],
+      "risks": [
+        "Fatigue on 600 km slab",
+        "Crosswinds"
+      ],
+      "planB": "Split into two shorter days if weather or energy is poor.",
+      "babAlternateIds": [
+        "lisa-redfield"
+      ]
+    },
+    {
+      "dayIndex": 33,
+      "date": "2026-07-03",
+      "title": "Rochester → Oconomowoc (WI)",
+      "distanceKm": 0,
+      "terrain": "Upper Midwest freeways",
+      "highlights": [
+        "Driftless optional detour if time"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Stay option",
+        "name": "Jane Thompson",
+        "address": "Oconomowoc, WI",
+        "notes": "Confirm address."
+      },
+      "lodgingAlternatives": [
+        {
+          "heading": "Stay option",
+          "name": "Jeff Van Ark",
+          "address": "Oconomowoc, WI",
+          "notes": "Alternate host same town."
+        }
+      ],
+      "risks": [],
+      "planB": "",
+      "babAlternateIds": []
+    },
+    {
+      "dayIndex": 34,
+      "date": "2026-07-04",
+      "title": "Oconomowoc → Benton Harbor (MI)",
+      "distanceKm": 0,
+      "terrain": "WI → MI lake corridor",
+      "highlights": [
+        "Lake Michigan approaches"
+      ],
+      "stops": [],
+      "lodging": {
+        "heading": "Stay option",
+        "name": "John Cody Smith",
+        "address": "Coloma, MI",
+        "notes": "Near Benton Harbor / St. Joseph area."
+      },
+      "lodgingAlternatives": [
+        {
+          "heading": "Stay option",
+          "name": "Alan Mussmann",
+          "address": "Three Oaks, MI",
+          "notes": "MI southwest corner alternative."
+        }
+      ],
+      "risks": [],
+      "planB": "",
+      "babAlternateIds": []
+    },
+    {
+      "dayIndex": 35,
+      "date": "2026-07-05",
+      "title": "Benton Harbor → London (ON)",
+      "distanceKm": 0,
+      "terrain": "US-12 / Detroit–Windsor or Blue Water crossing — verify CBSA/NEXUS",
+      "highlights": [
+        "Canada re-entry",
+        "London overnight"
+      ],
+      "stops": [],
+      "lodging": {
+        "name": "TBD — book London, ON",
+        "notes": "Holiday weekend (Jul 4 US / Canada Day proximity) — book early."
+      },
+      "risks": [
+        "Border delays on summer holiday"
+      ],
+      "planB": "Sarnia–Port Huron crossing if Detroit is jammed.",
+      "babAlternateIds": []
+    },
+    {
+      "dayIndex": 36,
+      "date": "2026-07-06",
+      "title": "Return home (London, ON → Toronto)",
+      "distanceKm": 0,
+      "terrain": "ON 401 — heavy traffic possible",
+      "highlights": [
+        "Final leg home"
+      ],
+      "stops": [],
+      "lodging": {
+        "name": "HOME — Toronto, ON",
+        "notes": "Final leg from London — debrief, service bike, archive receipts."
+      },
+      "risks": [
+        "401 construction zones"
+      ],
+      "planB": "",
+      "babAlternateIds": []
+    }
+  ],
+  "checklists": {
+    "documents": [
+      "Passport / NEXUS",
+      "Driver license + motorcycle endorsement",
+      "Vehicle registration + proof of insurance (CA/US)",
+      "E111 or travel medical / evacuation (confirm coverage in US)"
+    ],
+    "bike": [
+      "Tool kit, tire repair, pump/CO2, spare tubes if applicable",
+      "Chain lube, zip ties, electrical tape, spare fuses",
+      "Phone mount + USB power, offline maps downloaded"
+    ],
+    "ridingGear": [
+      "Rain suit",
+      "Cold layer for mountains",
+      "Hydration",
+      "Earplugs"
+    ],
+    "camp": [
+      "Tent / sleep system for high-altitude cold nights",
+      "Headlamp, stove/fuel rules per jurisdiction",
+      "Water capacity for UT/AZ/CA desert legs"
+    ]
+  },
+  "emergency": {
+    "insurancePhone": "",
+    "roadside": "",
+    "embassy": "Canadian citizen services: travel.gc.ca",
+    "bloodTypes": "",
+    "notes": "ICE: add contacts and any allergies. Yellowstone: nearest care may be far — carry first aid.",
+    "contacts": [
+      {
+        "name": "ICE — primary",
+        "relation": "",
+        "phone": ""
+      }
+    ]
+  },
+  "beforeYouGo": [
+    "Replace placeholder start/end dates in trip.json with your real departure window.",
+    "Leg distances are queried from Google Maps (JavaScript Directions API). Put your browser API key in google-maps-config.js — see google-maps-config.example.js. Re-check each leg in Maps after you set exact pins.",
+    "Primary stays stay first on each day; Bunk a Biker backups are in data/bab-hosts.json (edit babAlternateIds per day if you trim the list).",
+    "Confirm each host address, gate codes, and bike parking before arrival day.",
+    "Arches NP: check timed-entry reservation rules for your dates.",
+    "Yellowstone / Beartooth: verify pass opening and NPS alerts.",
+    "Download offline maps for the full loop and share location with one trusted contact."
+  ]
+}

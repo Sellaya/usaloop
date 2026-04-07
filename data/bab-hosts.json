@@ -1,0 +1,585 @@
+{
+  "hosts": {
+    "wayne-lawler": {
+      "name": "Wayne \"Chip\" Lawler",
+      "greetingName": "Chip",
+      "address": "2659 Cool Lea Camp Road, Alpine, NY 14805",
+      "phone": "+19782651984",
+      "email": "wclawler@aol.com",
+      "contact": "email_or_text",
+      "notes": "Tent space + dry RV; house facilities when host present. Garage, basic tools. Email or text fine.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=2659+Cool+Lea+Camp+Road%2C+Alpine%2C+NY+14805"
+    },
+    "richard-honchar": {
+      "name": "Richard Honchar",
+      "greetingName": "Richard",
+      "address": "3100 Franklin Street Road, Auburn, NY 13021",
+      "phone": "+17205602679",
+      "email": "rbhcmh2018@gmail.com",
+      "contact": "email",
+      "notes": "Spare room, outdoor room, tools and jack for repairs.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=3100+Franklin+Street+Road%2C+Auburn%2C+NY+13021"
+    },
+    "mike-miller": {
+      "name": "Mike Miller",
+      "greetingName": "Mike",
+      "address": "414 Dublin Road, Clyde, NY 14433",
+      "phone": "+13159757240",
+      "email": "Millertude2006@gmail.com",
+      "contact": "email_or_text",
+      "notes": "Guest bedroom (queen) + ~1 acre to camp.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=414+Dublin+Road%2C+Clyde%2C+NY+14433"
+    },
+    "robert-baldwin": {
+      "name": "Robert Baldwin",
+      "greetingName": "Robert",
+      "address": "Van Buren Street, Baldwin, NY 11510",
+      "phone": "+15165872022",
+      "email": "cycleoption@gmail.com",
+      "contact": "email",
+      "notes": "Email best. Suburban home and yard.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Van+Buren+Street%2C+Baldwin%2C+NY+11510"
+    },
+    "jay-massapequa": {
+      "name": "Jay",
+      "greetingName": "Jay",
+      "address": "North Massapequa, NY 11758",
+      "phone": "+12508950800",
+      "email": "Painterboy67@hotmail.com",
+      "contact": "email",
+      "notes": "Tent trailer use; ~45 min from Manhattan.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=North+Massapequa%2C+NY+11758"
+    },
+    "genie-cane": {
+      "name": "Genie Cane",
+      "greetingName": "Genie",
+      "address": "North Cape May, NJ 08204",
+      "phone": "+19084215506",
+      "email": "Geniecane@aol.com",
+      "contact": "email",
+      "notes": "Bedroom + bath or driveway. No garage.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=North+Cape+May%2C+NJ+08204"
+    },
+    "jim-manchester-nj": {
+      "name": "Jim C",
+      "greetingName": "Jim",
+      "address": "Manchester Township, NJ 08759",
+      "phone": "+16097090400",
+      "email": "jimcee66383@gmail.com",
+      "contact": "email",
+      "notes": "INFO ONLY: may not host \u2014 NJ/Shore info & guided runs with lead time. Email preferred; phone checked rarely.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Manchester+Township%2C+NJ+08759",
+      "infoOnly": true
+    },
+    "arnab-sinha": {
+      "name": "Arnab Sinha",
+      "greetingName": "Arnab",
+      "address": "Manassas, VA 20109",
+      "phone": "+17742851612",
+      "email": "aksinhas@gmail.com",
+      "contact": "email_or_call",
+      "notes": "Pickup/tow options; garage 1 bike; guest beds/couch/tent; food & draft beer. No indoor smoking/drugs \u2014 family home.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Manassas%2C+VA+20109"
+    },
+    "mark-sabrina-catlett": {
+      "name": "Mark & Sabrina Catlett",
+      "greetingName": "Mark",
+      "address": "3328 Catlett Rd, Catlett, VA 20119",
+      "phone": "+18126645070",
+      "email": "mark.w.bruce@gmail.com",
+      "contact": "email",
+      "notes": "Tent/hammock on gravel; business space \u2014 respect neighbors. Tools, garage, driveway. Wife +1-270-860-0865.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=3328+Catlett+Rd%2C+Catlett%2C+VA+20119"
+    },
+    "fred-christie-huger": {
+      "name": "Fred & Christie Huger",
+      "greetingName": "Fred",
+      "address": "Fairfield, VA 24435",
+      "phone": "+15404604161",
+      "email": "drnkmlk2@yahoo.com",
+      "contact": "email",
+      "notes": "Couch, air mattress, acreage camping; hot shower; ~1 mi off I-81.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Fairfield%2C+VA+24435"
+    },
+    "katherine-sharpe": {
+      "name": "Katherine Sharpe",
+      "greetingName": "Katherine",
+      "address": "1444 Chapman Highway, Sevierville, TN 37876",
+      "phone": "+16156635280",
+      "email": "sharpe.katherine@icloud.com",
+      "contact": "text",
+      "notes": "Guest room often available; sunroom/couches/air mattress; tent. Kids & pets. Text preferred. Near Dragon/Smokies.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=1444+Chapman+Highway%2C+Sevierville%2C+TN+37876"
+    },
+    "scott-middleton": {
+      "name": "Scott David Middleton",
+      "greetingName": "Scott",
+      "address": "Knoxville, TN 37917",
+      "phone": "+15132232157",
+      "email": "scott.middleton@rocketmail.com",
+      "contact": "email_or_text",
+      "notes": "Garage sometimes; bedroom/couches; kitchen/patio. Heads-up for key if away.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Knoxville%2C+TN+37917"
+    },
+    "shane-mt-juliet": {
+      "name": "Shane (Mt. Juliet)",
+      "greetingName": "Shane",
+      "address": "Mt. Juliet, TN",
+      "phone": "+12178419348",
+      "email": "Chevy791979@hotmail.com",
+      "contact": "email",
+      "notes": "Outside space, possible bedroom; covered parking; few mi off I-40 E of Nashville.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Mt.+Juliet%2C+TN"
+    },
+    "daniel-fucella": {
+      "name": "Daniel Fucella",
+      "greetingName": "Daniel",
+      "address": "173 W. Concord Drive, Clarksville, TN",
+      "phone": "+19312570578",
+      "email": "cruisin4ever1@yahoo.com",
+      "contact": "email",
+      "notes": "2 guest rooms; garage; tent space.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=173+W.+Concord+Drive%2C+Clarksville%2C+TN"
+    },
+    "harrison-hickok": {
+      "name": "Harrison Hickok",
+      "greetingName": "Harrison",
+      "address": "6269 Memphis Arlington Rd, Bartlett, TN 38135",
+      "phone": "+12697195893",
+      "email": "harrynama@gmail.com",
+      "contact": "email_or_text",
+      "notes": "Flower farm ~3 ac; dogs/fosters; shared kitchen/bath; RV sometimes; garage/tools/welder. 24h notice preferred. Smoke/alcohol/420 outside only.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=6269+Memphis+Arlington+Rd%2C+Bartlett%2C+TN+38135"
+    },
+    "dj-suter": {
+      "name": "DJ Suter",
+      "greetingName": "DJ",
+      "address": "Arlington, TN 38002",
+      "phone": "+17575828490",
+      "email": "djsuter@gmail.com",
+      "contact": "email",
+      "notes": "Farm; tent/barn/RV camping setup.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Arlington%2C+TN+38002"
+    },
+    "jeff-roberts-ozark": {
+      "name": "Jeff Roberts",
+      "greetingName": "Jeff",
+      "address": "1803 West Philpot Road, Ozark, AR 72949",
+      "phone": "+14798577752",
+      "email": "jc3rob@yahoo.com",
+      "contact": "email",
+      "notes": "3 acres tents; trailers/tools/lift/workshop. Map pin ~1 mi off \u2014 confirm directions.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=1803+West+Philpot+Road%2C+Ozark%2C+AR+72949"
+    },
+    "brian-cooper": {
+      "name": "Brian Cooper",
+      "greetingName": "Brian",
+      "address": "6712 McClure Road, Van Buren, AR 72956",
+      "phone": "+14792624977",
+      "email": "max.burnside8@gmail.com",
+      "contact": "email",
+      "notes": "Queen bed inside; outside space; power; 1 bike inside building.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=6712+McClure+Road%2C+Van+Buren%2C+AR+72956"
+    },
+    "connie-jeff-lackey": {
+      "name": "Connie & Jeff Lackey",
+      "greetingName": "Jeff",
+      "address": "720 North Evergreen Street, Greenwood, AR 72936",
+      "phone": "+13072755977",
+      "email": "Pweestorekeeper@gmail.com",
+      "contact": "email",
+      "notes": "House with carport.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=720+North+Evergreen+Street%2C+Greenwood%2C+AR+72936"
+    },
+    "kelly-snyder": {
+      "name": "Kelly Snyder (Route 66 Midpoint)",
+      "greetingName": "Kelly",
+      "address": "307 W Historic Route 66, Adrian, TX 79001",
+      "phone": "+19379352204",
+      "email": "dreammakerstationroute66@yahoo.com",
+      "contact": "text",
+      "notes": "Souvenir shop property; food/drinks donation; BYO alcohol. **24-hour notice via text.** Many riders possible; confirm seasonal hours.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=307+W+Historic+Route+66%2C+Adrian%2C+TX+79001"
+    },
+    "derek-duncan-denver": {
+      "name": "Derek Duncan",
+      "greetingName": "Derek",
+      "address": "55 Hazel Court, Denver, CO 80219",
+      "phone": "+17202206266",
+      "email": "derekduncan1973@gmail.com",
+      "contact": "email",
+      "notes": "Front/back yard camping; pets OK if traveling with pets.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=55+Hazel+Court%2C+Denver%2C+CO+80219"
+    },
+    "jim-wendy-conifer": {
+      "name": "Jim & Wendy S",
+      "greetingName": "Jim",
+      "address": "Conifer, CO 80433",
+      "phone": "+16784642386",
+      "email": "seetheworld@mindspring.com",
+      "contact": "email",
+      "notes": "9,100 ft; woods or balcony camping; towel/shower; up to 4 bikers; wildlife; fire/smoking rules \u2014 high fire risk area.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Conifer%2C+CO+80433"
+    },
+    "cc-golden": {
+      "name": "CC",
+      "greetingName": "CC",
+      "address": "975 Xenophon Court, Golden, CO 80401",
+      "phone": "+17209859851",
+      "email": "ccsiedlarz@gmail.com",
+      "contact": "email",
+      "notes": "Bed, couch, camping, food; 4 dogs; smoking outside; cul-de-sac.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=975+Xenophon+Court%2C+Golden%2C+CO+80401"
+    },
+    "travis-georgetown": {
+      "name": "Travis Gilbertson",
+      "greetingName": "Travis",
+      "address": "Georgetown, CO",
+      "phone": "+19704713865",
+      "email": "gilbertsontravis@gmail.com",
+      "contact": "email",
+      "notes": "King bed + private bath; mountain riding; walk to bars; pet-friendly if pets behave.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Georgetown%2C+CO"
+    },
+    "robert-vandenbroeke": {
+      "name": "Robert VandenBroeke",
+      "greetingName": "Robert",
+      "address": "Moab, UT 84532",
+      "phone": "+14352200576",
+      "email": "rjvandenbroeke@gmail.com",
+      "contact": "text_whatsapp",
+      "notes": "Queen bed basement + sink/toilet. Text/WhatsApp. Jeep tour possible \u2014 you provide gas.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Moab%2C+UT+84532"
+    },
+    "good-adv-cortez": {
+      "name": "Good ADV",
+      "greetingName": "Good ADV",
+      "address": "22812 County Road G, Cortez, CO 81321",
+      "phone": "+19707390568",
+      "email": "goodadv@icloud.com",
+      "contact": "email",
+      "notes": "Tent; tools; tire gear; possible trailer; paid Airbnbs on site optional.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=22812+County+Road+G%2C+Cortez%2C+CO+81321"
+    },
+    "matt-burton-seligman": {
+      "name": "Matt Burton",
+      "greetingName": "Matt",
+      "address": "Seligman, AZ 86337",
+      "phone": "+19289254381",
+      "email": "mybroskpr73@gmail.com",
+      "contact": "email",
+      "notes": "Off-grid S of Seligman; gravel; ADV-oriented; shop/lift; read full BAB profile.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Seligman%2C+AZ+86337"
+    },
+    "montana-shaffer": {
+      "name": "Montana Shaffer",
+      "greetingName": "Montana",
+      "address": "22060 Wren Street, Apple Valley, CA 92308",
+      "phone": "+15623249109",
+      "email": "jandme24@hotmail.com",
+      "contact": "email",
+      "notes": "Home; outside space for trailers or inside.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=22060+Wren+Street%2C+Apple+Valley%2C+CA+92308"
+    },
+    "anais-redlands": {
+      "name": "Anais",
+      "greetingName": "Anais",
+      "address": "Redlands, CA",
+      "phone": "+19512022797",
+      "email": "anaisfan05@gmail.com",
+      "contact": "call",
+      "notes": "Tent patio or guest room; pool/jacuzzi by arrangement; garage/tools. **Phone call required** to align.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Redlands%2C+CA"
+    },
+    "layla-sisney": {
+      "name": "Layla Sisney",
+      "greetingName": "Layla",
+      "address": "1621 Diego Way, Oxnard, CA 93030",
+      "phone": "+18058613411",
+      "email": "lvsisney@gmail.com",
+      "contact": "email_or_phone",
+      "notes": "Couch or small backyard; tools/truck/trailer. Advance contact; pet policy; quiet 10p\u20137a; max 2 nights/2 people; valid ID.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=1621+Diego+Way%2C+Oxnard%2C+CA+93030"
+    },
+    "darlene-morro": {
+      "name": "Darlene Bennett",
+      "greetingName": "Darlene",
+      "address": "California 1, Morro Bay, CA 93442",
+      "phone": "+18059060643",
+      "email": "oshnbby@yahoo.com",
+      "contact": "text",
+      "notes": "Cottage; driveway; local intel. Limited hosting \u2014 text for date fit.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=California+1%2C+Morro+Bay%2C+CA+93442"
+    },
+    "jeff-rothman": {
+      "name": "Jeff Rothman",
+      "greetingName": "Jeff",
+      "address": "314 Hewett St, Santa Rosa, CA 95401",
+      "phone": "+14157134511",
+      "email": "dravnx@novato.net",
+      "contact": "email_then_text",
+      "notes": "Room + couch; garage/tools; wants name/route/bike/social; notice preferred; no pets; M\u2013F away 7\u20137.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=314+Hewett+St%2C+Santa+Rosa%2C+CA+95401"
+    },
+    "scott-taggart": {
+      "name": "Scott Taggart",
+      "greetingName": "Scott",
+      "address": "8112 Fort Collins Way, Roseville, CA 95747",
+      "phone": "+19167160028",
+      "email": "taggart@taggarts.org",
+      "contact": "email",
+      "notes": "Backyard camping; shop/lift/tire; garage 2 bikes; laundry. **Pin approximate \u2014 confirm address.**",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=8112+Fort+Collins+Way%2C+Roseville%2C+CA+95747"
+    },
+    "jim-haines-shasta": {
+      "name": "Jim Haines",
+      "greetingName": "Jim",
+      "address": "24451 Creamery Lane, Edgewood, CA 96094",
+      "phone": "+15302610100",
+      "email": "shastajim@gmail.com",
+      "contact": "email",
+      "notes": "Mt. Shasta area; lawn; bath; tools/trailer; cats.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=24451+Creamery+Lane%2C+Edgewood%2C+CA+96094"
+    },
+    "lisa-blue-bend": {
+      "name": "Lisa Blue",
+      "greetingName": "Lisa",
+      "address": "Bend, OR 97701",
+      "phone": "+17072235953",
+      "email": "1lisabluesky@gmail.com",
+      "contact": "email",
+      "notes": "Bedroom; gated parking; garage tools/lift; 24h notice + ETA; max 2 nights preferred; LGBTQ+ friendly.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Bend%2C+OR+97701"
+    },
+    "suze-riley-maupin": {
+      "name": "Suze Riley",
+      "greetingName": "Suze",
+      "address": "Maupin, OR 97037",
+      "phone": "+15038169640",
+      "email": "suze@suzeriley.com",
+      "contact": "email",
+      "notes": "Large yard camping; maybe inside; best odds Sat\u2013Wed.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Maupin%2C+OR+97037"
+    },
+    "mosko-moto": {
+      "name": "Mosko Moto / Bates Mototel",
+      "greetingName": "Mosko",
+      "address": "186 East Jewett Blvd, White Salmon, WA 98672",
+      "phone": "+15092813211",
+      "email": "moskomoto@moskomoto.com",
+      "contact": "email",
+      "notes": "**Register first** \u2014 Mototel N of HQ; gravel access; moto-oriented. Office weekday or IG @batesmototel.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=186+East+Jewett+Blvd%2C+White+Salmon%2C+WA+98672"
+    },
+    "david-kishpaugh": {
+      "name": "David Kishpaugh",
+      "greetingName": "David",
+      "address": "29820 SE Eagle Creek Road, Estacada, OR 97023",
+      "phone": "+15039578063",
+      "email": "jeep.west.dave@gmail.com",
+      "contact": "call_or_text",
+      "notes": "Room/camping; full shop/lift; trailer help. **Phone/text fastest.**",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=29820+SE+Eagle+Creek+Road%2C+Estacada%2C+OR+97023"
+    },
+    "jeff-carrie-bob": {
+      "name": "Jeff and Carrie Bob",
+      "greetingName": "Carrie",
+      "address": "11885 SW Edgewood St, Portland, OR 97225",
+      "phone": "+15038630230",
+      "email": "carrie@carriebob.com",
+      "contact": "email",
+      "notes": "Camping; garage/tools/lift; pets; often same-day OK.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=11885+SW+Edgewood+St%2C+Portland%2C+OR+97225"
+    },
+    "david-rs-washougal": {
+      "name": "David R S",
+      "greetingName": "David",
+      "address": "4232 Canyon Creek Rd, Washougal, WA 98671",
+      "phone": "+13602163192",
+      "email": "drsanchez1114@gmail.com",
+      "contact": "email",
+      "notes": "Tent + shop; inside if available. No call after 9pm.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=4232+Canyon+Creek+Rd%2C+Washougal%2C+WA+98671"
+    },
+    "christe-smith-rainier": {
+      "name": "Christe Smith (Stewart Ranch)",
+      "greetingName": "Christe",
+      "address": "800 Tipsoo Loop South, Rainier, WA 98576",
+      "phone": "+13604818196",
+      "email": "Trainerchriste@yahoo.com",
+      "contact": "email",
+      "notes": "Tent/RV; water/power; moto shop evenings.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=800+Tipsoo+Loop+South%2C+Rainier%2C+WA+98576"
+    },
+    "ob-graham": {
+      "name": "O.B.",
+      "greetingName": "O.B.",
+      "address": "30323 Meridian Ave E, Graham, WA 98338",
+      "phone": "+12539510979",
+      "email": "cascadianrogue@gmail.com",
+      "contact": "email",
+      "notes": "Camping; tools; food tips.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=30323+Meridian+Ave+E%2C+Graham%2C+WA+98338"
+    },
+    "bob-combs": {
+      "name": "Bob Combs",
+      "greetingName": "Bob",
+      "address": "12832 464th Ave SE, North Bend, WA 98045",
+      "phone": "+14258912329",
+      "email": "bob@combshouse.com",
+      "contact": "email",
+      "notes": "Mt Si area; shower; shop lifts. **No pets.**",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=12832+464th+Ave+SE%2C+North+Bend%2C+WA+98045"
+    },
+    "julie-lake-tapps": {
+      "name": "Julie C Cardenas",
+      "greetingName": "Julie",
+      "address": "3609 Lakeridge Dr E, Lake Tapps, WA 98391",
+      "phone": "+12535695531",
+      "email": "medassistnurse@gmail.com",
+      "contact": "email",
+      "notes": "Spare room + tent space.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=3609+Lakeridge+Dr+E%2C+Lake+Tapps%2C+WA+98391"
+    },
+    "bill-darrington": {
+      "name": "Bill",
+      "greetingName": "Bill",
+      "address": "Darrington, WA 98241",
+      "phone": "+14253308861",
+      "email": "Bhart1601@gmail.com",
+      "contact": "email",
+      "notes": "Tent; tools; views.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Darrington%2C+WA+98241"
+    },
+    "dave-katherine-cashmere": {
+      "name": "Dave & Katherine D",
+      "greetingName": "Dave",
+      "address": "Cashmere, WA 98815",
+      "phone": "+12063564288",
+      "email": "Kjdegel@nwi.net",
+      "contact": "text",
+      "notes": "Guest room, basement couch, yard camping; laundry; meals if timing works. Text preferred.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Cashmere%2C+WA+98815"
+    },
+    "angela-east-wenatchee": {
+      "name": "Angela Parkison",
+      "greetingName": "Angela",
+      "address": "East Wenatchee, WA 98802",
+      "phone": "+15097411918",
+      "email": "streetglidequeen@hotmail.com",
+      "contact": "email",
+      "notes": "Dirt road; rooms or camping; big dogs.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=East+Wenatchee%2C+WA+98802"
+    },
+    "betty-chewelah": {
+      "name": "Betty (Kenny's place)",
+      "greetingName": "Betty",
+      "address": "303 East King Ave, Chewelah, WA 99109",
+      "phone": "+15096752844",
+      "email": "Okiesmack@gmail.com",
+      "contact": "email",
+      "notes": "Posting for brother Kenny \u2014 tent; tools.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=303+East+King+Ave%2C+Chewelah%2C+WA+99109"
+    },
+    "randy-rathdrum": {
+      "name": "Randy Dominicak",
+      "greetingName": "Randy",
+      "address": "17405 N Wilkinson Rd, Rathdrum, ID 83858",
+      "phone": "+12084572828",
+      "email": "radnpad@gmail.com",
+      "contact": "text",
+      "notes": "Forest camping. **Text first; call only after text.**",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=17405+N+Wilkinson+Rd%2C+Rathdrum%2C+ID+83858"
+    },
+    "karl-angie-stevensville": {
+      "name": "Karl & Angie",
+      "greetingName": "Karl",
+      "address": "Stevensville, MT 59870 (confirm by text)",
+      "phone": "+14067771230",
+      "email": "itomt@hotmail.com",
+      "contact": "text",
+      "notes": "Bitterroot valley; camping common; text full name/FB, group size, dates.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Stevensville%2C+MT+59870+%28confirm+by+text%29"
+    },
+    "phyl-corvallis-mt": {
+      "name": "Phyl",
+      "greetingName": "Phyl",
+      "address": "Corvallis, MT 59828",
+      "phone": "+14063706668",
+      "email": "Missimont@gmail.com",
+      "contact": "text",
+      "notes": "Tent pasture/pines; well water; Bitterroot views. Text fastest.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Corvallis%2C+MT+59828"
+    },
+    "dustin-patton": {
+      "name": "Dustin Patton",
+      "greetingName": "Dustin",
+      "address": "20800 Twin Lakes Road, Frenchtown, MT 59834",
+      "phone": "+14063603174",
+      "email": "dspatton44@gmail.com",
+      "contact": "text",
+      "notes": "RV/tent w/ power & water; shop; 1 mi gravel; advance notice.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=20800+Twin+Lakes+Road%2C+Frenchtown%2C+MT+59834"
+    },
+    "kevin-island-park": {
+      "name": "Kevin",
+      "greetingName": "Kevin",
+      "address": "Island Park, ID 83429",
+      "phone": "+12089401919",
+      "email": "2005misc@gmail.com",
+      "contact": "text_or_email",
+      "notes": "Camping; **1 night max** without prior OK; text preferred.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Island+Park%2C+ID+83429"
+    },
+    "daryn-engesser": {
+      "name": "Daryn Engesser",
+      "greetingName": "Daryn",
+      "address": "Powell, WY 82435",
+      "phone": "+14066601765",
+      "email": "darynengesser@gmail.com",
+      "contact": "email",
+      "notes": "Bedroom; tent yard; garage/tools.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Powell%2C+WY+82435"
+    },
+    "jolene-casper": {
+      "name": "Jolene Beiswenger",
+      "greetingName": "Jolene",
+      "address": "Casper, WY",
+      "phone": "+12182807277",
+      "email": "beis0011@gmail.com",
+      "contact": "text_or_email",
+      "notes": "Family + dog; laundry; may cook; flexible timing.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Casper%2C+WY"
+    },
+    "michelle-custer": {
+      "name": "Michelle Lamphere",
+      "greetingName": "Michelle",
+      "address": "Custer, SD 57730",
+      "phone": "+16056732393",
+      "email": "michellelamphere@icloud.com",
+      "contact": "email",
+      "notes": "**Not during Sturgis rally** \u2014 tent or possible guest room.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Custer%2C+SD+57730"
+    },
+    "dave-van-gorkom": {
+      "name": "Dave van Gorkom",
+      "greetingName": "Dave",
+      "address": "609 Triple L Loop, Spearfish, SD 57783",
+      "phone": "+17012690560",
+      "email": "davevangorkom@yahoo.com",
+      "contact": "email",
+      "notes": "1 bedroom + bath; food/help.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=609+Triple+L+Loop%2C+Spearfish%2C+SD+57783"
+    },
+    "lisa-redfield": {
+      "name": "Lisa",
+      "greetingName": "Lisa",
+      "address": "Redfield, SD 57469",
+      "phone": "+13173799621",
+      "email": "lisam_38122@yahoo.com",
+      "contact": "email",
+      "notes": "Tent; shower/laundry/food; pets inside; smoking outside.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Redfield%2C+SD+57469"
+    }
+  }
+}

@@ -1,0 +1,516 @@
+{
+  "meta": {
+    "title": "Per-day route metrics & ideas",
+    "disclaimer": "Each day links to Google Directions. Kilometers in the app are requested live from the Google Maps JavaScript API (driving mode) using the same origin/destination as that link — not from hand-entered numbers. You still need to confirm the route the morning you ride."
+  },
+  "byDay": {
+    "1": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Toronto%2C+ON%2C+Canada&destination=4177+Syrian+Hill+Rd%2C+McGraw%2C+NY&travelmode=driving",
+      "distanceNote": "Driving km come from the Google Maps API for the same origin/destination as the link. Your chosen border crossing and pins can still change the route — confirm in Maps before you ride.",
+      "recommendations": [
+        {
+          "text": "Pre-clear eTA/ESTA not needed for US land — have passport, reg, insurance ready.",
+          "url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html"
+        },
+        {
+          "text": "Optional break: Niagara Falls NY state park (goat island) if crossing near Niagara.",
+          "url": "https://www.google.com/maps/search/Niagara+Falls+State+Park+NY"
+        },
+        {
+          "text": "Watkins Glen State Park gorge (short hike) if you arrive with daylight.",
+          "url": "https://www.nps.gov/places/watkins-glen-state-park.htm"
+        }
+      ]
+    },
+    "2": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=McGraw%2C+NY&destination=New+York%2C+NY&travelmode=driving",
+      "distanceNote": "Finger Lakes to NYC metro — pick Southampton vs DC pacing in Maps after you choose host; tolls on Thruway/I-95 possible.",
+      "recommendations": [
+        {
+          "text": "If staying Southampton: adjust destination pin in Google Maps.",
+          "url": ""
+        },
+        {
+          "text": "George Washington Bridge / Hudson crossings — peak traffic.",
+          "url": "https://www.google.com/maps/search/George+Washington+Bridge"
+        }
+      ]
+    },
+    "3": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Washington%2C+DC&destination=Luray%2C+VA&travelmode=driving",
+      "distanceNote": "Core mid-Atlantic segment (DC → Luray). If starting from NY/LI, chain origin in Maps to match your Day 2 end pin.",
+      "recommendations": [
+        {
+          "text": "Shenandoah approaches — Skyline Dr is a detour with fee.",
+          "url": "https://www.nps.gov/shen/"
+        },
+        {
+          "text": "I-95 / Beltway congestion — avoid rush if possible.",
+          "url": ""
+        }
+      ]
+    },
+    "4": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Luray%2C+VA&destination=Pulaski%2C+VA&travelmode=driving",
+      "distanceNote": "Diagonal across VA; Blue Ridge parallels possible on part of leg.",
+      "recommendations": [
+        {
+          "text": "Blue Ridge Parkway connections near Luray — scenic, slower.",
+          "url": "https://www.nps.gov/blri/"
+        },
+        {
+          "text": "Natural Bridge State Park (short detour possible).",
+          "url": "https://www.dcr.virginia.gov/state-parks/natural-bridge"
+        }
+      ]
+    },
+    "5": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Pulaski%2C+VA&destination=1444+Chapman+Hwy%2C+Sevierville%2C+TN&travelmode=driving",
+      "distanceNote": "I-81 south + TN corridors; Knoxville bypass options.",
+      "recommendations": [
+        {
+          "text": "Tail of the Dragon (US-129) is a detour from direct routing — fuel at Deals Gap if you go.",
+          "url": "https://www.google.com/maps/search/Deals+Gap+NC"
+        },
+        {
+          "text": "Smokies GSMNP vehicle reservation (peak season) — check before detouring into park.",
+          "url": "https://www.nps.gov/grsm/planyourvisit/park-it-forward.htm"
+        }
+      ]
+    },
+    "6": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Sevierville%2C+TN&destination=585+Roundtree+Ln%2C+Beech+Bluff%2C+TN&travelmode=driving",
+      "distanceNote": "Often via Nashville on I-40 W; matches ~212 mi car routing.",
+      "recommendations": [
+        {
+          "text": "Nashville food/fuel stop — downtown traffic heavy; use ring roads.",
+          "url": "https://www.google.com/maps/search/I-440+Nashville+TN"
+        },
+        {
+          "text": "Natchez Trace northern end nearby if you want a scenic parallel (no trucks).",
+          "url": "https://www.nps.gov/natr/"
+        }
+      ]
+    },
+    "7": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Parsons%2C+TN&destination=Jacksonville%2C+AR&travelmode=driving",
+      "distanceNote": "I-40 W across Mississippi River bridges.",
+      "recommendations": [
+        {
+          "text": "Memphis river crossing — plan fuel before/after bridge congestion.",
+          "url": ""
+        },
+        {
+          "text": "Hot Springs NP detour (+~1 h) if staying with Garland County host instead.",
+          "url": "https://www.nps.gov/hosp/"
+        }
+      ]
+    },
+    "8": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Jacksonville%2C+AR&destination=Fort+Worth%2C+TX&travelmode=driving",
+      "distanceNote": "I-30 W into DFW; summer heat + storms.",
+      "recommendations": [
+        {
+          "text": "Texas speed limits high — watch fuel range and wind on plains.",
+          "url": ""
+        },
+        {
+          "text": "DFW traffic peaks: avoid I-35E core at rush if possible.",
+          "url": ""
+        }
+      ]
+    },
+    "9": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Fort+Worth%2C+TX&destination=307+W+Historic+Route+66%2C+Adrian%2C+TX&travelmode=driving",
+      "distanceNote": "US-287 / I-40 W common; ~295 mi.",
+      "recommendations": [
+        {
+          "text": "Cadillac Ranch Amarillo — quick 66 icon near I-40.",
+          "url": "https://www.google.com/maps/search/Cadillac+Ranch+Amarillo"
+        },
+        {
+          "text": "Palo Duro Canyon SP if you can spare half-day north of route.",
+          "url": "https://tpwd.texas.gov/state-parks/palo-duro-canyon"
+        }
+      ]
+    },
+    "10": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Amarillo%2C+TX&destination=Albuquerque%2C+NM&travelmode=driving",
+      "distanceNote": "Classic I-40 W ~285 mi; matches published Amarillo–Albuquerque driving guides.",
+      "recommendations": [
+        {
+          "text": "Route 66 Midpoint Adrian — you may have stayed night prior; still good photo stop if passing.",
+          "url": "https://www.google.com/maps/search/Midpoint+Adrian+TX+66"
+        },
+        {
+          "text": "Cadillac Ranch if you skipped Day 8.",
+          "url": "https://www.google.com/maps/search/Cadillac+Ranch"
+        }
+      ]
+    },
+    "11": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Albuquerque%2C+NM&destination=Silverton%2C+CO&travelmode=driving",
+      "distanceNote": "Often US-550 N via Durango area; mountain weather.",
+      "recommendations": [
+        {
+          "text": "Mesa Verde NP detour (west) if you have +1 day later — not same-day with Silverton push.",
+          "url": "https://www.nps.gov/meve/"
+        },
+        {
+          "text": "Durango fuel/food before climbing toward Silverton.",
+          "url": "https://www.google.com/maps/search/Durango+CO"
+        }
+      ]
+    },
+    "12": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Silverton%2C+CO&destination=Mexican+Hat%2C+UT&travelmode=driving",
+      "distanceNote": "Four Corners + US-491/160; Silverton is north of Durango on 550.",
+      "recommendations": [
+        {
+          "text": "Million Dollar Highway (US-550) weather — check COtrip / closures.",
+          "url": "https://www.codot.gov/"
+        },
+        {
+          "text": "Monument Valley (AZ) short detour south of Mexican Hat if time/light.",
+          "url": "https://www.nps.gov/muve/"
+        }
+      ]
+    },
+    "13": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Mexican+Hat%2C+UT&destination=Bryce+Canyon+City%2C+UT&travelmode=driving",
+      "distanceNote": "Includes Page/Horseshoe/Antelope corridor; long day — your ~500 km plan is realistic.",
+      "recommendations": [
+        {
+          "text": "Antelope Canyon — book Navajo tour ahead.",
+          "url": "https://www.navajonationparks.org/"
+        },
+        {
+          "text": "Glen Canyon / Lake Powell NRA — Lone Rock beach area if cooling off.",
+          "url": "https://www.nps.gov/glca/"
+        },
+        {
+          "text": "Zion is a major detour W — usually not same-day with Bryce + Page.",
+          "url": "https://www.nps.gov/zion/"
+        }
+      ]
+    },
+    "14": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Bryce+Canyon+National+Park%2C+UT&destination=Moab%2C+UT&travelmode=driving",
+      "distanceNote": "Travelmath/Arches–Bryce corridor often ~440–450 km depending on UT-12 vs I-70 routing.",
+      "recommendations": [
+        {
+          "text": "Capitol Reef (UT-12) — scenic buffer; adds time.",
+          "url": "https://www.nps.gov/care/"
+        },
+        {
+          "text": "Gas in Hanksville or Torrey if taking scenic route — long empty spans.",
+          "url": ""
+        }
+      ]
+    },
+    "15": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Moab%2C+UT&destination=St.+George%2C+UT&travelmode=driving",
+      "distanceNote": "Often ~310 mi via I-70 E to I-15 S — remote I-70 Salina–Green River segment; plan fuel.",
+      "recommendations": [
+        {
+          "text": "Arches timed entry — reserve on Recreation.gov.",
+          "url": "https://www.recreation.gov/ticket/facility/234635"
+        },
+        {
+          "text": "Dead Horse Point SP overlook near Moab if skipping Arches repeat.",
+          "url": "https://stateparks.utah.gov/parks/dead-horse/"
+        }
+      ]
+    },
+    "16": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=St.+George%2C+UT&destination=22060+Wren+St%2C+Apple+Valley%2C+CA&travelmode=driving",
+      "distanceNote": "I-15 S Mojave; summer heat extreme.",
+      "recommendations": [
+        {
+          "text": "Zion NP (Springdale) detour if you skipped earlier — tunnel rules for wide bars.",
+          "url": "https://www.nps.gov/zion/"
+        },
+        {
+          "text": "Valley of Fire NV state park — short detour off I-15.",
+          "url": "https://parks.nv.gov/parks/valley-of-fire"
+        }
+      ]
+    },
+    "17": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Barstow%2C+CA&destination=Leo+Carrillo+State+Park%2C+Malibu%2C+CA&travelmode=driving",
+      "distanceNote": "I-15 to CA-14 to LA basin traffic; ~148 mi.",
+      "recommendations": [
+        {
+          "text": "PCH traffic weekends — aim early through Santa Monica/Malibu.",
+          "url": ""
+        },
+        {
+          "text": "California Aqueduct vista (optional) along 14 if you like industrial weird.",
+          "url": ""
+        }
+      ]
+    },
+    "18": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Malibu%2C+CA&destination=Big+Sur%2C+CA&travelmode=driving",
+      "distanceNote": "CA-1 N — slow curves; longer than miles suggest mentally.",
+      "recommendations": [
+        {
+          "text": "Fuel in Cambria or San Simeon before long Big Sur no-service stretch.",
+          "url": ""
+        },
+        {
+          "text": "McWay Falls / Julia Pfeiffer SP — short stops.",
+          "url": "https://www.parks.ca.gov/?page_id=582"
+        },
+        {
+          "text": "Nacimiento-Fergusson Rd to Fort Hunter Liggett — ADV detour only (rough).",
+          "url": ""
+        }
+      ]
+    },
+    "19": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Big+Sur%2C+CA&destination=Point+Arena%2C+CA&travelmode=driving",
+      "distanceNote": "Coast + inland cutoffs possible in bad weather.",
+      "recommendations": [
+        {
+          "text": "Bixby Creek Bridge — pullout etiquette.",
+          "url": ""
+        },
+        {
+          "text": "Mendocino village — coffee if fog lifts.",
+          "url": "https://www.google.com/maps/search/Mendocino+CA"
+        }
+      ]
+    },
+    "20": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Point+Arena%2C+CA&destination=Redwood+National+and+State+Parks%2C+CA&travelmode=driving",
+      "distanceNote": "US-101 redwoods corridor.",
+      "recommendations": [
+        {
+          "text": "Avenue of the Giants detour (Humboldt) — worth it.",
+          "url": "https://www.avenueofthegiants.net/"
+        },
+        {
+          "text": "Elk herds on 101 — dawn/dusk.",
+          "url": ""
+        }
+      ]
+    },
+    "21": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Orick%2C+CA&destination=Westfir%2C+OR&travelmode=driving",
+      "distanceNote": "Long day US-199 + I-5 + OR-126; ~365 mi class routing.",
+      "recommendations": [
+        {
+          "text": "Crater Lake NP detour adds significant miles — usually a separate day.",
+          "url": "https://www.nps.gov/crla/"
+        },
+        {
+          "text": "Oregon Caves NM (OR-46) if you love twisty side roads.",
+          "url": "https://www.nps.gov/orca/"
+        }
+      ]
+    },
+    "22": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Westfir%2C+OR&destination=Goldendale%2C+WA&travelmode=driving",
+      "distanceNote": "Cascade routing via Portland/Vancouver or eastern OR depending on choice.",
+      "recommendations": [
+        {
+          "text": "Columbia River Gorge I-84 — wind + vista stops (Multnomah reservations peak season).",
+          "url": "https://www.fs.usda.gov/detail/crgnsa/news-events/?cid=FSEPRD536086"
+        },
+        {
+          "text": "Mosier (Rowena Crest) if heading to Gorge hosts.",
+          "url": "https://www.google.com/maps/search/Rowena+Crest+Viewpoint"
+        }
+      ]
+    },
+    "23": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Mosier%2C+OR&destination=Seattle%2C+WA&travelmode=driving",
+      "distanceNote": "I-84 to I-5 N ~192 mi core; Seattle metro adds time.",
+      "recommendations": [
+        {
+          "text": "Mount St. Helens Johnston Ridge (detour) — long day add-on.",
+          "url": "https://www.nps.gov/mshs/"
+        },
+        {
+          "text": "Seattle HOV rules / bridge tolls — check WSDOT.",
+          "url": "https://wsdot.wa.gov/"
+        }
+      ]
+    },
+    "24": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Seattle%2C+WA&destination=Winthrop%2C+WA&travelmode=driving",
+      "distanceNote": "WA SR-20 North Cascades — seasonal opening critical (snow). ~180 mi.",
+      "recommendations": [
+        {
+          "text": "North Cascades Hwy opening dates — snow closures.",
+          "url": "https://www.wsdot.com/travel/real-time/mountainpasses/north-cascades-highway"
+        },
+        {
+          "text": "If SR-20 closed: reroute via I-90 to Wenatchee (+ km).",
+          "url": "https://www.google.com/maps/dir/Seattle%2C+WA/Wenatchee%2C+WA"
+        }
+      ]
+    },
+    "25": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Winthrop%2C+WA&destination=Spokane%2C+WA&travelmode=driving",
+      "distanceNote": "US-97 / US-2 eastbound ~167 mi typical.",
+      "recommendations": [
+        {
+          "text": "Lake Chelan detour (south) if you want water break.",
+          "url": "https://www.google.com/maps/search/Lake+Chelan+WA"
+        },
+        {
+          "text": "Grand Coulee Dam visitor area (north detour option).",
+          "url": "https://www.usbr.gov/pn/grandcoulee/visit/visitorcenter.html"
+        }
+      ]
+    },
+    "26": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Spokane%2C+WA&destination=Lolo+Pass+Visitor+Center%2C+ID&travelmode=driving",
+      "distanceNote": "Matches ~207 mi Spokane–Lolo area references on US-12 corridor.",
+      "recommendations": [
+        {
+          "text": "US-12 Lolo Pass — curves next 99 miles; deer/elk.",
+          "url": "https://www.fs.usda.gov/recarea/nezperceclearwater/recarea/?recid=51962"
+        },
+        {
+          "text": "Clearwater River overlooks — fuel in Kooskia/Lowell.",
+          "url": ""
+        }
+      ]
+    },
+    "27": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Lolo%2C+MT&destination=Gallatin+Gateway%2C+MT&travelmode=driving",
+      "distanceNote": "~Lolo to Bozeman ~213 mi + south to gateway; verify your actual start pin at pass vs Lolo town.",
+      "recommendations": [
+        {
+          "text": "Yellowstone west entrance at West Yellowstone — expect summer queues.",
+          "url": "https://www.nps.gov/yell/planyourvisit/directions.htm"
+        },
+        {
+          "text": "Grizzly & Wolf Discovery Center if staying West Yellowstone.",
+          "url": "https://www.grizzlydiscoverycenter.org/"
+        }
+      ]
+    },
+    "28": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=West+Yellowstone%2C+MT&destination=Old+Faithful%2C+Yellowstone+National+Park%2C+WY&travelmode=driving",
+      "distanceNote": "In-park miles vary wildly by loop; figure is a moderate geyser-basin day, not perimeter.",
+      "recommendations": [
+        {
+          "text": "NPS Trip Planner + road construction.",
+          "url": "https://www.nps.gov/yell/planyourvisit/index.htm"
+        },
+        {
+          "text": "Bison jams — never crowd wildlife; pass buying online.",
+          "url": "https://www.recreation.gov/sitepass/7420"
+        }
+      ]
+    },
+    "29": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Old+Faithful%2C+Yellowstone&destination=Powell%2C+WY&travelmode=driving",
+      "distanceNote": "Via Yellowstone NE toward Cody/Powell; seasonal closures.",
+      "recommendations": [
+        {
+          "text": "Beartooth Hwy (US-212) status — snow/weather.",
+          "url": "https://www.nps.gov/yell/planyourvisit/beartoothhwy.htm"
+        },
+        {
+          "text": "Cody Buffalo Bill Center if overnight nearby.",
+          "url": "https://centerofthewest.org/"
+        }
+      ]
+    },
+    "30": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Powell%2C+WY&destination=Gillette%2C+WY&travelmode=driving",
+      "distanceNote": "Bighorn Basin / I-90 style routing ~198 mi.",
+      "recommendations": [
+        {
+          "text": "Bighorn Canyon NRA (optional north detour).",
+          "url": "https://www.nps.gov/bica/"
+        },
+        {
+          "text": "Wind River Canyon (US-20) if routing that way — scenic.",
+          "url": ""
+        }
+      ]
+    },
+    "31": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Gillette%2C+WY&destination=Custer%2C+SD&travelmode=driving",
+      "distanceNote": "Black Hills approach; Sturgis week traffic if August.",
+      "recommendations": [
+        {
+          "text": "Needles Highway / Iron Mountain Rd — tight tunnels; check vehicle height.",
+          "url": "https://www.nps.gov/memo/planyourvisit/needles-highway.htm"
+        },
+        {
+          "text": "Mount Rushmore — evening lighting if time.",
+          "url": "https://www.nps.gov/moru/"
+        }
+      ]
+    },
+    "32": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Oacoma%2C+SD&destination=Rochester%2C+MN&travelmode=driving",
+      "distanceNote": "Matches your ~600 km slab day; I-90 E ~370 mi.",
+      "recommendations": [
+        {
+          "text": "Fuel every half tank — prairie crosswinds.",
+          "url": ""
+        },
+        {
+          "text": "Badlands NP / Wall Drug — detour south if +half day.",
+          "url": "https://www.nps.gov/badl/"
+        }
+      ]
+    },
+    "33": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Rochester%2C+MN&destination=Oconomowoc%2C+WI&travelmode=driving",
+      "distanceNote": "I-90 E to Madison/Milwaukee arc ~277 mi.",
+      "recommendations": [
+        {
+          "text": "Wisconsin Dells detour — touristy but easy off I-90.",
+          "url": "https://www.google.com/maps/search/Wisconsin+Dells"
+        }
+      ]
+    },
+    "34": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Oconomowoc%2C+WI&destination=Benton+Harbor%2C+MI&travelmode=driving",
+      "distanceNote": "Milwaukee to Lake Michigan shore ~142 mi.",
+      "recommendations": [
+        {
+          "text": "Lake Michigan ferry (Muskegon–Milwaukee) is alternate route, not distance-comparable.",
+          "url": "https://www.lakeexpress.com/"
+        }
+      ]
+    },
+    "35": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Benton+Harbor%2C+MI&destination=London%2C+ON%2C+Canada&travelmode=driving",
+      "distanceNote": "Blue Water or Detroit–Windsor crossing — pick in Maps; times vary by border.",
+      "recommendations": [
+        {
+          "text": "CBSA border wait times.",
+          "url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html"
+        },
+        {
+          "text": "Register ROVR if needed for US preclearance context.",
+          "url": "https://www.cbsa-asfc.gc.ca/travel-voyage/rovr-irvr/menu-eng.html"
+        }
+      ]
+    },
+    "36": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=London%2C+ON%2C+Canada&destination=Toronto%2C+ON%2C+Canada&travelmode=driving",
+      "distanceNote": "401 corridor ~119 mi; construction common.",
+      "recommendations": [
+        {
+          "text": "511 Ontario for closures.",
+          "url": "https://511on.ca/"
+        },
+        {
+          "text": "Stratford or Niagara detour if avoiding 401 stress.",
+          "url": ""
+        }
+      ]
+    }
+  }
+}
