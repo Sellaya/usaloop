@@ -154,9 +154,15 @@ function buildDirectionsRequest(parsed, travelMode) {
   };
 }
 
+const DIRECTIONS_CALL_TIMEOUT_MS = 20000;
+
 function directionsRouteOnce(svc, request) {
   return new Promise((resolve, reject) => {
+    const timer = window.setTimeout(() => {
+      reject(new Error("TIMEOUT"));
+    }, DIRECTIONS_CALL_TIMEOUT_MS);
     svc.route(request, (result, status) => {
+      window.clearTimeout(timer);
       const leg = result?.routes?.[0]?.legs?.[0];
       const meters = leg?.distance?.value;
       if (status === "OK" && leg && meters != null) {
@@ -277,7 +283,14 @@ async function fetchGoogleDistancesForDays(days) {
   if (!window.google?.maps?.DirectionsService) return;
   const svc = new google.maps.DirectionsService();
   const list = (days || []).filter((d) => d.routeOverlay?.mapsDirectionsUrl);
+  const hero = document.getElementById("hero-route-total");
+  let legIndex = 0;
   for (const day of list) {
+    legIndex += 1;
+    if (hero && !hero.hidden) {
+      hero.classList.remove("hero-route-total--setup");
+      hero.textContent = `Full route: fetching leg ${legIndex}/${list.length} from Google Maps…`;
+    }
     const href = day.routeOverlay.mapsDirectionsUrl;
     day.googleDurationText = null;
     day.googleDurationSeconds = null;
@@ -315,7 +328,7 @@ async function fetchGoogleDistancesForDays(days) {
       }
     }
     applyDayDistanceToDom(day);
-    await new Promise((r) => setTimeout(r, 180));
+    await new Promise((r) => setTimeout(r, 120));
   }
 }
 
@@ -525,6 +538,7 @@ function scheduleGoogleDistanceFetch(days) {
   initRouteTotalsUI("loading");
 
   let fetchStarted = false;
+  let fetchFinished = false;
   const run = async () => {
     if (fetchStarted) return;
     fetchStarted = true;
@@ -533,6 +547,7 @@ function scheduleGoogleDistanceFetch(days) {
     } catch (err) {
       console.error("Google distance fetch:", err);
     } finally {
+      fetchFinished = true;
       updateTotalRouteDistanceUI(days);
     }
   };
@@ -560,6 +575,13 @@ function scheduleGoogleDistanceFetch(days) {
       }
     }, 50);
   };
+
+  window.setTimeout(() => {
+    if (!fetchFinished && fetchStarted) {
+      console.warn("[Directions] Safety timeout — forcing UI refresh (some requests may still be pending).");
+      updateTotalRouteDistanceUI(days);
+    }
+  }, 120000);
 
   if (tryStart()) return;
   if (window.__googleMapsJsReady) {
