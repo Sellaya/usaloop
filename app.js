@@ -1982,10 +1982,106 @@ function syncDayDetailsFromHash() {
   if (node && node.tagName === "DETAILS") node.open = true;
 }
 
+/** Render the YouTube content-creation guide section. */
+function renderContentCreation(ccData) {
+  const root = document.getElementById("content-list");
+  if (!root || !ccData?.days?.length) return;
+  root.innerHTML = "";
+
+  ccData.days.forEach((day) => {
+    const card = el("details", { class: "cc-card" });
+
+    // Summary row
+    const sum = el("summary");
+    sum.appendChild(el("span", { class: "cc-day-badge", text: `Day\n${day.dayIndex}` }));
+    const sumText = el("div", { class: "cc-summary-text" });
+    sumText.appendChild(el("div", { class: "cc-video-title", text: day.videoTitle || `Day ${day.dayIndex}` }));
+    if (day.hook) {
+      sumText.appendChild(el("div", { class: "cc-hook-preview", text: `"${day.hook}"` }));
+    }
+    sum.appendChild(sumText);
+    sum.appendChild(el("span", { class: "cc-chevron", text: "›" }));
+    card.appendChild(sum);
+
+    const body = el("div", { class: "cc-body" });
+
+    // Helper to create a labelled section
+    const addSection = (modClass, label, contentFn) => {
+      const s = el("div", { class: `cc-section cc-section--${modClass}` });
+      s.appendChild(el("div", { class: "cc-section-label", text: label }));
+      contentFn(s);
+      body.appendChild(s);
+    };
+
+    // Hook
+    if (day.hook) {
+      addSection("hook", "🎬 Opening hook", (s) => {
+        s.appendChild(el("p", { class: "cc-hook-text", text: day.hook }));
+      });
+    }
+
+    // Story arc
+    if (day.storyArc) {
+      addSection("arc", "📖 Story arc", (s) => {
+        s.appendChild(el("p", { class: "cc-arc-text", text: day.storyArc }));
+      });
+    }
+
+    // Grid: shots + talking points
+    const grid = el("div", { class: "cc-grid" });
+
+    if (day.shots?.length) {
+      const s = el("div", { class: "cc-section cc-section--shots" });
+      s.appendChild(el("div", { class: "cc-section-label", text: "📷 Shots to get" }));
+      const ul = el("ul", { class: "cc-list" });
+      day.shots.forEach((item) => ul.appendChild(el("li", { text: item })));
+      s.appendChild(ul);
+      grid.appendChild(s);
+    }
+
+    if (day.talkingPoints?.length) {
+      const s = el("div", { class: "cc-section cc-section--talk" });
+      s.appendChild(el("div", { class: "cc-section-label", text: "🎙 Talking points" }));
+      const ul = el("ul", { class: "cc-list" });
+      day.talkingPoints.forEach((item) => ul.appendChild(el("li", { text: item })));
+      s.appendChild(ul);
+      grid.appendChild(s);
+    }
+
+    if (grid.children.length) body.appendChild(grid);
+
+    // Facts
+    if (day.facts?.length) {
+      addSection("facts", "💡 Interesting facts", (s) => {
+        const ul = el("ul", { class: "cc-list" });
+        day.facts.forEach((item) => ul.appendChild(el("li", { text: item })));
+        s.appendChild(ul);
+      });
+    }
+
+    // Culture
+    if (day.culture) {
+      addSection("culture", "🌍 Culture & context", (s) => {
+        s.appendChild(el("p", { class: "cc-culture-text", text: day.culture }));
+      });
+    }
+
+    // CTA
+    if (day.cta) {
+      addSection("cta", "💬 Audience CTA", (s) => {
+        s.appendChild(el("div", { class: "cc-cta-box", text: day.cta }));
+      });
+    }
+
+    card.appendChild(body);
+    root.appendChild(card);
+  });
+}
+
 /** Highlights jump nav to match current section hash (falls back to Overview). */
 function syncJumpNav() {
   const raw = window.location.hash.slice(1);
-  const sectionIds = new Set(["overview", "glance", "days", "checklists", "before", "emergency", "links"]);
+  const sectionIds = new Set(["overview", "glance", "days", "content", "checklists", "before", "emergency", "links"]);
   const active = raw && sectionIds.has(raw) ? raw : "overview";
   document.querySelectorAll("nav.jump a").forEach((a) => {
     const href = a.getAttribute("href") || "";
@@ -1997,10 +2093,11 @@ function syncJumpNav() {
 async function main() {
   const banner = document.getElementById("load-error");
   try {
-    const [tripRes, babRes, routeRes] = await Promise.all([
+    const [tripRes, babRes, routeRes, ccRes] = await Promise.all([
       fetch("data/trip.json", { cache: "no-store" }),
       fetch("data/bab-hosts.json", { cache: "no-store" }),
       fetch("data/route-overlays.json", { cache: "no-store" }),
+      fetch("data/content-creation.json", { cache: "no-store" }),
     ]);
     if (!tripRes.ok) throw new Error(`trip.json HTTP ${tripRes.status}`);
     const data = await tripRes.json();
@@ -2013,6 +2110,10 @@ async function main() {
     if (routeRes.ok) {
       const pack = await routeRes.json();
       routeMeta = applyRouteOverlays(data.days, pack);
+    }
+    if (ccRes.ok) {
+      const ccData = await ccRes.json();
+      renderContentCreation(ccData);
     }
     renderTrip(data, babHostsMap, routeMeta);
     scheduleGoogleDistanceFetch(data.days, data.trip);
