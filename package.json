@@ -2,6 +2,7 @@
   "name": "usaloop-itinerary",
   "private": true,
   "scripts": {
-    "build": "node scripts/inject-maps-key.js"
+    "build": "node scripts/inject-maps-key.js",
+    "dev": "npm run build && npx --yes serve . -l 8765"
   }
 }

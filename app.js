@@ -354,7 +354,7 @@ function initRouteTotalsUI(phase) {
   if (phase === "loading") {
     if (hero) {
       hero.hidden = false;
-      hero.classList.remove("hero-route-total--muted");
+      hero.classList.remove("hero-route-total--muted", "hero-route-total--setup");
       hero.textContent = "Full route: calculating from Google Maps (sum of daily legs)…";
     }
     if (overview) {
@@ -375,15 +375,33 @@ function initRouteTotalsUI(phase) {
   if (phase === "nokey") {
     if (hero) {
       hero.hidden = false;
-      hero.classList.add("hero-route-total--muted");
-      hero.textContent =
-        "Full-route total: set GOOGLE_MAPS_API_KEY in .env (or Vercel env), run npm run build, reload.";
+      hero.classList.add("hero-route-total--muted", "hero-route-total--setup");
+      hero.innerHTML = "";
+      hero.appendChild(el("strong", { text: "Route totals load from Google Directions" }));
+      const hint = el("div", { class: "hero-route-total-setup" });
+      hint.appendChild(
+        el("p", {
+          class: "hero-route-total-setup__line",
+          text: "Local: add GOOGLE_MAPS_API_KEY to .env, then run npm run dev (builds config + serves on :8765).",
+        })
+      );
+      hint.appendChild(
+        el("p", {
+          class: "hero-route-total-setup__line",
+          text: "Vercel: set GOOGLE_MAPS_API_KEY for Production → Redeploy. Cloud Console: Maps JavaScript API + Directions API (Legacy) + billing.",
+        })
+      );
+      hero.appendChild(hint);
     }
     if (overview) {
       overview.hidden = false;
       overview.className = "overview-route-total muted";
-      overview.textContent =
-        "Full route uses Google Maps Platform (Directions). Add GOOGLE_MAPS_API_KEY to .env or Vercel, then deploy / npm run build.";
+      overview.innerHTML = "";
+      overview.appendChild(
+        el("p", {
+          text: "Per-day km use the same key. After the key is live, reload — totals appear here and in the table footer.",
+        })
+      );
     }
     if (tfoot) tfoot.hidden = true;
   }
@@ -428,6 +446,7 @@ function updateTotalRouteDistanceUI(days) {
     if (hero) {
       hero.hidden = false;
       hero.classList.add("hero-route-total--muted");
+      hero.classList.remove("hero-route-total--setup");
       hero.textContent = err;
     }
     if (overview) {
@@ -451,7 +470,7 @@ function updateTotalRouteDistanceUI(days) {
 
   if (hero && fmt) {
     hero.hidden = false;
-    hero.classList.remove("hero-route-total--muted");
+    hero.classList.remove("hero-route-total--muted", "hero-route-total--setup");
     hero.innerHTML = "";
     hero.appendChild(el("strong", { text: `Full route (Google Maps): ${fmt.primaryLine}` }));
     if (totalDurationLabel) {
