@@ -414,7 +414,38 @@
     },
     {
       "dayIndex": 15,
-      "videoTitle": "Zion at the Horizon — Riding the Desert South to St. George | Day 15",
+      "videoTitle": "Moab Zero Day — Arches, Dead Horse Point, and the Art of Slowing Down | Day 15",
+      "hook": "I have been riding since Day 1. Today I don't ride. Today, I walk into the oldest stone on Earth and watch the sun rise through a hole in a cliff.",
+      "storyArc": "The rare zero day. Arches National Park at dawn — Delicate Arch hike while the rock is orange and cool. Dead Horse Point SP mid-morning: 600 meters above the Colorado River, a horseshoe meander so perfect it looks fake. Moab town in the afternoon: the culture of an outdoor desert town, gear shops, resupply, local color. Evening: the reflection that only comes from stillness after weeks of motion.",
+      "shots": [
+        "Pre-dawn departure from camp/host — the bike parked, a hiking bag on your back instead",
+        "Arches NP entrance sign at first light",
+        "Delicate Arch: the full hike — the surprise of walking over a slickrock ridge and suddenly seeing it",
+        "Framing yourself inside the arch — the classic composition",
+        "Colorado River from Dead Horse Point: the full horseshoe bend from 600 m above",
+        "Moab Main Street at midday: the outdoor-sports-town vibe (Gear shops, ice cream, other riders)",
+        "Evening: bike sitting in the garage / camp. Rider sitting still. No helmet. Just the desert air."
+      ],
+      "facts": [
+        "Arches National Park contains more than 2,000 natural stone arches — the highest concentration of natural arches in the world. Delicate Arch, at 65 feet tall, is Utah's official state symbol and appears on the Utah license plate.",
+        "Delicate Arch was called 'Old Maid's Bloomers' by early settlers before being renamed. Edward Abbey, who worked as a park ranger at Arches in the 1950s, described it as 'a pair of … well, a large red sandstone arch' in his book Desert Solitaire — one of the most influential environmental books ever written.",
+        "Dead Horse Point gets its name from a legend that cowboys used the narrow neck of the mesa as a natural corral for wild mustangs — then allegedly abandoned a herd there without water. The mesa is only 30 meters wide at its narrowest neck.",
+        "The Colorado River visible from Dead Horse Point has carved through rock layers that are 300 million years old — the river itself is geologically young (5-6 million years). Water cutting through ancient stone over millions of years: this is what you are looking at.",
+        "Moab is the adventure sports capital of the American Southwest — it became famous for mountain biking in the late 1980s when the slickrock trail opened. The town has only ~5,000 residents but hosts hundreds of thousands of visitors annually. Film crews have used the surrounding landscape as a stand-in for Mars in multiple movies."
+      ],
+      "culture": "The Moab area sits within the ancestral territory of the Ute people, whose descendants still live in Utah. The name 'Moab' may derive from the Biblical Moab (a land beyond the known world) or from a Paiute word. Edward Abbey's Desert Solitaire, written right here, created the philosophical underpinning of the American wilderness preservation movement. A zero day in this landscape — no deadlines, no km counter — is not laziness. It is the reason to take a long trip.",
+      "talkingPoints": [
+        "Why zero days on a long trip are not wasted days — the physical and mental reset argument",
+        "Delicate Arch hike logistics: the 3.2-mile slickrock trail, why you go at dawn, what to carry",
+        "Dead Horse Point vs. Canyonlands: two world-class overlooks separated by a 30-minute drive",
+        "Moab's outdoor culture and why the DR650 fits perfectly in this town",
+        "Edward Abbey and Desert Solitaire: the book that made the desert political"
+      ],
+      "cta": "Have you ever taken a zero day mid-trip and felt guilty about it? Tell me how it turned out — in the comments below."
+    },
+    {
+      "dayIndex": 16,
+      "videoTitle": "Zion at the Horizon — Riding the Desert South to St. George | Day 16",
       "hook": "I-15 south from Moab: the desert turns colors you don't have names for.",
       "storyArc": "Long desert run south and west. Zion approaches — the canyon wall visible from the highway. St. George as a desert outpost: Brigham Young's winter escape, now a booming retirement city. Find dispersed camp outside town as the sun drops behind the Virgin River Gorge.",
       "shots": [
@@ -442,8 +473,8 @@
       "cta": "Tent camping or motel when you're solo-traveling? Tell me your preference and your reasoning."
     },
     {
-      "dayIndex": 16,
-      "videoTitle": "Crossing the Mojave — The Desert That Tests Everything | Day 16",
+      "dayIndex": 17,
+      "videoTitle": "Crossing the Mojave — The Desert That Tests Everything | Day 17",
       "hook": "The Mojave Desert in June. Pavement surface temperature: 65°C. Air temperature: 45°C. Engine temperature: climbing.",
       "storyArc": "Departure from St. George — the I-15 through Nevada's desert corridor. Valley of Fire: ancient red rock, the oldest in the region. Into California. Apple Valley arrival: suburban California adjacent to the Mojave. End the episode with a heat-management tutorial and the first whiff of Pacific air in the forecast.",
       "shots": [
@@ -471,62 +502,41 @@
       "cta": "Have you ever ridden or driven in extreme heat? What's the highest temperature you've endured? Tell me below."
     },
     {
-      "dayIndex": 17,
-      "videoTitle": "Pacific Coast Highway — The Day I'll Remember Forever | Day 17",
-      "hook": "I've been riding toward the Pacific Ocean for 16 days. Today, I smell salt water.",
-      "storyArc": "The emotional climax of the first half of the trip. Barstow to LA — navigate the California freeway system (culture note: lane positioning in CA). Break to the coast. PCH north through Malibu: cliffs, ocean, surfers, sunlight on water. Leo Carrillo camp arrival — the Pacific as a backdrop. This episode is emotional, cinematic, and celebratory.",
-      "shots": [
-        "First Pacific Ocean sight — pull over and react on camera",
-        "Santa Monica Pier — the western terminus of Route 66 (completes the Route 66 arc from Day 9)",
-        "PCH riding footage: coastal cliff one side, ocean the other",
-        "Malibu surfers from the road — wave and shaka",
-        "Leo Carrillo State Beach sunset: campfire, ocean sound, reflection",
-        "Stand in the Pacific Ocean — boots off, feet in the water"
-      ],
-      "facts": [
-        "Pacific Coast Highway (Highway 1) was built partially using prison labor in the 1930s — it was considered one of the most dangerous construction projects in California history.",
-        "Santa Monica Pier marks the western terminus of Route 66 — the 'End of the Trail' sign is mounted at the end of the pier. You rode from the Texas midpoint on Day 9; this closes the arc.",
-        "Leo Carrillo State Beach is named after actor and conservationist Leo Carrillo, who spent 18 years lobbying to keep California's beaches accessible to the public — he died in 1961 and his efforts directly shaped California's public beach laws.",
-        "Malibu is 21 miles of coastline with only about 13,000 permanent residents — yet it contains some of the highest-value residential real estate in the world.",
-        "California has legal lane-splitting (officially 'lane filtering') — it is the only US state where it is explicitly legal, but California DMV/CHP guidelines define the conditions (speed differential, safe speed, lane position). Always check the current CHP guidelines before filtering."
-      ],
-      "culture": "Arriving at the Pacific after riding from Canada carries a specific weight that is hard to explain to someone who hasn't done it. The continent is behind you. You are as far west as the road goes. For your audience, this is the emotional peak of the first arc of the journey — spend time here. The content you make at Leo Carrillo will be some of the most-watched of the series.",
-      "talkingPoints": [
-        "The Route 66 arc closes: the midpoint sign in Adrian Texas on Day 9, the end sign at Santa Monica today",
-        "California lane filtering: what it actually means and how to do it safely",
-        "The psychological reset of seeing the ocean after 17 days inland",
-        "Leo Carrillo campfire: off-camera conversation, quieter content"
-      ],
-      "cta": "What was the moment in your life where you felt like you'd finally made it somewhere? Tell me below."
-    },
-    {
       "dayIndex": 18,
-      "videoTitle": "Big Sur — The Most Dramatic Coastline in North America | Day 18",
-      "hook": "Big Sur has no cell service. No chain restaurants. No guardrails on some corners. That's not a bug.",
-      "storyArc": "PCH north from Malibu through Monterey, then into Big Sur. The road narrows, the scenery escalates, the phone goes silent. Bixby Creek Bridge. McWay Falls. Prewitt Ridge climb — the hidden BLM camp above the Pacific. Night: just wind, stars, the sound of ocean below.",
+      "videoTitle": "Pacific Ocean Arrived — PCH, Leo Carrillo, and Big Sur in One Epic Day | Day 18",
+      "hook": "I have been riding toward the Pacific for 17 days. Today I smell salt water. Then I keep riding — along the most famous coastline in America — until I camp above the ocean on a cliff with no guardrails and no cell service.",
+      "storyArc": "The day the continent opens up. Barstow to LA: navigate the California freeway system (a culture note for Canadian/international viewers on lane filtering). Then the emotional rupture: the Pacific Ocean in the windshield. Leo Carrillo State Beach (Malibu): park the bike, walk into the water, close the circle from Day 9's Route 66 midpoint. Then north on PCH: Santa Barbara, Morro Bay, the Big Sur cliffs, Bixby Creek Bridge. Prewitt Ridge at dusk: a rough dirt road climbs 1,000 feet above Hwy 1 to a dispersed camp on a cliff above the ocean. Stars and wave-sounds all night.",
       "shots": [
-        "Bixby Creek Bridge from the cliff above — the signature Big Sur shot",
-        "PCH hairpin corners through Big Sur — camera behind catching the lean",
+        "Barstow departure — 6:30 am, pre-dawn desert light",
+        "CA-14 into the LA basin: the Valley approach, the smog horizon",
+        "First Pacific Ocean sight from PCH — pull over and react on camera (this is the clip)",
+        "Santa Monica Pier — the 'End of the Trail' Route 66 sign. This closes the Day 9 arc",
+        "Leo Carrillo day stop: boots off, standing in the Pacific, GoPro rolling",
+        "PCH riding footage: cliff one side, open ocean the other — this is why people ride motorcycles",
+        "Bixby Creek Bridge from the cliff above — the signature Big Sur arch-over-canyon shot",
         "McWay Falls: waterfall directly onto the beach (Julia Pfeiffer Burns SP)",
-        "Big Sur coastline from above: cloud bank, deep blue Pacific",
-        "Prewitt Ridge dirt road climb — showing the turn-off and the ascent",
-        "Camp on the ridge: cliff edge, ocean 1,000 feet below"
+        "Prewitt Ridge dirt road climb — the turn-off and the rough ascent",
+        "Camp: edge of the cliff, ocean 1,000 feet below, sunset, tent"
       ],
       "facts": [
-        "Big Sur is approximately 90 miles long — there is no town, no chain of any kind, and no reliable cell service for most of its length. This is deliberate: residents have repeatedly rejected development proposals.",
-        "Bixby Creek Bridge is 714 feet long and 260 feet above the canyon — when completed in 1932 it was one of the longest single-span concrete bridges in the world.",
-        "Henry Miller, the novelist, lived in Big Sur from 1944 to 1962 and wrote extensively about its effect on his imagination. His book Big Sur and the Oranges of Hieronymus Bosch described it as 'the face of the earth as the Creator intended it to look.'",
-        "Highway 1 through Big Sur regularly closes due to landslides — sections have slid into the ocean multiple times in the past decade. Check Caltrans road conditions before riding.",
-        "Prewitt Ridge Road is a dirt and gravel BLM access road that climbs 1,000+ feet above Highway 1 to dispersed camping sites — it is known primarily to locals and overlanders and offers arguably the most dramatic camping view in California."
+        "Pacific Coast Highway (Highway 1) was built partially using prison labor in the 1930s — considered one of the most dangerous construction projects in California history. Multiple sections have since slid into the ocean and been rebuilt.",
+        "Santa Monica Pier marks the western terminus of Route 66 — the 'End of the Trail' sign is at the end of the pier. If you rode any part of Route 66 on Day 9, standing here closes a 2,400-mile arc.",
+        "Leo Carrillo State Beach is named after actor and conservationist Leo Carrillo, who spent 18 years lobbying to keep California's beaches publicly accessible. His efforts directly shaped California beach law — most beaches in the state must remain publicly accessible because of the California Coastal Act he influenced.",
+        "Big Sur is approximately 90 miles long with no town, no chain restaurants, and no reliable cell service for most of its length. This is deliberate: residents have repeatedly defeated development proposals since the 1960s.",
+        "Bixby Creek Bridge is 714 feet long and 260 feet above the canyon — when completed in 1932 it was one of the longest single-span concrete bridges in the world. It has appeared in more car advertisements and movies than almost any other bridge in the US.",
+        "Prewitt Ridge Road is a BLM access road that climbs 1,000+ feet above Highway 1 to dispersed camping sites — known primarily to locals and overlanders, with arguably the most dramatic camping view in California.",
+        "California is the only US state with explicitly legal lane filtering (splitting) — California DMV/CHP guidelines define the speed differential and positioning rules. Check CHP's current guidelines before filtering."
       ],
-      "culture": "Big Sur has attracted artists, writers, and spiritual seekers since the 1940s — the Esalen Institute (founded 1962) is literally built into the cliffs here and invented the human potential movement. The culture of the place is anti-commercial, fiercely protective of its wildness, and quietly spiritual. Riding through it on a loaded bike, without a deadline, is exactly the spirit it was built to reward.",
+      "culture": "Arriving at the Pacific after crossing the continent carries a weight that can't be manufactured. The continent is behind you. You are as far west as the road goes. Leo Carrillo is your Pacific arrival moment — budget time here. Big Sur, meanwhile, has attracted artists, writers, and spiritual seekers since the 1940s. The Esalen Institute (founded 1962) is literally built into these cliffs and invented the human potential movement. Henry Miller lived here from 1944–1962. Riding through it on a loaded bike, without a deadline, is exactly the spirit it was built to reward.",
       "talkingPoints": [
-        "The Prewitt Ridge camp: how to find it, what to expect, the road conditions for a loaded ADV bike",
-        "Big Sur's deliberate rejection of commercialization — why it matters and who fights for it",
-        "Tar snakes and wet pavement on Highway 1: the grip conditions change constantly",
-        "Henry Miller and the literary tradition of Big Sur as a place that changes people"
+        "The Route 66 arc closes: midpoint sign in Adrian, Texas on Day 9 — the end sign at Santa Monica today",
+        "California lane filtering: what it actually is, what CHP says, how to do it safely on a loaded bike",
+        "Leo Carrillo as a day stop vs. overnight: why the extra 300 km to Big Sur is worth it",
+        "The psychological reset of ocean after 17 days of desert and mountains",
+        "Prewitt Ridge logistics: the turn-off, the road condition, what to carry, arrive before dark",
+        "Big Sur's deliberate rejection of commercialization — why it matters and who fights for it"
       ],
-      "cta": "What's the most isolated place you've slept on a trip? I want to know — and see photos if you have them."
+      "cta": "What was the moment in your life where you finally made it somewhere you'd been riding toward? Tell me the story below."
     },
     {
       "dayIndex": 19,
@@ -963,65 +973,44 @@
     },
     {
       "dayIndex": 34,
-      "videoTitle": "The Third Coast — Lake Michigan and the Most Underappreciated Shoreline in America | Day 34",
-      "hook": "Lake Michigan is the only Great Lake entirely within the United States. It has 1,640 miles of shoreline. Nobody talks about it like they should.",
-      "storyArc": "Oconomowoc east toward Lake Michigan. The Third Coast: fresh water, sand dunes, lighthouses, fruit orchards. Indiana Dunes: some of the highest freshwater dunes in the world. Cross into Michigan at Benton Harbor / St. Joseph. The fruit belt: peaches, blueberries, cherries from Lake Michigan's temperature-moderating effect.",
+      "videoTitle": "The Third Coast, the Border, and the Last Night Before Home | Day 34",
+      "hook": "Lake Michigan is 1,640 miles of shoreline that nobody talks about. Then, after lunch with a host in the fruit belt, I cross back into Canada — for the first time in 33 days.",
+      "storyArc": "Oconomowoc east toward Lake Michigan — the Third Coast revealing itself: sand dunes, orchards, lighthouses, fresh water the color of the Caribbean. Stop in Benton Harbor with John Cody Smith for lunch and filming — the economic and social story of this divided twin city. Then north and east to Port Huron, and the Blue Water Bridge: Canada. The CBSA crossing — coming home is a different experience than going in. Windsor/Sarnia to London, Ontario: the final overnight before Toronto. The trip is almost over, and you can feel it.",
       "shots": [
-        "Lake Michigan from I-94 or US-12: the first sight of the inland sea",
-        "Indiana Dunes: climbing a dune that has no business being this large",
-        "St. Joseph, MI: lighthouse on the pier, fresh water against a clear horizon",
-        "Michigan fruit stands: roadside produce in the fruit belt",
-        "Benton Harbor streets: the economic and demographic reality of the region"
+        "Lake Michigan from the highway: the first sight of the inland sea — it genuinely looks oceanic",
+        "Indiana Dunes (if routing through) — climbing the dune with Lake Michigan below",
+        "St. Joseph/Benton Harbor shoreline: lighthouse, fresh water, blue horizon",
+        "Benton Harbor stop with John Cody Smith: the human moment — conversation, food, the host culture",
+        "Michigan fruit belt: roadside peach stands, blueberry farms, cherry orchards",
+        "Port Huron/Blue Water Bridge approach — two countries separated by a channel of water",
+        "CBSA booth: coming home — 'where have you been?' '33 days in America.'",
+        "'Welcome to Ontario' sign — the reaction shot",
+        "London, Ontario evening: reflective, quiet, final night before home"
       ],
       "facts": [
-        "Lake Michigan is 307 miles long, 118 miles wide, and 925 feet deep — it contains 1,180 cubic miles of fresh water and is visible from space as a distinctive blue shape.",
-        "The Indiana Dunes contain some of the highest freshwater sand dunes in the world — Mount Baldy dune is 126 feet tall and moves approximately 4 feet inland every year as it migrates from the lake.",
-        "Michigan produces more varieties of fruit than any other state in the continental US — this is directly caused by Lake Michigan moderating temperatures in the 'fruit belt' along its eastern shore, preventing the extreme temperature swings that kill fruit trees.",
-        "Lake Michigan's 'Third Coast' produces about 75% of all tart cherries grown in the United States, with Traverse City, Michigan hosting an annual National Cherry Festival.",
-        "The Whirlpool Corporation, the world's largest manufacturer of home appliances, is headquartered in Benton Harbor, Michigan — in a city with one of the highest poverty rates in the US."
+        "Lake Michigan is 307 miles long, 118 miles wide, and 925 feet deep — it contains 1,180 cubic miles of fresh water and is visible from space. It is the only Great Lake entirely within the United States.",
+        "The Indiana Dunes include Mount Baldy, a dune 126 feet tall that migrates approximately 4 feet inland every year as wind moves it away from Lake Michigan.",
+        "Michigan produces more varieties of fruit than any other continental US state — this is directly caused by Lake Michigan moderating temperatures in the 'fruit belt' along its eastern shore. Michigan produces ~75% of all US tart cherries.",
+        "The Whirlpool Corporation, the world's largest home appliance manufacturer, is headquartered in Benton Harbor — in a city with one of the highest poverty rates in Michigan. St. Joseph, one mile away, has a median household income more than four times higher.",
+        "The Blue Water Bridge (Port Huron–Sarnia) consists of two parallel spans — the original 1938 suspension bridge and the 1997 cable-stayed addition. Together they handle over 8 million vehicle crossings per year.",
+        "Windsor, Ontario is at approximately 42°18'N — geographically south of Chicago, Cleveland, and Portland, Oregon. It is the southernmost point in Canada and the only place where you drive south to enter the United States from Canada.",
+        "London, Ontario was seriously considered as the capital of the Province of Canada in the 1840s — it lost to Ottawa primarily for reasons of political balance between French and English Canada."
       ],
-      "culture": "Benton Harbor and its neighbor St. Joseph are geographically adjacent but economically and racially separated in a way that has been studied as a case study in American residential segregation. The story of these two communities is a microcosm of structural inequality in the Midwest. It's worth acknowledging without oversimplifying.",
+      "culture": "The Windsor-Detroit crossing has a specific cultural weight for Canadians — it is the most economically important land border crossing in North America, handling $250 million USD in trade per day. The Blue Water Bridge crossing at Port Huron/Sarnia is quieter and often faster on holiday weekends. Crossing back into Canada after 33 days in the US produces a specific re-orientation: the road signs change, the measurement system changes, the flag changes, and you realize how much of the last month you spent adapting to a country that is almost — but not quite — home.",
       "talkingPoints": [
-        "The Great Lakes as the world's largest fresh water system — why this is the most important geography in North America",
-        "Indiana Dunes: a national park that most Americans don't know is a national park",
-        "The fruit belt: how a lake creates a microclimate that grows world-class cherries and peaches",
-        "Benton Harbor vs. St. Joseph: the story of two cities separated by a mile and decades of inequality"
+        "The Great Lakes as the world's largest fresh water system — the most strategically important geography in North America",
+        "Benton Harbor vs. St. Joseph: two cities separated by a mile and decades of structural inequality",
+        "The fruit belt microclimate: how a lake creates a world-class agricultural zone",
+        "Crossing back into Canada: what 33 days in America did to your sense of home",
+        "London, Ontario: the city that might have been Canada's capital",
+        "Jul 4 afternoon border crossing: why the traffic is lighter going into Canada today than tomorrow"
       ],
-      "cta": "Great Lakes or Ocean? Which do you prefer for a summer trip — and why?"
+      "cta": "If you've crossed the Canada-US border by motorcycle — tell me your crossing story. Best or worst experience. I want to know."
     },
     {
       "dayIndex": 35,
-      "videoTitle": "Crossing Back Into Canada — 35 Days, One Border, and What America Taught Me | Day 35",
-      "hook": "35 days ago, I rode across the US border with everything I owned in two panniers. Today, I ride back across — and I am not the same person.",
-      "storyArc": "Benton Harbor north to the Michigan border crossing. The Ambassador Bridge or Blue Water Bridge at Port Huron/Sarnia. The CBSA crossing — the differences between going in (CBP) and coming home (CBSA). Windsor, Ontario: the southernmost city in Canada, south of much of the US. London, Ontario as the overnight stop — the final night before home.",
-      "shots": [
-        "Ambassador Bridge or Blue Water Bridge approach: industrial scale, two nations separated by water",
-        "CBSA booth: coming home moment — 'where are you coming from?' 'America.'",
-        "'Welcome to Ontario' sign — reaction shot",
-        "Windsor, Ontario: surprisingly urban, surprisingly close to Detroit",
-        "Highway 401 west of Windsor: the busiest highway in North America",
-        "London, Ontario evening: reflective, quiet, one night from home"
-      ],
-      "facts": [
-        "The Ambassador Bridge between Windsor, Ontario and Detroit, Michigan is the busiest international land crossing in North America — approximately $250 million USD in trade crosses it every day.",
-        "Windsor, Ontario sits at approximately 42°18'N — which makes it south of most of the northern US cities and actually south of Buffalo, Cleveland, Chicago, and Portland, Oregon.",
-        "The Detroit-Windsor Tunnel, running under the Detroit River, was the first international underwater road tunnel in the world when it opened in 1930.",
-        "London, Ontario was seriously considered as the capital of the Province of Canada in the 1840s — it was eventually passed over in favor of Ottawa partly for political balance between English and French Canada.",
-        "The Gordie Howe International Bridge, currently under construction between Windsor and Detroit, will be the longest cable-stayed bridge in North America when completed — it is named after the Windsor-born hockey legend."
-      ],
-      "culture": "The Windsor-Detroit crossing has a specific cultural weight for Canadians — it is the only place in Canada where you drive south to enter the United States. Windsor has historically had the closest cultural relationship with the US of any Canadian city, and the border here is more porous in daily life (commuters, trade, family) than almost anywhere else on the 5,525-mile boundary.",
-      "talkingPoints": [
-        "The emotional experience of re-entering Canada: what 35 days in America did to your sense of home",
-        "Windsor's geographic anomaly: the most southerly Canadian city, south of most American cities",
-        "The $250M/day Ambassador Bridge: the economic spine of the Canada-US relationship",
-        "London, Ontario: the city that might have been the capital of Canada"
-      ],
-      "cta": "What does coming home feel like after a long trip? Tell me your ritual — first thing you do when you walk through the door."
-    },
-    {
-      "dayIndex": 36,
-      "videoTitle": "36 Days Across America — Home. What I Learned. What Changed. | Day 36 (FINALE)",
-      "hook": "36 days ago, I left this driveway. Today, I come back. Same bike. Different person.",
+      "videoTitle": "35 Days Across America — Home. What I Learned. What Changed. | Day 35 (FINALE)",
+      "hook": "35 days ago, I left this driveway. Today, I come back. Same bike. Different person.",
       "storyArc": "The finale. London to Toronto on the 401. Don't rush this — arrive slowly and deliberately. The city revealing itself: the skyline, the CN Tower, the familiar streets. Helmet off. Engine off. The ritual of arriving. Then: the reflection video. This is your season finale — the emotional capstone of the entire series.",
       "shots": [
         "London departure: last morning on the road, early light",
@@ -1040,7 +1029,7 @@
       ],
       "culture": "Coming home from a long solo ride is a specific kind of transition. The world that seemed large is suddenly compressed back into the familiar. The things that felt permanent — the routine, the house, the neighborhood — have the strange quality of being both exactly the same and completely changed. For a YouTube audience that has watched 36 episodes, this moment is what they've been building toward. Give it the time it deserves.",
       "talkingPoints": [
-        "The 36-day recap: the three chapters (East, West, Home) and what each taught you",
+        "The 35-day recap: the three chapters (East, West, Home) and what each taught you",
         "What the DR650 taught you — the bike that made all of this possible",
         "What you'd do differently: the honest answer",
         "A First Nations land acknowledgment for ending a journey through Indigenous North America",

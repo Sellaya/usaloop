@@ -1,19 +1,19 @@
 {
   "meta": {
-    "title": "Toronto ↔ Southwest loop — 36-day motorcycle itinerary",
+    "title": "Toronto ↔ Southwest loop — 35-day motorcycle itinerary",
     "timezone": "America/Toronto",
     "currency": "USD",
     "units": "metric"
   },
   "trip": {
-    "name": "Toronto → Texas → West Coast → Rockies → Home (36 days)",
+    "name": "Toronto → Texas → West Coast → Rockies → Home (35 days)",
     "tagline": "USA loop — your ride, mapped",
     "startDate": "2026-06-01",
-    "endDate": "2026-07-06",
+    "endDate": "2026-07-05",
     "homeBase": "Toronto, ON",
     "bike": "Suzuki DR650",
     "statsChips": [
-      "36 days",
+      "35 days",
       "Live distances",
       "Live weather",
       "Check Maps on ride day",
@@ -22,7 +22,7 @@
     "legs": {
       "1": "Toronto → Fort Worth · Days 1–8",
       "2": "Fort Worth → Seattle · Days 9–23",
-      "3": "Seattle → Toronto · Days 24–36"
+      "3": "Seattle → Toronto · Days 24–35"
     },
     "riders": [
       {
@@ -31,7 +31,7 @@
         "plate": ""
       }
     ],
-    "overviewLead": "36-day Canada ↔ USA motorcycle loop in three chapters: east → Texas home → west coast, Cascades, Yellowstone, and home through the plains. Includes a Finger Lakes → New York segment before DC and Luray.",
+    "overviewLead": "35-day Canada ↔ USA motorcycle loop in three chapters: east → Texas home → west coast, Cascades, Yellowstone, and home through the plains. Includes a Finger Lakes → New York segment before DC and Luray.",
     "regionChips": [
       "Finger Lakes",
       "New York / DC",
@@ -58,7 +58,7 @@
       "Summer wildfire smoke can hit NorCal, PNW, Rockies, and high plains on short notice — check AQI/smoke maps for your corridor the morning you ride; shorten or reroute when air is unhealthy.",
       "Every iOverlander / BLM / dispersed GPS pin: confirm land status, MVUM, and fire closures the same week you stay — crowdsourced pins are not permission to camp."
     ],
-    "summary": "The ride strings together the Finger Lakes, a New York metro stop, Washington DC and Luray, southwest Virginia, Great Smoky approaches, Nashville–Memphis, Arkansas, a Fort Worth home stop, then the high plains and I-40 toward New Mexico. From there: San Juan Mountains and Million Dollar Highway, Utah (Mexican Hat, Page, Bryce, Moab, Arches, St. George), the California coast to the redwoods, Oregon and the Columbia River Gorge, Seattle, US-20 and Spokane, Lolo Pass, Yellowstone and the Beartooth corridor, and a long return through the Dakotas and Great Lakes to Ontario, with a final night in London before Toronto.",
+    "summary": "35-day ride stringing together the Finger Lakes, a New York metro stop, Washington DC and Luray, southwest Virginia, Great Smoky approaches, Nashville–Memphis, Arkansas, a Fort Worth home stop, then the high plains and I-40 toward New Mexico. From there: San Juan Mountains and Million Dollar Highway, Utah (Mexican Hat, Page, Bryce, Moab with a full rest day at Arches, St. George), the California coast (Leo Carrillo day stop, Big Sur, redwoods), Oregon and the Columbia River Gorge, Seattle, US-20 and Spokane, Lolo Pass, Yellowstone and the Beartooth corridor, and a long return through the Dakotas and Great Lakes to Ontario, with a final night in London before Toronto.",
     "riderName": "Ali",
     "riderEmail": "",
     "riderPhone": ""
@@ -558,7 +558,71 @@
     {
       "dayIndex": 15,
       "date": "2026-06-15",
-      "title": "Arches → St. George (UT)",
+      "title": "Moab — Arches & Dead Horse Point (Rest/Exploration Day)",
+      "distanceKm": 0,
+      "difficulty": "EASY",
+      "routeLine": "Zero riding day. Base: Moab, UT. Arches NP is 8 km from town — drive or ride out early before the heat and tourist crowds build.",
+      "fuelNotes": "No fuel needed — day ride within Moab area only.",
+      "terrain": "Paved park roads and short walking trails. No challenging riding.",
+      "highlights": [
+        "Arches National Park — Delicate Arch hike (5 km round trip, start by 7 am)",
+        "Dead Horse Point State Park — 600 m canyon rim overlook above the Colorado River",
+        "Canyonlands NP Island in the Sky (optional 30-min drive from Dead Horse Point)",
+        "Moab town: gear shops, resupply, laundry, bike check"
+      ],
+      "stops": [
+        {
+          "label": "Arches NP timed entry",
+          "place": "Arches National Park Entrance",
+          "type": "sight",
+          "notes": "Reserve timed entry on Recreation.gov — required May 1–Oct 31. Book as soon as possible.",
+          "mapsUrl": "https://www.recreation.gov/ticket/facility/234635"
+        },
+        {
+          "label": "Dead Horse Point SP",
+          "place": "Dead Horse Point State Park, UT",
+          "type": "sight",
+          "notes": "600 m above the Colorado River — one of the most photographed overlooks in the USA. Entry fee ~$20.",
+          "mapsUrl": "https://www.google.com/maps/search/Dead+Horse+Point+State+Park"
+        }
+      ],
+      "lodging": {
+        "heading": "Stay (Moab — second night)",
+        "name": "Robert VandenBroeke",
+        "address": "Moab, UT 84532",
+        "phone": "+1-435-220-0576",
+        "email": "rjvandenbroeke@gmail.com",
+        "notes": "Second consecutive night — confirm availability with host for 2-night stay.",
+        "babMergeId": "robert-vandenbroeke"
+      },
+      "lodgingAlternatives": [
+        {
+          "heading": "Camping (~$20/night)",
+          "name": "Camp area (GPS)",
+          "notes": "GPS 38.55729, -109.58466 — verify name, amenities, and booking.",
+          "mapsUrl": "https://www.google.com/maps?q=38.55729,-109.58466"
+        },
+        {
+          "heading": "Motel option",
+          "name": "Any Moab motel (book ahead)",
+          "notes": "Moab fills fast in June — if host can only do 1 night, book motel for this night."
+        }
+      ],
+      "risks": [
+        "Moab summer heat — Arches by 7 am, off trail by 11 am",
+        "Arches timed entry sells out weeks in advance — must pre-book",
+        "Dehydration risk on Delicate Arch hike — carry 2 L minimum"
+      ],
+      "weatherNotes": "June temperatures in Moab regularly exceed 38 °C (100 °F) by midday. All outdoor activity should be done before 10–11 am or after 5 pm.",
+      "planB": "If Arches entry not available, Dead Horse Point + Canyonlands Island in the Sky is an equally spectacular full day.",
+      "babAlternateIds": [
+        "robert-vandenbroeke"
+      ]
+    },
+    {
+      "dayIndex": 16,
+      "date": "2026-06-16",
+      "title": "Moab → St. George (UT)",
       "distanceKm": 0,
       "terrain": "I-15 south — desert",
       "highlights": [
@@ -593,8 +657,8 @@
       "babAlternateIds": []
     },
     {
-      "dayIndex": 16,
-      "date": "2026-06-16",
+      "dayIndex": 17,
+      "date": "2026-06-17",
       "title": "St. George → Barstow (CA)",
       "distanceKm": 0,
       "terrain": "Mojave Desert — heat and wind",
@@ -618,67 +682,58 @@
       ]
     },
     {
-      "dayIndex": 17,
-      "date": "2026-06-17",
-      "title": "Barstow → Hollywood → Los Angeles",
-      "distanceKm": 0,
-      "terrain": "CA freeways — read current California DMV / CHP lane-splitting guidance before you ride; it is only allowed in specific situations (speed differential, lane position) — do not assume every freeway or speed is OK.",
-      "highlights": [
-        "Coastal swim / day stop — TBD (pick beach or cove)"
-      ],
-      "stops": [
-        {
-          "label": "To plan",
-          "place": "Coastal swim / day stop",
-          "type": "sight",
-          "notes": "Choose PCH pull-out or state beach with day parking."
-        }
-      ],
-      "lodging": {
-        "heading": "Camping",
-        "name": "Leo Carrillo State Park",
-        "address": "35000 Pacific Coast Hwy, Malibu, CA 90265",
-        "notes": "Book camp spot; popular — PCH access.",
-        "mapsUrl": "https://www.google.com/maps?q=34.0480,-118.9327"
-      },
-      "risks": [
-        "LA traffic",
-        "PCH weekend parking pressure"
-      ],
-      "planB": "Inland motel if PCH camps full.",
-      "babAlternateIds": [
-        "layla-sisney",
-        "anais-redlands"
-      ]
-    },
-    {
       "dayIndex": 18,
       "date": "2026-06-18",
-      "title": "Leo Carrillo → Prewitt Ridge Campground",
+      "title": "Barstow → Hollywood → Leo Carrillo (Day Stop) → Big Sur / Prewitt Ridge",
       "distanceKm": 0,
-      "terrain": "Big Sur coast — tight curves, fog",
+      "difficulty": "EPIC",
+      "routeLine": "Barstow → I-15 S → CA-14 → LA basin → PCH (Hwy 1) north through Malibu → Leo Carrillo State Park (2-3 hr day stop) → PCH north through Big Sur → Prewitt Ridge Campground. ~590 km total — longest riding day of the California leg. Start by 6:30 am to clear LA traffic.",
+      "fuelNotes": "Fuel in Barstow before departure. Next reliable fuel: Cambria or San Simeon (before Big Sur no-services stretch). Fill there.",
+      "terrain": "CA freeways to coast — read current California DMV / CHP lane-splitting guidance; only allowed in specific situations. PCH curves, tar snakes, patch pavement, damp fog — reduced grip even when dry. Prewitt Ridge final climb: rough dirt road.",
       "highlights": [
-        "Big Sur / Los Padres"
+        "First sight of the Pacific Ocean after 17 days inland — emotional milestone for video",
+        "Leo Carrillo State Park (Malibu) — 2-3 hr stop: swim, beach content, food",
+        "PCH north through Ventura, Santa Barbara, and San Luis Obispo county",
+        "Bixby Creek Bridge — iconic Big Sur arch bridge photo stop",
+        "McWay Falls / Julia Pfeiffer Burns SP — short walk, waterfall into the ocean",
+        "Prewitt Ridge — BLM dispersed camp with Pacific view"
       ],
       "stops": [
         {
-          "label": "Plan food resupply",
-          "place": "Groceries / meal stop (TBD)",
+          "label": "Day stop — Leo Carrillo",
+          "place": "Leo Carrillo State Park, Malibu, CA",
+          "type": "sight",
+          "notes": "2-3 hour stop. Beach, swim, content creation — this is your Pacific arrival moment. No overnight here.",
+          "mapsUrl": "https://www.google.com/maps?q=34.0480,-118.9327"
+        },
+        {
+          "label": "Food / fuel resupply",
+          "place": "Cambria or San Simeon, CA",
           "type": "food",
-          "notes": "Limited services on Hwy 1 — fuel and food before ridge road."
+          "notes": "Last reliable fuel before Big Sur. Fill tank and carry extra food — limited services on Hwy 1 north."
+        },
+        {
+          "label": "Photo stop — Bixby Creek Bridge",
+          "place": "Bixby Creek Bridge, Big Sur, CA",
+          "type": "sight",
+          "notes": "Pull over on north side for the classic arch-over-coast shot."
         }
       ],
       "lodging": {
         "name": "Prewitt Ridge Campground",
-        "notes": "Confirm road conditions for loaded bikes; carry water."
+        "notes": "Confirm road conditions for loaded DR650; carry 4 L water. Final climb is rough BLM dirt. Arrive before dark."
       },
       "risks": [
-        "Cliff exposure",
-        "Private road / gate policies — verify",
-        "Coastal Hwy 1: tar snakes, patch pavement, and damp fog — reduced grip in corners even when it’s not raining."
+        "LA traffic — depart Barstow by 6:30 am to beat morning rush",
+        "PCH weekend parking pressure at Malibu",
+        "Big Sur: Coastal Hwy 1 tar snakes, patch pavement, damp fog — reduced grip in corners",
+        "Prewitt Ridge: cliff exposure on approach road, private gate policies — verify access",
+        "Long day (~590 km) — monitor fatigue; Cambria is a bail-out overnight if needed"
       ],
-      "planB": "State park camp lower on Hwy 1 if ridge inaccessible.",
+      "planB": "If fatigued by Cambria: stay at state park camp (Hwy 1 corridor) and ride Prewitt Ridge the next morning before continuing north.",
       "babAlternateIds": [
+        "layla-sisney",
+        "anais-redlands",
         "darlene-morro",
         "jeff-rothman"
       ]
@@ -1153,55 +1208,54 @@
     {
       "dayIndex": 34,
       "date": "2026-07-04",
-      "title": "Oconomowoc → Benton Harbor (MI)",
+      "title": "Oconomowoc → Benton Harbor (Day Stop, John Cody Smith) → London, ON",
       "distanceKm": 0,
-      "terrain": "WI → MI lake corridor",
+      "difficulty": "LONG",
+      "routeLine": "Oconomowoc, WI → I-94 E → Benton Harbor, MI (visit John Cody Smith, 2 hr lunch stop) → US-12 or I-94 E → Port Huron, MI → Blue Water Bridge → Sarnia, ON → Hwy 402 E → London, ON. ~530 km total. Cross the border on Jul 4 afternoon — traffic flows INTO Canada on the American holiday, making it lighter than the July 5 return rush.",
+      "fuelNotes": "Fuel in Oconomowoc before departure. Fill again at Port Huron before the border — Canadian fuel is priced in litres and typically higher. Cross with a full tank.",
+      "terrain": "I-94 corridor — flat Midwest freeway. Blue Water Bridge (Port Huron–Sarnia): active CBSA crossing. Highway 402 to London: Ontario freeway, smooth.",
       "highlights": [
-        "Lake Michigan approaches"
+        "John Cody Smith visit (Benton Harbor area) — 2 hr lunch + content stop",
+        "Lake Michigan shoreline approach on I-94",
+        "Blue Water Bridge at Port Huron/Sarnia — re-entering Canada",
+        "Canadian border crossing: note CBSA declaration requirements (duty-free limits after 48 hrs)",
+        "London, ON overnight — final Canadian city before Toronto"
       ],
-      "stops": [],
-      "lodging": {
-        "heading": "Stay option",
-        "name": "John Cody Smith",
-        "address": "Coloma, MI",
-        "notes": "Near Benton Harbor / St. Joseph area."
-      },
-      "lodgingAlternatives": [
+      "stops": [
         {
-          "heading": "Stay option",
-          "name": "Alan Mussmann",
-          "address": "Three Oaks, MI",
-          "notes": "MI southwest corner alternative."
+          "label": "Day stop — John Cody Smith",
+          "place": "Coloma, MI (near Benton Harbor / St. Joseph)",
+          "type": "host",
+          "notes": "2 hr lunch and content stop. Confirm arrival window with John. No overnight — continuing to London, ON same day.",
+          "mapsUrl": "https://www.google.com/maps/search/Coloma+MI"
+        },
+        {
+          "label": "Border crossing",
+          "place": "Blue Water Bridge, Port Huron, MI → Sarnia, ON",
+          "type": "border",
+          "notes": "Jul 4 afternoon crossing into Canada is lighter than Jul 5. Have passport/NEXUS ready. Declare all items accurately to CBSA.",
+          "mapsUrl": "https://www.google.com/maps/search/Blue+Water+Bridge+Port+Huron"
         }
       ],
-      "risks": [],
-      "planB": "",
-      "babAlternateIds": []
+      "lodging": {
+        "name": "TBD — book London, ON",
+        "notes": "Any central London motel — book in advance. Last night before home leg tomorrow."
+      },
+      "risks": [
+        "Long day (~530 km) on US Independence Day — US-side traffic heavy mid-day; plan Benton Harbor stop early (11 am–1 pm) and border crossing by 3–4 pm",
+        "Blue Water Bridge border wait — check CBSA wait times that morning; have all documents ready",
+        "Michigan I-94 Jul 4 holiday traffic — allow extra time around Chicago-to-Detroit corridor",
+        "Canadian CBSA: strict about alcohol, firearms, and food items — declare everything"
+      ],
+      "weatherNotes": "July 4 in the Great Lakes region: typically warm (25–32 °C), possible afternoon thunderstorms. Check radar before departure.",
+      "planB": "If John Cody Smith visit runs long or traffic is severe, skip London and stay in Sarnia/Windsor area instead.",
+      "babAlternateIds": [
+        "john-cody-smith"
+      ]
     },
     {
       "dayIndex": 35,
       "date": "2026-07-05",
-      "title": "Benton Harbor → London (ON)",
-      "distanceKm": 0,
-      "terrain": "US-12 / Detroit–Windsor or Blue Water crossing — verify CBSA/NEXUS",
-      "highlights": [
-        "Canada re-entry",
-        "London overnight"
-      ],
-      "stops": [],
-      "lodging": {
-        "name": "TBD — book London, ON",
-        "notes": "Holiday weekend (Jul 4 US / Canada Day proximity) — book early."
-      },
-      "risks": [
-        "Border delays on summer holiday"
-      ],
-      "planB": "Sarnia–Port Huron crossing if Detroit is jammed.",
-      "babAlternateIds": []
-    },
-    {
-      "dayIndex": 36,
-      "date": "2026-07-06",
       "title": "Return home (London, ON → Toronto)",
       "distanceKm": 0,
       "terrain": "ON 401 — heavy traffic possible",
