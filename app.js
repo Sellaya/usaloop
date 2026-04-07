@@ -1774,7 +1774,7 @@ function appendDayRecommendations(body, day) {
 }
 
 function renderTrip(data, babHostsMap, routeMeta) {
-  const { meta, trip, links, days, checklists, emergency, beforeYouGo } = data;
+  const { meta, trip, links, days, checklists } = data;
   setTripDisplayMeta(meta);
 
   document.title = meta?.title || trip?.name || "Trip";
@@ -1946,31 +1946,6 @@ function renderTrip(data, babHostsMap, routeMeta) {
     grid.appendChild(col);
   });
   checkEl.appendChild(grid);
-
-  const beforeEl = document.getElementById("before-you-go");
-  beforeEl.innerHTML = "";
-  (beforeYouGo || []).forEach((t) => beforeEl.appendChild(el("li", { text: t })));
-
-  const emergEl = document.getElementById("emergency-root");
-  emergEl.innerHTML = "";
-  const ec = el("div", { class: "card" });
-  const lines = [
-    emergency?.insurancePhone && `Insurance: ${emergency.insurancePhone}`,
-    emergency?.roadside && `Roadside: ${emergency.roadside}`,
-    emergency?.embassy && `Embassy / consulate: ${emergency.embassy}`,
-    emergency?.bloodTypes && `Blood types: ${emergency.bloodTypes}`,
-    emergency?.notes,
-  ].filter(Boolean);
-  lines.forEach((t) => ec.appendChild(el("p", { text: t })));
-  if (emergency?.contacts?.length) {
-    const ul = el("ul", { class: "contacts" });
-    emergency.contacts.forEach((c) => {
-      const bit = [c.name, c.relation, c.phone].filter(Boolean).join(" — ");
-      ul.appendChild(el("li", { text: bit }));
-    });
-    ec.appendChild(ul);
-  }
-  emergEl.appendChild(ec);
 
   syncDayDetailsFromHash();
 }
@@ -2195,8 +2170,6 @@ function syncJumpNav() {
     "content",
     "homework",
     "checklists",
-    "before",
-    "emergency",
     "links",
   ]);
   const active = raw && sectionIds.has(raw) ? raw : "overview";
