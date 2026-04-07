@@ -1,15 +1,15 @@
 {
   "meta": {
-    "channelTheme": "Lifetime journey — solo adventure rider crossing North America on a Suzuki DR650",
-    "seriesTitle": "35 Days Across America",
-    "tone": "Personal, raw, authentic. Equal parts travel film and honest riding diary."
+    "channelTheme": "Continental motorcycle documentary — Suzuki DR650, verifiable geography, field-craft technique, zero travel-bro filler.",
+    "seriesTitle": "35 Days Across North America",
+    "tone": "Treat viewers as intelligent adults. Sound like a disciplined field journal: what to look for, how to film it, what can go wrong, what the maps actually say. Excitement comes from accuracy and stakes—not from exclamation marks."
   },
   "days": [
     {
       "dayIndex": 1,
       "videoTitle": "I Crossed Into the USA on a Motorcycle — Canada Border to Finger Lakes | Day 1",
-      "hook": "Passport out, engine running, border officer staring at the bike. This is the moment you stop planning and start riding — across an international border, alone, into America.",
-      "storyArc": "Start the episode at home — Toronto morning routine, gear-up, roll out. Build tension through the border crossing (the questions, the wait, the wave-through). Release into the open road of upstate New York. End on an emotional note at the host's front door: Day 1, done.",
+      "hook": "You are not ‘living your best life.’ You are executing a controlled international port-of-entry on two wheels—with cameras rolling.",
+      "storyArc": "Act I — departure and approach geometry (time to port, fuel, paperwork). Act II — primary inspection as procedure, not drama. Act III — first American miles: verify connectivity, tire temps, mental reset. Denouement — host arrival with enough light to read the ground you’ll sleep on.",
       "shots": [
         "Time-lapse leaving Toronto at dawn — CN Tower in background",
         "GoPro forward-facing on the 401 / QEW run to the border",
@@ -28,18 +28,26 @@
       ],
       "culture": "The US-Canada border is the longest undefended border in the world (5,525 miles) — yet crossing on a motorcycle with gear feels distinctly different from a car. American CBP officers often react with curiosity to solo moto travelers: be honest, be brief, keep your documents in an outer pocket.",
       "talkingPoints": [
-        "Why you chose the DR650 for this kind of trip",
-        "What it feels like emotionally to leave home for 35 days",
-        "The difference in road 'feel' the moment you cross into the US",
-        "Finger Lakes as an overlooked gem — wine country, deep glacial lakes, quiet roads"
+        "VO: contrast CBP’s job (risk triage) with your job (clean narrative + clean paperwork).",
+        "On-camera: show document sleeve and pannier map—teach, don’t perform surprise.",
+        "Explain glacial Finger Lakes as trenches—why weather stacks differently than flat Ontario.",
+        "Close with one honest fear you had at the booth—specific, not performative."
       ],
-      "cta": "Comment: What's one thing you'd pack for a 35-day US motorcycle loop? I'll reply to every comment on Day 1."
+      "cta": "Comment: What's one thing you'd pack for a 35-day US motorcycle loop? I'll reply to every comment on Day 1.",
+      "fieldGuide": [
+        "1️⃣ The border hack nobody repeats: rehearse a 15-second truth before you stop—home, tonight’s stop, trip purpose, approximate value of gear. Hesitation reads as inconsistency, not humility.",
+        "2️⃣ Documents in one sleeve, in order: passport, vehicle registration, insurance. Officers watch hands. Fumbling suggests first crossing or hidden nerves.",
+        "3️⃣ Watch the vehicle ahead: engine-on vs engine-off rules differ by booth and shift. Match behaviour; don’t restart until waved—noise signals anxiety.",
+        "4️⃣ Secondary inspection is rare for clean paperwork—usually agriculture, cash thresholds, or inconsistent story. Know every organic item in your kit (fruit, jerky, soil on boots).",
+        "5️⃣ First hour US-side: confirm phone data actually roams before you film. Dead SIM 40 km in is a production failure, not a ‘story beat.’",
+        "6️⃣ Finger Lakes are narrow north–south trenches—post-sunset inversions and fog banks are routine. Arrive with real daylight for unload, tent, and hazard scan—not hero shots in the dark."
+      ]
     },
     {
       "dayIndex": 2,
       "videoTitle": "Riding Into New York — Finger Lakes to Long Island on a DR650 | Day 2",
-      "hook": "Most riders avoid New York City entirely. I rode straight toward it.",
-      "storyArc": "Open with the beauty of upstate NY — quiet Finger Lakes roads, morning fog on the water. Contrast it with the growing density as you push toward the metro. Capture the Thruway toll plazas (cashless — talk about EZPass for Canadian plates). Deliver the 'city vs. open road' tension. Land in Southampton — old money, beach town, motorcycles attract stares.",
+      "hook": "Today isn’t scenery. It’s a lesson in how American road engineering changes when money and population density replace farmland.",
+      "storyArc": "Open on a quiet lake metric (temperature, wind, dew point). Transition to lane mathematics and toll infrastructure. Land in a social environment where your bike is an anomaly—film the contrast as anthropology, not insecurity.",
       "shots": [
         "Morning mist on one of the Finger Lakes — wide and slow",
         "NY Thruway open stretch — lanes wide, fields either side",
@@ -57,18 +65,26 @@
       ],
       "culture": "Long Island is two worlds: the working-class west end near Queens, and the ultra-wealthy East End (the Hamptons). Arriving on a loaded adventure bike in Southampton turns heads — the locals there are used to Ferraris, not DR650s. That contrast is your story.",
       "talkingPoints": [
-        "Navigating toll roads on Canadian plates without EZPass",
-        "The social geography of Long Island — diversity from west to east",
-        "Why a motorcycle rider feels out of place in the Hamptons — and why that's interesting",
-        "Setting up the next big day: NYC → DC → Shenandoah"
+        "Explain cashless toll capture for foreign plates—what actually hits your bill and when.",
+        "VO on Long Island’s west-to-east income gradient—one road, two economies.",
+        "Why DR650 ergonomics matter in stop-and-go parkway merges.",
+        "Tease tomorrow: monument sight-lines and I-95 throughput physics."
       ],
-      "cta": "Like this video if you've ever ridden somewhere you felt completely out of place — and loved it."
+      "cta": "Like this video if you've ever ridden somewhere you felt completely out of place — and loved it.",
+      "fieldGuide": [
+        "1️⃣ Thruway tolling without a transponder: know your plate class, keep a payment method that works at every plaza—some lanes are cashless only.",
+        "2️⃣ Density gradient: film exposure change (shoulder width, merge geometry, sight lines) as quantitative, not ‘vibes.’",
+        "3️⃣ Long Island sound-masking: ocean and traffic hide tire noise—check pressures at a full stop; you won’t hear a slow leak.",
+        "4️⃣ Hamptons land use: many shoulders are soft or no-parking—scouting a legal pullout beats a viral ticket.",
+        "5️⃣ Heat shimmer on I-495 is real refraction—long lenses exaggerate; wide establishes truth.",
+        "6️⃣ End-of-day: if hosted, record permission boundaries for interior audio—documentary ethics on day two already matter."
+      ]
     },
     {
       "dayIndex": 3,
       "videoTitle": "New York → Washington DC → Shenandoah Valley in One Day | Day 3",
-      "hook": "Three different worlds in one riding day: the biggest city in America, the capital of the free world, and one of the oldest mountain ranges on Earth.",
-      "storyArc": "Open with the chaos and energy of leaving NYC / Long Island. Build across the NJ/MD corridor — I-95 reality check. Arrive in DC: slow roll past monuments, Capitol, White House. The emotional pivot: leaving the power-center and climbing toward Luray — mountains rising in the mirror. End at Shenandoah with a sense of 'this is what America really looks like.'",
+      "hook": "Three physiographic provinces, one day—if you narrate only emotion, you waste the geography.",
+      "storyArc": "Structure as a transect: coastal plain → Piedmont → Blue Ridge foreland. Use map overlays sparingly but precisely. DC sequence is tight B-roll + VO; release into mountain air mass and cooling rates.",
       "shots": [
         "NYC skyline or bridge exit — wide, cinematic",
         "GoPro through NJ Turnpike and Delaware Memorial Bridge",
@@ -86,18 +102,26 @@
       ],
       "culture": "Riding through DC on a motorcycle is unlike anything else in America. The city was designed by French architect Pierre Charles L'Enfant in 1791 specifically to project power. Wide ceremonial boulevards, sight-lines to monuments, symbolic geometry — riding through it on a loaded bike makes all of that feel close and real.",
       "talkingPoints": [
-        "The weight of history in Washington DC — how it feels to ride past those monuments",
-        "I-95 corridor congestion reality — and how motorcycles deal with it",
-        "Luray Caverns as an underrated world-class wonder",
-        "The Shenandoah as the spine of eastern American history: Civil War battlefields within miles of the highway"
+        "VO: DC’s L’Enfant sightlines as design for power—how a rider experiences width and vista differently than a pedestrian.",
+        "Data beat: I-95 AADT context—why mirrors and escape paths matter.",
+        "Shenandoah: orographic lift in plain language.",
+        "Luray Caverns as karst—tie to regional hydrology if you visit."
       ],
-      "cta": "Drop a flag emoji for every US state you've visited. Let's see who's got the most."
+      "cta": "Drop a flag emoji for every US state you've visited. Let's see who's got the most.",
+      "fieldGuide": [
+        "1️⃣ DC on a bike: you are low-profile in a city designed for ceremonial vistas—plan sightlines; U-turn rules and parking enforcement are unforgiving.",
+        "2️⃣ Heat island + humidity: carburetion and rider hydration scale together—log fluid intake like you log fuel.",
+        "3️⃣ I-95 is throughput engineering—film merge physics and following distance, not just ‘traffic bad.’",
+        "4️⃣ Shenandoah ascent: brake fade on a loaded bike is cumulative—downshift before the smell starts.",
+        "5️⃣ Blue Ridge air mass: afternoon convection builds fast—check radar at fuel stops, not at the overlook.",
+        "6️⃣ End card: name three concrete differences between coastal plain riding and ridge-and-valley Appalachia—teach the map."
+      ]
     },
     {
       "dayIndex": 4,
       "videoTitle": "Riding the Blue Ridge Corridor — Virginia's Best Hidden Roads | Day 4",
-      "hook": "Virginia has roads that rival anything in the Alps. Most people drive past them on the Interstate.",
-      "storyArc": "The morning departure from Luray sets up this as a 'discovery day' — no mega landmarks, just the pure experience of riding southwest Virginia. Introduce the Blue Ridge Parkway concept. Find Natural Bridge. Deliver a personal reflection on what riding through American history actually means.",
+      "hook": "The Parkway is free because it’s a public trust—not because it’s ‘chill.’ Treat it like a flight check.",
+      "storyArc": "Morning: road-as-instrument (curve rhythm, sight lines). Midday: cultural waypoint (Natural Bridge) with geological timestamp. Late: small-town resupply and honest fatigue. No fake ‘discovery’—show preparation.",
       "shots": [
         "Blue Ridge Parkway entrance sign — classic wooden NPS marker",
         "Long sweeping BRP road ahead — no cars, autumn or summer light",
@@ -115,18 +139,26 @@
       ],
       "culture": "The Appalachian culture of southwest Virginia is distinct from the rest of the South and the rest of the Northeast — it has its own music (old-time, not country), its own food, its own way of dealing with strangers. Riders are usually welcomed with curiosity. This is the heartland of American folk culture.",
       "talkingPoints": [
-        "Why the Blue Ridge Parkway is one of the greatest engineering achievements in American history — and it's free to ride",
-        "The story of Natural Bridge: Jefferson, early America, colonial tourism",
-        "Appalachian identity — not a stereotype, a real living culture",
-        "Setting up the big emotional moment: riding into Tennessee tomorrow"
+        "BRP engineering history in one minute—Depression-era labor, design speed, no billboards by policy.",
+        "Jefferson’s purchase of Natural Bridge—property law as story, not trivia.",
+        "Mining legacy and modern SWVA economy—accuracy beats pity.",
+        "Tomorrow: liability and line choice on US-129."
       ],
-      "cta": "Have you ever been to Appalachia? Tell me what surprised you most."
+      "cta": "Have you ever been to Appalachia? Tell me what surprised you most.",
+      "fieldGuide": [
+        "1️⃣ BRP is park road, not racetrack—wildlife strike risk peaks at dawn/dusk; plan speed to stopping sight distance.",
+        "2️⃣ No commercial trucks means consistent pavement texture—use audio bed: wind vs tire noise tells lean angle stories.",
+        "3️⃣ Natural Bridge: scale shots need a human or bike reference—without it, viewers can’t read 215 ft.",
+        "4️⃣ Appalachian Trail crossings: legally park only where signed—film the sign; teaches Leave-No-Trace culture.",
+        "5️⃣ SW Virginia fuel spacing: smaller tanks mean proactive stops—show odometer math on camera.",
+        "6️⃣ Night audio: katydids and stream noise will bury whisper VO—plan lav or post dub for technical lines."
+      ]
     },
     {
       "dayIndex": 5,
       "videoTitle": "The Most Dangerous Beautiful Road in America — Tail of the Dragon | Day 5",
-      "hook": "318 curves in 11 miles. No passing zones. No driveways. No guardrails. Welcome to the Dragon.",
-      "storyArc": "Build from the departure in Pulaski toward the Smokies — the landscape changing, getting wilder. Arrive at Deals Gap. Capture the Tail of the Dragon tree of shame (bikes that crashed). Execute the pass — show skill, show respect. Land in Sevierville and pull the Dolly Parton surprise fact. End with the Smokies glowing at sunset.",
+      "hook": "This road doesn’t reward ego. It invoices it.",
+      "storyArc": "Pre-ride: bike check (tires, pressures, luggage torque). Approach: set expectations—skill, not speed. Ride: intercut GoPro with static maps showing curvature density. Aftermath: physiological cost (hands, neck) stated honestly.",
       "shots": [
         "Tail of the Dragon signage — 'Tree of Shame' with crashed bike parts",
         "GoPro on the Dragon: corner after corner after corner",
@@ -144,18 +176,26 @@
       ],
       "culture": "The Dragon draws riders from across North America like a pilgrimage site. There's a whole subculture: photographers at 'Dragon's Tail' marking your run, the Tree of Shame (hung with parts from crashes), the Deals Gap store that's been serving riders for decades. Respect the road — the 'enthusiastic' locals on sport bikes know every corner and will pass you on a blind curve.",
       "talkingPoints": [
-        "Technique for technical mountain passes on a loaded adventure bike — slow in, accelerate out",
-        "The Tree of Shame and riding culture ego management",
-        "Dolly Parton as a symbol of Appalachian identity and pride",
-        "GSMNP vehicle reservations — the park has timed entry in peak season"
+        "Cornering technique vocabulary: trail braking limits on loose centerlines.",
+        "Why photographers line certain corners—predictable rider lines.",
+        "Dolly Parton as regional economic and cultural counter-narrative—fact-based, brief.",
+        "Park visitation math—why crowds concentrate where they do."
       ],
-      "cta": "Would you ride the Dragon? YES or NO in the comments — explain your answer."
+      "cta": "Would you ride the Dragon? YES or NO in the comments — explain your answer.",
+      "fieldGuide": [
+        "1️⃣ Tail of the Dragon is 318 curves in 11 miles—fatigue, not bravery, causes most offs. Segment the road mentally: thirds, not one heroic take.",
+        "2️⃣ Loaded ADV: slow-in fast-out is mandatory; late braking on decreasing-radius bends transfers weight wrong.",
+        "3️⃣ Tree of Shame: film respectfully—it’s trauma archaeology, not a meme garden.",
+        "4️⃣ Enforcement and photography: assume you’re observed; passing on double-yellow is evidence-grade stupidity.",
+        "5️⃣ Smokies haze is chemistry (VOCs + light scattering)—say that once, correctly, then show the gradient on a ridge.",
+        "6️⃣ GSMNP reservations: screen capture the booking—on-camera proof beats ‘I thought we could…’"
+      ]
     },
     {
       "dayIndex": 6,
       "videoTitle": "Riding Through the Soul of America — Smokies to Nashville to Memphis | Day 6",
-      "hook": "One day. Three music capitals. The road that wrote American music.",
-      "storyArc": "Leave the mountains, ride west through rolling Tennessee. Nashville: quick fuel stop but soak up Music Row energy. Acknowledge the civil rights history — this city changed America. Arrive in Memphis near dark. Beale Street after dinner — the sound of America coming from every door.",
+      "hook": "American music wasn’t invented in algorithms. It was hammered out in humidity, Jim Crow economics, and river ports—ride through the evidence.",
+      "storyArc": "Morning mountains to I-40 rhythm. Midday Nashville as compressed urban node. Afternoon west Tennessee agriculture geometry. Evening Memphis as river city acoustics + light. Music is texture, not background wallpaper.",
       "shots": [
         "Exit the Smokies — mountain in the rear camera, flat country ahead",
         "Nashville skyline from the highway — the Batman Building (AT&T tower)",
@@ -173,18 +213,26 @@
       ],
       "culture": "Memphis and Nashville represent two very different Tennessees. Nashville is commercially polished, aspirational, bachelorette-party country. Memphis is rawer, deeply soulful, historically significant, and underappreciated. The music that came out of Memphis (Blues, early Rock, Soul) directly created most of the global popular music that followed. Ride through with that in mind.",
       "talkingPoints": [
-        "Why Memphis doesn't get the recognition it deserves — the birthplace of rock and roll",
-        "The Nashville vs. Memphis tension — commercial success vs. soul",
-        "Tennessee River and Mississippi River — the hydraulic spine of the American interior",
-        "Sun Studio in Memphis: $13 self-guided tour, worth every penny for content"
+        "Nashville sit-ins: discipline strategy vs chaos—why it mattered legally.",
+        "Memphis name + river analogy—founders’ intent vs geography.",
+        "Beale Street as century-scale continuity—one block, deep time.",
+        "Rider fatigue curve on slab—when to refuse ‘one more scenic detour.’"
       ],
-      "cta": "Team Nashville or Team Memphis? Drop it in the comments and tell me why."
+      "cta": "Team Nashville or Team Memphis? Drop it in the comments and tell me why.",
+      "fieldGuide": [
+        "1️⃣ One day, three cities: white balance and exposure will swing (forest shade → urban glass → river glare)—lock a baseline profile or accept grade time.",
+        "2️⃣ Memphis river bluff humidity vs Nashville basin heat—different sweat rates; film the science, not just ‘hot.’",
+        "3️⃣ Civil rights history in Nashville isn’t garnish—if you mention sit-ins, date them and name institutions.",
+        "4️⃣ Beale Street audio: SPL limits and crowd noise will clip—use manual gain if you care about dialogue.",
+        "5️⃣ Mississippi bridge: crosswind gust channels between trusses—two-hand rule, no relaxed posing.",
+        "6️⃣ Night ride discipline: wildlife on river corridors spikes—high beam etiquette and following distance."
+      ]
     },
     {
       "dayIndex": 7,
       "videoTitle": "Crossing the Mississippi River — Into the Deep South Heartland | Day 7",
-      "hook": "The Mississippi River. Every American story crosses it eventually.",
-      "storyArc": "Memphis bridge crossing is cinematic — the river at highway speed, industrial scale, historical weight. Cross into Arkansas. Flat, wide open, sky dominating the frame. Stop in Little Rock — talk about Central High. Ride through late afternoon Arkansas toward Jacksonville. End the episode on the quiet flat roads of the mid-South.",
+      "hook": "The continent’s drainage spine is a teaching tool—if you only say ‘big river,’ you failed the shot.",
+      "storyArc": "Bridge sequence: wide, stable, then map overlay of watershed. Little Rock: one precise historical beat, no museum montage. Arkansas traverse: sky fraction and horizon curvature as flatland psychology. Close: quiet roads as auditory reset.",
       "shots": [
         "Hernando de Soto Bridge crossing — wide Mississippi, bridge steel",
         "First 'Welcome to Arkansas' sign",
@@ -201,18 +249,26 @@
       ],
       "culture": "Arkansas is deeply underrated by the coastal travel media. It has some of the most dramatic Ozark landscape, legitimate American history (Little Rock Nine is as important as any event in 20th-century America), and a river culture tied directly to the continent's geography. Riding through it with knowledge makes every mile more meaningful.",
       "talkingPoints": [
-        "The Little Rock Nine — what really happened and why it matters",
-        "The Mississippi River crossing as a psychological threshold — 'the West begins here'",
-        "Arkansas diamonds — you can literally find a diamond there",
-        "Hot Springs: where organized crime met American health tourism in the 1930s"
+        "Mississippi-Missouri system hierarchy—length vs discharge, correctly.",
+        "Little Rock Nine: federal enforcement as constitutional mechanics.",
+        "Arkansas fertility vs flood history—geology in one sentence.",
+        "Tomorrow: service stop as narrative reset, not filler."
       ],
-      "cta": "What do you know about Arkansas? I bet it surprised you. Let me know below."
+      "cta": "What do you know about Arkansas? I bet it surprised you. Let me know below.",
+      "fieldGuide": [
+        "1️⃣ Mississippi crossing: brown water = sediment load, not ‘dirty.’ Explain suspended silt vs pollution unless you have lab data.",
+        "2️⃣ Central High in Little Rock: if you film the building, pair with the 1957 timeline—architecture is silent; history isn’t.",
+        "3️⃣ Arkansas slab: thermals and crosswinds over rice fields and cutovers—mirror checks are data.",
+        "4️⃣ Flatland dehydration sneaks up—sip schedule beats chugging at stops.",
+        "5️⃣ Dusk insect strike rate rises exponentially—visor cleaning kit accessible, not buried.",
+        "6️⃣ Host arrival script: confirm gate codes, dog rules, and night lighting—documentary courtesy is operational security."
+      ]
     },
     {
       "dayIndex": 8,
       "videoTitle": "Riding Into the Heart of Texas — Fort Worth Home Stop | Day 8",
-      "hook": "After 2,000+ km from Toronto, the bike rolls into a garage and stops. It's not the end — it's the service bay.",
-      "storyArc": "This is the 'home base' episode. Lean into the ritual of the maintenance stop — oil check, tire pressure, chain, what's rattling. Fort Worth Stockyards as B-roll. The emotional weight of having a home on the road. Rest, repack, then the west begins tomorrow.",
+      "hook": "The trip doesn’t pause at a garage. It enters a different production phase—inspection, torque, and honest wear.",
+      "storyArc": "Morning: arrival geometry. Midday: maintenance as ASMR + instruction (oil, chain, fasteners). Afternoon: cultural texture (Stockyards) as contrast to wrench time. Evening: repack with annotations.",
       "shots": [
         "Dallas/Fort Worth skyline approach — sprawling and flat",
         "Fort Worth Stockyards — cattle drive at 11:30am or 4pm (daily)",
@@ -230,18 +286,26 @@
       ],
       "culture": "Fort Worth has a genuine cowboy culture that Dallas lacks. The Stockyards is not a theme park — real cattle auctions, real working cowboys, and the sense that the Old West is still alive here. For a Canadian riding through, this contrast with the East Coast days is jarring in the best possible way.",
       "talkingPoints": [
-        "What a home base stop teaches you — what you'd change if you started over",
-        "The myth of Texas vs the reality",
-        "Fort Worth Stockyards as one of the only places in the US where the 19th century is still a daily routine",
-        "The west starts here: tomorrow is Route 66, the desert, and the unknown"
+        "Republic of Texas history—one fact, cleanly tied to road naming.",
+        "Fort Worth vs Dallas identity—economics, not stereotypes.",
+        "Why a mid-trip service matters for suspension and steering head bearings on washboard later.",
+        "Route 66 preview: myth vs mileage truth."
       ],
-      "cta": "If you could have a home base anywhere in the USA, where would it be? I'll pick the most interesting answer and make it a stop."
+      "cta": "If you could have a home base anywhere in the USA, where would it be? I'll pick the most interesting answer and make it a stop.",
+      "fieldGuide": [
+        "1️⃣ Home-stop maintenance: photograph chain slack and sprocket hooks before adjustment—continuity for viewers tracking wear.",
+        "2️⃣ Torque critical fasteners cold—post-ride metal reads wrong on a click wrench.",
+        "3️⃣ Stockyards cattle drives are timed events—arrive 20 minutes early, establish camera, respect working animals.",
+        "4️⃣ Texas heat on black asphalt: check tire pressure cold each morning; show gauge on camera.",
+        "5️⃣ Repack flat lay: label what changed and why—viewers steal packing lists, not vibes.",
+        "6️⃣ Emotional beat: name one component you’ll replace before the west—honest wear data beats brand loyalty."
+      ]
     },
     {
       "dayIndex": 9,
       "videoTitle": "Route 66 — Riding America's Most Mythic Road to the Midpoint | Day 9",
-      "hook": "There are roads, and then there is Route 66 — the road that invented road trips.",
-      "storyArc": "Fort Worth north to Amarillo then west on 66. The landscape expanding, the sky impossibly large. Cadillac Ranch — obligatory, absurd, perfect content. Adrian, TX: the literal geographic midpoint of Route 66. The emotional weight of standing exactly halfway between Chicago and Los Angeles on the Mother Road.",
+      "hook": "Route 66 is decommissioned infrastructure pretending to be nostalgia—film the seams where Interstate killed access.",
+      "storyArc": "Morning: Fort Worth departure metrics. Midday: panhandle relentlessness as time-lapse honesty. Cadillac Ranch: public art + liability. Adrian: midpoint as cartographic fact. Close: wind turbines as land-use story.",
       "shots": [
         "Route 66 shield on the road — iconic symbol",
         "Texas panhandle: road ruler-straight to the vanishing point",
@@ -259,19 +323,26 @@
       ],
       "culture": "Route 66 is America's most mythologized road — it carried Dust Bowl refugees west in the 1930s, returning soldiers in the 1940s, and free-spirited travelers in the 1960s. Driving it today is an act of historical tourism. The ghost towns and closed motels are not sad — they are honest monuments to every era that lived on this road.",
       "talkingPoints": [
-        "Why Route 66 matters beyond nostalgia: it's the story of American migration",
-        "The Grapes of Wrath — Steinbeck rode this road and made it immortal",
-        "Cadillac Ranch: one of the most accessible pieces of public art in America",
-        "Adrian's Midpoint Cafe — the 'ugly pie' is famous. Try it.",
-        "The windmills of west Texas — clean energy on the old Dust Bowl"
+        "Steinbeck’s Mother Road—literary fact vs road engineering reality.",
+        "Grapes of Wrath corridor ecology—dust bowl science in one beat.",
+        "Spray paint as participation archaeology—who pays for removal.",
+        "Tomorrow: state-line culture shift at the 103rd meridian feeling."
       ],
-      "cta": "Have you driven any part of Route 66? Tell me where — I want to see your best photo in the comments."
+      "cta": "Have you driven any part of Route 66? Tell me where — I want to see your best photo in the comments.",
+      "fieldGuide": [
+        "1️⃣ Panhandle wind: lean angle into gusts is not ‘skill flex’—it’s physics; explain slipstreams when passing semis.",
+        "2️⃣ Cadillac Ranch: lead-free paint history matters if kids appear in frame—safety note, not lecture.",
+        "3️⃣ Midpoint Adrian: GPS verification on camera—1,139 mi claims need a screen, not a poster trust fall.",
+        "4️⃣ I-40 shoulder debris: puncture day—carry patch math and inflation proof.",
+        "5️⃣ Altitude still low—heat management for rider and fuel vapor lock on carb bikes.",
+        "6️⃣ Golden hour dust: ND filters or accept blown sky—pick a look and commit."
+      ]
     },
     {
       "dayIndex": 10,
       "videoTitle": "Texas to New Mexico — Where America Gets Weird and Beautiful | Day 10",
-      "hook": "New Mexico has an official state question. It's not 'what's your name?' It's: 'Red or green?'",
-      "storyArc": "I-40 west is relentless and meditative. Cross into New Mexico — the light changes, the landscape changes, the culture changes. Albuquerque as a cultural crossroads: Native American, Spanish colonial, Anglo American, Breaking Bad. End the episode with green chile heat and the promise of mountains tomorrow.",
+      "hook": "Enchantment isn’t marketing—it’s refractive index, altitude, and chile genetics. Be specific.",
+      "storyArc": "State line: light color temperature shift. Albuquerque: layered cultures as soundscape + signage. Food: one verifiable chile fact. Science corridor: labs as economy, not jokes. Close: foreshadow elevation gain and cooling.",
       "shots": [
         "'Welcome to New Mexico — Land of Enchantment' state line sign",
         "High desert plateau — mesas, brush, impossible sky",
@@ -289,18 +360,26 @@
       ],
       "culture": "New Mexico operates at three cultural layers simultaneously — you can go from a Pueblo feast day to a Spanish colonial plaza to a Breaking Bad film location in the same afternoon. The food is genuinely distinct (Hatch green chile has its own harvest season and devoted culture), the light is unlike anywhere else, and the state has a quiet, confident identity unlike the more commercially known Southwest states.",
       "talkingPoints": [
-        "New Mexico's food: why it's in a category of its own (not Mexican food, not Tex-Mex)",
-        "Breaking Bad filming locations as a form of dark tourism",
-        "The Trinity Site — where the first nuclear bomb was detonated in 1945, in southern New Mexico",
-        "Tomorrow: the Million Dollar Highway — one of the most dramatic roads on the continent"
+        "Official state question—food chemistry vs tradition.",
+        "Albuquerque elevation and engine tuning—DR650 field note.",
+        "Trinity site access rules—if mentioned, cite schedule.",
+        "San Juan volcanics tomorrow—magma chamber in plain language."
       ],
-      "cta": "Red or green? Tell me in the comments. If you've had real New Mexico green chile, you already know."
+      "cta": "Red or green? Tell me in the comments. If you've had real New Mexico green chile, you already know.",
+      "fieldGuide": [
+        "1️⃣ New Mexico light: low humidity = harsh shadows—fill or bounce, or shoot golden windows only.",
+        "2️⃣ Hatch chile is seasonal—if you claim flavor authority, show the menu date.",
+        "3️⃣ High desert elevation: jetting and fuel range change—log octane and ping honestly on carb bikes.",
+        "4️⃣ Breaking Bad tourism: private property lines—film from public right-of-way.",
+        "5️⃣ Petroglyph ethics: no touch, no chalk rubbings—NPS rules are the documentary standard.",
+        "6️⃣ Night sky transition: ABQ light dome vs dark east mesa—plan astro shots before moonrise."
+      ]
     },
     {
       "dayIndex": 11,
       "videoTitle": "The Million Dollar Highway — Riding One of Earth's Most Spectacular Roads | Day 11",
-      "hook": "No guardrails. 11,000 feet of elevation. Sheer cliff drops on one side. This road was built by people who did not value your life above their schedule.",
-      "storyArc": "Climb from Albuquerque into the San Juans — the elevation rising, temperature dropping, landscape becoming alpine. The moment US-550 reveals itself: sudden exposure, cliff edges, vertical mountain walls. Silverton arrival: a Victorian mining town frozen in 1880. Camp at altitude. Stars at 9,000 feet.",
+      "hook": "Colorado didn’t install guardrails to insult you—it calculated that false security kills. Understand the engineering argument.",
+      "storyArc": "Climb profile as graph (elevation vs distance). Exposed sections: stable tripod, no lean-out stunts. Town beat: Silverton as working island. Night: stars with stated ISO and exposure—teach, don’t magic.",
       "shots": [
         "Albuquerque skyline in the rearview — desert city shrinking",
         "US-550 switchback climbing — mountain wall on one side, air on the other",
@@ -318,18 +397,26 @@
       ],
       "culture": "The San Juan region has a boom-bust mining history (gold, silver, uranium) that left ghost towns, Victorian architecture, and a deeply stubborn independence in the people who stayed. Silverton is authentically that — not polished for tourism, just itself. Riders and overlanders are a major part of the local economy.",
       "talkingPoints": [
-        "How to actually ride an exposed mountain road on a loaded bike — technique and mindset",
-        "The supervolcano fact: you're riding through geological history",
-        "Altitude effects at 9,000 feet — body, bike performance, cold nights",
-        "Tomorrow: descending into the Four Corners desert — the biggest contrast on the trip"
+        "San Juan volcanic field—caldera vocabulary without sensationalism.",
+        "Silverton railroad endpoint fact—verify timetable if you shoot train.",
+        "Ouray bowl geology—why ‘Switzerland’ analogy is structural, not cosmetic.",
+        "Descending to desert tomorrow—brake and tire thermal cycle."
       ],
-      "cta": "Would you ride the Million Dollar Highway? Write YES/NO and what your biggest concern would be."
+      "cta": "Would you ride the Million Dollar Highway? Write YES/NO and what your biggest concern would be.",
+      "fieldGuide": [
+        "1️⃣ Million Dollar Highway: no guardrail sections mean recovery room is zero—speed to sight distance, not to ego.",
+        "2️⃣ Altitude sickness is cumulative—headache + ataxia means stop filming, descend, hydrate.",
+        "3️⃣ Brakes cool on straights—pump fade on repeated hairpins is real on heavy bikes.",
+        "4️⃣ Silverton oxygen: generators and stoves behave differently—film jetting/starting quirks if present.",
+        "5️⃣ Snow beside road in June: reflectance blows exposure—zebra striping in viewfinder.",
+        "6️⃣ Camp at elevation: stake frost—record overnight low; viewers in flats need the number."
+      ]
     },
     {
       "dayIndex": 12,
       "videoTitle": "Four Corners Desert — The Land That Movies Made Sacred | Day 12",
-      "hook": "Monument Valley isn't in any national park. It's Navajo land. And nothing looks like it anywhere on Earth.",
-      "storyArc": "Descend from Silverton into the Four Corners desert. Cross the Colorado-Utah-New Mexico-Arizona convergence. US-491 — the former Devil's Highway. Mexican Hat rock formation. Monument Valley appears at a distance like a mirage. End at Mexican Hat campground beside the San Juan River: profound desert quiet.",
+      "hook": "You’re not in a national park—you’re in a sovereign nation that licenses your presence.",
+      "storyArc": "Descent from alpine to desert via time-lapse color temperature. Four Corners: jurisdiction as geography. Monument Valley: cinema history vs tribal stewardship. River camp: hydrology + quiet.",
       "shots": [
         "Four Corners Monument — stand in four states simultaneously",
         "US-491 straight through desert — the road film directors love",
@@ -347,18 +434,26 @@
       ],
       "culture": "The Navajo Nation is a sovereign nation within the United States — it has its own government, police force, and laws. When you are on Navajo land, you are a guest. Photography rules apply (always ask before photographing people), and some sacred areas are off-limits entirely. The people you meet here have a specific, complex, and often painful relationship with the American government — approach it with genuine curiosity and humility.",
       "talkingPoints": [
-        "Why Monument Valley looks 'familiar' even to people who've never been there — the power of cinema",
-        "Navajo Nation sovereignty: what it means in practice for a visitor",
-        "US-666 to US-491: why a number change took 20 years and required an act of Congress",
-        "The silence of the desert — content worth capturing: ambient sound, no narration"
+        "John Ford frame vocabulary—and who owns the land in those frames.",
+        "US-666 renumber—Congressional trivia with safety outcome.",
+        "Navajo government structure—one clear sentence.",
+        "Tomorrow: slot canyon timing and tour physics."
       ],
-      "cta": "What's the most remote place you've ever slept? I want to hear the stories below."
+      "cta": "What's the most remote place you've ever slept? I want to hear the stories below.",
+      "fieldGuide": [
+        "1️⃣ Navajo Nation permits: carry receipt on camera person—tribal law supersedes ‘I’m just a tourist.’",
+        "2️⃣ Monument Valley telephoto compression: iconic but flattening—wide + long pair establishes truth.",
+        "3️⃣ Heat shimmer on US-491: long lenses lie; establish horizon with mid-focal length first.",
+        "4️⃣ San Juan River camp: flash-flood awareness in slot-adjacent terrain—weather upstream matters.",
+        "5️⃣ Silence recording: 30 seconds ambient-only—documentary gold if levels are clean.",
+        "6️⃣ Night: red light discipline if others camp—preserve everyone’s scotopic vision."
+      ]
     },
     {
       "dayIndex": 13,
       "videoTitle": "500 km Epic — Horseshoe Bend, Antelope Canyon, and Bryce | Day 13",
-      "hook": "This is the day the itinerary called 'EPIC.' 500 kilometers. Three world-class wonders. One sunset.",
-      "storyArc": "Pre-dawn start from Mexican Hat. Ride to Page for Horseshoe Bend and Antelope Canyon — both require planning and energy. Long desert haul toward Kanab and up to Bryce. Sunset at the Bryce amphitheater edge. Night camping above 7,500 feet. This is a full cinematic episode.",
+      "hook": "Epic on paper is logistics in reality—today you either manage energy or the desert invoices you.",
+      "storyArc": "Pre-dawn departure timestamp. Page stops as timeboxed modules. Transit legs as map + fuel receipts. Bryce sunset: exposure bracket or HDR decision stated. Night camp: Milky Way settings on screen.",
       "shots": [
         "Horseshoe Bend: the classic wide-angle over the edge shot",
         "Antelope Canyon: light beams through the slot (Upper Canyon in late morning)",
@@ -376,18 +471,26 @@
       ],
       "culture": "This day passes through three different Indigenous territories in a single riding day: Navajo Nation, ancestral Pueblo land, and Paiute territory. The landscape these cultures developed relationship with over thousands of years is the same one you ride through in hours. That contrast is worth sitting with and mentioning on camera.",
       "talkingPoints": [
-        "Antelope Canyon: how to actually get the light beam shots — tour timing matters",
-        "Glen Canyon: the most beautiful place in America that no longer exists — what the dam covered",
-        "Bryce Canyon hoodoos as alien architecture — and the science of how they form",
-        "Epic day realism: 500 km in desert heat with two major stops — hydration and pacing strategy"
+        "Horseshoe Bend incision meander—river vs rock timescales.",
+        "Antelope Canyon flood hydraulics—speed of wall of water.",
+        "Lake Powell storage politics—one neutral sentence, cited.",
+        "Hoodoo formation—frost wedging without fairy tales."
       ],
-      "cta": "Which sight would you prioritize on this day — Horseshoe Bend, Antelope Canyon, or Bryce? Make your case."
+      "cta": "Which sight would you prioritize on this day — Horseshoe Bend, Antelope Canyon, or Bryce? Make your case.",
+      "fieldGuide": [
+        "1️⃣ 500 km + two major stops = schedule risk—build slack or film failure honestly.",
+        "2️⃣ Horseshoe Bend: railings end; wind gusts at rim—never turn your back to load a drone case.",
+        "3️⃣ Antelope Canyon: tour slots tie to sun angle—late beams are physics, not ‘luck.’",
+        "4️⃣ Flash flood protocol in slots: upstream rain can arrive before local sky looks bad—ask guides, film the safety briefing.",
+        "5️⃣ Bryce rim: frost-wedging geology—temperature swing after sunset can ice footpaths.",
+        "6️⃣ Hydration math: publish your liter count if you teach desert riding—otherwise it’s theater."
+      ]
     },
     {
       "dayIndex": 14,
       "videoTitle": "UT-12 to Moab — America's Most Scenic Highway to its Most Extreme Park | Day 14",
-      "hook": "UT-12 is ranked the most scenic highway in America. I-70 through the desert is ranked one of the most desolate. Today, I ride both.",
-      "storyArc": "UT-12 morning: slow curves through Capitol Reef, red rock domes, painted desert colors. Then I-70 east: one of the most remote Interstate stretches in the entire US system. Descend into Moab. Arches NP entrance — 2,000 natural arches, Delicate Arch, and one of the best adventure-riding destinations in the world.",
+      "hook": "America’s ‘most scenic highway’ is still a road with crossfalls, thermals, and distracted drivers.",
+      "storyArc": "UT-12 as geological transect (five zones, named). I-70 void as psychological interval. Moab arrival: land use (tourism vs mining ghost). Arches: reservation system as carrying capacity tool.",
       "shots": [
         "UT-12 hogsback section — two-lane road with 1,000-foot drops on both sides",
         "Capitol Reef: white sandstone domes that inspired the name",
@@ -405,18 +508,26 @@
       ],
       "culture": "Moab has transformed from a uranium mining town to the mountain biking and off-road capital of America. It still has grit — you can feel the mining era in the bone structure of the town. The Jeep culture here is as strong as anywhere in the US. As a motorcycle rider, you belong to a tradition that goes back to the earliest wheeled explorers of slickrock country.",
       "talkingPoints": [
-        "UT-12 hogsback: the road with 1,000-foot drops on both sides — no barriers",
-        "Capitol Reef: the most undervisited 'big five' Utah park and why it's actually the best",
-        "Arches timed entry — reserve ahead on Recreation.gov or you wait outside",
-        "Dead Horse Point State Park as the premium viewpoint people miss"
+        "National Geographic claims—what metric they used.",
+        "Arch collapse events—erosion continues on human timescales.",
+        "I-70 desolation economics—why exits died.",
+        "Thelma & Louise location ethics—stunt geography vs visitor safety."
       ],
-      "cta": "What's the most beautiful road you've ever driven? Comment below — I'll feature the best answers."
+      "cta": "What's the most beautiful road you've ever driven? Comment below — I'll feature the best answers.",
+      "fieldGuide": [
+        "1️⃣ UT-12 hogsback: crosswind from either valley—scan both before passing.",
+        "2️⃣ Capitol Reef water: fill at every reliable tap—next dry gap is real.",
+        "3️⃣ I-70 Green River–Salina: 110 miles no services—fuel arithmetic on camera.",
+        "4️⃣ Arches timed entry: screenshot reservation; gate audio often unusable—lav mic.",
+        "5️⃣ Delicate Arch hike: carry 2L+ in summer—heat illness looks like ‘dramatic collapse’ online; it’s medicine.",
+        "6️⃣ Moab slickrock: tire pressures off-road vs highway—state both numbers."
+      ]
     },
     {
       "dayIndex": 15,
       "videoTitle": "Moab Zero Day — Arches, Dead Horse Point, and the Art of Slowing Down | Day 15",
-      "hook": "I have been riding since Day 1. Today I don't ride. Today, I walk into the oldest stone on Earth and watch the sun rise through a hole in a cliff.",
-      "storyArc": "The rare zero day. Arches National Park at dawn — Delicate Arch hike while the rock is orange and cool. Dead Horse Point SP mid-morning: 600 meters above the Colorado River, a horseshoe meander so perfect it looks fake. Moab town in the afternoon: the culture of an outdoor desert town, gear shops, resupply, local color. Evening: the reflection that only comes from stillness after weeks of motion.",
+      "hook": "Stillness isn’t laziness—it’s when the brain indexes trauma, joy, and mileage.",
+      "storyArc": "Dawn hike as technical sequence (footing, water, sun angle). Overlook geometry. Town logistics. Evening reflection with zero B-roll—face + sound + honest words.",
       "shots": [
         "Pre-dawn departure from camp/host — the bike parked, a hiking bag on your back instead",
         "Arches NP entrance sign at first light",
@@ -435,19 +546,26 @@
       ],
       "culture": "The Moab area sits within the ancestral territory of the Ute people, whose descendants still live in Utah. The name 'Moab' may derive from the Biblical Moab (a land beyond the known world) or from a Paiute word. Edward Abbey's Desert Solitaire, written right here, created the philosophical underpinning of the American wilderness preservation movement. A zero day in this landscape — no deadlines, no km counter — is not laziness. It is the reason to take a long trip.",
       "talkingPoints": [
-        "Why zero days on a long trip are not wasted days — the physical and mental reset argument",
-        "Delicate Arch hike logistics: the 3.2-mile slickrock trail, why you go at dawn, what to carry",
-        "Dead Horse Point vs. Canyonlands: two world-class overlooks separated by a 30-minute drive",
-        "Moab's outdoor culture and why the DR650 fits perfectly in this town",
-        "Edward Abbey and Desert Solitaire: the book that made the desert political"
+        "Why rest days reduce crash risk statistically.",
+        "Delicate Arch naming history—fact check settlers vs marketing.",
+        "Dead Horse legend—separate myth from hydrology.",
+        "Moab outdoor industrial scale—carrying capacity debate."
       ],
-      "cta": "Have you ever taken a zero day mid-trip and felt guilty about it? Tell me how it turned out — in the comments below."
+      "cta": "Have you ever taken a zero day mid-trip and felt guilty about it? Tell me how it turned out — in the comments below.",
+      "fieldGuide": [
+        "1️⃣ Zero day is production reset: batteries, media offload, lens clean, gimbal calibration—show the boring work.",
+        "2️⃣ Delicate Arch dawn: headlamp redundancy; slickrock navigation errors injure people yearly.",
+        "3️⃣ Dead Horse Point: 600 m exposure—tripod foot placement beats selfie sticks.",
+        "4️⃣ Edward Abbey mention: quote short, cite Desert Solitaire—don’t cosplay misanthropy.",
+        "5️⃣ Town afternoon: record audio room tone for later ADR matching.",
+        "6️⃣ Still evening: let silence run 10s on timeline—documentary pacing lesson."
+      ]
     },
     {
       "dayIndex": 16,
       "videoTitle": "Zion at the Horizon — Riding the Desert South to St. George | Day 16",
-      "hook": "I-15 south from Moab: the desert turns colors you don't have names for.",
-      "storyArc": "Long desert run south and west. Zion approaches — the canyon wall visible from the highway. St. George as a desert outpost: Brigham Young's winter escape, now a booming retirement city. Find dispersed camp outside town as the sun drops behind the Virgin River Gorge.",
+      "hook": "Utah’s south is engineered verticality—tunnels, bridges, and blast cuts—not postcard softness.",
+      "storyArc": "I-15 as controlled canyon flight. Zion as foreshadow (tomorrow’s heat). St. George as cultural layer (Mormon Dixie history, stated neutrally). BLM night as stars + fire discipline.",
       "shots": [
         "I-15 south: Virgin River Gorge slot — the highway cuts through vertical walls",
         "Zion Canyon from US-9 or from the highway approach: the sandstone cliffs",
@@ -465,18 +583,26 @@
       ],
       "culture": "Southern Utah is deeply tied to LDS (Mormon) history and culture — St. George, Cedar City, and the surrounding 'Utah Dixie' were colonized by early LDS settlers on a mission from Brigham Young. Understanding this history gives context to the architecture, place names, and social landscape of the region. It's not intrusive — it's part of what makes this corner of America distinct.",
       "talkingPoints": [
-        "The Virgin River Gorge — a canyon you drive through at 70 mph that rivals any national park",
-        "Zion: the tunnel rule for wide vehicles and why it matters for loaded adventure bikes",
-        "Dispersed BLM camping near St. George — the gateway to free desert nights",
-        "Foreshadowing tomorrow: the Mojave Desert and California"
+        "Virgin River Gorge cost per mile—why politicians still cite it.",
+        "Zion tunnel 1930 spec vs modern ADV width.",
+        "BLM acreage mandate—multiple use in one sentence.",
+        "Mojave preview: wet-bulb temperature concept."
       ],
-      "cta": "Tent camping or motel when you're solo-traveling? Tell me your preference and your reasoning."
+      "cta": "Tent camping or motel when you're solo-traveling? Tell me your preference and your reasoning.",
+      "fieldGuide": [
+        "1️⃣ Virgin River Gorge: downdrafts and debris in spring—visor down through construction zones.",
+        "2️⃣ Zion tunnel: measure handlebar width; escort rules are width-based, not ‘feeling.’",
+        "3️⃣ BLM dispersed: camp 300 ft from water where required; film the rule sign.",
+        "4️⃣ St. George heat: morning ride blocks beat afternoon hero segments.",
+        "5️⃣ Dinosaur tracks site: fragile matrix—tripods rubber feet only.",
+        "6️⃣ Audio: desert cicada beds vs wind—choose VO windows."
+      ]
     },
     {
       "dayIndex": 17,
       "videoTitle": "Crossing the Mojave — The Desert That Tests Everything | Day 17",
-      "hook": "The Mojave Desert in June. Pavement surface temperature: 65°C. Air temperature: 45°C. Engine temperature: climbing.",
-      "storyArc": "Departure from St. George — the I-15 through Nevada's desert corridor. Valley of Fire: ancient red rock, the oldest in the region. Into California. Apple Valley arrival: suburban California adjacent to the Mojave. End the episode with a heat-management tutorial and the first whiff of Pacific air in the forecast.",
+      "hook": "The Mojave isn’t testing your spirit—it’s testing your thermodynamics and your coolant.",
+      "storyArc": "Heat metrics on screen (air, pavement estimate, engine). Nevada color section. California border as regulatory shift. Suburban approach as cognitive dissonance. Close: Pacific air mass in forecast.",
       "shots": [
         "Valley of Fire NV entrance: blood-red Aztec sandstone",
         "California state line: 'Welcome to California' sign — iconic",
@@ -494,18 +620,26 @@
       ],
       "culture": "The Mojave is a cultural threshold. Drive east of it and you're in the interior West — rugged, self-reliant, conservative. Drive west and you're entering the California coastal culture — progressive, wealthy, globally connected. The desert is not just geological: it is the psychological and cultural buffer zone between two very different Americas.",
       "talkingPoints": [
-        "Heat management on a motorcycle: when to stop, how to hydrate, gear choices",
-        "Valley of Fire as the greatest state park nobody talks about",
-        "The two Californias: coastal vs. inland — entering from the desert, you see the real boundary",
-        "Tomorrow: Pacific Coast Highway. The most anticipated day of the trip."
+        "Radiation vs convection cooling on bikes.",
+        "Mojave endorheic basins—why ‘dry’ still floods.",
+        "Roy Rogers trivia vs Apple Valley sprawl facts.",
+        "Psychological threshold: inland vs coastal California."
       ],
-      "cta": "Have you ever ridden or driven in extreme heat? What's the highest temperature you've endured? Tell me below."
+      "cta": "Have you ever ridden or driven in extreme heat? What's the highest temperature you've endured? Tell me below.",
+      "fieldGuide": [
+        "1️⃣ Pavement 65°C+: tire pressure rises—check cold, not at McDonald’s after lunch.",
+        "2️⃣ Hydration: electrolyte loss without food equals cramping—film what you actually eat.",
+        "3️⃣ Valley of Fire: midday heat stroke risk—shoot edges of day unless medically prepared.",
+        "4️⃣ Lane-splitting entering CA: cite CHP guidance year; don’t improvise legal advice.",
+        "5️⃣ Joshua tree range shift: climate science one-liner from USGS or peer summary.",
+        "6️⃣ Engine temp lights: pull off before the boil-over—teach warning signs on DR650 specifically if applicable."
+      ]
     },
     {
       "dayIndex": 18,
       "videoTitle": "Pacific Ocean Arrived — PCH, Leo Carrillo, and Big Sur in One Epic Day | Day 18",
-      "hook": "I have been riding toward the Pacific for 17 days. Today I smell salt water. Then I keep riding — along the most famous coastline in America — until I camp above the ocean on a cliff with no guardrails and no cell service.",
-      "storyArc": "The day the continent opens up. Barstow to LA: navigate the California freeway system (a culture note for Canadian/international viewers on lane filtering). Then the emotional rupture: the Pacific Ocean in the windshield. Leo Carrillo State Beach (Malibu): park the bike, walk into the water, close the circle from Day 9's Route 66 midpoint. Then north on PCH: Santa Barbara, Morro Bay, the Big Sur cliffs, Bixby Creek Bridge. Prewitt Ridge at dusk: a rough dirt road climbs 1,000 feet above Hwy 1 to a dispersed camp on a cliff above the ocean. Stars and wave-sounds all night.",
+      "hook": "The ocean isn’t the climax—it’s a hydrologic boundary you’ve been approaching for weeks.",
+      "storyArc": "Freeway approach as systems test. Ocean reveal as controlled beat (pullout, tripod, audio). PCH as corridor geology. Big Sur as infrastructure fragility (slides). Ridge camp as exposure management + ethical filming neighbors.",
       "shots": [
         "Barstow departure — 6:30 am, pre-dawn desert light",
         "CA-14 into the LA basin: the Valley approach, the smog horizon",
@@ -529,20 +663,26 @@
       ],
       "culture": "Arriving at the Pacific after crossing the continent carries a weight that can't be manufactured. The continent is behind you. You are as far west as the road goes. Leo Carrillo is your Pacific arrival moment — budget time here. Big Sur, meanwhile, has attracted artists, writers, and spiritual seekers since the 1940s. The Esalen Institute (founded 1962) is literally built into these cliffs and invented the human potential movement. Henry Miller lived here from 1944–1962. Riding through it on a loaded bike, without a deadline, is exactly the spirit it was built to reward.",
       "talkingPoints": [
-        "The Route 66 arc closes: midpoint sign in Adrian, Texas on Day 9 — the end sign at Santa Monica today",
-        "California lane filtering: what it actually is, what CHP says, how to do it safely on a loaded bike",
-        "Leo Carrillo as a day stop vs. overnight: why the extra 300 km to Big Sur is worth it",
-        "The psychological reset of ocean after 17 days of desert and mountains",
-        "Prewitt Ridge logistics: the turn-off, the road condition, what to carry, arrive before dark",
-        "Big Sur's deliberate rejection of commercialization — why it matters and who fights for it"
+        "PCH prison labor history—one verifiable sentence.",
+        "Leo Carrillo coastal access law lineage.",
+        "Bixby bridge statics—span length vs height correctly.",
+        "CHP lane-filtering phrasing—quote, don’t paraphrase."
       ],
-      "cta": "What was the moment in your life where you finally made it somewhere you'd been riding toward? Tell me the story below."
+      "cta": "What was the moment in your life where you finally made it somewhere you'd been riding toward? Tell me the story below.",
+      "fieldGuide": [
+        "1️⃣ LA basin: filter lane-splitting through traffic law + survival—never teach recklessness.",
+        "2️⃣ Pacific first sight: exposure for white foam + dark water—zebra, don’t clip highlights.",
+        "3️⃣ Santa Monica Route 66 terminus: match Adrian midpoint math on screen—close the arc with numbers.",
+        "4️⃣ Big Sur: no cell = no upload; plan safety check-ins before Bixby.",
+        "5️⃣ Prewitt Ridge: high-clearance + dark = rollover risk—arrive with sun angle, walk the road first.",
+        "6️⃣ Cliff camp: stake for wind, not just rain; ocean downdrafts are real."
+      ]
     },
     {
       "dayIndex": 19,
       "videoTitle": "The Lost Coast — Riding California's Wild North | Day 19",
-      "hook": "Point Arena Lighthouse is the nearest point in the continental United States to Hawaii. It is also where the San Andreas Fault comes ashore.",
-      "storyArc": "Continue north on California's coast — past Monterey, past the vineyards, into the Mendocino coast's wild weather. The 'Lost Coast': so rugged that the highway engineers gave up and left it wild. Point Arena Lighthouse as the episode's anchor: two world-record facts in one structure. Fog, cold marine air, the GPS pin at the edge of the continent.",
+      "hook": "The continent’s edge is also a plate boundary—film both the romantic and the geophysical.",
+      "storyArc": "Northward transect of climate (temperature, dew point). Lighthouse as survey point + hazard light history. Fault walk as grounded science. Lost Coast as deliberate non-development.",
       "shots": [
         "Monterey Bay from the highway — sea otters in the kelp if you're lucky",
         "Mendocino village: Victorian buildings on a headland above the Pacific",
@@ -560,18 +700,26 @@
       ],
       "culture": "The Mendocino coast has a specific counter-culture history — it became a haven for 1960s back-to-the-land homesteaders and artists who found Big Sur too crowded. Many of those communities are still there, three generations in. The culture is organic, DIY, and deeply attached to the land and sea.",
       "talkingPoints": [
-        "The San Andreas Fault: walking the most dangerous geological feature in North America",
-        "The 1906 earthquake's true geographic reach — not just San Francisco",
-        "Murder She Wrote's fake Maine: how TV shapes our perception of places we've never been",
-        "Riding the Lost Coast: why the highway bypassed it and what that preserved"
+        "Hawaii great-circle distance—show map arc, not fake arrow.",
+        "Murder She Wrote location substitution—how TV exports false geography.",
+        "Mendocino homestead culture—succinct, respectful.",
+        "Rider gear for 10°C sea air vs desert yesterday."
       ],
-      "cta": "What earthquake zone or natural hazard site have you visited? Tell me how it made you feel."
+      "cta": "What earthquake zone or natural hazard site have you visited? Tell me how it made you feel.",
+      "fieldGuide": [
+        "1️⃣ Marine layer: ND or wait—gray ocean reads flat without polarizer discipline.",
+        "2️⃣ San Andreas onshore: fault trace photography needs scale reference—people or bike.",
+        "3️⃣ 1906 damage at Point Arena—tie earthquake rupture length to felt area.",
+        "4️⃣ Lost Coast roads: landslide maintenance—check Caltrans before promising passage.",
+        "5️⃣ GPS coordinate insert: verify datum WGS84 on screen—map nerds will catch errors.",
+        "6️⃣ Fog audio: low-pass wind muff; dialogue windows short."
+      ]
     },
     {
       "dayIndex": 20,
       "videoTitle": "Into the Redwoods — The Tallest Living Things on Earth | Day 20",
-      "hook": "These trees were alive when the Roman Empire fell. And they are still growing.",
-      "storyArc": "US-101 north into Humboldt County. The trees beginning to appear: first tall, then enormous, then incomprehensible in scale. Avenue of the Giants: ride it slowly, with the camera pointed up. Arrive at the Redwood National and State Parks area. The elk at dusk on the roadway. The forest absorbs sound — true silence.",
+      "hook": "These trees record centuries in cambium—your episode should respect slower timescales than TikTok.",
+      "storyArc": "Canopy closure as light falloff graph. Touch + sound (bark, drip). Elk as megafauna hazard. Night silence as data (dB if possible).",
       "shots": [
         "Avenue of the Giants approach: cathedral canopy forming above the road",
         "Stop and look up: 380-foot redwood from below",
@@ -589,18 +737,26 @@
       ],
       "culture": "The redwood forests carry a specific spiritual weight for many people who visit — the scale of the trees is literally incomprehensible to human brains calibrated for human-scale objects. Many visitors become quiet and still in old-growth redwood groves, as if in a cathedral. This is worth acknowledging on camera: let your audience feel that moment, not just hear about it.",
       "talkingPoints": [
-        "The Hyperion tree: the tallest living thing and why its location is secret",
-        "How redwoods make their own rain — the fog-drip system",
-        "The elk on US-101: a reminder that this ecosystem is still functioning at scale",
-        "What it feels like to stand next to a living 2,000-year-old organism"
+        "Coast redwood vs giant sequoia—range and volume facts.",
+        "Fire-resistant bark chemistry—tannins, succinct.",
+        "Old-growth policy—one neutral policy sentence.",
+        "Tourism load on US-101—peak hour strategy."
       ],
-      "cta": "What's the oldest or largest natural thing you've stood next to? Tell me what it felt like."
+      "cta": "What's the oldest or largest natural thing you've stood next to? Tell me what it felt like.",
+      "fieldGuide": [
+        "1️⃣ Redwoods: vertical shots need nodal pan or parallax ruins scale—use person+bike reference.",
+        "2️⃣ Fog drip ecosystem—record drips on leaves with close mic; it’s the science beat.",
+        "3️⃣ Elk on road: rut season aggression—never corner animals for frame.",
+        "4️⃣ Avenue of the Giants: tourist traffic pulse—shoot at corridor edges.",
+        "5️⃣ Hyperion: don’t publish hidden coords—ethical documentary standard.",
+        "6️⃣ Low light under canopy: ISO noise vs blur—pick poison, explain choice."
+      ]
     },
     {
       "dayIndex": 21,
       "videoTitle": "California to Oregon — Riding Toward Crater Lake | Day 21",
-      "hook": "Oregon has more ghost towns than any other state. It also has the clearest lake in North America. Today, I try to reach both.",
-      "storyArc": "Cross the California-Oregon border — the landscape shifts: Douglas fir, wetter, greener, more rugged. US-199 through the Siskiyou Mountains. Oregon Caves if time allows. The Crater Lake detour question: it's worth it, but it adds significant mileage. Arrive at Westfir — a small timber town in the Cascades.",
+      "hook": "Oregon is where the ice sheets split—your road is either driftless or planed flat. Read the ground.",
+      "storyArc": "Border transition as species change (Douglas fir density). Optional Crater Lake module with go/no-go honesty. Timber valleys as economic geography. Arrival small town as quiet denouement.",
       "shots": [
         "'Welcome to Oregon' sign — clean, green, forest behind it",
         "US-199 Siskiyou mountain curves: tight, wooded, dramatic",
@@ -618,18 +774,26 @@
       ],
       "culture": "Oregon is a study in contrasts: the most progressive coastal cities (Portland, Eugene, Corvallis) and deeply conservative rural areas in the east and south, all connected by spectacular landscape. The timber culture in places like Westfir is authentic and fading — the mills that built these towns have closed and the communities are reinventing themselves slowly.",
       "talkingPoints": [
-        "Crater Lake blue: the science of why water that deep and clear looks that color",
-        "The 7,700-year-old eruption: how oral traditions of the Klamath people describe it",
-        "Oregon ghost towns: what they tell us about resource extraction economics",
-        "Timber culture: the identity of a region whose primary industry has disappeared"
+        "Mazama collapse scale—compare to St. Helens correctly.",
+        "Klamath oral history—attribute, don’t appropriate.",
+        "Oregon ghost town count—define ‘recognized’ source.",
+        "Rain shadow number—cite inches west vs east of Cascades."
       ],
-      "cta": "Crater Lake: worth the detour? Have you been? Did the color actually look that blue in person?"
+      "cta": "Crater Lake: worth the detour? Have you been? Did the color actually look that blue in person?",
+      "fieldGuide": [
+        "1️⃣ Border climb on US-199: cold tires + tight curves—first 10 minutes are crash window.",
+        "2️⃣ Crater Lake detour: verify rim road open; snow bergs in June block lanes.",
+        "3️⃣ Blue water: polarization helps; altitude sun burns skin faster—SPF on camera.",
+        "4️⃣ Ghost towns: structure safety—no entering collapsed structures for ‘ruin porn.’",
+        "5️⃣ Timber towns: unemployment narratives—cite one current statistic source year.",
+        "6️⃣ Westfir audio: river white noise for bed—levels consistent."
+      ]
     },
     {
       "dayIndex": 22,
       "videoTitle": "Columbia River Gorge — Wind, Water, and the World's Biggest Floods | Day 22",
-      "hook": "The Columbia River Gorge was carved by the most catastrophic floods in Earth's recorded geological history. And today I ride through it.",
-      "storyArc": "Westfir north to the Columbia River. The landscape opening up: the Cascades giving way to the Gorge. Multnomah Falls if time allows. The wind: Hood River is a world windsurfing capital because the Gorge acts as a natural wind tunnel. Goldendale, WA: arriving at the state line, the last rays of sun over the plateau.",
+      "hook": "This gorge was carved by catastrophic outburst floods—your wind buffeting is trivial physics by comparison.",
+      "storyArc": "Westfir descent to Columbia width reveal. Historic Highway stonework as craft. Wind sports as flow visualization. Goldendale plateau as rain-shadow exit.",
       "shots": [
         "Columbia River first sight: wide, silver, industrial-scale",
         "Historic Columbia River Highway cornices and cliff-edge road",
@@ -647,18 +811,26 @@
       ],
       "culture": "The Gorge is a place of deep Native American history — the Celilo Falls on the Columbia River (now submerged under The Dalles Dam) was one of the most important fishing sites in all of North America for 15,000 years, used by tribes from across the continent. When the dam flooded it in 1957, the event was mourned as a cultural catastrophe by Indigenous people throughout the Pacific Northwest.",
       "talkingPoints": [
-        "The Missoula Floods: the most extreme weather event in North American human history",
-        "Celilo Falls: the irreplaceable cultural site that was deliberately drowned in 1957",
-        "Wind in the Gorge: why Hood River is a world windsurfing capital",
-        "The Bridge of the Gods legend and the geology behind it"
+        "Missoula flood count (~40) and chronology window.",
+        "Multnomah flow seasonality.",
+        "Hood River wind funnel math—simple.",
+        "Landslide dam story for Bridge of Gods—separate legend from geology."
       ],
-      "cta": "What's the most geologically dramatic place you've ever been? The thing that made you realize how temporary we are?"
+      "cta": "What's the most geologically dramatic place you've ever been? The thing that made you realize how temporary we are?",
+      "fieldGuide": [
+        "1️⃣ Gorge wind: sport bikes tuck; ADV presents sail area—body English fundamentals.",
+        "2️⃣ Multnomah permit system: screenshot; overcrowding closures are real.",
+        "3️⃣ Missoula floods: quote peak discharge order of magnitude—don’t invent ‘biggest ever’ without era.",
+        "4️⃣ Bridge of the Gods: crosswalk etiquette—pedestrian right-of-way on busy span.",
+        "5️⃣ Celilo loss: submerged falls—use archival respectfully, cite Army Corps timeline.",
+        "6️⃣ Drone near falls: FAA + park rules—film signage."
+      ]
     },
     {
       "dayIndex": 23,
       "videoTitle": "Portland to Seattle — Riding Through the Birthplace of American Counterculture | Day 23",
-      "hook": "Portland has more independent bookstores per capita than any other US city. Seattle gave the world Starbucks, Nirvana, and Amazon. I'm riding between them.",
-      "storyArc": "Mosier to Portland on I-84. Portland: the 'Keep Portland Weird' culture, Powell's Books, Mount Hood in the distance. I-5 north through the heart of Cascadia. Mount St. Helens visible from the highway. Seattle arrival: the mountain views, the water, the density of history in this young city.",
+      "hook": "Cascadia isn’t vibes—it’s basalt floods, venture capital, and volcanoes wearing off.",
+      "storyArc": "Portland cultural module (books, beer) with numbers. I-5 as spine. Seattle skyline + market as sensory overload. Volcano glimpse as geologic callback.",
       "shots": [
         "Portland: Powell's Books exterior — 'City of Books'",
         "Mount Hood from the Portland skyline corridor",
@@ -676,18 +848,26 @@
       ],
       "culture": "The Pacific Northwest has a very specific identity: environmentally conscious, technically innovative, politically progressive, and deeply attached to outdoor culture. The craft beer, independent coffee, outdoor gear, and tech startup cultures that now exist globally were largely invented or refined in the Portland-Seattle corridor. Arriving on a motorcycle from the interior West, you can feel the cultural shift.",
       "talkingPoints": [
-        "Why Seattle produced so many iconic companies and cultural movements in such a short time",
-        "Grunge: what it actually was, where it came from, and why it matters as cultural history",
-        "Mount St. Helens: riding past a mountain that was 1,300 feet taller 45 years ago",
-        "Pike Place Market fish throw: why it's worth stopping despite being a tourist cliché"
+        "St. Helens energy release vs Hiroshima analog—use USGS-approved comparison or skip.",
+        "Pike Place continuity since 1907—fact.",
+        "Portland brewery per capita—define city limits.",
+        "Grunge as economic history—not costume."
       ],
-      "cta": "Seattle, Portland, or Vancouver — best Pacific Northwest city? Fight it out in the comments."
+      "cta": "Seattle, Portland, or Vancouver — best Pacific Northwest city? Fight it out in the comments.",
+      "fieldGuide": [
+        "1️⃣ Urban riding Portland/Seattle: track stand vs foot down—choose safety over cool.",
+        "2️⃣ Pike Place audio: peak SPL—manual gain, backup lav.",
+        "3️⃣ St. Helens view: explain truncated summit vs pre-1980 profile—use overlay.",
+        "4️⃣ Tech history lists: date each founding—Amazon 1994 ≠ Microsoft 1975.",
+        "5️⃣ Rain shadow transition eastbound memory—callback to day 22.",
+        "6️⃣ Ferry math if used: walk-on vs bike fare on screen."
+      ]
     },
     {
       "dayIndex": 24,
       "videoTitle": "North Cascades — America's Most Remote Highway | Day 24",
-      "hook": "State Route 20 through the North Cascades is only open about half the year. Today, it's open. And I'm on it.",
-      "storyArc": "Seattle departure. The anticipation of the North Cascades Highway — check it's open (it was). The transformation as you climb: the city behind, the peaks ahead. Ross Lake. Washington Pass. The descent into Winthrop: the deliberate Old West town. The Cascades are America's Alps — say it on camera.",
+      "hook": "This highway is seasonal infrastructure—if it’s open, you’re borrowing time from winter.",
+      "storyArc": "Check passes online—show screen. Climb as temperature drop curve. Liberty Bell as rock type lesson. Winthrop as deliberate aesthetic. Camp under peaks with stated elevation.",
       "shots": [
         "SR-20 east of Marblemount: the road disappearing into mountains",
         "Gorge Lake from the dam: deep glacier-blue water",
@@ -705,18 +885,26 @@
       ],
       "culture": "Eastern Washington is a completely different culture from the Seattle side of the mountains — agriculturally dominated, politically conservative, and with a proud independence from 'west-siders.' Winthrop's Old West identity is a deliberate invention that succeeded — but the ranching and orchard culture of the Methow Valley around it is entirely real.",
       "talkingPoints": [
-        "The seasonal highway: how to check opening dates and why it still closes in 2026",
-        "North Cascades glaciers: more than the Alps and disappearing faster",
-        "Winthrop's invented Old West: why manufactured authenticity sometimes works",
-        "The rain shadow transition: crossing the Cascades is like entering a different country"
+        "North Cascade glacier count vs Alps comparison—careful with units.",
+        "Winthrop redesign—tourism economics.",
+        "East-west cultural split—one balanced sentence.",
+        "Motorcycle season touring—tire temp in shade."
       ],
-      "cta": "What's the most spectacular mountain pass you've ever crossed? I want to see photos and stories."
+      "cta": "What's the most spectacular mountain pass you've ever crossed? I want to see photos and stories.",
+      "fieldGuide": [
+        "1️⃣ SR-20 opening dates: screenshot WSDOT; snow walls beside lane mean meltwater + debris.",
+        "2️⃣ Washington Pass: ice patches in shade—tire compound matters.",
+        "3️⃣ Avalanche paths overhead—spring warming increases release risk; don’t stop under chutes.",
+        "4️⃣ Winthrop western theme: 1972 design decision—cite local history archive.",
+        "5️⃣ Camp elevation: note sleeping bag rating vs actual low.",
+        "6️⃣ Glacier retreat photo pair—use dated USGS if comparing."
+      ]
     },
     {
       "dayIndex": 25,
       "videoTitle": "Eastern Washington to Spokane — Where the West Becomes the Plateau | Day 25",
-      "hook": "Nobody talks about eastern Washington. That's exactly why it's worth talking about.",
-      "storyArc": "Winthrop east through the Okanagan valley into the Columbia Plateau. The landscape: sage, wheat, basalt, sky. Grand Coulee Dam if the detour works. Spokane arrival — a city with more character than its reputation suggests. The city literally built around its waterfalls.",
+      "hook": "Eastern Washington looks empty until you read the flood scars—then every coulee tells a time machine story.",
+      "storyArc": "Plateau geometry + basalt columns. Optional dam module with scale humans. Spokane falls urban hydrology. Close: apple economy as tonnage, not postcard.",
       "shots": [
         "Eastern WA wheat fields: golden, rolling, quiet",
         "Columbia River Basin: dramatic basalt coulees",
@@ -734,18 +922,26 @@
       ],
       "culture": "Spokane has a working-class confidence that bigger cities sometimes lack. It has produced remarkable people (Bing Crosby was from here), hosted world events, and sits in a landscape of genuinely dramatic geology that most Americans have never seen or thought about. Arrive without assumptions.",
       "talkingPoints": [
-        "The Channeled Scablands: the ground-level evidence of the Ice Age megafloods",
-        "Grand Coulee Dam: what the largest structure in the Western Hemisphere actually looks like up close",
-        "Spokane's identity: a city that had to reinvent itself after the timber and mining booms ended",
-        "Bing Crosby: yes, that Bing Crosby — from here"
+        "Scablands Bretz hypothesis—brief, victorious science arc.",
+        "Grand Coulee generation ranking—verify current world list year.",
+        "Spokane streetcar first—date check.",
+        "Bing Crosby one fact, correctly sourced."
       ],
-      "cta": "What city surprised you the most — the one you expected nothing from and got everything? Tell me."
+      "cta": "What city surprised you the most — the one you expected nothing from and got everything? Tell me.",
+      "fieldGuide": [
+        "1️⃣ Channeled Scablands: basalt ripples read as ‘weird fields’—use aerial only where legal.",
+        "2️⃣ Grand Coulee: low-frequency dam rumble records well—place mic off-axis to turbine whine.",
+        "3️⃣ Spokane falls downtown: mist kills lenses—carry dry microfiber in pocket, not pannier.",
+        "4️⃣ Apple blossom drift: allergies hit riders harder at 100 km/h—note if VO sounds nasal.",
+        "5️⃣ Wheat wave shots: shutter speed choice explains ‘frozen’ vs ‘flowing’ stalks.",
+        "6️⃣ Expo ’74 legacy: cite environmental theme factually—avoid uncritical greenwashing."
+      ]
     },
     {
       "dayIndex": 26,
       "videoTitle": "Lolo Pass — Riding the Road Lewis & Clark Walked | Day 26",
-      "hook": "In 1805, Lewis & Clark crossed these mountains on foot. It almost killed them. Today, I do it in a day on a motorcycle.",
-      "storyArc": "Spokane to the Clearwater corridor on US-12. The Nez Percé homeland. Lochsa River: one of the best whitewater rivers in America. Lolo Pass. The last road in the lower 48 to be paved (1962). Arrival at Missoula/Frenchtown: the Bitterroot Valley beginning.",
+      "hook": "Lewis and Clark nearly starved here—your fuel gauge doesn’t make you smarter, just luckier in era.",
+      "storyArc": "US-12 as engineering lag narrative. River parallel as sound design. Summit sign as watershed fact. Montana valley as relief.",
       "shots": [
         "US-12 entering Idaho: Clearwater River gorge begins",
         "Lochsa River white water alongside the road",
@@ -763,18 +959,26 @@
       ],
       "culture": "The Clearwater and Lochsa corridor is in the heart of Nez Percé territory — the tribe fought a remarkable 1,170-mile fighting retreat in 1877, outwitting US Army forces for months before being caught 40 miles from the Canadian border. Their story is one of the most extraordinary chapters of American history, largely untaught. Riding through their homeland knowing this changes how it feels.",
       "talkingPoints": [
-        "Lewis & Clark's near-death crossing: what the journals actually say about this passage",
-        "The Nez Percé 1877 retreat: 800 people, 2,000 horses, 40 miles from freedom",
-        "The Appaloosa breed: one of the most significant contributions to American horsemanship",
-        "The last road to be paved in America — what it means that this was still wilderness in 1962"
+        "Journal quote on colt supper—date and context.",
+        "Nez Perce War geography—accuracy over drama.",
+        "Appaloosa genetics—one clean fact.",
+        "Wilderness access ethics—no drone in wilderness."
       ],
-      "cta": "What's the most historically significant road or trail you've traveled? Tell me the history you learned."
+      "cta": "What's the most historically significant road or trail you've traveled? Tell me the history you learned.",
+      "fieldGuide": [
+        "1️⃣ Lochsa corridor: wildlife dusk peaks—deer kinematics differ from elk.",
+        "2️⃣ Lolo Pass Continental Divide: water drop experiment ethical? Use map instead to avoid litter.",
+        "3️⃣ Nez Perce history: pronounce carefully; cite 1877 retreat mileage if quoted.",
+        "4️⃣ Pavement history 1962: last paved—use as infrastructure timeline, not brag.",
+        "5️⃣ River audio: stereo pair if possible—rushing water masks bike issues in post.",
+        "6️⃣ Night camp bear protocol—Utah/Idaho/Montana differences one sentence."
+      ]
     },
     {
       "dayIndex": 27,
       "videoTitle": "Into Yellowstone Country — The Volcano Beneath Montana | Day 27",
-      "hook": "Under your wheels for the next two days: the world's most active supervolcano. It last erupted 640,000 years ago. It will erupt again.",
-      "storyArc": "Missoula/Frenchtown south through the Bitterroot Valley. Big Sky country: the sky getting taller, the land emptying out. Gallatin Gateway: the door to Yellowstone. The bison on the roadway before you even enter the park. End the episode in anticipation — tomorrow is Yellowstone.",
+      "hook": "Yellowstone’s ground breathes—your seismometer is storytelling discipline, not clickbait.",
+      "storyArc": "Big sky metrics. Bison encounter as safety protocol episode. Supervolcano explained without apocalypse trailer voice. Park entrance anticipation with rules screengrab.",
       "shots": [
         "Bitterroot Valley south: mountains flanking a broad ranching valley",
         "Montana ranch gates and property signs: Big Sky identity",
@@ -792,18 +996,26 @@
       ],
       "culture": "Montana's identity is built on specific myths: ranching, fly-fishing, wilderness, and a rugged independence that sometimes tips into libertarianism. The reality is that Montana is also a deeply Indigenous land (the Crow, Blackfeet, Flathead, and Cheyenne nations all have major reservations here) and is experiencing profound economic change as tech workers and retirees move in, pricing out generational families.",
       "talkingPoints": [
-        "The supervolcano context: why Yellowstone is geologically unlike any other park in the world",
-        "Bison near-extinction and recovery: the most successful wildlife conservation story in American history",
-        "'A River Runs Through It' and the cultural construction of Montana's fly-fishing identity",
-        "The changing Montana: who lives here now and what it's doing to the culture"
+        "Bison near-extinction arithmetic—population trough and recovery.",
+        "Magma chamber imaging—seismic tomography one-liner.",
+        "A River Runs Through It—film vs book vs river.",
+        "Montana demographic change—cite census decade."
       ],
-      "cta": "If you could spend one week anywhere in Montana, where would it be? I'm taking suggestions for future trips."
+      "cta": "If you could spend one week anywhere in Montana, where would it be? I'm taking suggestions for future trips.",
+      "fieldGuide": [
+        "1️⃣ Bison jam: engine off, stay on bike unless charged—every year someone gets gored for a reel.",
+        "2️⃣ Supervolcano: avoid ‘due’ without timeframe—USGS prefers recurrence intervals with huge error bars.",
+        "3️⃣ Gallatin corridor wind: open ranch gates blow shut—mind ditches.",
+        "4️⃣ Fly-fishing iconography: don’t fake casts—permission + skill.",
+        "5️⃣ Altitude fueling: note any high-idle hang—carb jetting teaching moment.",
+        "6️⃣ Grizzly country: carry spray where legal; say where you stowed it—model behavior."
+      ]
     },
     {
       "dayIndex": 28,
       "videoTitle": "Inside Yellowstone — Old Faithful, Grand Prismatic, and Why This Park Is Unlike Any Other | Day 28",
-      "hook": "Half of all the geothermal features on Earth are in this one park. Yellowstone is not just a park. It is a geological argument about the nature of the planet.",
-      "storyArc": "Full day inside Yellowstone. Structure the episode around the three acts: geothermal wonders (Old Faithful, Grand Prismatic), wildlife (Hayden Valley, Lamar Valley), and geological overview (what the supervolcano means). The canyon. The quieter moments. End with the visceral feeling of camping or staying near a place this raw.",
+      "hook": "Half the planet’s geysers sit here—treat thermal ground like live ordnance.",
+      "storyArc": "Geothermal act structure: predictability (Old Faithful), chaos (steam fields), color science (Prismatic). Wildlife act with lens length ethics. Canyon module as erosion math.",
       "shots": [
         "Old Faithful eruption: the full arc from build-up to peak",
         "Grand Prismatic Spring from the overlook: color bands — blue, green, yellow, orange, red",
@@ -821,18 +1033,26 @@
       ],
       "culture": "Yellowstone is where the American national park idea was born and where it is most tested. The park has one of the highest densities of wildlife-related visitor injuries in the US system — people consistently underestimate the wildness of the animals because they're accustomed to zoo-scale distance. The bison will stop your motorcycle. The bears do not care about your presence. The geysers erupt whether or not you are in the way.",
       "talkingPoints": [
-        "Old Faithful timing: how to arrive for the best chance of a short wait for the next eruption",
-        "Grand Prismatic from the overlook vs. from the boardwalk: why altitude matters for that photo",
-        "Bison etiquette on motorcycle: what to actually do when one blocks the road",
-        "The world's first national park: what that concept meant in 1872 and what it still means"
+        "Geyser plumbing basics—reservoir, constriction, steam flash.",
+        "Thermophile pigments—one biochemistry sentence.",
+        "Caldera inflation/deflation—GPS data mention.",
+        "1872 park idea—global policy legacy."
       ],
-      "cta": "What would you most want to see in Yellowstone — geysers, wildlife, or the canyon? Vote below."
+      "cta": "What would you most want to see in Yellowstone — geysers, wildlife, or the canyon? Vote below.",
+      "fieldGuide": [
+        "1️⃣ Geyser basins: stay on boardwalk—thin crust breaks kill people; film the warning signs.",
+        "2️⃣ Old Faithful: eruption window posted—show the estimate board, teach uncertainty.",
+        "3️⃣ Grand Prismatic overlook vs deck—temperature bacteria color zones need both scales.",
+        "4️⃣ Wildlife distance NPS rules: 100 yards bison, 25 yards elk—quote current year.",
+        "5️⃣ Hayden Valley traffic: plan pullouts early; overheating bikes happen in jam.",
+        "6️⃣ Hydrogen sulfide low areas: if you feel headache, move upwind—don’t tough-guy it."
+      ]
     },
     {
       "dayIndex": 29,
       "videoTitle": "Beartooth Highway to Powell — Charles Kuralt’s Most Beautiful Drive | Day 29",
-      "hook": "This road hits 10,947 feet. Snow in June. Hairpin switchbacks. No barriers. Charles Kuralt was right.",
-      "storyArc": "Exit Yellowstone via Northeast Entrance → Cooke City on US-212 — not the WY-310 / Chief Joseph shortcut toward Cody if your goal is the Beartooth. The climb: switchbacks, the horizon widening with every turn. The plateau at nearly 11,000 feet: a moonscape of rock, snow, and sky. The descent toward Red Lodge. The emotional release of having crossed the highest point of the entire trip — then roll on into the Bighorn Basin to Powell, WY for the night (~316 km from Cooke City over the Beartooth to Powell; in-park miles to Cooke are on top of that).",
+      "hook": "Highest paved road in the Lower 48 is not a trophy—it’s a weather system you ride through.",
+      "storyArc": "Route choice honesty (Cooke vs Chief Joseph). Climb as temperature + pressure overlay. Plateau as tundra silence. Descent as relief + fatigue. Powell night as logistics.",
       "shots": [
         "The Beartooth approach: gradual climb, then sudden exposure",
         "Top-of-Beartooth plateau: snowfields in June, tundra, no trees",
@@ -850,19 +1070,26 @@
       ],
       "culture": "The Beartooth has a motorcycle culture unlike almost anywhere else — it's considered a bucket-list ride in the American motorcycle touring world, and you will share it with groups from across the country who have ridden hundreds of miles specifically to experience it. The camaraderie at the top is spontaneous and real.",
       "talkingPoints": [
-        "Navigation reality: why Google often pushes WY-310 — and why you force US-212 through Cooke City and Red Lodge for the real Beartooth",
-        "Cold management at altitude: gear layers, body temperature, fuel-range changes at elevation",
-        "The visual scale of the Beartooth plateau: why it looks like a different planet",
-        "Red Lodge's immigrant heritage: the diversity that mining brought to the American frontier",
-        "The Beartooth in June: snow possible, ice possible — check WSDOT/Montana DOT before going"
+        "Opening window variance—snowpack year dependency.",
+        "Tundra growth rate mm/yr—cite tundra ecology text.",
+        "Red Lodge mining immigrant layers—specific groups.",
+        "Navigation myth-bust Google vs US-212."
       ],
-      "cta": "What's the highest elevation you've ever been on a vehicle — car, motorcycle, anything? Tell me the number."
+      "cta": "What's the highest elevation you've ever been on a vehicle — car, motorcycle, anything? Tell me the number.",
+      "fieldGuide": [
+        "1️⃣ Beartooth snow in June: ice in shade—ride tires cold first corners slow.",
+        "2️⃣ 10,947 ft: fuel injection altitude trim OK; carbs may need pilot tweak—log symptoms.",
+        "3️⃣ Kuralt quote: verify wording source—documentary standard.",
+        "4️⃣ Red Lodge descent: brake cooling stops—smell is a sensor.",
+        "5️⃣ Wyoming wind after: crosswind transition day—gear lean visible to teach.",
+        "6️⃣ Oxygen saturation optional: pulse ox on camera if you own one—otherwise skip gimmick."
+      ]
     },
     {
       "dayIndex": 30,
       "videoTitle": "Powell to Gillette — Crossing Wyoming’s Wind and Coal Country | Day 30",
-      "hook": "Wyoming has 580,000 people. It is the tenth largest state in America. That's about 5.8 people per square mile. You will feel every one of those empty miles.",
-      "storyArc": "Morning in Powell after the Beartooth push — you’re in the Bighorn Basin. Roll out toward the Powder River: long slabs, crosswinds, and the scale of empty Wyoming. Gillette arrival: the energy capital of America, not the Wyoming anyone imagines.",
+      "hook": "Wyoming’s emptiness is full of wind turbines, coal trains, and votes—film the infrastructure, not the postcard.",
+      "storyArc": "Plains as renewable vs fossil tableau. Women’s suffrage first—political science beat. Gillette as work town portrait without poverty tourism. Close: Black Hills approach foreshadow.",
       "shots": [
         "Wyoming plains from the highway: horizon in every direction, no hills",
         "Wind farm: hundreds of turbines — Wyoming has the greatest wind energy potential in the US",
@@ -879,18 +1106,26 @@
       ],
       "culture": "Wyoming's identity is paradoxical: deeply conservative culturally, yet historically the most progressive in terms of women's rights. Deeply tied to fossil fuels, yet sitting on arguably the country's greatest renewable energy resources. Gillette is a working energy town — it is not a tourist destination, and it doesn't pretend to be. That honesty is worth respecting.",
       "talkingPoints": [
-        "The wind as a physical riding experience: technique, fatigue, and respect for crosswinds",
-        "Wyoming's women's suffrage history: why it happened first here, of all places",
-        "The Powder River Coal Basin: the place that fuels American electricity and what comes next",
-        "Wyoming's paradox: fossil fuel culture and renewable energy potential in the same landscape"
+        "Powder River Basin tonnage—year-stamped stat.",
+        "Wind potential ranking—EIA or NREL citation.",
+        "First female jury—Laramie 1870 fact check.",
+        "Riding technique: countersteer in gusts basics."
       ],
-      "cta": "What's the windiest riding condition you've experienced? How did you handle it? Share your technique."
+      "cta": "What's the windiest riding condition you've experienced? How did you handle it? Share your technique.",
+      "fieldGuide": [
+        "1️⃣ Crosswind sail area: panniers high—consider body lean demonstration at safe speed only.",
+        "2️⃣ Wind turbine rows: turbulence behind rotors—don’t linger parallel.",
+        "3️⃣ Coal trains: draft suck surprises—pass with margin.",
+        "4️⃣ Gillette: ask before filming industrial sites—corporate security culture.",
+        "5️⃣ Hydration on windy cool days: thirst lags—timer-based sips.",
+        "6️⃣ Dust devils: steer through base, not fight top—stability physics."
+      ]
     },
     {
       "dayIndex": 31,
       "videoTitle": "Needles Highway — The Most Dramatic 14 Miles in the Black Hills | Day 31",
-      "hook": "The Needles Highway has tunnels so narrow you fold your mirrors and hold your breath. It was built in 1922 by a governor who hated the idea of Mount Rushmore.",
-      "storyArc": "Gillette west to the Black Hills. The geology shift: suddenly, granite spires erupting from the plains. Needles Highway: the tunnels, the tight turns, the 'Eye of the Needle' rock formation. Custer State Park bison. The Black Hills context: sacred Lakota land, still disputed, still powerful. End at a dispersed camp under ponderosa pines.",
+      "hook": "A governor built this road to refuse a sculpture—now both exist. Hold two truths without flattening either.",
+      "storyArc": "Granite spires geology. Tunnel sequence as technical motorcycle puzzle. Rushmore as contested monument—facts + Supreme Court case. Custer bison as traffic hazard training.",
       "shots": [
         "Gillette exit: last view of the WY plains before the Black Hills",
         "Black Hills granite spires beginning to appear",
@@ -908,18 +1143,26 @@
       ],
       "culture": "The Black Hills are Pahá Sápa to the Lakota — 'the heart of everything that is.' The carving of Mt. Rushmore onto the most sacred mountains in Lakota cosmology was deliberate. The unclaimed $1.5 billion settlement is the most powerful statement the Sioux Nation could make. For a YouTube audience, this is not a political controversy — it is a story about what nations choose to hold onto and why.",
       "talkingPoints": [
-        "The Needles Highway tunnels: the physical sensation of threading a motorcycle through 8-foot granite",
-        "The $1.5 billion unclaimed: what the Lakota refusal to take money means and why it should be famous",
-        "Mount Rushmore: what Gutzon Borglum planned and never built",
-        "Custer State Park bison: 1,400 animals, no fence — what to do when they're on the road"
+        "Tunnel dimensions—narrowest height/width on screen.",
+        "Norbeck vs Borglum politics—dates.",
+        "1980 ruling + unclaimed funds—explain Sioux position.",
+        "Herd management biology—carrying capacity."
       ],
-      "cta": "What do you think the right outcome for the Black Hills dispute is? Tell me honestly — I'll engage with every reply."
+      "cta": "What do you think the right outcome for the Black Hills dispute is? Tell me honestly — I'll engage with every reply.",
+      "fieldGuide": [
+        "1️⃣ Needles tunnels: measure bar width + bags; walk through first if uncertain.",
+        "2️⃣ Mirror fold technique: practice before camera rolls—efficiency, not panic.",
+        "3️⃣ Black Hills sacred land: Rushmore photography—context Lakota claims + unclaimed judgment fund.",
+        "4️⃣ Bison in park: rut season distance larger—NPS updates seasonally.",
+        "5️⃣ Iron Mountain Road pigtail bridges: oncoming sight lines—horn protocol.",
+        "6️⃣ Camp pine duff: stake holding power—test pull before dark."
+      ]
     },
     {
       "dayIndex": 32,
       "videoTitle": "600 km Across the Great Plains — Oacoma to Rochester | Day 32",
-      "hook": "Day 32. 600 kilometers. Straight roads. You will discover things about yourself on a day like this.",
-      "storyArc": "This is the introspective episode. The long day, the repetitive landscape, the mental game of big-mileage riding. Oacoma and the Missouri River crossing — the last major hydrological boundary. Minnesota: suddenly greener, the sky full of lakes. Rochester as the destination: a city that exists entirely because of one hospital.",
+      "hook": "Flat miles are cognitive experiment—boredom is data; don’t cut it all out.",
+      "storyArc": "Missouri crossing hydrology. Minnesota limnology shout. Rochester as company town medicine. Mental game as honest VO with timestamps.",
       "shots": [
         "Missouri River crossing near Oacoma: massive, wide, brown water",
         "'Welcome to Minnesota — Land of 10,000 Lakes' sign",
@@ -937,18 +1180,26 @@
       ],
       "culture": "The Great Plains are the least cinematically represented American landscape — they appear in film as blank emptiness to be passed through. But as a rider, the plains are an extended meditation. The rhythm of the engine, the flat line of the horizon, the absence of visual distraction — it creates a mental clarity that mountain and coast riding does not. This episode should reflect that honestly.",
       "talkingPoints": [
-        "The mental game of long flat days: what your brain does with 600 km of nothing",
-        "The Missouri River's historical weight: the Lewis & Clark spine of continental exploration",
-        "Mayo Clinic: how one tornado in 1863 created the world's greatest medical institution",
-        "Minnesota's 10,000 lakes: the last major geological gift of the retreating glaciers"
+        "Missouri vs Mississippi length—source USGS.",
+        "Mayo tornado origin—1863 date check.",
+        "Shoreline miles comparison—define measurement.",
+        "Lewis & Clark Chamberlain quote—verify wording."
       ],
-      "cta": "What's the longest single riding or driving day you've ever done? Distance and hours — tell me everything."
+      "cta": "What's the longest single riding or driving day you've ever done? Distance and hours — tell me everything.",
+      "fieldGuide": [
+        "1️⃣ 600 km slab: vision narrows with fatigue—20-minute micro stops beat heroic nonstop.",
+        "2️⃣ Missouri bridge: expansion joints snap steering—loose grip, neutral throttle.",
+        "3️⃣ Minnesota lake glare: polarizer + helmet tint stacking—watch exposure.",
+        "4️⃣ Mayo campus: filming exteriors OK; patients deserve privacy—no ER B-roll.",
+        "5️⃣ Odometer storytelling: show trip total—continuity for series viewers.",
+        "6️⃣ Plains audio: constant wind; plan music bed or heavy VO processing."
+      ]
     },
     {
       "dayIndex": 33,
       "videoTitle": "Wisconsin's Cheese, Beer, and the Driftless Zone | Day 33",
-      "hook": "One part of the Midwest was never touched by glaciers. The rest was flattened. You're about to ride through both in one day.",
-      "storyArc": "Rochester south to Wisconsin. The Driftless Area: an oddly hilly, almost European landscape that escaped glaciation. Wisconsin dairy farms — the scale of the cheese industry here. Oconomowoc: a lakeside town with a Potawatomi name nobody spells correctly. The Great Lakes beginning to feel close.",
+      "hook": "Glaciers missed this pocket—your suspension feels it before your brain names it.",
+      "storyArc": "Driftless as unglaciated island. Dairy landscape as economy. Town name etymology. Great Lakes preview as bathymetry teaser.",
       "shots": [
         "'Welcome to Wisconsin — America's Dairyland' sign",
         "Driftless Area: rolling hills, coulees, narrow valleys — unexpected for the Midwest",
@@ -965,18 +1216,26 @@
       ],
       "culture": "Wisconsin is part of a Midwest identity that is often reduced to jokes about cheese and cold. The reality is a sophisticated food culture, a strong labor history (the state essentially invented the American labor union movement), and an outdoors culture built around the Great Lakes and the Mississippi tributaries.",
       "talkingPoints": [
-        "The Driftless Area: the geological accident that created Wisconsin's most interesting landscape",
-        "Why Wisconsin cheese is genuinely world-class — not just quantity, real quality",
-        "Oconomowoc name: 15 attempts to spell it correctly",
-        "Tomorrow: Lake Michigan and the Third Coast"
+        "Last glacial maximum split—simple map.",
+        "Cheese medal claim—define competition.",
+        "Wisconsin Idea—1904, one sentence.",
+        "Union history—optional labor beat, cited."
       ],
-      "cta": "What's your favorite cheese and where did you first eat something that changed how you thought about food?"
+      "cta": "What's your favorite cheese and where did you first eat something that changed how you thought about food?",
+      "fieldGuide": [
+        "1️⃣ Driftless hills: gravel on blind corners—county maintenance varies weekly.",
+        "2️⃣ Dairy air: flies in July—visor protocol.",
+        "3️⃣ Cheese stats: cite USDA or state ag year—avoid round ‘25%’ without year.",
+        "4️⃣ Oconomowoc spelling: on-screen graphic—payoff joke lands only if accurate.",
+        "5️⃣ Lake effect microclimate: evening wind shift on water—tent orientation.",
+        "6️⃣ Milwaukee beer history: one brand date, not a crawl."
+      ]
     },
     {
       "dayIndex": 34,
       "videoTitle": "The Third Coast, the Border, and the Last Night Before Home | Day 34",
-      "hook": "Lake Michigan is 1,640 miles of shoreline that nobody talks about. Then, after lunch with a host in the fruit belt, I cross back into Canada — for the first time in 34 days.",
-      "storyArc": "Oconomowoc east toward Lake Michigan — the Third Coast revealing itself: sand dunes, orchards, lighthouses, fresh water the color of the Caribbean. Stop in Benton Harbor with John Cody Smith for lunch and filming — the economic and social story of this divided twin city. Then north and east to Port Huron, and the Blue Water Bridge: Canada. The CBSA crossing — coming home is a different experience than going in. Windsor/Sarnia to London, Ontario: the final overnight before Toronto. The trip is almost over, and you can feel it.",
+      "hook": "You’re closing a loop through fresh water, inequality, and a border you now understand differently.",
+      "storyArc": "Lake Michigan scale facts. Host segment as human geography. Fruit belt agriculture climate. Port Huron crossing procedure. Ontario night as emotional restraint—no montage overdose.",
       "shots": [
         "Lake Michigan from the highway: the first sight of the inland sea — it genuinely looks oceanic",
         "Indiana Dunes (if routing through) — climbing the dune with Lake Michigan below",
@@ -999,20 +1258,28 @@
       ],
       "culture": "The Windsor-Detroit crossing has a specific cultural weight for Canadians — it is the most economically important land border crossing in North America, handling $250 million USD in trade per day. The Blue Water Bridge crossing at Port Huron/Sarnia is quieter and often faster on holiday weekends. Crossing back into Canada after 34 days in the US produces a specific re-orientation: the road signs change, the measurement system changes, the flag changes, and you realize how much of the last month you spent adapting to a country that is almost — but not quite — home.",
       "talkingPoints": [
-        "The Great Lakes as the world's largest fresh water system — the most strategically important geography in North America",
-        "Benton Harbor vs. St. Joseph: two cities separated by a mile and decades of structural inequality",
-        "The fruit belt microclimate: how a lake creates a world-class agricultural zone",
-        "Crossing back into Canada: what 34 days in America did to your sense of home",
-        "London, Ontario: the city that might have been Canada's capital",
-        "Jul 4 afternoon border crossing: why the traffic is lighter going into Canada today than tomorrow"
+        "Lake Michigan all-US fact.",
+        "Indiana dune migration—cm/yr source.",
+        "Cherry production share—year-stamped.",
+        "Windsor latitude south of Chicago—verify coordinates.",
+        "Trade volume Blue Water—round to year.",
+        "Jul 4 border traffic pattern—anecdote + CBSA pattern disclaimer."
       ],
-      "cta": "If you've crossed the Canada-US border by motorcycle — tell me your crossing story. Best or worst experience. I want to know."
+      "cta": "If you've crossed the Canada-US border by motorcycle — tell me your crossing story. Best or worst experience. I want to know.",
+      "fieldGuide": [
+        "1️⃣ Third Coast: freshwater refracts differently than ocean—white balance notes.",
+        "2️⃣ Benton Harbor / St. Joseph: income disparity story—cite ACS 5-year, name year.",
+        "3️⃣ Border crossing home: have goods declaration ready—serial-import gear lists help.",
+        "4️⃣ Blue Water Bridge: commercial lane vs car—motorcycle placement ask officer hand signal.",
+        "5️⃣ Canada re-entry: metric signs return—film speedo unit switch if applicable.",
+        "6️⃣ Host lunch audio: room treatment or accept noisy documentary truth."
+      ]
     },
     {
       "dayIndex": 35,
       "videoTitle": "35 Days Across America — Home. What I Learned. What Changed. | Day 35 (FINALE)",
-      "hook": "35 days ago, I left this driveway. Today, I come back. Same bike. Different person.",
-      "storyArc": "The finale. London to Toronto on the 401. Don't rush this — arrive slowly and deliberately. The city revealing itself: the skyline, the CN Tower, the familiar streets. Helmet off. Engine off. The ritual of arriving. Then: the reflection video. This is your season finale — the emotional capstone of the entire series.",
+      "hook": "The same driveway. A different odometer. If you learned nothing measurable, you weren’t paying attention.",
+      "storyArc": "Morning departure meter. 401 as stress test. Skyline as closure geometry. Garage scene with maintenance list tease. Sit-down finale: three lessons, one regret, one metric (cost, weight lost, countries), next project hint.",
       "shots": [
         "London departure: last morning on the road, early light",
         "Highway 401: the busiest highway in North America — what it feels like to be home on the most Canadian road",
@@ -1030,13 +1297,22 @@
       ],
       "culture": "Coming home from a long solo ride is a specific kind of transition. The world that seemed large is suddenly compressed back into the familiar. The things that felt permanent — the routine, the house, the neighborhood — have the strange quality of being both exactly the same and completely changed. For a YouTube audience that has watched 35 episodes, this moment is what they've been building toward. Give it the time it deserves.",
       "talkingPoints": [
-        "The 35-day recap: the three chapters (East, West, Home) and what each taught you",
-        "What the DR650 taught you — the bike that made all of this possible",
-        "What you'd do differently: the honest answer",
-        "A First Nations land acknowledgment for ending a journey through Indigenous North America",
-        "What's next: tease the next adventure or next season"
+        "401 volume figure—year and segment cited.",
+        "Toronto language stat—city official source.",
+        "CN Tower height history—fact check.",
+        "Tkaronto etymology—linguist-approved short form.",
+        "DR650 reliability data—personal log only, not universal claim.",
+        "What you’d change—tool and route, not ‘be braver.’"
       ],
-      "cta": "If you watched every episode — tell me the Day number that hit hardest for you. I want to read every one of these."
+      "cta": "If you watched every episode — tell me the Day number that hit hardest for you. I want to read every one of these.",
+      "fieldGuide": [
+        "1️⃣ 401 merge physics: highest AADT in North America—shoulder checks are survival, not style.",
+        "2️⃣ Toronto skyline approach: smog/haze summer—PM2.5 optional on-screen if available.",
+        "3️⃣ Finale VO: write script, don’t improv—emotion needs structure to land.",
+        "4️⃣ Helmet final shot: light the face; silhouette reads as anonymous.",
+        "5️⃣ Land acknowledgment: research local nation for your actual home address—specific beats generic.",
+        "6️⃣ Credits: list music licenses and map sources—documentary hygiene builds trust."
+      ]
     }
   ]
 }

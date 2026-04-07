@@ -1791,6 +1791,7 @@ section > h2 {
   margin-bottom: 0.35rem;
 }
 
+.cc-section--fieldguide .cc-section-label { color: #37474f; border-color: #37474f; }
 .cc-section--hook .cc-section-label { color: #c62828; border-color: #c62828; }
 .cc-section--arc   .cc-section-label { color: #1565c0; border-color: #1565c0; }
 .cc-section--shots .cc-section-label { color: #2e7d4a; border-color: #2e7d4a; }
@@ -1798,6 +1799,24 @@ section > h2 {
 .cc-section--culture .cc-section-label { color: #6a1b9a; border-color: #6a1b9a; }
 .cc-section--talk .cc-section-label { color: #00695c; border-color: #00695c; }
 .cc-section--cta .cc-section-label { color: #d84315; border-color: #d84315; }
+
+.cc-field-guide {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.cc-field-guide li {
+  margin: 0 0 0.75rem;
+  padding-left: 0.25rem;
+}
+
+.cc-field-guide li:last-child {
+  margin-bottom: 0;
+}
 
 .cc-hook-text {
   font-style: italic;

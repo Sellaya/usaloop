@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "channelTheme": "Continental motorcycle documentary — Suzuki DR650, verifiable geography, field-craft technique, zero travel-bro filler.",
+    "seriesTitle": "35 Days Across North America",
+    "tone": "Treat viewers as intelligent adults. Sound like a disciplined field journal: what to look for, how to film it, what can go wrong, what the maps actually say. Excitement comes from accuracy and stakes—not from exclamation marks."
+  },
+  "days": {
+    "1": {
+      "fieldGuide": [
+        "1️⃣ The border hack nobody repeats: rehearse a 15-second truth before you stop—home, tonight’s stop, trip purpose, approximate value of gear. Hesitation reads as inconsistency, not humility.",
+        "2️⃣ Documents in one sleeve, in order: passport, vehicle registration, insurance. Officers watch hands. Fumbling suggests first crossing or hidden nerves.",
+        "3️⃣ Watch the vehicle ahead: engine-on vs engine-off rules differ by booth and shift. Match behaviour; don’t restart until waved—noise signals anxiety.",
+        "4️⃣ Secondary inspection is rare for clean paperwork—usually agriculture, cash thresholds, or inconsistent story. Know every organic item in your kit (fruit, jerky, soil on boots).",
+        "5️⃣ First hour US-side: confirm phone data actually roams before you film. Dead SIM 40 km in is a production failure, not a ‘story beat.’",
+        "6️⃣ Finger Lakes are narrow north–south trenches—post-sunset inversions and fog banks are routine. Arrive with real daylight for unload, tent, and hazard scan—not hero shots in the dark."
+      ],
+      "hook": "You are not ‘living your best life.’ You are executing a controlled international port-of-entry on two wheels—with cameras rolling.",
+      "storyArc": "Act I — departure and approach geometry (time to port, fuel, paperwork). Act II — primary inspection as procedure, not drama. Act III — first American miles: verify connectivity, tire temps, mental reset. Denouement — host arrival with enough light to read the ground you’ll sleep on.",
+      "talkingPoints": [
+        "VO: contrast CBP’s job (risk triage) with your job (clean narrative + clean paperwork).",
+        "On-camera: show document sleeve and pannier map—teach, don’t perform surprise.",
+        "Explain glacial Finger Lakes as trenches—why weather stacks differently than flat Ontario.",
+        "Close with one honest fear you had at the booth—specific, not performative."
+      ]
+    },
+    "2": {
+      "fieldGuide": [
+        "1️⃣ Thruway tolling without a transponder: know your plate class, keep a payment method that works at every plaza—some lanes are cashless only.",
+        "2️⃣ Density gradient: film exposure change (shoulder width, merge geometry, sight lines) as quantitative, not ‘vibes.’",
+        "3️⃣ Long Island sound-masking: ocean and traffic hide tire noise—check pressures at a full stop; you won’t hear a slow leak.",
+        "4️⃣ Hamptons land use: many shoulders are soft or no-parking—scouting a legal pullout beats a viral ticket.",
+        "5️⃣ Heat shimmer on I-495 is real refraction—long lenses exaggerate; wide establishes truth.",
+        "6️⃣ End-of-day: if hosted, record permission boundaries for interior audio—documentary ethics on day two already matter."
+      ],
+      "hook": "Today isn’t scenery. It’s a lesson in how American road engineering changes when money and population density replace farmland.",
+      "storyArc": "Open on a quiet lake metric (temperature, wind, dew point). Transition to lane mathematics and toll infrastructure. Land in a social environment where your bike is an anomaly—film the contrast as anthropology, not insecurity.",
+      "talkingPoints": [
+        "Explain cashless toll capture for foreign plates—what actually hits your bill and when.",
+        "VO on Long Island’s west-to-east income gradient—one road, two economies.",
+        "Why DR650 ergonomics matter in stop-and-go parkway merges.",
+        "Tease tomorrow: monument sight-lines and I-95 throughput physics."
+      ]
+    },
+    "3": {
+      "fieldGuide": [
+        "1️⃣ DC on a bike: you are low-profile in a city designed for ceremonial vistas—plan sightlines; U-turn rules and parking enforcement are unforgiving.",
+        "2️⃣ Heat island + humidity: carburetion and rider hydration scale together—log fluid intake like you log fuel.",
+        "3️⃣ I-95 is throughput engineering—film merge physics and following distance, not just ‘traffic bad.’",
+        "4️⃣ Shenandoah ascent: brake fade on a loaded bike is cumulative—downshift before the smell starts.",
+        "5️⃣ Blue Ridge air mass: afternoon convection builds fast—check radar at fuel stops, not at the overlook.",
+        "6️⃣ End card: name three concrete differences between coastal plain riding and ridge-and-valley Appalachia—teach the map."
+      ],
+      "hook": "Three physiographic provinces, one day—if you narrate only emotion, you waste the geography.",
+      "storyArc": "Structure as a transect: coastal plain → Piedmont → Blue Ridge foreland. Use map overlays sparingly but precisely. DC sequence is tight B-roll + VO; release into mountain air mass and cooling rates.",
+      "talkingPoints": [
+        "VO: DC’s L’Enfant sightlines as design for power—how a rider experiences width and vista differently than a pedestrian.",
+        "Data beat: I-95 AADT context—why mirrors and escape paths matter.",
+        "Shenandoah: orographic lift in plain language.",
+        "Luray Caverns as karst—tie to regional hydrology if you visit."
+      ]
+    },
+    "4": {
+      "fieldGuide": [
+        "1️⃣ BRP is park road, not racetrack—wildlife strike risk peaks at dawn/dusk; plan speed to stopping sight distance.",
+        "2️⃣ No commercial trucks means consistent pavement texture—use audio bed: wind vs tire noise tells lean angle stories.",
+        "3️⃣ Natural Bridge: scale shots need a human or bike reference—without it, viewers can’t read 215 ft.",
+        "4️⃣ Appalachian Trail crossings: legally park only where signed—film the sign; teaches Leave-No-Trace culture.",
+        "5️⃣ SW Virginia fuel spacing: smaller tanks mean proactive stops—show odometer math on camera.",
+        "6️⃣ Night audio: katydids and stream noise will bury whisper VO—plan lav or post dub for technical lines."
+      ],
+      "hook": "The Parkway is free because it’s a public trust—not because it’s ‘chill.’ Treat it like a flight check.",
+      "storyArc": "Morning: road-as-instrument (curve rhythm, sight lines). Midday: cultural waypoint (Natural Bridge) with geological timestamp. Late: small-town resupply and honest fatigue. No fake ‘discovery’—show preparation.",
+      "talkingPoints": [
+        "BRP engineering history in one minute—Depression-era labor, design speed, no billboards by policy.",
+        "Jefferson’s purchase of Natural Bridge—property law as story, not trivia.",
+        "Mining legacy and modern SWVA economy—accuracy beats pity.",
+        "Tomorrow: liability and line choice on US-129."
+      ]
+    },
+    "5": {
+      "fieldGuide": [
+        "1️⃣ Tail of the Dragon is 318 curves in 11 miles—fatigue, not bravery, causes most offs. Segment the road mentally: thirds, not one heroic take.",
+        "2️⃣ Loaded ADV: slow-in fast-out is mandatory; late braking on decreasing-radius bends transfers weight wrong.",
+        "3️⃣ Tree of Shame: film respectfully—it’s trauma archaeology, not a meme garden.",
+        "4️⃣ Enforcement and photography: assume you’re observed; passing on double-yellow is evidence-grade stupidity.",
+        "5️⃣ Smokies haze is chemistry (VOCs + light scattering)—say that once, correctly, then show the gradient on a ridge.",
+        "6️⃣ GSMNP reservations: screen capture the booking—on-camera proof beats ‘I thought we could…’"
+      ],
+      "hook": "This road doesn’t reward ego. It invoices it.",
+      "storyArc": "Pre-ride: bike check (tires, pressures, luggage torque). Approach: set expectations—skill, not speed. Ride: intercut GoPro with static maps showing curvature density. Aftermath: physiological cost (hands, neck) stated honestly.",
+      "talkingPoints": [
+        "Cornering technique vocabulary: trail braking limits on loose centerlines.",
+        "Why photographers line certain corners—predictable rider lines.",
+        "Dolly Parton as regional economic and cultural counter-narrative—fact-based, brief.",
+        "Park visitation math—why crowds concentrate where they do."
+      ]
+    },
+    "6": {
+      "fieldGuide": [
+        "1️⃣ One day, three cities: white balance and exposure will swing (forest shade → urban glass → river glare)—lock a baseline profile or accept grade time.",
+        "2️⃣ Memphis river bluff humidity vs Nashville basin heat—different sweat rates; film the science, not just ‘hot.’",
+        "3️⃣ Civil rights history in Nashville isn’t garnish—if you mention sit-ins, date them and name institutions.",
+        "4️⃣ Beale Street audio: SPL limits and crowd noise will clip—use manual gain if you care about dialogue.",
+        "5️⃣ Mississippi bridge: crosswind gust channels between trusses—two-hand rule, no relaxed posing.",
+        "6️⃣ Night ride discipline: wildlife on river corridors spikes—high beam etiquette and following distance."
+      ],
+      "hook": "American music wasn’t invented in algorithms. It was hammered out in humidity, Jim Crow economics, and river ports—ride through the evidence.",
+      "storyArc": "Morning mountains to I-40 rhythm. Midday Nashville as compressed urban node. Afternoon west Tennessee agriculture geometry. Evening Memphis as river city acoustics + light. Music is texture, not background wallpaper.",
+      "talkingPoints": [
+        "Nashville sit-ins: discipline strategy vs chaos—why it mattered legally.",
+        "Memphis name + river analogy—founders’ intent vs geography.",
+        "Beale Street as century-scale continuity—one block, deep time.",
+        "Rider fatigue curve on slab—when to refuse ‘one more scenic detour.’"
+      ]
+    },
+    "7": {
+      "fieldGuide": [
+        "1️⃣ Mississippi crossing: brown water = sediment load, not ‘dirty.’ Explain suspended silt vs pollution unless you have lab data.",
+        "2️⃣ Central High in Little Rock: if you film the building, pair with the 1957 timeline—architecture is silent; history isn’t.",
+        "3️⃣ Arkansas slab: thermals and crosswinds over rice fields and cutovers—mirror checks are data.",
+        "4️⃣ Flatland dehydration sneaks up—sip schedule beats chugging at stops.",
+        "5️⃣ Dusk insect strike rate rises exponentially—visor cleaning kit accessible, not buried.",
+        "6️⃣ Host arrival script: confirm gate codes, dog rules, and night lighting—documentary courtesy is operational security."
+      ],
+      "hook": "The continent’s drainage spine is a teaching tool—if you only say ‘big river,’ you failed the shot.",
+      "storyArc": "Bridge sequence: wide, stable, then map overlay of watershed. Little Rock: one precise historical beat, no museum montage. Arkansas traverse: sky fraction and horizon curvature as flatland psychology. Close: quiet roads as auditory reset.",
+      "talkingPoints": [
+        "Mississippi-Missouri system hierarchy—length vs discharge, correctly.",
+        "Little Rock Nine: federal enforcement as constitutional mechanics.",
+        "Arkansas fertility vs flood history—geology in one sentence.",
+        "Tomorrow: service stop as narrative reset, not filler."
+      ]
+    },
+    "8": {
+      "fieldGuide": [
+        "1️⃣ Home-stop maintenance: photograph chain slack and sprocket hooks before adjustment—continuity for viewers tracking wear.",
+        "2️⃣ Torque critical fasteners cold—post-ride metal reads wrong on a click wrench.",
+        "3️⃣ Stockyards cattle drives are timed events—arrive 20 minutes early, establish camera, respect working animals.",
+        "4️⃣ Texas heat on black asphalt: check tire pressure cold each morning; show gauge on camera.",
+        "5️⃣ Repack flat lay: label what changed and why—viewers steal packing lists, not vibes.",
+        "6️⃣ Emotional beat: name one component you’ll replace before the west—honest wear data beats brand loyalty."
+      ],
+      "hook": "The trip doesn’t pause at a garage. It enters a different production phase—inspection, torque, and honest wear.",
+      "storyArc": "Morning: arrival geometry. Midday: maintenance as ASMR + instruction (oil, chain, fasteners). Afternoon: cultural texture (Stockyards) as contrast to wrench time. Evening: repack with annotations.",
+      "talkingPoints": [
+        "Republic of Texas history—one fact, cleanly tied to road naming.",
+        "Fort Worth vs Dallas identity—economics, not stereotypes.",
+        "Why a mid-trip service matters for suspension and steering head bearings on washboard later.",
+        "Route 66 preview: myth vs mileage truth."
+      ]
+    },
+    "9": {
+      "fieldGuide": [
+        "1️⃣ Panhandle wind: lean angle into gusts is not ‘skill flex’—it’s physics; explain slipstreams when passing semis.",
+        "2️⃣ Cadillac Ranch: lead-free paint history matters if kids appear in frame—safety note, not lecture.",
+        "3️⃣ Midpoint Adrian: GPS verification on camera—1,139 mi claims need a screen, not a poster trust fall.",
+        "4️⃣ I-40 shoulder debris: puncture day—carry patch math and inflation proof.",
+        "5️⃣ Altitude still low—heat management for rider and fuel vapor lock on carb bikes.",
+        "6️⃣ Golden hour dust: ND filters or accept blown sky—pick a look and commit."
+      ],
+      "hook": "Route 66 is decommissioned infrastructure pretending to be nostalgia—film the seams where Interstate killed access.",
+      "storyArc": "Morning: Fort Worth departure metrics. Midday: panhandle relentlessness as time-lapse honesty. Cadillac Ranch: public art + liability. Adrian: midpoint as cartographic fact. Close: wind turbines as land-use story.",
+      "talkingPoints": [
+        "Steinbeck’s Mother Road—literary fact vs road engineering reality.",
+        "Grapes of Wrath corridor ecology—dust bowl science in one beat.",
+        "Spray paint as participation archaeology—who pays for removal.",
+        "Tomorrow: state-line culture shift at the 103rd meridian feeling."
+      ]
+    },
+    "10": {
+      "fieldGuide": [
+        "1️⃣ New Mexico light: low humidity = harsh shadows—fill or bounce, or shoot golden windows only.",
+        "2️⃣ Hatch chile is seasonal—if you claim flavor authority, show the menu date.",
+        "3️⃣ High desert elevation: jetting and fuel range change—log octane and ping honestly on carb bikes.",
+        "4️⃣ Breaking Bad tourism: private property lines—film from public right-of-way.",
+        "5️⃣ Petroglyph ethics: no touch, no chalk rubbings—NPS rules are the documentary standard.",
+        "6️⃣ Night sky transition: ABQ light dome vs dark east mesa—plan astro shots before moonrise."
+      ],
+      "hook": "Enchantment isn’t marketing—it’s refractive index, altitude, and chile genetics. Be specific.",
+      "storyArc": "State line: light color temperature shift. Albuquerque: layered cultures as soundscape + signage. Food: one verifiable chile fact. Science corridor: labs as economy, not jokes. Close: foreshadow elevation gain and cooling.",
+      "talkingPoints": [
+        "Official state question—food chemistry vs tradition.",
+        "Albuquerque elevation and engine tuning—DR650 field note.",
+        "Trinity site access rules—if mentioned, cite schedule.",
+        "San Juan volcanics tomorrow—magma chamber in plain language."
+      ]
+    },
+    "11": {
+      "fieldGuide": [
+        "1️⃣ Million Dollar Highway: no guardrail sections mean recovery room is zero—speed to sight distance, not to ego.",
+        "2️⃣ Altitude sickness is cumulative—headache + ataxia means stop filming, descend, hydrate.",
+        "3️⃣ Brakes cool on straights—pump fade on repeated hairpins is real on heavy bikes.",
+        "4️⃣ Silverton oxygen: generators and stoves behave differently—film jetting/starting quirks if present.",
+        "5️⃣ Snow beside road in June: reflectance blows exposure—zebra striping in viewfinder.",
+        "6️⃣ Camp at elevation: stake frost—record overnight low; viewers in flats need the number."
+      ],
+      "hook": "Colorado didn’t install guardrails to insult you—it calculated that false security kills. Understand the engineering argument.",
+      "storyArc": "Climb profile as graph (elevation vs distance). Exposed sections: stable tripod, no lean-out stunts. Town beat: Silverton as working island. Night: stars with stated ISO and exposure—teach, don’t magic.",
+      "talkingPoints": [
+        "San Juan volcanic field—caldera vocabulary without sensationalism.",
+        "Silverton railroad endpoint fact—verify timetable if you shoot train.",
+        "Ouray bowl geology—why ‘Switzerland’ analogy is structural, not cosmetic.",
+        "Descending to desert tomorrow—brake and tire thermal cycle."
+      ]
+    },
+    "12": {
+      "fieldGuide": [
+        "1️⃣ Navajo Nation permits: carry receipt on camera person—tribal law supersedes ‘I’m just a tourist.’",
+        "2️⃣ Monument Valley telephoto compression: iconic but flattening—wide + long pair establishes truth.",
+        "3️⃣ Heat shimmer on US-491: long lenses lie; establish horizon with mid-focal length first.",
+        "4️⃣ San Juan River camp: flash-flood awareness in slot-adjacent terrain—weather upstream matters.",
+        "5️⃣ Silence recording: 30 seconds ambient-only—documentary gold if levels are clean.",
+        "6️⃣ Night: red light discipline if others camp—preserve everyone’s scotopic vision."
+      ],
+      "hook": "You’re not in a national park—you’re in a sovereign nation that licenses your presence.",
+      "storyArc": "Descent from alpine to desert via time-lapse color temperature. Four Corners: jurisdiction as geography. Monument Valley: cinema history vs tribal stewardship. River camp: hydrology + quiet.",
+      "talkingPoints": [
+        "John Ford frame vocabulary—and who owns the land in those frames.",
+        "US-666 renumber—Congressional trivia with safety outcome.",
+        "Navajo government structure—one clear sentence.",
+        "Tomorrow: slot canyon timing and tour physics."
+      ]
+    }
+  }
+}

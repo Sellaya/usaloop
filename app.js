@@ -1972,8 +1972,9 @@ function renderContentCreation(ccData) {
     sum.appendChild(el("span", { class: "cc-day-badge", text: `Day\n${day.dayIndex}` }));
     const sumText = el("div", { class: "cc-summary-text" });
     sumText.appendChild(el("div", { class: "cc-video-title", text: day.videoTitle || `Day ${day.dayIndex}` }));
-    if (day.hook) {
-      sumText.appendChild(el("div", { class: "cc-hook-preview", text: `"${day.hook}"` }));
+    const previewLine = day.fieldGuide?.[0] || day.hook || "";
+    if (previewLine) {
+      sumText.appendChild(el("div", { class: "cc-hook-preview", text: previewLine }));
     }
     sum.appendChild(sumText);
     sum.appendChild(el("span", { class: "cc-chevron", text: "›" }));
@@ -1989,16 +1990,22 @@ function renderContentCreation(ccData) {
       body.appendChild(s);
     };
 
-    // Hook
+    if (day.fieldGuide?.length) {
+      addSection("fieldguide", "Field notes — technique & story spine", (s) => {
+        const ul = el("ul", { class: "cc-field-guide" });
+        day.fieldGuide.forEach((item) => ul.appendChild(el("li", { text: item })));
+        s.appendChild(ul);
+      });
+    }
+
     if (day.hook) {
-      addSection("hook", "🎬 Opening hook", (s) => {
+      addSection("hook", "Cold open (VO)", (s) => {
         s.appendChild(el("p", { class: "cc-hook-text", text: day.hook }));
       });
     }
 
-    // Story arc
     if (day.storyArc) {
-      addSection("arc", "📖 Story arc", (s) => {
+      addSection("arc", "Episode structure (acts)", (s) => {
         s.appendChild(el("p", { class: "cc-arc-text", text: day.storyArc }));
       });
     }
@@ -2008,7 +2015,7 @@ function renderContentCreation(ccData) {
 
     if (day.shots?.length) {
       const s = el("div", { class: "cc-section cc-section--shots" });
-      s.appendChild(el("div", { class: "cc-section-label", text: "📷 Shots to get" }));
+      s.appendChild(el("div", { class: "cc-section-label", text: "Camera & sound coverage" }));
       const ul = el("ul", { class: "cc-list" });
       day.shots.forEach((item) => ul.appendChild(el("li", { text: item })));
       s.appendChild(ul);
@@ -2017,7 +2024,7 @@ function renderContentCreation(ccData) {
 
     if (day.talkingPoints?.length) {
       const s = el("div", { class: "cc-section cc-section--talk" });
-      s.appendChild(el("div", { class: "cc-section-label", text: "🎙 Talking points" }));
+      s.appendChild(el("div", { class: "cc-section-label", text: "VO & narration beats" }));
       const ul = el("ul", { class: "cc-list" });
       day.talkingPoints.forEach((item) => ul.appendChild(el("li", { text: item })));
       s.appendChild(ul);
@@ -2028,7 +2035,7 @@ function renderContentCreation(ccData) {
 
     // Facts
     if (day.facts?.length) {
-      addSection("facts", "💡 Interesting facts", (s) => {
+      addSection("facts", "Verified facts (say dates & units)", (s) => {
         const ul = el("ul", { class: "cc-list" });
         day.facts.forEach((item) => ul.appendChild(el("li", { text: item })));
         s.appendChild(ul);
@@ -2037,14 +2044,14 @@ function renderContentCreation(ccData) {
 
     // Culture
     if (day.culture) {
-      addSection("culture", "🌍 Culture & context", (s) => {
+      addSection("culture", "Place, land & politics", (s) => {
         s.appendChild(el("p", { class: "cc-culture-text", text: day.culture }));
       });
     }
 
     // CTA
     if (day.cta) {
-      addSection("cta", "💬 Audience CTA", (s) => {
+      addSection("cta", "Outro / audience beat", (s) => {
         s.appendChild(el("div", { class: "cc-cta-box", text: day.cta }));
       });
     }
