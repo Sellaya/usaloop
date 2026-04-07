@@ -1807,9 +1807,7 @@ function renderTrip(data, babHostsMap, routeMeta) {
   if (linksEl) linksEl.innerHTML = "";
   const linkDefs = [
     ["GPX / tracks", links?.gpxFolder],
-    ["Shared map", links?.sharedMap],
     ["Weather", links?.weather],
-    ["Bookings", links?.bookingFolder],
   ];
   if (linksEl) {
     linkDefs.forEach(([label, url]) => {
