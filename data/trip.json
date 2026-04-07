@@ -1058,7 +1058,8 @@
       "date": "2026-06-29",
       "title": "Yellowstone → Beartooth Highway",
       "distanceKm": 0,
-      "routeLine": "Exit Yellowstone via Northeast Entrance → Cooke City, MT. Take US-212 (Beartooth Highway) over the pass to Red Lodge, MT — not WY-310 (Chief Joseph Scenic Byway toward Cody), which skips the Beartooth unless US-212 is closed. After Red Lodge, continue into the Bighorn Basin to Cowley, WY for the night; confirm last miles in Maps.",
+      "routeLine": "Exit Yellowstone via Northeast Entrance → Cooke City, MT. Take US-212 (Beartooth Highway) over the pass to Red Lodge, MT — not WY-310 (Chief Joseph Scenic Byway toward Cody), which skips the Beartooth unless US-212 is closed. After Red Lodge, continue into the Bighorn Basin to Cowley, WY for the night. The itinerary Maps link uses a lat/lng chain (Old Faithful → Cooke City → Red Lodge → Cowley) so distance matches US-212, not a Cody/WY-310 shortcut.",
+      "fuelNotes": "Long day: fill inside Yellowstone before pushing to the NE exit; top up again in Cooke City or Red Lodge; carry range for the Red Lodge → Cowley crossing (Bighorn Basin).",
       "terrain": "US-212 high alpine — snow/ice possible early season; do not confuse with lower WY-310 corridor",
       "highlights": [
         "Beartooth Pass — one of the great US motorcycle roads"
@@ -1092,8 +1093,9 @@
     {
       "dayIndex": 30,
       "date": "2026-06-30",
-      "title": "Beartooth Highway → Gillette (WY)",
+      "title": "Cowley → Gillette (WY)",
       "distanceKm": 0,
+      "routeLine": "Bighorn Basin crossing after the Beartooth night in Cowley — slab and wind typical toward Gillette (Powder River Basin).",
       "terrain": "WY plains — wind",
       "highlights": [
         "Powder River Basin"

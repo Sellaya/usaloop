@@ -47,7 +47,7 @@ const STATIC = {
   26: [46.997, -114.248, "Frenchtown, MT"],
   27: [45.329, -111.195, "Gallatin Gateway, MT"],
   28: [44.4605, -110.8281, "Yellowstone (Old Faithful area — in-park day)"],
-  29: [44.8838, -108.8921, "Cowley, WY"],
+  29: [44.8792, -108.4678, "Cowley, WY (town center)"],
   30: [44.2911, -105.5022, "Gillette, WY"],
   31: [43.7667, -103.5988, "Custer, SD (Black Hills — TBD camp)"],
   32: [44.0328, -92.6458, "Byron, MN"],
