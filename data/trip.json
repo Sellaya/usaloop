@@ -54,7 +54,9 @@
     "planningChecklist": [
       "Confirm dates, host addresses, and camping fees before you roll.",
       "Days marked TBD still need pins — use each day’s Google Maps link to lock distance.",
-      "Fill fuel / weather / key notes per day as you research (same idea as your Word plan)."
+      "Fill fuel / weather / key notes per day as you research (same idea as your Word plan).",
+      "Summer wildfire smoke can hit NorCal, PNW, Rockies, and high plains on short notice — check AQI/smoke maps for your corridor the morning you ride; shorten or reroute when air is unhealthy.",
+      "Every iOverlander / BLM / dispersed GPS pin: confirm land status, MVUM, and fire closures the same week you stay — crowdsourced pins are not permission to camp."
     ],
     "summary": "The ride strings together the Finger Lakes, a New York metro stop, Washington DC and Luray, southwest Virginia, Great Smoky approaches, Nashville–Memphis, Arkansas, a Fort Worth home stop, then the high plains and I-40 toward New Mexico. From there: San Juan Mountains and Million Dollar Highway, Utah (Mexican Hat, Page, Bryce, Moab, Arches, St. George), the California coast to the redwoods, Oregon and the Columbia River Gorge, Seattle, US-20 and Spokane, Lolo Pass, Yellowstone and the Beartooth corridor, and a long return through the Dakotas and Great Lakes to Ontario, with a final night in London before Toronto.",
     "riderName": "Ali",
@@ -113,6 +115,7 @@
       "title": "Finger Lakes → New York",
       "distanceKm": 0,
       "terrain": "NY Thruway / Hudson Valley approaches",
+      "weatherNotes": "Approaching NYC / Long Island in summer: heat + humidity in full gear — plan water, shade, and rest; don’t rely on “not thirsty yet.”",
       "highlights": [
         "Shorter leg before DC → Luray segment"
       ],
@@ -148,6 +151,7 @@
       "title": "New York → Washington, DC → Luray (VA)",
       "distanceKm": 0,
       "terrain": "Interstate / Appalachian approaches",
+      "weatherNotes": "Mid-Atlantic June: humid air and slow traffic can overheat you in protective gear — hydrate on a schedule through the I-95 / Beltway grind.",
       "highlights": [
         "Shenandoah approaches near Luray"
       ],
@@ -178,6 +182,7 @@
       "title": "Luray → Pulaski (VA)",
       "distanceKm": 0,
       "terrain": "VA parkways / mountains",
+      "weatherNotes": "SW Virginia still gets sticky summer days — humidity + elevation changes can sneak up on fluid loss; keep electrolytes in mind.",
       "highlights": [
         "Blue Ridge transitions toward SW Virginia"
       ],
@@ -202,6 +207,7 @@
       "title": "Pulaski → Smoky Mountains (TN)",
       "distanceKm": 0,
       "terrain": "Mountains into Tennessee",
+      "weatherNotes": "TN approach to the Smokies: classic Southeast humidity — pair rain readiness with ventilation breaks so you don’t cook in stopped traffic.",
       "highlights": [
         "Great Smoky Mountains approach",
         "Sevierville / gateway towns"
@@ -236,6 +242,7 @@
       "title": "Smoky Mountains → Nashville → Memphis (TN)",
       "distanceKm": 0,
       "terrain": "Rolling TN highways",
+      "weatherNotes": "West TN / river valleys: humid June riding is harder on the body than dry western heat — drink before you feel dry.",
       "highlights": [
         "Music City fuel/food stop if routed through Nashville"
       ],
@@ -311,7 +318,9 @@
         "name": "HOME — Fort Worth, TX",
         "notes": "Garage tools, laundry, bike check before western push."
       },
-      "risks": [],
+      "risks": [
+        "Fast TX highways: cattle guards, expansion joints, and bridge transitions — ease up and square the bike before hitting them leaned over."
+      ],
       "planB": "",
       "babAlternateIds": []
     },
@@ -341,7 +350,8 @@
         }
       ],
       "risks": [
-        "Wind exposure on plains"
+        "Wind exposure on plains",
+        "Grooved pavement and metal bridge decks at highway speeds — reduce lean and avoid hard braking on seams."
       ],
       "planB": "",
       "babAlternateIds": []
@@ -411,7 +421,8 @@
       "risks": [
         "Altitude",
         "Afternoon storms",
-        "Mud on forest roads"
+        "Mud on forest roads",
+        "Mountain chip seal and tar patches — traction drops fast when wet; treat painted lines and metal grates as low-grip."
       ],
       "planB": "Paid campground or Silverton lodging if dispersed full or weather bad.",
       "babAlternateIds": [
@@ -611,7 +622,7 @@
       "date": "2026-06-17",
       "title": "Barstow → Hollywood → Los Angeles",
       "distanceKm": 0,
-      "terrain": "CA freeways — lane filtering rules",
+      "terrain": "CA freeways — read current California DMV / CHP lane-splitting guidance before you ride; it is only allowed in specific situations (speed differential, lane position) — do not assume every freeway or speed is OK.",
       "highlights": [
         "Coastal swim / day stop — TBD (pick beach or cove)"
       ],
@@ -663,7 +674,8 @@
       },
       "risks": [
         "Cliff exposure",
-        "Private road / gate policies — verify"
+        "Private road / gate policies — verify",
+        "Coastal Hwy 1: tar snakes, patch pavement, and damp fog — reduced grip in corners even when it’s not raining."
       ],
       "planB": "State park camp lower on Hwy 1 if ridge inaccessible.",
       "babAlternateIds": [
@@ -689,7 +701,8 @@
       },
       "risks": [
         "Fog",
-        "Cold marine layer"
+        "Cold marine layer",
+        "Regional wildfire smoke can drop visibility and AQI with little warning — check smoke/air maps along the coast that morning."
       ],
       "planB": "",
       "babAlternateIds": [
@@ -714,7 +727,8 @@
         "mapsUrl": "https://www.google.com/maps?q=38.98170,-123.70057"
       },
       "risks": [
-        "Elk on roadway"
+        "Elk on roadway",
+        "NorCal / redwoods corridor: summer wildfire smoke and poor AQI — have a shorter-day or inland detour mindset if maps go red."
       ],
       "planB": "",
       "babAlternateIds": [
@@ -738,7 +752,8 @@
         "notes": "Confirm exact address / directions into town."
       },
       "risks": [
-        "Smoke season (late summer) — check AQI"
+        "Wildfire smoke and AQI — not only “late summer”; June can see regional haze from distant fires. Check AQI and visibility each morning across OR / PNW / Rockies legs.",
+        "Heavy smoke: favor shorter riding, more breaks, and indoor air when AQI is unhealthy — especially at altitude."
       ],
       "planB": "",
       "babAlternateIds": [
@@ -847,7 +862,8 @@
         "notes": "Options: Winthrop, Twisp, Omak, or I-90 corridor motels."
       },
       "risks": [
-        "Mountain pass closures / construction"
+        "Mountain pass closures / construction",
+        "PNW / interior BC smoke can funnel into mountain valleys — if AQI spikes, SR-20 vs I-90 isn’t just a snow decision; air quality matters for long climb days."
       ],
       "planB": "I-90 direct to eastern WA if SR-20 closed.",
       "babAlternateIds": [
@@ -941,7 +957,8 @@
       },
       "risks": [
         "Bison / elk on roadway",
-        "Altitude fatigue"
+        "Altitude fatigue",
+        "Greater Yellowstone: wildfire smoke and park-wide haze can persist for days — watch NPS alerts and AQI before committing to long high-elevation legs."
       ],
       "planB": "",
       "babAlternateIds": [
@@ -972,7 +989,8 @@
       },
       "risks": [
         "Sudden weather",
-        "Thermal area foot traffic"
+        "Thermal area foot traffic",
+        "Smoke from regional fires can cut views and air quality inside the park — adjust expectations and rest if you feel tight-chested at altitude."
       ],
       "planB": "",
       "babAlternateIds": [
@@ -1096,7 +1114,8 @@
       ],
       "risks": [
         "Fatigue on 600 km slab",
-        "Crosswinds"
+        "Crosswinds",
+        "Great Plains: persistent wind grooves and open-deck bridges — relax grip, don’t fight the bars, and plan hand breaks."
       ],
       "planB": "Split into two shorter days if weather or energy is poor.",
       "babAlternateIds": [
@@ -1217,6 +1236,7 @@
       "Rain suit",
       "Cold layer for mountains",
       "Hydration",
+      "Moisture-wicking base layers for humid Southeast / Mississippi valley legs (easier than cooking in cotton under armor)",
       "Earplugs"
     ],
     "camp": [
@@ -1230,7 +1250,7 @@
     "roadside": "",
     "embassy": "Canadian citizen services: travel.gc.ca",
     "bloodTypes": "",
-    "notes": "ICE: add contacts and any allergies. Yellowstone: nearest care may be far — carry first aid.",
+    "notes": "ICE: add contacts and any allergies. Yellowstone: nearest care may be far — carry first aid. If regional wildfire smoke drives AQI into unhealthy ranges, shorten the riding day and seek clean indoor air — especially at altitude or with any respiratory history.",
     "contacts": [
       {
         "name": "ICE — primary",
@@ -1246,6 +1266,8 @@
     "Confirm each host address, gate codes, and bike parking before arrival day.",
     "Arches NP: check timed-entry reservation rules for your dates.",
     "Yellowstone / Beartooth: verify pass opening and NPS alerts.",
+    "Every other national park or monument you actually enter on this loop (e.g. Zion tunnel / vehicle size rules, Smokies parking, timed shuttles, Navajo Nation tour permits): open NPS.gov or the managing tribe/agency site for **your** entry dates — rules and reservations change by season.",
+    "Surface hazards common on US Interstates and plains: grooved pavement, tar snakes, steel bridge decks, expansion joints, and cattle guards — scan ahead, reduce lean, and avoid hard throttle or braking on transitions.",
     "Download offline maps for the full loop and share location with one trusted contact."
   ]
 }
