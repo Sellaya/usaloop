@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * One-off: insert Day 2 (Finger Lakes → New York), renumber to 36 days,
- * align titles with rider flow, shift route-overlays byDay keys.
+ * Historical one-off (do not run blindly): inserted Day 2 and renumbered to 36 days.
+ * The live itinerary is now 35 days — see data/trip.json and the redesign commit.
  */
 const fs = require("fs");
 const path = require("path");

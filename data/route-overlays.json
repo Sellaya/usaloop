@@ -209,8 +209,8 @@
       ]
     },
     "15": {
-      "mapsDirectionsUrl": "",
-      "distanceNote": "Zero riding day — base in Moab, UT. Arches NP is ~8 km from downtown. Dead Horse Point SP is ~30 km. No highway mileage.",
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Moab%2C+UT&destination=Dead+Horse+Point+State+Park%2C+UT&waypoints=Arches+National+Park%2C+UT&travelmode=driving",
+      "distanceNote": "Local Moab-area loop for map + weather (Moab → Arches → Dead Horse Point). Not a touring day — use for pins and 10-day forecast; actual mileage is short.",
       "recommendations": [
         {
           "text": "Arches NP timed entry — required May 1–Oct 31. Book on Recreation.gov weeks in advance.",
