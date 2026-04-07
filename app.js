@@ -2010,6 +2010,14 @@ function renderContentCreation(ccData) {
       });
     }
 
+    if (day.roadRules?.length) {
+      addSection("roadrules", "Road & legal awareness (this day)", (s) => {
+        const ul = el("ul", { class: "cc-list cc-road-rules" });
+        day.roadRules.forEach((item) => ul.appendChild(el("li", { text: item })));
+        s.appendChild(ul);
+      });
+    }
+
     // Grid: shots + talking points
     const grid = el("div", { class: "cc-grid" });
 
