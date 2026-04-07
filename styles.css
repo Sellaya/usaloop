@@ -1163,6 +1163,12 @@ section > h2::after {
   color: var(--doc-slate);
 }
 
+.route-multi-stop-hint {
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
 .maps-platform-attribution {
   margin: 0.5rem 0 0;
   font-size: 0.72rem;

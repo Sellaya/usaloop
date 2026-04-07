@@ -138,55 +138,76 @@ function parseWaypointsFromMapsParam(raw) {
     .filter(Boolean);
 }
 
-/**
- * Path-style URLs: /maps/dir/Origin/Destination/ or /maps/dir/A/B/C/D with middle segments as waypoints.
- */
-function parsePathStyleMapsDir(pathname) {
-  const parts = pathname.split("/").filter(Boolean);
-  const dirIdx = parts.indexOf("dir");
-  if (dirIdx < 0) return null;
-  const segs = parts.slice(dirIdx + 1);
-  if (segs.length < 2) return null;
-  const decoded = segs.map((s) => decodeMapsDirectionsParam(s));
-  const origin = decoded[0];
-  const destination = decoded[decoded.length - 1];
-  const waypoints = decoded.slice(1, -1).map((location) => ({ location, stopover: true }));
-  return { origin, destination, waypoints };
+/** Drop Maps path junk (data=… blob, @lat,lng zoom, etc.) — not place names. */
+function isMapsDirPathJunkSegment(decoded) {
+  if (decoded == null || !String(decoded).trim()) return true;
+  const s = String(decoded).trim();
+  if (/^data=/i.test(s)) return true;
+  if (/^@\s*[\d.,\-]+/.test(s)) return true;
+  return false;
 }
 
-/** Parse google.com/maps/dir URL for DirectionsService (query or path form; includes waypoints). */
+/**
+ * Human place segments after /maps/dir/… in order (A/B/C → 3 stops).
+ * Google often puts every stop in the path while also duplicating endpoints in ?origin=&destination=;
+ * we must not return early on query only or we drop middle path stops.
+ */
+function extractMapsDirPathPlaces(pathname) {
+  const parts = pathname.split("/").filter(Boolean);
+  const dirIdx = parts.indexOf("dir");
+  if (dirIdx < 0) return [];
+  return parts
+    .slice(dirIdx + 1)
+    .map((s) => decodeMapsDirectionsParam(s))
+    .filter((seg) => !isMapsDirPathJunkSegment(seg));
+}
+
+/** Parse google.com/maps/dir URL for DirectionsService (query + path; full multi-stop chain). */
 function parseGoogleMapsDirectionsUrl(href) {
   try {
     const u = new URL(href);
+    const h = u.hostname.toLowerCase();
     const hostOk =
-      u.hostname === "www.google.com" ||
-      u.hostname === "google.com" ||
-      u.hostname === "maps.google.com" ||
-      u.hostname.endsWith(".google.com");
+      h === "google.com" ||
+      h === "maps.google.com" ||
+      h.endsWith(".google.com") ||
+      /^maps\.google\./.test(h);
     if (!hostOk || !u.pathname.includes("/maps/dir")) return null;
 
     const tm = (u.searchParams.get("travelmode") || "driving").toUpperCase();
-    let origin = u.searchParams.get("origin")?.trim();
-    let destination = u.searchParams.get("destination")?.trim();
-    let waypoints = parseWaypointsFromMapsParam(u.searchParams.get("waypoints"));
+    const originQ = u.searchParams.get("origin")?.trim();
+    const destQ = u.searchParams.get("destination")?.trim();
+    const wpFromQuery = parseWaypointsFromMapsParam(u.searchParams.get("waypoints"));
+    const pathPlaces = extractMapsDirPathPlaces(u.pathname);
 
-    if (origin && destination) {
+    if (pathPlaces.length >= 3) {
       return {
-        origin: decodeMapsDirectionsParam(origin),
-        destination: decodeMapsDirectionsParam(destination),
-        waypoints,
+        origin: pathPlaces[0],
+        destination: pathPlaces[pathPlaces.length - 1],
+        waypoints: pathPlaces.slice(1, -1).map((location) => ({ location, stopover: true })),
         travelModeKey: tm,
       };
     }
 
-    const pathParsed = parsePathStyleMapsDir(u.pathname);
-    if (!pathParsed) return null;
-    return {
-      origin: pathParsed.origin,
-      destination: pathParsed.destination,
-      waypoints: pathParsed.waypoints?.length ? pathParsed.waypoints : waypoints,
-      travelModeKey: tm,
-    };
+    if (pathPlaces.length === 2) {
+      return {
+        origin: pathPlaces[0],
+        destination: pathPlaces[1],
+        waypoints: wpFromQuery,
+        travelModeKey: tm,
+      };
+    }
+
+    if (originQ && destQ) {
+      return {
+        origin: decodeMapsDirectionsParam(originQ),
+        destination: decodeMapsDirectionsParam(destQ),
+        waypoints: wpFromQuery,
+        travelModeKey: tm,
+      };
+    }
+
+    return null;
   } catch {
     return null;
   }
@@ -263,6 +284,7 @@ function directionsRouteOnce(svc, request) {
         durationSeconds,
         endLat,
         endLng,
+        legCount: legs.length,
       });
     });
   });
@@ -332,7 +354,13 @@ function applyDayDistanceToDom(day) {
       const f = formatDistanceKmMi(day.googleDistanceKm);
       kmCell.textContent = f ? f.shortLine : String(day.googleDistanceKm);
       const tip = f ? `${f.primaryLine}` : "";
-      kmCell.title = [tip, day.googleDurationText, "Google Directions (driving)"].filter(Boolean).join(" · ");
+      const legHint =
+        day.googleDirectionsLegCount != null && day.googleDirectionsLegCount > 1
+          ? `${day.googleDirectionsLegCount} legs (${day.googleDirectionsLegCount + 1} stops)`
+          : "";
+      kmCell.title = [tip, legHint, day.googleDurationText, "Google Directions (driving)"]
+        .filter(Boolean)
+        .join(" · ");
     } else if (day.googleDistanceError) {
       kmCell.textContent = "—";
       kmCell.title = day.googleDistanceError;
@@ -351,9 +379,17 @@ function applyDayDistanceToDom(day) {
       kmLine.appendChild(el("strong", { text: f ? `≈ ${f.primaryLine}` : `≈ ${day.googleDistanceKm} km` }));
       kmLine.appendChild(
         document.createTextNode(
-          " — Google Directions (driving, metric): full route distance including all legs and waypoints in the link. Matches Maps when origin, destination, and stops are the same."
+          " — Google Directions (driving, metric): sums every driving leg in the link (origin → any waypoints → destination). Path + ?waypoints= are merged so middle stops are not dropped."
         )
       );
+      if (day.googleDirectionsLegCount != null && day.googleDirectionsLegCount > 1) {
+        kmLine.appendChild(
+          el("span", {
+            class: "route-multi-stop-hint",
+            text: ` ${day.googleDirectionsLegCount} legs · ${day.googleDirectionsLegCount + 1} stops.`,
+          })
+        );
+      }
       if (day.googleDurationText) {
         kmLine.appendChild(
           el("span", {
@@ -387,6 +423,7 @@ async function fetchGoogleDistancesForDays(days) {
     const parsed = parseGoogleMapsDirectionsUrl(href);
     if (!parsed) {
       day.googleDistanceKm = null;
+      day.googleDirectionsLegCount = null;
       day.routeEndLat = null;
       day.routeEndLng = null;
       day.googleDistanceError = "Unrecognized Maps URL";
@@ -395,6 +432,7 @@ async function fetchGoogleDistancesForDays(days) {
     }
     const travelMode = googleTravelModeFromKey(parsed.travelModeKey);
     if (!travelMode) {
+      day.googleDirectionsLegCount = null;
       day.routeEndLat = null;
       day.routeEndLng = null;
       day.googleDistanceError = "Maps API not ready";
@@ -404,7 +442,7 @@ async function fetchGoogleDistancesForDays(days) {
 
     try {
       const request = buildDirectionsRequest(parsed, travelMode);
-      const { meters, durationText, durationSeconds, endLat, endLng } = await directionsRouteWithRetry(
+      const { meters, durationText, durationSeconds, endLat, endLng, legCount } = await directionsRouteWithRetry(
         svc,
         request
       );
@@ -414,8 +452,10 @@ async function fetchGoogleDistancesForDays(days) {
       day.googleDistanceError = null;
       day.routeEndLat = endLat;
       day.routeEndLng = endLng;
+      day.googleDirectionsLegCount = legCount ?? null;
     } catch (e) {
       day.googleDistanceKm = null;
+      day.googleDirectionsLegCount = null;
       day.routeEndLat = null;
       day.routeEndLng = null;
       day.googleDistanceError = e?.message || "REQUEST_DENIED";
