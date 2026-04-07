@@ -1056,10 +1056,10 @@
     {
       "dayIndex": 29,
       "date": "2026-06-29",
-      "title": "Yellowstone → Beartooth Highway",
+      "title": "Yellowstone → Beartooth Highway → Powell, WY",
       "distanceKm": 0,
-      "routeLine": "Exit Yellowstone via Northeast Entrance → Cooke City, MT. Take US-212 (Beartooth Highway) over the pass to Red Lodge, MT — not WY-310 (Chief Joseph Scenic Byway toward Cody), which skips the Beartooth unless US-212 is closed. After Red Lodge, continue into the Bighorn Basin to Cowley, WY for the night. The itinerary Maps link uses a lat/lng chain (Old Faithful → Cooke City → Red Lodge → Cowley) so distance matches US-212, not a Cody/WY-310 shortcut.",
-      "fuelNotes": "Long day: fill inside Yellowstone before pushing to the NE exit; top up again in Cooke City or Red Lodge; carry range for the Red Lodge → Cowley crossing (Bighorn Basin).",
+      "routeLine": "Morning: ride Yellowstone’s Grand Loop toward the Northeast Entrance (from wherever you stayed — e.g. Old Faithful area). At Cooke City, MT, pick up US-212 (Beartooth Highway) over the pass to Red Lodge — not WY-310 (Chief Joseph toward Cody) unless 212 is closed. Continue into the Bighorn Basin to Powell, WY for the night. The app’s Maps distance (~316 km) is the Cooke City → Red Lodge → Powell leg only; add your in-park miles separately.",
+      "fuelNotes": "Fill before leaving the park interior; top up in Cooke City or Red Lodge; Powell has services before overnight.",
       "terrain": "US-212 high alpine — snow/ice possible early season; do not confuse with lower WY-310 corridor",
       "highlights": [
         "Beartooth Pass — one of the great US motorcycle roads"
@@ -1067,16 +1067,16 @@
       "stops": [],
       "lodging": {
         "heading": "Stay option",
-        "name": "Jerry Bellmyer",
-        "address": "Cowley, WY",
-        "notes": "WY side pacing."
+        "name": "Daryn Engesser",
+        "address": "Powell, WY",
+        "notes": "Powell matches the ~316 km Beartooth+Bighorn corridor (Cooke City → Red Lodge → Powell). Confirm address and bike parking."
       },
       "lodgingAlternatives": [
         {
           "heading": "Stay option",
-          "name": "Daryn Engesser",
-          "address": "Powell, WY",
-          "notes": "Alternate east of Yellowstone loop."
+          "name": "Jerry Bellmyer",
+          "address": "Cowley, WY",
+          "notes": "South of Powell in the Bighorn Basin — short ride from Powell if you prefer this host."
         }
       ],
       "risks": [
@@ -1093,9 +1093,9 @@
     {
       "dayIndex": 30,
       "date": "2026-06-30",
-      "title": "Cowley → Gillette (WY)",
+      "title": "Powell → Gillette (WY)",
       "distanceKm": 0,
-      "routeLine": "Bighorn Basin crossing after the Beartooth night in Cowley — slab and wind typical toward Gillette (Powder River Basin).",
+      "routeLine": "Bighorn Basin crossing after the night in Powell — slab and wind typical toward Gillette (Powder River Basin).",
       "terrain": "WY plains — wind",
       "highlights": [
         "Powder River Basin"

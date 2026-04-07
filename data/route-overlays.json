@@ -437,8 +437,8 @@
       ]
     },
     "29": {
-      "mapsDirectionsUrl": "https://www.google.com/maps/dir/44.460548,-110.828102/45.018871,-109.926270/45.185899,-109.247017/44.87917,-108.46778?api=1&travelmode=driving",
-      "distanceNote": "Path order: Old Faithful → Cooke City (NE gate) → Red Lodge (US-212 Beartooth) → Cowley, WY town center. Uses lat/lng so the app’s Directions API matches this US-212 line (not WY-310 via Cody). Typical total often ~500–620 km; Cooke City–Red Lodge (Beartooth) ~105 km. Confirm Yellowstone seasonal road links toward NE entrance.",
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/45.018871,-109.926270/45.185899,-109.247017/44.7589,-108.7573?api=1&travelmode=driving",
+      "distanceNote": "~316 km (typical): Cooke City, MT (Yellowstone NE gate) → Red Lodge via US-212 Beartooth → Powell, WY. This is the Beartooth+Bighorn link the app totals — cross-park miles from Old Faithful / Canyon to Cooke are extra (~120–180 km); plan that leg separately.",
       "recommendations": [
         {
           "text": "Beartooth Hwy (US-212) status — snow/weather.",
@@ -455,8 +455,8 @@
       ]
     },
     "30": {
-      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=44.87917,-108.46778&destination=Gillette%2C+WY&travelmode=driving",
-      "distanceNote": "Cowley → Gillette: Bighorn Basin / I-90 style routing; often ~300–340 km depending on corridor.",
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=44.7589,-108.7573&destination=Gillette%2C+WY&travelmode=driving",
+      "distanceNote": "Powell → Gillette: Bighorn Basin / I-90 style routing; often ~300–340 km depending on corridor.",
       "recommendations": [
         {
           "text": "Bighorn Canyon NRA (optional north detour).",

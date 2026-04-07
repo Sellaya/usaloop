@@ -6,7 +6,7 @@
   <metadata>
     <name>Toronto ↔ Southwest loop — 35-day motorcycle itinerary</name>
     <desc>35 overnight waypoints from trip.json. Straight-line route is NOT the riding route — import into Garmin, Gaia, or Google Earth and plan roads separately.</desc>
-    <time>2026-04-07T18:05:39.588Z</time>
+    <time>2026-04-07T18:10:36.306Z</time>
   </metadata>
   <wpt lat="42.5962" lon="-75.9182">
     <name>Day 1: Toronto → Finger Lakes (NY)</name>
@@ -250,17 +250,17 @@ Waypoint note: Yellowstone (Old Faithful area — in-park day) (approximate)</de
     <type>overnight</type>
     <time>2026-06-28T12:00:00Z</time>
   </wpt>
-  <wpt lat="44.8792" lon="-108.4678">
-    <name>Day 29: Yellowstone → Beartooth Highway</name>
+  <wpt lat="44.7589" lon="-108.7573">
+    <name>Day 29: Yellowstone → Beartooth Highway → Powell, WY</name>
     <desc>Date: 2026-06-29
-Stay: Jerry Bellmyer
-Address: Cowley, WY
-Waypoint note: Cowley, WY (town center) (approximate)</desc>
+Stay: Daryn Engesser
+Address: Powell, WY
+Waypoint note: Powell, WY (town center) (approximate)</desc>
     <type>overnight</type>
     <time>2026-06-29T12:00:00Z</time>
   </wpt>
   <wpt lat="44.2911" lon="-105.5022">
-    <name>Day 30: Cowley → Gillette (WY)</name>
+    <name>Day 30: Powell → Gillette (WY)</name>
     <desc>Date: 2026-06-30
 Stay: Sherry Smith
 Address: Gillette, WY
@@ -425,13 +425,13 @@ Waypoint note: Toronto, ON (approximate)</desc>
       <name>D28</name>
       <desc>Day 28: Yellowstone National Park — full day</desc>
     </rtept>
-    <rtept lat="44.8792" lon="-108.4678">
+    <rtept lat="44.7589" lon="-108.7573">
       <name>D29</name>
-      <desc>Day 29: Yellowstone → Beartooth Highway</desc>
+      <desc>Day 29: Yellowstone → Beartooth Highway → Powell, WY</desc>
     </rtept>
     <rtept lat="44.2911" lon="-105.5022">
       <name>D30</name>
-      <desc>Day 30: Cowley → Gillette (WY)</desc>
+      <desc>Day 30: Powell → Gillette (WY)</desc>
     </rtept>
     <rtept lat="43.7667" lon="-103.5988">
       <name>D31</name>
