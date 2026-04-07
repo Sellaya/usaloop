@@ -37,8 +37,8 @@
       ]
     },
     "3": {
-      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Washington%2C+DC&destination=Luray%2C+VA&travelmode=driving",
-      "distanceNote": "Core mid-Atlantic segment (DC → Luray). If starting from NY/LI, chain origin in Maps to match your Day 2 end pin.",
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=New+York%2C+NY&waypoints=Washington%2C+DC&destination=Luray%2C+VA&travelmode=driving",
+      "distanceNote": "Full day as titled: NYC metro → DC → Luray. If you actually leave from Long Island (Day 2), change origin in Maps to your Southampton pin — distances will shorten slightly vs this NYC centroid.",
       "recommendations": [
         {
           "text": "Shenandoah approaches — Skyline Dr is a detour with fee.",
