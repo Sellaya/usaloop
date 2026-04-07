@@ -606,19 +606,37 @@ function renderHero(trip) {
   root.hidden = false;
   root.innerHTML = "";
   const inner = el("div", { class: "hero-doc-inner" });
+
   inner.appendChild(el("p", { class: "hero-kicker", text: `🏍 ${trip.tagline || "Ride plan"}` }));
-  const chips = el("div", { class: "hero-chips" });
+
+  const chips = el("div", { class: "hero-chips", "aria-label": "Trip summary tags" });
   if (trip.bike) chips.appendChild(el("span", { class: "hero-chip", text: trip.bike }));
   (trip.statsChips || []).forEach((c) => chips.appendChild(el("span", { class: "hero-chip", text: c })));
   if (chips.childNodes.length) inner.appendChild(chips);
+
   if (trip.legs && typeof trip.legs === "object") {
-    const legs = el("div", { class: "hero-legs" });
+    const legs = el("div", { class: "hero-legs", "aria-label": "Trip legs" });
+    let anyLeg = false;
     ["1", "2", "3"].forEach((k) => {
-      if (trip.legs[k]) legs.appendChild(el("div", { class: "hero-leg", text: `Leg ${k}: ${trip.legs[k]}` }));
+      const title = trip.legs[k];
+      if (!title) return;
+      anyLeg = true;
+      const row = el("div", { class: "hero-leg" });
+      row.appendChild(el("span", { class: "hero-leg__bar", "aria-hidden": "true" }));
+      const text = el("p", { class: "hero-leg__text" });
+      text.appendChild(el("strong", { class: "hero-leg__label", text: `Leg ${k}: ` }));
+      text.appendChild(document.createTextNode(title));
+      row.appendChild(text);
+      legs.appendChild(row);
     });
-    if (legs.childNodes.length) inner.appendChild(legs);
+    if (anyLeg) {
+      inner.appendChild(el("div", { class: "hero-doc__divider", "aria-hidden": "true" }));
+      inner.appendChild(legs);
+    }
   }
-  inner.appendChild(
+
+  const foot = el("footer", { class: "hero-doc__footer" });
+  foot.appendChild(
     el("div", {
       class: "hero-route-total",
       id: "hero-route-total",
@@ -626,6 +644,8 @@ function renderHero(trip) {
       "aria-live": "polite",
     })
   );
+  inner.appendChild(foot);
+
   root.appendChild(inner);
 }
 
@@ -1325,6 +1345,18 @@ function syncDayDetailsFromHash() {
   if (node && node.tagName === "DETAILS") node.open = true;
 }
 
+/** Highlights jump nav to match current section hash (falls back to Overview). */
+function syncJumpNav() {
+  const raw = window.location.hash.slice(1);
+  const sectionIds = new Set(["overview", "glance", "days", "checklists", "before", "emergency", "links"]);
+  const active = raw && sectionIds.has(raw) ? raw : "overview";
+  document.querySelectorAll("nav.jump a").forEach((a) => {
+    const href = a.getAttribute("href") || "";
+    const id = href.startsWith("#") ? href.slice(1) : "";
+    a.classList.toggle("is-active", id === active);
+  });
+}
+
 async function main() {
   const banner = document.getElementById("load-error");
   try {
@@ -1347,7 +1379,11 @@ async function main() {
     }
     renderTrip(data, babHostsMap, routeMeta);
     scheduleGoogleDistanceFetch(data.days);
-    window.addEventListener("hashchange", syncDayDetailsFromHash);
+    syncJumpNav();
+    window.addEventListener("hashchange", () => {
+      syncDayDetailsFromHash();
+      syncJumpNav();
+    });
     banner.hidden = true;
   } catch (e) {
     banner.hidden = false;
