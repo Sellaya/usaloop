@@ -65,8 +65,11 @@ function el(tag, attrs = {}, children = []) {
     else if (["href", "target", "rel", "title", "type"].includes(k)) node.setAttribute(k, v);
     else node[k] = v;
   });
-  children.forEach((c) => {
-    if (c != null) node.appendChild(c);
+  const list = Array.isArray(children) ? children : children == null ? [] : [children];
+  list.forEach((c) => {
+    if (c == null) return;
+    if (typeof c === "string") node.appendChild(document.createTextNode(c));
+    else node.appendChild(c);
   });
   return node;
 }
@@ -378,7 +381,9 @@ function applyDayDistanceToDom(day) {
       kmLine.innerHTML = "";
       kmLine.appendChild(el("strong", { text: f ? `≈ ${f.primaryLine}` : `≈ ${day.googleDistanceKm} km` }));
       if (day.googleDurationText) {
-        kmLine.appendChild(el("span", { class: "muted" }, ` · ~${day.googleDurationText}`));
+        kmLine.appendChild(
+          el("span", { class: "muted", text: ` · ~${day.googleDurationText}` })
+        );
       }
     } else if (day.googleDistanceError) {
       kmLine.classList.add("muted");
