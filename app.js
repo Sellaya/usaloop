@@ -156,6 +156,15 @@ function buildDirectionsRequest(parsed, travelMode) {
 
 const DIRECTIONS_CALL_TIMEOUT_MS = 20000;
 
+function latLngFromEnd(end) {
+  if (!end) return { endLat: null, endLng: null };
+  const lat = typeof end.lat === "function" ? end.lat() : end.lat;
+  const lng = typeof end.lng === "function" ? end.lng() : end.lng;
+  const endLat = typeof lat === "number" && Number.isFinite(lat) ? lat : null;
+  const endLng = typeof lng === "number" && Number.isFinite(lng) ? lng : null;
+  return { endLat, endLng };
+}
+
 function directionsRouteOnce(svc, request) {
   return new Promise((resolve, reject) => {
     const timer = window.setTimeout(() => {
@@ -166,10 +175,13 @@ function directionsRouteOnce(svc, request) {
       const leg = result?.routes?.[0]?.legs?.[0];
       const meters = leg?.distance?.value;
       if (status === "OK" && leg && meters != null) {
+        const { endLat, endLng } = latLngFromEnd(leg.end_location);
         resolve({
           meters,
           durationText: leg.duration?.text || "",
           durationSeconds: leg.duration?.value ?? 0,
+          endLat,
+          endLng,
         });
       } else {
         reject(new Error(status));
@@ -297,12 +309,16 @@ async function fetchGoogleDistancesForDays(days) {
     const parsed = parseGoogleMapsDirectionsUrl(href);
     if (!parsed) {
       day.googleDistanceKm = null;
+      day.routeEndLat = null;
+      day.routeEndLng = null;
       day.googleDistanceError = "Unrecognized Maps URL";
       applyDayDistanceToDom(day);
       continue;
     }
     const travelMode = googleTravelModeFromKey(parsed.travelModeKey);
     if (!travelMode) {
+      day.routeEndLat = null;
+      day.routeEndLng = null;
       day.googleDistanceError = "Maps API not ready";
       applyDayDistanceToDom(day);
       continue;
@@ -310,13 +326,20 @@ async function fetchGoogleDistancesForDays(days) {
 
     try {
       const request = buildDirectionsRequest(parsed, travelMode);
-      const { meters, durationText, durationSeconds } = await directionsRouteWithRetry(svc, request);
+      const { meters, durationText, durationSeconds, endLat, endLng } = await directionsRouteWithRetry(
+        svc,
+        request
+      );
       day.googleDistanceKm = Math.round(meters / 1000);
       day.googleDurationText = durationText;
       day.googleDurationSeconds = durationSeconds;
       day.googleDistanceError = null;
+      day.routeEndLat = endLat;
+      day.routeEndLng = endLng;
     } catch (e) {
       day.googleDistanceKm = null;
+      day.routeEndLat = null;
+      day.routeEndLng = null;
       day.googleDistanceError = e?.message || "REQUEST_DENIED";
       if (list.indexOf(day) === 0) {
         console.warn(
@@ -330,6 +353,567 @@ async function fetchGoogleDistancesForDays(days) {
     applyDayDistanceToDom(day);
     await new Promise((r) => setTimeout(r, 120));
   }
+}
+
+const WEATHER_DEDUPE_DECIMALS = 2;
+
+function roundCoord(n) {
+  if (n == null || !Number.isFinite(n)) return null;
+  const f = 10 ** WEATHER_DEDUPE_DECIMALS;
+  return Math.round(n * f) / f;
+}
+
+function coordCacheKey(lat, lng) {
+  const a = roundCoord(lat);
+  const b = roundCoord(lng);
+  if (a == null || b == null) return null;
+  return `${a},${b}`;
+}
+
+function forecastDayToIso(fd) {
+  const d = fd?.displayDate;
+  if (!d) return null;
+  const y = d.year;
+  const m = String(d.month).padStart(2, "0");
+  const day = String(d.day).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
+function forecastDisplayDateKey(fd) {
+  const d = fd?.displayDate;
+  if (!d) return "";
+  return `${d.year}-${d.month}-${d.day}`;
+}
+
+/**
+ * Google’s days:lookup defaults pageSize to 5; follow nextPageToken until we have up to `nDays` rows.
+ */
+async function fetchWeatherForecastPages(buildUrl, nDaysIn) {
+  const nDays = Math.min(10, Math.max(1, nDaysIn));
+  const mergedDays = [];
+  const seen = new Set();
+  let timeZone = null;
+  let pageToken = null;
+
+  do {
+    const u = buildUrl();
+    u.searchParams.set("days", String(nDays));
+    u.searchParams.set("pageSize", "10");
+    if (pageToken) u.searchParams.set("pageToken", pageToken);
+
+    const r = await fetch(u.toString(), { cache: "no-store" });
+    const data = await r.json().catch(() => ({}));
+    if (!r.ok) {
+      throw new Error(
+        data?.error?.message || data?.error || data?.message || `Weather HTTP ${r.status}`
+      );
+    }
+    if (data.timeZone && !timeZone) timeZone = data.timeZone;
+    for (const fd of data.forecastDays || []) {
+      const k = forecastDisplayDateKey(fd);
+      if (!k || seen.has(k)) continue;
+      seen.add(k);
+      mergedDays.push(fd);
+    }
+    pageToken = data.nextPageToken || null;
+    if (mergedDays.length >= nDays) pageToken = null;
+  } while (pageToken);
+
+  return { forecastDays: mergedDays, timeZone: timeZone || {} };
+}
+
+async function fetchDailyForecastFromGoogle(lat, lng, dayCount) {
+  const nDays = Math.min(10, Math.max(1, dayCount));
+  const proxyParams = new URLSearchParams({
+    lat: String(lat),
+    lon: String(lng),
+    days: String(nDays),
+  });
+  const proxyRes = await fetch(`/api/weather?${proxyParams}`, { cache: "no-store" });
+  if (proxyRes.ok) return proxyRes.json();
+
+  if (!hasGoogleMapsApiKey()) {
+    const err = await proxyRes.json().catch(() => ({}));
+    throw new Error(err?.error?.message || err?.error || `Weather HTTP ${proxyRes.status}`);
+  }
+
+  const k = String(window.__GOOGLE_MAPS_API_KEY__).trim();
+  const buildUrl = () => {
+    const u = new URL("https://weather.googleapis.com/v1/forecast/days:lookup");
+    u.searchParams.set("key", k);
+    u.searchParams.set("location.latitude", String(lat));
+    u.searchParams.set("location.longitude", String(lng));
+    return u;
+  };
+  return fetchWeatherForecastPages(buildUrl, nDays);
+}
+
+async function fetchCurrentConditionsFromGoogle(lat, lng) {
+  const proxyParams = new URLSearchParams({
+    lat: String(lat),
+    lon: String(lng),
+    current: "1",
+  });
+  const proxyRes = await fetch(`/api/weather?${proxyParams}`, { cache: "no-store" });
+  if (proxyRes.ok) return proxyRes.json();
+
+  if (!hasGoogleMapsApiKey()) {
+    const err = await proxyRes.json().catch(() => ({}));
+    throw new Error(err?.error?.message || err?.error || `Weather HTTP ${proxyRes.status}`);
+  }
+
+  const k = String(window.__GOOGLE_MAPS_API_KEY__).trim();
+  const u = new URL("https://weather.googleapis.com/v1/currentConditions:lookup");
+  u.searchParams.set("key", k);
+  u.searchParams.set("location.latitude", String(lat));
+  u.searchParams.set("location.longitude", String(lng));
+  const r = await fetch(u.toString(), { cache: "no-store" });
+  const data = await r.json().catch(() => ({}));
+  if (!r.ok) {
+    throw new Error(
+      data?.error?.message || data?.error || data?.message || `Current weather HTTP ${r.status}`
+    );
+  }
+  return data;
+}
+
+function formatCurrentObservedAt(cc) {
+  if (!cc?.currentTime) return "";
+  try {
+    const d = new Date(cc.currentTime);
+    if (Number.isNaN(d.getTime())) return "";
+    return d.toLocaleString(undefined, { dateStyle: "short", timeStyle: "short" });
+  } catch {
+    return "";
+  }
+}
+
+function formatCurrentConditionsSummary(cc) {
+  if (!cc) return "";
+  const bits = [];
+  const cond = cc.weatherCondition?.description?.text;
+  if (cond) bits.push(cond);
+  const t = cc.temperature?.degrees;
+  if (t != null && Number.isFinite(t)) bits.push(`${Math.round(t)}°C`);
+  const fl = cc.feelsLikeTemperature?.degrees;
+  if (fl != null && Number.isFinite(fl) && (t == null || Math.abs(fl - t) >= 2)) {
+    bits.push(`feels like ${Math.round(fl)}°C`);
+  }
+  const pp = cc.precipitation?.probability?.percent;
+  if (pp != null) bits.push(`${pp}% rain chance`);
+  const gust = cc.wind?.gust?.value;
+  const ws = cc.wind?.speed?.value;
+  if (gust != null && Number.isFinite(gust)) bits.push(`gusts to ${Math.round(gust)} km/h`);
+  else if (ws != null && Number.isFinite(ws)) bits.push(`wind ${Math.round(ws)} km/h`);
+  if (cc.relativeHumidity != null) bits.push(`${cc.relativeHumidity}% humidity`);
+  if (cc.isDaytime === false) bits.push("night at destination");
+  return bits.join(" · ");
+}
+
+/** Riding concerns from live current conditions (DR650 / touring, metric). */
+function scoreCurrentConditionsRisks(cc) {
+  if (!cc) return null;
+  const lines = [];
+  const pp = cc.precipitation?.probability?.percent;
+  const ts = cc.thunderstormProbability;
+  const gust = cc.wind?.gust?.value;
+  const wind = cc.wind?.speed?.value;
+  const temp = cc.temperature?.degrees;
+  const wchill = cc.windChill?.degrees;
+  const feels = cc.feelsLikeTemperature?.degrees;
+  const type = (cc.weatherCondition?.type || "").toUpperCase();
+  const desc = cc.weatherCondition?.description?.text;
+  const vis = cc.visibility;
+  let visKm = null;
+  if (vis?.distance != null && Number.isFinite(vis.distance)) {
+    const u = (vis.unit || "").toString();
+    visKm = u.includes("MILE") ? vis.distance * 1.609344 : vis.distance;
+  }
+
+  if (pp != null && pp >= 55) lines.push(`precipitation ~${pp}%`);
+  if (ts != null && ts >= 25) lines.push(`thunderstorms ~${ts}%`);
+  if (gust != null && gust >= 45) lines.push(`wind gusts to ${Math.round(gust)} km/h`);
+  else if (wind != null && wind >= 38) lines.push(`sustained wind ~${Math.round(wind)} km/h`);
+  const cold = [temp, wchill, feels].filter((n) => n != null && Number.isFinite(n));
+  if (cold.length && Math.min(...cold) <= 2) {
+    lines.push(`cold / wind chill ~${Math.round(Math.min(...cold))}°C`);
+  }
+  if (visKm != null && visKm < 1.5) {
+    lines.push(
+      visKm < 1
+        ? `low visibility ~${Math.round(visKm * 1000)} m`
+        : `low visibility ~${visKm.toFixed(1)} km`
+    );
+  }
+  if (cc.uvIndex != null && cc.uvIndex >= 8) lines.push(`high UV index ${cc.uvIndex}`);
+  if (/SNOW|ICE|HAIL|THUNDER|BLIZZARD|FREEZING/i.test(type)) lines.push(desc || type);
+
+  return lines.length ? lines : null;
+}
+
+function mergeRidingRiskLines(currentCc, forecastDay) {
+  const a = scoreCurrentConditionsRisks(currentCc);
+  const b = forecastDay ? scoreMotorcycleRidingRisks(forecastDay) : null;
+  const out = [];
+  const seen = new Set();
+  for (const line of [...(a || []), ...(b || [])]) {
+    if (seen.has(line)) continue;
+    seen.add(line);
+    out.push(line);
+  }
+  return out.length ? out : null;
+}
+
+/** Riding concerns for a Suzuki DR650 / light adventure bike (metric). */
+function scoreMotorcycleRidingRisks(forecastDay) {
+  if (!forecastDay) return null;
+  const d = forecastDay.daytimeForecast;
+  if (!d) return null;
+  const lines = [];
+  const pp = d.precipitation?.probability?.percent;
+  const ts = d.thunderstormProbability;
+  const gust = d.wind?.gust?.value;
+  const wind = d.wind?.speed?.value;
+  const tmin = forecastDay.minTemperature?.degrees;
+  const type = (d.weatherCondition?.type || "").toUpperCase();
+  const desc = d.weatherCondition?.description?.text;
+
+  if (pp != null && pp >= 55) lines.push(`precipitation ~${pp}%`);
+  if (ts != null && ts >= 25) lines.push(`thunderstorms ~${ts}%`);
+  if (gust != null && gust >= 45) lines.push(`wind gusts to ${Math.round(gust)} km/h`);
+  else if (wind != null && wind >= 38) lines.push(`sustained wind ~${Math.round(wind)} km/h`);
+  if (tmin != null && tmin <= 2) lines.push(`overnight low ~${Math.round(tmin)}°C (ice risk)`);
+  if (forecastDay.iceThickness?.thickness > 0) lines.push("ice thickness reported");
+  if (/SNOW|ICE|HAIL|THUNDER|BLIZZARD|FREEZING/i.test(type)) lines.push(desc || type);
+
+  return lines.length ? lines : null;
+}
+
+function attachWeatherToDay(day, cache) {
+  day.googleWeather = null;
+  if (day.routeEndLat == null || day.routeEndLng == null || !day.date) return;
+  const key = coordCacheKey(day.routeEndLat, day.routeEndLng);
+  if (!key) return;
+  const payload = cache.get(key);
+  if (!payload) return;
+
+  const tz =
+    payload.timeZone?.id ||
+    payload.current?.timeZone?.id ||
+    "";
+
+  const gw = {
+    current: payload.current || null,
+    forecastDay: null,
+    rideDateMatched: false,
+    timeZoneId: tz,
+  };
+
+  if (payload.forecastDays?.length) {
+    const exact = payload.forecastDays.find((fd) => forecastDayToIso(fd) === day.date);
+    if (exact) {
+      gw.forecastDay = exact;
+      gw.rideDateMatched = true;
+    } else {
+      gw.forecastDay = payload.forecastDays[0];
+      gw.rideDateMatched = false;
+    }
+  }
+
+  if (!gw.current && !gw.forecastDay) return;
+  day.googleWeather = gw;
+}
+
+async function fetchAndRenderRouteWeather(days, trip) {
+  if (!hasGoogleMapsApiKey()) return;
+
+  const unique = new Map();
+  for (const day of days || []) {
+    if (day.routeEndLat == null || day.routeEndLng == null) continue;
+    const key = coordCacheKey(day.routeEndLat, day.routeEndLng);
+    if (!key || unique.has(key)) continue;
+    unique.set(key, { lat: day.routeEndLat, lng: day.routeEndLng });
+  }
+
+  const cache = new Map();
+  for (const { lat, lng } of unique.values()) {
+    const key = coordCacheKey(lat, lng);
+    let current = null;
+    let forecast = { forecastDays: [], timeZone: {} };
+
+    try {
+      current = await fetchCurrentConditionsFromGoogle(lat, lng);
+    } catch (e) {
+      console.warn("[Weather] current conditions failed for", lat, lng, e?.message || e);
+    }
+    await new Promise((r) => setTimeout(r, 120));
+
+    try {
+      forecast = await fetchDailyForecastFromGoogle(lat, lng, 10);
+    } catch (e) {
+      console.warn("[Weather] forecast failed for", lat, lng, e?.message || e);
+      forecast = { forecastDays: [], timeZone: {}, error: String(e?.message || e) };
+    }
+
+    cache.set(key, {
+      current,
+      forecastDays: forecast.forecastDays || [],
+      timeZone: forecast.timeZone || current?.timeZone || {},
+    });
+    await new Promise((r) => setTimeout(r, 120));
+  }
+
+  for (const day of days || []) {
+    attachWeatherToDay(day, cache);
+    applyDayWeatherToDom(day);
+  }
+
+  renderHeroWeatherAlerts(days, trip);
+  renderOverviewLegWeather(days, trip);
+}
+
+function scheduleRouteWeatherFetch(days, trip) {
+  if (!hasGoogleMapsApiKey()) return;
+  fetchAndRenderRouteWeather(days, trip || {}).catch((e) => console.error("[Weather]", e));
+}
+
+function applyDayWeatherToDom(day) {
+  const slot = document.querySelector(`[data-day-weather="${day.dayIndex}"]`);
+  if (!slot) return;
+  const gw = day.googleWeather;
+  if (!gw?.current && !gw?.forecastDay) {
+    slot.hidden = true;
+    slot.innerHTML = "";
+    return;
+  }
+
+  slot.hidden = false;
+  slot.innerHTML = "";
+  const wrap = el("div", { class: "day-weather-google" });
+  wrap.appendChild(
+    el("h4", {
+      class: "day-section-title",
+      text: "🌤 Google Weather — route destination",
+    })
+  );
+  wrap.appendChild(
+    el("p", {
+      class: "day-weather-google__window muted",
+      text: `Tour calendar: ride day ${formatDate(day.date)}. Below is live and/or outlook data at this leg’s end coordinates (not tied to that date).`,
+    })
+  );
+
+  const cc = gw.current;
+  if (cc) {
+    const obs = formatCurrentObservedAt(cc);
+    const tz = gw.timeZoneId || cc.timeZone?.id || "";
+    wrap.appendChild(
+      el("p", {
+        class: "day-weather-google__label",
+        text: `Now${obs ? ` · observed ${obs}` : ""}${tz ? ` · ${tz}` : ""}`,
+      })
+    );
+    wrap.appendChild(
+      el("p", {
+        class: "day-weather-google__body day-weather-google__body--current",
+        text: formatCurrentConditionsSummary(cc) || "Current conditions loaded — see raw details in Google Weather if needed.",
+      })
+    );
+  }
+
+  const fd = gw.forecastDay;
+  if (fd) {
+    const d = fd.daytimeForecast;
+    const rideMatched = gw.rideDateMatched === true;
+    const fcIso = forecastDayToIso(fd);
+    const fcLabel = fcIso ? formatDate(fcIso) : "near-term";
+    const desc = d?.weatherCondition?.description?.text || "—";
+    const hi = fd.maxTemperature?.degrees;
+    const lo = fd.minTemperature?.degrees;
+    const rain = d?.precipitation?.probability?.percent;
+    const gust = d?.wind?.gust?.value;
+    const parts = [desc];
+    if (hi != null || lo != null) {
+      parts.push(
+        `High ${hi != null ? Math.round(hi) : "—"}°C · Low ${lo != null ? Math.round(lo) : "—"}°C`
+      );
+    }
+    if (rain != null) parts.push(`daytime rain chance ${rain}%`);
+    if (gust != null) parts.push(`gusts to ${Math.round(gust)} km/h`);
+
+    wrap.appendChild(
+      el("p", {
+        class: "day-weather-google__label",
+        text: rideMatched
+          ? `Daily outlook · ${fcLabel} (matches your ride day)`
+          : `Daily outlook · ${fcLabel} (next days at destination; ride day may differ)`,
+      })
+    );
+    wrap.appendChild(el("p", { class: "day-weather-google__body", text: parts.join(" · ") }));
+  }
+
+  const merged = mergeRidingRiskLines(cc, fd);
+  if (merged?.length) {
+    wrap.appendChild(
+      el("p", {
+        class: "day-weather-google__risk",
+        text: `DR650 / touring — watch: ${merged.join(" · ")}`,
+      })
+    );
+  }
+
+  slot.appendChild(wrap);
+}
+
+function renderHeroWeatherAlerts(days, trip) {
+  const box = document.getElementById("hero-weather");
+  if (!box) return;
+  const bikeLabel = trip?.bike || "Suzuki DR650";
+
+  const withCoords = (days || []).filter((d) => d.routeEndLat != null && d.routeEndLng != null);
+  const withWeather = (days || []).filter((d) => d.googleWeather?.current || d.googleWeather?.forecastDay);
+
+  const alerts = [];
+  for (const day of days || []) {
+    const gw = day.googleWeather;
+    if (!gw) continue;
+    const risks = mergeRidingRiskLines(gw.current, gw.forecastDay);
+    if (!risks) continue;
+    alerts.push({ day, risks });
+  }
+
+  box.hidden = false;
+  box.innerHTML = "";
+  box.classList.remove("hero-weather--alert", "hero-weather--muted", "hero-weather--ok");
+
+  if (!hasGoogleMapsApiKey()) {
+    box.hidden = true;
+    return;
+  }
+
+  if (!withCoords.length) {
+    box.classList.add("hero-weather--muted");
+    box.appendChild(
+      el("p", {
+        class: "hero-weather__text",
+        text: `Weather: after Google Directions resolves each leg, we load current conditions plus a short daily outlook at that leg’s destination (${bikeLabel}). Tour dates on the calendar do not gate what you see.`,
+      })
+    );
+    return;
+  }
+
+  if (!withWeather.length) {
+    box.classList.add("hero-weather--muted");
+    box.appendChild(
+      el("p", {
+        class: "hero-weather__text",
+        text: `Could not load Google Weather for route ends (check Weather API + billing on your key, use Vercel or vercel dev for /api/weather, or watch the browser console).`,
+      })
+    );
+    return;
+  }
+
+  box.appendChild(
+    el("p", {
+      class: "hero-weather__text",
+      text: `Live conditions at each day’s route destination (${bikeLabel}) — reload for a fresh read. Below: anything that looks rough for riding; open each day for full “now” + outlook.`,
+    })
+  );
+
+  if (alerts.length) {
+    box.classList.add("hero-weather--alert");
+    box.appendChild(
+      el("p", {
+        class: "hero-weather__title",
+        text: `⚠ Riding weather watch (${bikeLabel})`,
+      })
+    );
+    const ul = el("ul", { class: "hero-weather__list" });
+    for (const { day, risks } of alerts.slice(0, 8)) {
+      ul.appendChild(
+        el("li", {
+          text: `Day ${day.dayIndex} (destination now / outlook): ${risks.join(" · ")}`,
+        })
+      );
+    }
+    if (alerts.length > 8) {
+      ul.appendChild(el("li", { text: `+${alerts.length - 8} more day(s) — see daily sections.` }));
+    }
+    box.appendChild(ul);
+    box.appendChild(
+      el("p", {
+        class: "hero-weather__sub",
+        text: "Current = Google currentConditions at route-end coordinates; outlook = daily model. Re-check before you roll.",
+      })
+    );
+    return;
+  }
+
+  box.classList.add("hero-weather--ok");
+  box.appendChild(
+    el("p", {
+      class: "hero-weather__text",
+      text: `No high-priority riding flags in current + short outlook at route destinations (${bikeLabel}) — still verify wind, precip, and temperature yourself.`,
+    })
+  );
+}
+
+function renderOverviewLegWeather(days, trip) {
+  const mount = document.getElementById("overview-weather-mount");
+  if (!mount) return;
+  mount.innerHTML = "";
+  const bikeLabel = trip?.bike || "Suzuki DR650";
+
+  const byLeg = { 1: [], 2: [], 3: [] };
+  for (const day of days || []) {
+    const gw = day.googleWeather;
+    if (!gw?.current && !gw?.forecastDay) continue;
+    const risks = mergeRidingRiskLines(gw.current, gw.forecastDay) || [];
+    const leg = inferLeg(day.dayIndex);
+    const nowLine = gw.current ? formatCurrentConditionsSummary(gw.current) : "";
+    byLeg[leg].push({ day, risks, nowLine });
+  }
+
+  const any = Object.values(byLeg).some((a) => a.length);
+  if (!any) {
+    mount.hidden = true;
+    return;
+  }
+
+  mount.hidden = false;
+  mount.appendChild(
+    el("h3", { class: "overview-weather-heading", text: "Weather along legs (Google · DR650 notes)" })
+  );
+  const sub = el("p", {
+    class: "overview-weather-sub muted",
+    text: "Same route-end coordinates as driving distances. “Now” is currentConditions; concerns merge current + daily outlook. Tour dates do not change the live read.",
+  });
+  mount.appendChild(sub);
+
+  ["1", "2", "3"].forEach((k) => {
+    const rows = byLeg[k];
+    if (!rows.length) return;
+    const card = el("div", { class: "overview-leg-weather" });
+    const title = trip?.legs?.[k] || `Leg ${k}`;
+    card.appendChild(el("h4", { class: "overview-leg-weather__title", text: `Leg ${k}: ${title}` }));
+    const ul = el("ul", { class: "overview-leg-weather__list" });
+    for (const { day, risks, nowLine } of rows) {
+      const bits = [`Day ${day.dayIndex}`];
+      if (nowLine) bits.push(`Now: ${nowLine}`);
+      if (risks.length) bits.push(`Watch: ${risks.join(" · ")}`);
+      else bits.push("No major riding flags in merged current + outlook");
+      ul.appendChild(el("li", { text: bits.join(" — ") }));
+    }
+    card.appendChild(ul);
+    mount.appendChild(card);
+  });
+
+  mount.appendChild(
+    el("p", {
+      class: "overview-weather-foot muted",
+      text: `${bikeLabel}: reduce exposure in strong gusts, heavy precip, and near-freezing temps; gear for visibility and traction.`,
+    })
+  );
 }
 
 function computeGoogleRouteTotals(days) {
@@ -401,7 +985,7 @@ function initRouteTotalsUI(phase) {
       hint.appendChild(
         el("p", {
           class: "hero-route-total-setup__line",
-          text: "Vercel: set GOOGLE_MAPS_API_KEY for Production → Redeploy. Cloud Console: Maps JavaScript API + Directions API (Legacy) + billing.",
+          text: "Vercel: set GOOGLE_MAPS_API_KEY for Production → Redeploy. Cloud Console: Maps JavaScript API + Directions API (Legacy) + Weather API + billing (one key).",
         })
       );
       hero.appendChild(hint);
@@ -412,7 +996,7 @@ function initRouteTotalsUI(phase) {
       overview.innerHTML = "";
       overview.appendChild(
         el("p", {
-          text: "Per-day km use the same key. After the key is live, reload — totals appear here and in the table footer.",
+          text: "Per-day km and weather use the same GOOGLE_MAPS_API_KEY. After the key is live, reload — totals and forecasts appear here and in the table footer.",
         })
       );
     }
@@ -530,7 +1114,7 @@ function updateTotalRouteDistanceUI(days) {
   }
 }
 
-function scheduleGoogleDistanceFetch(days) {
+function scheduleGoogleDistanceFetch(days, trip) {
   if (!hasGoogleMapsApiKey()) {
     initRouteTotalsUI("nokey");
     return;
@@ -549,6 +1133,7 @@ function scheduleGoogleDistanceFetch(days) {
     } finally {
       fetchFinished = true;
       updateTotalRouteDistanceUI(days);
+      scheduleRouteWeatherFetch(days, trip);
     }
   };
 
@@ -572,6 +1157,7 @@ function scheduleGoogleDistanceFetch(days) {
       if (++attempts > 300) {
         window.clearInterval(id);
         updateTotalRouteDistanceUI(days);
+        scheduleRouteWeatherFetch(days, trip);
       }
     }, 50);
   };
@@ -681,6 +1267,14 @@ function renderHero(trip) {
     el("div", {
       class: "hero-route-total",
       id: "hero-route-total",
+      hidden: true,
+      "aria-live": "polite",
+    })
+  );
+  foot.appendChild(
+    el("div", {
+      class: "hero-weather",
+      id: "hero-weather",
       hidden: true,
       "aria-live": "polite",
     })
@@ -854,9 +1448,10 @@ ${rider}`;
   if (/text (is )?better|text preferred|text fastest/i.test(notes)) {
     extra += "\n\nText is fine on my side if that’s easiest for you.";
   }
+  const bikeMention = trip?.bike || "Suzuki DR650";
   const body = `Hi ${gn},
 
-I’m ${rider}, riding a long Toronto → USA motorcycle loop (adventure bike). I’m aiming to be in your area around ${dateLong} (${routeHint}) and found you through Bunk a Biker.
+I’m ${rider}, riding a long Toronto → USA motorcycle loop (${bikeMention}). I’m aiming to be in your area around ${dateLong} (${routeHint}) and found you through Bunk a Biker.
 
 Would you have space for one rider for a night? I’m flexible—tent, couch, or whatever you usually host—and I’ll share a tighter ETA as the day gets closer.${extra}
 
@@ -1127,7 +1722,7 @@ function appendRouteMetrics(body, day) {
   } else {
     row.classList.add("muted");
     row.textContent =
-      "Distances load only via Google Maps Platform (Directions). Add GOOGLE_MAPS_API_KEY to .env, run npm run build, or set that variable on Vercel — then enable Maps JavaScript API + Directions API for the key. You can still open the link below.";
+      "Distances and weather load via Google Maps Platform (same GOOGLE_MAPS_API_KEY). Add the key to .env, run npm run build, or set it on Vercel — enable Maps JavaScript API + Directions API (Legacy) + Weather API. You can still open the link below.";
   }
   wrap.appendChild(row);
   wrap.appendChild(
@@ -1272,6 +1867,15 @@ function renderTrip(data, babHostsMap, routeMeta) {
     b.appendChild(routeRow);
     if (day.routeLine) b.appendChild(el("div", { class: "day-route-line muted", text: day.routeLine }));
     appendRouteMetrics(b, day);
+    if (hasGoogleMapsApiKey() && day.routeOverlay?.mapsDirectionsUrl) {
+      b.appendChild(
+        el("div", {
+          class: "day-weather-slot",
+          "data-day-weather": String(day.dayIndex),
+          hidden: true,
+        })
+      );
+    }
     appendDayRecommendations(b, day);
 
     if (day.highlights?.length) {
@@ -1419,7 +2023,7 @@ async function main() {
       routeMeta = applyRouteOverlays(data.days, pack);
     }
     renderTrip(data, babHostsMap, routeMeta);
-    scheduleGoogleDistanceFetch(data.days);
+    scheduleGoogleDistanceFetch(data.days, data.trip);
     syncJumpNav();
     window.addEventListener("hashchange", () => {
       syncDayDetailsFromHash();

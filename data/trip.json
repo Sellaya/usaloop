@@ -11,10 +11,12 @@
     "startDate": "2026-06-01",
     "endDate": "2026-07-06",
     "homeBase": "Toronto, ON",
-    "bike": "Adventure motorcycle (set in trip.json)",
+    "bike": "Suzuki DR650",
     "statsChips": [
       "36 riding days",
+      "Bike: Suzuki DR650",
       "Km & drive time: Google Maps Platform (Directions API via JS)",
+      "Daily weather: Google Weather API at each leg’s route end (10-day window)",
       "Re-check each leg in Maps the day you ride (traffic not applied in-app)"
     ],
     "legs": {
@@ -25,7 +27,7 @@
     "riders": [
       {
         "name": "You",
-        "bike": "",
+        "bike": "Suzuki DR650",
         "plate": ""
       }
     ],

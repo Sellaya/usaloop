@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
  * Writes google-maps-config.js from GOOGLE_MAPS_API_KEY.
+ * Same env var powers Maps JS + Directions in the browser and (on Vercel) api/weather.js.
  * - Local: set the key in .env (see .env.example), then run: npm run build
  * - Vercel: add GOOGLE_MAPS_API_KEY in Project → Settings → Environment Variables
  */

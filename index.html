@@ -41,6 +41,7 @@
           <p class="overview-lead" id="overview-lead"></p>
           <div class="overview-stats" id="overview-stats" aria-label="Trip stats"></div>
           <div id="overview-route-total" class="overview-route-total" aria-live="polite" hidden></div>
+          <div id="overview-weather-mount" class="overview-weather-mount" hidden></div>
           <div class="overview-legs" id="overview-legs"></div>
           <div class="overview-chips-block" id="overview-chips-block" hidden>
             <span class="overview-chips-label">Regions on this loop</span>
@@ -73,7 +74,7 @@
       <section id="glance">
         <h2>Calendar at a glance</h2>
         <p class="muted glance-hint">
-          Per-day km from Google Maps Directions; the footer row is the full-route total (sum of those legs). Highlights and stays summarize each row.
+          Per-day km from Google Maps Directions; daily forecast (when your ride dates fall in Google’s 10-day window) uses the same leg’s route-end coordinates. The footer row is the full-route total. Highlights and stays summarize each row.
         </p>
         <div class="card card--table">
           <div class="table-scroll">
