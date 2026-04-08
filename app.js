@@ -789,15 +789,14 @@ async function fetchAndRenderRouteWeather(days, trip) {
     applyDayWeatherToDom(day, trip || {});
   }
 
-  applyHeroRouteWeather(days, trip || {});
+  applyHeroRouteWeather(days);
 }
 
 function scheduleRouteWeatherFetch(days, trip) {
   if (!hasGoogleMapsApiKey()) return;
-  setHeroRouteWeatherLoading();
   fetchAndRenderRouteWeather(days, trip || {}).catch((e) => {
     console.error("[Weather]", e);
-    applyHeroRouteWeather(days, trip || {});
+    applyHeroRouteWeather(days);
   });
 }
 
@@ -826,24 +825,8 @@ function pickHeroWeatherAnchorDays(days) {
   return out;
 }
 
-function setHeroRouteWeatherLoading() {
-  const slot = document.getElementById("hero-route-weather");
-  if (!slot || !hasGoogleMapsApiKey()) return;
-  slot.hidden = false;
-  slot.classList.remove("hero-route-weather--empty");
-  slot.replaceChildren();
-  slot.appendChild(
-    el("h3", { class: "hero-route-weather__title", text: "Route weather checkpoints" })
-  );
-  slot.appendChild(
-    el("p", {
-      class: "hero-route-weather__loading muted",
-      text: "Fetching live conditions for three cities along your route…",
-    })
-  );
-}
-
-function applyHeroRouteWeather(days, trip) {
+/** Hero strip: only shown when ≥1 checkpoint has merged riding-risk lines (max 3 cities). */
+function applyHeroRouteWeather(days) {
   const slot = document.getElementById("hero-route-weather");
   if (!slot) return;
   if (!hasGoogleMapsApiKey()) {
@@ -852,92 +835,66 @@ function applyHeroRouteWeather(days, trip) {
     return;
   }
 
-  const bikeLabel = trip?.bike || "bike";
   const anchors = pickHeroWeatherAnchorDays(days);
   slot.replaceChildren();
-  slot.classList.remove("hero-route-weather--empty");
-
-  const title = el("h3", { class: "hero-route-weather__title", text: "Route weather checkpoints" });
-  slot.appendChild(title);
-  slot.appendChild(
-    el("p", {
-      class: "hero-route-weather__intro muted",
-      text: `Up to 3 cities on your loop — riding-relevant flags only (${bikeLabel}). Not a forecast for every mile.`,
-    })
-  );
 
   if (!anchors.length) {
-    slot.appendChild(
-      el("p", { class: "hero-route-weather__muted", text: "Trip days not loaded — nothing to show." })
-    );
-    slot.classList.add("hero-route-weather--empty");
-    slot.hidden = false;
+    slot.hidden = true;
     return;
   }
 
-  const grid = el("div", { class: "hero-route-weather__grid" });
-
+  const alerts = [];
   for (const day of anchors) {
-    const place = legDestinationPlaceLabel(day);
     const gw = day.googleWeather;
-    const card = el("article", { class: "hero-route-weather__city" });
-    const head = el("div", { class: "hero-route-weather__city-head" });
-    head.appendChild(el("strong", { class: "hero-route-weather__place", text: place }));
-    head.appendChild(
-      el("span", { class: "hero-route-weather__day-idx muted", text: `Day ${day.dayIndex}` })
-    );
-    card.appendChild(head);
-
-    if (!gw?.current && !gw?.forecastDay) {
-      card.appendChild(
-        el("p", {
-          class: "hero-route-weather__muted",
-          text:
-            day.routeEndLat == null
-              ? "Weather appears after this day’s route loads in Maps."
-              : "No snapshot yet — try reloading.",
-        })
-      );
-      grid.appendChild(card);
-      continue;
-    }
-
+    if (!gw?.current && !gw?.forecastDay) continue;
     const merged = mergeRidingRiskLines(gw.current, gw.forecastDay);
-    if (merged?.length) {
-      const warn = el("div", {
-        class: "hero-route-weather__flags",
-        role: "region",
-        "aria-label": `Riding weather watch for ${place}`,
-      });
-      const ul = el("ul", { class: "hero-route-weather__flag-list" });
-      merged.forEach((line) => ul.appendChild(el("li", { text: line })));
-      warn.appendChild(ul);
-      card.appendChild(warn);
-    } else {
-      card.appendChild(
-        el("p", {
-          class: "hero-route-weather__ok",
-          text: "No major wind, rain, cold, or visibility flags in this snapshot — still check morning-of.",
-        })
-      );
-    }
-
-    const fc = tenDayWeatherForecastSearchUrl(place);
-    card.appendChild(
-      el("a", {
-        class: "hero-route-weather__forecast-link",
-        href: fc,
-        target: "_blank",
-        rel: "noopener noreferrer",
-        text: `Full forecast: ${place}`,
-      })
-    );
-
-    grid.appendChild(card);
+    if (!merged?.length) continue;
+    alerts.push({
+      day,
+      place: legDestinationPlaceLabel(day),
+      merged,
+    });
+    if (alerts.length >= 3) break;
   }
 
-  slot.appendChild(grid);
+  if (!alerts.length) {
+    slot.hidden = true;
+    return;
+  }
+
   slot.hidden = false;
+  slot.setAttribute("role", "region");
+  slot.setAttribute("aria-label", "Weather checks before riding");
+
+  slot.appendChild(
+    el("p", { class: "hero-route-weather__label", text: "⚠ Check before you ride" })
+  );
+
+  const ul = el("ul", { class: "hero-route-weather__alerts" });
+  alerts.forEach(({ day, place, merged }) => {
+    const li = el("li", { class: "hero-route-weather__alert" });
+    li.appendChild(el("span", { class: "hero-route-weather__where", text: `${place} · Day ${day.dayIndex}` }));
+    li.appendChild(document.createTextNode(" "));
+    li.appendChild(el("span", { class: "hero-route-weather__what", text: merged.join(" · ") }));
+    ul.appendChild(li);
+  });
+  slot.appendChild(ul);
+
+  const linkRow = el("p", { class: "hero-route-weather__links" });
+  linkRow.appendChild(document.createTextNode("Forecasts: "));
+  alerts.forEach((a, i) => {
+    if (i > 0) linkRow.appendChild(document.createTextNode(" · "));
+    linkRow.appendChild(
+      el("a", {
+        class: "hero-route-weather__link",
+        href: tenDayWeatherForecastSearchUrl(a.place),
+        target: "_blank",
+        rel: "noopener noreferrer",
+        text: a.place,
+      })
+    );
+  });
+  slot.appendChild(linkRow);
 }
 
 function applyDayWeatherToDom(day, trip) {
