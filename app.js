@@ -788,11 +788,156 @@ async function fetchAndRenderRouteWeather(days, trip) {
     attachWeatherToDay(day, cache);
     applyDayWeatherToDom(day, trip || {});
   }
+
+  applyHeroRouteWeather(days, trip || {});
 }
 
 function scheduleRouteWeatherFetch(days, trip) {
   if (!hasGoogleMapsApiKey()) return;
-  fetchAndRenderRouteWeather(days, trip || {}).catch((e) => console.error("[Weather]", e));
+  setHeroRouteWeatherLoading();
+  fetchAndRenderRouteWeather(days, trip || {}).catch((e) => {
+    console.error("[Weather]", e);
+    applyHeroRouteWeather(days, trip || {});
+  });
+}
+
+/** Up to three spread checkpoints: end of leg 1, mid-loop desert/west, end of leg 2 (PNW). */
+function pickHeroWeatherAnchorDays(days) {
+  const d = days || [];
+  const lastOfLeg = (leg) => {
+    const inLeg = d.filter((x) => inferLeg(x.dayIndex) === leg);
+    return inLeg.reduce((best, x) => (!best || x.dayIndex > best.dayIndex ? x : best), null);
+  };
+  const leg1 = lastOfLeg("1");
+  const leg2 = lastOfLeg("2");
+  const mid =
+    d.find((x) => x.dayIndex === 17) ||
+    d.find((x) => x.dayIndex === 16) ||
+    d.find((x) => x.dayIndex === Math.ceil(d.length / 2));
+  const ordered = [leg1, mid, leg2].filter(Boolean);
+  const seen = new Set();
+  const out = [];
+  for (const x of ordered) {
+    if (seen.has(x.dayIndex)) continue;
+    seen.add(x.dayIndex);
+    out.push(x);
+    if (out.length >= 3) break;
+  }
+  return out;
+}
+
+function setHeroRouteWeatherLoading() {
+  const slot = document.getElementById("hero-route-weather");
+  if (!slot || !hasGoogleMapsApiKey()) return;
+  slot.hidden = false;
+  slot.classList.remove("hero-route-weather--empty");
+  slot.replaceChildren();
+  slot.appendChild(
+    el("h3", { class: "hero-route-weather__title", text: "Route weather checkpoints" })
+  );
+  slot.appendChild(
+    el("p", {
+      class: "hero-route-weather__loading muted",
+      text: "Fetching live conditions for three cities along your route…",
+    })
+  );
+}
+
+function applyHeroRouteWeather(days, trip) {
+  const slot = document.getElementById("hero-route-weather");
+  if (!slot) return;
+  if (!hasGoogleMapsApiKey()) {
+    slot.hidden = true;
+    slot.replaceChildren();
+    return;
+  }
+
+  const bikeLabel = trip?.bike || "bike";
+  const anchors = pickHeroWeatherAnchorDays(days);
+  slot.replaceChildren();
+  slot.classList.remove("hero-route-weather--empty");
+
+  const title = el("h3", { class: "hero-route-weather__title", text: "Route weather checkpoints" });
+  slot.appendChild(title);
+  slot.appendChild(
+    el("p", {
+      class: "hero-route-weather__intro muted",
+      text: `Up to 3 cities on your loop — riding-relevant flags only (${bikeLabel}). Not a forecast for every mile.`,
+    })
+  );
+
+  if (!anchors.length) {
+    slot.appendChild(
+      el("p", { class: "hero-route-weather__muted", text: "Trip days not loaded — nothing to show." })
+    );
+    slot.classList.add("hero-route-weather--empty");
+    slot.hidden = false;
+    return;
+  }
+
+  const grid = el("div", { class: "hero-route-weather__grid" });
+
+  for (const day of anchors) {
+    const place = legDestinationPlaceLabel(day);
+    const gw = day.googleWeather;
+    const card = el("article", { class: "hero-route-weather__city" });
+    const head = el("div", { class: "hero-route-weather__city-head" });
+    head.appendChild(el("strong", { class: "hero-route-weather__place", text: place }));
+    head.appendChild(
+      el("span", { class: "hero-route-weather__day-idx muted", text: `Day ${day.dayIndex}` })
+    );
+    card.appendChild(head);
+
+    if (!gw?.current && !gw?.forecastDay) {
+      card.appendChild(
+        el("p", {
+          class: "hero-route-weather__muted",
+          text:
+            day.routeEndLat == null
+              ? "Weather appears after this day’s route loads in Maps."
+              : "No snapshot yet — try reloading.",
+        })
+      );
+      grid.appendChild(card);
+      continue;
+    }
+
+    const merged = mergeRidingRiskLines(gw.current, gw.forecastDay);
+    if (merged?.length) {
+      const warn = el("div", {
+        class: "hero-route-weather__flags",
+        role: "region",
+        "aria-label": `Riding weather watch for ${place}`,
+      });
+      const ul = el("ul", { class: "hero-route-weather__flag-list" });
+      merged.forEach((line) => ul.appendChild(el("li", { text: line })));
+      warn.appendChild(ul);
+      card.appendChild(warn);
+    } else {
+      card.appendChild(
+        el("p", {
+          class: "hero-route-weather__ok",
+          text: "No major wind, rain, cold, or visibility flags in this snapshot — still check morning-of.",
+        })
+      );
+    }
+
+    const fc = tenDayWeatherForecastSearchUrl(place);
+    card.appendChild(
+      el("a", {
+        class: "hero-route-weather__forecast-link",
+        href: fc,
+        target: "_blank",
+        rel: "noopener noreferrer",
+        text: `Full forecast: ${place}`,
+      })
+    );
+
+    grid.appendChild(card);
+  }
+
+  slot.appendChild(grid);
+  slot.hidden = false;
 }
 
 function applyDayWeatherToDom(day, trip) {
@@ -966,6 +1111,11 @@ function initRouteTotalsUI(phase) {
   }
 
   if (phase === "nokey") {
+    const heroWx = document.getElementById("hero-route-weather");
+    if (heroWx) {
+      heroWx.hidden = true;
+      heroWx.replaceChildren();
+    }
     if (hero) {
       hero.hidden = false;
       hero.classList.add("hero-route-total--muted", "hero-route-total--setup");
@@ -1016,6 +1166,11 @@ function updateTotalRouteDistanceUI(days) {
       overview.textContent = "No Directions URLs in route-overlays — nothing to sum.";
     }
     if (hero) hero.hidden = true;
+    const heroWx = document.getElementById("hero-route-weather");
+    if (heroWx) {
+      heroWx.hidden = true;
+      heroWx.replaceChildren();
+    }
     if (tfoot) tfoot.hidden = true;
     return;
   }
@@ -1280,6 +1435,14 @@ function renderHero(trip) {
   }
 
   const foot = el("footer", { class: "hero-doc__footer" });
+  foot.appendChild(
+    el("div", {
+      id: "hero-route-weather",
+      class: "hero-route-weather",
+      hidden: true,
+      "aria-live": "polite",
+    })
+  );
   foot.appendChild(
     el("div", {
       class: "hero-route-total",
