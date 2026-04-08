@@ -685,6 +685,74 @@ function mergeRidingRiskLines(currentCc, forecastDay) {
   return out.length ? out : null;
 }
 
+/** Daily low / high for hero checkpoints (forecast day preferred; folds in current temp when helpful). */
+function formatHeroCheckpointTempLine(cc, forecastDay) {
+  const tmin = forecastDay?.minTemperature?.degrees;
+  const tmax = forecastDay?.maxTemperature?.degrees;
+  const tnow = cc?.temperature?.degrees;
+  const hasMin = tmin != null && Number.isFinite(tmin);
+  const hasMax = tmax != null && Number.isFinite(tmax);
+  if (hasMin && hasMax) {
+    let lo = Math.min(tmin, tmax);
+    let hi = Math.max(tmin, tmax);
+    if (tnow != null && Number.isFinite(tnow)) {
+      lo = Math.min(lo, tnow);
+      hi = Math.max(hi, tnow);
+    }
+    return `Low ${Math.round(lo)}°C · High ${Math.round(hi)}°C`;
+  }
+  if (tnow != null && Number.isFinite(tnow)) {
+    return `Now ~${Math.round(tnow)}°C`;
+  }
+  if (hasMin || hasMax) {
+    const a = hasMin ? Math.round(tmin) : "—";
+    const b = hasMax ? Math.round(tmax) : "—";
+    return `Low ${a}°C · High ${b}°C`;
+  }
+  return null;
+}
+
+const HERO_SEVERE_WEATHER_RE =
+  /TORNADO|HURRICANE|TROPICAL|SEVERE|FUNNEL|WATERSPOUT|DUST\s*STORM|SMOKE|VOLCANIC|ASH|FLOOD|FLASH|BLIZZARD|ICE\s*STORM|EXTREME|THUNDERSTORM|LIGHTNING/i;
+
+/** Storms, tornado-class conditions, and other high-salience hazards (plus merged riding-risk lines). */
+function collectHeroImportantNotes(cc, forecastDay) {
+  const out = [];
+  const seen = new Set();
+  const push = (line) => {
+    const t = String(line || "").trim();
+    if (!t || seen.has(t)) return;
+    seen.add(t);
+    out.push(t);
+  };
+
+  const considerCond = (wc) => {
+    if (!wc) return;
+    const type = (wc.type || "").toUpperCase();
+    const desc = (wc.description?.text || "").trim();
+    if (HERO_SEVERE_WEATHER_RE.test(type) || HERO_SEVERE_WEATHER_RE.test(desc)) {
+      push(desc || type.replace(/_/g, " "));
+      return;
+    }
+    if (/SNOW|ICE|HAIL|FREEZING|FOG|HAZE|MIST|SQUALL/i.test(type)) {
+      push(desc || type.replace(/_/g, " "));
+    }
+  };
+
+  if (cc) {
+    considerCond(cc.weatherCondition);
+  }
+
+  if (forecastDay?.daytimeForecast) {
+    considerCond(forecastDay.daytimeForecast.weatherCondition);
+  }
+
+  const riding = mergeRidingRiskLines(cc, forecastDay) || [];
+  riding.forEach(push);
+
+  return out.length ? out : null;
+}
+
 /** Riding concerns for a Suzuki DR650 / light adventure bike (metric). */
 function scoreMotorcycleRidingRisks(forecastDay) {
   if (!forecastDay) return null;
@@ -825,13 +893,15 @@ function pickHeroWeatherAnchorDays(days) {
   return out;
 }
 
-/** Hero strip: only shown when ≥1 checkpoint has merged riding-risk lines (max 3 cities). */
+/** Hero strip: 3 checkpoints — always show low/high (or current); important hazards when present. */
 function applyHeroRouteWeather(days) {
   const slot = document.getElementById("hero-route-weather");
   if (!slot) return;
   if (!hasGoogleMapsApiKey()) {
     slot.hidden = true;
     slot.replaceChildren();
+    slot.removeAttribute("role");
+    slot.removeAttribute("aria-label");
     return;
   }
 
@@ -843,54 +913,80 @@ function applyHeroRouteWeather(days) {
     return;
   }
 
-  const alerts = [];
-  for (const day of anchors) {
-    const gw = day.googleWeather;
-    if (!gw?.current && !gw?.forecastDay) continue;
-    const merged = mergeRidingRiskLines(gw.current, gw.forecastDay);
-    if (!merged?.length) continue;
-    alerts.push({
-      day,
-      place: legDestinationPlaceLabel(day),
-      merged,
-    });
-    if (alerts.length >= 3) break;
-  }
-
-  if (!alerts.length) {
-    slot.hidden = true;
-    return;
-  }
-
   slot.hidden = false;
   slot.setAttribute("role", "region");
-  slot.setAttribute("aria-label", "Weather checks before riding");
+  slot.setAttribute("aria-label", "Route checkpoint weather");
 
   slot.appendChild(
-    el("p", { class: "hero-route-weather__label", text: "⚠ Check before you ride" })
+    el("p", {
+      class: "hero-route-weather__label",
+      text: "Route weather · 3 checkpoints",
+    })
+  );
+  slot.appendChild(
+    el("p", {
+      class: "hero-route-weather__sub",
+      text: "Low / high from forecast (or current temp if range missing). Important hazards called out below when reported.",
+    })
   );
 
   const ul = el("ul", { class: "hero-route-weather__alerts" });
-  alerts.forEach(({ day, place, merged }) => {
+  const linkPlaces = [];
+
+  for (const day of anchors) {
+    const place = legDestinationPlaceLabel(day);
+    linkPlaces.push(place);
+    const gw = day.googleWeather;
     const li = el("li", { class: "hero-route-weather__alert" });
-    li.appendChild(el("span", { class: "hero-route-weather__where", text: `${place} · Day ${day.dayIndex}` }));
-    li.appendChild(document.createTextNode(" "));
-    li.appendChild(el("span", { class: "hero-route-weather__what", text: merged.join(" · ") }));
+    const head = el("div", { class: "hero-route-weather__row-head" });
+    head.appendChild(el("span", { class: "hero-route-weather__where", text: `${place} · Day ${day.dayIndex}` }));
+    li.appendChild(head);
+
+    if (!gw?.current && !gw?.forecastDay) {
+      li.appendChild(
+        el("p", {
+          class: "hero-route-weather__temps hero-route-weather__temps--missing",
+          text:
+            day.routeEndLat == null
+              ? "Temps: — (route still loading)"
+              : "Temps: — (no snapshot — reload or check key)",
+        })
+      );
+      ul.appendChild(li);
+      continue;
+    }
+
+    const tempLine = formatHeroCheckpointTempLine(gw.current, gw.forecastDay);
+    li.appendChild(
+      el("p", {
+        class: "hero-route-weather__temps",
+        text: tempLine || "Temps: —",
+      })
+    );
+
+    const notes = collectHeroImportantNotes(gw.current, gw.forecastDay);
+    if (notes?.length) {
+      const imp = el("ul", { class: "hero-route-weather__important" });
+      notes.forEach((line) => imp.appendChild(el("li", { text: line })));
+      li.appendChild(imp);
+    }
+
     ul.appendChild(li);
-  });
+  }
+
   slot.appendChild(ul);
 
   const linkRow = el("p", { class: "hero-route-weather__links" });
   linkRow.appendChild(document.createTextNode("Forecasts: "));
-  alerts.forEach((a, i) => {
+  linkPlaces.forEach((p, i) => {
     if (i > 0) linkRow.appendChild(document.createTextNode(" · "));
     linkRow.appendChild(
       el("a", {
         class: "hero-route-weather__link",
-        href: tenDayWeatherForecastSearchUrl(a.place),
+        href: tenDayWeatherForecastSearchUrl(p),
         target: "_blank",
         rel: "noopener noreferrer",
-        text: a.place,
+        text: p,
       })
     );
   });
