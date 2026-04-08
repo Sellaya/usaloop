@@ -336,18 +336,34 @@ function googleTravelModeFromKey(key) {
   return map[key] || T.DRIVING;
 }
 
-function formatDayMetaLine(day) {
-  const bits = [];
-  if (day.date) bits.push(formatDate(day.date));
+/** Fills the summary meta row with wrap-friendly chips (mobile-first). */
+function renderDayMetaChips(container, day) {
+  if (!container) return;
+  container.replaceChildren();
+  if (day.date) {
+    container.appendChild(
+      el("span", { class: "day-meta-chip day-meta-chip--date", text: formatDate(day.date) })
+    );
+  }
   if (day.googleDistanceKm != null) {
     const f = formatDistanceKmMi(day.googleDistanceKm);
-    let bit = f ? `~${f.shortLine}` : `~${day.googleDistanceKm} km`;
-    if (day.googleDurationText) bit += ` · ~${day.googleDurationText}`;
-    bits.push(bit);
+    let t = f ? `~${f.shortLine}` : `~${day.googleDistanceKm} km`;
+    if (day.googleDurationText) t += ` · ~${day.googleDurationText}`;
+    container.appendChild(el("span", { class: "day-meta-chip day-meta-chip--route", text: t }));
   }
-  if (day.seatTimeHours != null) bits.push(`~${day.seatTimeHours} h seat`);
-  if (day.terrain) bits.push(day.terrain);
-  return bits.join(" · ");
+  if (day.seatTimeHours != null) {
+    container.appendChild(
+      el("span", { class: "day-meta-chip day-meta-chip--seat", text: `~${day.seatTimeHours} h seat` })
+    );
+  }
+  if (day.terrain) {
+    container.appendChild(el("span", { class: "day-meta-chip day-meta-chip--terrain", text: day.terrain }));
+  }
+  if (!container.childElementCount) {
+    container.appendChild(
+      el("span", { class: "day-meta-chip day-meta-chip--placeholder", text: "Open for route & notes" })
+    );
+  }
 }
 
 function applyDayDistanceToDom(day) {
@@ -371,7 +387,7 @@ function applyDayDistanceToDom(day) {
   }
 
   const meta = document.querySelector(`[data-day-meta="${day.dayIndex}"]`);
-  if (meta) meta.textContent = formatDayMetaLine(day);
+  if (meta) renderDayMetaChips(meta, day);
 
   const kmLine = document.querySelector(`p[data-route-km-line="${day.dayIndex}"]`);
   if (kmLine) {
@@ -1835,21 +1851,32 @@ function renderTrip(data, babHostsMap, routeMeta) {
     const details = el("details", { class: "day", id: `day-${day.dayIndex}` });
     if (isToday) details.open = true;
 
-    const summary = el("summary");
-    summary.appendChild(el("span", { class: "day-title", text: `Day ${day.dayIndex}: ${day.title}` }));
-    if (isToday) summary.appendChild(el("span", { class: "pill today", text: "Today" }));
-    summary.appendChild(
-      el("div", {
-        class: "day-meta",
-        "data-day-meta": String(day.dayIndex),
-        text: formatDayMetaLine(day),
-      })
+    const leg = day.leg || inferLeg(day.dayIndex);
+    const legTitle = trip?.legs?.[leg] || "";
+
+    const summary = el("summary", { class: "day-summary" });
+    const main = el("div", { class: "day-summary-main" });
+    const titleRow = el("div", { class: "day-summary-title-row" });
+    titleRow.appendChild(el("span", { class: "day-index-badge", text: String(day.dayIndex) }));
+    titleRow.appendChild(el("span", { class: "day-title", text: day.title }));
+    if (isToday) titleRow.appendChild(el("span", { class: "pill today", text: "Today" }));
+    main.appendChild(titleRow);
+    main.appendChild(
+      el("div", { class: "day-summary-meta-row" }, [
+        el("span", { class: "pill pill-leg pill-leg--compact", text: `Leg ${leg}`, title: legTitle }),
+      ])
     );
+    const metaChips = el("div", {
+      class: "day-meta-chips",
+      "data-day-meta": String(day.dayIndex),
+    });
+    renderDayMetaChips(metaChips, day);
+    main.appendChild(metaChips);
+    summary.appendChild(main);
+    summary.appendChild(el("span", { class: "day-summary-chevron", "aria-hidden": "true" }));
 
     const b = el("div", { class: "day-body" });
 
-    const leg = day.leg || inferLeg(day.dayIndex);
-    const legTitle = trip?.legs?.[leg] || "";
     const routeRow = el("div", { class: "day-route-row" });
     routeRow.appendChild(
       el("span", { class: "pill pill-leg", text: `Leg ${leg}`, title: legTitle })
