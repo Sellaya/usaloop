@@ -1824,7 +1824,7 @@ function renderBabDirectory(trip, babHostsMap, days, babMeta) {
       const contact = babHostRecordToContact(babId, b);
       contact.routeContext = formatBabRouteContext(babId, entry, trip, babHostsMap);
       const outreachDay = pickOutreachDayForBab(entry, days, trip);
-      renderContactCard(contact, outreachDay, trip, wrap);
+      renderContactCard(contact, outreachDay, trip, wrap, { mode: "directory" });
       n++;
     }
     countEl.textContent =
@@ -1938,10 +1938,12 @@ function contactHintLine(contactPref) {
   return CONTACT_HINTS[contactPref] || `Host preference: ${contactPref.replace(/_/g, " ")}.`;
 }
 
-function renderContactCard(contact, day, trip, container) {
+/** Day plan uses `mode: "day"` (default): names, addresses, actions only. Full region/shortlist/screenshot context stays in the B.a.B. directory (`mode: "directory"`). */
+function renderContactCard(contact, day, trip, container, options = {}) {
+  const dir = options.mode === "directory";
   const cardClass = ["contact-card"];
   if (contact.primary) cardClass.push("contact-card--primary");
-  if (contact.listHighlight) cardClass.push("contact-card--highlight");
+  if (dir && contact.listHighlight) cardClass.push("contact-card--highlight");
   const card = el("div", {
     class: cardClass.join(" "),
   });
@@ -1956,17 +1958,17 @@ function renderContactCard(contact, day, trip, container) {
     badges.appendChild(el("span", { class: "badge badge-bab", text: "B.a.B. profile merged" }));
   else if (contact.source === "personal")
     badges.appendChild(el("span", { class: "badge badge-personal", text: "Your contact" }));
-  if (contact.listHighlight)
+  if (dir && contact.listHighlight)
     badges.appendChild(el("span", { class: "badge badge-highlight", text: "Shortlisted" }));
   if (contact.url && !contact.email && !contact.phone)
     badges.appendChild(el("span", { class: "badge badge-camp", text: "Book / link" }));
   if (badges.childNodes.length) head.appendChild(badges);
   card.appendChild(head);
 
-  if (contact.region) {
+  if (dir && contact.region) {
     card.appendChild(el("p", { class: "contact-region", text: contact.region }));
   }
-  if (contact.image) {
+  if (dir && contact.image) {
     const ph = document.createElement("img");
     ph.className = "contact-card__photo";
     ph.src = contact.image;
@@ -1976,7 +1978,7 @@ function renderContactCard(contact, day, trip, container) {
     card.appendChild(ph);
   }
 
-  if (contact.routeContext) {
+  if (dir && contact.routeContext) {
     card.appendChild(el("p", { class: "contact-route-context", text: contact.routeContext }));
   }
 
@@ -2205,7 +2207,7 @@ function renderStayContacts(body, day, trip, babHostsMap) {
   if (!list.length) return;
   body.appendChild(el("h4", { class: "day-section-title day-stops-heading", text: "🏠 Stay & Bunk a Biker contacts" }));
   const wrap = el("div", { class: "contact-cards" });
-  list.forEach((c) => renderContactCard(c, day, trip, wrap));
+  list.forEach((c) => renderContactCard(c, day, trip, wrap, { mode: "day" }));
   body.appendChild(wrap);
 }
 
