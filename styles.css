@@ -1683,6 +1683,57 @@ section > h2 {
 }
 
 /* Stay / contact cards */
+.stay-summary {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  background: var(--surface2);
+  margin-top: 0.35rem;
+}
+
+.stay-summary-name {
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+}
+
+.stay-summary-address {
+  margin: 0 0 0.35rem;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.stay-summary-notes {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+}
+
+.stay-summary-sub {
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0.65rem 0 0.35rem;
+  color: var(--muted);
+}
+
+.stay-summary-alt {
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--border);
+}
+
+.stay-summary-bab-hint {
+  margin: 0.65rem 0 0;
+  padding-top: 0.55rem;
+  border-top: 1px dashed var(--border);
+  font-size: 0.84rem;
+}
+
+.stay-summary-bab-hint a {
+  font-weight: 600;
+}
+
 .contact-cards {
   display: flex;
   flex-direction: column;

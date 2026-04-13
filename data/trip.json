@@ -82,7 +82,7 @@
         "Border: registration, insurance, declare tools/spares as needed; keep answers simple (touring).",
         "Save offline maps for NY Thruway and last-mile to McGraw."
       ],
-      "campingAccommodation": "See Stay & contacts below; keep a state-park backup in mind if plans slip.",
+      "campingAccommodation": "See B.a.B. directory for host contact actions; keep a state-park backup in mind if plans slip.",
       "terrain": "Highway / border crossing",
       "highlights": [
         "US entry documentation ready",
@@ -1388,7 +1388,7 @@
   "beforeYouGo": [
     "Replace placeholder start/end dates in trip.json with your real departure window.",
     "Maps: set GOOGLE_MAPS_API_KEY in .env (see .env.example), run npm run build, then serve. On Vercel, add the same variable under Environment Variables — build generates google-maps-config.js. Restrict the key by HTTP referrer (localhost + your Vercel URL). Re-check each leg in Maps after you set exact pins.",
-    "Primary stays stay first on each day; Bunk a Biker backups are in data/bab-hosts.json (edit babAlternateIds per day if you trim the list).",
+    "Daily plan lists stay name/address only; phone, email, and all Bunk a Biker backups are in the B.a.B. directory. Edit babAlternateIds per day in data/bab-hosts.json / trip.json if you trim the list.",
     "Confirm each host address, gate codes, and bike parking before arrival day.",
     "Arches NP: check timed-entry reservation rules for your dates.",
     "Yellowstone / Beartooth: verify pass opening and NPS alerts.",

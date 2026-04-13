@@ -1584,63 +1584,81 @@ function normalizeLodgingWithBab(L, babHostsMap) {
   return out;
 }
 
-function lodgingToContact(L, babHostsMap, primary) {
-  const n = normalizeLodgingWithBab(L, babHostsMap);
-  if (!stayHasContent(n)) return null;
-  const source = L.babMergeId && babHostsMap?.[L.babMergeId] ? "bab_merged" : "personal";
-  return {
-    ...n,
-    source,
-    primary,
-    heading: L.heading,
-    priorityStar: L.priority,
-    babMergeId: L.babMergeId,
-  };
-}
+/** Where you sleep: name, address, notes, Maps — no host contact actions (those live only in the B.a.B. directory). */
+function renderStaySummary(body, day, babHostsMap) {
+  const primary = day.lodging ? normalizeLodgingWithBab(day.lodging, babHostsMap) : null;
+  const alts = (day.lodgingAlternatives || [])
+    .map((alt) => normalizeLodgingWithBab(alt, babHostsMap))
+    .filter((x) => stayHasContent(x));
+  const hasBabAlts = (day.babAlternateIds || []).length > 0;
+  const hasPrimary = stayHasContent(primary);
 
-function buildOrderedContacts(day, babHostsMap) {
-  const contacts = [];
-  const seenEmails = new Set();
+  if (!hasPrimary && !alts.length && !hasBabAlts) return;
 
-  if (day.lodging) {
-    const c = lodgingToContact(day.lodging, babHostsMap, true);
-    if (c) {
-      contacts.push(c);
-      if (c.email) seenEmails.add(c.email.toLowerCase());
+  body.appendChild(el("h4", { class: "day-section-title day-stops-heading", text: "🏠 Stay" }));
+  const box = el("div", { class: "stay-summary" });
+
+  if (hasPrimary) {
+    if (primary.name) box.appendChild(el("p", { class: "stay-summary-name", text: primary.name }));
+    if (primary.address) {
+      const p = el("p", { class: "stay-summary-address" });
+      p.appendChild(document.createTextNode(primary.address));
+      if (primary.mapsUrl) {
+        p.appendChild(document.createTextNode(" · "));
+        p.appendChild(
+          el("a", {
+            href: primary.mapsUrl,
+            class: "stay-summary-maps",
+            text: "Maps",
+            target: "_blank",
+            rel: "noopener noreferrer",
+          })
+        );
+      }
+      box.appendChild(p);
+    } else if (primary.mapsUrl) {
+      box.appendChild(
+        el("a", {
+          href: primary.mapsUrl,
+          class: "stay-summary-maps",
+          text: "Open in Google Maps",
+          target: "_blank",
+          rel: "noopener noreferrer",
+        })
+      );
     }
+    const note = primary.notes || primary.profileNotes;
+    if (note) box.appendChild(el("p", { class: "stay-summary-notes muted", text: note }));
   }
-  for (const alt of day.lodgingAlternatives || []) {
-    const c = lodgingToContact(alt, babHostsMap, false);
-    if (!c) continue;
-    if (c.email && seenEmails.has(c.email.toLowerCase())) continue;
-    contacts.push(c);
-    if (c.email) seenEmails.add(c.email.toLowerCase());
-  }
-  for (const bid of day.babAlternateIds || []) {
-    if (bid === day.lodging?.babMergeId) continue;
-    const b = babHostsMap[bid];
-    if (!b) continue;
-    if (b.email && seenEmails.has(b.email.toLowerCase())) continue;
-    contacts.push({
-      name: b.name,
-      address: b.address,
-      mapsUrl: b.mapsUrl,
-      phone: b.phone,
-      email: b.email,
-      profileNotes: b.notes,
-      contactPref: b.contact,
-      greetingName: b.greetingName,
-      region: b.region,
-      listHighlight: Boolean(b.listHighlight),
-      image: b.image,
-      source: "bab",
-      primary: false,
-      babId: bid,
-      infoOnly: Boolean(b.infoOnly),
+
+  if (alts.length) {
+    box.appendChild(el("p", { class: "stay-summary-sub", text: "Alternates" }));
+    alts.forEach((a) => {
+      const row = el("div", { class: "stay-summary-alt" });
+      if (a.name) row.appendChild(el("p", { class: "stay-summary-name", text: a.name }));
+      if (a.address) row.appendChild(el("p", { class: "stay-summary-address muted", text: a.address }));
+      const note = a.notes || a.profileNotes;
+      if (note) row.appendChild(el("p", { class: "stay-summary-notes muted", text: note }));
+      box.appendChild(row);
     });
-    if (b.email) seenEmails.add(b.email.toLowerCase());
   }
-  return contacts;
+
+  if (!hasPrimary && !alts.length && hasBabAlts) {
+    box.appendChild(
+      el("p", {
+        class: "stay-summary-notes muted",
+        text: "This day references Bunk a Biker backup hosts — full contact cards are in the B.a.B. directory.",
+      })
+    );
+  }
+
+  const hint = el("p", { class: "stay-summary-bab-hint muted" });
+  hint.appendChild(document.createTextNode("Phone, text, email, and all Bunk a Biker hosts: "));
+  hint.appendChild(el("a", { href: "#bab", text: "open B.a.B. directory" }));
+  hint.appendChild(document.createTextNode("."));
+  box.appendChild(hint);
+
+  body.appendChild(box);
 }
 
 /** US state from typical "City, ST 12345" addresses (best-effort). */
@@ -2202,15 +2220,6 @@ function renderOverviewSection(trip, dayCount) {
   }
 }
 
-function renderStayContacts(body, day, trip, babHostsMap) {
-  const list = buildOrderedContacts(day, babHostsMap);
-  if (!list.length) return;
-  body.appendChild(el("h4", { class: "day-section-title day-stops-heading", text: "🏠 Stay & Bunk a Biker contacts" }));
-  const wrap = el("div", { class: "contact-cards" });
-  list.forEach((c) => renderContactCard(c, day, trip, wrap, { mode: "day" }));
-  body.appendChild(wrap);
-}
-
 function applyRouteOverlays(days, overlayPack) {
   if (!overlayPack?.byDay) return null;
   (days || []).forEach((day) => {
@@ -2443,7 +2452,7 @@ function renderTrip(data, babHostsMap, routeMeta, babMeta) {
       b.appendChild(stop);
     });
 
-    renderStayContacts(b, day, trip, babHostsMap);
+    renderStaySummary(b, day, babHostsMap);
 
     if (day.risks?.length) {
       const a = el("div", { class: "alert risk" });
