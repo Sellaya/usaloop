@@ -1703,6 +1703,33 @@ section > h2 {
   box-shadow: 0 0 0 1px rgba(255, 183, 77, 0.35);
 }
 
+.contact-card--highlight {
+  border-color: #ffeb3b;
+  background: #fffef5;
+  box-shadow: 0 0 0 1px rgba(255, 235, 59, 0.45);
+}
+
+.contact-region {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--doc-slate);
+  margin: 0 0 0.5rem;
+}
+
+.contact-card__photo {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0 0 0.65rem;
+  border: 1px solid var(--border);
+}
+
+.badge-highlight {
+  background: #fff9c4;
+  color: #795548;
+}
+
 .contact-route-context {
   font-size: 0.86rem;
   line-height: 1.45;
@@ -1716,6 +1743,30 @@ section > h2 {
 
 .bab-directory-card {
   padding: 1rem;
+}
+
+.bab-reference-slot {
+  margin-bottom: 1rem;
+}
+
+.bab-reference-figure {
+  margin: 0 0 1rem;
+}
+
+.bab-reference-img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.bab-reference-caption {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0.4rem 0 0;
+  line-height: 1.4;
 }
 
 .bab-dir-toolbar {

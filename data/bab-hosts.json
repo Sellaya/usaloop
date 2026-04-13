@@ -1,38 +1,53 @@
 {
+  "meta": {
+    "referenceScreenshots": [
+      {
+        "title": "New York — Finger Lakes & NYC (Bunk a Biker export)",
+        "path": "assets/bab-ny-hosts-reference.png",
+        "caption": "Original list used to cross-check Chip, Greg & Chris, Richard, Mike, Dan, and Robert."
+      }
+    ]
+  },
   "hosts": {
     "wayne-lawler": {
       "name": "Wayne \"Chip\" Lawler",
       "greetingName": "Chip",
+      "region": "Finger Lakes, NY",
       "address": "2659 Cool Lea Camp Road, Alpine, NY 14805",
       "phone": "+19782651984",
       "email": "wclawler@aol.com",
       "contact": "email_or_text",
-      "notes": "Tent space + dry RV; house facilities when host present. Garage, basic tools. Email or text fine.",
+      "notes": "Tent space and a dry RV (no shower/toilet in the RV). You are welcome to use the house facilities when the host is home. Garage with basic tools. Email or text is fine.",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=2659+Cool+Lea+Camp+Road%2C+Alpine%2C+NY+14805"
     },
     "greg-chris-mcgraw": {
       "name": "Greg & Chris",
       "greetingName": "Greg",
+      "region": "Finger Lakes, NY",
+      "listHighlight": true,
       "address": "4177 Syrian Hill Road, McGraw, NY 13101",
       "phone": "+13154276327",
       "email": "Chrissowles@gmail.com",
       "contact": "text",
-      "notes": "Tenting/camping; water and power; tools/work space; good meal. Best to text Greg’s number.",
+      "notes": "Tenting/camping; water available; power available; tools/work space; good meal. Best to text Greg’s number.",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=4177+Syrian+Hill+Road%2C+McGraw%2C+NY+13101"
     },
     "dan-southampton": {
       "name": "Dan",
       "greetingName": "Dan",
+      "region": "New York City area (Southampton, Long Island)",
+      "listHighlight": true,
       "address": "Southampton, NY 11968",
       "phone": "",
       "email": "danielprelato@yahoo.com",
       "contact": "email",
-      "notes": "Garage, tools, local intel (Long Island). Confirm full street address and bike parking before arrival.",
+      "notes": "Access to garage, tools, local info. Confirm full street address and bike parking before arrival.",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Southampton%2C+NY+11968"
     },
     "richard-honchar": {
       "name": "Richard Honchar",
       "greetingName": "Richard",
+      "region": "Finger Lakes, NY",
       "address": "3100 Franklin Street Road, Auburn, NY 13021",
       "phone": "+17205602679",
       "email": "rbhcmh2018@gmail.com",
@@ -43,21 +58,23 @@
     "mike-miller": {
       "name": "Mike Miller",
       "greetingName": "Mike",
+      "region": "Finger Lakes, NY",
       "address": "414 Dublin Road, Clyde, NY 14433",
       "phone": "+13159757240",
       "email": "Millertude2006@gmail.com",
       "contact": "email_or_text",
-      "notes": "Guest bedroom (queen) + ~1 acre to camp.",
+      "notes": "Second bedroom with queen-size bed; about an acre of land if you want to camp.",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=414+Dublin+Road%2C+Clyde%2C+NY+14433"
     },
     "robert-baldwin": {
-      "name": "Robert Baldwin",
+      "name": "Robert",
       "greetingName": "Robert",
+      "region": "New York City area (Baldwin, Long Island)",
       "address": "Van Buren Street, Baldwin, NY 11510",
       "phone": "+15165872022",
       "email": "cycleoption@gmail.com",
       "contact": "email",
-      "notes": "Email best. Suburban home and yard.",
+      "notes": "Listing had no extra description in your Bunk a Biker export — email to confirm what they offer (suburban home/yard).",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Van+Buren+Street%2C+Baldwin%2C+NY+11510"
     },
     "jay-massapequa": {

@@ -1574,6 +1574,9 @@ function normalizeLodgingWithBab(L, babHostsMap) {
     out.profileNotes = b.notes;
     out.contactPref = b.contact;
     out.greetingName = b.greetingName;
+    if (b.region) out.region = b.region;
+    if (b.listHighlight) out.listHighlight = true;
+    if (b.image) out.image = b.image;
   }
   if (!out.mapsUrl && out.address) {
     out.mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(out.address)}`;
@@ -1627,6 +1630,9 @@ function buildOrderedContacts(day, babHostsMap) {
       profileNotes: b.notes,
       contactPref: b.contact,
       greetingName: b.greetingName,
+      region: b.region,
+      listHighlight: Boolean(b.listHighlight),
+      image: b.image,
       source: "bab",
       primary: false,
       babId: bid,
@@ -1695,6 +1701,9 @@ function babHostRecordToContact(babId, b) {
     profileNotes: b.notes,
     contactPref: b.contact,
     greetingName: b.greetingName,
+    region: b.region,
+    listHighlight: Boolean(b.listHighlight),
+    image: b.image,
     source: "bab",
     primary: false,
     babId,
@@ -1724,8 +1733,30 @@ function babHostPassesFilter(indexEntry, legFilter, itineraryOnly) {
   return true;
 }
 
-function renderBabDirectory(trip, babHostsMap, days) {
-  const root = document.getElementById("bab-directory-root");
+function renderBabReferenceShots(babMeta) {
+  const slot = document.getElementById("bab-reference-slot");
+  if (!slot || !babMeta?.referenceScreenshots?.length || slot.dataset.rendered === "1") return;
+  slot.dataset.rendered = "1";
+  slot.hidden = false;
+  babMeta.referenceScreenshots.forEach((shot) => {
+    const figure = el("figure", { class: "bab-reference-figure" });
+    const img = document.createElement("img");
+    img.className = "bab-reference-img";
+    img.src = shot.path;
+    img.alt = shot.title || "Bunk a Biker reference list";
+    img.loading = "lazy";
+    img.decoding = "async";
+    figure.appendChild(img);
+    if (shot.caption || shot.title) {
+      figure.appendChild(el("figcaption", { class: "bab-reference-caption", text: shot.caption || shot.title }));
+    }
+    slot.appendChild(figure);
+  });
+}
+
+function renderBabDirectory(trip, babHostsMap, days, babMeta) {
+  renderBabReferenceShots(babMeta);
+  const root = document.getElementById("bab-directory-dynamic");
   if (!root || !babHostsMap || typeof babHostsMap !== "object") return;
 
   const index = buildBabHostIndex(days);
@@ -1787,7 +1818,7 @@ function renderBabDirectory(trip, babHostsMap, days) {
       const entry = index[babId];
       if (!babHostPassesFilter(entry, legFilter, itineraryOnly)) continue;
       if (q) {
-        const hay = `${b.name || ""} ${b.address || ""} ${b.notes || ""}`.toLowerCase();
+        const hay = `${b.name || ""} ${b.address || ""} ${b.notes || ""} ${b.region || ""}`.toLowerCase();
         if (!hay.includes(q)) continue;
       }
       const contact = babHostRecordToContact(babId, b);
@@ -1908,8 +1939,11 @@ function contactHintLine(contactPref) {
 }
 
 function renderContactCard(contact, day, trip, container) {
+  const cardClass = ["contact-card"];
+  if (contact.primary) cardClass.push("contact-card--primary");
+  if (contact.listHighlight) cardClass.push("contact-card--highlight");
   const card = el("div", {
-    class: `contact-card${contact.primary ? " contact-card--primary" : ""}`,
+    class: cardClass.join(" "),
   });
   const head = el("div", { class: "contact-card__head" });
   const title = contact.priorityStar ? `★ ${contact.name}` : contact.name;
@@ -1922,10 +1956,25 @@ function renderContactCard(contact, day, trip, container) {
     badges.appendChild(el("span", { class: "badge badge-bab", text: "B.a.B. profile merged" }));
   else if (contact.source === "personal")
     badges.appendChild(el("span", { class: "badge badge-personal", text: "Your contact" }));
+  if (contact.listHighlight)
+    badges.appendChild(el("span", { class: "badge badge-highlight", text: "Shortlisted" }));
   if (contact.url && !contact.email && !contact.phone)
     badges.appendChild(el("span", { class: "badge badge-camp", text: "Book / link" }));
   if (badges.childNodes.length) head.appendChild(badges);
   card.appendChild(head);
+
+  if (contact.region) {
+    card.appendChild(el("p", { class: "contact-region", text: contact.region }));
+  }
+  if (contact.image) {
+    const ph = document.createElement("img");
+    ph.className = "contact-card__photo";
+    ph.src = contact.image;
+    ph.alt = contact.name ? `Photo: ${contact.name}` : "Host photo";
+    ph.loading = "lazy";
+    ph.decoding = "async";
+    card.appendChild(ph);
+  }
 
   if (contact.routeContext) {
     card.appendChild(el("p", { class: "contact-route-context", text: contact.routeContext }));
@@ -2243,7 +2292,7 @@ function appendDayRecommendations(body, day) {
   body.appendChild(sec);
 }
 
-function renderTrip(data, babHostsMap, routeMeta) {
+function renderTrip(data, babHostsMap, routeMeta, babMeta) {
   const { meta, trip, links, days, checklists } = data;
   setTripDisplayMeta(meta);
 
@@ -2429,7 +2478,7 @@ function renderTrip(data, babHostsMap, routeMeta) {
   });
   checkEl.appendChild(grid);
 
-  renderBabDirectory(trip, babHostsMap, days);
+  renderBabDirectory(trip, babHostsMap, days, babMeta);
 
   syncDayDetailsFromHash();
 }
@@ -2693,9 +2742,11 @@ async function main() {
     if (!tripRes.ok) throw new Error(`trip.json HTTP ${tripRes.status}`);
     const data = await tripRes.json();
     let babHostsMap = {};
+    let babMeta = null;
     if (babRes.ok) {
       const bab = await babRes.json();
       babHostsMap = bab.hosts || {};
+      babMeta = bab.meta || null;
     }
     let routeMeta = null;
     if (routeRes.ok) {
@@ -2719,7 +2770,7 @@ async function main() {
       const hr = document.getElementById("homework-root");
       if (hr) hr.appendChild(el("p", { class: "muted", text: "Homework data did not load (check data/homework.json)." }));
     }
-    renderTrip(data, babHostsMap, routeMeta);
+    renderTrip(data, babHostsMap, routeMeta, babMeta);
     scheduleGoogleDistanceFetch(data.days, data.trip);
     syncJumpNav();
     window.addEventListener("hashchange", () => {
