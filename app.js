@@ -1637,6 +1637,187 @@ function buildOrderedContacts(day, babHostsMap) {
   return contacts;
 }
 
+/** US state from typical "City, ST 12345" addresses (best-effort). */
+function extractUsStateFromAddress(address) {
+  if (!address) return "";
+  const m = String(address).match(/\b([A-Z]{2})\s+\d{5}\b/);
+  return m ? m[1] : "";
+}
+
+/** Which itinerary days reference each Bunk a Biker id (merge + alternates). */
+function buildBabHostIndex(days) {
+  const idx = {};
+  for (const day of days || []) {
+    const di = day.dayIndex;
+    const mergeId = day.lodging?.babMergeId;
+    if (mergeId) {
+      if (!idx[mergeId]) idx[mergeId] = { days: [], roles: new Set() };
+      idx[mergeId].days.push(di);
+      idx[mergeId].roles.add("merged");
+    }
+    for (const bid of day.babAlternateIds || []) {
+      if (!idx[bid]) idx[bid] = { days: [], roles: new Set() };
+      idx[bid].days.push(di);
+      idx[bid].roles.add("alternate");
+    }
+  }
+  for (const k of Object.keys(idx)) {
+    idx[k].days = [...new Set(idx[k].days)].sort((a, b) => a - b);
+  }
+  return idx;
+}
+
+function formatBabRouteContext(babId, entry, trip, babHostsMap) {
+  const st = extractUsStateFromAddress(babHostsMap[babId]?.address);
+  if (!entry || !entry.days.length) {
+    return `Not on your pinned itinerary — backup if you detour${st ? ` (${st})` : ""}.`;
+  }
+  const leg = inferLeg(entry.days[0]);
+  const legTitle = trip?.legs?.[leg] || "";
+  const dayStr =
+    entry.days.length === 1 ? `Day ${entry.days[0]}` : `Days ${entry.days.join(", ")}`;
+  const merged = entry.roles.has("merged");
+  const alt = entry.roles.has("alternate");
+  let role = "";
+  if (merged && alt) role = "Primary stay on one day + alternate on others (check daily plan).";
+  else if (merged) role = "Primary stay that day; B.a.B. profile merged.";
+  else role = "Alternate / backup on those days.";
+  return `${dayStr} · Leg ${leg}${legTitle ? ` (${legTitle})` : ""} — ${role}`;
+}
+
+function babHostRecordToContact(babId, b) {
+  return {
+    name: b.name,
+    address: b.address,
+    mapsUrl: b.mapsUrl,
+    phone: b.phone,
+    email: b.email,
+    profileNotes: b.notes,
+    contactPref: b.contact,
+    greetingName: b.greetingName,
+    source: "bab",
+    primary: false,
+    babId,
+    infoOnly: Boolean(b.infoOnly),
+  };
+}
+
+function pickOutreachDayForBab(indexEntry, days, trip) {
+  if (indexEntry?.days?.length) {
+    const target = indexEntry.days[0];
+    const found = days.find((d) => d.dayIndex === target);
+    if (found) return found;
+  }
+  return {
+    date: trip?.startDate || "",
+    title: `${trip?.name || "Toronto ↔ USA loop"} — general inquiry (host not on pinned itinerary days)`,
+  };
+}
+
+function babHostPassesFilter(indexEntry, legFilter, itineraryOnly) {
+  if (itineraryOnly && (!indexEntry || !indexEntry.days.length)) return false;
+  if (legFilter !== "all") {
+    if (!indexEntry?.days?.length) return false;
+    const ok = indexEntry.days.some((d) => inferLeg(d) === legFilter);
+    if (!ok) return false;
+  }
+  return true;
+}
+
+function renderBabDirectory(trip, babHostsMap, days) {
+  const root = document.getElementById("bab-directory-root");
+  if (!root || !babHostsMap || typeof babHostsMap !== "object") return;
+
+  const index = buildBabHostIndex(days);
+  const ids = Object.keys(babHostsMap).sort((a, b) => {
+    const ia = index[a];
+    const ib = index[b];
+    const aOn = ia?.days?.length ? 0 : 1;
+    const bOn = ib?.days?.length ? 0 : 1;
+    if (aOn !== bOn) return aOn - bOn;
+    const amin = ia?.days?.[0] ?? 999;
+    const bmin = ib?.days?.[0] ?? 999;
+    if (amin !== bmin) return amin - bmin;
+    return (babHostsMap[a].name || a).localeCompare(babHostsMap[b].name || b);
+  });
+
+  const render = (legFilter, itineraryOnly, searchQ) => {
+    root.innerHTML = "";
+    const q = (searchQ || "").trim().toLowerCase();
+
+    const toolbar = el("div", { class: "bab-dir-toolbar" });
+    toolbar.appendChild(el("span", { class: "bab-dir-field-label", text: "Filter" }));
+    const sel = el("select", { class: "bab-dir-select", "aria-label": "Filter by trip leg" });
+    [
+      ["all", "All legs"],
+      ["1", "Leg 1 · Toronto → Fort Worth"],
+      ["2", "Leg 2 · Fort Worth → Seattle"],
+      ["3", "Leg 3 · Seattle → Toronto"],
+    ].forEach(([v, lab]) => sel.appendChild(el("option", { value: v, text: lab })));
+    sel.value = legFilter;
+    toolbar.appendChild(sel);
+
+    const cbId = `bab-dir-itin-${Math.random().toString(36).slice(2, 9)}`;
+    const cb = el("input", { type: "checkbox", class: "bab-dir-cb", id: cbId });
+    cb.checked = itineraryOnly;
+    const cbLabel = el("label", { class: "bab-dir-cb-label" });
+    cbLabel.htmlFor = cbId;
+    cbLabel.appendChild(cb);
+    cbLabel.appendChild(document.createTextNode(" Itinerary-linked hosts only"));
+    toolbar.appendChild(cbLabel);
+
+    const search = el("input", {
+      type: "search",
+      class: "bab-dir-search",
+      placeholder: "Search name, town, notes…",
+      value: searchQ || "",
+      "aria-label": "Search hosts",
+    });
+    toolbar.appendChild(search);
+
+    const countEl = el("p", { class: "bab-dir-count muted", text: "" });
+    toolbar.appendChild(countEl);
+    root.appendChild(toolbar);
+
+    const wrap = el("div", { class: "contact-cards bab-dir-cards" });
+    let n = 0;
+    for (const babId of ids) {
+      const b = babHostsMap[babId];
+      if (!b) continue;
+      const entry = index[babId];
+      if (!babHostPassesFilter(entry, legFilter, itineraryOnly)) continue;
+      if (q) {
+        const hay = `${b.name || ""} ${b.address || ""} ${b.notes || ""}`.toLowerCase();
+        if (!hay.includes(q)) continue;
+      }
+      const contact = babHostRecordToContact(babId, b);
+      contact.routeContext = formatBabRouteContext(babId, entry, trip, babHostsMap);
+      const outreachDay = pickOutreachDayForBab(entry, days, trip);
+      renderContactCard(contact, outreachDay, trip, wrap);
+      n++;
+    }
+    countEl.textContent =
+      n === 0
+        ? "No hosts match — widen the filter or clear search."
+        : `${n} host${n === 1 ? "" : "s"} shown`;
+
+    root.appendChild(wrap);
+
+    const bind = () => {
+      render(sel.value, cb.checked, search.value);
+    };
+    sel.addEventListener("change", bind);
+    cb.addEventListener("change", bind);
+    let searchTimer;
+    search.addEventListener("input", () => {
+      window.clearTimeout(searchTimer);
+      searchTimer = window.setTimeout(bind, 200);
+    });
+  };
+
+  render("all", false, "");
+}
+
 function digitsE164ish(phone) {
   if (!phone) return "";
   const d = phone.replace(/\D/g, "");
@@ -1745,6 +1926,10 @@ function renderContactCard(contact, day, trip, container) {
     badges.appendChild(el("span", { class: "badge badge-camp", text: "Book / link" }));
   if (badges.childNodes.length) head.appendChild(badges);
   card.appendChild(head);
+
+  if (contact.routeContext) {
+    card.appendChild(el("p", { class: "contact-route-context", text: contact.routeContext }));
+  }
 
   if (contact.address) {
     const p = el("p", { class: "contact-card__address" });
@@ -2244,6 +2429,8 @@ function renderTrip(data, babHostsMap, routeMeta) {
   });
   checkEl.appendChild(grid);
 
+  renderBabDirectory(trip, babHostsMap, days);
+
   syncDayDetailsFromHash();
 }
 
@@ -2483,6 +2670,7 @@ function syncJumpNav() {
     "homework",
     "checklists",
     "links",
+    "bab",
   ]);
   const active = raw && sectionIds.has(raw) ? raw : "overview";
   document.querySelectorAll("nav.jump a").forEach((a) => {

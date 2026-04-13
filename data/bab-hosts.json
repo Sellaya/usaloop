@@ -10,6 +10,26 @@
       "notes": "Tent space + dry RV; house facilities when host present. Garage, basic tools. Email or text fine.",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=2659+Cool+Lea+Camp+Road%2C+Alpine%2C+NY+14805"
     },
+    "greg-chris-mcgraw": {
+      "name": "Greg & Chris",
+      "greetingName": "Greg",
+      "address": "4177 Syrian Hill Road, McGraw, NY 13101",
+      "phone": "+13154276327",
+      "email": "Chrissowles@gmail.com",
+      "contact": "text",
+      "notes": "Tenting/camping; water and power; tools/work space; good meal. Best to text Greg’s number.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=4177+Syrian+Hill+Road%2C+McGraw%2C+NY+13101"
+    },
+    "dan-southampton": {
+      "name": "Dan",
+      "greetingName": "Dan",
+      "address": "Southampton, NY 11968",
+      "phone": "",
+      "email": "danielprelato@yahoo.com",
+      "contact": "email",
+      "notes": "Garage, tools, local intel (Long Island). Confirm full street address and bike parking before arrival.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Southampton%2C+NY+11968"
+    },
     "richard-honchar": {
       "name": "Richard Honchar",
       "greetingName": "Richard",

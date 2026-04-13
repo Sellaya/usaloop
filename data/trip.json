@@ -92,6 +92,7 @@
       "lodging": {
         "heading": "Stay options",
         "priority": true,
+        "babMergeId": "greg-chris-mcgraw",
         "name": "Greg & Chris",
         "address": "4177 Syrian Hill Road, McGraw, NY 13101",
         "notes": "Confirm arrival time and parking for bikes."
@@ -120,9 +121,10 @@
       "stops": [],
       "lodging": {
         "heading": "Stay options",
+        "babMergeId": "dan-southampton",
         "name": "Dan",
         "address": "Southampton, NY 11968",
-        "notes": "Long Island — confirm full address and bike parking."
+        "notes": "Long Island — confirm full street address and bike parking."
       },
       "lodgingAlternatives": [
         {
