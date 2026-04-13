@@ -1,13 +1,4 @@
 {
-  "meta": {
-    "referenceScreenshots": [
-      {
-        "title": "New York — Finger Lakes & NYC (Bunk a Biker export)",
-        "path": "assets/bab-ny-hosts-reference.png",
-        "caption": "Original list used to cross-check Chip, Greg & Chris, Richard, Mike, Dan, and Robert."
-      }
-    ]
-  },
   "hosts": {
     "wayne-lawler": {
       "name": "Wayne \"Chip\" Lawler",

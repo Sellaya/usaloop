@@ -1751,29 +1751,7 @@ function babHostPassesFilter(indexEntry, legFilter, itineraryOnly) {
   return true;
 }
 
-function renderBabReferenceShots(babMeta) {
-  const slot = document.getElementById("bab-reference-slot");
-  if (!slot || !babMeta?.referenceScreenshots?.length || slot.dataset.rendered === "1") return;
-  slot.dataset.rendered = "1";
-  slot.hidden = false;
-  babMeta.referenceScreenshots.forEach((shot) => {
-    const figure = el("figure", { class: "bab-reference-figure" });
-    const img = document.createElement("img");
-    img.className = "bab-reference-img";
-    img.src = shot.path;
-    img.alt = shot.title || "Bunk a Biker reference list";
-    img.loading = "lazy";
-    img.decoding = "async";
-    figure.appendChild(img);
-    if (shot.caption || shot.title) {
-      figure.appendChild(el("figcaption", { class: "bab-reference-caption", text: shot.caption || shot.title }));
-    }
-    slot.appendChild(figure);
-  });
-}
-
-function renderBabDirectory(trip, babHostsMap, days, babMeta) {
-  renderBabReferenceShots(babMeta);
+function renderBabDirectory(trip, babHostsMap, days) {
   const root = document.getElementById("bab-directory-dynamic");
   if (!root || !babHostsMap || typeof babHostsMap !== "object") return;
 
@@ -2303,7 +2281,7 @@ function appendDayRecommendations(body, day) {
   body.appendChild(sec);
 }
 
-function renderTrip(data, babHostsMap, routeMeta, babMeta) {
+function renderTrip(data, babHostsMap, routeMeta) {
   const { meta, trip, links, days, checklists } = data;
   setTripDisplayMeta(meta);
 
@@ -2489,7 +2467,7 @@ function renderTrip(data, babHostsMap, routeMeta, babMeta) {
   });
   checkEl.appendChild(grid);
 
-  renderBabDirectory(trip, babHostsMap, days, babMeta);
+  renderBabDirectory(trip, babHostsMap, days);
 
   syncDayDetailsFromHash();
 }
@@ -2753,11 +2731,9 @@ async function main() {
     if (!tripRes.ok) throw new Error(`trip.json HTTP ${tripRes.status}`);
     const data = await tripRes.json();
     let babHostsMap = {};
-    let babMeta = null;
     if (babRes.ok) {
       const bab = await babRes.json();
       babHostsMap = bab.hosts || {};
-      babMeta = bab.meta || null;
     }
     let routeMeta = null;
     if (routeRes.ok) {
@@ -2781,7 +2757,7 @@ async function main() {
       const hr = document.getElementById("homework-root");
       if (hr) hr.appendChild(el("p", { class: "muted", text: "Homework data did not load (check data/homework.json)." }));
     }
-    renderTrip(data, babHostsMap, routeMeta, babMeta);
+    renderTrip(data, babHostsMap, routeMeta);
     scheduleGoogleDistanceFetch(data.days, data.trip);
     syncJumpNav();
     window.addEventListener("hashchange", () => {

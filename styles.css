@@ -1796,30 +1796,6 @@ section > h2 {
   padding: 1rem;
 }
 
-.bab-reference-slot {
-  margin-bottom: 1rem;
-}
-
-.bab-reference-figure {
-  margin: 0 0 1rem;
-}
-
-.bab-reference-img {
-  width: 100%;
-  max-height: 420px;
-  object-fit: contain;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-}
-
-.bab-reference-caption {
-  font-size: 0.82rem;
-  color: var(--muted);
-  margin: 0.4rem 0 0;
-  line-height: 1.4;
-}
-
 .bab-dir-toolbar {
   display: flex;
   flex-wrap: wrap;
