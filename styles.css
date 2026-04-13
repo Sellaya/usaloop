@@ -1816,6 +1816,17 @@ section > h2 {
   background: var(--doc-navy);
 }
 
+.btn-action--webmail {
+  border-color: #90caf9;
+  color: #0d47a1;
+  background: #e3f2fd;
+}
+
+.btn-action--webmail:hover {
+  border-color: #42a5f5;
+  background: #bbdefb;
+}
+
 .contact-notes {
   font-size: 0.85rem;
   color: var(--muted);

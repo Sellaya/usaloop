@@ -1687,6 +1687,40 @@ ${rider}`;
   return { subject, body };
 }
 
+/** Long mailto: URLs often fail silently in Chrome/Arc/macOS (handler / length limits). */
+const MAILTO_SAFE_MAX_LEN = 1800;
+
+function buildMailtoHref(email, subject, body) {
+  const q = new URLSearchParams();
+  q.set("subject", subject);
+  q.set("body", body);
+  const withQuery = `mailto:${email}?${q.toString()}`;
+  if (withQuery.length <= MAILTO_SAFE_MAX_LEN) return withQuery;
+  const subOnly = `mailto:${email}?${new URLSearchParams({ subject }).toString()}`;
+  return subOnly;
+}
+
+/** Opens Gmail in the browser; truncates body if the URL would exceed a safe length. */
+function buildGmailComposeUrl(email, subject, body) {
+  const prefix = "https://mail.google.com/mail/?view=cm&fs=1&";
+  const suffix = "\n\n[… truncated — use “Copy message” below for the full draft.]";
+  let slice = body;
+  for (let i = 0; i < 24; i++) {
+    const p = new URLSearchParams();
+    p.set("to", email);
+    p.set("su", subject);
+    p.set("body", slice);
+    const url = prefix + p.toString();
+    if (url.length <= 2000) return url;
+    slice = slice.slice(0, Math.max(0, Math.floor(slice.length * 0.75))) + suffix;
+  }
+  const p = new URLSearchParams();
+  p.set("to", email);
+  p.set("su", subject);
+  p.set("body", suffix.trim());
+  return prefix + p.toString();
+}
+
 function contactHintLine(contactPref) {
   if (!contactPref) return "";
   return CONTACT_HINTS[contactPref] || `Host preference: ${contactPref.replace(/_/g, " ")}.`;
@@ -1770,8 +1804,27 @@ function renderContactCard(contact, day, trip, container) {
   }
   if (contact.email) {
     const { subject, body } = buildOutreach(contact, day, trip);
-    const mail = `mailto:${contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    actions.appendChild(el("a", { class: "btn-action", href: mail, text: "Email (prefilled)" }));
+    const mailHref = buildMailtoHref(contact.email, subject, body);
+    const mailBtn = el("a", {
+      class: "btn-action",
+      href: mailHref,
+      text: mailHref.includes("&body=") ? "Email app (prefilled)" : "Email app (subject only)",
+      title:
+        mailHref.includes("&body=")
+          ? "Opens your default mail app with subject and body"
+          : "Opens your default mail app with subject only — full draft is in “Draft message” below (use Copy message)",
+    });
+    actions.appendChild(mailBtn);
+    actions.appendChild(
+      el("a", {
+        class: "btn-action btn-action--webmail",
+        href: buildGmailComposeUrl(contact.email, subject, body),
+        text: "Gmail (browser)",
+        target: "_blank",
+        rel: "noopener noreferrer",
+        title: "Compose in Gmail in this browser (Google account)",
+      })
+    );
   }
   if (contact.url) {
     actions.appendChild(
