@@ -1792,6 +1792,34 @@ section > h2 {
   border-left: 3px solid #1565c0;
 }
 
+.contact-route-guidance {
+  margin: 0 0 0.75rem;
+  padding: 0.6rem 0.7rem;
+  background: #f7f9ef;
+  border-radius: 8px;
+  border: 1px solid #c5d4a7;
+}
+
+.contact-route-guidance__label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #4a5d23;
+  margin-bottom: 0.4rem;
+}
+
+.contact-route-guidance__p {
+  margin: 0 0 0.4rem;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--doc-slate);
+}
+
+.contact-route-guidance__p:last-child {
+  margin-bottom: 0;
+}
+
 .bab-directory-card {
   padding: 1rem;
 }

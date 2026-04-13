@@ -1577,6 +1577,7 @@ function normalizeLodgingWithBab(L, babHostsMap) {
     if (b.region) out.region = b.region;
     if (b.listHighlight) out.listHighlight = true;
     if (b.image) out.image = b.image;
+    if (b.routeGuidance) out.routeGuidance = b.routeGuidance;
   }
   if (!out.mapsUrl && out.address) {
     out.mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(out.address)}`;
@@ -1722,6 +1723,7 @@ function babHostRecordToContact(babId, b) {
     region: b.region,
     listHighlight: Boolean(b.listHighlight),
     image: b.image,
+    routeGuidance: b.routeGuidance,
     source: "bab",
     primary: false,
     babId,
@@ -1976,6 +1978,17 @@ function renderContactCard(contact, day, trip, container, options = {}) {
 
   if (dir && contact.routeContext) {
     card.appendChild(el("p", { class: "contact-route-context", text: contact.routeContext }));
+  }
+
+  if (dir && contact.routeGuidance) {
+    const rg = el("div", { class: "contact-route-guidance" });
+    rg.appendChild(el("div", { class: "contact-route-guidance__label", text: "Planner notes (your 36-day loop)" }));
+    contact.routeGuidance.split(/\n+/).forEach((line) => {
+      const t = line.trim();
+      if (!t) return;
+      rg.appendChild(el("p", { class: "contact-route-guidance__p", text: t }));
+    });
+    card.appendChild(rg);
   }
 
   if (contact.address) {
