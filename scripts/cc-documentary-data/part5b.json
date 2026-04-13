@@ -2,6 +2,21 @@
   "days": {
     "13": {
       "roadRules": [
+        "Utah: lane filtering legal under Utah Code §41-6a-1102 as of recent years—only between stopped lanes of same direction, speed ≤15 mph, conditions listed; NOT California-style free splitting at speed—read statute before demonstrating.",
+        "Arizona: helmet required under 18; adults optional in AZ but eye protection practical; Navajo Nation may require helmets on tribal roads—obey posted tribal law.",
+        "Four Corners Monument: queue on foot; motorcycles park in designated areas—do not block tour buses.",
+        "US-491 (ex-666): rural Navajo Police and New Mexico State Police patrol; dust storms and livestock on road are hazards.",
+        "Mexican Hat UT: river corridor camping—flash flood warnings override Instagram plans."
+      ],
+      "culture": "Navajo Nation is a sovereign government with criminal jurisdiction complexities (Major Crimes Act, Public Law 280 variations)—tourists should understand permits for Monument Valley Tribal Park fund local services. John Ford’s films exported a visual ‘West’ that displaced living Navajo and Diné stories—credit Navajo guides when filming tours. US-666 renumber to 491 was driven by theft, stigma, and emergency-response confusion—Congressional bills are public record. Mexican Hat’s name references a balanced rock; the San Juan River is silty—different hydraulics than clear Rocky Mountain streams.",
+      "moreFacts": [
+        "Monument Valley Tribal Park requires Navajo Nation permits separate from NPS passes.",
+        "Utah’s liquor laws historically restricted bar service; today’s mixed drinks require ‘metered’ dispensing in some counties—quirky statute legacy.",
+        "Navajo Nation observes DST differently than Arizona in some jurisdictions—time on phone may lie near borders."
+      ]
+    },
+    "14": {
+      "roadRules": [
         "Arizona: speed enforcement on US-89 is aggressive; photo enforcement exists in some municipalities.",
         "Utah: helmet required for riders under 21; adult helmet optional but carry eye protection; national parks may still recommend helmets.",
         "Page AZ area: Navajo Nation police enforce tribal codes adjacent to BIA roads—speed traps fund services.",
@@ -16,7 +31,7 @@
         "Horseshoe Bend is Glen Canyon NRA—NPS passes apply; overcrowding led to parking fees and safety railings."
       ]
     },
-    "14": {
+    "15": {
       "roadRules": [
         "Utah: motorcycle registration and insurance required; modified exhaust can fail safety inspection counties that require it.",
         "UT-12 Hogback: no center barrier—wind gusts from both valleys; do not stop on crest for photos if traffic flows.",
@@ -32,7 +47,7 @@
         "Canyonlands needle district filming permits required for commercial YouTube if monetized and crew>minimal—check NPS commercial policy."
       ]
     },
-    "15": {
+    "16": {
       "roadRules": [
         "Arches NP: single-file on narrow trails; pets restricted; drones prohibited in national parks (federal).",
         "Grand County UT sheriff enforces UTV noise on city limits—motorcycle exhaust sometimes grouped in noise complaints in Moab.",
@@ -47,7 +62,7 @@
         "Utah’s ‘Zion curtain’ liquor-serving rules were reformed but some counties remain ‘dry’ or restricted—check Grand County."
       ]
     },
-    "16": {
+    "17": {
       "roadRules": [
         "Utah I-15 Virgin River Gorge: reduced shoulders; rockfall zones—don’t stop in tunnels.",
         "Zion NP: tunnel escort required for vehicles over 7'10\" wide or 11'4\" tall—measure loaded bike with mirrors/ bags.",
@@ -62,7 +77,7 @@
         "Washington County water rates rise with Lake Powell elevation drops—municipal politics tie to Colorado River Compact."
       ]
     },
-    "17": {
+    "18": {
       "roadRules": [
         "California lane splitting/filtering: CHP publishes guidelines (speed differential ~10 mph, not >30 mph traffic, etc.)—illegal in NV except where posted experiments; legal in CA under CVC context—verify current CHP handout year.",
         "Nevada: helmet required; daytime headlight; handlebar height restrictions exist—check NRS for ape hanger limits.",
@@ -78,7 +93,7 @@
         "I-15 Baker–Barstow segment is high enforcement for DUIs Friday nights—Las Vegas return traffic."
       ]
     },
-    "18": {
+    "19": {
       "roadRules": [
         "California: motorcycle helmet required for all operators and passengers (CVC §27803)—DOT-compliant; novelty helmets risk ticket.",
         "Lane splitting: follow CHP guidance; splitting at highway speeds is cited as unsafe speed/reckless.",
@@ -94,7 +109,7 @@
         "California Coastal Commission regulates view corridors—why some pullouts exist and some ‘secret’ camps get bulldozed."
       ]
     },
-    "19": {
+    "20": {
       "roadRules": [
         "California SR-1 north of SF: fog reduces visibility below 50 ft—use low beams; pulling off completely is safer than crawling in lane.",
         "Mendocino County: marijuana grows (legal and illegal) mean private roads gated—don’t explore driveways.",
@@ -110,7 +125,7 @@
         "Marine layer (advection fog) is Pacific high-pressure + cold water—predictable morning pattern."
       ]
     },
-    "20": {
+    "21": {
       "roadRules": [
         "California US-101 in redwoods: narrow shoulders; logging trucks exit suddenly—give distance.",
         "Humboldt County: CA-254 Avenue of Giants is old highway—tourists stop mid-lane for photos; assume stupidity.",
@@ -126,7 +141,7 @@
         "1960s Redwood National Park creation faced local job fears—similar to modern monument fights."
       ]
     },
-    "21": {
+    "22": {
       "roadRules": [
         "Oregon: motorcycle endorsement required; daytime headlights required on motorcycles built after certain years—ORS 816.330; run headlight always.",
         "California–Oregon US-199: tight curves, logging trucks, wet leaves—traction varies mile to mile.",
@@ -142,7 +157,7 @@
         "Umpqua National Forest overlaps Day 21 routing possibilities—wildfire closures now annual planning factor."
       ]
     },
-    "22": {
+    "23": {
       "roadRules": [
         "Oregon Historic Columbia River Highway: bicycles abundant—share narrow tunnels and curves courteously.",
         "Multnomah Falls: timed use permits / reservations in peak season—NFS/USFS and Oregon parks rules changed post-COVID; verify.",
@@ -158,7 +173,7 @@
         "Hood River County fruit loop drives tourism ordinance—farm stands have food-handling permits."
       ]
     },
-    "23": {
+    "24": {
       "roadRules": [
         "Washington: motorcycle insurance required; carry card or electronic proof.",
         "Oregon–Washington I-5: variable speed limits in some segments—watch electronic signs.",
@@ -172,22 +187,6 @@
         "Washington lacks income tax; Oregon lacks sales tax—border shopping arbitrage is economic geography.",
         "Boeing’s union history shapes Seattle labor politics—current HQ spread across states complicates ‘Seattle company’ narrative.",
         "Salish Sea naming replaced Georgia Strait/Puget Sound colonial names in some contexts—First Nations advocacy."
-      ]
-    },
-    "24": {
-      "roadRules": [
-        "Washington SR-20 North Cascades: seasonal closure—check WSDOT; avalanche zones mean no stopping under chutes.",
-        "Washington: studded tire season doesn’t help motorcycles—ice means turn around.",
-        "Washington Pass: frost heave bumps after thaw—suspension bottoming risk on loaded bikes.",
-        "Winthrop: 20 mph town strips; western-theme tourism pedestrians jaywalk for photos.",
-        "Chelan County sheriff enforces noise on Hwy 20 weekend warriors—revving in tunnel is citation bait.",
-        "Camping on national forest land: NW Forest Pass or fee site rules—motorcycle counts as vehicle."
-      ],
-      "culture": "Winthrop’s 1972 western theme rebuild was deliberate place-making after highway opening—‘authenticity’ is designed, yet Methow Valley ranching is real. North Cascades National Park is one of the least-visited contiguous US parks by road access difficulty—glacier loss is visible repeat-photography science. Eastern Washington’s political contrast with Seattle funds state-level tension over carbon pricing and fuel taxes—road maintenance politics show up as pothole gradients at county lines.",
-      "moreFacts": [
-        "North Cascades glaciers are retreating faster than global average—local photography projects document year-to-year.",
-        "Liberty Bell Mountain spires are granodiorite—popular alpine climbing, not motorcycle terrain.",
-        "SR-20 connects to Sedro-Woolley logging history—timber protests of 1990s ‘spotted owl’ era reshaped towns."
       ]
     }
   }

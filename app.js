@@ -106,8 +106,8 @@ function todayIsoLocal() {
 }
 
 function inferLeg(dayIndex) {
-  if (dayIndex <= 8) return "1";
-  if (dayIndex <= 23) return "2";
+  if (dayIndex <= 9) return "1";
+  if (dayIndex <= 24) return "2";
   return "3";
 }
 
@@ -1913,8 +1913,8 @@ function renderOverviewSection(trip, dayCount) {
     legsEl.innerHTML = "";
     [
       { key: "1", anchor: "day-1" },
-      { key: "2", anchor: "day-9" },
-      { key: "3", anchor: "day-24" },
+      { key: "2", anchor: "day-10" },
+      { key: "3", anchor: "day-25" },
     ].forEach(({ key, anchor }) => {
       const title = trip.legs[key];
       if (!title) return;

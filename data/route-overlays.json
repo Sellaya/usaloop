@@ -51,48 +51,62 @@
       ]
     },
     "4": {
-      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Luray%2C+VA&destination=Pulaski%2C+VA&travelmode=driving",
-      "distanceNote": "Diagonal across VA; Blue Ridge parallels possible on part of leg.",
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Luray%2C+VA+22835&destination=Roanoke%2C+VA&travelmode=driving",
+      "distanceNote": "~150–180 km depending on I-81 vs US-460 routing — confirm scenic choice in Maps.",
       "recommendations": [
         {
-          "text": "Blue Ridge Parkway connections near Luray — scenic, slower.",
-          "url": "https://www.nps.gov/blri/"
+          "text": "Shenandoah NP Skyline Dr is a fee detour — optional.",
+          "url": "https://www.nps.gov/shen/"
         },
         {
-          "text": "Natural Bridge State Park (short detour possible).",
-          "url": "https://www.dcr.virginia.gov/state-parks/natural-bridge"
+          "text": "Roanoke: Blue Ridge Parkway access points south of town.",
+          "url": "https://www.nps.gov/blri/"
         }
       ]
     },
     "5": {
-      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Pulaski%2C+VA&destination=1444+Chapman+Hwy%2C+Sevierville%2C+TN&travelmode=driving",
-      "distanceNote": "I-81 south + TN corridors; Knoxville bypass options.",
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Roanoke%2C+VA&waypoints=Rocky+Knob+Visitor+Center+Blue+Ridge+Parkway|Fancy+Gap%2C+VA|Boone%2C+NC&destination=Bristol%2C+TN&travelmode=driving",
+      "distanceNote": "BRP + connectors — Maps may suggest I-81; drag onto Blue Ridge Parkway and secondary roads. Full day at parkway speeds.",
       "recommendations": [
         {
-          "text": "Tail of the Dragon (US-129) is a detour from direct routing — fuel at Deals Gap if you go.",
-          "url": "https://www.google.com/maps/search/Deals+Gap+NC"
+          "text": "Blue Ridge Parkway — no trucks; plan fuel gaps.",
+          "url": "https://www.nps.gov/blri/"
         },
         {
-          "text": "Smokies GSMNP vehicle reservation (peak season) — check before detouring into park.",
-          "url": "https://www.nps.gov/grsm/planyourvisit/park-it-forward.htm"
+          "text": "In Maps: use ‘Avoid highways’ or add BRP waypoints to keep off interstates.",
+          "url": ""
+        },
+        {
+          "text": "Boone NC: food/fuel before final push to Bristol.",
+          "url": "https://www.google.com/maps/search/Boone+NC"
         }
       ]
     },
     "6": {
-      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Sevierville%2C+TN&destination=585+Roundtree+Ln%2C+Beech+Bluff%2C+TN&travelmode=driving",
-      "distanceNote": "Often via Nashville on I-40 W; matches ~212 mi car routing.",
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Bristol%2C+TN&waypoints=Gatlinburg%2C+TN|Deals+Gap+NC&destination=Kingston%2C+TN&travelmode=driving",
+      "distanceNote": "Smokies gateway + US-129 Dragon + run to Kingston — long, technical day; verify GSMNP entry needs.",
       "recommendations": [
         {
-          "text": "Nashville food/fuel stop — downtown traffic heavy; use ring roads.",
-          "url": "https://www.google.com/maps/search/I-440+Nashville+TN"
+          "text": "Tail of the Dragon — fuel at Deals Gap.",
+          "url": "https://www.google.com/maps/search/Deals+Gap"
         },
         {
-          "text": "Natchez Trace northern end nearby if you want a scenic parallel (no trucks).",
-          "url": "https://www.nps.gov/natr/"
+          "text": "GSMNP vehicle reservation (peak) — check NPS.",
+          "url": "https://www.nps.gov/grsm/planyourvisit/park-it-forward.htm"
         }
       ]
     },
     "7": {
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Kingston%2C+TN&destination=Parsons%2C+TN+38363&travelmode=driving",
+      "distanceNote": "~100–130 km short day — recovery before I-40 west.",
+      "recommendations": [
+        {
+          "text": "Parsons — resupply before Arkansas leg tomorrow.",
+          "url": ""
+        }
+      ]
+    },
+    "8": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Parsons%2C+TN&destination=Jacksonville%2C+AR&travelmode=driving",
       "distanceNote": "I-40 W across Mississippi River bridges.",
       "recommendations": [
@@ -106,7 +120,7 @@
         }
       ]
     },
-    "8": {
+    "9": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Jacksonville%2C+AR&destination=Fort+Worth%2C+TX&travelmode=driving",
       "distanceNote": "I-30 W into DFW; summer heat + storms.",
       "recommendations": [
@@ -120,7 +134,7 @@
         }
       ]
     },
-    "9": {
+    "10": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Fort+Worth%2C+TX&destination=307+W+Historic+Route+66%2C+Adrian%2C+TX&travelmode=driving",
       "distanceNote": "US-287 / I-40 W common; ~295 mi.",
       "recommendations": [
@@ -134,7 +148,7 @@
         }
       ]
     },
-    "10": {
+    "11": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Amarillo%2C+TX&destination=Albuquerque%2C+NM&travelmode=driving",
       "distanceNote": "Classic I-40 W ~285 mi; matches published Amarillo–Albuquerque driving guides.",
       "recommendations": [
@@ -143,12 +157,12 @@
           "url": "https://www.google.com/maps/search/Midpoint+Adrian+TX+66"
         },
         {
-          "text": "Cadillac Ranch if you skipped Day 8.",
+          "text": "Cadillac Ranch if you skipped Day 9 (Fort Worth).",
           "url": "https://www.google.com/maps/search/Cadillac+Ranch"
         }
       ]
     },
-    "11": {
+    "12": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Albuquerque%2C+NM&destination=Silverton%2C+CO&travelmode=driving",
       "distanceNote": "Often US-550 N via Durango area; mountain weather.",
       "recommendations": [
@@ -162,7 +176,7 @@
         }
       ]
     },
-    "12": {
+    "13": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Silverton%2C+CO&destination=Mexican+Hat%2C+UT&travelmode=driving",
       "distanceNote": "Four Corners + US-491/160; Silverton is north of Durango on 550.",
       "recommendations": [
@@ -176,7 +190,7 @@
         }
       ]
     },
-    "13": {
+    "14": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Mexican+Hat%2C+UT&destination=Bryce+Canyon+City%2C+UT&travelmode=driving",
       "distanceNote": "Includes Page/Horseshoe/Antelope corridor; long day — your ~500 km plan is realistic.",
       "recommendations": [
@@ -194,7 +208,7 @@
         }
       ]
     },
-    "14": {
+    "15": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Bryce+Canyon+National+Park%2C+UT&destination=Moab%2C+UT&travelmode=driving",
       "distanceNote": "Travelmath/Arches–Bryce corridor often ~440–450 km depending on UT-12 vs I-70 routing.",
       "recommendations": [
@@ -208,7 +222,7 @@
         }
       ]
     },
-    "15": {
+    "16": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Moab%2C+UT&destination=Dead+Horse+Point+State+Park%2C+UT&waypoints=Arches+National+Park%2C+UT&travelmode=driving",
       "distanceNote": "Local Moab-area loop for map + weather (Moab → Arches → Dead Horse Point). Not a touring day — use for pins and 10-day forecast; actual mileage is short.",
       "recommendations": [
@@ -234,7 +248,7 @@
         }
       ]
     },
-    "16": {
+    "17": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Moab%2C+UT&destination=St.+George%2C+UT&travelmode=driving",
       "distanceNote": "Often ~310 mi via I-70 E to I-15 S — remote I-70 Salina–Green River segment; plan fuel.",
       "recommendations": [
@@ -248,7 +262,7 @@
         }
       ]
     },
-    "17": {
+    "18": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=St.+George%2C+UT&destination=22060+Wren+St%2C+Apple+Valley%2C+CA&travelmode=driving",
       "distanceNote": "I-15 S Mojave; summer heat extreme.",
       "recommendations": [
@@ -262,7 +276,7 @@
         }
       ]
     },
-    "18": {
+    "19": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Barstow%2C+CA&destination=Prewitt+Ridge+Campground%2C+Big+Sur%2C+CA&waypoints=Leo+Carrillo+State+Park%2C+Malibu%2C+CA&travelmode=driving",
       "distanceNote": "Barstow → LA basin → Leo Carrillo (PCH/Malibu) → Big Sur → Prewitt Ridge. ~590 km total — longest California day. CA-14 into LA, then PCH north. Slow curves on Hwy 1 Big Sur add time beyond distance.",
       "recommendations": [
@@ -296,7 +310,7 @@
         }
       ]
     },
-    "19": {
+    "20": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Big+Sur%2C+CA&destination=Point+Arena%2C+CA&travelmode=driving",
       "distanceNote": "Coast + inland cutoffs possible in bad weather.",
       "recommendations": [
@@ -310,7 +324,7 @@
         }
       ]
     },
-    "20": {
+    "21": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Point+Arena%2C+CA&destination=Redwood+National+and+State+Parks%2C+CA&travelmode=driving",
       "distanceNote": "US-101 redwoods corridor.",
       "recommendations": [
@@ -324,7 +338,7 @@
         }
       ]
     },
-    "21": {
+    "22": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Orick%2C+CA&destination=Westfir%2C+OR&travelmode=driving",
       "distanceNote": "Long day US-199 + I-5 + OR-126; ~365 mi class routing.",
       "recommendations": [
@@ -338,7 +352,7 @@
         }
       ]
     },
-    "22": {
+    "23": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Westfir%2C+OR&destination=Goldendale%2C+WA&travelmode=driving",
       "distanceNote": "Cascade routing via Portland/Vancouver or eastern OR depending on choice.",
       "recommendations": [
@@ -352,7 +366,7 @@
         }
       ]
     },
-    "23": {
+    "24": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Mosier%2C+OR&destination=Seattle%2C+WA&travelmode=driving",
       "distanceNote": "I-84 to I-5 N ~192 mi core; Seattle metro adds time.",
       "recommendations": [
@@ -366,7 +380,7 @@
         }
       ]
     },
-    "24": {
+    "25": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Seattle%2C+WA&destination=Winthrop%2C+WA&travelmode=driving",
       "distanceNote": "WA SR-20 North Cascades — seasonal opening critical (snow). ~180 mi.",
       "recommendations": [
@@ -380,7 +394,7 @@
         }
       ]
     },
-    "25": {
+    "26": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Winthrop%2C+WA&destination=Spokane%2C+WA&travelmode=driving",
       "distanceNote": "US-97 / US-2 eastbound ~167 mi typical.",
       "recommendations": [
@@ -394,7 +408,7 @@
         }
       ]
     },
-    "26": {
+    "27": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Spokane%2C+WA&destination=Lolo+Pass+Visitor+Center%2C+ID&travelmode=driving",
       "distanceNote": "Matches ~207 mi Spokane–Lolo area references on US-12 corridor.",
       "recommendations": [
@@ -408,7 +422,7 @@
         }
       ]
     },
-    "27": {
+    "28": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Lolo%2C+MT&destination=Gallatin+Gateway%2C+MT&travelmode=driving",
       "distanceNote": "~Lolo to Bozeman ~213 mi + south to gateway; verify your actual start pin at pass vs Lolo town.",
       "recommendations": [
@@ -422,7 +436,7 @@
         }
       ]
     },
-    "28": {
+    "29": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=West+Yellowstone%2C+MT&destination=Old+Faithful%2C+Yellowstone+National+Park%2C+WY&travelmode=driving",
       "distanceNote": "In-park miles vary wildly by loop; figure is a moderate geyser-basin day, not perimeter.",
       "recommendations": [
@@ -436,7 +450,7 @@
         }
       ]
     },
-    "29": {
+    "30": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/45.018871,-109.926270/45.185899,-109.247017/44.7589,-108.7573?api=1&travelmode=driving",
       "distanceNote": "~316 km (typical): Cooke City, MT (Yellowstone NE gate) → Red Lodge via US-212 Beartooth → Powell, WY. This is the Beartooth+Bighorn link the app totals — cross-park miles from Old Faithful / Canyon to Cooke are extra (~120–180 km); plan that leg separately.",
       "recommendations": [
@@ -454,7 +468,7 @@
         }
       ]
     },
-    "30": {
+    "31": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=44.7589,-108.7573&destination=Gillette%2C+WY&travelmode=driving",
       "distanceNote": "Powell → Gillette: Bighorn Basin / I-90 style routing; often ~300–340 km depending on corridor.",
       "recommendations": [
@@ -468,7 +482,7 @@
         }
       ]
     },
-    "31": {
+    "32": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Gillette%2C+WY&destination=Custer%2C+SD&travelmode=driving",
       "distanceNote": "Black Hills approach; Sturgis week traffic if August.",
       "recommendations": [
@@ -482,7 +496,7 @@
         }
       ]
     },
-    "32": {
+    "33": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Oacoma%2C+SD&destination=Rochester%2C+MN&travelmode=driving",
       "distanceNote": "Matches your ~600 km slab day; I-90 E ~370 mi.",
       "recommendations": [
@@ -496,7 +510,7 @@
         }
       ]
     },
-    "33": {
+    "34": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Rochester%2C+MN&destination=Oconomowoc%2C+WI&travelmode=driving",
       "distanceNote": "I-90 E to Madison/Milwaukee arc ~277 mi.",
       "recommendations": [
@@ -506,12 +520,12 @@
         }
       ]
     },
-    "34": {
+    "35": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Oconomowoc%2C+WI&destination=London%2C+ON%2C+Canada&waypoints=Coloma%2C+MI&travelmode=driving",
-      "distanceNote": "Oconomowoc → Benton Harbor/Coloma area (~142 mi) + Benton Harbor → Port Huron → Sarnia → London ON (~200 mi). Total ~530 km. Jul 4 border crossing into Canada is lighter than Jul 5.",
+      "distanceNote": "Oconomowoc → Benton Harbor/Coloma area (~142 mi) + Benton Harbor → Port Huron → Sarnia → London ON (~200 mi). Total ~530 km. Border crossing Jul 5 — check CBSA waits; post–Jul 4 weekend can be busy.",
       "recommendations": [
         {
-          "text": "Plan Benton Harbor stop 11 am–1 pm — avoid early morning I-94 holiday traffic out of Milwaukee.",
+          "text": "Plan Benton Harbor stop 11 am–1 pm — allow buffer for I-94 traffic out of Milwaukee.",
           "url": ""
         },
         {
@@ -532,7 +546,7 @@
         }
       ]
     },
-    "35": {
+    "36": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=London%2C+ON%2C+Canada&destination=Toronto%2C+ON%2C+Canada&travelmode=driving",
       "distanceNote": "401 corridor ~119 mi; construction common.",
       "recommendations": [

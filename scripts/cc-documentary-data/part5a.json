@@ -56,50 +56,61 @@
     },
     "4": {
       "roadRules": [
-        "Virginia: motorcyclists generally cannot ride two abreast in one lane unless statute/local ordinance allows—default is single file within lane.",
-        "Blue Ridge Parkway: federal NPS regulations—speed limits low (often 45 mph max); wildlife (deer, bear) have right-of-way morally and practically; passing only where legal dashed lines.",
-        "Virginia state highways: photo enforcement zones exist in some municipalities; motorcycle plates must remain horizontal and unobstructed.",
-        "Motorcycle exhaust: Virginia has noise enforcement in some counties—aftermarket pipes draw tickets near college towns and resort areas.",
-        "SW Virginia: coal-country roads may have coal dust, gravel on curves after truck spillage—traction surprises in rain."
+        "Virginia: helmets required for operators and passengers (§46.2-910); Jefferson NF falls under USFS motor-vehicle rules — MVUM dictates where wheels may leave pavement.",
+        "George Washington & Jefferson National Forests: dispersed camping is allowed only in designated zones on the MVUM — random bushwhacking can be trespass.",
+        "Roanoke-area two-lanes: deer strikes peak dawn/dusk; agricultural equipment uses full lane width on blind curves.",
+        "Virginia reckless-driving thresholds can treat high speed as misdemeanor — verify statutory mph vs. ‘simple speeding’ before narrating.",
+        "NF roads: seasonal gates — snow or mud can close spurs without advance notice on apps."
       ],
-      "culture": "Southwest Virginia sits in Central Appalachia—culturally distinct from both Deep South plantation narrative and Northeast urbanism. Old-time and bluegrass music here predate Nashville’s commercial packaging; local fiddlers’ conventions are living institutions. The region’s economy shifted from tobacco and coal to logistics, healthcare, and remote work—political identity often skews conservative, but mutual-aid networks (churches, volunteer fire departments) remain strong. Natural Bridge was marketed from Jefferson’s era as sublime nature—early American ‘landscape consumption’ that prefigured national parks. Respect local dry counties and Sunday alcohol laws in pockets; some convenience stores still observe blue laws.",
+      "culture": "Roanoke’s railroad and coal history shaped town layout; today’s outdoor economy (trail runners, MTB, moto tourism) sits on that infrastructure. The Ridge and Valley province west of Shenandoah reads as ‘more Appalachia’ to outsiders but politically and acoustically differs from SWVA coalfields. Respect private land edges along NF boundaries — trespass disputes are common where suburbs meet forest.",
       "moreFacts": [
-        "The Blue Ridge Parkway took Depression-era CCC labor and mid-century road engineering; commercial vehicles have always been banned, preserving sightlines.",
-        "Pulaski is named for Casimir Pulaski, Polish cavalry officer mortally wounded in the Revolutionary War—American towns named for foreign volunteers dot the Appalachians.",
-        "Appalachian Trail crossings on public roads are high foot-traffic zones—yield to hikers; harassment laws apply."
+        "The Roanoke Valley sits in the Roanoke River watershed — flash floods in mountain creeks arrive faster than radar suggests to valley riders.",
+        "Jefferson NF merges administratively with GWNF — one Motor Vehicle Use Map system for legal OHV/dispersed access."
       ]
     },
     "5": {
       "roadRules": [
-        "Tennessee: helmet required for riders under age thresholds historically; Tennessee law changed effective 2022—adult riders 21+ may ride without helmet only if meeting insurance/training conditions; verify current TCA §55-9-305 before you narrate or ride without helmet.",
-        "Tail of the Dragon (US-129): Tennessee and North Carolina share enforcement—aggressive speeding and crossing double-yellow are cited heavily; THP and sheriff’s deputies use aircraft pacing on some corridors.",
-        "North Carolina: helmet required for all operators and passengers (G.S. 20-140.4); day-use headlights recommended.",
-        "Great Smoky Mountains NP: vehicle reservations required peak season—motorcycles pay same rules; wildlife distance regulations are federal—fines are real.",
-        "Deals Gap area: noise ordinances and private-property photography—commercial drone use near treeline may need FAA + landowner permission."
+        "Blue Ridge Parkway: federal NPS road — 45 mph typical max; commercial vehicles prohibited; wildlife (bear, deer) have right-of-way morally and practically.",
+        "North Carolina: helmet required for all operators and passengers (G.S. 20-140.4); Tennessee shares enforcement on state-line routes.",
+        "BRP: passing only on dashed yellow where sight distance allows — tourists stop in travel lanes for photos.",
+        "Boone NC approaches: college-town traffic + mountain tourism — short tempers in parking lots.",
+        "Bristol TN/VA: state line splits sales tax and traffic laws — verify which side of State Street you cite."
       ],
-      "culture": "Sevier County (Sevierville, Gatlinburg, Pigeon Forge) runs on tourism—Dolly Parton’s Dollywood is economic gravity, but also a story of Appalachian women’s entrepreneurship in a male-dominated industry. The Smokies’ ‘blue smoke’ is VOC chemistry from vegetation—cultural storytelling often romanticizes what is measurable air chemistry. The Dragon attracts international riders; local ambivalence mixes profit from riders with crash costs and EMS burden. Cherokee, NC (if nearby) is Eastern Band of Cherokee Indians land—different laws and permit systems than adjacent national forest.",
+      "culture": "The Blue Ridge Parkway is Depression-era CCC legacy — interpret labor history before ‘pretty road’ VO. Boone’s university economy contrasts with coal towns to the north — don’t flatten Appalachia into one accent. Bristol’s ‘Twin Cities’ marketing straddles two states — music history (Bristol sessions) is asset; NASCAR adjacent culture is not every rider’s taste.",
       "moreFacts": [
-        "GSMNP is the most-visited US national park—traffic queues are management science, not surprises.",
-        "Sevierville’s Dolly statue marks civic pride; Parton’s Imagination Library began here as literacy philanthropy.",
-        "US-129’s crash statistics are public record—use Tennessee and North Carolina DOT data if you cite safety."
+        "The BRP’s 469 miles connect Shenandoah to Great Smoky Mountains — no billboards by federal policy.",
+        "Mabry Mill is among the most photographed BRP stops — parking fills on summer weekends."
       ]
     },
     "6": {
       "roadRules": [
-        "Tennessee: carry registration and proof of financial responsibility; implied consent applies to DUI stops involving motorcycles.",
-        "Nashville / Memphis urban cores: scooter and motorcycle theft clusters exist—use visible disc lock in city parking; Tennessee’s ‘castle doctrine’ is not a traffic law—don’t conflate.",
-        "Mississippi River bridges: gusty crosswinds and expansion joints—reduce speed in rain; Hernando de Soto Bridge (I-40) has had structural inspections—follow load postings if hauling trailer (you are not, but know context).",
-        "Arkansas entry: helmet required for riders under 21; adult helmet optional but eye protection still practical law in many states—AR requires glasses/goggles/windshield per A.C.A. § 27-20-104 for certain speeds/conditions.",
-        "Memphis urban traffic: Tennessee ‘modified comparative fault’ in crashes—insurance and lane-splitting debates matter if incident occurs."
+        "Tennessee / North Carolina: US-129 Tail of the Dragon — heavy THP and sheriff enforcement; crossing double-yellow is citation-grade.",
+        "North Carolina: helmet required for all riders (G.S. 20-140.4); Tennessee adult helmet rules changed in 2022 — verify TCA §55-9-305 before ‘no helmet’ narration.",
+        "Great Smoky Mountains NP: peak season vehicle reservations may apply — motorcycles pay same rules as cars; wildlife distance regulations are federal.",
+        "Cherokee NF: dispersed camping only on MVUM — bear country food storage; fines for feeding wildlife.",
+        "Gatlinburg/Pigeon Forge tourism corridors: distracted drivers and lane changes — treat as urban core."
       ],
-      "culture": "Nashville’s Music Row is an IP factory—publishing, licensing, and tourism grafted onto a small-city street grid. Memphis is a river-port city whose blues and soul output underwrote rock and roll; Graceland tourism funds preservation but also debates around Elvis’s appropriation of Black music—narrate with nuance. Tennessee’s Civil Rights history (Nashville sit-ins) is taught as nonviolent discipline strategy—use dates and institutions (Fisk, AME churches) accurately. Mississippi River levees reflect Army Corps of Engineers politics; flooding is racialized in land-use history—brief mention beats shallow ‘river pretty’ VO.",
+      "culture": "Sevier County tourism runs on Dollywood economics; the Smokies’ ‘blue smoke’ is VOC chemistry from vegetation — not romantic mist. The Dragon draws international riders; EMS burden is real. Eastern Band Cherokee lands near the corridor use different jurisdiction — don’t conflate with NPS rules.",
       "moreFacts": [
-        "Beale Street historically Black-owned nightlife; today’s tourism economy includes curfew and security rules—film crews need permits after hours.",
-        "Tennessee River is TVA-managed—hydroelectric politics shaped 1930s modernization and displacement.",
-        "Memphis–Shelby County has high violent-crime rates in specific neighborhoods—use neutral statistics, avoid fear-mongering maps."
+        "US-129 at Deals Gap: 318 curves in 11 miles — public crash statistics are cited by TN/NC DOT.",
+        "GSMNP is the most-visited US national park — traffic congestion is management science."
       ]
     },
     "7": {
+      "roadRules": [
+        "Tennessee: carry registration and proof of financial responsibility; implied consent applies to DUI stops involving motorcycles.",
+        "West Tennessee: farm equipment on US-70 corridors; dogs in roadways — reduce speed through settlements.",
+        "Kentucky Lake / Tennessee River public lands: camping only where posted — USACE and TVA have different rules; flood lines move.",
+        "Ticks and chiggers in tall grass — permethrin gear vs. DEET on skin is a tradeoff; Lyme is less common in west TN than mid-Atlantic but still possible.",
+        "Parsons (Decatur County): small-town ordinances on overnight parking — verify before stealth camping."
+      ],
+      "culture": "West Tennessee agriculture and river economics differ from East Tennessee mountains — same state, different labor history. Natchez Trace State Forest and TVA lands carry separate histories of displacement and flood control. Ask permission before filming on church lots or private river access.",
+      "moreFacts": [
+        "The Tennessee River’s Kentucky Lake is one of the largest man-made lakes in the US by surface area — TVA legacy.",
+        "Parsons sits in Decatur County — named for Commodore Stephen Decatur."
+      ]
+    },
+    "8": {
       "roadRules": [
         "Arkansas: motorcycle endorsement required on license; passengers need footrests and seats per state equipment rules.",
         "Arkansas speed enforcement rises on US highways near Little Rock and on I-30/I-40 approaches—work zones double fines.",
@@ -114,7 +125,7 @@
         "Municipal jurisdiction: Pulaski County sheriff vs Little Rock PD matters for traffic stop appeal routes—obscure but real."
       ]
     },
-    "8": {
+    "9": {
       "roadRules": [
         "Texas: motorcycle operators under 21 must wear helmet; adults 21+ may ride without helmet only if eligible under insurance/education exemptions—verify Texas Transportation Code §661.003 current wording before riding or saying ‘helmets optional in Texas’ on camera.",
         "Texas requires annual motorcycle inspection in the inspection program counties—out-of-state bikes on tourism are generally not cited if properly registered elsewhere, but officers have discretion.",
@@ -129,7 +140,7 @@
         "Texas Department of Public Safety issues ‘Road to Texas’ guides for new residents—useful for comparing out-of-state endorsements."
       ]
     },
-    "9": {
+    "10": {
       "roadRules": [
         "Texas panhandle: extreme crosswinds on north–south roads; wind advisories on I-40 close high-profile vehicles—motorcycles detour or wait.",
         "Texas speed limits: rural highways may post 75 mph; night speed limits sometimes lower—read signs, not memory.",
@@ -144,7 +155,7 @@
         "Palo Duro Canyon is Texas’s ‘Grand Canyon’ marketing—geology is Permian/Triassic layers; night sky tourism competes with oil-field flaring."
       ]
     },
-    "10": {
+    "11": {
       "roadRules": [
         "New Mexico: helmet required for riders under 18; adults may ride without helmet but eye protection is still mandated in open-cab operation—verify NMSA 66-3-1002 for goggles/windshield wording.",
         "New Mexico DWI enforcement is strict—BAC limits and implied consent apply to motorcyclists; checkpoints occur near tribal boundaries.",
@@ -159,7 +170,7 @@
         "Elevation from Amarillo to Albuquerque changes engine tuning on carbureted bikes—document jetting if you teach mechanics."
       ]
     },
-    "11": {
+    "12": {
       "roadRules": [
         "Colorado: motorcycle endorsement required; passengers must have seat and footrests; minors have helmet rules—check CRS title 42 for age splits.",
         "Colorado mountain passes: chain law applies to commercial vehicles; motorcycles are not chained but ice means closure—check COtrip.org for US-550 status.",
@@ -172,21 +183,6 @@
         "San Juan volcanic field includes La Garita Caldera—one of Earth’s largest known eruptions (~28 Ma); today’s scenery is caldera collapse and erosion.",
         "Durango & Silverton Narrow Gauge Railroad is historic and operational—tourist trains affect road traffic timing in Silverton.",
         "Colorado’s traction law can surprise riders when slush refreezes at night on shaded curves."
-      ]
-    },
-    "12": {
-      "roadRules": [
-        "Utah: lane filtering legal under Utah Code §41-6a-1102 as of recent years—only between stopped lanes of same direction, speed ≤15 mph, conditions listed; NOT California-style free splitting at speed—read statute before demonstrating.",
-        "Arizona: helmet required under 18; adults optional in AZ but eye protection practical; Navajo Nation may require helmets on tribal roads—obey posted tribal law.",
-        "Four Corners Monument: queue on foot; motorcycles park in designated areas—do not block tour buses.",
-        "US-491 (ex-666): rural Navajo Police and New Mexico State Police patrol; dust storms and livestock on road are hazards.",
-        "Mexican Hat UT: river corridor camping—flash flood warnings override Instagram plans."
-      ],
-      "culture": "Navajo Nation is a sovereign government with criminal jurisdiction complexities (Major Crimes Act, Public Law 280 variations)—tourists should understand permits for Monument Valley Tribal Park fund local services. John Ford’s films exported a visual ‘West’ that displaced living Navajo and Diné stories—credit Navajo guides when filming tours. US-666 renumber to 491 was driven by theft, stigma, and emergency-response confusion—Congressional bills are public record. Mexican Hat’s name references a balanced rock; the San Juan River is silty—different hydraulics than clear Rocky Mountain streams.",
-      "moreFacts": [
-        "Monument Valley Tribal Park requires Navajo Nation permits separate from NPS passes.",
-        "Utah’s liquor laws historically restricted bar service; today’s mixed drinks require ‘metered’ dispensing in some counties—quirky statute legacy.",
-        "Navajo Nation observes DST differently than Arizona in some jurisdictions—time on phone may lie near borders."
       ]
     }
   }

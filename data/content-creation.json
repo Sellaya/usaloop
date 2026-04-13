@@ -1,7 +1,7 @@
 {
   "meta": {
     "channelTheme": "Continental motorcycle documentary — Suzuki DR650, verifiable geography, field-craft technique, zero travel-bro filler.",
-    "seriesTitle": "35 Days Across North America",
+    "seriesTitle": "36 Days Across North America",
     "tone": "Treat viewers as intelligent adults. Sound like a disciplined field journal: what to look for, how to film it, what can go wrong, what the maps actually say. Excitement comes from accuracy and stakes—not from exclamation marks."
   },
   "days": [
@@ -36,7 +36,7 @@
         "Explain glacial Finger Lakes as trenches—why weather stacks differently than flat Ontario.",
         "Close with one honest fear you had at the booth—specific, not performative."
       ],
-      "cta": "Comment: What's one thing you'd pack for a 35-day US motorcycle loop? I'll reply to every comment on Day 1.",
+      "cta": "Comment: What's one thing you'd pack for a 36-day US motorcycle loop? I'll reply to every comment on Day 1.",
       "fieldGuide": [
         "1️⃣ The border hack nobody repeats: rehearse a 15-second truth before you stop—home, tonight’s stop, trip purpose, approximate value of gear. Hesitation reads as inconsistency, not humility.",
         "2️⃣ Documents in one sleeve, in order: passport, vehicle registration, insurance. Officers watch hands. Fumbling suggests first crossing or hidden nerves.",
@@ -73,6 +73,9 @@
         "Southampton was established in 1640 — one of the oldest English-speaking settlements in North America.",
         "The Hamptons zip codes (like 11968) routinely appear on lists of the highest median household incomes in the entire country.",
         "Hip-hop culture has deep roots in Long Island — Public Enemy, Rakim, and Eric B. all came from here.",
+        "New York was among the first states with a universal motorcycle helmet law (1967 era); court challenges failed—expect strict enforcement outside NYC tourist cores.",
+        "The George Washington Bridge and Hudson crossings use cashless tolling; foreign plates receive bills by mail—late fees compound.",
+        "Southampton (1640) predates the United States; local historic districts limit signage and building facades—film permits sometimes required for commercial shoots on village streets.",
         "New York was among the first states with a universal motorcycle helmet law (1967 era); court challenges failed—expect strict enforcement outside NYC tourist cores.",
         "The George Washington Bridge and Hudson crossings use cashless tolling; foreign plates receive bills by mail—late fees compound.",
         "Southampton (1640) predates the United States; local historic districts limit signage and building facades—film permits sometimes required for commercial shoots on village streets."
@@ -122,6 +125,9 @@
         "The Appalachian Mountains are among the oldest on Earth — estimated at 480 million years old, older than trees.",
         "Virginia’s ‘reckless driving by speed’ statute historically kicked in at 20+ mph over or over 85 mph regardless—judges and lawyers treat it as serious; confirm current code before narrating.",
         "DC residents lack voting representation in Congress—a political status riders rarely connect to road-funding equity debates.",
+        "Luray Caverns sits in karst geology; the Shenandoah River corridor floods; low-water bridges exist—check NWS watches when routing side roads.",
+        "Virginia’s ‘reckless driving by speed’ statute historically kicked in at 20+ mph over or over 85 mph regardless—judges and lawyers treat it as serious; confirm current code before narrating.",
+        "DC residents lack voting representation in Congress—a political status riders rarely connect to road-funding equity debates.",
         "Luray Caverns sits in karst geology; the Shenandoah River corridor floods; low-water bridges exist—check NWS watches when routing side roads."
       ],
       "culture": "This day crosses the densest Northeast megalopolitan corridor. DC is a federal district—not a state—so its traffic codes blend Congressionally enacted rules with local enforcement priorities around Capitol security perimeters. Maryland and Virginia subsidize different transportation politics: Maryland leans toward toll lanes and cameras; Virginia uses aggressive Reckless Driving thresholds (speeds that would be mere speeding in other states can be misdemeanors—verify current statutory mph thresholds and case law). Shenandoah Valley towns (Luray) mix Civil War tourism with evangelical church culture and outdoor retail; Sunday traffic patterns differ. NJ Turnpike culture is industrial America in motion—refineries, ports, and distribution centers are the economy behind the smell and the trucks.",
@@ -151,150 +157,173 @@
     },
     {
       "dayIndex": 4,
-      "videoTitle": "Riding the Blue Ridge Corridor — Virginia's Best Hidden Roads | Day 4",
-      "hook": "The Parkway is free because it’s a public trust—not because it’s ‘chill.’ Treat it like a flight check.",
-      "storyArc": "Morning: road-as-instrument (curve rhythm, sight lines). Midday: cultural waypoint (Natural Bridge) with geological timestamp. Late: small-town resupply and honest fatigue. No fake ‘discovery’—show preparation.",
+      "videoTitle": "Luray to Roanoke — Appalachia Transition | Day 4",
+      "hook": "You leave Shenandoah country for the chessboard ridges—same Appalachia, different mileage math.",
+      "storyArc": "Morning pack from Luray. Midday: choose corridor with honest ETA. Evening: MVUM-legal camp — bear hang, water discipline, fatigue check.",
       "shots": [
-        "Blue Ridge Parkway entrance sign — classic wooden NPS marker",
-        "Long sweeping BRP road ahead — no cars, autumn or summer light",
-        "Natural Bridge from below looking up — 215 feet tall",
-        "Appalachian Trail crossing sign on the roadway",
-        "Small-town Virginia main street — gas station, diner, locals",
-        "Sunset over the Shenandoah ridge from above"
+        "Leaving Luray — ridge in mirror",
+        "Roanoke skyline or valley approach",
+        "NF spur — tent and bike in frame",
+        "Cook stove / hydration ritual"
       ],
       "facts": [
-        "The Blue Ridge Parkway is 469 miles long and has never allowed commercial trucks — ever. No billboards either.",
-        "Natural Bridge was owned by Thomas Jefferson, who paid 20 shillings for it in 1774 and called it 'the most sublime of Nature's works.'",
-        "The Appalachian Trail, which crosses this route, is 2,190 miles long — hikers completing it are called 'Thru-hikers' and typically take 5-7 months.",
-        "Pulaski, Virginia is named after Polish-born General Casimir Pulaski, who died at the 1779 Battle of Savannah fighting for American independence.",
-        "Southwest Virginia sits in the heart of Coalfield Appalachia — a region with one of the most complex economic and cultural histories in America.",
-        "The Blue Ridge Parkway took Depression-era CCC labor and mid-century road engineering; commercial vehicles have always been banned, preserving sightlines.",
-        "Pulaski is named for Casimir Pulaski, Polish cavalry officer mortally wounded in the Revolutionary War—American towns named for foreign volunteers dot the Appalachians.",
-        "Appalachian Trail crossings on public roads are high foot-traffic zones—yield to hikers; harassment laws apply."
+        "Roanoke sits in Virginia’s Ridge and Valley province — long parallel ridges formed by folded Paleozoic rock.",
+        "The Jefferson National Forest merges administratively with George Washington NF — one MVUM system for motor access.",
+        "The Roanoke Valley sits in the Roanoke River watershed — flash floods in mountain creeks arrive faster than radar suggests to valley riders.",
+        "Jefferson NF merges administratively with GWNF — one Motor Vehicle Use Map system for legal OHV/dispersed access."
       ],
-      "culture": "Southwest Virginia sits in Central Appalachia—culturally distinct from both Deep South plantation narrative and Northeast urbanism. Old-time and bluegrass music here predate Nashville’s commercial packaging; local fiddlers’ conventions are living institutions. The region’s economy shifted from tobacco and coal to logistics, healthcare, and remote work—political identity often skews conservative, but mutual-aid networks (churches, volunteer fire departments) remain strong. Natural Bridge was marketed from Jefferson’s era as sublime nature—early American ‘landscape consumption’ that prefigured national parks. Respect local dry counties and Sunday alcohol laws in pockets; some convenience stores still observe blue laws.",
+      "culture": "Roanoke’s railroad and coal history shaped town layout; today’s outdoor economy (trail runners, MTB, moto tourism) sits on that infrastructure. The Ridge and Valley province west of Shenandoah reads as ‘more Appalachia’ to outsiders but politically and acoustically differs from SWVA coalfields. Respect private land edges along NF boundaries — trespass disputes are common where suburbs meet forest.",
       "talkingPoints": [
-        "BRP engineering history in one minute—Depression-era labor, design speed, no billboards by policy.",
-        "Jefferson’s purchase of Natural Bridge—property law as story, not trivia.",
-        "Mining legacy and modern SWVA economy—accuracy beats pity.",
-        "Tomorrow: liability and line choice on US-129."
+        "Ridge vs valley wind — flags, grass, or stream riffles as evidence.",
+        "Jefferson NF as administrative merge with GW — one MVUM system.",
+        "Tomorrow: BRP as full-day commitment, not a detour."
       ],
-      "cta": "Have you ever been to Appalachia? Tell me what surprised you most.",
+      "cta": "Ever camped dispersed? What’s your leave-no-trace rule?",
       "fieldGuide": [
-        "1️⃣ BRP is park road, not racetrack—wildlife strike risk peaks at dawn/dusk; plan speed to stopping sight distance.",
-        "2️⃣ No commercial trucks means consistent pavement texture—use audio bed: wind vs tire noise tells lean angle stories.",
-        "3️⃣ Natural Bridge: scale shots need a human or bike reference—without it, viewers can’t read 215 ft.",
-        "4️⃣ Appalachian Trail crossings: legally park only where signed—film the sign; teaches Leave-No-Trace culture.",
-        "5️⃣ SW Virginia fuel spacing: smaller tanks mean proactive stops—show odometer math on camera.",
-        "6️⃣ Night audio: katydids and stream noise will bury whisper VO—plan lav or post dub for technical lines."
+        "1️⃣ Luray → Roanoke: slab vs scenic is a schedule decision—film the Maps tradeoff, not just the pretty valley.",
+        "2️⃣ Jefferson NF dispersed: MVUM screenshot on camera—legal tire placement beats Instagram aesthetics.",
+        "3️⃣ Ridge-and-valley weather: orographic clouds can form while sun shines in town—show both skies.",
+        "4️⃣ Deer math: dusk on two-lane US routes—high beam etiquette and following distance.",
+        "5️⃣ Roanoke resupply: grocery run as B-roll—hydration planning is documentary content.",
+        "6️⃣ NF camp audio: creek vs road—use as transition bed before VO."
       ],
       "roadRules": [
-        "Virginia: motorcyclists generally cannot ride two abreast in one lane unless statute/local ordinance allows—default is single file within lane.",
-        "Blue Ridge Parkway: federal NPS regulations—speed limits low (often 45 mph max); wildlife (deer, bear) have right-of-way morally and practically; passing only where legal dashed lines.",
-        "Virginia state highways: photo enforcement zones exist in some municipalities; motorcycle plates must remain horizontal and unobstructed.",
-        "Motorcycle exhaust: Virginia has noise enforcement in some counties—aftermarket pipes draw tickets near college towns and resort areas.",
-        "SW Virginia: coal-country roads may have coal dust, gravel on curves after truck spillage—traction surprises in rain."
+        "Virginia: helmets required for operators and passengers (§46.2-910); Jefferson NF falls under USFS motor-vehicle rules — MVUM dictates where wheels may leave pavement.",
+        "George Washington & Jefferson National Forests: dispersed camping is allowed only in designated zones on the MVUM — random bushwhacking can be trespass.",
+        "Roanoke-area two-lanes: deer strikes peak dawn/dusk; agricultural equipment uses full lane width on blind curves.",
+        "Virginia reckless-driving thresholds can treat high speed as misdemeanor — verify statutory mph vs. ‘simple speeding’ before narrating.",
+        "NF roads: seasonal gates — snow or mud can close spurs without advance notice on apps."
       ]
     },
     {
       "dayIndex": 5,
-      "videoTitle": "The Most Dangerous Beautiful Road in America — Tail of the Dragon | Day 5",
-      "hook": "This road doesn’t reward ego. It invoices it.",
-      "storyArc": "Pre-ride: bike check (tires, pressures, luggage torque). Approach: set expectations—skill, not speed. Ride: intercut GoPro with static maps showing curvature density. Aftermath: physiological cost (hands, neck) stated honestly.",
+      "videoTitle": "Blue Ridge Parkway — Roanoke to Bristol the Long Way | Day 5",
+      "hook": "This isn’t a transit day. It’s a 45 mph thesis on American road design.",
+      "storyArc": "Act I: clean merge onto BRP. Act II: milepost discipline and fuel gaps. Act III: exit to Bristol — twin cities, two states, one afternoon.",
       "shots": [
-        "Tail of the Dragon signage — 'Tree of Shame' with crashed bike parts",
-        "GoPro on the Dragon: corner after corner after corner",
-        "Pullout somewhere mid-Dragon: scan the mountain below",
-        "Deals Gap fueling / parking area atmosphere",
-        "Smoky Mountains first panoramic: the 'smoke' visible",
-        "Sevierville: Dolly Parton's statue in front of the courthouse"
+        "BRP entrance / milepost",
+        "Mabry Mill or Rocky Knob pullout",
+        "Tunnel or stone bridge — compression shot",
+        "Boone approach — college town in mountains",
+        "Bristol sign — TN/VA"
       ],
       "facts": [
-        "Tail of the Dragon (US-129) has 318 curves in 11 miles — no driveways, no intersections, no escape — it was designed that way.",
-        "The Great Smoky Mountains are named for the natural 'smoke' — actually terpenes (organic compounds) evaporating from the trees, creating a visible blue-grey haze.",
-        "The Smokies are the most visited national park in America with over 12 million visitors per year — more than the Grand Canyon and Yellowstone combined.",
-        "Sevierville, TN is the birthplace of Dolly Parton. Her bronze statue stands in front of the Sevier County Courthouse.",
-        "The Appalachian Mountains here are among the most biodiverse temperate forests on Earth — more tree species than all of northern Europe.",
-        "GSMNP is the most-visited US national park—traffic queues are management science, not surprises.",
-        "Sevierville’s Dolly statue marks civic pride; Parton’s Imagination Library began here as literacy philanthropy.",
-        "US-129’s crash statistics are public record—use Tennessee and North Carolina DOT data if you cite safety."
+        "The Blue Ridge Parkway is 469 miles with no billboards and no commercial trucks — by federal design.",
+        "Bristol is ‘Twin Cities’ — one downtown, two states.",
+        "The BRP’s 469 miles connect Shenandoah to Great Smoky Mountains — no billboards by federal policy.",
+        "Mabry Mill is among the most photographed BRP stops — parking fills on summer weekends."
       ],
-      "culture": "Sevier County (Sevierville, Gatlinburg, Pigeon Forge) runs on tourism—Dolly Parton’s Dollywood is economic gravity, but also a story of Appalachian women’s entrepreneurship in a male-dominated industry. The Smokies’ ‘blue smoke’ is VOC chemistry from vegetation—cultural storytelling often romanticizes what is measurable air chemistry. The Dragon attracts international riders; local ambivalence mixes profit from riders with crash costs and EMS burden. Cherokee, NC (if nearby) is Eastern Band of Cherokee Indians land—different laws and permit systems than adjacent national forest.",
+      "culture": "The Blue Ridge Parkway is Depression-era CCC legacy — interpret labor history before ‘pretty road’ VO. Boone’s university economy contrasts with coal towns to the north — don’t flatten Appalachia into one accent. Bristol’s ‘Twin Cities’ marketing straddles two states — music history (Bristol sessions) is asset; NASCAR adjacent culture is not every rider’s taste.",
       "talkingPoints": [
-        "Cornering technique vocabulary: trail braking limits on loose centerlines.",
-        "Why photographers line certain corners—predictable rider lines.",
-        "Dolly Parton as regional economic and cultural counter-narrative—fact-based, brief.",
-        "Park visitation math—why crowds concentrate where they do."
+        "Why the BRP bans trucks — engineering and sightlines, not elitism.",
+        "CCC labor history — one minute max, then show pavement.",
+        "Boone vs coal country — don’t flatten Appalachia.",
+        "Tomorrow: tourism density before the Dragon."
       ],
-      "cta": "Would you ride the Dragon? YES or NO in the comments — explain your answer.",
+      "cta": "BRP or interstate — which would you pick? Comment.",
       "fieldGuide": [
-        "1️⃣ Tail of the Dragon is 318 curves in 11 miles—fatigue, not bravery, causes most offs. Segment the road mentally: thirds, not one heroic take.",
-        "2️⃣ Loaded ADV: slow-in fast-out is mandatory; late braking on decreasing-radius bends transfers weight wrong.",
-        "3️⃣ Tree of Shame: film respectfully—it’s trauma archaeology, not a meme garden.",
-        "4️⃣ Enforcement and photography: assume you’re observed; passing on double-yellow is evidence-grade stupidity.",
-        "5️⃣ Smokies haze is chemistry (VOCs + light scattering)—say that once, correctly, then show the gradient on a ridge.",
-        "6️⃣ GSMNP reservations: screen capture the booking—on-camera proof beats ‘I thought we could…’"
+        "1️⃣ Blue Ridge Parkway: 45 mph life—fuel anxiety is honest B-roll; show odometer to next town.",
+        "2️⃣ Drag Google route off I-81 — screen record if Maps insists on interstate; teaches audience your method.",
+        "3️⃣ Mabry Mill / Rocky Knob: tourist stops block lanes — patience is content.",
+        "4️⃣ Boone approach: college-town fuel stops — elevation change vs carb jetting if relevant.",
+        "5️⃣ Bristol state line: one frame with both state signs if legal/safe — jurisdiction story without law lecture.",
+        "6️⃣ End card: miles on BRP vs miles saved — numbers beat vibes."
       ],
       "roadRules": [
-        "Tennessee: helmet required for riders under age thresholds historically; Tennessee law changed effective 2022—adult riders 21+ may ride without helmet only if meeting insurance/training conditions; verify current TCA §55-9-305 before you narrate or ride without helmet.",
-        "Tail of the Dragon (US-129): Tennessee and North Carolina share enforcement—aggressive speeding and crossing double-yellow are cited heavily; THP and sheriff’s deputies use aircraft pacing on some corridors.",
-        "North Carolina: helmet required for all operators and passengers (G.S. 20-140.4); day-use headlights recommended.",
-        "Great Smoky Mountains NP: vehicle reservations required peak season—motorcycles pay same rules; wildlife distance regulations are federal—fines are real.",
-        "Deals Gap area: noise ordinances and private-property photography—commercial drone use near treeline may need FAA + landowner permission."
+        "Blue Ridge Parkway: federal NPS road — 45 mph typical max; commercial vehicles prohibited; wildlife (bear, deer) have right-of-way morally and practically.",
+        "North Carolina: helmet required for all operators and passengers (G.S. 20-140.4); Tennessee shares enforcement on state-line routes.",
+        "BRP: passing only on dashed yellow where sight distance allows — tourists stop in travel lanes for photos.",
+        "Boone NC approaches: college-town traffic + mountain tourism — short tempers in parking lots.",
+        "Bristol TN/VA: state line splits sales tax and traffic laws — verify which side of State Street you cite."
       ]
     },
     {
       "dayIndex": 6,
-      "videoTitle": "Riding Through the Soul of America — Smokies to Nashville to Memphis | Day 6",
-      "hook": "American music wasn’t invented in algorithms. It was hammered out in humidity, Jim Crow economics, and river ports—ride through the evidence.",
-      "storyArc": "Morning mountains to I-40 rhythm. Midday Nashville as compressed urban node. Afternoon west Tennessee agriculture geometry. Evening Memphis as river city acoustics + light. Music is texture, not background wallpaper.",
+      "videoTitle": "Smokies Approach & Tail of the Dragon — Bristol to Kingston | Day 6",
+      "hook": "Tourism density spikes before the curves — then US-129 invoices ego in 318 installments.",
+      "storyArc": "Transit to Smokies overlook optional. Dragon: skill-not-speed, pullouts honest. Exit to Kingston: leg fatigue as data, not drama.",
       "shots": [
-        "Exit the Smokies — mountain in the rear camera, flat country ahead",
-        "Nashville skyline from the highway — the Batman Building (AT&T tower)",
-        "Broadway Street Nashville if time allows — neon signs, honky-tonks",
-        "Tennessee River crossing — wide water, industrial port",
-        "Memphis: Beale Street at dusk — lights, music, movement",
-        "Mississippi River from the Hernando de Soto Bridge bike path"
+        "Bristol departure — two states behind",
+        "Smokies haze wide shot",
+        "Dragon entrance sign",
+        "Tree of Shame — respectful frame",
+        "Kingston / river light"
       ],
       "facts": [
-        "Nashville has more than 150 live music venues — more per capita than anywhere else in the world.",
-        "The 1960 Nashville sit-ins, organized by students from Fisk University, were among the most disciplined and successful of the entire Civil Rights Movement — 81 days after they started, Nashville became the first major Southern city to desegregate lunch counters.",
-        "Memphis, Tennessee sits on the Chickasaw Bluffs above the Mississippi River. The name 'Memphis' was deliberately chosen by the city's founders because ancient Memphis, Egypt, was also located on a great river.",
-        "Beale Street has been a hub of African-American culture and music since the 1860s — W.C. Handy, 'Father of the Blues,' published the first Blues compositions here in 1912.",
-        "B.B. King, Elvis Presley, Johnny Cash, Roy Orbison, and Jerry Lee Lewis all got their starts in Memphis within a single decade — the 1950s.",
-        "Beale Street historically Black-owned nightlife; today’s tourism economy includes curfew and security rules—film crews need permits after hours.",
-        "Tennessee River is TVA-managed—hydroelectric politics shaped 1930s modernization and displacement.",
-        "Memphis–Shelby County has high violent-crime rates in specific neighborhoods—use neutral statistics, avoid fear-mongering maps."
+        "US-129 at Deals Gap: 318 curves in 11 miles — Tennessee and North Carolina share enforcement.",
+        "Great Smoky Mountains NP is the most visited US national park.",
+        "US-129 at Deals Gap: 318 curves in 11 miles — public crash statistics are cited by TN/NC DOT.",
+        "GSMNP is the most-visited US national park — traffic congestion is management science."
       ],
-      "culture": "Nashville’s Music Row is an IP factory—publishing, licensing, and tourism grafted onto a small-city street grid. Memphis is a river-port city whose blues and soul output underwrote rock and roll; Graceland tourism funds preservation but also debates around Elvis’s appropriation of Black music—narrate with nuance. Tennessee’s Civil Rights history (Nashville sit-ins) is taught as nonviolent discipline strategy—use dates and institutions (Fisk, AME churches) accurately. Mississippi River levees reflect Army Corps of Engineers politics; flooding is racialized in land-use history—brief mention beats shallow ‘river pretty’ VO.",
+      "culture": "Sevier County tourism runs on Dollywood economics; the Smokies’ ‘blue smoke’ is VOC chemistry from vegetation — not romantic mist. The Dragon draws international riders; EMS burden is real. Eastern Band Cherokee lands near the corridor use different jurisdiction — don’t conflate with NPS rules.",
       "talkingPoints": [
-        "Nashville sit-ins: discipline strategy vs chaos—why it mattered legally.",
-        "Memphis name + river analogy—founders’ intent vs geography.",
-        "Beale Street as century-scale continuity—one block, deep time.",
-        "Rider fatigue curve on slab—when to refuse ‘one more scenic detour.’"
+        "Smokies haze — VOC chemistry once, then show ridge gradient.",
+        "THP/NC enforcement — public record citations, not gossip.",
+        "Cherokee vs NPS jurisdiction — one sentence, map overlay.",
+        "Tomorrow: short west TN miles — recovery as content."
       ],
-      "cta": "Team Nashville or Team Memphis? Drop it in the comments and tell me why.",
+      "cta": "Dragon: been there or hard pass?",
       "fieldGuide": [
-        "1️⃣ One day, three cities: white balance and exposure will swing (forest shade → urban glass → river glare)—lock a baseline profile or accept grade time.",
-        "2️⃣ Memphis river bluff humidity vs Nashville basin heat—different sweat rates; film the science, not just ‘hot.’",
-        "3️⃣ Civil rights history in Nashville isn’t garnish—if you mention sit-ins, date them and name institutions.",
-        "4️⃣ Beale Street audio: SPL limits and crowd noise will clip—use manual gain if you care about dialogue.",
-        "5️⃣ Mississippi bridge: crosswind gust channels between trusses—two-hand rule, no relaxed posing.",
-        "6️⃣ Night ride discipline: wildlife on river corridors spikes—high beam etiquette and following distance."
+        "1️⃣ Bristol → Smokies gateway: white balance swings forest shade to tourist-strip neon — lock profile or commit to grade time.",
+        "2️⃣ GSMNP reservation screenshot on camera if entering — proof beats argument.",
+        "3️⃣ Tail of the Dragon: segment into thirds mentally — fatigue causes offs, not ‘lack of skill.’",
+        "4️⃣ Tree of Shame: respectful frame — trauma archaeology, not meme fodder.",
+        "5️⃣ Deals Gap fuel: show receipt or pump — documentary credibility.",
+        "6️⃣ Cherokee NF camp: bear hang on camera — Leave No Trace as plot beat."
       ],
       "roadRules": [
-        "Tennessee: carry registration and proof of financial responsibility; implied consent applies to DUI stops involving motorcycles.",
-        "Nashville / Memphis urban cores: scooter and motorcycle theft clusters exist—use visible disc lock in city parking; Tennessee’s ‘castle doctrine’ is not a traffic law—don’t conflate.",
-        "Mississippi River bridges: gusty crosswinds and expansion joints—reduce speed in rain; Hernando de Soto Bridge (I-40) has had structural inspections—follow load postings if hauling trailer (you are not, but know context).",
-        "Arkansas entry: helmet required for riders under 21; adult helmet optional but eye protection still practical law in many states—AR requires glasses/goggles/windshield per A.C.A. § 27-20-104 for certain speeds/conditions.",
-        "Memphis urban traffic: Tennessee ‘modified comparative fault’ in crashes—insurance and lane-splitting debates matter if incident occurs."
+        "Tennessee / North Carolina: US-129 Tail of the Dragon — heavy THP and sheriff enforcement; crossing double-yellow is citation-grade.",
+        "North Carolina: helmet required for all riders (G.S. 20-140.4); Tennessee adult helmet rules changed in 2022 — verify TCA §55-9-305 before ‘no helmet’ narration.",
+        "Great Smoky Mountains NP: peak season vehicle reservations may apply — motorcycles pay same rules as cars; wildlife distance regulations are federal.",
+        "Cherokee NF: dispersed camping only on MVUM — bear country food storage; fines for feeding wildlife.",
+        "Gatlinburg/Pigeon Forge tourism corridors: distracted drivers and lane changes — treat as urban core."
       ]
     },
     {
       "dayIndex": 7,
+      "videoTitle": "Short Miles — Kingston to Parsons | Day 7",
+      "hook": "Not every day is epic mileage — some days buy admin and sleep-debt recovery.",
+      "storyArc": "Slow morning. West TN two-lane as recovery spin. Parsons arrival — resupply and logistics before the Mississippi crossing tomorrow.",
+      "shots": [
+        "Kingston morning light",
+        "Two-lane west TN",
+        "Parsons welcome sign or main drag",
+        "Map screenshot — short leg truth"
+      ],
+      "facts": [
+        "The Tennessee River’s Kentucky Lake is one of the largest man-made lakes in the world by surface area — TVA legacy.",
+        "Parsons sits in Decatur County — named for Commodore Stephen Decatur.",
+        "The Tennessee River’s Kentucky Lake is one of the largest man-made lakes in the US by surface area — TVA legacy.",
+        "Parsons sits in Decatur County — named for Commodore Stephen Decatur."
+      ],
+      "culture": "West Tennessee agriculture and river economics differ from East Tennessee mountains — same state, different labor history. Natchez Trace State Forest and TVA lands carry separate histories of displacement and flood control. Ask permission before filming on church lots or private river access.",
+      "talkingPoints": [
+        "TVA lake geography — one fact, neutral on politics.",
+        "West vs east Tennessee economy — same state, different labor history.",
+        "Tomorrow: Little Rock and the river — history beat returns."
+      ],
+      "cta": "Do you schedule zero-hero days on tour?",
+      "fieldGuide": [
+        "1️⃣ Short leg: film the ‘non-hero’ day choice — audience thinks tours are only epic mileage.",
+        "2️⃣ Kingston → Parsons: two-lane west TN — farm equipment and dogs; reduce speed through towns.",
+        "3️⃣ Kentucky Lake / river optics: brown water = sediment, not always pollution — say once, correctly.",
+        "4️⃣ Tick/chigger belt: permethrin vs DEET tradeoff — practical without fear-mongering.",
+        "5️⃣ Laundry or chain lube B-roll — maintenance days are watchable if structured.",
+        "6️⃣ Map screenshot: short distance truth — credibility with map nerds."
+      ],
+      "roadRules": [
+        "Tennessee: carry registration and proof of financial responsibility; implied consent applies to DUI stops involving motorcycles.",
+        "West Tennessee: farm equipment on US-70 corridors; dogs in roadways — reduce speed through settlements.",
+        "Kentucky Lake / Tennessee River public lands: camping only where posted — USACE and TVA have different rules; flood lines move.",
+        "Ticks and chiggers in tall grass — permethrin gear vs. DEET on skin is a tradeoff; Lyme is less common in west TN than mid-Atlantic but still possible.",
+        "Parsons (Decatur County): small-town ordinances on overnight parking — verify before stealth camping."
+      ]
+    },
+    {
+      "dayIndex": 8,
       "videoTitle": "Crossing the Mississippi River — Into the Deep South Heartland | Day 7",
-      "hook": "The continent’s drainage spine is a teaching tool—if you only say ‘big river,’ you failed the shot.",
-      "storyArc": "Bridge sequence: wide, stable, then map overlay of watershed. Little Rock: one precise historical beat, no museum montage. Arkansas traverse: sky fraction and horizon curvature as flatland psychology. Close: quiet roads as auditory reset.",
+      "hook": "The trip doesn’t pause at a garage. It enters a different production phase—inspection, torque, and honest wear.",
+      "storyArc": "Morning: arrival geometry. Midday: maintenance as ASMR + instruction (oil, chain, fasteners). Afternoon: cultural texture (Stockyards) as contrast to wrench time. Evening: repack with annotations.",
       "shots": [
         "Hernando de Soto Bridge crossing — wide Mississippi, bridge steel",
         "First 'Welcome to Arkansas' sign",
@@ -310,23 +339,26 @@
         "The Arkansas River, which Little Rock straddles, is navigable for 448 miles and connects to the Mississippi via the McClellan-Kerr waterway.",
         "The Mississippi River alluvial plain drives US grain exports; levee breaks change routing during floods—USACE publishes gauge data.",
         "Arkansas River navigation connects to Mississippi via McClellan-Kerr—barge traffic signals industrial economy invisible from a bike seat.",
+        "Municipal jurisdiction: Pulaski County sheriff vs Little Rock PD matters for traffic stop appeal routes—obscure but real.",
+        "The Mississippi River alluvial plain drives US grain exports; levee breaks change routing during floods—USACE publishes gauge data.",
+        "Arkansas River navigation connects to Mississippi via McClellan-Kerr—barge traffic signals industrial economy invisible from a bike seat.",
         "Municipal jurisdiction: Pulaski County sheriff vs Little Rock PD matters for traffic stop appeal routes—obscure but real."
       ],
       "culture": "Little Rock’s Central High School (1957) is a National Historic Site—interpret the Little Rock Nine with federal intervention (101st Airborne) versus states’ rights rhetoric still present in Arkansas politics. The state’s diamond marketing (Crater of Diamonds State Park) is genuine public geology; Hot Springs’ gangster tourism encodes Prohibition’s uneven enforcement. Arkansas is politically conservative overall but contains rapidly diversifying Northwest corridor economics—don’t treat the state as monolith. Black communities in the Delta carry distinct cultural histories (blues, agriculture labor) versus Ozark hill culture—both are ‘Arkansas.’",
       "talkingPoints": [
-        "Mississippi-Missouri system hierarchy—length vs discharge, correctly.",
-        "Little Rock Nine: federal enforcement as constitutional mechanics.",
-        "Arkansas fertility vs flood history—geology in one sentence.",
-        "Tomorrow: service stop as narrative reset, not filler."
+        "Republic of Texas history—one fact, cleanly tied to road naming.",
+        "Fort Worth vs Dallas identity—economics, not stereotypes.",
+        "Why a mid-trip service matters for suspension and steering head bearings on washboard later.",
+        "Route 66 preview: myth vs mileage truth."
       ],
       "cta": "What do you know about Arkansas? I bet it surprised you. Let me know below.",
       "fieldGuide": [
-        "1️⃣ Mississippi crossing: brown water = sediment load, not ‘dirty.’ Explain suspended silt vs pollution unless you have lab data.",
-        "2️⃣ Central High in Little Rock: if you film the building, pair with the 1957 timeline—architecture is silent; history isn’t.",
-        "3️⃣ Arkansas slab: thermals and crosswinds over rice fields and cutovers—mirror checks are data.",
-        "4️⃣ Flatland dehydration sneaks up—sip schedule beats chugging at stops.",
-        "5️⃣ Dusk insect strike rate rises exponentially—visor cleaning kit accessible, not buried.",
-        "6️⃣ Host arrival script: confirm gate codes, dog rules, and night lighting—documentary courtesy is operational security."
+        "1️⃣ Home-stop maintenance: photograph chain slack and sprocket hooks before adjustment—continuity for viewers tracking wear.",
+        "2️⃣ Torque critical fasteners cold—post-ride metal reads wrong on a click wrench.",
+        "3️⃣ Stockyards cattle drives are timed events—arrive 20 minutes early, establish camera, respect working animals.",
+        "4️⃣ Texas heat on black asphalt: check tire pressure cold each morning; show gauge on camera.",
+        "5️⃣ Repack flat lay: label what changed and why—viewers steal packing lists, not vibes.",
+        "6️⃣ Emotional beat: name one component you’ll replace before the west—honest wear data beats brand loyalty."
       ],
       "roadRules": [
         "Arkansas: motorcycle endorsement required on license; passengers need footrests and seats per state equipment rules.",
@@ -337,10 +369,10 @@
       ]
     },
     {
-      "dayIndex": 8,
+      "dayIndex": 9,
       "videoTitle": "Riding Into the Heart of Texas — Fort Worth Home Stop | Day 8",
-      "hook": "The trip doesn’t pause at a garage. It enters a different production phase—inspection, torque, and honest wear.",
-      "storyArc": "Morning: arrival geometry. Midday: maintenance as ASMR + instruction (oil, chain, fasteners). Afternoon: cultural texture (Stockyards) as contrast to wrench time. Evening: repack with annotations.",
+      "hook": "Route 66 is decommissioned infrastructure pretending to be nostalgia—film the seams where Interstate killed access.",
+      "storyArc": "Morning: Fort Worth departure metrics. Midday: panhandle relentlessness as time-lapse honesty. Cadillac Ranch: public art + liability. Adrian: midpoint as cartographic fact. Close: wind turbines as land-use story.",
       "shots": [
         "Dallas/Fort Worth skyline approach — sprawling and flat",
         "Fort Worth Stockyards — cattle drive at 11:30am or 4pm (daily)",
@@ -357,23 +389,26 @@
         "Fort Worth and Dallas are two completely different cities despite being 30 miles apart — Dallas is finance and fashion, Fort Worth is 'where the West begins' (literally its official motto).",
         "Texas was an independent republic (1836–1846)—annexation debate still echoes in state rhetoric about federal regulation.",
         "Tarrant County votes increasingly urban-suburban; Fort Worth’s demographics are less ‘monolithically cowboy’ than marketing suggests.",
+        "Texas Department of Public Safety issues ‘Road to Texas’ guides for new residents—useful for comparing out-of-state endorsements.",
+        "Texas was an independent republic (1836–1846)—annexation debate still echoes in state rhetoric about federal regulation.",
+        "Tarrant County votes increasingly urban-suburban; Fort Worth’s demographics are less ‘monolithically cowboy’ than marketing suggests.",
         "Texas Department of Public Safety issues ‘Road to Texas’ guides for new residents—useful for comparing out-of-state endorsements."
       ],
       "culture": "Fort Worth markets ‘Cowtown’ identity against Dallas’s finance-and-fashion axis—cultural competition is economic branding. The Stockyards’ longhorn drives are regulated animal exhibitions—animal-welfare and insurance rules underpin the ‘Wild West’ show. Texas motorcycle culture splits between coastal imports (imports, café scenes) and inland dual-sport and ranch-utility bikes. German and Czech settlement patterns in Central Texas influenced small-town music (polka-western hybrids) rarely exported to national media. Property-rights ideology is strong—ask before filming on private ranch roads; driveways are not public easements for U-turns.",
       "talkingPoints": [
-        "Republic of Texas history—one fact, cleanly tied to road naming.",
-        "Fort Worth vs Dallas identity—economics, not stereotypes.",
-        "Why a mid-trip service matters for suspension and steering head bearings on washboard later.",
-        "Route 66 preview: myth vs mileage truth."
+        "Steinbeck’s Mother Road—literary fact vs road engineering reality.",
+        "Grapes of Wrath corridor ecology—dust bowl science in one beat.",
+        "Spray paint as participation archaeology—who pays for removal.",
+        "Tomorrow: state-line culture shift at the 103rd meridian feeling."
       ],
       "cta": "If you could have a home base anywhere in the USA, where would it be? I'll pick the most interesting answer and make it a stop.",
       "fieldGuide": [
-        "1️⃣ Home-stop maintenance: photograph chain slack and sprocket hooks before adjustment—continuity for viewers tracking wear.",
-        "2️⃣ Torque critical fasteners cold—post-ride metal reads wrong on a click wrench.",
-        "3️⃣ Stockyards cattle drives are timed events—arrive 20 minutes early, establish camera, respect working animals.",
-        "4️⃣ Texas heat on black asphalt: check tire pressure cold each morning; show gauge on camera.",
-        "5️⃣ Repack flat lay: label what changed and why—viewers steal packing lists, not vibes.",
-        "6️⃣ Emotional beat: name one component you’ll replace before the west—honest wear data beats brand loyalty."
+        "1️⃣ Panhandle wind: lean angle into gusts is not ‘skill flex’—it’s physics; explain slipstreams when passing semis.",
+        "2️⃣ Cadillac Ranch: lead-free paint history matters if kids appear in frame—safety note, not lecture.",
+        "3️⃣ Midpoint Adrian: GPS verification on camera—1,139 mi claims need a screen, not a poster trust fall.",
+        "4️⃣ I-40 shoulder debris: puncture day—carry patch math and inflation proof.",
+        "5️⃣ Altitude still low—heat management for rider and fuel vapor lock on carb bikes.",
+        "6️⃣ Golden hour dust: ND filters or accept blown sky—pick a look and commit."
       ],
       "roadRules": [
         "Texas: motorcycle operators under 21 must wear helmet; adults 21+ may ride without helmet only if eligible under insurance/education exemptions—verify Texas Transportation Code §661.003 current wording before riding or saying ‘helmets optional in Texas’ on camera.",
@@ -384,10 +419,10 @@
       ]
     },
     {
-      "dayIndex": 9,
+      "dayIndex": 10,
       "videoTitle": "Route 66 — Riding America's Most Mythic Road to the Midpoint | Day 9",
-      "hook": "Route 66 is decommissioned infrastructure pretending to be nostalgia—film the seams where Interstate killed access.",
-      "storyArc": "Morning: Fort Worth departure metrics. Midday: panhandle relentlessness as time-lapse honesty. Cadillac Ranch: public art + liability. Adrian: midpoint as cartographic fact. Close: wind turbines as land-use story.",
+      "hook": "Enchantment isn’t marketing—it’s refractive index, altitude, and chile genetics. Be specific.",
+      "storyArc": "State line: light color temperature shift. Albuquerque: layered cultures as soundscape + signage. Food: one verifiable chile fact. Science corridor: labs as economy, not jokes. Close: foreshadow elevation gain and cooling.",
       "shots": [
         "Route 66 shield on the road — iconic symbol",
         "Texas panhandle: road ruler-straight to the vanishing point",
@@ -404,23 +439,26 @@
         "Palo Duro Canyon near Amarillo is 120 miles long and 800 feet deep — the second largest canyon in the United States, called 'the Grand Canyon of Texas.'",
         "US-66 was decertified in segments beginning 1985—alignments differ from modern I-40; GPS ‘Route 66’ often jumps between frontage and business loops.",
         "Texas State Highway 130 posts up to 85 mph in segments—highest statutory limit in US; tire speed rating and heat matter.",
+        "Palo Duro Canyon is Texas’s ‘Grand Canyon’ marketing—geology is Permian/Triassic layers; night sky tourism competes with oil-field flaring.",
+        "US-66 was decertified in segments beginning 1985—alignments differ from modern I-40; GPS ‘Route 66’ often jumps between frontage and business loops.",
+        "Texas State Highway 130 posts up to 85 mph in segments—highest statutory limit in US; tire speed rating and heat matter.",
         "Palo Duro Canyon is Texas’s ‘Grand Canyon’ marketing—geology is Permian/Triassic layers; night sky tourism competes with oil-field flaring."
       ],
       "culture": "Route 66 nostalgia overlays mid-century federal highway policy that gutted small-town main streets—understand ‘ghost town’ as planning outcome, not moral failure. Panhandle wind farms represent landowner lease income and grid decarbonization debates in oil-country counties. Cadillac Ranch is pop art on the High Plains—Marsh family patronage and antitrust-era car culture. Native nations (e.g., portions of Route 66 in NM/AZ tomorrow) have distinct sovereignty—today’s TX/OK segments cross former Comanche and Kiowa homelands historically; acknowledge with care.",
       "talkingPoints": [
-        "Steinbeck’s Mother Road—literary fact vs road engineering reality.",
-        "Grapes of Wrath corridor ecology—dust bowl science in one beat.",
-        "Spray paint as participation archaeology—who pays for removal.",
-        "Tomorrow: state-line culture shift at the 103rd meridian feeling."
+        "Official state question—food chemistry vs tradition.",
+        "Albuquerque elevation and engine tuning—DR650 field note.",
+        "Trinity site access rules—if mentioned, cite schedule.",
+        "San Juan volcanics tomorrow—magma chamber in plain language."
       ],
       "cta": "Have you driven any part of Route 66? Tell me where — I want to see your best photo in the comments.",
       "fieldGuide": [
-        "1️⃣ Panhandle wind: lean angle into gusts is not ‘skill flex’—it’s physics; explain slipstreams when passing semis.",
-        "2️⃣ Cadillac Ranch: lead-free paint history matters if kids appear in frame—safety note, not lecture.",
-        "3️⃣ Midpoint Adrian: GPS verification on camera—1,139 mi claims need a screen, not a poster trust fall.",
-        "4️⃣ I-40 shoulder debris: puncture day—carry patch math and inflation proof.",
-        "5️⃣ Altitude still low—heat management for rider and fuel vapor lock on carb bikes.",
-        "6️⃣ Golden hour dust: ND filters or accept blown sky—pick a look and commit."
+        "1️⃣ New Mexico light: low humidity = harsh shadows—fill or bounce, or shoot golden windows only.",
+        "2️⃣ Hatch chile is seasonal—if you claim flavor authority, show the menu date.",
+        "3️⃣ High desert elevation: jetting and fuel range change—log octane and ping honestly on carb bikes.",
+        "4️⃣ Breaking Bad tourism: private property lines—film from public right-of-way.",
+        "5️⃣ Petroglyph ethics: no touch, no chalk rubbings—NPS rules are the documentary standard.",
+        "6️⃣ Night sky transition: ABQ light dome vs dark east mesa—plan astro shots before moonrise."
       ],
       "roadRules": [
         "Texas panhandle: extreme crosswinds on north–south roads; wind advisories on I-40 close high-profile vehicles—motorcycles detour or wait.",
@@ -431,10 +469,10 @@
       ]
     },
     {
-      "dayIndex": 10,
+      "dayIndex": 11,
       "videoTitle": "Texas to New Mexico — Where America Gets Weird and Beautiful | Day 10",
-      "hook": "Enchantment isn’t marketing—it’s refractive index, altitude, and chile genetics. Be specific.",
-      "storyArc": "State line: light color temperature shift. Albuquerque: layered cultures as soundscape + signage. Food: one verifiable chile fact. Science corridor: labs as economy, not jokes. Close: foreshadow elevation gain and cooling.",
+      "hook": "Colorado didn’t install guardrails to insult you—it calculated that false security kills. Understand the engineering argument.",
+      "storyArc": "Climb profile as graph (elevation vs distance). Exposed sections: stable tripod, no lean-out stunts. Town beat: Silverton as working island. Night: stars with stated ISO and exposure—teach, don’t magic.",
       "shots": [
         "'Welcome to New Mexico — Land of Enchantment' state line sign",
         "High desert plateau — mesas, brush, impossible sky",
@@ -451,23 +489,26 @@
         "Petroglyph National Monument on Albuquerque's west side contains more than 24,000 images carved into volcanic rock by ancestral Pueblo people over 700 years.",
         "Petroglyph National Monument protects volcanic basalt glyphs; vandalism is federal crime under ARPA.",
         "New Mexico questions drivers about immigration status in certain enforcement contexts—know rights vs. politicized rhetoric; cite ACLU-NM guidance if discussing.",
+        "Elevation from Amarillo to Albuquerque changes engine tuning on carbureted bikes—document jetting if you teach mechanics.",
+        "Petroglyph National Monument protects volcanic basalt glyphs; vandalism is federal crime under ARPA.",
+        "New Mexico questions drivers about immigration status in certain enforcement contexts—know rights vs. politicized rhetoric; cite ACLU-NM guidance if discussing.",
         "Elevation from Amarillo to Albuquerque changes engine tuning on carbureted bikes—document jetting if you teach mechanics."
       ],
       "culture": "New Mexico’s tri-cultural framing (Indigenous, Hispano, Anglo) is state tourism branding but also a legal reality: land grants, water rights, and Pueblo land status predate US annexation. Hatch chile is an agricultural product with certified harvest seasons—‘Christmas’ (red+green) is a menu language, not a joke. Los Alamos and Sandia labs mean federal science employment underpins Albuquerque’s economy alongside Route 66 kitsch. Breaking Bad tourism is dark heritage—meth crisis harmed real neighborhoods; film pilgrimage should acknowledge poverty optics respectfully.",
       "talkingPoints": [
-        "Official state question—food chemistry vs tradition.",
-        "Albuquerque elevation and engine tuning—DR650 field note.",
-        "Trinity site access rules—if mentioned, cite schedule.",
-        "San Juan volcanics tomorrow—magma chamber in plain language."
+        "San Juan volcanic field—caldera vocabulary without sensationalism.",
+        "Silverton railroad endpoint fact—verify timetable if you shoot train.",
+        "Ouray bowl geology—why ‘Switzerland’ analogy is structural, not cosmetic.",
+        "Descending to desert tomorrow—brake and tire thermal cycle."
       ],
       "cta": "Red or green? Tell me in the comments. If you've had real New Mexico green chile, you already know.",
       "fieldGuide": [
-        "1️⃣ New Mexico light: low humidity = harsh shadows—fill or bounce, or shoot golden windows only.",
-        "2️⃣ Hatch chile is seasonal—if you claim flavor authority, show the menu date.",
-        "3️⃣ High desert elevation: jetting and fuel range change—log octane and ping honestly on carb bikes.",
-        "4️⃣ Breaking Bad tourism: private property lines—film from public right-of-way.",
-        "5️⃣ Petroglyph ethics: no touch, no chalk rubbings—NPS rules are the documentary standard.",
-        "6️⃣ Night sky transition: ABQ light dome vs dark east mesa—plan astro shots before moonrise."
+        "1️⃣ Million Dollar Highway: no guardrail sections mean recovery room is zero—speed to sight distance, not to ego.",
+        "2️⃣ Altitude sickness is cumulative—headache + ataxia means stop filming, descend, hydrate.",
+        "3️⃣ Brakes cool on straights—pump fade on repeated hairpins is real on heavy bikes.",
+        "4️⃣ Silverton oxygen: generators and stoves behave differently—film jetting/starting quirks if present.",
+        "5️⃣ Snow beside road in June: reflectance blows exposure—zebra striping in viewfinder.",
+        "6️⃣ Camp at elevation: stake frost—record overnight low; viewers in flats need the number."
       ],
       "roadRules": [
         "New Mexico: helmet required for riders under 18; adults may ride without helmet but eye protection is still mandated in open-cab operation—verify NMSA 66-3-1002 for goggles/windshield wording.",
@@ -478,10 +519,10 @@
       ]
     },
     {
-      "dayIndex": 11,
+      "dayIndex": 12,
       "videoTitle": "The Million Dollar Highway — Riding One of Earth's Most Spectacular Roads | Day 11",
-      "hook": "Colorado didn’t install guardrails to insult you—it calculated that false security kills. Understand the engineering argument.",
-      "storyArc": "Climb profile as graph (elevation vs distance). Exposed sections: stable tripod, no lean-out stunts. Town beat: Silverton as working island. Night: stars with stated ISO and exposure—teach, don’t magic.",
+      "hook": "You’re not in a national park—you’re in a sovereign nation that licenses your presence.",
+      "storyArc": "Descent from alpine to desert via time-lapse color temperature. Four Corners: jurisdiction as geography. Monument Valley: cinema history vs tribal stewardship. River camp: hydrology + quiet.",
       "shots": [
         "Albuquerque skyline in the rearview — desert city shrinking",
         "US-550 switchback climbing — mountain wall on one side, air on the other",
@@ -498,23 +539,26 @@
         "Ouray, Colorado is called the 'Switzerland of America' — it sits in a natural bowl surrounded by 14,000-foot peaks on three sides.",
         "San Juan volcanic field includes La Garita Caldera—one of Earth’s largest known eruptions (~28 Ma); today’s scenery is caldera collapse and erosion.",
         "Durango & Silverton Narrow Gauge Railroad is historic and operational—tourist trains affect road traffic timing in Silverton.",
+        "Colorado’s traction law can surprise riders when slush refreezes at night on shaded curves.",
+        "San Juan volcanic field includes La Garita Caldera—one of Earth’s largest known eruptions (~28 Ma); today’s scenery is caldera collapse and erosion.",
+        "Durango & Silverton Narrow Gauge Railroad is historic and operational—tourist trains affect road traffic timing in Silverton.",
         "Colorado’s traction law can surprise riders when slush refreezes at night on shaded curves."
       ],
       "culture": "San Juan County’s mining boom-bust cycles left Victorian shells and environmental legacies (Silverton’s metals loading into rivers is a Superfund story). Ouray’s ‘Switzerland’ nickname is topography—German mining engineers did shape some Alpine analogies. Telluride’s festival economy is global wealth dropped into a box canyon—class contrast with Rico and Dolores downstream towns. Ute peoples have ongoing land claims and treaty histories in the San Juans—mention contemporary nation governments, not only ‘ancient’ presence.",
       "talkingPoints": [
-        "San Juan volcanic field—caldera vocabulary without sensationalism.",
-        "Silverton railroad endpoint fact—verify timetable if you shoot train.",
-        "Ouray bowl geology—why ‘Switzerland’ analogy is structural, not cosmetic.",
-        "Descending to desert tomorrow—brake and tire thermal cycle."
+        "John Ford frame vocabulary—and who owns the land in those frames.",
+        "US-666 renumber—Congressional trivia with safety outcome.",
+        "Navajo government structure—one clear sentence.",
+        "Tomorrow: slot canyon timing and tour physics."
       ],
       "cta": "Would you ride the Million Dollar Highway? Write YES/NO and what your biggest concern would be.",
       "fieldGuide": [
-        "1️⃣ Million Dollar Highway: no guardrail sections mean recovery room is zero—speed to sight distance, not to ego.",
-        "2️⃣ Altitude sickness is cumulative—headache + ataxia means stop filming, descend, hydrate.",
-        "3️⃣ Brakes cool on straights—pump fade on repeated hairpins is real on heavy bikes.",
-        "4️⃣ Silverton oxygen: generators and stoves behave differently—film jetting/starting quirks if present.",
-        "5️⃣ Snow beside road in June: reflectance blows exposure—zebra striping in viewfinder.",
-        "6️⃣ Camp at elevation: stake frost—record overnight low; viewers in flats need the number."
+        "1️⃣ Navajo Nation permits: carry receipt on camera person—tribal law supersedes ‘I’m just a tourist.’",
+        "2️⃣ Monument Valley telephoto compression: iconic but flattening—wide + long pair establishes truth.",
+        "3️⃣ Heat shimmer on US-491: long lenses lie; establish horizon with mid-focal length first.",
+        "4️⃣ San Juan River camp: flash-flood awareness in slot-adjacent terrain—weather upstream matters.",
+        "5️⃣ Silence recording: 30 seconds ambient-only—documentary gold if levels are clean.",
+        "6️⃣ Night: red light discipline if others camp—preserve everyone’s scotopic vision."
       ],
       "roadRules": [
         "Colorado: motorcycle endorsement required; passengers must have seat and footrests; minors have helmet rules—check CRS title 42 for age splits.",
@@ -525,10 +569,10 @@
       ]
     },
     {
-      "dayIndex": 12,
+      "dayIndex": 13,
       "videoTitle": "Four Corners Desert — The Land That Movies Made Sacred | Day 12",
-      "hook": "You’re not in a national park—you’re in a sovereign nation that licenses your presence.",
-      "storyArc": "Descent from alpine to desert via time-lapse color temperature. Four Corners: jurisdiction as geography. Monument Valley: cinema history vs tribal stewardship. River camp: hydrology + quiet.",
+      "hook": "Epic on paper is logistics in reality—today you either manage energy or the desert invoices you.",
+      "storyArc": "Pre-dawn departure timestamp. Page stops as timeboxed modules. Transit legs as map + fuel receipts. Bryce sunset: exposure bracket or HDR decision stated. Night camp: Milky Way settings on screen.",
       "shots": [
         "Four Corners Monument — stand in four states simultaneously",
         "US-491 straight through desert — the road film directors love",
@@ -545,23 +589,26 @@
         "The Navajo Nation is the largest Native American reservation in the United States — at 27,425 square miles, it is larger than the state of West Virginia.",
         "Monument Valley Tribal Park requires Navajo Nation permits separate from NPS passes.",
         "Utah’s liquor laws historically restricted bar service; today’s mixed drinks require ‘metered’ dispensing in some counties—quirky statute legacy.",
+        "Navajo Nation observes DST differently than Arizona in some jurisdictions—time on phone may lie near borders.",
+        "Monument Valley Tribal Park requires Navajo Nation permits separate from NPS passes.",
+        "Utah’s liquor laws historically restricted bar service; today’s mixed drinks require ‘metered’ dispensing in some counties—quirky statute legacy.",
         "Navajo Nation observes DST differently than Arizona in some jurisdictions—time on phone may lie near borders."
       ],
       "culture": "Navajo Nation is a sovereign government with criminal jurisdiction complexities (Major Crimes Act, Public Law 280 variations)—tourists should understand permits for Monument Valley Tribal Park fund local services. John Ford’s films exported a visual ‘West’ that displaced living Navajo and Diné stories—credit Navajo guides when filming tours. US-666 renumber to 491 was driven by theft, stigma, and emergency-response confusion—Congressional bills are public record. Mexican Hat’s name references a balanced rock; the San Juan River is silty—different hydraulics than clear Rocky Mountain streams.",
       "talkingPoints": [
-        "John Ford frame vocabulary—and who owns the land in those frames.",
-        "US-666 renumber—Congressional trivia with safety outcome.",
-        "Navajo government structure—one clear sentence.",
-        "Tomorrow: slot canyon timing and tour physics."
+        "Horseshoe Bend incision meander—river vs rock timescales.",
+        "Antelope Canyon flood hydraulics—speed of wall of water.",
+        "Lake Powell storage politics—one neutral sentence, cited.",
+        "Hoodoo formation—frost wedging without fairy tales."
       ],
       "cta": "What's the most remote place you've ever slept? I want to hear the stories below.",
       "fieldGuide": [
-        "1️⃣ Navajo Nation permits: carry receipt on camera person—tribal law supersedes ‘I’m just a tourist.’",
-        "2️⃣ Monument Valley telephoto compression: iconic but flattening—wide + long pair establishes truth.",
-        "3️⃣ Heat shimmer on US-491: long lenses lie; establish horizon with mid-focal length first.",
-        "4️⃣ San Juan River camp: flash-flood awareness in slot-adjacent terrain—weather upstream matters.",
-        "5️⃣ Silence recording: 30 seconds ambient-only—documentary gold if levels are clean.",
-        "6️⃣ Night: red light discipline if others camp—preserve everyone’s scotopic vision."
+        "1️⃣ 500 km + two major stops = schedule risk—build slack or film failure honestly.",
+        "2️⃣ Horseshoe Bend: railings end; wind gusts at rim—never turn your back to load a drone case.",
+        "3️⃣ Antelope Canyon: tour slots tie to sun angle—late beams are physics, not ‘luck.’",
+        "4️⃣ Flash flood protocol in slots: upstream rain can arrive before local sky looks bad—ask guides, film the safety briefing.",
+        "5️⃣ Bryce rim: frost-wedging geology—temperature swing after sunset can ice footpaths.",
+        "6️⃣ Hydration math: publish your liter count if you teach desert riding—otherwise it’s theater."
       ],
       "roadRules": [
         "Utah: lane filtering legal under Utah Code §41-6a-1102 as of recent years—only between stopped lanes of same direction, speed ≤15 mph, conditions listed; NOT California-style free splitting at speed—read statute before demonstrating.",
@@ -572,10 +619,10 @@
       ]
     },
     {
-      "dayIndex": 13,
+      "dayIndex": 14,
       "videoTitle": "500 km Epic — Horseshoe Bend, Antelope Canyon, and Bryce | Day 13",
-      "hook": "Epic on paper is logistics in reality—today you either manage energy or the desert invoices you.",
-      "storyArc": "Pre-dawn departure timestamp. Page stops as timeboxed modules. Transit legs as map + fuel receipts. Bryce sunset: exposure bracket or HDR decision stated. Night camp: Milky Way settings on screen.",
+      "hook": "America’s ‘most scenic highway’ is still a road with crossfalls, thermals, and distracted drivers.",
+      "storyArc": "UT-12 as geological transect (five zones, named). I-70 void as psychological interval. Moab arrival: land use (tourism vs mining ghost). Arches: reservation system as carrying capacity tool.",
       "shots": [
         "Horseshoe Bend: the classic wide-angle over the edge shot",
         "Antelope Canyon: light beams through the slot (Upper Canyon in late morning)",
@@ -592,23 +639,26 @@
         "The Navajo Nation guided tour requirement for Antelope Canyon is not bureaucracy — the canyon is sacred Navajo land, and the tour system ensures that visitors understand what they are entering and who it belongs to.",
         "Glen Canyon Dam’s Lake Powell is named for explorer John Wesley Powell—one-armed Civil War veteran who mapped the Colorado.",
         "Bryce ‘hoodoos’ form by frost-wedging in clastic rock—freeze-thaw cycles pop rock off cliffs.",
+        "Horseshoe Bend is Glen Canyon NRA—NPS passes apply; overcrowding led to parking fees and safety railings.",
+        "Glen Canyon Dam’s Lake Powell is named for explorer John Wesley Powell—one-armed Civil War veteran who mapped the Colorado.",
+        "Bryce ‘hoodoos’ form by frost-wedging in clastic rock—freeze-thaw cycles pop rock off cliffs.",
         "Horseshoe Bend is Glen Canyon NRA—NPS passes apply; overcrowding led to parking fees and safety railings."
       ],
       "culture": "Page sits between Navajo Nation, Kaibab Paiute, and Anglo county governance—one gas station can be on different tax and alcohol rules. Lake Powell storage is Colorado River Compact politics: Upper vs Lower Basin, tribal water rights, and drought are litigation terrain—‘bathtub ring’ visuals are climate policy. Antelope Canyon’s photography economy funds families who endured relocation from Glen Canyon Dam flooding—pair beauty shots with land-loss history. Kanab is Mormon pioneer meets Hollywood western location scouting—polygamy stereotypes are lazy; cite Utah’s modern demographics.",
       "talkingPoints": [
-        "Horseshoe Bend incision meander—river vs rock timescales.",
-        "Antelope Canyon flood hydraulics—speed of wall of water.",
-        "Lake Powell storage politics—one neutral sentence, cited.",
-        "Hoodoo formation—frost wedging without fairy tales."
+        "National Geographic claims—what metric they used.",
+        "Arch collapse events—erosion continues on human timescales.",
+        "I-70 desolation economics—why exits died.",
+        "Thelma & Louise location ethics—stunt geography vs visitor safety."
       ],
       "cta": "Which sight would you prioritize on this day — Horseshoe Bend, Antelope Canyon, or Bryce? Make your case.",
       "fieldGuide": [
-        "1️⃣ 500 km + two major stops = schedule risk—build slack or film failure honestly.",
-        "2️⃣ Horseshoe Bend: railings end; wind gusts at rim—never turn your back to load a drone case.",
-        "3️⃣ Antelope Canyon: tour slots tie to sun angle—late beams are physics, not ‘luck.’",
-        "4️⃣ Flash flood protocol in slots: upstream rain can arrive before local sky looks bad—ask guides, film the safety briefing.",
-        "5️⃣ Bryce rim: frost-wedging geology—temperature swing after sunset can ice footpaths.",
-        "6️⃣ Hydration math: publish your liter count if you teach desert riding—otherwise it’s theater."
+        "1️⃣ UT-12 hogsback: crosswind from either valley—scan both before passing.",
+        "2️⃣ Capitol Reef water: fill at every reliable tap—next dry gap is real.",
+        "3️⃣ I-70 Green River–Salina: 110 miles no services—fuel arithmetic on camera.",
+        "4️⃣ Arches timed entry: screenshot reservation; gate audio often unusable—lav mic.",
+        "5️⃣ Delicate Arch hike: carry 2L+ in summer—heat illness looks like ‘dramatic collapse’ online; it’s medicine.",
+        "6️⃣ Moab slickrock: tire pressures off-road vs highway—state both numbers."
       ],
       "roadRules": [
         "Arizona: speed enforcement on US-89 is aggressive; photo enforcement exists in some municipalities.",
@@ -620,10 +670,10 @@
       ]
     },
     {
-      "dayIndex": 14,
+      "dayIndex": 15,
       "videoTitle": "UT-12 to Moab — America's Most Scenic Highway to its Most Extreme Park | Day 14",
-      "hook": "America’s ‘most scenic highway’ is still a road with crossfalls, thermals, and distracted drivers.",
-      "storyArc": "UT-12 as geological transect (five zones, named). I-70 void as psychological interval. Moab arrival: land use (tourism vs mining ghost). Arches: reservation system as carrying capacity tool.",
+      "hook": "Stillness isn’t laziness—it’s when the brain indexes trauma, joy, and mileage.",
+      "storyArc": "Dawn hike as technical sequence (footing, water, sun angle). Overlook geometry. Town logistics. Evening reflection with zero B-roll—face + sound + honest words.",
       "shots": [
         "UT-12 hogsback section — two-lane road with 1,000-foot drops on both sides",
         "Capitol Reef: white sandstone domes that inspired the name",
@@ -640,23 +690,26 @@
         "Canyonlands National Park near Moab was the filming location of the final scene of Thelma and Louise — the cliffs they drove over are directly identifiable.",
         "UT-12 crosses Boulder Mountain—steep grades and deer; cattle guards vibrate luggage—retorque bolts nightly on long trips.",
         "San Rafael Swell west of I-70 is BLM wilderness study areas—mechanical travel restricted in places.",
+        "Canyonlands needle district filming permits required for commercial YouTube if monetized and crew>minimal—check NPS commercial policy.",
+        "UT-12 crosses Boulder Mountain—steep grades and deer; cattle guards vibrate luggage—retorque bolts nightly on long trips.",
+        "San Rafael Swell west of I-70 is BLM wilderness study areas—mechanical travel restricted in places.",
         "Canyonlands needle district filming permits required for commercial YouTube if monetized and crew>minimal—check NPS commercial policy."
       ],
       "culture": "Wayne County’s economy pivoted from uranium boom to tourism and second homes—Moab’s ‘eco-capital’ branding conflicts with Jeep event crowds and trail erosion debates. Capitol Reef’s Waterpocket Fold is a monocline—Mormon settlers called the area ‘Wayne’ for Anthony Wayne; orchards reflect 1880s Fruita irrigation communalism. Arches sits on salt anticline geology—oil and potash politics underlie park boundaries. Respect Moab’s housing crisis: short-term rentals displaced workers—your hotel bill funds who, exactly?",
       "talkingPoints": [
-        "National Geographic claims—what metric they used.",
-        "Arch collapse events—erosion continues on human timescales.",
-        "I-70 desolation economics—why exits died.",
-        "Thelma & Louise location ethics—stunt geography vs visitor safety."
+        "Why rest days reduce crash risk statistically.",
+        "Delicate Arch naming history—fact check settlers vs marketing.",
+        "Dead Horse legend—separate myth from hydrology.",
+        "Moab outdoor industrial scale—carrying capacity debate."
       ],
       "cta": "What's the most beautiful road you've ever driven? Comment below — I'll feature the best answers.",
       "fieldGuide": [
-        "1️⃣ UT-12 hogsback: crosswind from either valley—scan both before passing.",
-        "2️⃣ Capitol Reef water: fill at every reliable tap—next dry gap is real.",
-        "3️⃣ I-70 Green River–Salina: 110 miles no services—fuel arithmetic on camera.",
-        "4️⃣ Arches timed entry: screenshot reservation; gate audio often unusable—lav mic.",
-        "5️⃣ Delicate Arch hike: carry 2L+ in summer—heat illness looks like ‘dramatic collapse’ online; it’s medicine.",
-        "6️⃣ Moab slickrock: tire pressures off-road vs highway—state both numbers."
+        "1️⃣ Zero day is production reset: batteries, media offload, lens clean, gimbal calibration—show the boring work.",
+        "2️⃣ Delicate Arch dawn: headlamp redundancy; slickrock navigation errors injure people yearly.",
+        "3️⃣ Dead Horse Point: 600 m exposure—tripod foot placement beats selfie sticks.",
+        "4️⃣ Edward Abbey mention: quote short, cite Desert Solitaire—don’t cosplay misanthropy.",
+        "5️⃣ Town afternoon: record audio room tone for later ADR matching.",
+        "6️⃣ Still evening: let silence run 10s on timeline—documentary pacing lesson."
       ],
       "roadRules": [
         "Utah: motorcycle registration and insurance required; modified exhaust can fail safety inspection counties that require it.",
@@ -668,10 +721,10 @@
       ]
     },
     {
-      "dayIndex": 15,
+      "dayIndex": 16,
       "videoTitle": "Moab Zero Day — Arches, Dead Horse Point, and the Art of Slowing Down | Day 15",
-      "hook": "Stillness isn’t laziness—it’s when the brain indexes trauma, joy, and mileage.",
-      "storyArc": "Dawn hike as technical sequence (footing, water, sun angle). Overlook geometry. Town logistics. Evening reflection with zero B-roll—face + sound + honest words.",
+      "hook": "Utah’s south is engineered verticality—tunnels, bridges, and blast cuts—not postcard softness.",
+      "storyArc": "I-15 as controlled canyon flight. Zion as foreshadow (tomorrow’s heat). St. George as cultural layer (Mormon Dixie history, stated neutrally). BLM night as stars + fire discipline.",
       "shots": [
         "Pre-dawn departure from camp/host — the bike parked, a hiking bag on your back instead",
         "Arches NP entrance sign at first light",
@@ -689,23 +742,26 @@
         "Moab is the adventure sports capital of the American Southwest — it became famous for mountain biking in the late 1980s when the slickrock trail opened. The town has only ~5,000 residents but hosts hundreds of thousands of visitors annually. Film crews have used the surrounding landscape as a stand-in for Mars in multiple movies.",
         "Delicate Arch trail is 3 mi RT with exposure; NPS rescues dozens yearly—heat stroke primary.",
         "Moab Slickrock Trail (bike) is not motorcycle-legal surface in many sections—stick to designated routes.",
+        "Utah’s ‘Zion curtain’ liquor-serving rules were reformed but some counties remain ‘dry’ or restricted—check Grand County.",
+        "Delicate Arch trail is 3 mi RT with exposure; NPS rescues dozens yearly—heat stroke primary.",
+        "Moab Slickrock Trail (bike) is not motorcycle-legal surface in many sections—stick to designated routes.",
         "Utah’s ‘Zion curtain’ liquor-serving rules were reformed but some counties remain ‘dry’ or restricted—check Grand County."
       ],
       "culture": "Moab’s restaurant and guide workforce is largely seasonal Latino/a labor plus young climbers—service culture is professional but under housing stress. Edward Abbey’s Desert Solitaire was written at Arches as a park ranger memoir that helped spark modern wilderness politics—Abbey was controversial (misogyny, eco-sabotage cheerleading); cite him as influential, not saint. Ute lands surround the tourism bubble—Puebloan ancestry visible in archaeology; pot hunting is felony under ARPA.",
       "talkingPoints": [
-        "Why rest days reduce crash risk statistically.",
-        "Delicate Arch naming history—fact check settlers vs marketing.",
-        "Dead Horse legend—separate myth from hydrology.",
-        "Moab outdoor industrial scale—carrying capacity debate."
+        "Virgin River Gorge cost per mile—why politicians still cite it.",
+        "Zion tunnel 1930 spec vs modern ADV width.",
+        "BLM acreage mandate—multiple use in one sentence.",
+        "Mojave preview: wet-bulb temperature concept."
       ],
       "cta": "Have you ever taken a zero day mid-trip and felt guilty about it? Tell me how it turned out — in the comments below.",
       "fieldGuide": [
-        "1️⃣ Zero day is production reset: batteries, media offload, lens clean, gimbal calibration—show the boring work.",
-        "2️⃣ Delicate Arch dawn: headlamp redundancy; slickrock navigation errors injure people yearly.",
-        "3️⃣ Dead Horse Point: 600 m exposure—tripod foot placement beats selfie sticks.",
-        "4️⃣ Edward Abbey mention: quote short, cite Desert Solitaire—don’t cosplay misanthropy.",
-        "5️⃣ Town afternoon: record audio room tone for later ADR matching.",
-        "6️⃣ Still evening: let silence run 10s on timeline—documentary pacing lesson."
+        "1️⃣ Virgin River Gorge: downdrafts and debris in spring—visor down through construction zones.",
+        "2️⃣ Zion tunnel: measure handlebar width; escort rules are width-based, not ‘feeling.’",
+        "3️⃣ BLM dispersed: camp 300 ft from water where required; film the rule sign.",
+        "4️⃣ St. George heat: morning ride blocks beat afternoon hero segments.",
+        "5️⃣ Dinosaur tracks site: fragile matrix—tripods rubber feet only.",
+        "6️⃣ Audio: desert cicada beds vs wind—choose VO windows."
       ],
       "roadRules": [
         "Arches NP: single-file on narrow trails; pets restricted; drones prohibited in national parks (federal).",
@@ -716,10 +772,10 @@
       ]
     },
     {
-      "dayIndex": 16,
+      "dayIndex": 17,
       "videoTitle": "Zion at the Horizon — Riding the Desert South to St. George | Day 16",
-      "hook": "Utah’s south is engineered verticality—tunnels, bridges, and blast cuts—not postcard softness.",
-      "storyArc": "I-15 as controlled canyon flight. Zion as foreshadow (tomorrow’s heat). St. George as cultural layer (Mormon Dixie history, stated neutrally). BLM night as stars + fire discipline.",
+      "hook": "The Mojave isn’t testing your spirit—it’s testing your thermodynamics and your coolant.",
+      "storyArc": "Heat metrics on screen (air, pavement estimate, engine). Nevada color section. California border as regulatory shift. Suburban approach as cognitive dissonance. Close: Pacific air mass in forecast.",
       "shots": [
         "I-15 south: Virgin River Gorge slot — the highway cuts through vertical walls",
         "Zion Canyon from US-9 or from the highway approach: the sandstone cliffs",
@@ -736,23 +792,26 @@
         "BLM (Bureau of Land Management) manages 245 million acres of American public land — more than any other federal agency — and much of it in southern Utah is open for dispersed camping.",
         "Virgin River is one of the most endangered rivers in US conservation lists—Las Vegas and agriculture straws matter upstream metaphorically and literally.",
         "Zion’s weeping rock is hanging garden hydrology—seepage from Navajo sandstone aquifer.",
+        "Washington County water rates rise with Lake Powell elevation drops—municipal politics tie to Colorado River Compact.",
+        "Virgin River is one of the most endangered rivers in US conservation lists—Las Vegas and agriculture straws matter upstream metaphorically and literally.",
+        "Zion’s weeping rock is hanging garden hydrology—seepage from Navajo sandstone aquifer.",
         "Washington County water rates rise with Lake Powell elevation drops—municipal politics tie to Colorado River Compact."
       ],
       "culture": "‘Utah Dixie’ names Brigham Young’s cotton mission—settlers used enslaved African-descended and Indigenous labor in some accounts; modern St. George is retirement and remote-work influx straining water on Colorado River tributaries. Zion’s Navajo sandstone cliffs are sacred to multiple nations—climbing bolt ethics and filming on ceremonial days require research. Dinosaur tracks at Johnson Farm are Jurassic lake shoreline science—creationist tourism nearby is cultural fact; don’t conflate science and belief on VO without clarity.",
       "talkingPoints": [
-        "Virgin River Gorge cost per mile—why politicians still cite it.",
-        "Zion tunnel 1930 spec vs modern ADV width.",
-        "BLM acreage mandate—multiple use in one sentence.",
-        "Mojave preview: wet-bulb temperature concept."
+        "Radiation vs convection cooling on bikes.",
+        "Mojave endorheic basins—why ‘dry’ still floods.",
+        "Roy Rogers trivia vs Apple Valley sprawl facts.",
+        "Psychological threshold: inland vs coastal California."
       ],
       "cta": "Tent camping or motel when you're solo-traveling? Tell me your preference and your reasoning.",
       "fieldGuide": [
-        "1️⃣ Virgin River Gorge: downdrafts and debris in spring—visor down through construction zones.",
-        "2️⃣ Zion tunnel: measure handlebar width; escort rules are width-based, not ‘feeling.’",
-        "3️⃣ BLM dispersed: camp 300 ft from water where required; film the rule sign.",
-        "4️⃣ St. George heat: morning ride blocks beat afternoon hero segments.",
-        "5️⃣ Dinosaur tracks site: fragile matrix—tripods rubber feet only.",
-        "6️⃣ Audio: desert cicada beds vs wind—choose VO windows."
+        "1️⃣ Pavement 65°C+: tire pressure rises—check cold, not at McDonald’s after lunch.",
+        "2️⃣ Hydration: electrolyte loss without food equals cramping—film what you actually eat.",
+        "3️⃣ Valley of Fire: midday heat stroke risk—shoot edges of day unless medically prepared.",
+        "4️⃣ Lane-splitting entering CA: cite CHP guidance year; don’t improvise legal advice.",
+        "5️⃣ Joshua tree range shift: climate science one-liner from USGS or peer summary.",
+        "6️⃣ Engine temp lights: pull off before the boil-over—teach warning signs on DR650 specifically if applicable."
       ],
       "roadRules": [
         "Utah I-15 Virgin River Gorge: reduced shoulders; rockfall zones—don’t stop in tunnels.",
@@ -763,10 +822,10 @@
       ]
     },
     {
-      "dayIndex": 17,
+      "dayIndex": 18,
       "videoTitle": "Crossing the Mojave — The Desert That Tests Everything | Day 17",
-      "hook": "The Mojave isn’t testing your spirit—it’s testing your thermodynamics and your coolant.",
-      "storyArc": "Heat metrics on screen (air, pavement estimate, engine). Nevada color section. California border as regulatory shift. Suburban approach as cognitive dissonance. Close: Pacific air mass in forecast.",
+      "hook": "The ocean isn’t the climax—it’s a hydrologic boundary you’ve been approaching for weeks.",
+      "storyArc": "Freeway approach as systems test. Ocean reveal as controlled beat (pullout, tripod, audio). PCH as corridor geology. Big Sur as infrastructure fragility (slides). Ridge camp as exposure management + ethical filming neighbors.",
       "shots": [
         "Valley of Fire NV entrance: blood-red Aztec sandstone",
         "California state line: 'Welcome to California' sign — iconic",
@@ -783,23 +842,26 @@
         "The Joshua Tree is the signature plant of the Mojave Desert and can live for 500+ years — climate change is shifting its range northward and its long-term survival is a subject of active research.",
         "Death Valley holds US heat records; Mojave subset still hits lethal pavement temps—dogs in cars laws are strict in CA.",
         "Nevada open carry laws differ from CA concealed rules—don’t film guns casually crossing state line.",
+        "I-15 Baker–Barstow segment is high enforcement for DUIs Friday nights—Las Vegas return traffic.",
+        "Death Valley holds US heat records; Mojave subset still hits lethal pavement temps—dogs in cars laws are strict in CA.",
+        "Nevada open carry laws differ from CA concealed rules—don’t film guns casually crossing state line.",
         "I-15 Baker–Barstow segment is high enforcement for DUIs Friday nights—Las Vegas return traffic."
       ],
       "culture": "The Mojave is a borderland between inland empire sprawl and desert emptiness—Apple Valley’s Roy Rogers mythologized mid-century Western TV while today’s High Desert mixes warehouse logistics with meth recovery narratives media flatten unfairly. Joshua trees are Yucca brevifolia—Cahuilla and other nations used fibers and seeds; climate shift threatens range. CA entering from NV is a regulatory step-change: emissions, CARB, and traffic codes—riders notice ‘two Californias’ (coastal lawmaker vs inland rider politics).",
       "talkingPoints": [
-        "Radiation vs convection cooling on bikes.",
-        "Mojave endorheic basins—why ‘dry’ still floods.",
-        "Roy Rogers trivia vs Apple Valley sprawl facts.",
-        "Psychological threshold: inland vs coastal California."
+        "PCH prison labor history—one verifiable sentence.",
+        "Leo Carrillo coastal access law lineage.",
+        "Bixby bridge statics—span length vs height correctly.",
+        "CHP lane-filtering phrasing—quote, don’t paraphrase."
       ],
       "cta": "Have you ever ridden or driven in extreme heat? What's the highest temperature you've endured? Tell me below.",
       "fieldGuide": [
-        "1️⃣ Pavement 65°C+: tire pressure rises—check cold, not at McDonald’s after lunch.",
-        "2️⃣ Hydration: electrolyte loss without food equals cramping—film what you actually eat.",
-        "3️⃣ Valley of Fire: midday heat stroke risk—shoot edges of day unless medically prepared.",
-        "4️⃣ Lane-splitting entering CA: cite CHP guidance year; don’t improvise legal advice.",
-        "5️⃣ Joshua tree range shift: climate science one-liner from USGS or peer summary.",
-        "6️⃣ Engine temp lights: pull off before the boil-over—teach warning signs on DR650 specifically if applicable."
+        "1️⃣ LA basin: filter lane-splitting through traffic law + survival—never teach recklessness.",
+        "2️⃣ Pacific first sight: exposure for white foam + dark water—zebra, don’t clip highlights.",
+        "3️⃣ Santa Monica Route 66 terminus: match Adrian midpoint math on screen—close the arc with numbers.",
+        "4️⃣ Big Sur: no cell = no upload; plan safety check-ins before Bixby.",
+        "5️⃣ Prewitt Ridge: high-clearance + dark = rollover risk—arrive with sun angle, walk the road first.",
+        "6️⃣ Cliff camp: stake for wind, not just rain; ocean downdrafts are real."
       ],
       "roadRules": [
         "California lane splitting/filtering: CHP publishes guidelines (speed differential ~10 mph, not >30 mph traffic, etc.)—illegal in NV except where posted experiments; legal in CA under CVC context—verify current CHP handout year.",
@@ -811,10 +873,10 @@
       ]
     },
     {
-      "dayIndex": 18,
+      "dayIndex": 19,
       "videoTitle": "Pacific Ocean Arrived — PCH, Leo Carrillo, and Big Sur in One Epic Day | Day 18",
-      "hook": "The ocean isn’t the climax—it’s a hydrologic boundary you’ve been approaching for weeks.",
-      "storyArc": "Freeway approach as systems test. Ocean reveal as controlled beat (pullout, tripod, audio). PCH as corridor geology. Big Sur as infrastructure fragility (slides). Ridge camp as exposure management + ethical filming neighbors.",
+      "hook": "The continent’s edge is also a plate boundary—film both the romantic and the geophysical.",
+      "storyArc": "Northward transect of climate (temperature, dew point). Lighthouse as survey point + hazard light history. Fault walk as grounded science. Lost Coast as deliberate non-development.",
       "shots": [
         "Barstow departure — 6:30 am, pre-dawn desert light",
         "CA-14 into the LA basin: the Valley approach, the smog horizon",
@@ -837,23 +899,26 @@
         "California is the only US state with explicitly legal lane filtering (splitting) — California DMV/CHP guidelines define the speed differential and positioning rules. Check CHP's current guidelines before filtering.",
         "Santa Monica Pier Route 66 terminus sign is a replica marketing piece—history is real, sign is maintained for tourism.",
         "Bixby Bridge (1932) is Monterey County heritage; earthquake retrofit cycles continue.",
+        "California Coastal Commission regulates view corridors—why some pullouts exist and some ‘secret’ camps get bulldozed.",
+        "Santa Monica Pier Route 66 terminus sign is a replica marketing piece—history is real, sign is maintained for tourism.",
+        "Bixby Bridge (1932) is Monterey County heritage; earthquake retrofit cycles continue.",
         "California Coastal Commission regulates view corridors—why some pullouts exist and some ‘secret’ camps get bulldozed."
       ],
       "culture": "Pacific Coast Highway’s construction used convict and civilian labor in deadly conditions—labor history beats postcard aesthetics. Leo Carrillo helped pass California’s coastal access protections; public trust doctrine shapes beach access fights today (Malibu gates). Big Sur’s development moratorium is a political achievement of locals and environmental litigators—Starbucks can’t buy a view. Pfeiffer Big Sur State Park sits on Rumsen Ohlone ancestral land—acknowledge when filming ‘wilderness.’",
       "talkingPoints": [
-        "PCH prison labor history—one verifiable sentence.",
-        "Leo Carrillo coastal access law lineage.",
-        "Bixby bridge statics—span length vs height correctly.",
-        "CHP lane-filtering phrasing—quote, don’t paraphrase."
+        "Hawaii great-circle distance—show map arc, not fake arrow.",
+        "Murder She Wrote location substitution—how TV exports false geography.",
+        "Mendocino homestead culture—succinct, respectful.",
+        "Rider gear for 10°C sea air vs desert yesterday."
       ],
       "cta": "What was the moment in your life where you finally made it somewhere you'd been riding toward? Tell me the story below.",
       "fieldGuide": [
-        "1️⃣ LA basin: filter lane-splitting through traffic law + survival—never teach recklessness.",
-        "2️⃣ Pacific first sight: exposure for white foam + dark water—zebra, don’t clip highlights.",
-        "3️⃣ Santa Monica Route 66 terminus: match Adrian midpoint math on screen—close the arc with numbers.",
-        "4️⃣ Big Sur: no cell = no upload; plan safety check-ins before Bixby.",
-        "5️⃣ Prewitt Ridge: high-clearance + dark = rollover risk—arrive with sun angle, walk the road first.",
-        "6️⃣ Cliff camp: stake for wind, not just rain; ocean downdrafts are real."
+        "1️⃣ Marine layer: ND or wait—gray ocean reads flat without polarizer discipline.",
+        "2️⃣ San Andreas onshore: fault trace photography needs scale reference—people or bike.",
+        "3️⃣ 1906 damage at Point Arena—tie earthquake rupture length to felt area.",
+        "4️⃣ Lost Coast roads: landslide maintenance—check Caltrans before promising passage.",
+        "5️⃣ GPS coordinate insert: verify datum WGS84 on screen—map nerds will catch errors.",
+        "6️⃣ Fog audio: low-pass wind muff; dialogue windows short."
       ],
       "roadRules": [
         "California: motorcycle helmet required for all operators and passengers (CVC §27803)—DOT-compliant; novelty helmets risk ticket.",
@@ -865,10 +930,10 @@
       ]
     },
     {
-      "dayIndex": 19,
+      "dayIndex": 20,
       "videoTitle": "The Lost Coast — Riding California's Wild North | Day 19",
-      "hook": "The continent’s edge is also a plate boundary—film both the romantic and the geophysical.",
-      "storyArc": "Northward transect of climate (temperature, dew point). Lighthouse as survey point + hazard light history. Fault walk as grounded science. Lost Coast as deliberate non-development.",
+      "hook": "These trees record centuries in cambium—your episode should respect slower timescales than TikTok.",
+      "storyArc": "Canopy closure as light falloff graph. Touch + sound (bark, drip). Elk as megafauna hazard. Night silence as data (dB if possible).",
       "shots": [
         "Monterey Bay from the highway — sea otters in the kelp if you're lucky",
         "Mendocino village: Victorian buildings on a headland above the Pacific",
@@ -885,23 +950,26 @@
         "The 'Lost Coast' of northern California was so geologically unstable and expensive to build roads through that highway engineers simply routed Highway 1 inland — it remains one of the most remote stretches of California coastline, accessible only by rugged mountain roads.",
         "Point Arena is among closest US mainland points to Hawaii by great-circle—still ~2,000+ mi; telegraph cables once landed here.",
         "Lost Coast’s King Range lacks Hwy 1 because landslides and cost—wilderness is partly infrastructure failure preserved as choice.",
+        "Marine layer (advection fog) is Pacific high-pressure + cold water—predictable morning pattern.",
+        "Point Arena is among closest US mainland points to Hawaii by great-circle—still ~2,000+ mi; telegraph cables once landed here.",
+        "Lost Coast’s King Range lacks Hwy 1 because landslides and cost—wilderness is partly infrastructure failure preserved as choice.",
         "Marine layer (advection fog) is Pacific high-pressure + cold water—predictable morning pattern."
       ],
       "culture": "Mendocino coast attracted back-to-land migration post-1960s—communal land trusts and cannabis economies shaped county politics before statewide legalization. Murder, She Wrote filmed in Mendocino village as ‘Cabot Cove’—local economy still sells mystery tourism. San Andreas Fault onshore at Point Arena ties to 1906 rupture segmentation science—public education beats sensational ‘big one’ panic. Pomo and Coast Yuki histories precede Spanish and Russian coastal claims—first contact stories are violent and documented.",
       "talkingPoints": [
-        "Hawaii great-circle distance—show map arc, not fake arrow.",
-        "Murder She Wrote location substitution—how TV exports false geography.",
-        "Mendocino homestead culture—succinct, respectful.",
-        "Rider gear for 10°C sea air vs desert yesterday."
+        "Coast redwood vs giant sequoia—range and volume facts.",
+        "Fire-resistant bark chemistry—tannins, succinct.",
+        "Old-growth policy—one neutral policy sentence.",
+        "Tourism load on US-101—peak hour strategy."
       ],
       "cta": "What earthquake zone or natural hazard site have you visited? Tell me how it made you feel.",
       "fieldGuide": [
-        "1️⃣ Marine layer: ND or wait—gray ocean reads flat without polarizer discipline.",
-        "2️⃣ San Andreas onshore: fault trace photography needs scale reference—people or bike.",
-        "3️⃣ 1906 damage at Point Arena—tie earthquake rupture length to felt area.",
-        "4️⃣ Lost Coast roads: landslide maintenance—check Caltrans before promising passage.",
-        "5️⃣ GPS coordinate insert: verify datum WGS84 on screen—map nerds will catch errors.",
-        "6️⃣ Fog audio: low-pass wind muff; dialogue windows short."
+        "1️⃣ Redwoods: vertical shots need nodal pan or parallax ruins scale—use person+bike reference.",
+        "2️⃣ Fog drip ecosystem—record drips on leaves with close mic; it’s the science beat.",
+        "3️⃣ Elk on road: rut season aggression—never corner animals for frame.",
+        "4️⃣ Avenue of the Giants: tourist traffic pulse—shoot at corridor edges.",
+        "5️⃣ Hyperion: don’t publish hidden coords—ethical documentary standard.",
+        "6️⃣ Low light under canopy: ISO noise vs blur—pick poison, explain choice."
       ],
       "roadRules": [
         "California SR-1 north of SF: fog reduces visibility below 50 ft—use low beams; pulling off completely is safer than crawling in lane.",
@@ -913,10 +981,10 @@
       ]
     },
     {
-      "dayIndex": 20,
+      "dayIndex": 21,
       "videoTitle": "Into the Redwoods — The Tallest Living Things on Earth | Day 20",
-      "hook": "These trees record centuries in cambium—your episode should respect slower timescales than TikTok.",
-      "storyArc": "Canopy closure as light falloff graph. Touch + sound (bark, drip). Elk as megafauna hazard. Night silence as data (dB if possible).",
+      "hook": "Oregon is where the ice sheets split—your road is either driftless or planed flat. Read the ground.",
+      "storyArc": "Border transition as species change (Douglas fir density). Optional Crater Lake module with go/no-go honesty. Timber valleys as economic geography. Arrival small town as quiet denouement.",
       "shots": [
         "Avenue of the Giants approach: cathedral canopy forming above the road",
         "Stop and look up: 380-foot redwood from below",
@@ -933,23 +1001,26 @@
         "Avenue of the Giants is a 31-mile stretch of the original US-101 highway running through Humboldt Redwoods State Park — it contains the largest remaining old-growth coast redwood forest in the world.",
         "Hyperion tree location is secret—NPS fines for bushwhacking to it.",
         "Redwood fog drip can supply 30–40% of annual water budget in summer—hydrology supports summer green.",
+        "1960s Redwood National Park creation faced local job fears—similar to modern monument fights.",
+        "Hyperion tree location is secret—NPS fines for bushwhacking to it.",
+        "Redwood fog drip can supply 30–40% of annual water budget in summer—hydrology supports summer green.",
         "1960s Redwood National Park creation faced local job fears—similar to modern monument fights."
       ],
       "culture": "Humboldt’s ‘behind the redwood curtain’ stereotype mixes cannabis legalization, timber wars, and university ecology programs—real county government is normal boring public works. Yurok, Karuk, and Hupa nations maintain fisheries on the Klamath—dam removal politics (2020s) is largest US dam removal story. Coast redwoods are Sequoia sempervirens—sequoia gigantea is Sierra different species; confuse them on VO and viewers will comment. Save-the-Redwoods League bought cutover lands for regrowth—conservation is markets + philanthropy, not only parks.",
       "talkingPoints": [
-        "Coast redwood vs giant sequoia—range and volume facts.",
-        "Fire-resistant bark chemistry—tannins, succinct.",
-        "Old-growth policy—one neutral policy sentence.",
-        "Tourism load on US-101—peak hour strategy."
+        "Mazama collapse scale—compare to St. Helens correctly.",
+        "Klamath oral history—attribute, don’t appropriate.",
+        "Oregon ghost town count—define ‘recognized’ source.",
+        "Rain shadow number—cite inches west vs east of Cascades."
       ],
       "cta": "What's the oldest or largest natural thing you've stood next to? Tell me what it felt like.",
       "fieldGuide": [
-        "1️⃣ Redwoods: vertical shots need nodal pan or parallax ruins scale—use person+bike reference.",
-        "2️⃣ Fog drip ecosystem—record drips on leaves with close mic; it’s the science beat.",
-        "3️⃣ Elk on road: rut season aggression—never corner animals for frame.",
-        "4️⃣ Avenue of the Giants: tourist traffic pulse—shoot at corridor edges.",
-        "5️⃣ Hyperion: don’t publish hidden coords—ethical documentary standard.",
-        "6️⃣ Low light under canopy: ISO noise vs blur—pick poison, explain choice."
+        "1️⃣ Border climb on US-199: cold tires + tight curves—first 10 minutes are crash window.",
+        "2️⃣ Crater Lake detour: verify rim road open; snow bergs in June block lanes.",
+        "3️⃣ Blue water: polarization helps; altitude sun burns skin faster—SPF on camera.",
+        "4️⃣ Ghost towns: structure safety—no entering collapsed structures for ‘ruin porn.’",
+        "5️⃣ Timber towns: unemployment narratives—cite one current statistic source year.",
+        "6️⃣ Westfir audio: river white noise for bed—levels consistent."
       ],
       "roadRules": [
         "California US-101 in redwoods: narrow shoulders; logging trucks exit suddenly—give distance.",
@@ -961,10 +1032,10 @@
       ]
     },
     {
-      "dayIndex": 21,
+      "dayIndex": 22,
       "videoTitle": "California to Oregon — Riding Toward Crater Lake | Day 21",
-      "hook": "Oregon is where the ice sheets split—your road is either driftless or planed flat. Read the ground.",
-      "storyArc": "Border transition as species change (Douglas fir density). Optional Crater Lake module with go/no-go honesty. Timber valleys as economic geography. Arrival small town as quiet denouement.",
+      "hook": "This gorge was carved by catastrophic outburst floods—your wind buffeting is trivial physics by comparison.",
+      "storyArc": "Westfir descent to Columbia width reveal. Historic Highway stonework as craft. Wind sports as flow visualization. Goldendale plateau as rain-shadow exit.",
       "shots": [
         "'Welcome to Oregon' sign — clean, green, forest behind it",
         "US-199 Siskiyou mountain curves: tight, wooded, dramatic",
@@ -981,23 +1052,26 @@
         "Oregon has more than 400 recognized ghost towns — the highest count of any US state — a legacy of boom-bust cycles in gold, silver, timber, and fishing.",
         "Crater Lake clarity records (~43 m Secchi) fluctuate with invasive organisms and climate—rangers track science.",
         "Oregon Bottle Bill (1971) pioneered US container deposits—roadside litter culture differs from neighboring states.",
+        "Umpqua National Forest overlaps Day 21 routing possibilities—wildfire closures now annual planning factor.",
+        "Crater Lake clarity records (~43 m Secchi) fluctuate with invasive organisms and climate—rangers track science.",
+        "Oregon Bottle Bill (1971) pioneered US container deposits—roadside litter culture differs from neighboring states.",
         "Umpqua National Forest overlaps Day 21 routing possibilities—wildfire closures now annual planning factor."
       ],
       "culture": "Oregon’s east–west cultural divide is real: Willamette Valley votes differently from Harney County; timber counties resent Portland environmental rules. Crater Lake is Giiwas to Klamath Tribes—sacred, not only scenic. Mount Mazama caldera collapse ~7.7 ka aligns with Klamath oral histories of cataclysm—science and story can complement without reducing one to the other. Ghost towns are often timber-bust artifacts—economics, not ‘mystery.’",
       "talkingPoints": [
-        "Mazama collapse scale—compare to St. Helens correctly.",
-        "Klamath oral history—attribute, don’t appropriate.",
-        "Oregon ghost town count—define ‘recognized’ source.",
-        "Rain shadow number—cite inches west vs east of Cascades."
+        "Missoula flood count (~40) and chronology window.",
+        "Multnomah flow seasonality.",
+        "Hood River wind funnel math—simple.",
+        "Landslide dam story for Bridge of Gods—separate legend from geology."
       ],
       "cta": "Crater Lake: worth the detour? Have you been? Did the color actually look that blue in person?",
       "fieldGuide": [
-        "1️⃣ Border climb on US-199: cold tires + tight curves—first 10 minutes are crash window.",
-        "2️⃣ Crater Lake detour: verify rim road open; snow bergs in June block lanes.",
-        "3️⃣ Blue water: polarization helps; altitude sun burns skin faster—SPF on camera.",
-        "4️⃣ Ghost towns: structure safety—no entering collapsed structures for ‘ruin porn.’",
-        "5️⃣ Timber towns: unemployment narratives—cite one current statistic source year.",
-        "6️⃣ Westfir audio: river white noise for bed—levels consistent."
+        "1️⃣ Gorge wind: sport bikes tuck; ADV presents sail area—body English fundamentals.",
+        "2️⃣ Multnomah permit system: screenshot; overcrowding closures are real.",
+        "3️⃣ Missoula floods: quote peak discharge order of magnitude—don’t invent ‘biggest ever’ without era.",
+        "4️⃣ Bridge of the Gods: crosswalk etiquette—pedestrian right-of-way on busy span.",
+        "5️⃣ Celilo loss: submerged falls—use archival respectfully, cite Army Corps timeline.",
+        "6️⃣ Drone near falls: FAA + park rules—film signage."
       ],
       "roadRules": [
         "Oregon: motorcycle endorsement required; daytime headlights required on motorcycles built after certain years—ORS 816.330; run headlight always.",
@@ -1009,10 +1083,10 @@
       ]
     },
     {
-      "dayIndex": 22,
+      "dayIndex": 23,
       "videoTitle": "Columbia River Gorge — Wind, Water, and the World's Biggest Floods | Day 22",
-      "hook": "This gorge was carved by catastrophic outburst floods—your wind buffeting is trivial physics by comparison.",
-      "storyArc": "Westfir descent to Columbia width reveal. Historic Highway stonework as craft. Wind sports as flow visualization. Goldendale plateau as rain-shadow exit.",
+      "hook": "Cascadia isn’t vibes—it’s basalt floods, venture capital, and volcanoes wearing off.",
+      "storyArc": "Portland cultural module (books, beer) with numbers. I-5 as spine. Seattle skyline + market as sensory overload. Volcano glimpse as geologic callback.",
       "shots": [
         "Columbia River first sight: wide, silver, industrial-scale",
         "Historic Columbia River Highway cornices and cliff-edge road",
@@ -1029,23 +1103,26 @@
         "The Bridge of the Gods at Cascade Locks is named after a Native American legend describing a natural land bridge across the Columbia that collapsed — geologists believe a large landslide may have actually temporarily dammed the river here around 1450 CE.",
         "Missoula Floods scraped the scablands—Bretz hypothesis vindicated mid-century; Gorge basalt is part of same story.",
         "Bonneville Dam fish ladders are federal-tribal co-management sites—salmon returns are political numbers.",
+        "Hood River County fruit loop drives tourism ordinance—farm stands have food-handling permits.",
+        "Missoula Floods scraped the scablands—Bretz hypothesis vindicated mid-century; Gorge basalt is part of same story.",
+        "Bonneville Dam fish ladders are federal-tribal co-management sites—salmon returns are political numbers.",
         "Hood River County fruit loop drives tourism ordinance—farm stands have food-handling permits."
       ],
       "culture": "Celilo Falls’ drowning behind The Dalles Dam (1957) destroyed a 15,000-year fishery economy for Columbia River tribes—‘energy sacrifice zone’ framing fits. Hood River’s windsurfing culture is also orchard Latino/a labor culture—don’t film only white athletes on the water. Expo ’74 in Spokane (you’ll hit Spokane later) was environmental-themed world’s fair—Columbia Gorge scenic highway was earlier (1916) auto-tourism innovation. Oregon vs Washington income tax divide drives suburban migration patterns visible in commute traffic.",
       "talkingPoints": [
-        "Missoula flood count (~40) and chronology window.",
-        "Multnomah flow seasonality.",
-        "Hood River wind funnel math—simple.",
-        "Landslide dam story for Bridge of Gods—separate legend from geology."
+        "St. Helens energy release vs Hiroshima analog—use USGS-approved comparison or skip.",
+        "Pike Place continuity since 1907—fact.",
+        "Portland brewery per capita—define city limits.",
+        "Grunge as economic history—not costume."
       ],
       "cta": "What's the most geologically dramatic place you've ever been? The thing that made you realize how temporary we are?",
       "fieldGuide": [
-        "1️⃣ Gorge wind: sport bikes tuck; ADV presents sail area—body English fundamentals.",
-        "2️⃣ Multnomah permit system: screenshot; overcrowding closures are real.",
-        "3️⃣ Missoula floods: quote peak discharge order of magnitude—don’t invent ‘biggest ever’ without era.",
-        "4️⃣ Bridge of the Gods: crosswalk etiquette—pedestrian right-of-way on busy span.",
-        "5️⃣ Celilo loss: submerged falls—use archival respectfully, cite Army Corps timeline.",
-        "6️⃣ Drone near falls: FAA + park rules—film signage."
+        "1️⃣ Urban riding Portland/Seattle: track stand vs foot down—choose safety over cool.",
+        "2️⃣ Pike Place audio: peak SPL—manual gain, backup lav.",
+        "3️⃣ St. Helens view: explain truncated summit vs pre-1980 profile—use overlay.",
+        "4️⃣ Tech history lists: date each founding—Amazon 1994 ≠ Microsoft 1975.",
+        "5️⃣ Rain shadow transition eastbound memory—callback to day 22.",
+        "6️⃣ Ferry math if used: walk-on vs bike fare on screen."
       ],
       "roadRules": [
         "Oregon Historic Columbia River Highway: bicycles abundant—share narrow tunnels and curves courteously.",
@@ -1057,10 +1134,10 @@
       ]
     },
     {
-      "dayIndex": 23,
+      "dayIndex": 24,
       "videoTitle": "Portland to Seattle — Riding Through the Birthplace of American Counterculture | Day 23",
-      "hook": "Cascadia isn’t vibes—it’s basalt floods, venture capital, and volcanoes wearing off.",
-      "storyArc": "Portland cultural module (books, beer) with numbers. I-5 as spine. Seattle skyline + market as sensory overload. Volcano glimpse as geologic callback.",
+      "hook": "This highway is seasonal infrastructure—if it’s open, you’re borrowing time from winter.",
+      "storyArc": "Check passes online—show screen. Climb as temperature drop curve. Liberty Bell as rock type lesson. Winthrop as deliberate aesthetic. Camp under peaks with stated elevation.",
       "shots": [
         "Portland: Powell's Books exterior — 'City of Books'",
         "Mount Hood from the Portland skyline corridor",
@@ -1077,23 +1154,26 @@
         "The Cascades form a literal rain shadow: the west side of the mountains receives over 80 inches of rain per year; the east side (where you came from) receives under 12 inches.",
         "Washington lacks income tax; Oregon lacks sales tax—border shopping arbitrage is economic geography.",
         "Boeing’s union history shapes Seattle labor politics—current HQ spread across states complicates ‘Seattle company’ narrative.",
+        "Salish Sea naming replaced Georgia Strait/Puget Sound colonial names in some contexts—First Nations advocacy.",
+        "Washington lacks income tax; Oregon lacks sales tax—border shopping arbitrage is economic geography.",
+        "Boeing’s union history shapes Seattle labor politics—current HQ spread across states complicates ‘Seattle company’ narrative.",
         "Salish Sea naming replaced Georgia Strait/Puget Sound colonial names in some contexts—First Nations advocacy."
       ],
       "culture": "Portland’s ‘weird’ branding is municipal marketing—underlying conflicts include homelessness, police reform, and gentrification along Mississippi and Alberta corridors. Seattle’s tech wealth concentration (Amazon/Microsoft) funds arts but also housing displacement—King County tax structure shows regressive sales tax reliance. Grunge was pre-internet local scene commodified globally—credit Black Flag lineage and Indigenous punk bands too. Mount St. Helens landscape is National Volcanic Monument—interpret 1980 as forestry and fisheries catastrophe, not only adventure tourism.",
       "talkingPoints": [
-        "St. Helens energy release vs Hiroshima analog—use USGS-approved comparison or skip.",
-        "Pike Place continuity since 1907—fact.",
-        "Portland brewery per capita—define city limits.",
-        "Grunge as economic history—not costume."
+        "North Cascade glacier count vs Alps comparison—careful with units.",
+        "Winthrop redesign—tourism economics.",
+        "East-west cultural split—one balanced sentence.",
+        "Motorcycle season touring—tire temp in shade."
       ],
       "cta": "Seattle, Portland, or Vancouver — best Pacific Northwest city? Fight it out in the comments.",
       "fieldGuide": [
-        "1️⃣ Urban riding Portland/Seattle: track stand vs foot down—choose safety over cool.",
-        "2️⃣ Pike Place audio: peak SPL—manual gain, backup lav.",
-        "3️⃣ St. Helens view: explain truncated summit vs pre-1980 profile—use overlay.",
-        "4️⃣ Tech history lists: date each founding—Amazon 1994 ≠ Microsoft 1975.",
-        "5️⃣ Rain shadow transition eastbound memory—callback to day 22.",
-        "6️⃣ Ferry math if used: walk-on vs bike fare on screen."
+        "1️⃣ SR-20 opening dates: screenshot WSDOT; snow walls beside lane mean meltwater + debris.",
+        "2️⃣ Washington Pass: ice patches in shade—tire compound matters.",
+        "3️⃣ Avalanche paths overhead—spring warming increases release risk; don’t stop under chutes.",
+        "4️⃣ Winthrop western theme: 1972 design decision—cite local history archive.",
+        "5️⃣ Camp elevation: note sleeping bag rating vs actual low.",
+        "6️⃣ Glacier retreat photo pair—use dated USGS if comparing."
       ],
       "roadRules": [
         "Washington: motorcycle insurance required; carry card or electronic proof.",
@@ -1105,10 +1185,10 @@
       ]
     },
     {
-      "dayIndex": 24,
+      "dayIndex": 25,
       "videoTitle": "North Cascades — America's Most Remote Highway | Day 24",
-      "hook": "This highway is seasonal infrastructure—if it’s open, you’re borrowing time from winter.",
-      "storyArc": "Check passes online—show screen. Climb as temperature drop curve. Liberty Bell as rock type lesson. Winthrop as deliberate aesthetic. Camp under peaks with stated elevation.",
+      "hook": "Eastern Washington looks empty until you read the flood scars—then every coulee tells a time machine story.",
+      "storyArc": "Plateau geometry + basalt columns. Optional dam module with scale humans. Spokane falls urban hydrology. Close: apple economy as tonnage, not postcard.",
       "shots": [
         "SR-20 east of Marblemount: the road disappearing into mountains",
         "Gorge Lake from the dam: deep glacier-blue water",
@@ -1125,23 +1205,26 @@
         "The North Cascades have been called 'the American Alps' by Ansel Adams and others — the combination of granite peaks, permanent snowfields, and deep valleys is genuinely alpine in character.",
         "North Cascades glaciers are retreating faster than global average—local photography projects document year-to-year.",
         "Liberty Bell Mountain spires are granodiorite—popular alpine climbing, not motorcycle terrain.",
+        "SR-20 connects to Sedro-Woolley logging history—timber protests of 1990s ‘spotted owl’ era reshaped towns.",
+        "North Cascades glaciers are retreating faster than global average—local photography projects document year-to-year.",
+        "Liberty Bell Mountain spires are granodiorite—popular alpine climbing, not motorcycle terrain.",
         "SR-20 connects to Sedro-Woolley logging history—timber protests of 1990s ‘spotted owl’ era reshaped towns."
       ],
       "culture": "Winthrop’s 1972 western theme rebuild was deliberate place-making after highway opening—‘authenticity’ is designed, yet Methow Valley ranching is real. North Cascades National Park is one of the least-visited contiguous US parks by road access difficulty—glacier loss is visible repeat-photography science. Eastern Washington’s political contrast with Seattle funds state-level tension over carbon pricing and fuel taxes—road maintenance politics show up as pothole gradients at county lines.",
       "talkingPoints": [
-        "North Cascade glacier count vs Alps comparison—careful with units.",
-        "Winthrop redesign—tourism economics.",
-        "East-west cultural split—one balanced sentence.",
-        "Motorcycle season touring—tire temp in shade."
+        "Scablands Bretz hypothesis—brief, victorious science arc.",
+        "Grand Coulee generation ranking—verify current world list year.",
+        "Spokane streetcar first—date check.",
+        "Bing Crosby one fact, correctly sourced."
       ],
       "cta": "What's the most spectacular mountain pass you've ever crossed? I want to see photos and stories.",
       "fieldGuide": [
-        "1️⃣ SR-20 opening dates: screenshot WSDOT; snow walls beside lane mean meltwater + debris.",
-        "2️⃣ Washington Pass: ice patches in shade—tire compound matters.",
-        "3️⃣ Avalanche paths overhead—spring warming increases release risk; don’t stop under chutes.",
-        "4️⃣ Winthrop western theme: 1972 design decision—cite local history archive.",
-        "5️⃣ Camp elevation: note sleeping bag rating vs actual low.",
-        "6️⃣ Glacier retreat photo pair—use dated USGS if comparing."
+        "1️⃣ Channeled Scablands: basalt ripples read as ‘weird fields’—use aerial only where legal.",
+        "2️⃣ Grand Coulee: low-frequency dam rumble records well—place mic off-axis to turbine whine.",
+        "3️⃣ Spokane falls downtown: mist kills lenses—carry dry microfiber in pocket, not pannier.",
+        "4️⃣ Apple blossom drift: allergies hit riders harder at 100 km/h—note if VO sounds nasal.",
+        "5️⃣ Wheat wave shots: shutter speed choice explains ‘frozen’ vs ‘flowing’ stalks.",
+        "6️⃣ Expo ’74 legacy: cite environmental theme factually—avoid uncritical greenwashing."
       ],
       "roadRules": [
         "Washington SR-20 North Cascades: seasonal closure—check WSDOT; avalanche zones mean no stopping under chutes.",
@@ -1153,10 +1236,10 @@
       ]
     },
     {
-      "dayIndex": 25,
+      "dayIndex": 26,
       "videoTitle": "Eastern Washington to Spokane — Where the West Becomes the Plateau | Day 25",
-      "hook": "Eastern Washington looks empty until you read the flood scars—then every coulee tells a time machine story.",
-      "storyArc": "Plateau geometry + basalt columns. Optional dam module with scale humans. Spokane falls urban hydrology. Close: apple economy as tonnage, not postcard.",
+      "hook": "Lewis and Clark nearly starved here—your fuel gauge doesn’t make you smarter, just luckier in era.",
+      "storyArc": "US-12 as engineering lag narrative. River parallel as sound design. Summit sign as watershed fact. Montana valley as relief.",
       "shots": [
         "Eastern WA wheat fields: golden, rolling, quiet",
         "Columbia River Basin: dramatic basalt coulees",
@@ -1173,23 +1256,26 @@
         "The Channeled Scablands of eastern Washington — the basalt plateau cut into coulees and cliffs — were created by the same Missoula Floods that carved the Columbia River Gorge. The entire region was shaped by catastrophic Ice Age floods.",
         "Washington produces ~65–70% of US apples (year-variable)—USDA NASS publishes annual totals.",
         "Scablands coulees host unique basalt cliff swallows—road bridges are nesting sites; speed for bird safety.",
+        "Spokane County votes increasingly purple—eastern WA is not politically uniform.",
+        "Washington produces ~65–70% of US apples (year-variable)—USDA NASS publishes annual totals.",
+        "Scablands coulees host unique basalt cliff swallows—road bridges are nesting sites; speed for bird safety.",
         "Spokane County votes increasingly purple—eastern WA is not politically uniform."
       ],
       "culture": "Spokane’s Expo ’74 rebranded a rail-yard city into riverfront parkland—environmental fair as urban renewal template predates ‘greenwashing’ vocabulary. Grand Coulee Dam symbolizes New Deal hydropower and Colville Confederated Tribes’ relocation impacts—fishing rights litigation continues decades. Channeled Scablands tourism teaches Bretz flood story—local wheat farming is export economy tied to Columbia Snake River System barges. Bing Crosby’s Spokane childhood is nostalgia industry—also note Salish-speaking peoples’ long presence.",
       "talkingPoints": [
-        "Scablands Bretz hypothesis—brief, victorious science arc.",
-        "Grand Coulee generation ranking—verify current world list year.",
-        "Spokane streetcar first—date check.",
-        "Bing Crosby one fact, correctly sourced."
+        "Journal quote on colt supper—date and context.",
+        "Nez Perce War geography—accuracy over drama.",
+        "Appaloosa genetics—one clean fact.",
+        "Wilderness access ethics—no drone in wilderness."
       ],
       "cta": "What city surprised you the most — the one you expected nothing from and got everything? Tell me.",
       "fieldGuide": [
-        "1️⃣ Channeled Scablands: basalt ripples read as ‘weird fields’—use aerial only where legal.",
-        "2️⃣ Grand Coulee: low-frequency dam rumble records well—place mic off-axis to turbine whine.",
-        "3️⃣ Spokane falls downtown: mist kills lenses—carry dry microfiber in pocket, not pannier.",
-        "4️⃣ Apple blossom drift: allergies hit riders harder at 100 km/h—note if VO sounds nasal.",
-        "5️⃣ Wheat wave shots: shutter speed choice explains ‘frozen’ vs ‘flowing’ stalks.",
-        "6️⃣ Expo ’74 legacy: cite environmental theme factually—avoid uncritical greenwashing."
+        "1️⃣ Lochsa corridor: wildlife dusk peaks—deer kinematics differ from elk.",
+        "2️⃣ Lolo Pass Continental Divide: water drop experiment ethical? Use map instead to avoid litter.",
+        "3️⃣ Nez Perce history: pronounce carefully; cite 1877 retreat mileage if quoted.",
+        "4️⃣ Pavement history 1962: last paved—use as infrastructure timeline, not brag.",
+        "5️⃣ River audio: stereo pair if possible—rushing water masks bike issues in post.",
+        "6️⃣ Night camp bear protocol—Utah/Idaho/Montana differences one sentence."
       ],
       "roadRules": [
         "Washington SR-20 to eastern WA: deer migration in fall; spring irrigation on US-2/US-97 corridors sprays road.",
@@ -1201,10 +1287,10 @@
       ]
     },
     {
-      "dayIndex": 26,
+      "dayIndex": 27,
       "videoTitle": "Lolo Pass — Riding the Road Lewis & Clark Walked | Day 26",
-      "hook": "Lewis and Clark nearly starved here—your fuel gauge doesn’t make you smarter, just luckier in era.",
-      "storyArc": "US-12 as engineering lag narrative. River parallel as sound design. Summit sign as watershed fact. Montana valley as relief.",
+      "hook": "Yellowstone’s ground breathes—your seismometer is storytelling discipline, not clickbait.",
+      "storyArc": "Big sky metrics. Bison encounter as safety protocol episode. Supervolcano explained without apocalypse trailer voice. Park entrance anticipation with rules screengrab.",
       "shots": [
         "US-12 entering Idaho: Clearwater River gorge begins",
         "Lochsa River white water alongside the road",
@@ -1221,23 +1307,26 @@
         "The Lochsa River is one of the premier whitewater rivers in the United States — its Selway-Bitterroot Wilderness section is accessible only on foot or by raft and is one of the most pristine river systems in North America.",
         "US-12 paving completed 1962—last major US route paved, a metric of mid-century infrastructure timing.",
         "Clearwater National Forest overlaps wild & scenic rivers—motorized travel restricted in river corridors.",
+        "Montana’s stream access law (public use of rivers) is litigated often—don’t camp on private bed without research.",
+        "US-12 paving completed 1962—last major US route paved, a metric of mid-century infrastructure timing.",
+        "Clearwater National Forest overlaps wild & scenic rivers—motorized travel restricted in river corridors.",
         "Montana’s stream access law (public use of rivers) is litigated often—don’t camp on private bed without research."
       ],
       "culture": "Nez Perce National Historic Trail commemorates 1877 war and flight—treat as sovereign military history, not cowboy entertainment. Lochsa River corridor is traditional Nez Perce homeland—fishing and treaty rights are live law. Lewis & Clark starvation at Lolo is documented in journals—respect as survival story, not joke about ‘colt supper.’ Appaloosa horse breeding is Nez Perce cultural technology exported globally—credit accurately.",
       "talkingPoints": [
-        "Journal quote on colt supper—date and context.",
-        "Nez Perce War geography—accuracy over drama.",
-        "Appaloosa genetics—one clean fact.",
-        "Wilderness access ethics—no drone in wilderness."
+        "Bison near-extinction arithmetic—population trough and recovery.",
+        "Magma chamber imaging—seismic tomography one-liner.",
+        "A River Runs Through It—film vs book vs river.",
+        "Montana demographic change—cite census decade."
       ],
       "cta": "What's the most historically significant road or trail you've traveled? Tell me the history you learned.",
       "fieldGuide": [
-        "1️⃣ Lochsa corridor: wildlife dusk peaks—deer kinematics differ from elk.",
-        "2️⃣ Lolo Pass Continental Divide: water drop experiment ethical? Use map instead to avoid litter.",
-        "3️⃣ Nez Perce history: pronounce carefully; cite 1877 retreat mileage if quoted.",
-        "4️⃣ Pavement history 1962: last paved—use as infrastructure timeline, not brag.",
-        "5️⃣ River audio: stereo pair if possible—rushing water masks bike issues in post.",
-        "6️⃣ Night camp bear protocol—Utah/Idaho/Montana differences one sentence."
+        "1️⃣ Bison jam: engine off, stay on bike unless charged—every year someone gets gored for a reel.",
+        "2️⃣ Supervolcano: avoid ‘due’ without timeframe—USGS prefers recurrence intervals with huge error bars.",
+        "3️⃣ Gallatin corridor wind: open ranch gates blow shut—mind ditches.",
+        "4️⃣ Fly-fishing iconography: don’t fake casts—permission + skill.",
+        "5️⃣ Altitude fueling: note any high-idle hang—carb jetting teaching moment.",
+        "6️⃣ Grizzly country: carry spray where legal; say where you stowed it—model behavior."
       ],
       "roadRules": [
         "Idaho: motorcycle endorsement required; helmet required for riders under 18; adults optional but eye protection recommended.",
@@ -1249,10 +1338,10 @@
       ]
     },
     {
-      "dayIndex": 27,
+      "dayIndex": 28,
       "videoTitle": "Into Yellowstone Country — The Volcano Beneath Montana | Day 27",
-      "hook": "Yellowstone’s ground breathes—your seismometer is storytelling discipline, not clickbait.",
-      "storyArc": "Big sky metrics. Bison encounter as safety protocol episode. Supervolcano explained without apocalypse trailer voice. Park entrance anticipation with rules screengrab.",
+      "hook": "Half the planet’s geysers sit here—treat thermal ground like live ordnance.",
+      "storyArc": "Geothermal act structure: predictability (Old Faithful), chaos (steam fields), color science (Prismatic). Wildlife act with lens length ethics. Canyon module as erosion math.",
       "shots": [
         "Bitterroot Valley south: mountains flanking a broad ranching valley",
         "Montana ranch gates and property signs: Big Sky identity",
@@ -1269,23 +1358,26 @@
         "Montana had no daytime speed limit from 1995 to 1999 — during that period the law required only 'reasonable and prudent' speed. It was the only state in the modern era to have no numerical speed limit.",
         "Yellowstone supervolcano recurrence intervals are not ‘due’ like a train schedule—USGS emphasizes non-predictable statistics.",
         "Bison genetics: Yellowstone herd is one of few continuously wild lineages—hybridization with cattle is management concern.",
+        "Grizzly delisting debates tie Endangered Species Act to state hunting politics—check current federal status when filming.",
+        "Yellowstone supervolcano recurrence intervals are not ‘due’ like a train schedule—USGS emphasizes non-predictable statistics.",
+        "Bison genetics: Yellowstone herd is one of few continuously wild lineages—hybridization with cattle is management concern.",
         "Grizzly delisting debates tie Endangered Species Act to state hunting politics—check current federal status when filming."
       ],
       "culture": "Gallatin Valley gentrification pits longtime ranchers against tech remote workers—housing costs exploded post-2020. A River Runs Through It mythologizes fly fishing while eliding Indigenous fishing rights and dam impacts. Yellowstone bison herd management involves tribal hunting rights outside park—politics of brucellosis and cattle industry lobbying are documentary-worthy. Montana’s libertarian branding conflicts with heavy federal land share—public land is who actually owns ‘Big Sky.’",
       "talkingPoints": [
-        "Bison near-extinction arithmetic—population trough and recovery.",
-        "Magma chamber imaging—seismic tomography one-liner.",
-        "A River Runs Through It—film vs book vs river.",
-        "Montana demographic change—cite census decade."
+        "Geyser plumbing basics—reservoir, constriction, steam flash.",
+        "Thermophile pigments—one biochemistry sentence.",
+        "Caldera inflation/deflation—GPS data mention.",
+        "1872 park idea—global policy legacy."
       ],
       "cta": "If you could spend one week anywhere in Montana, where would it be? I'm taking suggestions for future trips.",
       "fieldGuide": [
-        "1️⃣ Bison jam: engine off, stay on bike unless charged—every year someone gets gored for a reel.",
-        "2️⃣ Supervolcano: avoid ‘due’ without timeframe—USGS prefers recurrence intervals with huge error bars.",
-        "3️⃣ Gallatin corridor wind: open ranch gates blow shut—mind ditches.",
-        "4️⃣ Fly-fishing iconography: don’t fake casts—permission + skill.",
-        "5️⃣ Altitude fueling: note any high-idle hang—carb jetting teaching moment.",
-        "6️⃣ Grizzly country: carry spray where legal; say where you stowed it—model behavior."
+        "1️⃣ Geyser basins: stay on boardwalk—thin crust breaks kill people; film the warning signs.",
+        "2️⃣ Old Faithful: eruption window posted—show the estimate board, teach uncertainty.",
+        "3️⃣ Grand Prismatic overlook vs deck—temperature bacteria color zones need both scales.",
+        "4️⃣ Wildlife distance NPS rules: 100 yards bison, 25 yards elk—quote current year.",
+        "5️⃣ Hayden Valley traffic: plan pullouts early; overheating bikes happen in jam.",
+        "6️⃣ Hydrogen sulfide low areas: if you feel headache, move upwind—don’t tough-guy it."
       ],
       "roadRules": [
         "Montana: insurance proof required; motorcycle passengers need foot pegs and seat per 61-8-358.",
@@ -1297,10 +1389,10 @@
       ]
     },
     {
-      "dayIndex": 28,
+      "dayIndex": 29,
       "videoTitle": "Inside Yellowstone — Old Faithful, Grand Prismatic, and Why This Park Is Unlike Any Other | Day 28",
-      "hook": "Half the planet’s geysers sit here—treat thermal ground like live ordnance.",
-      "storyArc": "Geothermal act structure: predictability (Old Faithful), chaos (steam fields), color science (Prismatic). Wildlife act with lens length ethics. Canyon module as erosion math.",
+      "hook": "Highest paved road in the Lower 48 is not a trophy—it’s a weather system you ride through.",
+      "storyArc": "Route choice honesty (Cooke vs Chief Joseph). Climb as temperature + pressure overlay. Plateau as tundra silence. Descent as relief + fatigue. Powell night as logistics.",
       "shots": [
         "Old Faithful eruption: the full arc from build-up to peak",
         "Grand Prismatic Spring from the overlook: color bands — blue, green, yellow, orange, red",
@@ -1317,23 +1409,26 @@
         "Yellowstone was established in 1872 as the world's first national park — the concept of preserving wilderness for public enjoyment rather than private exploitation was genuinely novel and was watched with skepticism globally.",
         "Yellowstone sits on one of world’s largest active volcanic systems—ground deformation measured by GPS networks.",
         "Wolf reintroduction (1995) changed trophic cascades—elk behavior and willow recovery studied extensively.",
+        "Geyser gazers subculture tracks eruptions—citizen science feeds geology.",
+        "Yellowstone sits on one of world’s largest active volcanic systems—ground deformation measured by GPS networks.",
+        "Wolf reintroduction (1995) changed trophic cascades—elk behavior and willow recovery studied extensively.",
         "Geyser gazers subculture tracks eruptions—citizen science feeds geology."
       ],
       "culture": "Yellowstone was world’s first national park (1872)—idea exported globally but also displaced Shoshone, Bannock, and other users from seasonal hunting. Old Faithful timing variance ties to earthquake energy and underground plumbing changes—science updates yearly. Grand Prismatic colors are microbial mats—‘living paint’ is thermophile ecology, not mineral paint. Park visitation overcrowding triggers reservation systems—democracy of access vs carrying capacity is policy drama.",
       "talkingPoints": [
-        "Geyser plumbing basics—reservoir, constriction, steam flash.",
-        "Thermophile pigments—one biochemistry sentence.",
-        "Caldera inflation/deflation—GPS data mention.",
-        "1872 park idea—global policy legacy."
+        "Opening window variance—snowpack year dependency.",
+        "Tundra growth rate mm/yr—cite tundra ecology text.",
+        "Red Lodge mining immigrant layers—specific groups.",
+        "Navigation myth-bust Google vs US-212."
       ],
       "cta": "What would you most want to see in Yellowstone — geysers, wildlife, or the canyon? Vote below.",
       "fieldGuide": [
-        "1️⃣ Geyser basins: stay on boardwalk—thin crust breaks kill people; film the warning signs.",
-        "2️⃣ Old Faithful: eruption window posted—show the estimate board, teach uncertainty.",
-        "3️⃣ Grand Prismatic overlook vs deck—temperature bacteria color zones need both scales.",
-        "4️⃣ Wildlife distance NPS rules: 100 yards bison, 25 yards elk—quote current year.",
-        "5️⃣ Hayden Valley traffic: plan pullouts early; overheating bikes happen in jam.",
-        "6️⃣ Hydrogen sulfide low areas: if you feel headache, move upwind—don’t tough-guy it."
+        "1️⃣ Beartooth snow in June: ice in shade—ride tires cold first corners slow.",
+        "2️⃣ 10,947 ft: fuel injection altitude trim OK; carbs may need pilot tweak—log symptoms.",
+        "3️⃣ Kuralt quote: verify wording source—documentary standard.",
+        "4️⃣ Red Lodge descent: brake cooling stops—smell is a sensor.",
+        "5️⃣ Wyoming wind after: crosswind transition day—gear lean visible to teach.",
+        "6️⃣ Oxygen saturation optional: pulse ox on camera if you own one—otherwise skip gimmick."
       ],
       "roadRules": [
         "Yellowstone NP: federal motor carrier and traffic codes; DUI is federal court possible—don’t drink and ride in park.",
@@ -1345,10 +1440,10 @@
       ]
     },
     {
-      "dayIndex": 29,
+      "dayIndex": 30,
       "videoTitle": "Beartooth Highway to Powell — Charles Kuralt’s Most Beautiful Drive | Day 29",
-      "hook": "Highest paved road in the Lower 48 is not a trophy—it’s a weather system you ride through.",
-      "storyArc": "Route choice honesty (Cooke vs Chief Joseph). Climb as temperature + pressure overlay. Plateau as tundra silence. Descent as relief + fatigue. Powell night as logistics.",
+      "hook": "Wyoming’s emptiness is full of wind turbines, coal trains, and votes—film the infrastructure, not the postcard.",
+      "storyArc": "Plains as renewable vs fossil tableau. Women’s suffrage first—political science beat. Gillette as work town portrait without poverty tourism. Close: Black Hills approach foreshadow.",
       "shots": [
         "The Beartooth approach: gradual climb, then sudden exposure",
         "Top-of-Beartooth plateau: snowfields in June, tundra, no trees",
@@ -1365,23 +1460,26 @@
         "Red Lodge, Montana was a coal mining town with a significant immigrant population — its Heritage Festival celebrates Scandinavian, Finnish, German, Italian, Scottish, and other traditions from its mining era.",
         "Beartooth tops ~10,947 ft—alpine tundra plants grow mm/year; tire tracks off-road damage lasts decades.",
         "Chief Joseph Scenic Byway (WY-296) is alternate to Beartooth—different geology, still stunning.",
+        "Cooke City sits trapped in winter snow—snowmobile economy is survival infrastructure.",
+        "Beartooth tops ~10,947 ft—alpine tundra plants grow mm/year; tire tracks off-road damage lasts decades.",
+        "Chief Joseph Scenic Byway (WY-296) is alternate to Beartooth—different geology, still stunning.",
         "Cooke City sits trapped in winter snow—snowmobile economy is survival infrastructure."
       ],
       "culture": "Beartooth Highway is Charles Kuralt media legacy plus Civilian Conservation Corps history—scenic road as federal project. Crow Nation lands lie east of Yellowstone; treaty boundaries and hunting rights differ from NPS rules. Red Lodge coal and immigrant labor built town festivals—Scandinavian threads are documented heritage, not costume only. Powell is Bighorn Basin agriculture and energy corridor—‘empty Wyoming’ is working infrastructure.",
       "talkingPoints": [
-        "Opening window variance—snowpack year dependency.",
-        "Tundra growth rate mm/yr—cite tundra ecology text.",
-        "Red Lodge mining immigrant layers—specific groups.",
-        "Navigation myth-bust Google vs US-212."
+        "Powder River Basin tonnage—year-stamped stat.",
+        "Wind potential ranking—EIA or NREL citation.",
+        "First female jury—Laramie 1870 fact check.",
+        "Riding technique: countersteer in gusts basics."
       ],
       "cta": "What's the highest elevation you've ever been on a vehicle — car, motorcycle, anything? Tell me the number.",
       "fieldGuide": [
-        "1️⃣ Beartooth snow in June: ice in shade—ride tires cold first corners slow.",
-        "2️⃣ 10,947 ft: fuel injection altitude trim OK; carbs may need pilot tweak—log symptoms.",
-        "3️⃣ Kuralt quote: verify wording source—documentary standard.",
-        "4️⃣ Red Lodge descent: brake cooling stops—smell is a sensor.",
-        "5️⃣ Wyoming wind after: crosswind transition day—gear lean visible to teach.",
-        "6️⃣ Oxygen saturation optional: pulse ox on camera if you own one—otherwise skip gimmick."
+        "1️⃣ Crosswind sail area: panniers high—consider body lean demonstration at safe speed only.",
+        "2️⃣ Wind turbine rows: turbulence behind rotors—don’t linger parallel.",
+        "3️⃣ Coal trains: draft suck surprises—pass with margin.",
+        "4️⃣ Gillette: ask before filming industrial sites—corporate security culture.",
+        "5️⃣ Hydration on windy cool days: thirst lags—timer-based sips.",
+        "6️⃣ Dust devils: steer through base, not fight top—stability physics."
       ],
       "roadRules": [
         "Wyoming / Montana US-212 Beartooth: seasonal closure—snow walls in June; black ice mornings.",
@@ -1393,10 +1491,10 @@
       ]
     },
     {
-      "dayIndex": 30,
+      "dayIndex": 31,
       "videoTitle": "Powell to Gillette — Crossing Wyoming’s Wind and Coal Country | Day 30",
-      "hook": "Wyoming’s emptiness is full of wind turbines, coal trains, and votes—film the infrastructure, not the postcard.",
-      "storyArc": "Plains as renewable vs fossil tableau. Women’s suffrage first—political science beat. Gillette as work town portrait without poverty tourism. Close: Black Hills approach foreshadow.",
+      "hook": "A governor built this road to refuse a sculpture—now both exist. Hold two truths without flattening either.",
+      "storyArc": "Granite spires geology. Tunnel sequence as technical motorcycle puzzle. Rushmore as contested monument—facts + Supreme Court case. Custer bison as traffic hazard training.",
       "shots": [
         "Wyoming plains from the highway: horizon in every direction, no hills",
         "Wind farm: hundreds of turbines — Wyoming has the greatest wind energy potential in the US",
@@ -1412,23 +1510,26 @@
         "The first all-female jury in US history sat in Laramie, Wyoming in 1870 — one year after women were given the vote in the territory.",
         "Powder River Basin coal powers much of US grid historically—plant retirements shift economics you’ll see in towns.",
         "Wyoming exports wind electricity to Colorado markets—grid interconnect politics.",
+        "Cowboy State nickname masks Indigenous nations (Eastern Shoshone, Northern Arapaho on Wind River) with complex jurisdiction.",
+        "Powder River Basin coal powers much of US grid historically—plant retirements shift economics you’ll see in towns.",
+        "Wyoming exports wind electricity to Colorado markets—grid interconnect politics.",
         "Cowboy State nickname masks Indigenous nations (Eastern Shoshone, Northern Arapaho on Wind River) with complex jurisdiction."
       ],
       "culture": "Wyoming granted women’s suffrage in 1869 as territory to attract settlers and assert population for statehood—political strategy intertwined with justice. Gillette ‘Energy Capital’ branding faces coal decline and pivot to wind—same landowners often lease both. First female jury (Laramie 1870) is statute milestone—tell with names and court records if possible. Wind politics pit neighbor against neighbor on sightlines—documentary fairness shows lease checks vs view loss.",
       "talkingPoints": [
-        "Powder River Basin tonnage—year-stamped stat.",
-        "Wind potential ranking—EIA or NREL citation.",
-        "First female jury—Laramie 1870 fact check.",
-        "Riding technique: countersteer in gusts basics."
+        "Tunnel dimensions—narrowest height/width on screen.",
+        "Norbeck vs Borglum politics—dates.",
+        "1980 ruling + unclaimed funds—explain Sioux position.",
+        "Herd management biology—carrying capacity."
       ],
       "cta": "What's the windiest riding condition you've experienced? How did you handle it? Share your technique.",
       "fieldGuide": [
-        "1️⃣ Crosswind sail area: panniers high—consider body lean demonstration at safe speed only.",
-        "2️⃣ Wind turbine rows: turbulence behind rotors—don’t linger parallel.",
-        "3️⃣ Coal trains: draft suck surprises—pass with margin.",
-        "4️⃣ Gillette: ask before filming industrial sites—corporate security culture.",
-        "5️⃣ Hydration on windy cool days: thirst lags—timer-based sips.",
-        "6️⃣ Dust devils: steer through base, not fight top—stability physics."
+        "1️⃣ Needles tunnels: measure bar width + bags; walk through first if uncertain.",
+        "2️⃣ Mirror fold technique: practice before camera rolls—efficiency, not panic.",
+        "3️⃣ Black Hills sacred land: Rushmore photography—context Lakota claims + unclaimed judgment fund.",
+        "4️⃣ Bison in park: rut season distance larger—NPS updates seasonally.",
+        "5️⃣ Iron Mountain Road pigtail bridges: oncoming sight lines—horn protocol.",
+        "6️⃣ Camp pine duff: stake holding power—test pull before dark."
       ],
       "roadRules": [
         "Wyoming: high wind areas post wind warnings—I-25/I-80 corridors; semi blow-overs happen—motorcycles should exit.",
@@ -1440,10 +1541,10 @@
       ]
     },
     {
-      "dayIndex": 31,
+      "dayIndex": 32,
       "videoTitle": "Needles Highway — The Most Dramatic 14 Miles in the Black Hills | Day 31",
-      "hook": "A governor built this road to refuse a sculpture—now both exist. Hold two truths without flattening either.",
-      "storyArc": "Granite spires geology. Tunnel sequence as technical motorcycle puzzle. Rushmore as contested monument—facts + Supreme Court case. Custer bison as traffic hazard training.",
+      "hook": "Flat miles are cognitive experiment—boredom is data; don’t cut it all out.",
+      "storyArc": "Missouri crossing hydrology. Minnesota limnology shout. Rochester as company town medicine. Mental game as honest VO with timestamps.",
       "shots": [
         "Gillette exit: last view of the WY plains before the Black Hills",
         "Black Hills granite spires beginning to appear",
@@ -1460,23 +1561,26 @@
         "Custer State Park maintains one of the largest publicly owned bison herds in the world — approximately 1,400 animals roam freely across the park's 71,000 acres.",
         "Needles Highway narrowest tunnel 8'4\" wide—Harley baggers scrape; measure mirrors.",
         "Crazy Horse Memorial is private nonprofit—not federal NPS; fundraising controversies documented.",
+        "1874 Custer expedition confirmed gold in Hills—treaty violation under 1868 Fort Laramie treaty text.",
+        "Needles Highway narrowest tunnel 8'4\" wide—Harley baggers scrape; measure mirrors.",
+        "Crazy Horse Memorial is private nonprofit—not federal NPS; fundraising controversies documented.",
         "1874 Custer expedition confirmed gold in Hills—treaty violation under 1868 Fort Laramie treaty text."
       ],
       "culture": "Black Hills are sacred Pahá Sápa to Lakota—Mount Rushmore’s sculpture on stolen treaty land is why Sioux Nations refused settlement funds. Unclaimed judgment account (1980 Supreme Court) is still uncollected by choice—sovereignty statement, not bookkeeping error. Custer State Park bison herd management includes auction sales—ranching meets conservation tourism. Governor Norbeck opposed Rushmore carving—historic preservation vs monument boosterism is old debate.",
       "talkingPoints": [
-        "Tunnel dimensions—narrowest height/width on screen.",
-        "Norbeck vs Borglum politics—dates.",
-        "1980 ruling + unclaimed funds—explain Sioux position.",
-        "Herd management biology—carrying capacity."
+        "Missouri vs Mississippi length—source USGS.",
+        "Mayo tornado origin—1863 date check.",
+        "Shoreline miles comparison—define measurement.",
+        "Lewis & Clark Chamberlain quote—verify wording."
       ],
       "cta": "What do you think the right outcome for the Black Hills dispute is? Tell me honestly — I'll engage with every reply.",
       "fieldGuide": [
-        "1️⃣ Needles tunnels: measure bar width + bags; walk through first if uncertain.",
-        "2️⃣ Mirror fold technique: practice before camera rolls—efficiency, not panic.",
-        "3️⃣ Black Hills sacred land: Rushmore photography—context Lakota claims + unclaimed judgment fund.",
-        "4️⃣ Bison in park: rut season distance larger—NPS updates seasonally.",
-        "5️⃣ Iron Mountain Road pigtail bridges: oncoming sight lines—horn protocol.",
-        "6️⃣ Camp pine duff: stake holding power—test pull before dark."
+        "1️⃣ 600 km slab: vision narrows with fatigue—20-minute micro stops beat heroic nonstop.",
+        "2️⃣ Missouri bridge: expansion joints snap steering—loose grip, neutral throttle.",
+        "3️⃣ Minnesota lake glare: polarizer + helmet tint stacking—watch exposure.",
+        "4️⃣ Mayo campus: filming exteriors OK; patients deserve privacy—no ER B-roll.",
+        "5️⃣ Odometer storytelling: show trip total—continuity for series viewers.",
+        "6️⃣ Plains audio: constant wind; plan music bed or heavy VO processing."
       ],
       "roadRules": [
         "South Dakota: helmet required for riders/passengers under 18; adults optional—eye protection still smart law-wise.",
@@ -1488,10 +1592,10 @@
       ]
     },
     {
-      "dayIndex": 32,
+      "dayIndex": 33,
       "videoTitle": "600 km Across the Great Plains — Oacoma to Rochester | Day 32",
-      "hook": "Flat miles are cognitive experiment—boredom is data; don’t cut it all out.",
-      "storyArc": "Missouri crossing hydrology. Minnesota limnology shout. Rochester as company town medicine. Mental game as honest VO with timestamps.",
+      "hook": "Glaciers missed this pocket—your suspension feels it before your brain names it.",
+      "storyArc": "Driftless as unglaciated island. Dairy landscape as economy. Town name etymology. Great Lakes preview as bathymetry teaser.",
       "shots": [
         "Missouri River crossing near Oacoma: massive, wide, brown water",
         "'Welcome to Minnesota — Land of 10,000 Lakes' sign",
@@ -1508,23 +1612,26 @@
         "The Oacoma/Chamberlain area on the Missouri River was called 'the most dangerous and difficult' part of the entire Corps of Discovery journey by Captain William Clark in 1804 — the current, the weather, and the riverbed made it the only part that nearly stopped them.",
         "Missouri River is longest in North America—headwaters in Montana, confluence with Mississippi north of St. Louis.",
         "Minnesota lake count definitions vary (10,000 is marketing rounded)—DNR uses size thresholds.",
+        "Rochester’s economy is Mayo-dependent—property tax base and school funding follow hospital cycles.",
+        "Missouri River is longest in North America—headwaters in Montana, confluence with Mississippi north of St. Louis.",
+        "Minnesota lake count definitions vary (10,000 is marketing rounded)—DNR uses size thresholds.",
         "Rochester’s economy is Mayo-dependent—property tax base and school funding follow hospital cycles."
       ],
       "culture": "Mayo Clinic’s global medical tourism reshapes Rochester demography—interpreters on staff for dozens of languages. Missouri River as Lewis & Clark spine contrasts with dam-altered modern channel—Indigenous displacement along river is long arc. Great Plains ‘flyover’ narrative erases Hidatsa, Mandan, Lakota histories of astronomy and agriculture—brief land acknowledgment beats ironic drone shot. Oacoma/Chamberlain bridges include tribal monument art—stop respectfully.",
       "talkingPoints": [
-        "Missouri vs Mississippi length—source USGS.",
-        "Mayo tornado origin—1863 date check.",
-        "Shoreline miles comparison—define measurement.",
-        "Lewis & Clark Chamberlain quote—verify wording."
+        "Last glacial maximum split—simple map.",
+        "Cheese medal claim—define competition.",
+        "Wisconsin Idea—1904, one sentence.",
+        "Union history—optional labor beat, cited."
       ],
       "cta": "What's the longest single riding or driving day you've ever done? Distance and hours — tell me everything.",
       "fieldGuide": [
-        "1️⃣ 600 km slab: vision narrows with fatigue—20-minute micro stops beat heroic nonstop.",
-        "2️⃣ Missouri bridge: expansion joints snap steering—loose grip, neutral throttle.",
-        "3️⃣ Minnesota lake glare: polarizer + helmet tint stacking—watch exposure.",
-        "4️⃣ Mayo campus: filming exteriors OK; patients deserve privacy—no ER B-roll.",
-        "5️⃣ Odometer storytelling: show trip total—continuity for series viewers.",
-        "6️⃣ Plains audio: constant wind; plan music bed or heavy VO processing."
+        "1️⃣ Driftless hills: gravel on blind corners—county maintenance varies weekly.",
+        "2️⃣ Dairy air: flies in July—visor protocol.",
+        "3️⃣ Cheese stats: cite USDA or state ag year—avoid round ‘25%’ without year.",
+        "4️⃣ Oconomowoc spelling: on-screen graphic—payoff joke lands only if accurate.",
+        "5️⃣ Lake effect microclimate: evening wind shift on water—tent orientation.",
+        "6️⃣ Milwaukee beer history: one brand date, not a crawl."
       ],
       "roadRules": [
         "South Dakota / Minnesota: helmet laws differ—MN requires helmet for learners under certain ages and all under 18; adult MN helmet optional historically—verify current MN statute before riding bareheaded.",
@@ -1536,10 +1643,10 @@
       ]
     },
     {
-      "dayIndex": 33,
+      "dayIndex": 34,
       "videoTitle": "Wisconsin's Cheese, Beer, and the Driftless Zone | Day 33",
-      "hook": "Glaciers missed this pocket—your suspension feels it before your brain names it.",
-      "storyArc": "Driftless as unglaciated island. Dairy landscape as economy. Town name etymology. Great Lakes preview as bathymetry teaser.",
+      "hook": "You’re closing a loop through fresh water, inequality, and a border you now understand differently.",
+      "storyArc": "Lake Michigan scale facts. Host segment as human geography. Fruit belt agriculture climate. Port Huron crossing procedure. Ontario night as emotional restraint—no montage overdose.",
       "shots": [
         "'Welcome to Wisconsin — America's Dairyland' sign",
         "Driftless Area: rolling hills, coulees, narrow valleys — unexpected for the Midwest",
@@ -1555,23 +1662,28 @@
         "The Wisconsin Idea — established in 1904 — is the principle that the University of Wisconsin should extend its influence beyond campus to improve the state. It became the model for how American public universities were integrated into state governance and policy.",
         "Wisconsin Idea linked UW extension to county fairs and agriculture—policy innovation exported nationally.",
         "Door County cherries ≠ Driftless apples—microclimates differ; fruit belt along Lake Michigan eastern WI.",
+        "Cheese grading is USDA standardized—artisan awards (ACS) are separate from commodity cheddar blocks.",
+        "Wisconsin Idea linked UW extension to county fairs and agriculture—policy innovation exported nationally.",
+        "Door County cherries ≠ Driftless apples—microclimates differ; fruit belt along Lake Michigan eastern WI.",
         "Cheese grading is USDA standardized—artisan awards (ACS) are separate from commodity cheddar blocks."
       ],
       "culture": "Driftless Area escaped last glaciation—topography like miniature Appalachia inside Midwest; geology drives cold-water trout streams prized ecologically. Wisconsin dairy consolidates into fewer giant farms—‘America’s Dairyland’ plate is nostalgia economics. Labor history: Milwaukee brewing unions, Kohler strikes, and paper mill towns built Scandinavian and Polish migration layers. Oconomowoc Potawatomi name reflects chain lakes hydrology—suburban development pressures lake water quality politics.",
       "talkingPoints": [
-        "Last glacial maximum split—simple map.",
-        "Cheese medal claim—define competition.",
-        "Wisconsin Idea—1904, one sentence.",
-        "Union history—optional labor beat, cited."
+        "Lake Michigan all-US fact.",
+        "Indiana dune migration—cm/yr source.",
+        "Cherry production share—year-stamped.",
+        "Windsor latitude south of Chicago—verify coordinates.",
+        "Trade volume Blue Water—round to year.",
+        "Jul 4 border traffic pattern—anecdote + CBSA pattern disclaimer."
       ],
       "cta": "What's your favorite cheese and where did you first eat something that changed how you thought about food?",
       "fieldGuide": [
-        "1️⃣ Driftless hills: gravel on blind corners—county maintenance varies weekly.",
-        "2️⃣ Dairy air: flies in July—visor protocol.",
-        "3️⃣ Cheese stats: cite USDA or state ag year—avoid round ‘25%’ without year.",
-        "4️⃣ Oconomowoc spelling: on-screen graphic—payoff joke lands only if accurate.",
-        "5️⃣ Lake effect microclimate: evening wind shift on water—tent orientation.",
-        "6️⃣ Milwaukee beer history: one brand date, not a crawl."
+        "1️⃣ Third Coast: freshwater refracts differently than ocean—white balance notes.",
+        "2️⃣ Benton Harbor / St. Joseph: income disparity story—cite ACS 5-year, name year.",
+        "3️⃣ Border crossing home: have goods declaration ready—serial-import gear lists help.",
+        "4️⃣ Blue Water Bridge: commercial lane vs car—motorcycle placement ask officer hand signal.",
+        "5️⃣ Canada re-entry: metric signs return—film speedo unit switch if applicable.",
+        "6️⃣ Host lunch audio: room treatment or accept noisy documentary truth."
       ],
       "roadRules": [
         "Wisconsin: motorcycle endorsement required; helmet required for riders/passengers under 18 or with instructional permit; adults may ride without helmet if licensed >2 years—verify WI statute exceptions yearly.",
@@ -1583,10 +1695,10 @@
       ]
     },
     {
-      "dayIndex": 34,
+      "dayIndex": 35,
       "videoTitle": "The Third Coast, the Border, and the Last Night Before Home | Day 34",
-      "hook": "You’re closing a loop through fresh water, inequality, and a border you now understand differently.",
-      "storyArc": "Lake Michigan scale facts. Host segment as human geography. Fruit belt agriculture climate. Port Huron crossing procedure. Ontario night as emotional restraint—no montage overdose.",
+      "hook": "The same driveway. A different odometer. If you learned nothing measurable, you weren’t paying attention.",
+      "storyArc": "Morning departure meter. 401 as stress test. Skyline as closure geometry. Garage scene with maintenance list tease. Sit-down finale: three lessons, one regret, one metric (cost, weight lost, countries), next project hint.",
       "shots": [
         "Lake Michigan from the highway: the first sight of the inland sea — it genuinely looks oceanic",
         "Indiana Dunes (if routing through) — climbing the dune with Lake Michigan below",
@@ -1609,25 +1721,29 @@
         "Lake Michigan is only Great Lake entirely in US—still cooperatively managed with IJC for levels.",
         "Blue Water Bridge twin spans (1938 + 1997) handle massive trade—NAFTA-era truck counts shaped expansion.",
         "Windsor is south of 13 US states’ northernmost points—geography surprises audiences.",
+        "London ON nearly became Canada capital—historical counterfactual taught in Ontario schools.",
+        "Lake Michigan is only Great Lake entirely in US—still cooperatively managed with IJC for levels.",
+        "Blue Water Bridge twin spans (1938 + 1997) handle massive trade—NAFTA-era truck counts shaped expansion.",
+        "Windsor is south of 13 US states’ northernmost points—geography surprises audiences.",
         "London ON nearly became Canada capital—historical counterfactual taught in Ontario schools."
       ],
       "culture": "Lake Michigan ‘Third Coast’ has Caribbean-colored shallows on sunny days—calcium carbonate sediments and sky reflection, not tropical magic. Benton Harbor / St. Joseph twin cities show racialized wealth gap across a bridge—use American Community Survey stats with year cited, not shock imagery. Indigenous Odawa, Potawatomi, and Huron histories underlie Michigan fruit belt placenames. Canada re-entry culture shift: metric signs, bilingual packaging, and slightly different insurance fault rules (Ontario no-fault) matter practically.",
       "talkingPoints": [
-        "Lake Michigan all-US fact.",
-        "Indiana dune migration—cm/yr source.",
-        "Cherry production share—year-stamped.",
-        "Windsor latitude south of Chicago—verify coordinates.",
-        "Trade volume Blue Water—round to year.",
-        "Jul 4 border traffic pattern—anecdote + CBSA pattern disclaimer."
+        "401 volume figure—year and segment cited.",
+        "Toronto language stat—city official source.",
+        "CN Tower height history—fact check.",
+        "Tkaronto etymology—linguist-approved short form.",
+        "DR650 reliability data—personal log only, not universal claim.",
+        "What you’d change—tool and route, not ‘be braver.’"
       ],
       "cta": "If you've crossed the Canada-US border by motorcycle — tell me your crossing story. Best or worst experience. I want to know.",
       "fieldGuide": [
-        "1️⃣ Third Coast: freshwater refracts differently than ocean—white balance notes.",
-        "2️⃣ Benton Harbor / St. Joseph: income disparity story—cite ACS 5-year, name year.",
-        "3️⃣ Border crossing home: have goods declaration ready—serial-import gear lists help.",
-        "4️⃣ Blue Water Bridge: commercial lane vs car—motorcycle placement ask officer hand signal.",
-        "5️⃣ Canada re-entry: metric signs return—film speedo unit switch if applicable.",
-        "6️⃣ Host lunch audio: room treatment or accept noisy documentary truth."
+        "1️⃣ 401 merge physics: highest AADT in North America—shoulder checks are survival, not style.",
+        "2️⃣ Toronto skyline approach: smog/haze summer—PM2.5 optional on-screen if available.",
+        "3️⃣ Finale VO: write script, don’t improv—emotion needs structure to land.",
+        "4️⃣ Helmet final shot: light the face; silhouette reads as anonymous.",
+        "5️⃣ Land acknowledgment: research local nation for your actual home address—specific beats generic.",
+        "6️⃣ Credits: list music licenses and map sources—documentary hygiene builds trust."
       ],
       "roadRules": [
         "Michigan: helmet required for riders/passengers under 21; insurance required; left turn yield rules strictly enforced in urban grids.",
@@ -1639,8 +1755,8 @@
       ]
     },
     {
-      "dayIndex": 35,
-      "videoTitle": "35 Days Across America — Home. What I Learned. What Changed. | Day 35 (FINALE)",
+      "dayIndex": 36,
+      "videoTitle": "36 Days Across America — Home. What I Learned. What Changed. | Day 36 (FINALE)",
       "hook": "The same driveway. A different odometer. If you learned nothing measurable, you weren’t paying attention.",
       "storyArc": "Morning departure meter. 401 as stress test. Skyline as closure geometry. Garage scene with maintenance list tease. Sit-down finale: three lessons, one regret, one metric (cost, weight lost, countries), next project hint.",
       "shots": [
@@ -1657,6 +1773,9 @@
         "The CN Tower was the world's tallest free-standing structure from 1976 until 2007 when the Burj Khalifa surpassed it.",
         "Toronto's Indigenous name is from the Mohawk language — 'Tkaronto' means 'where there are trees standing in the water,' referring to the wooden stakes used in fish weirs near the lake.",
         "The Canadian motorcycle industry has produced some of the most important riders in history: Mike Hailwood (British-born but Canadian career), Steve Baker, and the entire adventure touring culture that grew out of the Canada-US cross-border riding tradition.",
+        "401 throughput peaks over 400k AADT near Toronto—transportation engineering textbooks use it globally.",
+        "Ontario motorcycle insurance is mandatory private market—rates vary wildly by postal code.",
+        "French language rights appear on federal packaging you’ll see day one in Ontario stores—Charter of Rights context.",
         "401 throughput peaks over 400k AADT near Toronto—transportation engineering textbooks use it globally.",
         "Ontario motorcycle insurance is mandatory private market—rates vary wildly by postal code.",
         "French language rights appear on federal packaging you’ll see day one in Ontario stores—Charter of Rights context."

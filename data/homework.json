@@ -5,7 +5,7 @@
     "lastReviewed": "2026-04-07"
   },
   "mechanics": {
-    "introduction": "Below: (1) a practical order of operations for DR650 care and learning, (2) where on the internet owners and manuals live, (3) how to find a mechanic anywhere on your loop, and (4) tools/spares that matter for this specific 35-day, heat-to-mountains route.",
+    "introduction": "Below: (1) a practical order of operations for DR650 care and learning, (2) where on the internet owners and manuals live, (3) how to find a mechanic anywhere on your loop, and (4) tools/spares that matter for this specific 36-day, heat-to-mountains route.",
     "maintenanceSequence": [
       {
         "order": 1,
@@ -96,7 +96,7 @@
       { "area": "London ON / Toronto", "hint": "Final service before storage or next tour." }
     ],
     "tripToolkit": {
-      "intro": "Tailored to: tubed dual-sport, 35 days, June–July, desert + mountains + long slabs + some dirt.",
+      "intro": "Tailored to: tubed dual-sport, 36 days, June–July, desert + mountains + long slabs + some dirt.",
       "categories": [
         {
           "name": "Tire & wheel (highest failure rate)",
