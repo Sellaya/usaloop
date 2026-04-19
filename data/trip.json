@@ -106,6 +106,11 @@
         "wayne-lawler",
         "richard-honchar",
         "mike-miller"
+      ],
+      "feesAndPasses": [
+        "No U.S. national park entrance on this day.",
+        "Canada: no outbound park fee. U.S. entry: CBP inspection has no park-style fee.",
+        "NY Thruway (I-90) / crossings: tolls apply — E-ZPass or Tolls By Mail (plate billing); Peace Bridge / Lewiston–Queenston bridge tolls vary — set up payment before trip if needed."
       ]
     },
     {
@@ -143,6 +148,10 @@
         "jay-massapequa",
         "wayne-lawler",
         "richard-honchar"
+      ],
+      "feesAndPasses": [
+        "No federal park entrance fee on routing described.",
+        "NYC / Hudson crossings (if used): many bridges/tunnels are cashless tolling to a registered plate or bill-by-mail — budget tolls; motorcycles follow posted rules per crossing."
       ]
     },
     {
@@ -174,6 +183,11 @@
         "jay-massapequa",
         "genie-cane",
         "jim-manchester-nj"
+      ],
+      "feesAndPasses": [
+        "District of Columbia: no NPS entrance fee to ride public roads past monuments (no timed NPS entry ticket required just to transit).",
+        "If you enter a specific fee-charging NPS unit as a visitor attraction, pay that site’s fee — not required for through-riding to Luray.",
+        "Virginia: no Shenandoah NP fee unless you enter the Skyline Drive corridor (fee applies at entrance stations). Your Luray routing may stay outside park gates — confirm map."
       ]
     },
     {
@@ -208,7 +222,10 @@
         "Gravel/mud on NF roads after rain"
       ],
       "planB": "Developed NF campground (fee) or Walmart parking urban last resort — not ideal.",
-      "babAlternateIds": []
+      "babAlternateIds": [],
+      "feesAndPasses": [
+        "George Washington & Jefferson National Forests: no NPS entrance fee; dispersed camping is generally free where MVUM allows — developed NF campgrounds charge site fees if you use them."
+      ]
     },
     {
       "dayIndex": 5,
@@ -251,7 +268,11 @@
         "Long day = fatigue before Bristol"
       ],
       "planB": "Paid campground or motel Bristol if weather or fatigue wins.",
-      "babAlternateIds": []
+      "babAlternateIds": [],
+      "feesAndPasses": [
+        "Blue Ridge Parkway (NPS): no entrance fee for the parkway itself; standard NPS rules apply (speed, wildlife).",
+        "Optional stops (e.g. Mabry Mill): parking may fill — no separate park ‘ticket’ beyond your time."
+      ]
     },
     {
       "dayIndex": 6,
@@ -295,7 +316,13 @@
         "Tourist traffic near Gatlinburg"
       ],
       "planB": "Paid campground Kingston / Loudon if dispersed full.",
-      "babAlternateIds": []
+      "babAlternateIds": [],
+      "feesAndPasses": [
+        "Great Smoky Mountains NP: no entrance fee, but a parking tag is required for any vehicle parked >15 minutes (2026: daily US$5, weekly US$15, annual US$40 — purchase/print via recreation.gov activity pass or in-park; display physical tag per nps.gov/grsm).",
+        "Smokies is not on the 2026 US$100 non-resident surcharge list — that applies only to the 11 parks listed on nps.gov/aboutus/nonresident-fees.htm.",
+        "Tail of the Dragon (US-129): public highway — no park entrance; obey enforcement and lane rules.",
+        "Non-U.S. citizens (2026): America the Beautiful annual pass for non-residents US$250 (digital: recreation.gov/pass) — covers standard entrance fees where accepted and waives the US$100/person non-resident surcharge at the 11 high-visitation parks when you show valid pass + photo ID (see nps.gov/aboutus/nonresident-fees.htm). U.S. resident pass remains US$80."
+      ]
     },
     {
       "dayIndex": 7,
@@ -336,7 +363,10 @@
         "Limited cell in hollows"
       ],
       "planB": "County fairground or church parking with permission — ask locally.",
-      "babAlternateIds": []
+      "babAlternateIds": [],
+      "feesAndPasses": [
+        "No major national-park entrance on this short west-TN day. Natchez Trace State Forest / USACE / WMA: follow posted day-use or camping fees if you use a fee area — many dispersed options are free if legally allowed."
+      ]
     },
     {
       "dayIndex": 8,
@@ -370,6 +400,10 @@
         "jeff-roberts-ozark",
         "brian-cooper",
         "connie-jeff-lackey"
+      ],
+      "feesAndPasses": [
+        "Hot Springs National Park (optional detour near Garland County): no entrance fee to enter the park (per NPS). Bathhouse row services are separate commercial fees if you use them.",
+        "Arkansas state highways: no park pass required for slab transit."
       ]
     },
     {
@@ -390,7 +424,11 @@
         "Fast TX highways: cattle guards, expansion joints, and bridge transitions — ease up and square the bike before hitting them leaned over."
       ],
       "planB": "",
-      "babAlternateIds": []
+      "babAlternateIds": [],
+      "feesAndPasses": [
+        "Texas: possible toll roads on some I-30/I-20 routings — TxTag / toll-by-plate; budget if your GPS uses toll lanes.",
+        "No NPS entrance on this home-stop day as written."
+      ]
     },
     {
       "dayIndex": 10,
@@ -422,7 +460,11 @@
         "Grooved pavement and metal bridge decks at highway speeds — reduce lean and avoid hard braking on seams."
       ],
       "planB": "",
-      "babAlternateIds": []
+      "babAlternateIds": [],
+      "feesAndPasses": [
+        "Texas plains / Route 66 stops: roadside attractions may charge their own small admission — optional.",
+        "No federal park entrance fee for the driving day as written."
+      ]
     },
     {
       "dayIndex": 11,
@@ -468,6 +510,10 @@
       "planB": "Motel in Amarillo or Albuquerque if weather turns.",
       "babAlternateIds": [
         "kelly-snyder"
+      ],
+      "feesAndPasses": [
+        "iOverlander / private camp pins (~US$10 tenting in your notes): pay the host/landowner; not an NPS fee.",
+        "I-40 / Amarillo: no NPS fee for driving; motel/camp is commercial pricing."
       ]
     },
     {
@@ -498,6 +544,10 @@
         "jim-wendy-conifer",
         "cc-golden",
         "travis-georgetown"
+      ],
+      "feesAndPasses": [
+        "San Juan NF / Silverton area: USFS — no NPS entrance; dispersed camping usually free where allowed — verify MVUM. Developed USFS or county sites may charge.",
+        "Colorado state highways: no park pass for through-riding."
       ]
     },
     {
@@ -525,6 +575,10 @@
       "babAlternateIds": [
         "good-adv-cortez",
         "matt-burton-seligman"
+      ],
+      "feesAndPasses": [
+        "Mexican Hat Rocks campground (private): ~US$22+ tax in your plan — reserve/confirm on their site (seasonal).",
+        "Navajo Nation / Monument Valley (if you enter tribal park): separate tribal permit/fees — not included in America the Beautiful."
       ]
     },
     {
@@ -586,6 +640,13 @@
       "babAlternateIds": [
         "matt-burton-seligman",
         "good-adv-cortez"
+      ],
+      "feesAndPasses": [
+        "Bryce Canyon NP (NPS): motorcycle 7-day entrance US$30 (cashless at park — nps.gov/brca); private vehicle US$35. Bryce is on the 2026 non-resident surcharge list — without an America the Beautiful pass, ages 16+ non-U.S. residents pay an additional US$100/person at entry (with valid non-resident annual pass, entrance + surcharge covered for passholder per NPS rules — verify ID).",
+        "Horseshoe Bend overlook (City of Page): parking fee ~US$5 motorcycle / ~US$10 private vehicle (Page, AZ — not covered by federal passes; verify current rate at visitpage.com / city site).",
+        "Antelope Canyon: Navajo Nation guided tours — commercial pricing (often US$50–100+); book slots in advance; separate from NPS.",
+        "Glen Canyon NRA (Lake Powell area): if you use NRA fee areas, Glen Canyon has its own fee schedule — America the Beautiful applies to NPS-managed standard entrance (see nps.gov/glca).",
+        "Non-U.S. citizens (2026): America the Beautiful annual pass for non-residents US$250 (digital: recreation.gov/pass) — covers standard entrance fees where accepted and waives the US$100/person non-resident surcharge at the 11 high-visitation parks when you show valid pass + photo ID (see nps.gov/aboutus/nonresident-fees.htm). U.S. resident pass remains US$80."
       ]
     },
     {
@@ -618,10 +679,14 @@
       ],
       "risks": [
         "Moab heat",
-        "Crowds — Arches timed entry rules"
+        "Crowds at Arches — arrive early; lots can temporarily close when full"
       ],
       "planB": "",
-      "babAlternateIds": []
+      "babAlternateIds": [],
+      "feesAndPasses": [
+        "Driving UT-12 toward Moab: if you enter Capitol Reef NP, pay NPS entrance (motorcycle rate on nps.gov/care) or use America the Beautiful — optional detour only.",
+        "Canyonlands / Arches not yet visited this day as written — no Arches fee until you enter."
+      ]
     },
     {
       "dayIndex": 16,
@@ -640,11 +705,11 @@
       ],
       "stops": [
         {
-          "label": "Arches NP timed entry",
+          "label": "Arches NP entrance",
           "place": "Arches National Park Entrance",
           "type": "sight",
-          "notes": "Reserve timed entry on Recreation.gov — required May 1–Oct 31. Book as soon as possible.",
-          "mapsUrl": "https://www.recreation.gov/ticket/facility/234635"
+          "notes": "Pay NPS entrance (motorcycle or vehicle rate) or use America the Beautiful. As of 2026, timed-entry reservations for Arches were discontinued — check nps.gov/arch for any parking/closure updates before you go.",
+          "mapsUrl": "https://www.nps.gov/arch/planyourvisit/hours.htm"
         },
         {
           "label": "Dead Horse Point SP",
@@ -678,13 +743,20 @@
       ],
       "risks": [
         "Moab summer heat — Arches by 7 am, off trail by 11 am",
-        "Arches timed entry sells out weeks in advance — must pre-book",
+        "Arches parking — popular trailheads fill early; carry park map offline",
         "Dehydration risk on Delicate Arch hike — carry 2 L minimum"
       ],
       "weatherNotes": "June temperatures in Moab regularly exceed 38 °C (100 °F) by midday. All outdoor activity should be done before 10–11 am or after 5 pm.",
-      "planB": "If Arches entry not available, Dead Horse Point + Canyonlands Island in the Sky is an equally spectacular full day.",
+      "planB": "If Arches is too crowded or lots are closed, Dead Horse Point + Canyonlands Island in the Sky is an equally spectacular full day.",
       "babAlternateIds": [
         "robert-vandenbroeke"
+      ],
+      "feesAndPasses": [
+        "Arches NP: motorcycle 7-day entrance US$25; private vehicle US$30 (nps.gov/arch, credit/debit at entrance). America the Beautiful covers standard entrance. 2026: timed-entry reservation for Arches was discontinued — verify current status on nps.gov/arch before travel (parking may still temporarily limit entry when lots are full).",
+        "Fiery Furnace hikes: separate permit/ranger fees if you do those activities (nps.gov/arch).",
+        "Dead Horse Point State Park (Utah state): separate from NPS — motorcycle day-use ~US$10, private vehicle ~US$20 (stateparks.utah.gov — verify 2026). Not covered by federal annual pass.",
+        "Canyonlands Island in the Sky (optional): NPS entrance fee if you enter — motorcycle rate on nps.gov/cany.",
+        "Non-U.S. citizens (2026): America the Beautiful annual pass for non-residents US$250 (digital: recreation.gov/pass) — covers standard entrance fees where accepted and waives the US$100/person non-resident surcharge at the 11 high-visitation parks when you show valid pass + photo ID (see nps.gov/aboutus/nonresident-fees.htm). U.S. resident pass remains US$80."
       ]
     },
     {
@@ -722,7 +794,11 @@
         "Soft sand on BLM spurs"
       ],
       "planB": "Paid RV park or hotel in St. George.",
-      "babAlternateIds": []
+      "babAlternateIds": [],
+      "feesAndPasses": [
+        "BLM dispersed (Sheep Bridge / Cove Wash): typically no entrance fee; follow BLM posted rules.",
+        "Zion NP (if you enter the park): Zion is on the 2026 non-resident surcharge list — motorcycle entrance fee + possible US$100/person without annual pass; check nps.gov/zion + tunnel restrictions for large vehicles."
+      ]
     },
     {
       "dayIndex": 18,
@@ -747,6 +823,10 @@
       "babAlternateIds": [
         "anais-redlands",
         "layla-sisney"
+      ],
+      "feesAndPasses": [
+        "I-15: possible toll lanes in some segments — account for toll-by-plate.",
+        "No park entrance fee for Mojave transit to Apple Valley as written."
       ]
     },
     {
@@ -804,6 +884,11 @@
         "anais-redlands",
         "darlene-morro",
         "jeff-rothman"
+      ],
+      "feesAndPasses": [
+        "Leo Carrillo State Park (CA): vehicle day-use fee required (California State Parks — 2026 pricing on parks.ca.gov; online day-use reservation recommended weekends/holidays).",
+        "PCH / Big Sur: Julia Pfeiffer Burns SP and other CA state parks charge day-use or parking fees — check parks.ca.gov for each stop.",
+        "Prewitt Ridge BLM: usually no fee; confirm BLM Los Padres info for your exact spur."
       ]
     },
     {
@@ -831,6 +916,9 @@
       "babAlternateIds": [
         "darlene-morro",
         "jeff-rothman"
+      ],
+      "feesAndPasses": [
+        "CA Hwy 1 / dispersed pin: confirm land manager (private / county / state) and any day-use or camping fee before paying or camping."
       ]
     },
     {
@@ -857,6 +945,9 @@
       "babAlternateIds": [
         "jeff-rothman",
         "jim-haines-shasta"
+      ],
+      "feesAndPasses": [
+        "Redwood National and State Parks: NPS units — no entrance fee for the federal Redwood areas (nps.gov/redw). Adjacent California state park units may charge day-use — pay if you enter those units."
       ]
     },
     {
@@ -882,6 +973,9 @@
       "babAlternateIds": [
         "lisa-blue-bend",
         "suze-riley-maupin"
+      ],
+      "feesAndPasses": [
+        "Crater Lake NP (optional detour): NPS entrance applies if you enter — motorcycle rate on nps.gov/crla; America the Beautiful accepted. Not on the 11-park US$100 surcharge list as published Jan 2026 (verify if policy updates)."
       ]
     },
     {
@@ -918,6 +1012,9 @@
         "david-kishpaugh",
         "dave-katherine-cashmere",
         "angela-east-wenatchee"
+      ],
+      "feesAndPasses": [
+        "Columbia River Gorge NSA / OR & WA state parks: some trailheads require Northwest Forest Pass or state day-use — check fs.usda.gov and Oregon/Washington park sites for the exact stop."
       ]
     },
     {
@@ -961,6 +1058,9 @@
         "ob-graham",
         "julie-lake-tapps",
         "bill-darrington"
+      ],
+      "feesAndPasses": [
+        "Seattle metro: no NPS entrance for urban riding; paid parking garages may apply downtown."
       ]
     },
     {
@@ -995,6 +1095,10 @@
         "mosko-moto",
         "jeff-carrie-bob",
         "david-rs-washougal"
+      ],
+      "feesAndPasses": [
+        "North Cascades National Park complex: no entrance fee to drive WA SR-20 (nps.gov/noca).",
+        "If you use a fee trailhead or Sno-Park in season, Washington Sno-Park permit may apply in winter — June usually not applicable."
       ]
     },
     {
@@ -1026,6 +1130,9 @@
         "randy-rathdrum",
         "betty-chewelah",
         "dave-katherine-cashmere"
+      ],
+      "feesAndPasses": [
+        "Eastern WA / Spokane: no NPS fee for routing as written."
       ]
     },
     {
@@ -1061,6 +1168,9 @@
         "dustin-patton",
         "karl-angie-stevensville",
         "phyl-corvallis-mt"
+      ],
+      "feesAndPasses": [
+        "Lolo Pass / US-12: scenic highway — no national-park entrance fee for the pass transit itself."
       ]
     },
     {
@@ -1087,6 +1197,11 @@
       "babAlternateIds": [
         "kevin-island-park",
         "daryn-engesser"
+      ],
+      "feesAndPasses": [
+        "Yellowstone NP: motorcycle 7-day entrance US$30 (nps.gov/yell). Yellowstone is on the 2026 non-resident surcharge list — without America the Beautiful, ages 16+ non-U.S. residents pay US$100/person in addition to entrance; valid America the Beautiful (including non-resident US$250 pass) covers entrance and surcharge for passholder presentation with ID per NPS.",
+        "Keep receipt — 7-day Yellowstone entrance valid for re-entry.",
+        "Non-U.S. citizens (2026): America the Beautiful annual pass for non-residents US$250 (digital: recreation.gov/pass) — covers standard entrance fees where accepted and waives the US$100/person non-resident surcharge at the 11 high-visitation parks when you show valid pass + photo ID (see nps.gov/aboutus/nonresident-fees.htm). U.S. resident pass remains US$80."
       ]
     },
     {
@@ -1119,6 +1234,10 @@
       "babAlternateIds": [
         "kevin-island-park",
         "jolene-casper"
+      ],
+      "feesAndPasses": [
+        "Yellowstone NP: same 7-day entrance window if within validity from purchase — carry pass/receipt.",
+        "Non-U.S. citizens (2026): America the Beautiful annual pass for non-residents US$250 (digital: recreation.gov/pass) — covers standard entrance fees where accepted and waives the US$100/person non-resident surcharge at the 11 high-visitation parks when you show valid pass + photo ID (see nps.gov/aboutus/nonresident-fees.htm). U.S. resident pass remains US$80."
       ]
     },
     {
@@ -1156,6 +1275,10 @@
         "daryn-engesser",
         "jolene-casper",
         "dave-van-gorkom"
+      ],
+      "feesAndPasses": [
+        "Yellowstone NP: still inside 7-day window if continuous from prior entries — confirm dates on your pass stub.",
+        "Beartooth Highway (US-212): scenic corridor — no separate ‘Beartooth pass’ beyond any NPS Yellowstone re-entry if you dip back in."
       ]
     },
     {
@@ -1180,6 +1303,9 @@
       "planB": "",
       "babAlternateIds": [
         "jolene-casper"
+      ],
+      "feesAndPasses": [
+        "Wyoming plains: no NPS fee for routing as written."
       ]
     },
     {
@@ -1206,6 +1332,11 @@
         "michelle-custer",
         "dave-van-gorkom",
         "lisa-redfield"
+      ],
+      "feesAndPasses": [
+        "Custer State Park (SD): park entrance license required for Wildlife Loop etc. — 2026: 7-day temporary license ~US$25/private vehicle or ~US$20/motorcycle (verify gfp.sd.gov/pel). Non-stop through-travel on designated US-16A through-route may be exempt — read posted rules.",
+        "Black Hills National Forest: generally no entrance fee; amenity sites may charge.",
+        "Mount Rushmore NM: parking is a private concession fee (not covered by America the Beautiful for the parking structure) — budget separately if you visit."
       ]
     },
     {
@@ -1247,6 +1378,9 @@
       "planB": "Split into two shorter days if weather or energy is poor.",
       "babAlternateIds": [
         "lisa-redfield"
+      ],
+      "feesAndPasses": [
+        "I-90 Great Plains: possible toll segments (e.g. Illinois/Iowa depending on route) — verify GPS toll settings."
       ]
     },
     {
@@ -1275,7 +1409,10 @@
       ],
       "risks": [],
       "planB": "",
-      "babAlternateIds": []
+      "babAlternateIds": [],
+      "feesAndPasses": [
+        "Upper Midwest freeways: tolls possible (e.g. Illinois Tollway if routed) — I-Pass or pay-by-plate."
+      ]
     },
     {
       "dayIndex": 35,
@@ -1323,6 +1460,11 @@
       "planB": "If John Cody Smith visit runs long or traffic is severe, skip London and stay in Sarnia/Windsor area instead.",
       "babAlternateIds": [
         "john-cody-smith"
+      ],
+      "feesAndPasses": [
+        "U.S. side: no national park entrance for I-94 day as written.",
+        "Blue Water Bridge (Port Huron → Sarnia): toll per bridge authority — check current motorcycle/car rate and payment method.",
+        "Canada (CBSA): no park fee; declare goods per CBSA rules; possible duties on purchases."
       ]
     },
     {
@@ -1343,7 +1485,11 @@
         "401 construction zones"
       ],
       "planB": "",
-      "babAlternateIds": []
+      "babAlternateIds": [],
+      "feesAndPasses": [
+        "Ontario 401: 407 ETR if used is all-electronic toll to plate — avoid or register.",
+        "Home — no park fee."
+      ]
     }
   ],
   "checklists": {

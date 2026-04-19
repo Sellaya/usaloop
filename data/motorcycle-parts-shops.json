@@ -1,0 +1,642 @@
+{
+  "meta": {
+    "title": "Motorcycle parts & dealers along this route",
+    "disclaimer": "Research snapshot for trip planning — not an endorsement. Hours, phone numbers, and brands change; call before you detour. “Authorized Suzuki” means OEM parts counter access for most DR650 wear items; exotic or aftermarket DR parts may still need mail-order.",
+    "lastReviewed": "2026-04-07",
+    "bikeFocus": "Suzuki DR650 — prioritize authorized Suzuki parts counters, dual-sport–friendly independents, and mega retailers with metric inventory."
+  },
+  "howToUse": [
+    "Use the jump links to open the corridor you are in or about to enter.",
+    "For DR650: ask for oil filter, air filter, spark plug (NGK per manual), tubes, chain/sprockets, brake pads — carry OEM or aftermarket part numbers in your phone (ProCycle, manual, or forum cheat sheet).",
+    "Independent shops without Suzuki auth may still wrench a DR; they may not stock OEM Suzuki small parts same-day.",
+    "Nationwide: suzukicycles.com/dealers is the official dealer locator if you need a backup not listed here."
+  ],
+  "regions": [
+    {
+      "id": "ontario",
+      "name": "Ontario — start & finish",
+      "routeDays": "Days 1, 35–36 · Toronto, London, 401 corridor",
+      "corridor": "Home base and last night before Toronto — best place to pre-stock spares.",
+      "shops": [
+        {
+          "name": "Powersports T.O.",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Toronto-area Suzuki dealer — OEM parts counter; good first stop for filters and fluids before the border.",
+          "city": "Toronto",
+          "region": "ON",
+          "address": "24 Nashville Ave, Toronto, ON M6M 1J1",
+          "phone": "+1-416-925-1818",
+          "url": "https://www.powersportsto.com/"
+        },
+        {
+          "name": "Inglis Cycle Center",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Authorized Suzuki — parts/service; useful if you stage a final service or pickup near London.",
+          "city": "London",
+          "region": "ON",
+          "address": "466 McCormick Blvd, London, ON N5W 4C5",
+          "phone": "+1-519-455-3840",
+          "url": "https://www.ingliscycle.com/"
+        }
+      ]
+    },
+    {
+      "id": "new-york-metro",
+      "name": "New York — Finger Lakes & NYC corridor",
+      "routeDays": "Days 2–3 · McGraw, metro NYC",
+      "corridor": "I-90 / Thruway and down toward NJ — upstate + metro options.",
+      "shops": [
+        {
+          "name": "Sport-Mann Suzuki (North Syracuse)",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Upstate Suzuki dealer — OEM parts; north of Ithaca/Finger Lakes.",
+          "city": "North Syracuse",
+          "region": "NY",
+          "address": "6225 E Taft Rd, North Syracuse, NY 13212",
+          "phone": "+1-315-458-8974",
+          "url": "https://www.google.com/maps/search/?api=1&query=6225+E+Taft+Rd+North+Syracuse+NY+13212"
+        },
+        {
+          "name": "RevZilla Brooklyn (gear & retail)",
+          "types": ["chain-retail", "showroom"],
+          "dr650Note": "Comoto/RevZilla showroom — riding gear, common consumables; not a full Suzuki OEM counter; call for in-stock tires/chains.",
+          "city": "Brooklyn",
+          "region": "NY",
+          "address": "25 Hall St Bldg I, Brooklyn, NY 11205",
+          "phone": "+1-877-792-9455",
+          "url": "https://www.revzilla.com/stores"
+        }
+      ]
+    },
+    {
+      "id": "mid-atlantic",
+      "name": "Mid-Atlantic — DC / Maryland / NoVA",
+      "routeDays": "Day 3–4 · DC, Luray approaches",
+      "corridor": "Beltway and northern Virginia — several multi-brand dealers.",
+      "shops": [
+        {
+          "name": "Coleman Powersports (Falls Church)",
+          "types": ["multi-brand-dealer", "parts-service"],
+          "dr650Note": "Large DC-area dealer group — Suzuki among many lines; parts counter for OEM.",
+          "city": "Falls Church",
+          "region": "VA",
+          "address": "435 S Washington St, Falls Church, VA 22046",
+          "phone": "+1-703-237-3400",
+          "url": "https://wherethepoweris.com/"
+        },
+        {
+          "name": "Coleman Powersports (Woodbridge)",
+          "types": ["multi-brand-dealer", "parts-service"],
+          "dr650Note": "Second Coleman location — same idea; pick whichever is closer to your routing.",
+          "city": "Woodbridge",
+          "region": "VA",
+          "address": "14105 Telegraph Rd, Woodbridge, VA 22192",
+          "phone": "+1-703-497-1500",
+          "url": "https://wherethepoweris.com/"
+        },
+        {
+          "name": "Heyser Cycle",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Maryland Suzuki inventory — useful if you hug MD vs VA.",
+          "city": "Laurel",
+          "region": "MD",
+          "address": "14445 Baltimore Ave, Laurel, MD 20707",
+          "phone": "+1-301-776-6932",
+          "url": "https://www.heysercycle.com/"
+        }
+      ]
+    },
+    {
+      "id": "virginia-appalachia",
+      "name": "Virginia & Appalachia — Roanoke, Bristol",
+      "routeDays": "Days 5–6 · Blue Ridge, BRP, Tri-Cities",
+      "corridor": "Southwest VA into TN — mountain riding days.",
+      "shops": [
+        {
+          "name": "MotoSport Roanoke",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Full-line dealer incl. Suzuki — parts before/after BRP segment.",
+          "city": "Roanoke",
+          "region": "VA",
+          "address": "5120 Peters Creek Rd NW, Roanoke, VA 24019",
+          "phone": "+1-540-366-8500",
+          "url": "https://www.motosportroanoke.com/"
+        },
+        {
+          "name": "Jim's Motorcycle Sales",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Tri-Cities TN — Suzuki OEM; near Bristol/Kingsport/Johnson City cluster.",
+          "city": "Johnson City",
+          "region": "TN",
+          "address": "1209 W Market St, Johnson City, TN 37604",
+          "phone": "+1-423-926-5561",
+          "url": "https://www.jimsmotorcyclesales.net/"
+        }
+      ]
+    },
+    {
+      "id": "tennessee-arkansas",
+      "name": "Tennessee & Arkansas — Smokies, Dragon, Memphis, Little Rock",
+      "routeDays": "Days 7–9 · Kingston, Parsons, Little Rock",
+      "corridor": "Eastern TN through western TN into Arkansas.",
+      "shops": [
+        {
+          "name": "Honda Yamaha Suzuki of Knoxville",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Near I-40 — good if you need parts around Smokies / Knoxville side trips.",
+          "city": "Knoxville",
+          "region": "TN",
+          "address": "5800 Clinton Hwy, Knoxville, TN 37912",
+          "phone": "+1-865-688-8484",
+          "url": "https://www.hondaofknoxville.com/"
+        },
+        {
+          "name": "Polaris Suzuki Yamaha of Nashville",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "If your routing touches Nashville — Suzuki OEM line.",
+          "city": "Nashville",
+          "region": "TN",
+          "address": "2609 Murfreesboro Pike, Nashville, TN 37217",
+          "phone": "+1-615-399-2991",
+          "url": "https://www.polarisofnashville.com/"
+        },
+        {
+          "name": "Bellevue Suzuki-Kawasaki (Memphis)",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Memphis-area Suzuki — aligns with Memphis–Little Rock leg.",
+          "city": "Memphis",
+          "region": "TN",
+          "address": "2319 Elvis Presley Blvd, Memphis, TN 38106",
+          "phone": "+1-901-345-1040",
+          "url": "https://www.bellevuekawasaki.com/"
+        },
+        {
+          "name": "Doug Reynolds Suzuki of Little Rock",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Dedicated Suzuki nameplate — strong OEM parts bet in central AR.",
+          "city": "Little Rock",
+          "region": "AR",
+          "address": "9800 I-30, Little Rock, AR 72209",
+          "phone": "+1-501-562-6229",
+          "url": "https://www.dougreynoldssuzuki.com/"
+        }
+      ]
+    },
+    {
+      "id": "texas",
+      "name": "Texas — DFW & Amarillo",
+      "routeDays": "Days 10–11 · Fort Worth, I-40 west",
+      "corridor": "Major metro + panhandle — several Suzuki lines and chain retail.",
+      "shops": [
+        {
+          "name": "RideNow Powersports Fort Worth North",
+          "types": ["multi-brand-dealer", "parts-service"],
+          "dr650Note": "Large inventory dealer incl. Suzuki — OEM parts counter; call ahead.",
+          "city": "Fort Worth",
+          "region": "TX",
+          "address": "10717 North Fwy Suite 101, Fort Worth, TX 76177",
+          "phone": "+1-817-886-9555",
+          "url": "https://www.ridenowfortworthnorth.com/"
+        },
+        {
+          "name": "Ft. Worth Motorsports",
+          "types": ["multi-brand-dealer", "parts-service"],
+          "dr650Note": "Suzuki among lines — alternative in DFW.",
+          "city": "Fort Worth",
+          "region": "TX",
+          "address": "5717 Hwy 121A, Fort Worth, TX 76117",
+          "phone": "+1-817-834-7185",
+          "url": "https://www.ftwmotorsports.com/"
+        },
+        {
+          "name": "Cycle Gear (Plano)",
+          "types": ["chain-retail"],
+          "dr650Note": "Comoto/Cycle Gear — tires, chains, tools, fluids; verify metric stock by phone.",
+          "city": "Plano",
+          "region": "TX",
+          "address": "2301 N Central Expy Space 182, Plano, TX 75075",
+          "phone": "+1-214-473-8044",
+          "url": "https://www.cyclegear.com/stores"
+        },
+        {
+          "name": "Lone Star Powersports — Amarillo",
+          "types": ["multi-brand-dealer", "parts-service"],
+          "dr650Note": "I-40 panhandle — Suzuki line; long slab day support.",
+          "city": "Amarillo",
+          "region": "TX",
+          "address": "4413 I-40 E, Amarillo, TX 79104",
+          "phone": "+1-806-373-3051",
+          "url": "https://www.lonestarpowersportsamarillo.com/"
+        }
+      ]
+    },
+    {
+      "id": "new-mexico-colorado",
+      "name": "New Mexico & Colorado — Albuquerque, Four Corners, San Juans",
+      "routeDays": "Days 12–13 · Albuquerque, Silverton / Million Dollar Hwy",
+      "corridor": "High desert into the Rockies.",
+      "shops": [
+        {
+          "name": "Team R&S Powersports (Lomas)",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Major ABQ Suzuki dealer — multiple locations in town.",
+          "city": "Albuquerque",
+          "region": "NM",
+          "address": "9601 Lomas Blvd NE, Albuquerque, NM 87112",
+          "phone": "+1-505-292-6692",
+          "url": "https://www.teamrands.com/"
+        },
+        {
+          "name": "Fun Center (Durango)",
+          "types": ["multi-brand-dealer", "parts-service"],
+          "dr650Note": "San Juan corridor — Suzuki OEM; altitude jetting questions for carb bikes.",
+          "city": "Durango",
+          "region": "CO",
+          "address": "29603 US Highway 160 E, Durango, CO 81301",
+          "phone": "+1-970-259-1070",
+          "url": "https://www.funcenter.com/"
+        },
+        {
+          "name": "Handlebar Motorsports (Durango)",
+          "types": ["multi-brand-dealer", "parts-service"],
+          "dr650Note": "Second Durango option — Honda/Yamaha/Suzuki mix.",
+          "city": "Durango",
+          "region": "CO",
+          "address": "346 S Camino Del Rio, Durango, CO 81301",
+          "phone": "+1-970-247-0845",
+          "url": "https://www.handlebarmotorsports.com/"
+        },
+        {
+          "name": "RevZilla Denver (gear & retail)",
+          "types": ["chain-retail", "showroom"],
+          "dr650Note": "Only if you detour north to Denver — large showroom; not a substitute for Suzuki OEM same-day.",
+          "city": "Denver",
+          "region": "CO",
+          "address": "2845 Walnut St, Denver, CO 80205",
+          "phone": "+1-303-993-9680",
+          "url": "https://www.revzilla.com/denver"
+        }
+      ]
+    },
+    {
+      "id": "utah-arizona",
+      "name": "Utah & Arizona — Page, Bryce, Moab, St. George",
+      "routeDays": "Days 14–18 · Four Corners, UT, northern AZ",
+      "corridor": "Desert + park gateway towns — critical DR support zone.",
+      "shops": [
+        {
+          "name": "Rocky Mountain ATV/MC (Payson HQ — will-call)",
+          "types": ["online-wholesale", "will-call", "mega-parts"],
+          "dr650Note": "Huge aftermarket catalog; **will-call pickup** at Utah HQ — order online, confirm hours. DR650 farkles common.",
+          "city": "Payson",
+          "region": "UT",
+          "address": "1551 American Way, Payson, UT 84651",
+          "phone": "+1-800-336-5437",
+          "url": "https://www.rockymountainatvmc.com/"
+        },
+        {
+          "name": "Honda Suzuki of Salt Lake",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Major Wasatch Front Suzuki — useful if you detour to I-15 / SLC.",
+          "city": "Salt Lake City",
+          "region": "UT",
+          "address": "2354 S State St, Salt Lake City, UT 84115",
+          "phone": "+1-801-467-9945",
+          "url": "https://www.hondasuzuki.com/"
+        },
+        {
+          "name": "Mad Bro Powersports",
+          "types": ["independent-service", "multi-brand-dealer"],
+          "dr650Note": "Moab’s large powersports shop — metric/dual-sport friendly; call for DR tubes/filters stock.",
+          "city": "Moab",
+          "region": "UT",
+          "address": "2471 S Hwy 191, Moab, UT 84532",
+          "phone": "+1-435-259-6232",
+          "url": "https://www.madbropowersports.com/"
+        },
+        {
+          "name": "Factory Powersports (St. George)",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Southern UT Suzuki dealer — OEM parts before California.",
+          "city": "St. George",
+          "region": "UT",
+          "address": "1685 E Red Hills Pkwy, St. George, UT 84770",
+          "phone": "+1-435-628-5281",
+          "url": "https://www.factorypowersportsutah.com/"
+        }
+      ]
+    },
+    {
+      "id": "california",
+      "name": "California — Mojave, LA basin, Central Coast",
+      "routeDays": "Days 19–22 · Barstow, LA, Big Sur, coast",
+      "corridor": "SoCal mega dealers + coastal riding.",
+      "shops": [
+        {
+          "name": "Victorville Suzuki",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Near I-15 — Suzuki OEM after Mojave/Barstow segment.",
+          "city": "Victorville",
+          "region": "CA",
+          "address": "14327 Amargosa Rd, Victorville, CA 92392",
+          "phone": "+1-760-245-7777",
+          "url": "https://www.vsksuzuki.com/"
+        },
+        {
+          "name": "Chaparral Motorsports",
+          "types": ["mega-parts", "multi-brand-dealer"],
+          "dr650Note": "One of the largest US motorcycle retailers — vast parts floor; metric and off-road inventory.",
+          "city": "San Bernardino",
+          "region": "CA",
+          "address": "555 S H St, San Bernardino, CA 92410",
+          "phone": "+1-909-889-2761",
+          "url": "https://www.chapmoto.com/"
+        },
+        {
+          "name": "Suzuki of Van Nuys",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "LA County Suzuki — OEM parts counter.",
+          "city": "Van Nuys",
+          "region": "CA",
+          "address": "16141 Sherman Way, Van Nuys, CA 91406",
+          "phone": "+1-818-994-2882",
+          "url": "https://www.suzukiofvannuys.com/"
+        },
+        {
+          "name": "RevZilla Costa Mesa (gear & retail)",
+          "types": ["chain-retail", "showroom"],
+          "dr650Note": "OC showroom — gear and some consumables; verify stock.",
+          "city": "Costa Mesa",
+          "region": "CA",
+          "address": "1812 Newport Blvd, Costa Mesa, CA 92627",
+          "phone": "+1-949-945-9670",
+          "url": "https://www.revzilla.com/stores"
+        },
+        {
+          "name": "Eureka Motorsports Center",
+          "types": ["multi-brand-dealer", "parts-service"],
+          "dr650Note": "North Coast — Suzuki line if you need parts on Hwy 101 segment.",
+          "city": "Eureka",
+          "region": "CA",
+          "address": "1601 Broadway, Eureka, CA 95501",
+          "phone": "+1-707-443-3232",
+          "url": "https://www.eurekamotorsports.com/"
+        }
+      ]
+    },
+    {
+      "id": "oregon-washington",
+      "name": "Oregon & Washington — Gorge, Portland, Seattle, Spokane",
+      "routeDays": "Days 23–27 · Westfir, Mosier, Seattle, US-20, Spokane",
+      "corridor": "PNW — dense dealer network.",
+      "shops": [
+        {
+          "name": "MotoSport Hillsboro",
+          "types": ["authorized-suzuki", "mega-parts"],
+          "dr650Note": "Portland metro — huge stock, Suzuki auth.",
+          "city": "Hillsboro",
+          "region": "OR",
+          "address": "809 NE 28th Ave, Hillsboro, OR 97124",
+          "phone": "+1-503-648-4555",
+          "url": "https://www.motosporthillsboro.com/"
+        },
+        {
+          "name": "Medford Powersports",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Southern I-5 — if you drop to Medford from the coast or need parts in SW Oregon.",
+          "city": "Medford",
+          "region": "OR",
+          "address": "3735 Crater Lake Hwy, Medford, OR 97504",
+          "phone": "+1-541-772-5550",
+          "url": "https://www.medfordpowersportsinc.com/"
+        },
+        {
+          "name": "Beaverton Motorcycles (Tigard)",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Large PNW service dept — Suzuki OEM.",
+          "city": "Tigard",
+          "region": "OR",
+          "address": "10380 SW Cascade Ave, Tigard, OR 97223",
+          "phone": "+1-503-828-9223",
+          "url": "https://www.beavertonmotorcycles.com/"
+        },
+        {
+          "name": "RideNow Powersports Tri-Cities",
+          "types": ["multi-brand-dealer", "parts-service"],
+          "dr650Note": "Kennewick — Columbia Basin Suzuki if you drop south from Gorge routing.",
+          "city": "Kennewick",
+          "region": "WA",
+          "address": "3305 W 19th Ave, Kennewick, WA 99338",
+          "phone": "+1-509-337-4597",
+          "url": "https://www.ridenowtricities.com/"
+        },
+        {
+          "name": "Aurora Suzuki",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Seattle proper Suzuki-only dealer — OEM focus.",
+          "city": "Seattle",
+          "region": "WA",
+          "address": "7409 Aurora Ave N, Seattle, WA 98103",
+          "phone": "+1-206-783-2323",
+          "url": "https://www.aurorasuzuki.com/"
+        },
+        {
+          "name": "Tacoma Motorsports",
+          "types": ["multi-brand-dealer", "parts-service"],
+          "dr650Note": "South Sound alternative to Seattle.",
+          "city": "Tacoma",
+          "region": "WA",
+          "address": "4701 Center St, Tacoma, WA 98409",
+          "phone": "+1-253-564-8678",
+          "url": "https://www.tacomamotorsports.com/"
+        },
+        {
+          "name": "Spokane Powersports",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Eastern WA — strong stop before US-20 / Idaho.",
+          "city": "Spokane",
+          "region": "WA",
+          "address": "1925 E Francis Ave, Spokane, WA 99208",
+          "phone": "+1-509-467-8185",
+          "url": "https://www.spokanepowersports.com/"
+        }
+      ]
+    },
+    {
+      "id": "idaho-montana",
+      "name": "Idaho & Montana — Lolo, Missoula, Bozeman, Yellowstone",
+      "routeDays": "Days 28–31 · Kooskia, Lolo, Yellowstone, Beartooth, Powell",
+      "corridor": "Northern Rockies — longer distances between towns.",
+      "shops": [
+        {
+          "name": "CDA Powersports",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "North Idaho — Suzuki before Lolo if you pass CDA.",
+          "city": "Coeur d'Alene",
+          "region": "ID",
+          "address": "2745 W Seltice Way, Coeur d'Alene, ID 83814",
+          "phone": "+1-208-765-1495",
+          "url": "https://www.cdapowersports.com/"
+        },
+        {
+          "name": "Mike Tingley Suzuki Yamaha",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Missoula — key I-90 hub before/after Lolo.",
+          "city": "Missoula",
+          "region": "MT",
+          "address": "2150 South Ave W, Missoula, MT 59801",
+          "phone": "+1-406-649-4260",
+          "url": "https://www.google.com/maps/search/?api=1&query=Mike+Tingley+Suzuki+Missoula+MT"
+        },
+        {
+          "name": "Summit Motor Sports (Bozeman)",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Yellowstone gateway — OEM Suzuki; ~90 min from West Yellowstone.",
+          "city": "Bozeman",
+          "region": "MT",
+          "address": "1804 N Rouse Ave, Bozeman, MT 59715",
+          "phone": "+1-406-586-7147",
+          "url": "https://www.summitmotorsports.net/"
+        }
+      ]
+    },
+    {
+      "id": "plains-midwest",
+      "name": "Plains & Upper Midwest — Dakotas, Minnesota",
+      "routeDays": "Days 32–34 · Gillette, Oacoma, Rochester",
+      "corridor": "Long slab days — fewer dual-sport specialists.",
+      "shops": [
+        {
+          "name": "Thunder Basin Motorsports",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Northeast WY — Suzuki line on I-90 corridor.",
+          "city": "Gillette",
+          "region": "WY",
+          "address": "2904 Conestoga Dr, Gillette, WY 82718",
+          "phone": "+1-307-685-0001",
+          "url": "https://www.thunderbasinmotorsports.com/"
+        },
+        {
+          "name": "Rice's Rapid Motorsports",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Black Hills / Rapid — major stop if you touch Needles Hwy area.",
+          "city": "Rapid City",
+          "region": "SD",
+          "address": "3337 E Mall Dr, Rapid City, SD 57701",
+          "phone": "+1-605-342-2242",
+          "url": "https://www.ricesrapidmotorsports.com/"
+        },
+        {
+          "name": "Cycle City Rochester",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Southern MN — aligns with Rochester night on itinerary.",
+          "city": "Rochester",
+          "region": "MN",
+          "address": "5600 US-63 S, Rochester, MN 55904",
+          "phone": "+1-507-288-1084",
+          "url": "https://www.cyclecityrochester.com/"
+        },
+        {
+          "name": "Leo's South",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Twin Cities south metro — large multi-line dealer.",
+          "city": "Lakeville",
+          "region": "MN",
+          "address": "16375 Kenrick Ave, Lakeville, MN 55044",
+          "phone": "+1-952-435-5371",
+          "url": "https://www.leossouth.com/"
+        }
+      ]
+    },
+    {
+      "id": "wisconsin-michigan",
+      "name": "Wisconsin & Michigan — Great Lakes return",
+      "routeDays": "Days 34–35 · Oconomowoc, Benton Harbor area",
+      "corridor": "Lake Michigan swing before Ontario.",
+      "shops": [
+        {
+          "name": "Milwaukee Powersports",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Southeast WI — Suzuki line near Milwaukee corridor.",
+          "city": "Oak Creek",
+          "region": "WI",
+          "address": "7221 S 13th St, Oak Creek, WI 53154",
+          "phone": "+1-414-764-2800",
+          "url": "https://www.milwaukeeps.com/"
+        },
+        {
+          "name": "Southeast Sales (Milwaukee)",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "Long-running Milwaukee dealer — Honda/Kawasaki/KTM/Suzuki.",
+          "city": "Milwaukee",
+          "region": "WI",
+          "address": "6930 N 76th St, Milwaukee, WI 53223",
+          "phone": "+1-414-463-2540",
+          "url": "https://www.southeastsales.com/"
+        },
+        {
+          "name": "Platinum Powersports (Coloma)",
+          "types": ["authorized-suzuki", "parts-service"],
+          "dr650Note": "SW Michigan — near Benton Harbor day-stop radius.",
+          "city": "Coloma",
+          "region": "MI",
+          "address": "5270 Paw Paw Lake Rd, Coloma, MI 49038",
+          "phone": "+1-269-468-8600",
+          "url": "https://www.platinumpowersportsmi.com/"
+        }
+      ]
+    }
+  ],
+  "mailOrderAndOem": {
+    "title": "Mail-order, OEM & DR specialists (ship ahead or home)",
+    "items": [
+      {
+        "name": "ProCycle (DR650 aftermarket specialist)",
+        "url": "https://www.procycle.us/",
+        "note": "DR-specific seats, tanks, guards, jet kits — the reference catalog for many DR650 builds."
+      },
+      {
+        "name": "Rocky Mountain ATV/MC",
+        "url": "https://www.rockymountainatvmc.com/",
+        "note": "Massive aftermarket; overnight to many hotels; Payson UT will-call if you time it."
+      },
+      {
+        "name": "Suzuki Cycles — dealer & parts locator",
+        "url": "https://suzukicycles.com/dealers",
+        "note": "Official USA dealer finder + OEM accessory catalog pointers."
+      },
+      {
+        "name": "Partzilla / OEM parts sellers",
+        "url": "https://www.partzilla.com/",
+        "note": "OEM diagrams — useful when you have a part number from the manual."
+      },
+      {
+        "name": "BikeBandit",
+        "url": "https://www.bikebandit.com/",
+        "note": "OEM/aftermarket mix — compare shipping to your route."
+      }
+    ]
+  },
+  "nationalRetail": {
+    "title": "National retail chains (gear, tires, common service items)",
+    "note": "Inventory is store-specific — always call. Often stronger for tires, chain tools, and fluids than for obscure DR650 OEM hardware.",
+    "stores": [
+      {
+        "name": "Cycle Gear / Comoto",
+        "url": "https://www.cyclegear.com/stores",
+        "note": "Many US locations — use store locator; Plano TX listed under Texas region."
+      },
+      {
+        "name": "RevZilla retail",
+        "url": "https://www.revzilla.com/stores",
+        "note": "Brooklyn, Denver, Costa Mesa showrooms — gear-heavy."
+      }
+    ]
+  },
+  "findingMore": [
+    "Official locator: https://suzukicycles.com/dealers",
+    "Search: “dual sport motorcycle repair” + city — independents often stock tubes and metric chains.",
+    "ADVRider regional forums — rider vetted shops in Moab, Spokane, etc.",
+    "If stranded: larger Honda/Kawasaki/Yamaha dealers often service simple DR work (tires, brakes) even without Suzuki franchise."
+  ]
+}

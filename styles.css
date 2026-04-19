@@ -2492,6 +2492,169 @@ section > h2 {
   font-size: 0.85rem;
 }
 
+/* —— Motorcycle parts directory —— */
+.parts-root {
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.parts-disclaimer {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.parts-reviewed {
+  font-size: 0.85rem;
+  margin: 0 0 1rem;
+}
+
+.parts-jump {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.65rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-subtle, rgba(26, 43, 64, 0.12));
+}
+
+.parts-jump-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted, #5a6b7d);
+  margin-right: 0.25rem;
+}
+
+.parts-jump a {
+  font-size: 0.88rem;
+}
+
+.parts-howto {
+  margin: 0 0 1.25rem;
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+  color: var(--text, #1a2b40);
+}
+
+.parts-howto li {
+  margin-bottom: 0.35rem;
+}
+
+.parts-region {
+  border: 1px solid var(--border-subtle, rgba(26, 43, 64, 0.12));
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  background: var(--card-inner, rgba(255, 255, 255, 0.5));
+}
+
+.parts-region-sum {
+  cursor: pointer;
+  padding: 0.65rem 0.9rem;
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.parts-region-sum::-webkit-details-marker {
+  display: none;
+}
+
+.parts-region[open] .parts-region-sum {
+  border-bottom: 1px solid var(--border-subtle, rgba(26, 43, 64, 0.1));
+}
+
+.parts-region-days {
+  font-weight: 400;
+  font-size: 0.88rem;
+}
+
+.parts-region-body {
+  padding: 0.35rem 0.9rem 0.85rem;
+}
+
+.parts-corridor {
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem;
+}
+
+.parts-shop {
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--border-subtle, rgba(26, 43, 64, 0.08));
+}
+
+.parts-shop:first-of-type {
+  border-top: none;
+  padding-top: 0.25rem;
+}
+
+.parts-shop-name {
+  font-size: 1.05rem;
+  margin: 0 0 0.35rem;
+  font-weight: 700;
+}
+
+.parts-type-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.4rem;
+}
+
+.parts-type-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(26, 43, 64, 0.07);
+  color: var(--text, #1a2b40);
+}
+
+.parts-shop-meta {
+  font-size: 0.92rem;
+  margin: 0.25rem 0;
+  line-height: 1.45;
+}
+
+.parts-shop-actions {
+  font-size: 0.92rem;
+  margin: 0.35rem 0 0;
+}
+
+.parts-shop-actions a {
+  font-weight: 600;
+}
+
+.parts-dr-note {
+  font-size: 0.88rem;
+  margin: 0.5rem 0 0;
+  padding: 0.5rem 0.65rem;
+  border-radius: 8px;
+  background: rgba(212, 168, 75, 0.12);
+  border-left: 3px solid rgba(212, 168, 75, 0.7);
+  line-height: 1.45;
+}
+
+.parts-subsection-title {
+  font-size: 1.05rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.parts-link-list,
+.parts-bullets {
+  margin: 0 0 0.5rem;
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.parts-link-list li,
+.parts-bullets li {
+  margin-bottom: 0.4rem;
+}
+
 @media print {
   header.site {
     position: static;
@@ -2528,7 +2691,8 @@ section > h2 {
 
   .homework-step,
   .homework-toolkit,
-  .homework-region {
+  .homework-region,
+  .parts-region {
     break-inside: avoid;
   }
 }

@@ -2411,6 +2411,7 @@ function renderTrip(data, babHostsMap, routeMeta) {
     appendDayDetailSection(b, "🥘", "Food", day.foodNotes);
     appendDayDetailSection(b, "🌤", "Weather", day.weatherNotes);
     appendDayDetailSection(b, "📌", "Key notes", day.keyNotes);
+    appendDayDetailSection(b, "💵", "Fees, passes & bookings (verify at ride time)", day.feesAndPasses);
     appendDayDetailSection(b, "⛺", "Camping & accommodation", day.campingAccommodation);
     if (day.terrain) appendDayDetailSection(b, "🛣", "Road / terrain", day.terrain);
 
@@ -2710,6 +2711,174 @@ function renderHomework(data) {
   );
 }
 
+const PARTS_TYPE_LABELS = {
+  "authorized-suzuki": "Suzuki OEM parts",
+  "multi-brand-dealer": "Multi-brand dealer",
+  "independent-service": "Independent / service",
+  "chain-retail": "National retail chain",
+  "mega-parts": "Mega retailer",
+  "online-wholesale": "Online / catalog",
+  "will-call": "Will-call pickup",
+  "showroom": "Showroom",
+};
+
+/** Parts & dealers directory: route-corridor shops, mail-order, DR650 context. */
+function renderMotorcyclePartsShops(pack) {
+  const root = document.getElementById("parts-shops-root");
+  if (!root) return;
+  root.innerHTML = "";
+  if (!pack?.regions?.length) {
+    root.appendChild(el("p", { class: "muted", text: "No parts directory data." }));
+    return;
+  }
+
+  const meta = pack.meta || {};
+  root.appendChild(
+    el("div", { class: "parts-disclaimer", role: "note" }, [
+      el("p", {}, [el("strong", { text: "Note. " }), meta.disclaimer || ""]),
+    ])
+  );
+  if (meta.lastReviewed) {
+    root.appendChild(el("p", { class: "muted parts-reviewed", text: `Last reviewed: ${meta.lastReviewed}` }));
+  }
+
+  const jump = el("nav", { class: "parts-jump", "aria-label": "Jump to corridor" });
+  jump.appendChild(el("span", { class: "parts-jump-label", text: "Jump to:" }));
+  pack.regions.forEach((reg) => {
+    const id = reg.id || "region";
+    jump.appendChild(
+      el("a", {
+        href: `#parts-${id}`,
+        text: reg.name.split("—")[0].trim(),
+      })
+    );
+  });
+  root.appendChild(jump);
+
+  const how = el("ul", { class: "parts-howto" });
+  (pack.howToUse || []).forEach((t) => how.appendChild(el("li", { text: t })));
+  root.appendChild(how);
+
+  pack.regions.forEach((reg) => {
+    const id = reg.id || "region";
+    const det = el("details", { class: "parts-region", id: `parts-${id}` });
+    const sum = el("summary", { class: "parts-region-sum" });
+    sum.appendChild(el("span", { class: "parts-region-title", text: reg.name || "Corridor" }));
+    if (reg.routeDays) {
+      sum.appendChild(el("span", { class: "muted parts-region-days", text: ` · ${reg.routeDays}` }));
+    }
+    det.appendChild(sum);
+    const body = el("div", { class: "parts-region-body" });
+    if (reg.corridor) {
+      body.appendChild(el("p", { class: "parts-corridor muted", text: reg.corridor }));
+    }
+    (reg.shops || []).forEach((shop) => {
+      const card = el("article", { class: "parts-shop" });
+      const h = el("h4", { class: "parts-shop-name", text: shop.name || "Shop" });
+      card.appendChild(h);
+      const pills = el("div", { class: "parts-type-row" });
+      (shop.types || []).forEach((t) => {
+        const label = PARTS_TYPE_LABELS[t] || t;
+        pills.appendChild(el("span", { class: "parts-type-pill", text: label }));
+      });
+      card.appendChild(pills);
+      const where = [shop.address, [shop.city, shop.region].filter(Boolean).join(", ")]
+        .filter(Boolean)
+        .join(" — ");
+      if (where) {
+        card.appendChild(el("p", { class: "parts-shop-meta", text: where }));
+      }
+      const row = el("p", { class: "parts-shop-actions" });
+      if (shop.phone) {
+        const tel = shop.phone.replace(/[^\d+]/g, "");
+        row.appendChild(el("a", { href: `tel:${tel}`, text: shop.phone }));
+      }
+      if (shop.url) {
+        if (shop.phone) row.appendChild(document.createTextNode(" · "));
+        row.appendChild(
+          el("a", {
+            href: shop.url,
+            target: "_blank",
+            rel: "noopener noreferrer",
+            text: "Website / map",
+          })
+        );
+      }
+      card.appendChild(row);
+      if (shop.dr650Note) {
+        card.appendChild(el("p", { class: "parts-dr-note", text: `DR650: ${shop.dr650Note}` }));
+      }
+      body.appendChild(card);
+    });
+    det.appendChild(body);
+    root.appendChild(det);
+  });
+
+  const mo = pack.mailOrderAndOem;
+  if (mo?.items?.length) {
+    root.appendChild(el("h3", { class: "parts-subsection-title", text: mo.title || "Mail-order & OEM" }));
+    const ul = el("ul", { class: "parts-link-list" });
+    mo.items.forEach((item) => {
+      const li = document.createElement("li");
+      if (item.url) {
+        li.appendChild(
+          el("a", { href: item.url, target: "_blank", rel: "noopener noreferrer", text: item.name || item.url })
+        );
+        li.appendChild(document.createTextNode(` — ${item.note || ""}`));
+      } else {
+        li.textContent = `${item.name || ""} — ${item.note || ""}`;
+      }
+      ul.appendChild(li);
+    });
+    root.appendChild(ul);
+  }
+
+  const nr = pack.nationalRetail;
+  if (nr) {
+    root.appendChild(el("h3", { class: "parts-subsection-title", text: nr.title || "National retail" }));
+    if (nr.note) root.appendChild(el("p", { class: "muted", text: nr.note }));
+    const ul = el("ul", { class: "parts-link-list" });
+    (nr.stores || []).forEach((s) => {
+      const li = document.createElement("li");
+      if (s.url) {
+        li.appendChild(el("a", { href: s.url, target: "_blank", rel: "noopener noreferrer", text: s.name || s.url }));
+        li.appendChild(document.createTextNode(` — ${s.note || ""}`));
+      } else {
+        li.textContent = `${s.name || ""} — ${s.note || ""}`;
+      }
+      ul.appendChild(li);
+    });
+    root.appendChild(ul);
+  }
+
+  if (pack.findingMore?.length) {
+    root.appendChild(el("h3", { class: "parts-subsection-title", text: "Finding more shops on the fly" }));
+    const ul = el("ul", { class: "parts-bullets" });
+    pack.findingMore.forEach((t) => {
+      const li = document.createElement("li");
+      const m = t.match(/^(https?:\/\/\S+)\s*$/);
+      if (m) {
+        li.appendChild(el("a", { href: m[1], target: "_blank", rel: "noopener noreferrer", text: m[1] }));
+      } else {
+        const urlMatch = t.match(/(https?:\/\/[^\s]+)/);
+        if (urlMatch) {
+          const before = t.slice(0, t.indexOf(urlMatch[1]));
+          const after = t.slice(t.indexOf(urlMatch[1]) + urlMatch[1].length);
+          li.appendChild(document.createTextNode(before));
+          li.appendChild(
+            el("a", { href: urlMatch[1], target: "_blank", rel: "noopener noreferrer", text: urlMatch[1] })
+          );
+          li.appendChild(document.createTextNode(after));
+        } else {
+          li.textContent = t;
+        }
+      }
+      ul.appendChild(li);
+    });
+    root.appendChild(ul);
+  }
+}
+
 /** Highlights jump nav to match current section hash (falls back to Overview). */
 function syncJumpNav() {
   const raw = window.location.hash.slice(1);
@@ -2721,6 +2890,7 @@ function syncJumpNav() {
     "homework",
     "checklists",
     "links",
+    "parts-shops",
     "bab",
   ]);
   const active = raw && sectionIds.has(raw) ? raw : "overview";
@@ -2734,12 +2904,13 @@ function syncJumpNav() {
 async function main() {
   const banner = document.getElementById("load-error");
   try {
-    const [tripRes, babRes, routeRes, ccRes, hwRes] = await Promise.all([
+    const [tripRes, babRes, routeRes, ccRes, hwRes, partsRes] = await Promise.all([
       fetch("data/trip.json", { cache: "no-store" }),
       fetch("data/bab-hosts.json", { cache: "no-store" }),
       fetch("data/route-overlays.json", { cache: "no-store" }),
       fetch("data/content-creation.json", { cache: "no-store" }),
       fetch("data/homework.json", { cache: "no-store" }),
+      fetch("data/motorcycle-parts-shops.json", { cache: "no-store" }),
     ]);
     if (!tripRes.ok) throw new Error(`trip.json HTTP ${tripRes.status}`);
     const data = await tripRes.json();
@@ -2769,6 +2940,19 @@ async function main() {
     } else {
       const hr = document.getElementById("homework-root");
       if (hr) hr.appendChild(el("p", { class: "muted", text: "Homework data did not load (check data/homework.json)." }));
+    }
+    if (partsRes.ok) {
+      try {
+        const partsData = await partsRes.json();
+        renderMotorcyclePartsShops(partsData);
+      } catch (partsErr) {
+        console.warn("motorcycle-parts-shops.json parse failed", partsErr);
+        const pr = document.getElementById("parts-shops-root");
+        if (pr) pr.appendChild(el("p", { class: "muted", text: "Parts directory could not be read." }));
+      }
+    } else {
+      const pr = document.getElementById("parts-shops-root");
+      if (pr) pr.appendChild(el("p", { class: "muted", text: "Parts directory did not load (check data/motorcycle-parts-shops.json)." }));
     }
     renderTrip(data, babHostsMap, routeMeta);
     scheduleGoogleDistanceFetch(data.days, data.trip);
