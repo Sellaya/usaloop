@@ -96,7 +96,7 @@
       { "area": "London ON / Toronto", "hint": "Final service before storage or next tour." }
     ],
     "tripToolkit": {
-      "intro": "Tailored to: tubed dual-sport, 36 days, June–July, desert + mountains + long slabs + some dirt.",
+      "intro": "Tailored to: tubed dual-sport, 36 days, late May–June (2026-05-20 → 2026-06-24), desert + mountains + long slabs + some dirt.",
       "categories": [
         {
           "name": "Tire & wheel (highest failure rate)",
@@ -169,7 +169,7 @@
           "Urban Toronto–London: theft of unsecured gear; don’t leave tools visible on the bike at dinner."
         ],
         "weather": [
-          "Sudden thunderstorms in June; bridge gusts near Great Lakes.",
+          "Sudden thunderstorms in late spring and summer; bridge gusts near Great Lakes.",
           "Construction on 401 — lane debris (nails, retread strips)."
         ],
         "bike": [
@@ -179,7 +179,7 @@
           "Deer at dawn/dusk near forested ON corridors — same risk as US."
         ],
         "other": [
-          "Holiday border queues (you planned around July 4) — heat while idling in gear."
+          "Holiday-weekend border queues can stack up (US Memorial Day late May, Canadian long weekends) — heat while idling in gear."
         ]
       },
       {
@@ -235,7 +235,7 @@
           "Friendly small towns but also private-property signage; ask before drone or camp snaps of people."
         ],
         "weather": [
-          "Hail and lightning on plains; tornado season awareness (June can still produce storms).",
+          "Hail and lightning on plains; tornado season awareness (May–June can still produce storms).",
           "Crosswinds that move a tall-loaded DR; relax grip.",
           "Extreme heat — pavement softens; tire pressure rises."
         ],
@@ -418,8 +418,8 @@
         "id": "great-lakes",
         "name": "Lake Michigan, Michigan, border re-entry",
         "people": [
-          "July 4 corridor — impaired drivers late; your plan crosses holiday — extra vigilance.",
-          "Border officers on holiday volume — patience, documents ready."
+          "Late June Great Lakes / border metros — summer traffic and evening social riding; impaired-driver risk on warm nights — extra vigilance.",
+          "Border officers at peak times — patience, documents ready."
         ],
         "weather": [
           "Lake-effect pop-up storms; sudden side winds near bridges."

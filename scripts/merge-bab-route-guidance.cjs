@@ -224,7 +224,7 @@ Maps: Town-level — verify.`,
   "jolene-casper": `Corridor: Leg 3 · central WY. Casper is I-25 US route — good plains crossing stop if your return uses Wyoming.
 Maps: Town only — flexible timing per profile.`,
 
-  "michelle-custer": `Corridor: Leg 3 · Black Hills SD. Custer is near I-90 / US-16 — NOT during Sturgis rally per profile — check June vs rally dates.
+  "michelle-custer": `Corridor: Leg 3 · Black Hills SD. Custer is near I-90 / US-16 — NOT during Sturgis rally per profile — check your travel dates vs Sturgis (early Aug) per profile.
 Early stop: Hills fatigue or storm on plains approach.
 Maps: Town-level — email.`,
 

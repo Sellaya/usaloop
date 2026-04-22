@@ -1532,11 +1532,11 @@
     ]
   },
   "beforeYouGo": [
-    "Replace placeholder start/end dates in trip.json with your real departure window.",
+    "Trip window in this file: 2026-05-20 → 2026-06-24. If you move departure, update trip.startDate, trip.endDate, and every days[].date in sync (or regenerate from your spreadsheet).",
     "Maps: set GOOGLE_MAPS_API_KEY in .env (see .env.example), run npm run build, then serve. On Vercel, add the same variable under Environment Variables — build generates google-maps-config.js. Restrict the key by HTTP referrer (localhost + your Vercel URL). Re-check each leg in Maps after you set exact pins.",
     "Daily plan lists stay name/address only; phone, email, and all Bunk a Biker backups are in the B.a.B. directory. Edit babAlternateIds per day in data/bab-hosts.json / trip.json if you trim the list.",
     "Confirm each host address, gate codes, and bike parking before arrival day.",
-    "Arches NP: check timed-entry reservation rules for your dates.",
+    "Arches NP: verify current entry and parking rules on nps.gov/arch for your dates (timed-entry reservations were discontinued as of 2026 research — lots can still fill).",
     "Yellowstone / Beartooth: verify pass opening and NPS alerts.",
     "Every other national park or monument you actually enter on this loop (e.g. Zion tunnel / vehicle size rules, Smokies parking, timed shuttles, Navajo Nation tour permits): open NPS.gov or the managing tribe/agency site for **your** entry dates — rules and reservations change by season.",
     "Surface hazards common on US Interstates and plains: grooved pavement, tar snakes, steel bridge decks, expansion joints, and cattle guards — scan ahead, reduce lean, and avoid hard throttle or braking on transitions.",

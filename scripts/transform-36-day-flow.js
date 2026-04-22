@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Historical one-off (do not run blindly): inserted Day 2 and renumbered to 36 days.
- * The live itinerary is now 35 days — see data/trip.json and the redesign commit.
+ * Live itinerary: 36 days in data/trip.json (start 2026-05-20, end 2026-06-24 as of last edit).
  */
 const fs = require("fs");
 const path = require("path");
