@@ -4,314 +4,319 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
-    <name>Toronto ↔ Southwest loop — 35-day motorcycle itinerary</name>
-    <desc>35 overnight waypoints from trip.json. Straight-line route is NOT the riding route — import into Garmin, Gaia, or Google Earth and plan roads separately.</desc>
-    <time>2026-04-07T18:10:36.306Z</time>
+    <name>Toronto ↔ Southwest loop — 36-day motorcycle itinerary</name>
+    <desc>36 overnight waypoints from trip.json. Straight-line route is NOT the riding route — import into Garmin, Gaia, or Google Earth and plan roads separately.</desc>
+    <time>2026-04-22T16:16:01.186Z</time>
   </metadata>
   <wpt lat="42.5962" lon="-75.9182">
     <name>Day 1: Toronto → Finger Lakes (NY)</name>
-    <desc>Date: 2026-06-01
+    <desc>Date: 2026-05-20
 Stay: Greg &amp; Chris
 Address: 4177 Syrian Hill Road, McGraw, NY 13101
 Waypoint note: McGraw, NY (Finger Lakes host area) (approximate)</desc>
     <type>overnight</type>
-    <time>2026-06-01T12:00:00Z</time>
+    <time>2026-05-20T12:00:00Z</time>
   </wpt>
   <wpt lat="40.8843" lon="-72.3895">
     <name>Day 2: Finger Lakes → New York</name>
-    <desc>Date: 2026-06-02
+    <desc>Date: 2026-05-21
 Stay: Dan
 Address: Southampton, NY 11968
 Waypoint note: Southampton, NY (approximate)</desc>
     <type>overnight</type>
-    <time>2026-06-02T12:00:00Z</time>
+    <time>2026-05-21T12:00:00Z</time>
   </wpt>
   <wpt lat="38.6651" lon="-78.4594">
     <name>Day 3: New York → Washington, DC → Luray (VA)</name>
-    <desc>Date: 2026-06-03
+    <desc>Date: 2026-05-22
 Stay: Frank Allen Pence
 Address: Luray, VA 22835
 Waypoint note: Luray, VA (approximate)</desc>
     <type>overnight</type>
-    <time>2026-06-03T12:00:00Z</time>
+    <time>2026-05-22T12:00:00Z</time>
   </wpt>
-  <wpt lat="37.0479" lon="-80.7798">
-    <name>Day 4: Luray → Pulaski (VA)</name>
-    <desc>Date: 2026-06-04
-Stay: Shawna Rowe
-Address: Lagrange Street, Pulaski, VA 24301
-Waypoint note: Pulaski, VA (approximate)</desc>
+  <wpt lat="37.5" lon="-79.9">
+    <name>Day 4: Luray → Roanoke (VA)</name>
+    <desc>Date: 2026-05-23
+Stay: George Washington &amp; Jefferson NF — near Roanoke (search MVUM)
+Waypoint note: trip.json lodging / alt mapsUrl (GPS pin)</desc>
     <type>overnight</type>
-    <time>2026-06-04T12:00:00Z</time>
+    <time>2026-05-23T12:00:00Z</time>
   </wpt>
-  <wpt lat="35.8681" lon="-83.5618">
-    <name>Day 5: Pulaski → Smoky Mountains (TN)</name>
-    <desc>Date: 2026-06-05
-Stay: Katherine Sharpe
-Address: 1444 Chapman Highway, Sevierville, TN 37876
-Waypoint note: Sevierville, TN (approximate)</desc>
+  <wpt lat="36.5951" lon="-82.1887">
+    <name>Day 5: Roanoke → Bristol (VA/TN) — Blue Ridge Parkway day</name>
+    <desc>Date: 2026-05-24
+Stay: Cherokee NF / Holston Mountain area — verify MVUM
+Waypoint note: Bristol VA/TN (approximate) (approximate)</desc>
     <type>overnight</type>
-    <time>2026-06-05T12:00:00Z</time>
+    <time>2026-05-24T12:00:00Z</time>
   </wpt>
-  <wpt lat="35.7679" lon="-88.7896">
-    <name>Day 6: Smoky Mountains → Nashville → Memphis (TN)</name>
-    <desc>Date: 2026-06-06
-Stay: Paul &amp; Cindy Lasko
-Address: 585 Roundtree Lane, Beech Bluff, TN 38313
-Waypoint note: Beech Bluff / Jackson, TN area (approximate)</desc>
+  <wpt lat="35.364" lon="-84.292">
+    <name>Day 6: Bristol → Great Smoky Mountains → Tail of the Dragon → Kingston (TN)</name>
+    <desc>Date: 2026-05-25
+Stay: Cherokee NF — Tellico Plains / Bald River corridor (MVUM)
+Waypoint note: trip.json lodging / alt mapsUrl (GPS pin)</desc>
     <type>overnight</type>
-    <time>2026-06-06T12:00:00Z</time>
+    <time>2026-05-25T12:00:00Z</time>
+  </wpt>
+  <wpt lat="35.6773" lon="-88.0337">
+    <name>Day 7: Kingston → Parsons (TN)</name>
+    <desc>Date: 2026-05-26
+Stay: Natchez Trace State Forest / Kentucky Lake USACE (verify free)
+Waypoint note: Parsons, TN (approximate) (approximate)</desc>
+    <type>overnight</type>
+    <time>2026-05-26T12:00:00Z</time>
   </wpt>
   <wpt lat="34.8662" lon="-92.1101">
-    <name>Day 7: Memphis / Parsons → Little Rock (AR)</name>
-    <desc>Date: 2026-06-07
+    <name>Day 8: Parsons → Little Rock (AR)</name>
+    <desc>Date: 2026-05-27
 Stay: Joe Maglie
 Address: John Harden Drive, Jacksonville, AR 72076
 Waypoint note: Jacksonville, AR (approximate)</desc>
     <type>overnight</type>
-    <time>2026-06-07T12:00:00Z</time>
+    <time>2026-05-27T12:00:00Z</time>
   </wpt>
   <wpt lat="32.7555" lon="-97.3308">
-    <name>Day 8: Little Rock → Fort Worth (TX)</name>
-    <desc>Date: 2026-06-08
+    <name>Day 9: Little Rock → Fort Worth (TX)</name>
+    <desc>Date: 2026-05-28
 Stay: HOME — Fort Worth, TX
 Waypoint note: Fort Worth, TX (approximate)</desc>
     <type>overnight</type>
-    <time>2026-06-08T12:00:00Z</time>
+    <time>2026-05-28T12:00:00Z</time>
   </wpt>
   <wpt lat="35.2742" lon="-102.6682">
-    <name>Day 9: Fort Worth → Amarillo (TX)</name>
-    <desc>Date: 2026-06-09
+    <name>Day 10: Fort Worth → Amarillo (TX)</name>
+    <desc>Date: 2026-05-29
 Stay: Kelly Snyder
 Address: 307 W Historic Route 66, Adrian, TX 79001
-Waypoint note: Adrian, TX (Route 66) (approximate)</desc>
+Waypoint note: Adrian, TX (Route 66)</desc>
     <type>overnight</type>
-    <time>2026-06-09T12:00:00Z</time>
+    <time>2026-05-29T12:00:00Z</time>
   </wpt>
   <wpt lat="35.192" lon="-101.831">
-    <name>Day 10: Amarillo → Albuquerque (NM)</name>
-    <desc>Date: 2026-06-10
+    <name>Day 11: Amarillo → Albuquerque (NM)</name>
+    <desc>Date: 2026-05-30
 Stay: Motel (I-40 frontage)
 Address: 6030 W Interstate 40 Frontage Rd, Amarillo, TX area (~$50 CAD — verify)
-Waypoint note: Amarillo, TX (I-40 corridor)</desc>
+Waypoint note: Amarillo, TX (I-40 corridor) (approximate)</desc>
     <type>overnight</type>
-    <time>2026-06-10T12:00:00Z</time>
+    <time>2026-05-30T12:00:00Z</time>
   </wpt>
   <wpt lat="37.82022" lon="-107.71362">
-    <name>Day 11: Albuquerque → Million Dollar Highway (Silverton, CO)</name>
-    <desc>Date: 2026-06-11
+    <name>Day 12: Albuquerque → Million Dollar Highway (Silverton, CO)</name>
+    <desc>Date: 2026-05-31
 Stay: iOverlander (FREE)
 Waypoint note: trip.json lodging / alt mapsUrl (GPS pin)</desc>
     <type>overnight</type>
-    <time>2026-06-11T12:00:00Z</time>
+    <time>2026-05-31T12:00:00Z</time>
   </wpt>
   <wpt lat="37.1631" lon="-109.8859">
-    <name>Day 12: Silverton → Mexican Hat (UT)</name>
-    <desc>Date: 2026-06-12
+    <name>Day 13: Silverton → Mexican Hat (UT)</name>
+    <desc>Date: 2026-06-01
 Stay: Mexican Hat Rocks
 Waypoint note: Mexican Hat, UT (campground area) (approximate)</desc>
     <type>overnight</type>
-    <time>2026-06-12T12:00:00Z</time>
+    <time>2026-06-01T12:00:00Z</time>
   </wpt>
   <wpt lat="37.65553" lon="-112.17089">
-    <name>Day 13: Mexican Hat → Page → Bryce Canyon (~500 km)</name>
-    <desc>Date: 2026-06-13
+    <name>Day 14: Mexican Hat → Page → Bryce Canyon (~500 km)</name>
+    <desc>Date: 2026-06-02
 Stay: Dispersed near Bryce (option A)
 Waypoint note: trip.json lodging / alt mapsUrl (GPS pin)</desc>
     <type>overnight</type>
-    <time>2026-06-13T12:00:00Z</time>
+    <time>2026-06-02T12:00:00Z</time>
   </wpt>
   <wpt lat="38.5733" lon="-109.5498">
-    <name>Day 14: Bryce Canyon → Arches National Park (Moab, UT)</name>
-    <desc>Date: 2026-06-14
+    <name>Day 15: Bryce Canyon → Arches National Park (Moab, UT)</name>
+    <desc>Date: 2026-06-03
 Stay: Robert VandenBroeke
 Address: Moab, UT 84532
 Waypoint note: Moab, UT (town — confirm host)</desc>
     <type>overnight</type>
-    <time>2026-06-14T12:00:00Z</time>
+    <time>2026-06-03T12:00:00Z</time>
   </wpt>
   <wpt lat="38.5733" lon="-109.5498">
-    <name>Day 15: Moab — Arches &amp; Dead Horse Point (Rest/Exploration Day)</name>
-    <desc>Date: 2026-06-15
+    <name>Day 16: Moab — Arches &amp; Dead Horse Point (Rest/Exploration Day)</name>
+    <desc>Date: 2026-06-04
 Stay: Robert VandenBroeke
 Address: Moab, UT 84532
 Waypoint note: Moab, UT (rest day — same base)</desc>
     <type>overnight</type>
-    <time>2026-06-15T12:00:00Z</time>
+    <time>2026-06-04T12:00:00Z</time>
   </wpt>
   <wpt lat="37.12891" lon="-113.66331">
-    <name>Day 16: Moab → St. George (UT)</name>
-    <desc>Date: 2026-06-16
+    <name>Day 17: Moab → St. George (UT)</name>
+    <desc>Date: 2026-06-05
 Stay: Sheep Bridge Park (BLM)
 Waypoint note: trip.json lodging / alt mapsUrl (GPS pin)</desc>
     <type>overnight</type>
-    <time>2026-06-16T12:00:00Z</time>
+    <time>2026-06-05T12:00:00Z</time>
   </wpt>
   <wpt lat="34.5008" lon="-117.1859">
-    <name>Day 17: St. George → Barstow (CA)</name>
-    <desc>Date: 2026-06-17
+    <name>Day 18: St. George → Barstow (CA)</name>
+    <desc>Date: 2026-06-06
 Stay: Montana Shaffer
 Address: 22060 Wren Street, Apple Valley, CA 92308
 Waypoint note: Apple Valley, CA (approximate)</desc>
     <type>overnight</type>
-    <time>2026-06-17T12:00:00Z</time>
+    <time>2026-06-06T12:00:00Z</time>
   </wpt>
   <wpt lat="36.204" lon="-121.82">
-    <name>Day 18: Barstow → Hollywood → Leo Carrillo (Day Stop) → Big Sur / Prewitt Ridge</name>
-    <desc>Date: 2026-06-18
+    <name>Day 19: Barstow → Hollywood → Leo Carrillo (Day Stop) → Big Sur / Prewitt Ridge</name>
+    <desc>Date: 2026-06-07
 Stay: Prewitt Ridge Campground
 Waypoint note: Prewitt Ridge / Big Sur area (approximate — confirm road open) (approximate)</desc>
     <type>overnight</type>
-    <time>2026-06-18T12:00:00Z</time>
+    <time>2026-06-07T12:00:00Z</time>
   </wpt>
   <wpt lat="35.87322" lon="-121.4185">
-    <name>Day 19: Prewitt Ridge → Point Arena Lighthouse</name>
-    <desc>Date: 2026-06-19
+    <name>Day 20: Prewitt Ridge → Point Arena Lighthouse</name>
+    <desc>Date: 2026-06-08
 Stay: Dispersed / listed GPS
 Waypoint note: trip.json lodging / alt mapsUrl (GPS pin)</desc>
     <type>overnight</type>
-    <time>2026-06-19T12:00:00Z</time>
+    <time>2026-06-08T12:00:00Z</time>
   </wpt>
   <wpt lat="38.9817" lon="-123.70057">
-    <name>Day 20: Point Arena → Redwood National Park</name>
-    <desc>Date: 2026-06-20
+    <name>Day 21: Point Arena → Redwood National Park</name>
+    <desc>Date: 2026-06-09
 Stay: Redwood area camp (GPS)
 Waypoint note: trip.json lodging / alt mapsUrl (GPS pin)</desc>
     <type>overnight</type>
-    <time>2026-06-20T12:00:00Z</time>
+    <time>2026-06-09T12:00:00Z</time>
   </wpt>
   <wpt lat="43.7584" lon="-122.5001">
-    <name>Day 21: Redwood → Crater Lake (Westfir, OR)</name>
-    <desc>Date: 2026-06-21
+    <name>Day 22: Redwood → Crater Lake (Westfir, OR)</name>
+    <desc>Date: 2026-06-10
 Stay: Deb &amp; Dave B
 Address: Westfir, OR 97492
 Waypoint note: Westfir, OR (approximate)</desc>
     <type>overnight</type>
-    <time>2026-06-21T12:00:00Z</time>
+    <time>2026-06-10T12:00:00Z</time>
   </wpt>
   <wpt lat="45.8207" lon="-120.8215">
-    <name>Day 22: Westfir → Goldendale / Mosier</name>
-    <desc>Date: 2026-06-22
+    <name>Day 23: Westfir → Goldendale / Mosier</name>
+    <desc>Date: 2026-06-11
 Stay: Greg Wagner
 Address: 303 Fish Hatchery Road, Goldendale, WA 98620
 Waypoint note: Goldendale, WA (approximate)</desc>
     <type>overnight</type>
-    <time>2026-06-22T12:00:00Z</time>
+    <time>2026-06-11T12:00:00Z</time>
   </wpt>
   <wpt lat="47.4957" lon="-121.7868">
-    <name>Day 23: Mosier → Seattle (WA)</name>
-    <desc>Date: 2026-06-23
+    <name>Day 24: Mosier → Seattle (WA)</name>
+    <desc>Date: 2026-06-12
 Stay: Bob Combs
 Address: North Bend, WA
 Waypoint note: North Bend, WA (approximate)</desc>
     <type>overnight</type>
-    <time>2026-06-23T12:00:00Z</time>
+    <time>2026-06-12T12:00:00Z</time>
   </wpt>
   <wpt lat="48.4779" lon="-120.1866">
-    <name>Day 24: Seattle → US-20 (~400 km)</name>
-    <desc>Date: 2026-06-24
+    <name>Day 25: Seattle → US-20 (~400 km)</name>
+    <desc>Date: 2026-06-13
 Stay: TBD — book after route pinned
 Waypoint note: Winthrop, WA (North Cascades hub — TBD booking) (approximate)</desc>
     <type>overnight</type>
-    <time>2026-06-24T12:00:00Z</time>
+    <time>2026-06-13T12:00:00Z</time>
   </wpt>
   <wpt lat="47.6733" lon="-117.2394">
-    <name>Day 25: US-20 → Spokane</name>
-    <desc>Date: 2026-06-25
+    <name>Day 26: US-20 → Spokane</name>
+    <desc>Date: 2026-06-14
 Stay: David &amp; Pita Ettenberg
 Address: Spokane Valley, WA
 Waypoint note: Spokane Valley, WA (approximate)</desc>
     <type>overnight</type>
-    <time>2026-06-25T12:00:00Z</time>
+    <time>2026-06-14T12:00:00Z</time>
   </wpt>
   <wpt lat="46.997" lon="-114.248">
-    <name>Day 26: Spokane → Kooskia → Lolo Pass</name>
-    <desc>Date: 2026-06-26
+    <name>Day 27: Spokane → Kooskia → Lolo Pass</name>
+    <desc>Date: 2026-06-15
 Stay: Dustin Patton
 Address: Frenchtown, MT
 Waypoint note: Frenchtown, MT (approximate)</desc>
     <type>overnight</type>
-    <time>2026-06-26T12:00:00Z</time>
+    <time>2026-06-15T12:00:00Z</time>
   </wpt>
   <wpt lat="45.329" lon="-111.195">
-    <name>Day 27: Lolo Pass → Yellowstone</name>
-    <desc>Date: 2026-06-27
+    <name>Day 28: Lolo Pass → Yellowstone</name>
+    <desc>Date: 2026-06-16
 Stay: Deryk Hagey
 Address: Gallatin Gateway, MT
 Waypoint note: Gallatin Gateway, MT (approximate)</desc>
     <type>overnight</type>
-    <time>2026-06-27T12:00:00Z</time>
+    <time>2026-06-16T12:00:00Z</time>
   </wpt>
   <wpt lat="44.4605" lon="-110.8281">
-    <name>Day 28: Yellowstone National Park — full day</name>
-    <desc>Date: 2026-06-28
+    <name>Day 29: Yellowstone National Park — full day</name>
+    <desc>Date: 2026-06-17
 Stay: Same as Day 26 or move closer to NE exit
 Waypoint note: Yellowstone (Old Faithful area — in-park day) (approximate)</desc>
     <type>overnight</type>
-    <time>2026-06-28T12:00:00Z</time>
+    <time>2026-06-17T12:00:00Z</time>
   </wpt>
   <wpt lat="44.7589" lon="-108.7573">
-    <name>Day 29: Yellowstone → Beartooth Highway → Powell, WY</name>
-    <desc>Date: 2026-06-29
+    <name>Day 30: Yellowstone → Beartooth Highway → Powell, WY</name>
+    <desc>Date: 2026-06-18
 Stay: Daryn Engesser
 Address: Powell, WY
 Waypoint note: Powell, WY (town center) (approximate)</desc>
     <type>overnight</type>
-    <time>2026-06-29T12:00:00Z</time>
+    <time>2026-06-18T12:00:00Z</time>
   </wpt>
   <wpt lat="44.2911" lon="-105.5022">
-    <name>Day 30: Powell → Gillette (WY)</name>
-    <desc>Date: 2026-06-30
+    <name>Day 31: Powell → Gillette (WY)</name>
+    <desc>Date: 2026-06-19
 Stay: Sherry Smith
 Address: Gillette, WY
 Waypoint note: Gillette, WY (approximate)</desc>
     <type>overnight</type>
-    <time>2026-06-30T12:00:00Z</time>
+    <time>2026-06-19T12:00:00Z</time>
   </wpt>
   <wpt lat="43.7667" lon="-103.5988">
-    <name>Day 31: Gillette → Needles Highway → border camping</name>
-    <desc>Date: 2026-07-01
+    <name>Day 32: Gillette → Needles Highway → border camping</name>
+    <desc>Date: 2026-06-20
 Stay: TBD — border / Black Hills dispersed
 Waypoint note: Custer, SD (Black Hills — TBD camp) (approximate)</desc>
     <type>overnight</type>
-    <time>2026-07-01T12:00:00Z</time>
+    <time>2026-06-20T12:00:00Z</time>
   </wpt>
   <wpt lat="44.0328" lon="-92.6458">
-    <name>Day 32: Oacoma → Rochester (MN) (~600 km)</name>
-    <desc>Date: 2026-07-02
+    <name>Day 33: Oacoma → Rochester (MN) (~600 km)</name>
+    <desc>Date: 2026-06-21
 Stay: Laurie Calhoon
 Address: Byron, MN
 Waypoint note: Byron, MN (approximate)</desc>
     <type>overnight</type>
-    <time>2026-07-02T12:00:00Z</time>
+    <time>2026-06-21T12:00:00Z</time>
   </wpt>
   <wpt lat="43.1114" lon="-88.4993">
-    <name>Day 33: Rochester → Oconomowoc (WI)</name>
-    <desc>Date: 2026-07-03
+    <name>Day 34: Rochester → Oconomowoc (WI)</name>
+    <desc>Date: 2026-06-22
 Stay: Jane Thompson
 Address: Oconomowoc, WI
 Waypoint note: Oconomowoc, WI (approximate)</desc>
     <type>overnight</type>
-    <time>2026-07-03T12:00:00Z</time>
+    <time>2026-06-22T12:00:00Z</time>
   </wpt>
   <wpt lat="42.9849" lon="-81.2453">
-    <name>Day 34: Oconomowoc → Benton Harbor (Day Stop, John Cody Smith) → London, ON</name>
-    <desc>Date: 2026-07-04
+    <name>Day 35: Oconomowoc → Benton Harbor (Day Stop, John Cody Smith) → London, ON</name>
+    <desc>Date: 2026-06-23
 Stay: TBD — book London, ON
-Waypoint note: London, ON (approximate)</desc>
+Waypoint note: London, ON (approximate) (approximate)</desc>
     <type>overnight</type>
-    <time>2026-07-04T12:00:00Z</time>
+    <time>2026-06-23T12:00:00Z</time>
   </wpt>
   <wpt lat="43.6532" lon="-79.3832">
-    <name>Day 35: Return home (London, ON → Toronto)</name>
-    <desc>Date: 2026-07-05
+    <name>Day 36: Return home (London, ON → Toronto)</name>
+    <desc>Date: 2026-06-24
 Stay: HOME — Toronto, ON
 Waypoint note: Toronto, ON (approximate)</desc>
     <type>overnight</type>
-    <time>2026-07-05T12:00:00Z</time>
+    <time>2026-06-24T12:00:00Z</time>
   </wpt>
   <rte>
-    <name>Toronto ↔ Southwest loop — 35-day motorcycle itinerary</name>
+    <name>Toronto ↔ Southwest loop — 36-day motorcycle itinerary</name>
     <desc>Ordered overnight stops only.</desc>
     <rtept lat="42.5962" lon="-75.9182">
       <name>D1</name>
@@ -325,133 +330,137 @@ Waypoint note: Toronto, ON (approximate)</desc>
       <name>D3</name>
       <desc>Day 3: New York → Washington, DC → Luray (VA)</desc>
     </rtept>
-    <rtept lat="37.0479" lon="-80.7798">
+    <rtept lat="37.5" lon="-79.9">
       <name>D4</name>
-      <desc>Day 4: Luray → Pulaski (VA)</desc>
+      <desc>Day 4: Luray → Roanoke (VA)</desc>
     </rtept>
-    <rtept lat="35.8681" lon="-83.5618">
+    <rtept lat="36.5951" lon="-82.1887">
       <name>D5</name>
-      <desc>Day 5: Pulaski → Smoky Mountains (TN)</desc>
+      <desc>Day 5: Roanoke → Bristol (VA/TN) — Blue Ridge Parkway day</desc>
     </rtept>
-    <rtept lat="35.7679" lon="-88.7896">
+    <rtept lat="35.364" lon="-84.292">
       <name>D6</name>
-      <desc>Day 6: Smoky Mountains → Nashville → Memphis (TN)</desc>
+      <desc>Day 6: Bristol → Great Smoky Mountains → Tail of the Dragon → Kingston (TN)</desc>
+    </rtept>
+    <rtept lat="35.6773" lon="-88.0337">
+      <name>D7</name>
+      <desc>Day 7: Kingston → Parsons (TN)</desc>
     </rtept>
     <rtept lat="34.8662" lon="-92.1101">
-      <name>D7</name>
-      <desc>Day 7: Memphis / Parsons → Little Rock (AR)</desc>
+      <name>D8</name>
+      <desc>Day 8: Parsons → Little Rock (AR)</desc>
     </rtept>
     <rtept lat="32.7555" lon="-97.3308">
-      <name>D8</name>
-      <desc>Day 8: Little Rock → Fort Worth (TX)</desc>
+      <name>D9</name>
+      <desc>Day 9: Little Rock → Fort Worth (TX)</desc>
     </rtept>
     <rtept lat="35.2742" lon="-102.6682">
-      <name>D9</name>
-      <desc>Day 9: Fort Worth → Amarillo (TX)</desc>
+      <name>D10</name>
+      <desc>Day 10: Fort Worth → Amarillo (TX)</desc>
     </rtept>
     <rtept lat="35.192" lon="-101.831">
-      <name>D10</name>
-      <desc>Day 10: Amarillo → Albuquerque (NM)</desc>
+      <name>D11</name>
+      <desc>Day 11: Amarillo → Albuquerque (NM)</desc>
     </rtept>
     <rtept lat="37.82022" lon="-107.71362">
-      <name>D11</name>
-      <desc>Day 11: Albuquerque → Million Dollar Highway (Silverton, CO)</desc>
+      <name>D12</name>
+      <desc>Day 12: Albuquerque → Million Dollar Highway (Silverton, CO)</desc>
     </rtept>
     <rtept lat="37.1631" lon="-109.8859">
-      <name>D12</name>
-      <desc>Day 12: Silverton → Mexican Hat (UT)</desc>
+      <name>D13</name>
+      <desc>Day 13: Silverton → Mexican Hat (UT)</desc>
     </rtept>
     <rtept lat="37.65553" lon="-112.17089">
-      <name>D13</name>
-      <desc>Day 13: Mexican Hat → Page → Bryce Canyon (~500 km)</desc>
-    </rtept>
-    <rtept lat="38.5733" lon="-109.5498">
       <name>D14</name>
-      <desc>Day 14: Bryce Canyon → Arches National Park (Moab, UT)</desc>
+      <desc>Day 14: Mexican Hat → Page → Bryce Canyon (~500 km)</desc>
     </rtept>
     <rtept lat="38.5733" lon="-109.5498">
       <name>D15</name>
-      <desc>Day 15: Moab — Arches &amp; Dead Horse Point (Rest/Exploration Day)</desc>
+      <desc>Day 15: Bryce Canyon → Arches National Park (Moab, UT)</desc>
+    </rtept>
+    <rtept lat="38.5733" lon="-109.5498">
+      <name>D16</name>
+      <desc>Day 16: Moab — Arches &amp; Dead Horse Point (Rest/Exploration Day)</desc>
     </rtept>
     <rtept lat="37.12891" lon="-113.66331">
-      <name>D16</name>
-      <desc>Day 16: Moab → St. George (UT)</desc>
+      <name>D17</name>
+      <desc>Day 17: Moab → St. George (UT)</desc>
     </rtept>
     <rtept lat="34.5008" lon="-117.1859">
-      <name>D17</name>
-      <desc>Day 17: St. George → Barstow (CA)</desc>
+      <name>D18</name>
+      <desc>Day 18: St. George → Barstow (CA)</desc>
     </rtept>
     <rtept lat="36.204" lon="-121.82">
-      <name>D18</name>
-      <desc>Day 18: Barstow → Hollywood → Leo Carrillo (Day Stop) → Big Sur / Prewitt Ridge</desc>
+      <name>D19</name>
+      <desc>Day 19: Barstow → Hollywood → Leo Carrillo (Day Stop) → Big Sur / Prewitt Ridge</desc>
     </rtept>
     <rtept lat="35.87322" lon="-121.4185">
-      <name>D19</name>
-      <desc>Day 19: Prewitt Ridge → Point Arena Lighthouse</desc>
+      <name>D20</name>
+      <desc>Day 20: Prewitt Ridge → Point Arena Lighthouse</desc>
     </rtept>
     <rtept lat="38.9817" lon="-123.70057">
-      <name>D20</name>
-      <desc>Day 20: Point Arena → Redwood National Park</desc>
+      <name>D21</name>
+      <desc>Day 21: Point Arena → Redwood National Park</desc>
     </rtept>
     <rtept lat="43.7584" lon="-122.5001">
-      <name>D21</name>
-      <desc>Day 21: Redwood → Crater Lake (Westfir, OR)</desc>
+      <name>D22</name>
+      <desc>Day 22: Redwood → Crater Lake (Westfir, OR)</desc>
     </rtept>
     <rtept lat="45.8207" lon="-120.8215">
-      <name>D22</name>
-      <desc>Day 22: Westfir → Goldendale / Mosier</desc>
+      <name>D23</name>
+      <desc>Day 23: Westfir → Goldendale / Mosier</desc>
     </rtept>
     <rtept lat="47.4957" lon="-121.7868">
-      <name>D23</name>
-      <desc>Day 23: Mosier → Seattle (WA)</desc>
+      <name>D24</name>
+      <desc>Day 24: Mosier → Seattle (WA)</desc>
     </rtept>
     <rtept lat="48.4779" lon="-120.1866">
-      <name>D24</name>
-      <desc>Day 24: Seattle → US-20 (~400 km)</desc>
+      <name>D25</name>
+      <desc>Day 25: Seattle → US-20 (~400 km)</desc>
     </rtept>
     <rtept lat="47.6733" lon="-117.2394">
-      <name>D25</name>
-      <desc>Day 25: US-20 → Spokane</desc>
+      <name>D26</name>
+      <desc>Day 26: US-20 → Spokane</desc>
     </rtept>
     <rtept lat="46.997" lon="-114.248">
-      <name>D26</name>
-      <desc>Day 26: Spokane → Kooskia → Lolo Pass</desc>
+      <name>D27</name>
+      <desc>Day 27: Spokane → Kooskia → Lolo Pass</desc>
     </rtept>
     <rtept lat="45.329" lon="-111.195">
-      <name>D27</name>
-      <desc>Day 27: Lolo Pass → Yellowstone</desc>
+      <name>D28</name>
+      <desc>Day 28: Lolo Pass → Yellowstone</desc>
     </rtept>
     <rtept lat="44.4605" lon="-110.8281">
-      <name>D28</name>
-      <desc>Day 28: Yellowstone National Park — full day</desc>
+      <name>D29</name>
+      <desc>Day 29: Yellowstone National Park — full day</desc>
     </rtept>
     <rtept lat="44.7589" lon="-108.7573">
-      <name>D29</name>
-      <desc>Day 29: Yellowstone → Beartooth Highway → Powell, WY</desc>
+      <name>D30</name>
+      <desc>Day 30: Yellowstone → Beartooth Highway → Powell, WY</desc>
     </rtept>
     <rtept lat="44.2911" lon="-105.5022">
-      <name>D30</name>
-      <desc>Day 30: Powell → Gillette (WY)</desc>
+      <name>D31</name>
+      <desc>Day 31: Powell → Gillette (WY)</desc>
     </rtept>
     <rtept lat="43.7667" lon="-103.5988">
-      <name>D31</name>
-      <desc>Day 31: Gillette → Needles Highway → border camping</desc>
+      <name>D32</name>
+      <desc>Day 32: Gillette → Needles Highway → border camping</desc>
     </rtept>
     <rtept lat="44.0328" lon="-92.6458">
-      <name>D32</name>
-      <desc>Day 32: Oacoma → Rochester (MN) (~600 km)</desc>
+      <name>D33</name>
+      <desc>Day 33: Oacoma → Rochester (MN) (~600 km)</desc>
     </rtept>
     <rtept lat="43.1114" lon="-88.4993">
-      <name>D33</name>
-      <desc>Day 33: Rochester → Oconomowoc (WI)</desc>
+      <name>D34</name>
+      <desc>Day 34: Rochester → Oconomowoc (WI)</desc>
     </rtept>
     <rtept lat="42.9849" lon="-81.2453">
-      <name>D34</name>
-      <desc>Day 34: Oconomowoc → Benton Harbor (Day Stop, John Cody Smith) → London, ON</desc>
+      <name>D35</name>
+      <desc>Day 35: Oconomowoc → Benton Harbor (Day Stop, John Cody Smith) → London, ON</desc>
     </rtept>
     <rtept lat="43.6532" lon="-79.3832">
-      <name>D35</name>
-      <desc>Day 35: Return home (London, ON → Toronto)</desc>
+      <name>D36</name>
+      <desc>Day 36: Return home (London, ON → Toronto)</desc>
     </rtept>
   </rte>
 </gpx>

@@ -22,38 +22,39 @@ const STATIC = {
   1: [42.5962, -75.9182, "McGraw, NY (Finger Lakes host area)"],
   2: [40.8843, -72.3895, "Southampton, NY"],
   3: [38.6651, -78.4594, "Luray, VA"],
-  4: [37.0479, -80.7798, "Pulaski, VA"],
-  5: [35.8681, -83.5618, "Sevierville, TN"],
-  6: [35.7679, -88.7896, "Beech Bluff / Jackson, TN area"],
-  7: [34.8662, -92.1101, "Jacksonville, AR"],
-  8: [32.7555, -97.3308, "Fort Worth, TX"],
-  9: [35.2742, -102.6682, "Adrian, TX (Route 66)"],
-  10: [35.192, -101.831, "Amarillo, TX (I-40 corridor)"],
-  11: [37.82022, -107.71362, "Silverton / San Juan NF dispersed (iOverlander pin)"],
-  12: [37.1631, -109.8859, "Mexican Hat, UT (campground area)"],
-  13: [37.65553, -112.17089, "Dispersed near Bryce (trip GPS)"],
-  14: [38.5733, -109.5498, "Moab, UT (town — confirm host)"],
-  15: [38.5733, -109.5498, "Moab, UT (rest day — same base)"],
-  16: [37.12891, -113.66331, "St. George area BLM (Cove Wash pin)"],
-  17: [34.5008, -117.1859, "Apple Valley, CA"],
-  18: [36.204, -121.82, "Prewitt Ridge / Big Sur area (approximate — confirm road open)"],
-  19: [35.87322, -121.4185, "Mendocino coast dispersed (trip GPS)"],
-  20: [38.9817, -123.70057, "Redwood area camp (trip GPS)"],
-  21: [43.7584, -122.5001, "Westfir, OR"],
-  22: [45.8207, -120.8215, "Goldendale, WA"],
-  23: [47.4957, -121.7868, "North Bend, WA"],
-  24: [48.4779, -120.1866, "Winthrop, WA (North Cascades hub — TBD booking)"],
-  25: [47.6733, -117.2394, "Spokane Valley, WA"],
-  26: [46.997, -114.248, "Frenchtown, MT"],
-  27: [45.329, -111.195, "Gallatin Gateway, MT"],
-  28: [44.4605, -110.8281, "Yellowstone (Old Faithful area — in-park day)"],
-  29: [44.7589, -108.7573, "Powell, WY (town center)"],
-  30: [44.2911, -105.5022, "Gillette, WY"],
-  31: [43.7667, -103.5988, "Custer, SD (Black Hills — TBD camp)"],
-  32: [44.0328, -92.6458, "Byron, MN"],
-  33: [43.1114, -88.4993, "Oconomowoc, WI"],
-  34: [42.9849, -81.2453, "London, ON"],
-  35: [43.6532, -79.3832, "Toronto, ON"],
+  4: [37.271, -79.9416, "Roanoke / Jefferson NF (approximate)"],
+  5: [36.5951, -82.1887, "Bristol VA/TN (approximate)"],
+  6: [35.8809, -84.1316, "Kingston, TN (approximate)"],
+  7: [35.6773, -88.0337, "Parsons, TN (approximate)"],
+  8: [34.8662, -92.1101, "Jacksonville, AR"],
+  9: [32.7555, -97.3308, "Fort Worth, TX"],
+  10: [35.2742, -102.6682, "Adrian, TX (Route 66)"],
+  11: [35.192, -101.831, "Amarillo, TX (I-40 corridor)"],
+  12: [37.82022, -107.71362, "Silverton / San Juan NF dispersed (iOverlander pin)"],
+  13: [37.1631, -109.8859, "Mexican Hat, UT (campground area)"],
+  14: [37.65553, -112.17089, "Dispersed near Bryce (trip GPS)"],
+  15: [38.5733, -109.5498, "Moab, UT (town — confirm host)"],
+  16: [38.5733, -109.5498, "Moab, UT (rest day — same base)"],
+  17: [37.12891, -113.66331, "St. George area BLM (Cove Wash pin)"],
+  18: [34.5008, -117.1859, "Apple Valley, CA"],
+  19: [36.204, -121.82, "Prewitt Ridge / Big Sur area (approximate — confirm road open)"],
+  20: [35.87322, -121.4185, "Mendocino coast dispersed (trip GPS)"],
+  21: [38.9817, -123.70057, "Redwood area camp (trip GPS)"],
+  22: [43.7584, -122.5001, "Westfir, OR"],
+  23: [45.8207, -120.8215, "Goldendale, WA"],
+  24: [47.4957, -121.7868, "North Bend, WA"],
+  25: [48.4779, -120.1866, "Winthrop, WA (North Cascades hub — TBD booking)"],
+  26: [47.6733, -117.2394, "Spokane Valley, WA"],
+  27: [46.997, -114.248, "Frenchtown, MT"],
+  28: [45.329, -111.195, "Gallatin Gateway, MT"],
+  29: [44.4605, -110.8281, "Yellowstone (Old Faithful area — in-park day)"],
+  30: [44.7589, -108.7573, "Powell, WY (town center)"],
+  31: [44.2911, -105.5022, "Gillette, WY"],
+  32: [43.7667, -103.5988, "Custer, SD (Black Hills — TBD camp)"],
+  33: [44.0328, -92.6458, "Byron, MN"],
+  34: [43.1114, -88.4993, "Oconomowoc, WI"],
+  35: [42.9849, -81.2453, "London, ON (approximate)"],
+  36: [43.6532, -79.3832, "Toronto, ON"],
 };
 
 function coordsFromMapsUrl(url) {
@@ -82,7 +83,7 @@ function coordsForDay(day) {
   const lodging = day.lodging;
   const alts = day.lodgingAlternatives;
 
-  if (idx === 14 || idx === 15) {
+  if (idx === 15 || idx === 16) {
     return { lat: STATIC[idx][0], lon: STATIC[idx][1], source: STATIC[idx][2] };
   }
   if (idx === 10) {
@@ -167,7 +168,7 @@ function main() {
   xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>${escapeXml(metaTitle)}</name>
-    <desc>35 overnight waypoints from trip.json. Straight-line route is NOT the riding route — import into Garmin, Gaia, or Google Earth and plan roads separately.</desc>
+    <desc>36 overnight waypoints from trip.json. Straight-line route is NOT the riding route — import into Garmin, Gaia, or Google Earth and plan roads separately.</desc>
     <time>${new Date().toISOString()}</time>
   </metadata>
 ${wptXml}

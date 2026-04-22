@@ -18,7 +18,7 @@ const cc = JSON.parse(fs.readFileSync(ccPath, "utf8"));
 const newTripDays = [
   {
     dayIndex: 4,
-    date: "2026-06-04",
+    date: "2026-05-23",
     title: "Luray → Roanoke (VA)",
     distanceKm: 0,
     difficulty: "MODERATE",
@@ -26,7 +26,7 @@ const newTripDays = [
       "Luray area → Roanoke metro via US-11 / US-460 or I-81 options — pick traffic vs scenery in Maps; aim Roanoke for resupply before NF overnight.",
     fuelNotes: "Fuel in Luray or before Roanoke; Roanoke has full services.",
     foodNotes: "Stock water/food before dispersed camp — no services on NF spurs.",
-    weatherNotes: "June: pop-up thunderstorms — check radar; avoid ridges in lightning.",
+    weatherNotes: "Late May: pop-up thunderstorms — check radar; avoid ridges in lightning.",
     keyNotes: [
       "Dispersed camping only where Jefferson NF MVUM allows motor vehicles — verify same week.",
       "Pack out all waste; many sites have no water.",
@@ -48,7 +48,7 @@ const newTripDays = [
   },
   {
     dayIndex: 5,
-    date: "2026-06-05",
+    date: "2026-05-24",
     title: "Roanoke → Bristol (VA/TN) — Blue Ridge Parkway day",
     distanceKm: 0,
     difficulty: "MODERATE",
@@ -86,7 +86,7 @@ const newTripDays = [
   },
   {
     dayIndex: 6,
-    date: "2026-06-06",
+    date: "2026-05-25",
     title: "Bristol → Great Smoky Mountains → Tail of the Dragon → Kingston (TN)",
     distanceKm: 0,
     difficulty: "MODERATE",
@@ -124,7 +124,7 @@ const newTripDays = [
   },
   {
     dayIndex: 7,
-    date: "2026-06-07",
+    date: "2026-05-26",
     title: "Kingston → Parsons (TN)",
     distanceKm: 0,
     difficulty: "EASY",
@@ -132,7 +132,7 @@ const newTripDays = [
       "Short west Tennessee day — US-70 / I-40 corridor options to Parsons (38363). Visit town, resupply, rest before Arkansas push.",
     fuelNotes: "Short leg — fuel optional.",
     foodNotes: "Parsons: small-town groceries — plan dinner.",
-    weatherNotes: "Humid June — afternoon storms possible.",
+    weatherNotes: "Humid late spring — afternoon storms possible.",
     keyNotes: ["Light day — use for laundry, bike check, hydration recovery."],
     campingAccommodation: "Free camping — public land / river access (verify)",
     terrain: "West TN rolling / river valleys",
@@ -179,7 +179,7 @@ trip.days = [...head, ...newTripDays, ...tail];
 trip.meta.title = trip.meta.title.replace(/35-day/i, "36-day");
 trip.trip.name = trip.trip.name.replace(/\(35 days\)/, "(36 days)");
 trip.trip.statsChips = trip.trip.statsChips.map((c) => (c.includes("35 days") ? "36 days" : c));
-trip.trip.endDate = "2026-07-06";
+trip.trip.endDate = "2026-06-24";
 trip.trip.legs = {
   "1": "Toronto → Fort Worth · Days 1–9",
   "2": "Fort Worth → Seattle · Days 10–24",

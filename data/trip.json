@@ -8,8 +8,8 @@
   "trip": {
     "name": "Toronto → Texas → West Coast → Rockies → Home (36 days)",
     "tagline": "USA loop — your ride, mapped",
-    "startDate": "2026-06-01",
-    "endDate": "2026-07-06",
+    "startDate": "2026-05-20",
+    "endDate": "2026-06-24",
     "homeBase": "Toronto, ON",
     "bike": "Suzuki DR650",
     "statsChips": [
@@ -70,7 +70,7 @@
   "days": [
     {
       "dayIndex": 1,
-      "date": "2026-06-01",
+      "date": "2026-05-20",
       "title": "Toronto → Finger Lakes (NY)",
       "distanceKm": 0,
       "difficulty": "MODERATE",
@@ -115,7 +115,7 @@
     },
     {
       "dayIndex": 2,
-      "date": "2026-06-02",
+      "date": "2026-05-21",
       "title": "Finger Lakes → New York",
       "distanceKm": 0,
       "terrain": "NY Thruway / Hudson Valley approaches",
@@ -156,11 +156,11 @@
     },
     {
       "dayIndex": 3,
-      "date": "2026-06-03",
+      "date": "2026-05-22",
       "title": "New York → Washington, DC → Luray (VA)",
       "distanceKm": 0,
       "terrain": "Interstate / Appalachian approaches",
-      "weatherNotes": "Mid-Atlantic June: humid air and slow traffic can overheat you in protective gear — hydrate on a schedule through the I-95 / Beltway grind.",
+      "weatherNotes": "Mid-Atlantic late May: humid air and slow traffic can overheat you in protective gear — hydrate on a schedule through the I-95 / Beltway grind.",
       "highlights": [
         "Shenandoah approaches near Luray"
       ],
@@ -192,14 +192,14 @@
     },
     {
       "dayIndex": 4,
-      "date": "2026-06-04",
+      "date": "2026-05-23",
       "title": "Luray → Roanoke (VA)",
       "distanceKm": 0,
       "difficulty": "MODERATE",
       "routeLine": "Luray area → Roanoke metro via US-11 / US-460 or I-81 options — pick traffic vs scenery in Maps; aim Roanoke for resupply before NF overnight.",
       "fuelNotes": "Fuel in Luray or before Roanoke; Roanoke has full services.",
       "foodNotes": "Stock water/food before dispersed camp — no services on NF spurs.",
-      "weatherNotes": "June: pop-up thunderstorms — check radar; avoid ridges in lightning.",
+      "weatherNotes": "Late May: pop-up thunderstorms — check radar; avoid ridges in lightning.",
       "keyNotes": [
         "Dispersed camping only where Jefferson NF MVUM allows motor vehicles — verify same week.",
         "Pack out all waste; many sites have no water."
@@ -229,7 +229,7 @@
     },
     {
       "dayIndex": 5,
-      "date": "2026-06-05",
+      "date": "2026-05-24",
       "title": "Roanoke → Bristol (VA/TN) — Blue Ridge Parkway day",
       "distanceKm": 0,
       "difficulty": "MODERATE",
@@ -276,7 +276,7 @@
     },
     {
       "dayIndex": 6,
-      "date": "2026-06-06",
+      "date": "2026-05-25",
       "title": "Bristol → Great Smoky Mountains → Tail of the Dragon → Kingston (TN)",
       "distanceKm": 0,
       "difficulty": "MODERATE",
@@ -326,14 +326,14 @@
     },
     {
       "dayIndex": 7,
-      "date": "2026-06-07",
+      "date": "2026-05-26",
       "title": "Kingston → Parsons (TN)",
       "distanceKm": 0,
       "difficulty": "EASY",
       "routeLine": "Short west Tennessee day — US-70 / I-40 corridor options to Parsons (38363). Visit town, resupply, rest before Arkansas push.",
       "fuelNotes": "Short leg — fuel optional.",
       "foodNotes": "Parsons: small-town groceries — plan dinner.",
-      "weatherNotes": "Humid June — afternoon storms possible.",
+      "weatherNotes": "Humid late spring — afternoon storms possible.",
       "keyNotes": [
         "Light day — use for laundry, bike check, hydration recovery."
       ],
@@ -370,7 +370,7 @@
     },
     {
       "dayIndex": 8,
-      "date": "2026-06-08",
+      "date": "2026-05-27",
       "title": "Parsons → Little Rock (AR)",
       "distanceKm": 0,
       "terrain": "MS River plain / AR",
@@ -408,7 +408,7 @@
     },
     {
       "dayIndex": 9,
-      "date": "2026-06-09",
+      "date": "2026-05-28",
       "title": "Little Rock → Fort Worth (TX)",
       "distanceKm": 0,
       "terrain": "TX highways",
@@ -432,7 +432,7 @@
     },
     {
       "dayIndex": 10,
-      "date": "2026-06-10",
+      "date": "2026-05-29",
       "title": "Fort Worth → Amarillo (TX)",
       "distanceKm": 0,
       "terrain": "North Texas plains",
@@ -468,7 +468,7 @@
     },
     {
       "dayIndex": 11,
-      "date": "2026-06-11",
+      "date": "2026-05-30",
       "title": "Amarillo → Albuquerque (NM)",
       "distanceKm": 0,
       "terrain": "High plains → NM high desert",
@@ -518,7 +518,7 @@
     },
     {
       "dayIndex": 12,
-      "date": "2026-06-12",
+      "date": "2026-05-31",
       "title": "Albuquerque → Million Dollar Highway (Silverton, CO)",
       "distanceKm": 0,
       "terrain": "Climb into San Juan Mountains — snow/ice risk off-season",
@@ -552,7 +552,7 @@
     },
     {
       "dayIndex": 13,
-      "date": "2026-06-13",
+      "date": "2026-06-01",
       "title": "Silverton → Mexican Hat (UT)",
       "distanceKm": 0,
       "terrain": "Four Corners high desert",
@@ -583,7 +583,7 @@
     },
     {
       "dayIndex": 14,
-      "date": "2026-06-14",
+      "date": "2026-06-02",
       "title": "Mexican Hat → Page → Bryce Canyon (~500 km)",
       "distanceKm": 0,
       "difficulty": "EPIC",
@@ -651,7 +651,7 @@
     },
     {
       "dayIndex": 15,
-      "date": "2026-06-15",
+      "date": "2026-06-03",
       "title": "Bryce Canyon → Arches National Park (Moab, UT)",
       "distanceKm": 0,
       "terrain": "UT-12 / scenic byways — traffic in season",
@@ -690,7 +690,7 @@
     },
     {
       "dayIndex": 16,
-      "date": "2026-06-16",
+      "date": "2026-06-04",
       "title": "Moab — Arches & Dead Horse Point (Rest/Exploration Day)",
       "distanceKm": 0,
       "difficulty": "EASY",
@@ -738,7 +738,7 @@
         {
           "heading": "Motel option",
           "name": "Any Moab motel (book ahead)",
-          "notes": "Moab fills fast in June — if host can only do 1 night, book motel for this night."
+          "notes": "Moab fills fast in peak season — if host can only do 1 night, book motel for this night."
         }
       ],
       "risks": [
@@ -761,7 +761,7 @@
     },
     {
       "dayIndex": 17,
-      "date": "2026-06-17",
+      "date": "2026-06-05",
       "title": "Moab → St. George (UT)",
       "distanceKm": 0,
       "terrain": "I-15 south — desert",
@@ -802,7 +802,7 @@
     },
     {
       "dayIndex": 18,
-      "date": "2026-06-18",
+      "date": "2026-06-06",
       "title": "St. George → Barstow (CA)",
       "distanceKm": 0,
       "terrain": "Mojave Desert — heat and wind",
@@ -831,7 +831,7 @@
     },
     {
       "dayIndex": 19,
-      "date": "2026-06-19",
+      "date": "2026-06-07",
       "title": "Barstow → Hollywood → Leo Carrillo (Day Stop) → Big Sur / Prewitt Ridge",
       "distanceKm": 0,
       "difficulty": "EPIC",
@@ -893,7 +893,7 @@
     },
     {
       "dayIndex": 20,
-      "date": "2026-06-20",
+      "date": "2026-06-08",
       "title": "Prewitt Ridge → Point Arena Lighthouse",
       "distanceKm": 0,
       "terrain": "Northern CA coast",
@@ -923,7 +923,7 @@
     },
     {
       "dayIndex": 21,
-      "date": "2026-06-21",
+      "date": "2026-06-09",
       "title": "Point Arena → Redwood National Park",
       "distanceKm": 0,
       "terrain": "US-101 redwood corridor",
@@ -952,7 +952,7 @@
     },
     {
       "dayIndex": 22,
-      "date": "2026-06-22",
+      "date": "2026-06-10",
       "title": "Redwood → Crater Lake (Westfir, OR)",
       "distanceKm": 0,
       "terrain": "OR coastal range / I-5 or 199 options",
@@ -980,7 +980,7 @@
     },
     {
       "dayIndex": 23,
-      "date": "2026-06-23",
+      "date": "2026-06-11",
       "title": "Westfir → Goldendale / Mosier",
       "distanceKm": 0,
       "terrain": "Columbia River Gorge — wind",
@@ -1019,7 +1019,7 @@
     },
     {
       "dayIndex": 24,
-      "date": "2026-06-24",
+      "date": "2026-06-12",
       "title": "Mosier → Seattle (WA)",
       "distanceKm": 0,
       "terrain": "Cascade approaches to Puget Sound",
@@ -1065,7 +1065,7 @@
     },
     {
       "dayIndex": 25,
-      "date": "2026-06-25",
+      "date": "2026-06-13",
       "title": "Seattle → US-20 (~400 km)",
       "distanceKm": 0,
       "terrain": "North Cascades Highway (if open) vs. I-90 fallback",
@@ -1103,7 +1103,7 @@
     },
     {
       "dayIndex": 26,
-      "date": "2026-06-26",
+      "date": "2026-06-14",
       "title": "US-20 → Spokane",
       "distanceKm": 0,
       "terrain": "Eastern WA / ID panhandle",
@@ -1137,7 +1137,7 @@
     },
     {
       "dayIndex": 27,
-      "date": "2026-06-27",
+      "date": "2026-06-15",
       "title": "Spokane → Kooskia → Lolo Pass",
       "distanceKm": 0,
       "terrain": "ID panhandle — forested passes",
@@ -1175,7 +1175,7 @@
     },
     {
       "dayIndex": 28,
-      "date": "2026-06-28",
+      "date": "2026-06-16",
       "title": "Lolo Pass → Yellowstone",
       "distanceKm": 0,
       "terrain": "MT high country into Greater Yellowstone",
@@ -1206,7 +1206,7 @@
     },
     {
       "dayIndex": 29,
-      "date": "2026-06-29",
+      "date": "2026-06-17",
       "title": "Yellowstone National Park — full day",
       "distanceKm": 0,
       "terrain": "NP roads — congestion, wildlife jams",
@@ -1242,7 +1242,7 @@
     },
     {
       "dayIndex": 30,
-      "date": "2026-06-30",
+      "date": "2026-06-18",
       "title": "Yellowstone → Beartooth Highway → Powell, WY",
       "distanceKm": 0,
       "routeLine": "Morning: ride Yellowstone’s Grand Loop toward the Northeast Entrance (from wherever you stayed — e.g. Old Faithful area). At Cooke City, MT, pick up US-212 (Beartooth Highway) over the pass to Red Lodge — not WY-310 (Chief Joseph toward Cody) unless 212 is closed. Continue into the Bighorn Basin to Powell, WY for the night. The app’s Maps distance (~316 km) is the Cooke City → Red Lodge → Powell leg only; add your in-park miles separately.",
@@ -1283,7 +1283,7 @@
     },
     {
       "dayIndex": 31,
-      "date": "2026-07-01",
+      "date": "2026-06-19",
       "title": "Powell → Gillette (WY)",
       "distanceKm": 0,
       "routeLine": "Bighorn Basin crossing after the night in Powell — slab and wind typical toward Gillette (Powder River Basin).",
@@ -1310,7 +1310,7 @@
     },
     {
       "dayIndex": 32,
-      "date": "2026-07-02",
+      "date": "2026-06-20",
       "title": "Gillette → Needles Highway → border camping",
       "distanceKm": 0,
       "terrain": "Black Hills — Needles / Iron Mountain Road traffic",
@@ -1341,7 +1341,7 @@
     },
     {
       "dayIndex": 33,
-      "date": "2026-07-03",
+      "date": "2026-06-21",
       "title": "Oacoma → Rochester (MN) (~600 km)",
       "distanceKm": 0,
       "terrain": "Great Plains long haul — services spacing",
@@ -1385,7 +1385,7 @@
     },
     {
       "dayIndex": 34,
-      "date": "2026-07-04",
+      "date": "2026-06-22",
       "title": "Rochester → Oconomowoc (WI)",
       "distanceKm": 0,
       "terrain": "Upper Midwest freeways",
@@ -1416,11 +1416,11 @@
     },
     {
       "dayIndex": 35,
-      "date": "2026-07-05",
+      "date": "2026-06-23",
       "title": "Oconomowoc → Benton Harbor (Day Stop, John Cody Smith) → London, ON",
       "distanceKm": 0,
       "difficulty": "LONG",
-      "routeLine": "Oconomowoc, WI → I-94 E → Benton Harbor, MI (visit John Cody Smith, 2 hr lunch stop) → US-12 or I-94 E → Port Huron, MI → Blue Water Bridge → Sarnia, ON → Hwy 402 E → London, ON. ~530 km total. Border crossing Jul 5 — check CBSA wait times; post–Jul 4 weekend traffic can be heavy.",
+      "routeLine": "Oconomowoc, WI → I-94 E → Benton Harbor, MI (visit John Cody Smith, 2 hr lunch stop) → US-12 or I-94 E → Port Huron, MI → Blue Water Bridge → Sarnia, ON → Hwy 402 E → London, ON. ~530 km total. Border crossing same day (late June) — check CBSA wait times; summer weekday traffic on I-94 can be heavy.",
       "fuelNotes": "Fuel in Oconomowoc before departure. Fill again at Port Huron before the border — Canadian fuel is priced in litres and typically higher. Cross with a full tank.",
       "terrain": "I-94 corridor — flat Midwest freeway. Blue Water Bridge (Port Huron–Sarnia): active CBSA crossing. Highway 402 to London: Ontario freeway, smooth.",
       "highlights": [
@@ -1442,7 +1442,7 @@
           "label": "Border crossing",
           "place": "Blue Water Bridge, Port Huron, MI → Sarnia, ON",
           "type": "border",
-          "notes": "Jul 5 crossing — have passport/NEXUS ready. Declare all items accurately to CBSA.",
+          "notes": "Have passport/NEXUS ready for the crossing. Declare all items accurately to CBSA.",
           "mapsUrl": "https://www.google.com/maps/search/Blue+Water+Bridge+Port+Huron"
         }
       ],
@@ -1453,10 +1453,10 @@
       "risks": [
         "Long day (~530 km) — US-side traffic heavy mid-day; plan Benton Harbor stop early (11 am–1 pm) and border crossing with buffer",
         "Blue Water Bridge border wait — check CBSA wait times that morning; have all documents ready",
-        "Michigan I-94 post-holiday weekend traffic — allow extra time around Chicago-to-Detroit corridor",
+        "Michigan I-94 summer traffic — allow extra time around Chicago-to-Detroit corridor",
         "Canadian CBSA: strict about alcohol, firearms, and food items — declare everything"
       ],
-      "weatherNotes": "Early July in the Great Lakes region: typically warm (25–32 °C), possible afternoon thunderstorms. Check radar before departure.",
+      "weatherNotes": "Late June in the Great Lakes region: typically warm (25–32 °C), possible afternoon thunderstorms. Check radar before departure.",
       "planB": "If John Cody Smith visit runs long or traffic is severe, skip London and stay in Sarnia/Windsor area instead.",
       "babAlternateIds": [
         "john-cody-smith"
@@ -1469,7 +1469,7 @@
     },
     {
       "dayIndex": 36,
-      "date": "2026-07-06",
+      "date": "2026-06-24",
       "title": "Return home (London, ON → Toronto)",
       "distanceKm": 0,
       "terrain": "ON 401 — heavy traffic possible",

@@ -62,12 +62,12 @@ const out = [];
 out.push({
   ...oldDays[0],
   dayIndex: 1,
-  date: isoAdd("2026-06-01", 0),
+  date: isoAdd("2026-05-20", 0),
 });
 
 out.push({
   dayIndex: 2,
-  date: isoAdd("2026-06-01", 1),
+  date: isoAdd("2026-05-20", 1),
   title: "Finger Lakes → New York",
   distanceKm: 0,
   terrain: "NY Thruway / Hudson Valley approaches",
@@ -94,7 +94,7 @@ out.push({
 
 const d3 = JSON.parse(JSON.stringify(oldDays[1]));
 d3.dayIndex = 3;
-d3.date = isoAdd("2026-06-01", 2);
+d3.date = isoAdd("2026-05-20", 2);
 d3.title = "New York → Washington, DC → Luray (VA)";
 d3.lodging = {
   heading: "Stay",
@@ -108,7 +108,7 @@ out.push(d3);
 for (let i = 2; i < oldDays.length; i++) {
   const nd = JSON.parse(JSON.stringify(oldDays[i]));
   nd.dayIndex = oldDays[i].dayIndex + 1;
-  nd.date = isoAdd("2026-06-01", nd.dayIndex - 1);
+  nd.date = isoAdd("2026-05-20", nd.dayIndex - 1);
   if (TITLE_BY_NEW_INDEX[nd.dayIndex]) {
     nd.title = TITLE_BY_NEW_INDEX[nd.dayIndex];
   }
@@ -125,7 +125,7 @@ for (let i = 2; i < oldDays.length; i++) {
 
 data.days = out;
 data.trip.name = "Toronto → Texas → West Coast → Rockies → Home (36 days)";
-data.trip.endDate = "2026-07-06";
+data.trip.endDate = "2026-06-24";
 data.trip.statsChips = [
   "36 riding days",
   "Km + Maps links in route-overlays.json",

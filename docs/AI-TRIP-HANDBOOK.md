@@ -14,8 +14,8 @@
 | Rider | Ali (from trip.json) |
 | Bike | Suzuki DR650 |
 | Home base | Toronto, ON |
-| Start date | 2026-06-01 |
-| End date | 2026-07-06 |
+| Start date | 2026-05-20 |
+| End date | 2026-06-24 |
 | Timezone (app) | America/Toronto |
 | Units | metric |
 | Currency (metadata) | USD |
@@ -87,7 +87,7 @@
 
 Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` in JSON means “use live Maps.” Stays marked **B.a.B.** resolve to `bab-hosts.json` via `babMergeId` or alternate ids.
 
-### Day 1 — 2026-06-01 — Toronto → Finger Lakes (NY)
+### Day 1 — 2026-05-20 — Toronto → Finger Lakes (NY)
 
 - **Difficulty:** MODERATE
 - **Route line:** Plan in your mapping app — typical: GTA → Niagara/Lewiston or Peace Bridge corridor → I-90 east into NY → Finger Lakes roads (verify crossing and tolls).
@@ -106,7 +106,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - Canada: no outbound park fee. U.S. entry: CBP inspection has no park-style fee.
   - NY Thruway (I-90) / crossings: tolls apply — E-ZPass or Tolls By Mail (plate billing); Peace Bridge / Lewiston–Queenston bridge tolls vary — set up payment before trip if needed.
 
-### Day 2 — 2026-06-02 — Finger Lakes → New York
+### Day 2 — 2026-05-21 — Finger Lakes → New York
 
 - **Terrain:** NY Thruway / Hudson Valley approaches
 - **Weather:** Approaching NYC / Long Island in summer: heat + humidity in full gear — plan water, shade, and rest; don’t rely on “not thirsty yet.”
@@ -120,10 +120,10 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - No federal park entrance fee on routing described.
   - NYC / Hudson crossings (if used): many bridges/tunnels are cashless tolling to a registered plate or bill-by-mail — budget tolls; motorcycles follow posted rules per crossing.
 
-### Day 3 — 2026-06-03 — New York → Washington, DC → Luray (VA)
+### Day 3 — 2026-05-22 — New York → Washington, DC → Luray (VA)
 
 - **Terrain:** Interstate / Appalachian approaches
-- **Weather:** Mid-Atlantic June: humid air and slow traffic can overheat you in protective gear — hydrate on a schedule through the I-95 / Beltway grind.
+- **Weather:** Mid-Atlantic late May: humid air and slow traffic can overheat you in protective gear — hydrate on a schedule through the I-95 / Beltway grind.
 - **Lodging:** Stay — **Frank Allen Pence** — Luray, VA 22835
 - **Highlights:** Shenandoah approaches near Luray
 - **Risks:** East Coast traffic corridors
@@ -133,14 +133,14 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - If you enter a specific fee-charging NPS unit as a visitor attraction, pay that site’s fee — not required for through-riding to Luray.
   - Virginia: no Shenandoah NP fee unless you enter the Skyline Drive corridor (fee applies at entrance stations). Your Luray routing may stay outside park gates — confirm map.
 
-### Day 4 — 2026-06-04 — Luray → Roanoke (VA)
+### Day 4 — 2026-05-23 — Luray → Roanoke (VA)
 
 - **Difficulty:** MODERATE
 - **Route line:** Luray area → Roanoke metro via US-11 / US-460 or I-81 options — pick traffic vs scenery in Maps; aim Roanoke for resupply before NF overnight.
 - **Terrain:** Shenandoah approaches → Roanoke valley
 - **Fuel:** Fuel in Luray or before Roanoke; Roanoke has full services.
 - **Food:** Stock water/food before dispersed camp — no services on NF spurs.
-- **Weather:** June: pop-up thunderstorms — check radar; avoid ridges in lightning.
+- **Weather:** Late May: pop-up thunderstorms — check radar; avoid ridges in lightning.
 - **Lodging:** Free camping (dispersed) — **George Washington & Jefferson NF — near Roanoke (search MVUM)** — Example search area ~37.5, -79.9 — use official Motor Vehicle Use Map for legal spur roads; iOverlander/FreeCampgrounds for user reports — verify. No amenities; 14-day limits common.
 - **Highlights:** Roanoke resupply; Jefferson NF camping
 - **Key notes:** Dispersed camping only where Jefferson NF MVUM allows motor vehicles — verify same week. | Pack out all waste; many sites have no water.
@@ -149,7 +149,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Fees / passes (1 lines):**
   - George Washington & Jefferson National Forests: no NPS entrance fee; dispersed camping is generally free where MVUM allows — developed NF campgrounds charge site fees if you use them.
 
-### Day 5 — 2026-06-05 — Roanoke → Bristol (VA/TN) — Blue Ridge Parkway day
+### Day 5 — 2026-05-24 — Roanoke → Bristol (VA/TN) — Blue Ridge Parkway day
 
 - **Difficulty:** MODERATE
 - **Route line:** Primary riding on Blue Ridge Parkway and short connectors — NOT I-81 as your main line. In Google Maps: set waypoints Roanoke → Rocky Knob / Mabry Mill (BRP) → Fancy Gap → Boone NC → secondary roads into Bristol TN/VA. Drag route off interstates; use ‘avoid highways’ if helpful. BRP max ~45 mph — full riding day.
@@ -168,7 +168,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - Blue Ridge Parkway (NPS): no entrance fee for the parkway itself; standard NPS rules apply (speed, wildlife).
   - Optional stops (e.g. Mabry Mill): parking may fill — no separate park ‘ticket’ beyond your time.
 
-### Day 6 — 2026-06-06 — Bristol → Great Smoky Mountains → Tail of the Dragon → Kingston (TN)
+### Day 6 — 2026-05-25 — Bristol → Great Smoky Mountains → Tail of the Dragon → Kingston (TN)
 
 - **Difficulty:** MODERATE
 - **Route line:** Bristol → Smokies gateway (Gatlinburg/Newfound Gap optional scenic) → US-129 Tail of the Dragon (Deals Gap) → Kingston TN (Loudon County). US-129 is enforcement-heavy — ride your own pace; crossing centerline is citation bait.
@@ -189,14 +189,14 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - Tail of the Dragon (US-129): public highway — no park entrance; obey enforcement and lane rules.
   - Non-U.S. citizens (2026): America the Beautiful annual pass for non-residents US$250 (digital: recreation.gov/pass) — covers standard entrance fees where accepted and waives the US$100/person non-resident surcharge at the 11 high-visitation parks when you show valid pass + photo ID (see nps.gov/aboutus/nonresident-fees.htm). U.S. resident pass remains US$80.
 
-### Day 7 — 2026-06-07 — Kingston → Parsons (TN)
+### Day 7 — 2026-05-26 — Kingston → Parsons (TN)
 
 - **Difficulty:** EASY
 - **Route line:** Short west Tennessee day — US-70 / I-40 corridor options to Parsons (38363). Visit town, resupply, rest before Arkansas push.
 - **Terrain:** West TN rolling / river valleys
 - **Fuel:** Short leg — fuel optional.
 - **Food:** Parsons: small-town groceries — plan dinner.
-- **Weather:** Humid June — afternoon storms possible.
+- **Weather:** Humid late spring — afternoon storms possible.
 - **Lodging:** Free camping (dispersed / primitive) — **Natchez Trace State Forest / Kentucky Lake USACE (verify free)** — West TN: search iOverlander for free camps near Parsons / Decaturville — many are lake/river bank or WMA — confirm legal camping, fire rules, and flood line. USACE sometimes offers free primitive areas — read signage.
 - **Highlights:** Parsons TN; Kentucky Lake / Tennessee River region nearby
 - **Key notes:** Light day — use for laundry, bike check, hydration recovery.
@@ -207,7 +207,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Fees / passes (1 lines):**
   - No major national-park entrance on this short west-TN day. Natchez Trace State Forest / USACE / WMA: follow posted day-use or camping fees if you use a fee area — many dispersed options are free if legally allowed.
 
-### Day 8 — 2026-06-08 — Parsons → Little Rock (AR)
+### Day 8 — 2026-05-27 — Parsons → Little Rock (AR)
 
 - **Terrain:** MS River plain / AR
 - **Lodging:** Stay option — **Joe Maglie** — John Harden Drive, Jacksonville, AR 72076
@@ -219,7 +219,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - Hot Springs National Park (optional detour near Garland County): no entrance fee to enter the park (per NPS). Bathhouse row services are separate commercial fees if you use them.
   - Arkansas state highways: no park pass required for slab transit.
 
-### Day 9 — 2026-06-09 — Little Rock → Fort Worth (TX)
+### Day 9 — 2026-05-28 — Little Rock → Fort Worth (TX)
 
 - **Terrain:** TX highways
 - **Lodging:**  — **HOME — Fort Worth, TX** — Garage tools, laundry, bike check before western push.
@@ -229,7 +229,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - Texas: possible toll roads on some I-30/I-20 routings — TxTag / toll-by-plate; budget if your GPS uses toll lanes.
   - No NPS entrance on this home-stop day as written.
 
-### Day 10 — 2026-06-10 — Fort Worth → Amarillo (TX)
+### Day 10 — 2026-05-29 — Fort Worth → Amarillo (TX)
 
 - **Terrain:** North Texas plains
 - **Lodging:** Stay option — **Kelly Snyder** — 307 W Historic Route 66, Adrian, TX 79001
@@ -241,7 +241,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - Texas plains / Route 66 stops: roadside attractions may charge their own small admission — optional.
   - No federal park entrance fee for the driving day as written.
 
-### Day 11 — 2026-06-11 — Amarillo → Albuquerque (NM)
+### Day 11 — 2026-05-30 — Amarillo → Albuquerque (NM)
 
 - **Terrain:** High plains → NM high desert
 - **Lodging:** Camping / motel options — **Motel (I-40 frontage)** — 6030 W Interstate 40 Frontage Rd, Amarillo, TX area (~$50 CAD — verify)
@@ -257,7 +257,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - iOverlander / private camp pins (~US$10 tenting in your notes): pay the host/landowner; not an NPS fee.
   - I-40 / Amarillo: no NPS fee for driving; motel/camp is commercial pricing.
 
-### Day 12 — 2026-06-12 — Albuquerque → Million Dollar Highway (Silverton, CO)
+### Day 12 — 2026-05-31 — Albuquerque → Million Dollar Highway (Silverton, CO)
 
 - **Terrain:** Climb into San Juan Mountains — snow/ice risk off-season
 - **Lodging:** Camping — **iOverlander (FREE)** — GPS 37.82022, -107.71362 — confirm MVUM / fire rules. Additional free dispersed camping along the route is possible — verify land status.
@@ -269,7 +269,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - San Juan NF / Silverton area: USFS — no NPS entrance; dispersed camping usually free where allowed — verify MVUM. Developed USFS or county sites may charge.
   - Colorado state highways: no park pass for through-riding.
 
-### Day 13 — 2026-06-13 — Silverton → Mexican Hat (UT)
+### Day 13 — 2026-06-01 — Silverton → Mexican Hat (UT)
 
 - **Terrain:** Four Corners high desert
 - **Lodging:** Camping (~$22 + tax) — **Mexican Hat Rocks** — Reserve or confirm same-day availability in season.
@@ -280,7 +280,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - Mexican Hat Rocks campground (private): ~US$22+ tax in your plan — reserve/confirm on their site (seasonal).
   - Navajo Nation / Monument Valley (if you enter tribal park): separate tribal permit/fees — not included in America the Beautiful.
 
-### Day 14 — 2026-06-14 — Mexican Hat → Page → Bryce Canyon (~500 km)
+### Day 14 — 2026-06-02 — Mexican Hat → Page → Bryce Canyon (~500 km)
 
 - **Difficulty:** EPIC
 - **Route line:** US-163 toward Page → US-89 toward Kanab/Bryce corridor — pin exact path and breaks in your GPS (long mileage day).
@@ -305,7 +305,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - Glen Canyon NRA (Lake Powell area): if you use NRA fee areas, Glen Canyon has its own fee schedule — America the Beautiful applies to NPS-managed standard entrance (see nps.gov/glca).
   - Non-U.S. citizens (2026): America the Beautiful annual pass for non-residents US$250 (digital: recreation.gov/pass) — covers standard entrance fees where accepted and waives the US$100/person non-resident surcharge at the 11 high-visitation parks when you show valid pass + photo ID (see nps.gov/aboutus/nonresident-fees.htm). U.S. resident pass remains US$80.
 
-### Day 15 — 2026-06-15 — Bryce Canyon → Arches National Park (Moab, UT)
+### Day 15 — 2026-06-03 — Bryce Canyon → Arches National Park (Moab, UT)
 
 - **Terrain:** UT-12 / scenic byways — traffic in season
 - **Lodging:** Stay (Moab) — **Robert VandenBroeke** — Moab, UT 84532
@@ -318,7 +318,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - Driving UT-12 toward Moab: if you enter Capitol Reef NP, pay NPS entrance (motorcycle rate on nps.gov/care) or use America the Beautiful — optional detour only.
   - Canyonlands / Arches not yet visited this day as written — no Arches fee until you enter.
 
-### Day 16 — 2026-06-16 — Moab — Arches & Dead Horse Point (Rest/Exploration Day)
+### Day 16 — 2026-06-04 — Moab — Arches & Dead Horse Point (Rest/Exploration Day)
 
 - **Difficulty:** EASY
 - **Route line:** Zero riding day. Base: Moab, UT. Arches NP is 8 km from town — drive or ride out early before the heat and tourist crowds build.
@@ -343,7 +343,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - Canyonlands Island in the Sky (optional): NPS entrance fee if you enter — motorcycle rate on nps.gov/cany.
   - Non-U.S. citizens (2026): America the Beautiful annual pass for non-residents US$250 (digital: recreation.gov/pass) — covers standard entrance fees where accepted and waives the US$100/person non-resident surcharge at the 11 high-visitation parks when you show valid pass + photo ID (see nps.gov/aboutus/nonresident-fees.htm). U.S. resident pass remains US$80.
 
-### Day 17 — 2026-06-17 — Moab → St. George (UT)
+### Day 17 — 2026-06-05 — Moab → St. George (UT)
 
 - **Terrain:** I-15 south — desert
 - **Lodging:** BLM / dispersed — **Sheep Bridge Park (BLM)** — Confirm road suitability for your bike loadout.
@@ -357,7 +357,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - BLM dispersed (Sheep Bridge / Cove Wash): typically no entrance fee; follow BLM posted rules.
   - Zion NP (if you enter the park): Zion is on the 2026 non-resident surcharge list — motorcycle entrance fee + possible US$100/person without annual pass; check nps.gov/zion + tunnel restrictions for large vehicles.
 
-### Day 18 — 2026-06-18 — St. George → Barstow (CA)
+### Day 18 — 2026-06-06 — St. George → Barstow (CA)
 
 - **Terrain:** Mojave Desert — heat and wind
 - **Lodging:**  — **Montana Shaffer** — 22060 Wren Street, Apple Valley, CA 92308
@@ -369,7 +369,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - I-15: possible toll lanes in some segments — account for toll-by-plate.
   - No park entrance fee for Mojave transit to Apple Valley as written.
 
-### Day 19 — 2026-06-19 — Barstow → Hollywood → Leo Carrillo (Day Stop) → Big Sur / Prewitt Ridge
+### Day 19 — 2026-06-07 — Barstow → Hollywood → Leo Carrillo (Day Stop) → Big Sur / Prewitt Ridge
 
 - **Difficulty:** EPIC
 - **Route line:** Barstow → I-15 S → CA-14 → LA basin → PCH (Hwy 1) north through Malibu → Leo Carrillo State Park (2-3 hr day stop) → PCH north through Big Sur → Prewitt Ridge Campground. ~590 km total — longest riding day of the California leg. Start by 6:30 am to clear LA traffic.
@@ -389,7 +389,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - PCH / Big Sur: Julia Pfeiffer Burns SP and other CA state parks charge day-use or parking fees — check parks.ca.gov for each stop.
   - Prewitt Ridge BLM: usually no fee; confirm BLM Los Padres info for your exact spur.
 
-### Day 20 — 2026-06-20 — Prewitt Ridge → Point Arena Lighthouse
+### Day 20 — 2026-06-08 — Prewitt Ridge → Point Arena Lighthouse
 
 - **Terrain:** Northern CA coast
 - **Lodging:** Camping (verify fees) — **Dispersed / listed GPS** — GPS 35.87322, -121.41850 — confirm land status and fees before paying/staying.
@@ -399,7 +399,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Fees / passes (1 lines):**
   - CA Hwy 1 / dispersed pin: confirm land manager (private / county / state) and any day-use or camping fee before paying or camping.
 
-### Day 21 — 2026-06-21 — Point Arena → Redwood National Park
+### Day 21 — 2026-06-09 — Point Arena → Redwood National Park
 
 - **Terrain:** US-101 redwood corridor
 - **Lodging:** Camping (paid) — **Redwood area camp (GPS)** — GPS 38.98170, -123.70057 — verify campground name and reservation rules.
@@ -409,7 +409,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Fees / passes (1 lines):**
   - Redwood National and State Parks: NPS units — no entrance fee for the federal Redwood areas (nps.gov/redw). Adjacent California state park units may charge day-use — pay if you enter those units.
 
-### Day 22 — 2026-06-22 — Redwood → Crater Lake (Westfir, OR)
+### Day 22 — 2026-06-10 — Redwood → Crater Lake (Westfir, OR)
 
 - **Terrain:** OR coastal range / I-5 or 199 options
 - **Lodging:**  — **Deb & Dave B** — Westfir, OR 97492
@@ -419,7 +419,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Fees / passes (1 lines):**
   - Crater Lake NP (optional detour): NPS entrance applies if you enter — motorcycle rate on nps.gov/crla; America the Beautiful accepted. Not on the 11-park US$100 surcharge list as published Jan 2026 (verify if policy updates).
 
-### Day 23 — 2026-06-23 — Westfir → Goldendale / Mosier
+### Day 23 — 2026-06-11 — Westfir → Goldendale / Mosier
 
 - **Terrain:** Columbia River Gorge — wind
 - **Lodging:** Stay option — **Greg Wagner** — 303 Fish Hatchery Road, Goldendale, WA 98620
@@ -430,7 +430,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Fees / passes (1 lines):**
   - Columbia River Gorge NSA / OR & WA state parks: some trailheads require Northwest Forest Pass or state day-use — check fs.usda.gov and Oregon/Washington park sites for the exact stop.
 
-### Day 24 — 2026-06-24 — Mosier → Seattle (WA)
+### Day 24 — 2026-06-12 — Mosier → Seattle (WA)
 
 - **Terrain:** Cascade approaches to Puget Sound
 - **Lodging:** Pre-Seattle — **Bob Combs** — North Bend, WA
@@ -442,7 +442,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Fees / passes (1 lines):**
   - Seattle metro: no NPS entrance for urban riding; paid parking garages may apply downtown.
 
-### Day 25 — 2026-06-25 — Seattle → US-20 (~400 km)
+### Day 25 — 2026-06-13 — Seattle → US-20 (~400 km)
 
 - **Terrain:** North Cascades Highway (if open) vs. I-90 fallback
 - **Lodging:**  — **TBD — book after route pinned** — Options: Winthrop, Twisp, Omak, or I-90 corridor motels.
@@ -456,7 +456,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - North Cascades National Park complex: no entrance fee to drive WA SR-20 (nps.gov/noca).
   - If you use a fee trailhead or Sno-Park in season, Washington Sno-Park permit may apply in winter — June usually not applicable.
 
-### Day 26 — 2026-06-26 — US-20 → Spokane
+### Day 26 — 2026-06-14 — US-20 → Spokane
 
 - **Terrain:** Eastern WA / ID panhandle
 - **Lodging:** Stay option — **David & Pita Ettenberg** — Spokane Valley, WA
@@ -466,7 +466,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Fees / passes (1 lines):**
   - Eastern WA / Spokane: no NPS fee for routing as written.
 
-### Day 27 — 2026-06-27 — Spokane → Kooskia → Lolo Pass
+### Day 27 — 2026-06-15 — Spokane → Kooskia → Lolo Pass
 
 - **Terrain:** ID panhandle — forested passes
 - **Lodging:** Stay option — **Dustin Patton** — Frenchtown, MT
@@ -478,7 +478,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Fees / passes (1 lines):**
   - Lolo Pass / US-12: scenic highway — no national-park entrance fee for the pass transit itself.
 
-### Day 28 — 2026-06-28 — Lolo Pass → Yellowstone
+### Day 28 — 2026-06-16 — Lolo Pass → Yellowstone
 
 - **Terrain:** MT high country into Greater Yellowstone
 - **Lodging:**  — **Deryk Hagey** — Gallatin Gateway, MT
@@ -490,7 +490,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - Keep receipt — 7-day Yellowstone entrance valid for re-entry.
   - Non-U.S. citizens (2026): America the Beautiful annual pass for non-residents US$250 (digital: recreation.gov/pass) — covers standard entrance fees where accepted and waives the US$100/person non-resident surcharge at the 11 high-visitation parks when you show valid pass + photo ID (see nps.gov/aboutus/nonresident-fees.htm). U.S. resident pass remains US$80.
 
-### Day 29 — 2026-06-29 — Yellowstone National Park — full day
+### Day 29 — 2026-06-17 — Yellowstone National Park — full day
 
 - **Terrain:** NP roads — congestion, wildlife jams
 - **Lodging:**  — **Same as Day 26 or move closer to NE exit** — Book inside-park or Gardiner/Cooke if pushing toward Beartooth next day.
@@ -503,7 +503,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - Yellowstone NP: same 7-day entrance window if within validity from purchase — carry pass/receipt.
   - Non-U.S. citizens (2026): America the Beautiful annual pass for non-residents US$250 (digital: recreation.gov/pass) — covers standard entrance fees where accepted and waives the US$100/person non-resident surcharge at the 11 high-visitation parks when you show valid pass + photo ID (see nps.gov/aboutus/nonresident-fees.htm). U.S. resident pass remains US$80.
 
-### Day 30 — 2026-06-30 — Yellowstone → Beartooth Highway → Powell, WY
+### Day 30 — 2026-06-18 — Yellowstone → Beartooth Highway → Powell, WY
 
 - **Route line:** Morning: ride Yellowstone’s Grand Loop toward the Northeast Entrance (from wherever you stayed — e.g. Old Faithful area). At Cooke City, MT, pick up US-212 (Beartooth Highway) over the pass to Red Lodge — not WY-310 (Chief Joseph toward Cody) unless 212 is closed. Continue into the Bighorn Basin to Powell, WY for the night. The app’s Maps distance (~316 km) is the Cooke City → Red Lodge → Powell leg only; add your in-park miles separately.
 - **Terrain:** US-212 high alpine — snow/ice possible early season; do not confuse with lower WY-310 corridor
@@ -518,7 +518,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - Yellowstone NP: still inside 7-day window if continuous from prior entries — confirm dates on your pass stub.
   - Beartooth Highway (US-212): scenic corridor — no separate ‘Beartooth pass’ beyond any NPS Yellowstone re-entry if you dip back in.
 
-### Day 31 — 2026-07-01 — Powell → Gillette (WY)
+### Day 31 — 2026-06-19 — Powell → Gillette (WY)
 
 - **Route line:** Bighorn Basin crossing after the night in Powell — slab and wind typical toward Gillette (Powder River Basin).
 - **Terrain:** WY plains — wind
@@ -529,7 +529,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Fees / passes (1 lines):**
   - Wyoming plains: no NPS fee for routing as written.
 
-### Day 32 — 2026-07-02 — Gillette → Needles Highway → border camping
+### Day 32 — 2026-06-20 — Gillette → Needles Highway → border camping
 
 - **Terrain:** Black Hills — Needles / Iron Mountain Road traffic
 - **Lodging:** Free camping — **TBD — border / Black Hills dispersed** — Pick legal dispersed or USFS after confirming MVUM; next leg starts Oacoma SD area.
@@ -542,7 +542,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - Black Hills National Forest: generally no entrance fee; amenity sites may charge.
   - Mount Rushmore NM: parking is a private concession fee (not covered by America the Beautiful for the parking structure) — budget separately if you visit.
 
-### Day 33 — 2026-07-03 — Oacoma → Rochester (MN) (~600 km)
+### Day 33 — 2026-06-21 — Oacoma → Rochester (MN) (~600 km)
 
 - **Terrain:** Great Plains long haul — services spacing
 - **Lodging:** Stay option — **Laurie Calhoon** — Byron, MN
@@ -556,7 +556,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Fees / passes (1 lines):**
   - I-90 Great Plains: possible toll segments (e.g. Illinois/Iowa depending on route) — verify GPS toll settings.
 
-### Day 34 — 2026-07-04 — Rochester → Oconomowoc (WI)
+### Day 34 — 2026-06-22 — Rochester → Oconomowoc (WI)
 
 - **Terrain:** Upper Midwest freeways
 - **Lodging:** Stay option — **Jane Thompson** — Oconomowoc, WI
@@ -565,19 +565,19 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Fees / passes (1 lines):**
   - Upper Midwest freeways: tolls possible (e.g. Illinois Tollway if routed) — I-Pass or pay-by-plate.
 
-### Day 35 — 2026-07-05 — Oconomowoc → Benton Harbor (Day Stop, John Cody Smith) → London, ON
+### Day 35 — 2026-06-23 — Oconomowoc → Benton Harbor (Day Stop, John Cody Smith) → London, ON
 
 - **Difficulty:** LONG
-- **Route line:** Oconomowoc, WI → I-94 E → Benton Harbor, MI (visit John Cody Smith, 2 hr lunch stop) → US-12 or I-94 E → Port Huron, MI → Blue Water Bridge → Sarnia, ON → Hwy 402 E → London, ON. ~530 km total. Border crossing Jul 5 — check CBSA wait times; post–Jul 4 weekend traffic can be heavy.
+- **Route line:** Oconomowoc, WI → I-94 E → Benton Harbor, MI (visit John Cody Smith, 2 hr lunch stop) → US-12 or I-94 E → Port Huron, MI → Blue Water Bridge → Sarnia, ON → Hwy 402 E → London, ON. ~530 km total. Border crossing same day (late June) — check CBSA wait times; summer weekday traffic on I-94 can be heavy.
 - **Terrain:** I-94 corridor — flat Midwest freeway. Blue Water Bridge (Port Huron–Sarnia): active CBSA crossing. Highway 402 to London: Ontario freeway, smooth.
 - **Fuel:** Fuel in Oconomowoc before departure. Fill again at Port Huron before the border — Canadian fuel is priced in litres and typically higher. Cross with a full tank.
-- **Weather:** Early July in the Great Lakes region: typically warm (25–32 °C), possible afternoon thunderstorms. Check radar before departure.
+- **Weather:** Late June in the Great Lakes region: typically warm (25–32 °C), possible afternoon thunderstorms. Check radar before departure.
 - **Lodging:**  — **TBD — book London, ON** — Any central London motel — book in advance. Last night before home leg tomorrow.
 - **Highlights:** John Cody Smith visit (Benton Harbor area) — 2 hr lunch + content stop; Lake Michigan shoreline approach on I-94; Blue Water Bridge at Port Huron/Sarnia — re-entering Canada; Canadian border crossing: note CBSA declaration requirements (duty-free limits after 48 hrs); London, ON overnight — final Canadian city before Toronto
 - **Stops:**
   - **Day stop — John Cody Smith** (host): Coloma, MI (near Benton Harbor / St. Joseph) — 2 hr lunch and content stop. Confirm arrival window with John. No overnight — continuing to London, ON same day.
-  - **Border crossing** (border): Blue Water Bridge, Port Huron, MI → Sarnia, ON — Jul 5 crossing — have passport/NEXUS ready. Declare all items accurately to CBSA.
-- **Risks:** Long day (~530 km) — US-side traffic heavy mid-day; plan Benton Harbor stop early (11 am–1 pm) and border crossing with buffer; Blue Water Bridge border wait — check CBSA wait times that morning; have all documents ready; Michigan I-94 post-holiday weekend traffic — allow extra time around Chicago-to-Detroit corridor; Canadian CBSA: strict about alcohol, firearms, and food items — declare everything
+  - **Border crossing** (border): Blue Water Bridge, Port Huron, MI → Sarnia, ON — Have passport/NEXUS ready for the crossing. Declare all items accurately to CBSA.
+- **Risks:** Long day (~530 km) — US-side traffic heavy mid-day; plan Benton Harbor stop early (11 am–1 pm) and border crossing with buffer; Blue Water Bridge border wait — check CBSA wait times that morning; have all documents ready; Michigan I-94 summer traffic — allow extra time around Chicago-to-Detroit corridor; Canadian CBSA: strict about alcohol, firearms, and food items — declare everything
 - **Plan B:** If John Cody Smith visit runs long or traffic is severe, skip London and stay in Sarnia/Windsor area instead.
 - **B.a.B. alternates:** `john-cody-smith`
 - **Fees / passes (3 lines):**
@@ -585,7 +585,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - Blue Water Bridge (Port Huron → Sarnia): toll per bridge authority — check current motorcycle/car rate and payment method.
   - Canada (CBSA): no park fee; declare goods per CBSA rules; possible duties on purchases.
 
-### Day 36 — 2026-07-06 — Return home (London, ON → Toronto)
+### Day 36 — 2026-06-24 — Return home (London, ON → Toronto)
 
 - **Terrain:** ON 401 — heavy traffic possible
 - **Lodging:**  — **HOME — Toronto, ON** — Final leg from London — debrief, service bike, archive receipts.
