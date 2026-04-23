@@ -19,10 +19,10 @@ const reMapsQ = /[?&]q=(-?\d+\.?\d*),(-?\d+\.?\d*)/;
 
 /** Centroids / city centers — verify against your final bookings. */
 const STATIC = {
-  1: [42.5962, -75.9182, "McGraw, NY (Finger Lakes host area)"],
+  1: [43.0308, -76.8697, "Clyde, NY (414 Dublin Rd area — verify pin)"],
   2: [40.8843, -72.3895, "Southampton, NY"],
   3: [38.6651, -78.4594, "Luray, VA"],
-  4: [37.271, -79.9416, "Roanoke / Jefferson NF (approximate)"],
+  4: [37.229, -79.811, "Hardy, VA (359 Shortridge Ln area — verify pin)"],
   5: [36.5951, -82.1887, "Bristol VA/TN (approximate)"],
   6: [35.8809, -84.1316, "Kingston, TN (approximate)"],
   7: [35.6773, -88.0337, "Parsons, TN (approximate)"],
@@ -88,6 +88,10 @@ function coordsForDay(day) {
   }
   if (idx === 10) {
     return { lat: STATIC[10][0], lon: STATIC[10][1], source: STATIC[10][2] };
+  }
+  // B.a.B. primary + NF backup alt with a pin — prefer host centroid over alt mapsUrl.
+  if (idx === 4 && lodging?.babMergeId === "vicky-cawley") {
+    return { lat: STATIC[4][0], lon: STATIC[4][1], source: STATIC[4][2] };
   }
 
   const fromTree = coordsFromLodgingTree(lodging, alts);

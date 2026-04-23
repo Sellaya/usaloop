@@ -89,7 +89,7 @@ out.push({
   ],
   risks: ["Metro traffic near NYC / Long Island"],
   planB: "",
-  babAlternateIds: ["robert-baldwin", "jay-massapequa", "wayne-lawler", "richard-honchar"],
+  babAlternateIds: [],
 });
 
 const d3 = JSON.parse(JSON.stringify(oldDays[1]));
@@ -152,7 +152,7 @@ newBy["1"] = oldBy["1"];
 
 newBy["2"] = {
   mapsDirectionsUrl:
-    "https://www.google.com/maps/dir/?api=1&origin=McGraw%2C+NY&destination=New+York%2C+NY&travelmode=driving",
+    "https://www.google.com/maps/dir/?api=1&origin=Clyde%2C+NY+14433&destination=New+York%2C+NY&travelmode=driving",
   distanceNote:
     "Finger Lakes to NYC metro — pick Southampton vs DC pacing in Maps after you choose host; tolls on Thruway/I-95 possible.",
   recommendations: [

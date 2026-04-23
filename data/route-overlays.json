@@ -5,7 +5,7 @@
   },
   "byDay": {
     "1": {
-      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Toronto%2C+ON%2C+Canada&destination=4177+Syrian+Hill+Rd%2C+McGraw%2C+NY&travelmode=driving",
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Toronto%2C+ON%2C+Canada&destination=414+Dublin+Rd%2C+Clyde%2C+NY+14433&travelmode=driving",
       "distanceNote": "Driving km come from the Google Maps API for the same origin/destination as the link. Your chosen border crossing and pins can still change the route — confirm in Maps before you ride.",
       "recommendations": [
         {
@@ -23,7 +23,7 @@
       ]
     },
     "2": {
-      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=McGraw%2C+NY&destination=New+York%2C+NY&travelmode=driving",
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Clyde%2C+NY+14433&destination=New+York%2C+NY&travelmode=driving",
       "distanceNote": "Finger Lakes to NYC metro — pick Southampton vs DC pacing in Maps after you choose host; tolls on Thruway/I-95 possible.",
       "recommendations": [
         {
@@ -51,7 +51,7 @@
       ]
     },
     "4": {
-      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Luray%2C+VA+22835&destination=Roanoke%2C+VA&travelmode=driving",
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Luray%2C+VA+22835&destination=359+Shortridge+Ln%2C+Hardy%2C+VA+24101&travelmode=driving",
       "distanceNote": "~150–180 km depending on I-81 vs US-460 routing — confirm scenic choice in Maps.",
       "recommendations": [
         {
@@ -65,7 +65,7 @@
       ]
     },
     "5": {
-      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Roanoke%2C+VA&waypoints=Rocky+Knob+Visitor+Center+Blue+Ridge+Parkway|Fancy+Gap%2C+VA|Boone%2C+NC&destination=Bristol%2C+TN&travelmode=driving",
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=359+Shortridge+Ln%2C+Hardy%2C+VA+24101&waypoints=Rocky+Knob+Visitor+Center+Blue+Ridge+Parkway|Fancy+Gap%2C+VA|Boone%2C+NC&destination=Bristol%2C+TN&travelmode=driving",
       "distanceNote": "BRP + connectors — Maps may suggest I-81; drag onto Blue Ridge Parkway and secondary roads. Full day at parkway speeds.",
       "recommendations": [
         {

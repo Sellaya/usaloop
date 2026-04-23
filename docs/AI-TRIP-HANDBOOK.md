@@ -95,12 +95,11 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Fuel:** Fill in Ontario before the border if convenient; I-90 NY has frequent fuel after entry.
 - **Food:** Pack snacks for border queue; rural Finger Lakes — know dinner plan with hosts or town stop.
 - **Weather:** Lake breeze and frontal weather near Ontario / Erie — check wind on bridge approaches.
-- **Lodging:** Stay options — **Greg & Chris** — 4177 Syrian Hill Road, McGraw, NY 13101
-  - `babMergeId:` `greg-chris-mcgraw`
-- **Highlights:** US entry documentation ready; Evening in McGraw area
-- **Key notes:** Border: registration, insurance, declare tools/spares as needed; keep answers simple (touring). | Save offline maps for NY Thruway and last-mile to McGraw.
+- **Lodging:** Stay options — **Mike Miller** — 414 Dublin Road, Clyde, NY 14433
+  - `babMergeId:` `mike-miller`
+- **Highlights:** US entry documentation ready; Evening near Clyde / I-90 corridor
+- **Key notes:** Border: registration, insurance, declare tools/spares as needed; keep answers simple (touring). | Save offline maps for NY Thruway and last-mile to Clyde.
 - **Risks:** Border wait times; Weather over Lake Ontario corridor
-- **B.a.B. alternates:** `wayne-lawler`, `richard-honchar`, `mike-miller`
 - **Fees / passes (3 lines):**
   - No U.S. national park entrance on this day.
   - Canada: no outbound park fee. U.S. entry: CBP inspection has no park-style fee.
@@ -115,7 +114,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Lodging alts:** Courtney Schrader
 - **Highlights:** Shorter leg before DC → Luray segment
 - **Risks:** Metro traffic near NYC / Long Island
-- **B.a.B. alternates:** `robert-baldwin`, `jay-massapequa`, `wayne-lawler`, `richard-honchar`
 - **Fees / passes (2 lines):**
   - No federal park entrance fee on routing described.
   - NYC / Hudson crossings (if used): many bridges/tunnels are cashless tolling to a registered plate or bill-by-mail — budget tolls; motorcycles follow posted rules per crossing.
@@ -124,10 +122,10 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 
 - **Terrain:** Interstate / Appalachian approaches
 - **Weather:** Mid-Atlantic late May: humid air and slow traffic can overheat you in protective gear — hydrate on a schedule through the I-95 / Beltway grind.
-- **Lodging:** Stay — **Frank Allen Pence** — Luray, VA 22835
+- **Lodging:** Stay (Bunk a Biker) — **Frank Allen Pence** — Luray, VA 22835
+  - `babMergeId:` `frank-allen-pence`
 - **Highlights:** Shenandoah approaches near Luray
 - **Risks:** East Coast traffic corridors
-- **B.a.B. alternates:** `fred-christie-huger`, `arnab-sinha`, `mark-sabrina-catlett`, `robert-baldwin`, `jay-massapequa`, `genie-cane`, `jim-manchester-nj`
 - **Fees / passes (3 lines):**
   - District of Columbia: no NPS entrance fee to ride public roads past monuments (no timed NPS entry ticket required just to transit).
   - If you enter a specific fee-charging NPS unit as a visitor attraction, pay that site’s fee — not required for through-riding to Luray.
@@ -136,18 +134,21 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 ### Day 4 — 2026-05-23 — Luray → Roanoke (VA)
 
 - **Difficulty:** MODERATE
-- **Route line:** Luray area → Roanoke metro via US-11 / US-460 or I-81 options — pick traffic vs scenery in Maps; aim Roanoke for resupply before NF overnight.
-- **Terrain:** Shenandoah approaches → Roanoke valley
+- **Route line:** Luray area → Roanoke metro via US-11 / US-460 or I-81 options — pick traffic vs scenery in Maps; resupply in Roanoke, then run last miles to Hardy (BRP area ~7 mi from MP 112 per host).
+- **Terrain:** Shenandoah approaches → Roanoke valley → short run to Hardy
 - **Fuel:** Fuel in Luray or before Roanoke; Roanoke has full services.
-- **Food:** Stock water/food before dispersed camp — no services on NF spurs.
+- **Food:** Stock water/snacks before leaving Roanoke if arriving late to the host.
 - **Weather:** Late May: pop-up thunderstorms — check radar; avoid ridges in lightning.
-- **Lodging:** Free camping (dispersed) — **George Washington & Jefferson NF — near Roanoke (search MVUM)** — Example search area ~37.5, -79.9 — use official Motor Vehicle Use Map for legal spur roads; iOverlander/FreeCampgrounds for user reports — verify. No amenities; 14-day limits common.
-- **Highlights:** Roanoke resupply; Jefferson NF camping
-- **Key notes:** Dispersed camping only where Jefferson NF MVUM allows motor vehicles — verify same week. | Pack out all waste; many sites have no water.
+- **Lodging:** Stay (Bunk a Biker) — **Vicky Cawley** — 359 Shortridge Lane, Hardy, VA 24101
+  - `babMergeId:` `vicky-cawley`
+- **Lodging alts:** George Washington & Jefferson NF — near Roanoke (search MVUM)
+- **Highlights:** Roanoke resupply; Blue Ridge Parkway area host (Hardy)
+- **Key notes:** Confirm ETA and bike parking with host (call/text). | If you bail to NF dispersed instead: Jefferson NF MVUM only — verify motor-vehicle access same week; pack out all waste.
 - **Risks:** Deer dawn/dusk; Gravel/mud on NF roads after rain
-- **Plan B:** Developed NF campground (fee) or Walmart parking urban last resort — not ideal.
-- **Fees / passes (1 lines):**
-  - George Washington & Jefferson National Forests: no NPS entrance fee; dispersed camping is generally free where MVUM allows — developed NF campgrounds charge site fees if you use them.
+- **Plan B:** Developed NF campground (fee), other B.a.B. options, or motel in Roanoke/Salem if weather or fatigue wins.
+- **Fees / passes (2 lines):**
+  - Private host stay: no public-land fee — separate from NF rules below.
+  - George Washington & Jefferson National Forests (if you use dispersed backup): no NPS entrance fee; dispersed camping is generally free where MVUM allows — developed NF campgrounds charge site fees if you use them.
 
 ### Day 5 — 2026-05-24 — Roanoke → Bristol (VA/TN) — Blue Ridge Parkway day
 
@@ -214,7 +215,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Lodging alts:** Marci Livingston
 - **Highlights:** Crossing into central Arkansas
 - **Risks:** Heat / humidity — hydrate
-- **B.a.B. alternates:** `jeff-roberts-ozark`, `brian-cooper`, `connie-jeff-lackey`
 - **Fees / passes (2 lines):**
   - Hot Springs National Park (optional detour near Garland County): no entrance fee to enter the park (per NPS). Bathhouse row services are separate commercial fees if you use them.
   - Arkansas state highways: no park pass required for slab transit.
@@ -252,7 +252,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - **Route 66 reference** (other): 100 U.S. Route 66, Adrian, TX — Landmark from your notes — verify pin.
 - **Risks:** Desert temperature swing
 - **Plan B:** Motel in Amarillo or Albuquerque if weather turns.
-- **B.a.B. alternates:** `kelly-snyder`
 - **Fees / passes (2 lines):**
   - iOverlander / private camp pins (~US$10 tenting in your notes): pay the host/landowner; not an NPS fee.
   - I-40 / Amarillo: no NPS fee for driving; motel/camp is commercial pricing.
@@ -264,7 +263,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Highlights:** Silverton area; Million Dollar Hwy when conditions allow
 - **Risks:** Altitude; Afternoon storms; Mud on forest roads; Mountain chip seal and tar patches — traction drops fast when wet; treat painted lines and metal grates as low-grip.
 - **Plan B:** Paid campground or Silverton lodging if dispersed full or weather bad.
-- **B.a.B. alternates:** `derek-duncan-denver`, `jim-wendy-conifer`, `cc-golden`, `travis-georgetown`
 - **Fees / passes (2 lines):**
   - San Juan NF / Silverton area: USFS — no NPS entrance; dispersed camping usually free where allowed — verify MVUM. Developed USFS or county sites may charge.
   - Colorado state highways: no park pass for through-riding.
@@ -275,7 +273,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Lodging:** Camping (~$22 + tax) — **Mexican Hat Rocks** — Reserve or confirm same-day availability in season.
 - **Highlights:** Monument Valley approaches; San Juan River corridor
 - **Risks:** Heat; Limited services
-- **B.a.B. alternates:** `good-adv-cortez`, `matt-burton-seligman`
 - **Fees / passes (2 lines):**
   - Mexican Hat Rocks campground (private): ~US$22+ tax in your plan — reserve/confirm on their site (seasonal).
   - Navajo Nation / Monument Valley (if you enter tribal park): separate tribal permit/fees — not included in America the Beautiful.
@@ -297,7 +294,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - **Antelope Canyon** (sight): Antelope Canyon (tour required) — Book Navajo-guided tour slots in advance.
 - **Risks:** Very long mileage day; Deer at dawn/dusk
 - **Plan B:** Shorten: skip one sight or book paid campground inside Bryce area.
-- **B.a.B. alternates:** `matt-burton-seligman`, `good-adv-cortez`
 - **Fees / passes (5 lines):**
   - Bryce Canyon NP (NPS): motorcycle 7-day entrance US$30 (cashless at park — nps.gov/brca); private vehicle US$35. Bryce is on the 2026 non-resident surcharge list — without an America the Beautiful pass, ages 16+ non-U.S. residents pay an additional US$100/person at entry (with valid non-resident annual pass, entrance + surcharge covered for passholder per NPS rules — verify ID).
   - Horseshoe Bend overlook (City of Page): parking fee ~US$5 motorcycle / ~US$10 private vehicle (Page, AZ — not covered by federal passes; verify current rate at visitpage.com / city site).
@@ -335,7 +331,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - **Dead Horse Point SP** (sight): Dead Horse Point State Park, UT — 600 m above the Colorado River — one of the most photographed overlooks in the USA. Entry fee ~$20.
 - **Risks:** Moab summer heat — Arches by 7 am, off trail by 11 am; Arches parking — popular trailheads fill early; carry park map offline; Dehydration risk on Delicate Arch hike — carry 2 L minimum
 - **Plan B:** If Arches is too crowded or lots are closed, Dead Horse Point + Canyonlands Island in the Sky is an equally spectacular full day.
-- **B.a.B. alternates:** `robert-vandenbroeke`
 - **Fees / passes (5 lines):**
   - Arches NP: motorcycle 7-day entrance US$25; private vehicle US$30 (nps.gov/arch, credit/debit at entrance). America the Beautiful covers standard entrance. 2026: timed-entry reservation for Arches was discontinued — verify current status on nps.gov/arch before travel (parking may still temporarily limit entry when lots are full).
   - Fiery Furnace hikes: separate permit/ranger fees if you do those activities (nps.gov/arch).
@@ -364,7 +359,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - `babMergeId:` `montana-shaffer`
 - **Highlights:** I-15 into California low desert
 - **Risks:** Extreme heat mid-summer
-- **B.a.B. alternates:** `anais-redlands`, `layla-sisney`
 - **Fees / passes (2 lines):**
   - I-15: possible toll lanes in some segments — account for toll-by-plate.
   - No park entrance fee for Mojave transit to Apple Valley as written.
@@ -383,7 +377,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - **Photo stop — Bixby Creek Bridge** (sight): Bixby Creek Bridge, Big Sur, CA — Pull over on north side for the classic arch-over-coast shot.
 - **Risks:** LA traffic — depart Barstow by 6:30 am to beat morning rush; PCH weekend parking pressure at Malibu; Big Sur: Coastal Hwy 1 tar snakes, patch pavement, damp fog — reduced grip in corners; Prewitt Ridge: cliff exposure on approach road, private gate policies — verify access; Long day (~590 km) — monitor fatigue; Cambria is a bail-out overnight if needed
 - **Plan B:** If fatigued by Cambria: stay at state park camp (Hwy 1 corridor) and ride Prewitt Ridge the next morning before continuing north.
-- **B.a.B. alternates:** `layla-sisney`, `anais-redlands`, `darlene-morro`, `jeff-rothman`
 - **Fees / passes (3 lines):**
   - Leo Carrillo State Park (CA): vehicle day-use fee required (California State Parks — 2026 pricing on parks.ca.gov; online day-use reservation recommended weekends/holidays).
   - PCH / Big Sur: Julia Pfeiffer Burns SP and other CA state parks charge day-use or parking fees — check parks.ca.gov for each stop.
@@ -395,7 +388,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Lodging:** Camping (verify fees) — **Dispersed / listed GPS** — GPS 35.87322, -121.41850 — confirm land status and fees before paying/staying.
 - **Highlights:** Mendocino coast
 - **Risks:** Fog; Cold marine layer; Regional wildfire smoke can drop visibility and AQI with little warning — check smoke/air maps along the coast that morning.
-- **B.a.B. alternates:** `darlene-morro`, `jeff-rothman`
 - **Fees / passes (1 lines):**
   - CA Hwy 1 / dispersed pin: confirm land manager (private / county / state) and any day-use or camping fee before paying or camping.
 
@@ -405,7 +397,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Lodging:** Camping (paid) — **Redwood area camp (GPS)** — GPS 38.98170, -123.70057 — verify campground name and reservation rules.
 - **Highlights:** Redwoods NP / state parks
 - **Risks:** Elk on roadway; NorCal / redwoods corridor: summer wildfire smoke and poor AQI — have a shorter-day or inland detour mindset if maps go red.
-- **B.a.B. alternates:** `jeff-rothman`, `jim-haines-shasta`
 - **Fees / passes (1 lines):**
   - Redwood National and State Parks: NPS units — no entrance fee for the federal Redwood areas (nps.gov/redw). Adjacent California state park units may charge day-use — pay if you enter those units.
 
@@ -415,7 +406,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Lodging:**  — **Deb & Dave B** — Westfir, OR 97492
 - **Highlights:** Crater Lake possible as detour if open and time allows
 - **Risks:** Wildfire smoke and AQI — not only “late summer”; June can see regional haze from distant fires. Check AQI and visibility each morning across OR / PNW / Rockies legs.; Heavy smoke: favor shorter riding, more breaks, and indoor air when AQI is unhealthy — especially at altitude.
-- **B.a.B. alternates:** `lisa-blue-bend`, `suze-riley-maupin`
 - **Fees / passes (1 lines):**
   - Crater Lake NP (optional detour): NPS entrance applies if you enter — motorcycle rate on nps.gov/crla; America the Beautiful accepted. Not on the 11-park US$100 surcharge list as published Jan 2026 (verify if policy updates).
 
@@ -426,7 +416,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Lodging alts:** Darin
 - **Highlights:** Gorge vistas; WSR-84 options
 - **Risks:** Gorge crosswinds
-- **B.a.B. alternates:** `mosko-moto`, `david-kishpaugh`, `dave-katherine-cashmere`, `angela-east-wenatchee`
 - **Fees / passes (1 lines):**
   - Columbia River Gorge NSA / OR & WA state parks: some trailheads require Northwest Forest Pass or state day-use — check fs.usda.gov and Oregon/Washington park sites for the exact stop.
 
@@ -438,7 +427,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Highlights:** Three host segments around Seattle metro
 - **Risks:** Seattle traffic; Splitting stays — pack light for moving between hosts
 - **Plan B:** Single hotel hub if multi-host logistics are tight.
-- **B.a.B. alternates:** `bob-combs`, `christe-smith-rainier`, `ob-graham`, `julie-lake-tapps`, `bill-darrington`
 - **Fees / passes (1 lines):**
   - Seattle metro: no NPS entrance for urban riding; paid parking garages may apply downtown.
 
@@ -451,7 +439,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - **TBD** (other): Overnight / stop location — Pick town based on North Cascades opening and weather.
 - **Risks:** Mountain pass closures / construction; PNW / interior BC smoke can funnel into mountain valleys — if AQI spikes, SR-20 vs I-90 isn’t just a snow decision; air quality matters for long climb days.
 - **Plan B:** I-90 direct to eastern WA if SR-20 closed.
-- **B.a.B. alternates:** `bob-combs`, `dave-katherine-cashmere`, `mosko-moto`, `jeff-carrie-bob`, `david-rs-washougal`
 - **Fees / passes (2 lines):**
   - North Cascades National Park complex: no entrance fee to drive WA SR-20 (nps.gov/noca).
   - If you use a fee trailhead or Sno-Park in season, Washington Sno-Park permit may apply in winter — June usually not applicable.
@@ -462,7 +449,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Lodging:** Stay option — **David & Pita Ettenberg** — Spokane Valley, WA
 - **Lodging alts:** Rathdrum, ID
 - **Highlights:** Columbia plateau riding
-- **B.a.B. alternates:** `randy-rathdrum`, `betty-chewelah`, `dave-katherine-cashmere`
 - **Fees / passes (1 lines):**
   - Eastern WA / Spokane: no NPS fee for routing as written.
 
@@ -474,7 +460,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Highlights:** Clearwater / Lochsa River approaches to Lolo
 - **Risks:** Wildlife; Loose gravel on forest roads
 - **Plan B:** US-12 services thin — fuel when you can.
-- **B.a.B. alternates:** `dustin-patton`, `karl-angie-stevensville`, `phyl-corvallis-mt`
 - **Fees / passes (1 lines):**
   - Lolo Pass / US-12: scenic highway — no national-park entrance fee for the pass transit itself.
 
@@ -484,7 +469,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Lodging:**  — **Deryk Hagey** — Gallatin Gateway, MT
 - **Highlights:** West Yellowstone or north entrance options depending on route
 - **Risks:** Bison / elk on roadway; Altitude fatigue; Greater Yellowstone: wildfire smoke and park-wide haze can persist for days — watch NPS alerts and AQI before committing to long high-elevation legs.
-- **B.a.B. alternates:** `kevin-island-park`, `daryn-engesser`
 - **Fees / passes (3 lines):**
   - Yellowstone NP: motorcycle 7-day entrance US$30 (nps.gov/yell). Yellowstone is on the 2026 non-resident surcharge list — without America the Beautiful, ages 16+ non-U.S. residents pay US$100/person in addition to entrance; valid America the Beautiful (including non-resident US$250 pass) covers entrance and surcharge for passholder presentation with ID per NPS.
   - Keep receipt — 7-day Yellowstone entrance valid for re-entry.
@@ -498,7 +482,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Stops:**
   - **Plan** (sight): Yellowstone loop — prioritize north or south loop — Check NPS.gov for road closures and construction same season.
 - **Risks:** Sudden weather; Thermal area foot traffic; Smoke from regional fires can cut views and air quality inside the park — adjust expectations and rest if you feel tight-chested at altitude.
-- **B.a.B. alternates:** `kevin-island-park`, `jolene-casper`
 - **Fees / passes (2 lines):**
   - Yellowstone NP: same 7-day entrance window if within validity from purchase — carry pass/receipt.
   - Non-U.S. citizens (2026): America the Beautiful annual pass for non-residents US$250 (digital: recreation.gov/pass) — covers standard entrance fees where accepted and waives the US$100/person non-resident surcharge at the 11 high-visitation parks when you show valid pass + photo ID (see nps.gov/aboutus/nonresident-fees.htm). U.S. resident pass remains US$80.
@@ -513,7 +496,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Highlights:** Beartooth Pass — one of the great US motorcycle roads
 - **Risks:** Ice / closure early season — verify pass status; Google Maps often prefers WY-310 / Cody corridor from the park — manually select US-212 via Cooke City and Red Lodge for the Beartooth
 - **Plan B:** If US-212 is closed, use NPS/MDT detour guidance (may include lower basin roads — not the same ride as the Beartooth).
-- **B.a.B. alternates:** `daryn-engesser`, `jolene-casper`, `dave-van-gorkom`
 - **Fees / passes (2 lines):**
   - Yellowstone NP: still inside 7-day window if continuous from prior entries — confirm dates on your pass stub.
   - Beartooth Highway (US-212): scenic corridor — no separate ‘Beartooth pass’ beyond any NPS Yellowstone re-entry if you dip back in.
@@ -525,7 +507,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Lodging:**  — **Sherry Smith** — Gillette, WY
 - **Highlights:** Powder River Basin
 - **Risks:** Crosswinds
-- **B.a.B. alternates:** `jolene-casper`
 - **Fees / passes (1 lines):**
   - Wyoming plains: no NPS fee for routing as written.
 
@@ -536,7 +517,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Highlights:** Custer State Park / Needles Highway — fees and traffic
 - **Risks:** Bison herds on park roads; Tourist congestion
 - **Plan B:** Paid campground in Black Hills NF or Custer area.
-- **B.a.B. alternates:** `michelle-custer`, `dave-van-gorkom`, `lisa-redfield`
 - **Fees / passes (3 lines):**
   - Custer State Park (SD): park entrance license required for Wildlife Loop etc. — 2026: 7-day temporary license ~US$25/private vehicle or ~US$20/motorcycle (verify gfp.sd.gov/pel). Non-stop through-travel on designated US-16A through-route may be exempt — read posted rules.
   - Black Hills National Forest: generally no entrance fee; amenity sites may charge.
@@ -552,7 +532,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - **Fuel strategy** (fuel): I-90 / US-14 corridor — Long day — top off whenever under half tank.
 - **Risks:** Fatigue on 600 km slab; Crosswinds; Great Plains: persistent wind grooves and open-deck bridges — relax grip, don’t fight the bars, and plan hand breaks.
 - **Plan B:** Split into two shorter days if weather or energy is poor.
-- **B.a.B. alternates:** `lisa-redfield`
 - **Fees / passes (1 lines):**
   - I-90 Great Plains: possible toll segments (e.g. Illinois/Iowa depending on route) — verify GPS toll settings.
 
@@ -579,7 +558,6 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - **Border crossing** (border): Blue Water Bridge, Port Huron, MI → Sarnia, ON — Have passport/NEXUS ready for the crossing. Declare all items accurately to CBSA.
 - **Risks:** Long day (~530 km) — US-side traffic heavy mid-day; plan Benton Harbor stop early (11 am–1 pm) and border crossing with buffer; Blue Water Bridge border wait — check CBSA wait times that morning; have all documents ready; Michigan I-94 summer traffic — allow extra time around Chicago-to-Detroit corridor; Canadian CBSA: strict about alcohol, firearms, and food items — declare everything
 - **Plan B:** If John Cody Smith visit runs long or traffic is severe, skip London and stay in Sarnia/Windsor area instead.
-- **B.a.B. alternates:** `john-cody-smith`
 - **Fees / passes (3 lines):**
   - U.S. side: no national park entrance for I-94 day as written.
   - Blue Water Bridge (Port Huron → Sarnia): toll per bridge authority — check current motorcycle/car rate and payment method.
@@ -603,66 +581,13 @@ Canonical JSON: `data/bab-hosts.json`. Each **host id** keys one object. Daily c
 
 | Host ID | Name | Address | Phone | Email | Contact prefs | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| `wayne-lawler` | Wayne "Chip" Lawler | 2659 Cool Lea Camp Road, Alpine, NY 14805 | +19782651984 | wclawler@aol.com | email_or_text | Tent space and a dry RV (no shower/toilet in the RV). You are welcome to use the house facilities when the host is home. Garage with basic tools. Email or text is fine. |
-| `greg-chris-mcgraw` | Greg & Chris | 4177 Syrian Hill Road, McGraw, NY 13101 | +13154276327 | Chrissowles@gmail.com | text | Tenting/camping; water available; power available; tools/work space; good meal. Best to text Greg’s number. |
-| `dan-southampton` | Dan | Southampton, NY 11968 | — | danielprelato@yahoo.com | email | Access to garage, tools, local info. Confirm full street address and bike parking before arrival. |
-| `richard-honchar` | Richard Honchar | 3100 Franklin Street Road, Auburn, NY 13021 | +17205602679 | rbhcmh2018@gmail.com | email | Spare room, outdoor room, tools and jack for repairs. |
 | `mike-miller` | Mike Miller | 414 Dublin Road, Clyde, NY 14433 | +13159757240 | Millertude2006@gmail.com | email_or_text | Second bedroom with queen-size bed; about an acre of land if you want to camp. |
-| `robert-baldwin` | Robert | Van Buren Street, Baldwin, NY 11510 | +15165872022 | cycleoption@gmail.com | email | Listing had no extra description in your Bunk a Biker export — email to confirm what they offer (suburban home/yard). |
-| `jay-massapequa` | Jay | North Massapequa, NY 11758 | +12508950800 | Painterboy67@hotmail.com | email | Tent trailer use; ~45 min from Manhattan. |
-| `genie-cane` | Genie Cane | North Cape May, NJ 08204 | +19084215506 | Geniecane@aol.com | email | Bedroom + bath or driveway. No garage. |
-| `jim-manchester-nj` | Jim C | Manchester Township, NJ 08759 | +16097090400 | jimcee66383@gmail.com | email | INFO ONLY: may not host — NJ/Shore info & guided runs with lead time. Email preferred; phone checked rarely. **(INFO ONLY)** |
-| `arnab-sinha` | Arnab Sinha | Manassas, VA 20109 | +17742851612 | aksinhas@gmail.com | email_or_call | Pickup/tow options; garage 1 bike; guest beds/couch/tent; food & draft beer. No indoor smoking/drugs — family home. |
-| `mark-sabrina-catlett` | Mark & Sabrina Catlett | 3328 Catlett Rd, Catlett, VA 20119 | +18126645070 | mark.w.bruce@gmail.com | email | Tent/hammock on gravel; business space — respect neighbors. Tools, garage, driveway. Wife +1-270-860-0865. |
-| `fred-christie-huger` | Fred & Christie Huger | Fairfield, VA 24435 | +15404604161 | drnkmlk2@yahoo.com | email | Couch, air mattress, acreage camping; hot shower; ~1 mi off I-81. |
-| `katherine-sharpe` | Katherine Sharpe | 1444 Chapman Highway, Sevierville, TN 37876 | +16156635280 | sharpe.katherine@icloud.com | text | Guest room often available; sunroom/couches/air mattress; tent. Kids & pets. Text preferred. Near Dragon/Smokies. |
-| `scott-middleton` | Scott David Middleton | Knoxville, TN 37917 | +15132232157 | scott.middleton@rocketmail.com | email_or_text | Garage sometimes; bedroom/couches; kitchen/patio. Heads-up for key if away. |
-| `shane-mt-juliet` | Shane (Mt. Juliet) | Mt. Juliet, TN | +12178419348 | Chevy791979@hotmail.com | email | Outside space, possible bedroom; covered parking; few mi off I-40 E of Nashville. |
-| `daniel-fucella` | Daniel Fucella | 173 W. Concord Drive, Clarksville, TN 37040 | +19312570578 | cruisin4ever1@yahoo.com | email | 2 guest rooms; garage; tent space. |
-| `harrison-hickok` | Harrison Hickok | 6269 Memphis Arlington Rd, Bartlett, TN 38135 | +12697195893 | harrynama@gmail.com | email_or_text | Flower farm ~3 ac; dogs/fosters; shared kitchen/bath; RV sometimes; garage/tools/welder. 24h notice preferred. Smoke/alcohol/420 outside only. |
-| `dj-suter` | DJ Suter | Arlington, TN 38002 | +17575828490 | djsuter@gmail.com | email | Farm; tent/barn/RV camping setup. |
-| `jeff-roberts-ozark` | Jeff Roberts | 1803 West Philpot Road, Ozark, AR 72949 | +14798577752 | jc3rob@yahoo.com | email | 3 acres tents; trailers/tools/lift/workshop. Map pin ~1 mi off — confirm directions. |
-| `brian-cooper` | Brian Cooper | 6712 McClure Road, Van Buren, AR 72956 | +14792624977 | max.burnside8@gmail.com | email | Queen bed inside; outside space; power; 1 bike inside building. |
-| `connie-jeff-lackey` | Connie & Jeff Lackey | 720 North Evergreen Street, Greenwood, AR 72936 | +13072755977 | Pweestorekeeper@gmail.com | email | House with carport. |
+| `frank-allen-pence` | Frank Allen Pence | Luray, VA 22835 | +15402449527 | Frankallenpence@yahoo.com | text | Heart of the Shenandoah Valley — about 15 minutes to Skyline Drive and Shenandoah National Park. Comfortable couch, shower and clean towels, full kitchen, meals on request. Safe parking. Text is best; say you found him through Bunk a Biker so he knows you’re from the site. Confirm exact street address before you ride. |
+| `vicky-cawley` | Vicky Cawley | 359 Shortridge Lane, Hardy, VA 24101 | +15403536058 | vcawleyhoa@gmail.com | call_or_text | Several acres near the Blue Ridge Parkway (~7 miles from milepost 112). Garage with fridge, washer, dryer; indoor space or outdoor tent camping. Motorcycle lift and tools for routine repairs/maintenance. Mountain views and quiet setting—deer and turkey common. If the hosts are away traveling, grounds stay available for tent camping with electricity and water. Call or text preferred. |
+| `dan-southampton` | Dan | Southampton, NY 11968 | — | danielprelato@yahoo.com | email | Access to garage, tools, local info. Confirm full street address and bike parking before arrival. |
 | `kelly-snyder` | Kelly Snyder (Route 66 Midpoint) | 307 W Historic Route 66, Adrian, TX 79001 | +19379352204 | dreammakerstationroute66@yahoo.com | text | Souvenir shop property; food/drinks donation; BYO alcohol. **24-hour notice via text.** Many riders possible; confirm seasonal hours. |
-| `derek-duncan-denver` | Derek Duncan | 55 Hazel Court, Denver, CO 80219 | +17202206266 | derekduncan1973@gmail.com | email | Front/back yard camping; pets OK if traveling with pets. |
-| `jim-wendy-conifer` | Jim & Wendy S | Conifer, CO 80433 | +16784642386 | seetheworld@mindspring.com | email | 9,100 ft; woods or balcony camping; towel/shower; up to 4 bikers; wildlife; fire/smoking rules — high fire risk area. |
-| `cc-golden` | CC | 975 Xenophon Court, Golden, CO 80401 | +17209859851 | ccsiedlarz@gmail.com | email | Bed, couch, camping, food; 4 dogs; smoking outside; cul-de-sac. |
-| `travis-georgetown` | Travis Gilbertson | Georgetown, CO | +19704713865 | gilbertsontravis@gmail.com | email | King bed + private bath; mountain riding; walk to bars; pet-friendly if pets behave. |
 | `robert-vandenbroeke` | Robert VandenBroeke | Moab, UT 84532 | +14352200576 | rjvandenbroeke@gmail.com | text_whatsapp | Queen bed basement + sink/toilet. Text/WhatsApp. Jeep tour possible — you provide gas. |
-| `good-adv-cortez` | Good ADV | 22812 County Road G, Cortez, CO 81321 | +19707390568 | goodadv@icloud.com | email | Tent; tools; tire gear; possible trailer; paid Airbnbs on site optional. |
-| `matt-burton-seligman` | Matt Burton | Seligman, AZ 86337 | +19289254381 | mybroskpr73@gmail.com | email | Off-grid S of Seligman; gravel; ADV-oriented; shop/lift; read full BAB profile. |
 | `montana-shaffer` | Montana Shaffer | 22060 Wren Street, Apple Valley, CA 92308 | +15623249109 | jandme24@hotmail.com | email | Home; outside space for trailers or inside. |
-| `anais-redlands` | Anais | Redlands, CA | +19512022797 | anaisfan05@gmail.com | call | Tent patio or guest room; pool/jacuzzi by arrangement; garage/tools. **Phone call required** to align. |
-| `layla-sisney` | Layla Sisney | 1621 Diego Way, Oxnard, CA 93030 | +18058613411 | lvsisney@gmail.com | email_or_phone | Couch or small backyard; tools/truck/trailer. Advance contact; pet policy; quiet 10p–7a; max 2 nights/2 people; valid ID. |
-| `darlene-morro` | Darlene Bennett | California 1, Morro Bay, CA 93442 | +18059060643 | oshnbby@yahoo.com | text | Cottage; driveway; local intel. Limited hosting — text for date fit. |
-| `jeff-rothman` | Jeff Rothman | 314 Hewett St, Santa Rosa, CA 95401 | +14157134511 | dravnx@novato.net | email_then_text | Room + couch; garage/tools; wants name/route/bike/social; notice preferred; no pets; M–F away 7–7. |
-| `scott-taggart` | Scott Taggart | 8112 Fort Collins Way, Roseville, CA 95747 | +19167160028 | taggart@taggarts.org | email | Backyard camping; shop/lift/tire; garage 2 bikes; laundry. **Pin approximate — confirm address.** |
-| `jim-haines-shasta` | Jim Haines | 24451 Creamery Lane, Edgewood, CA 96094 | +15302610100 | shastajim@gmail.com | email | Mt. Shasta area; lawn; bath; tools/trailer; cats. |
-| `lisa-blue-bend` | Lisa Blue | Bend, OR 97701 | +17072235953 | 1lisabluesky@gmail.com | email | Bedroom; gated parking; garage tools/lift; 24h notice + ETA; max 2 nights preferred; LGBTQ+ friendly. |
-| `suze-riley-maupin` | Suze Riley | Maupin, OR 97037 | +15038169640 | suze@suzeriley.com | email | Large yard camping; maybe inside; best odds Sat–Wed. |
-| `mosko-moto` | Mosko Moto / Bates Mototel | 186 East Jewett Blvd, White Salmon, WA 98672 | +15092813211 | moskomoto@moskomoto.com | email | **Register first** — Mototel N of HQ; gravel access; moto-oriented. Office weekday or IG @batesmototel. |
-| `david-kishpaugh` | David Kishpaugh | 29820 SE Eagle Creek Road, Estacada, OR 97023 | +15039578063 | jeep.west.dave@gmail.com | call_or_text | Room/camping; full shop/lift; trailer help. **Phone/text fastest.** |
-| `jeff-carrie-bob` | Jeff and Carrie Bob | 11885 SW Edgewood St, Portland, OR 97225 | +15038630230 | carrie@carriebob.com | email | Camping; garage/tools/lift; pets; often same-day OK. |
-| `david-rs-washougal` | David R S | 4232 Canyon Creek Rd, Washougal, WA 98671 | +13602163192 | drsanchez1114@gmail.com | email | Tent + shop; inside if available. No call after 9pm. |
-| `christe-smith-rainier` | Christe Smith (Stewart Ranch) | 800 Tipsoo Loop South, Rainier, WA 98576 | +13604818196 | Trainerchriste@yahoo.com | email | Tent/RV; water/power; moto shop evenings. |
-| `ob-graham` | O.B. | 30323 Meridian Ave E, Graham, WA 98338 | +12539510979 | cascadianrogue@gmail.com | email | Camping; tools; food tips. |
-| `bob-combs` | Bob Combs | 12832 464th Ave SE, North Bend, WA 98045 | +14258912329 | bob@combshouse.com | email | Mt Si area; shower; shop lifts. **No pets.** |
-| `julie-lake-tapps` | Julie C Cardenas | 3609 Lakeridge Dr E, Lake Tapps, WA 98391 | +12535695531 | medassistnurse@gmail.com | email | Spare room + tent space. |
-| `bill-darrington` | Bill | Darrington, WA 98241 | +14253308861 | Bhart1601@gmail.com | email | Tent; tools; views. |
-| `dave-katherine-cashmere` | Dave & Katherine D | Cashmere, WA 98815 | +12063564288 | Kjdegel@nwi.net | text | Guest room, basement couch, yard camping; laundry; meals if timing works. Text preferred. |
-| `angela-east-wenatchee` | Angela Parkison | East Wenatchee, WA 98802 | +15097411918 | streetglidequeen@hotmail.com | email | Dirt road; rooms or camping; big dogs. |
-| `betty-chewelah` | Betty (Kenny's place) | 303 East King Ave, Chewelah, WA 99109 | +15096752844 | Okiesmack@gmail.com | email | Posting for brother Kenny — tent; tools. |
-| `randy-rathdrum` | Randy Dominicak | 17405 N Wilkinson Rd, Rathdrum, ID 83858 | +12084572828 | radnpad@gmail.com | text | Forest camping. **Text first; call only after text.** |
-| `karl-angie-stevensville` | Karl & Angie | Stevensville, MT 59870 (confirm by text) | +14067771230 | itomt@hotmail.com | text | Bitterroot valley; camping common; text full name/FB, group size, dates. |
-| `phyl-corvallis-mt` | Phyl | Corvallis, MT 59828 | +14063706668 | Missimont@gmail.com | text | Tent pasture/pines; well water; Bitterroot views. Text fastest. |
-| `dustin-patton` | Dustin Patton | 20800 Twin Lakes Road, Frenchtown, MT 59834 | +14063603174 | dspatton44@gmail.com | text | RV/tent w/ power & water; shop; 1 mi gravel; advance notice. |
-| `kevin-island-park` | Kevin | Island Park, ID 83429 | +12089401919 | 2005misc@gmail.com | text_or_email | Camping; **1 night max** without prior OK; text preferred. |
-| `daryn-engesser` | Daryn Engesser | Powell, WY 82435 | +14066601765 | darynengesser@gmail.com | email | Bedroom; tent yard; garage/tools. |
-| `jolene-casper` | Jolene Beiswenger | Casper, WY | +12182807277 | beis0011@gmail.com | text_or_email | Family + dog; laundry; may cook; flexible timing. |
-| `michelle-custer` | Michelle Lamphere | Custer, SD 57730 | +16056732393 | michellelamphere@icloud.com | email | **Not during Sturgis rally** — tent or possible guest room. |
-| `dave-van-gorkom` | Dave van Gorkom | 609 Triple L Loop, Spearfish, SD 57783 | +17012690560 | davevangorkom@yahoo.com | email | 1 bedroom + bath; food/help. |
-| `lisa-redfield` | Lisa | Redfield, SD 57469 | +13173799621 | lisam_38122@yahoo.com | email | Tent; shower/laundry/food; pets inside; smoking outside. |
 
 ### routeGuidance (per host)
 
@@ -720,7 +645,7 @@ Each host in JSON also has a multi-line `routeGuidance` string (corridor, distan
 
 - Trip window in this file: 2026-05-20 → 2026-06-24. If you move departure, update trip.startDate, trip.endDate, and every days[].date in sync (or regenerate from your spreadsheet).
 - Maps: set GOOGLE_MAPS_API_KEY in .env (see .env.example), run npm run build, then serve. On Vercel, add the same variable under Environment Variables — build generates google-maps-config.js. Restrict the key by HTTP referrer (localhost + your Vercel URL). Re-check each leg in Maps after you set exact pins.
-- Daily plan lists stay name/address only; phone, email, and all Bunk a Biker backups are in the B.a.B. directory. Edit babAlternateIds per day in data/bab-hosts.json / trip.json if you trim the list.
+- Bunk a Biker stays: full host contact cards (phone, text, email, Gmail, draft message) render on each day that uses a host — primary hosts only in bab-hosts.json for this build.
 - Confirm each host address, gate codes, and bike parking before arrival day.
 - Arches NP: verify current entry and parking rules on nps.gov/arch for your dates (timed-entry reservations were discontinued as of 2026 research — lots can still fill).
 - Yellowstone / Beartooth: verify pass opening and NPS alerts.
@@ -738,14 +663,6 @@ Each host in JSON also has a multi-line `routeGuidance` string (corridor, distan
 - **Parts & dealers:** `data/motorcycle-parts-shops.json` — corridor-organized Suzuki/parts references.
 - **Route overlays:** `data/route-overlays.json` — `meta.disclaimer` explains Google distance behavior.
 - **Content creation:** `data/content-creation.json` — filming and legal-notes briefs per day.
-
----
-
-## 7. Host IDs referenced in trip.json but missing from bab-hosts.json
-
-Fix by adding these keys to `data/bab-hosts.json` or removing the references from the relevant days.
-
-- `john-cody-smith`
 
 ---
 

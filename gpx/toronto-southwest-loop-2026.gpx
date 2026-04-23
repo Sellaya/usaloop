@@ -6,14 +6,14 @@
   <metadata>
     <name>Toronto ↔ Southwest loop — 36-day motorcycle itinerary</name>
     <desc>36 overnight waypoints from trip.json. Straight-line route is NOT the riding route — import into Garmin, Gaia, or Google Earth and plan roads separately.</desc>
-    <time>2026-04-22T16:16:01.186Z</time>
+    <time>2026-04-23T18:31:05.127Z</time>
   </metadata>
-  <wpt lat="42.5962" lon="-75.9182">
+  <wpt lat="43.0308" lon="-76.8697">
     <name>Day 1: Toronto → Finger Lakes (NY)</name>
     <desc>Date: 2026-05-20
-Stay: Greg &amp; Chris
-Address: 4177 Syrian Hill Road, McGraw, NY 13101
-Waypoint note: McGraw, NY (Finger Lakes host area) (approximate)</desc>
+Stay: Mike Miller
+Address: 414 Dublin Road, Clyde, NY 14433
+Waypoint note: Clyde, NY (414 Dublin Rd area — verify pin) (approximate)</desc>
     <type>overnight</type>
     <time>2026-05-20T12:00:00Z</time>
   </wpt>
@@ -35,11 +35,12 @@ Waypoint note: Luray, VA (approximate)</desc>
     <type>overnight</type>
     <time>2026-05-22T12:00:00Z</time>
   </wpt>
-  <wpt lat="37.5" lon="-79.9">
+  <wpt lat="37.229" lon="-79.811">
     <name>Day 4: Luray → Roanoke (VA)</name>
     <desc>Date: 2026-05-23
-Stay: George Washington &amp; Jefferson NF — near Roanoke (search MVUM)
-Waypoint note: trip.json lodging / alt mapsUrl (GPS pin)</desc>
+Stay: Vicky Cawley
+Address: 359 Shortridge Lane, Hardy, VA 24101
+Waypoint note: Hardy, VA (359 Shortridge Ln area — verify pin)</desc>
     <type>overnight</type>
     <time>2026-05-23T12:00:00Z</time>
   </wpt>
@@ -318,7 +319,7 @@ Waypoint note: Toronto, ON (approximate)</desc>
   <rte>
     <name>Toronto ↔ Southwest loop — 36-day motorcycle itinerary</name>
     <desc>Ordered overnight stops only.</desc>
-    <rtept lat="42.5962" lon="-75.9182">
+    <rtept lat="43.0308" lon="-76.8697">
       <name>D1</name>
       <desc>Day 1: Toronto → Finger Lakes (NY)</desc>
     </rtept>
@@ -330,7 +331,7 @@ Waypoint note: Toronto, ON (approximate)</desc>
       <name>D3</name>
       <desc>Day 3: New York → Washington, DC → Luray (VA)</desc>
     </rtept>
-    <rtept lat="37.5" lon="-79.9">
+    <rtept lat="37.229" lon="-79.811">
       <name>D4</name>
       <desc>Day 4: Luray → Roanoke (VA)</desc>
     </rtept>

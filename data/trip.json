@@ -80,33 +80,29 @@
       "weatherNotes": "Lake breeze and frontal weather near Ontario / Erie — check wind on bridge approaches.",
       "keyNotes": [
         "Border: registration, insurance, declare tools/spares as needed; keep answers simple (touring).",
-        "Save offline maps for NY Thruway and last-mile to McGraw."
+        "Save offline maps for NY Thruway and last-mile to Clyde."
       ],
-      "campingAccommodation": "See B.a.B. directory for host contact actions; keep a state-park backup in mind if plans slip.",
+      "campingAccommodation": "Host contact (call, text, email, drafts) is on this day below the stay summary; keep a state-park backup in mind if plans slip.",
       "terrain": "Highway / border crossing",
       "highlights": [
         "US entry documentation ready",
-        "Evening in McGraw area"
+        "Evening near Clyde / I-90 corridor"
       ],
       "stops": [],
       "lodging": {
         "heading": "Stay options",
         "priority": true,
-        "babMergeId": "greg-chris-mcgraw",
-        "name": "Greg & Chris",
-        "address": "4177 Syrian Hill Road, McGraw, NY 13101",
-        "notes": "Confirm arrival time and parking for bikes."
+        "babMergeId": "mike-miller",
+        "name": "Mike Miller",
+        "address": "414 Dublin Road, Clyde, NY 14433",
+        "notes": "Confirm arrival time and bike parking (queen bedroom or camping on property)."
       },
       "risks": [
         "Border wait times",
         "Weather over Lake Ontario corridor"
       ],
       "planB": "",
-      "babAlternateIds": [
-        "wayne-lawler",
-        "richard-honchar",
-        "mike-miller"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "No U.S. national park entrance on this day.",
         "Canada: no outbound park fee. U.S. entry: CBP inspection has no park-style fee.",
@@ -143,12 +139,7 @@
         "Metro traffic near NYC / Long Island"
       ],
       "planB": "",
-      "babAlternateIds": [
-        "robert-baldwin",
-        "jay-massapequa",
-        "wayne-lawler",
-        "richard-honchar"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "No federal park entrance fee on routing described.",
         "NYC / Hudson crossings (if used): many bridges/tunnels are cashless tolling to a registered plate or bill-by-mail — budget tolls; motorcycles follow posted rules per crossing."
@@ -166,24 +157,18 @@
       ],
       "stops": [],
       "lodging": {
-        "heading": "Stay",
+        "heading": "Stay (Bunk a Biker)",
+        "priority": true,
+        "babMergeId": "frank-allen-pence",
         "name": "Frank Allen Pence",
         "address": "Luray, VA 22835",
-        "notes": "Confirm full street address before arrival."
+        "notes": "Text preferred — mention Bunk a Biker; host sends full street address. Full contact card below."
       },
       "risks": [
         "East Coast traffic corridors"
       ],
       "planB": "",
-      "babAlternateIds": [
-        "fred-christie-huger",
-        "arnab-sinha",
-        "mark-sabrina-catlett",
-        "robert-baldwin",
-        "jay-massapequa",
-        "genie-cane",
-        "jim-manchester-nj"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "District of Columbia: no NPS entrance fee to ride public roads past monuments (no timed NPS entry ticket required just to transit).",
         "If you enter a specific fee-charging NPS unit as a visitor attraction, pay that site’s fee — not required for through-riding to Luray.",
@@ -196,35 +181,46 @@
       "title": "Luray → Roanoke (VA)",
       "distanceKm": 0,
       "difficulty": "MODERATE",
-      "routeLine": "Luray area → Roanoke metro via US-11 / US-460 or I-81 options — pick traffic vs scenery in Maps; aim Roanoke for resupply before NF overnight.",
+      "routeLine": "Luray area → Roanoke metro via US-11 / US-460 or I-81 options — pick traffic vs scenery in Maps; resupply in Roanoke, then run last miles to Hardy (BRP area ~7 mi from MP 112 per host).",
       "fuelNotes": "Fuel in Luray or before Roanoke; Roanoke has full services.",
-      "foodNotes": "Stock water/food before dispersed camp — no services on NF spurs.",
+      "foodNotes": "Stock water/snacks before leaving Roanoke if arriving late to the host.",
       "weatherNotes": "Late May: pop-up thunderstorms — check radar; avoid ridges in lightning.",
       "keyNotes": [
-        "Dispersed camping only where Jefferson NF MVUM allows motor vehicles — verify same week.",
-        "Pack out all waste; many sites have no water."
+        "Confirm ETA and bike parking with host (call/text).",
+        "If you bail to NF dispersed instead: Jefferson NF MVUM only — verify motor-vehicle access same week; pack out all waste."
       ],
-      "campingAccommodation": "Free dispersed (NF) — confirm road open and fire rules.",
-      "terrain": "Shenandoah approaches → Roanoke valley",
+      "campingAccommodation": "Primary: Bunk a Biker stay at Hardy — host contact card below. Backup: see alternates for NF dispersed if plans change.",
+      "terrain": "Shenandoah approaches → Roanoke valley → short run to Hardy",
       "highlights": [
         "Roanoke resupply",
-        "Jefferson NF camping"
+        "Blue Ridge Parkway area host (Hardy)"
       ],
       "stops": [],
       "lodging": {
-        "heading": "Free camping (dispersed)",
-        "name": "George Washington & Jefferson NF — near Roanoke (search MVUM)",
-        "notes": "Example search area ~37.5, -79.9 — use official Motor Vehicle Use Map for legal spur roads; iOverlander/FreeCampgrounds for user reports — verify. No amenities; 14-day limits common.",
-        "mapsUrl": "https://www.google.com/maps?q=37.50,-79.90"
+        "heading": "Stay (Bunk a Biker)",
+        "priority": true,
+        "babMergeId": "vicky-cawley",
+        "name": "Vicky Cawley",
+        "address": "359 Shortridge Lane, Hardy, VA 24101",
+        "notes": "Call or text to confirm arrival; garage, tools, lift, tent or indoor options per host profile."
       },
+      "lodgingAlternatives": [
+        {
+          "heading": "Backup (dispersed NF)",
+          "name": "George Washington & Jefferson NF — near Roanoke (search MVUM)",
+          "notes": "Use official Motor Vehicle Use Map for legal spur roads; verify same week. No amenities; 14-day limits common.",
+          "mapsUrl": "https://www.google.com/maps?q=37.50,-79.90"
+        }
+      ],
       "risks": [
         "Deer dawn/dusk",
         "Gravel/mud on NF roads after rain"
       ],
-      "planB": "Developed NF campground (fee) or Walmart parking urban last resort — not ideal.",
+      "planB": "Developed NF campground (fee), other B.a.B. options, or motel in Roanoke/Salem if weather or fatigue wins.",
       "babAlternateIds": [],
       "feesAndPasses": [
-        "George Washington & Jefferson National Forests: no NPS entrance fee; dispersed camping is generally free where MVUM allows — developed NF campgrounds charge site fees if you use them."
+        "Private host stay: no public-land fee — separate from NF rules below.",
+        "George Washington & Jefferson National Forests (if you use dispersed backup): no NPS entrance fee; dispersed camping is generally free where MVUM allows — developed NF campgrounds charge site fees if you use them."
       ]
     },
     {
@@ -396,11 +392,7 @@
         "Heat / humidity — hydrate"
       ],
       "planB": "",
-      "babAlternateIds": [
-        "jeff-roberts-ozark",
-        "brian-cooper",
-        "connie-jeff-lackey"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "Hot Springs National Park (optional detour near Garland County): no entrance fee to enter the park (per NPS). Bathhouse row services are separate commercial fees if you use them.",
         "Arkansas state highways: no park pass required for slab transit."
@@ -508,9 +500,7 @@
         "Desert temperature swing"
       ],
       "planB": "Motel in Amarillo or Albuquerque if weather turns.",
-      "babAlternateIds": [
-        "kelly-snyder"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "iOverlander / private camp pins (~US$10 tenting in your notes): pay the host/landowner; not an NPS fee.",
         "I-40 / Amarillo: no NPS fee for driving; motel/camp is commercial pricing."
@@ -539,12 +529,7 @@
         "Mountain chip seal and tar patches — traction drops fast when wet; treat painted lines and metal grates as low-grip."
       ],
       "planB": "Paid campground or Silverton lodging if dispersed full or weather bad.",
-      "babAlternateIds": [
-        "derek-duncan-denver",
-        "jim-wendy-conifer",
-        "cc-golden",
-        "travis-georgetown"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "San Juan NF / Silverton area: USFS — no NPS entrance; dispersed camping usually free where allowed — verify MVUM. Developed USFS or county sites may charge.",
         "Colorado state highways: no park pass for through-riding."
@@ -572,10 +557,7 @@
         "Limited services"
       ],
       "planB": "",
-      "babAlternateIds": [
-        "good-adv-cortez",
-        "matt-burton-seligman"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "Mexican Hat Rocks campground (private): ~US$22+ tax in your plan — reserve/confirm on their site (seasonal).",
         "Navajo Nation / Monument Valley (if you enter tribal park): separate tribal permit/fees — not included in America the Beautiful."
@@ -637,10 +619,7 @@
         "Deer at dawn/dusk"
       ],
       "planB": "Shorten: skip one sight or book paid campground inside Bryce area.",
-      "babAlternateIds": [
-        "matt-burton-seligman",
-        "good-adv-cortez"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "Bryce Canyon NP (NPS): motorcycle 7-day entrance US$30 (cashless at park — nps.gov/brca); private vehicle US$35. Bryce is on the 2026 non-resident surcharge list — without an America the Beautiful pass, ages 16+ non-U.S. residents pay an additional US$100/person at entry (with valid non-resident annual pass, entrance + surcharge covered for passholder per NPS rules — verify ID).",
         "Horseshoe Bend overlook (City of Page): parking fee ~US$5 motorcycle / ~US$10 private vehicle (Page, AZ — not covered by federal passes; verify current rate at visitpage.com / city site).",
@@ -748,9 +727,7 @@
       ],
       "weatherNotes": "June temperatures in Moab regularly exceed 38 °C (100 °F) by midday. All outdoor activity should be done before 10–11 am or after 5 pm.",
       "planB": "If Arches is too crowded or lots are closed, Dead Horse Point + Canyonlands Island in the Sky is an equally spectacular full day.",
-      "babAlternateIds": [
-        "robert-vandenbroeke"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "Arches NP: motorcycle 7-day entrance US$25; private vehicle US$30 (nps.gov/arch, credit/debit at entrance). America the Beautiful covers standard entrance. 2026: timed-entry reservation for Arches was discontinued — verify current status on nps.gov/arch before travel (parking may still temporarily limit entry when lots are full).",
         "Fiery Furnace hikes: separate permit/ranger fees if you do those activities (nps.gov/arch).",
@@ -820,10 +797,7 @@
         "Extreme heat mid-summer"
       ],
       "planB": "",
-      "babAlternateIds": [
-        "anais-redlands",
-        "layla-sisney"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "I-15: possible toll lanes in some segments — account for toll-by-plate.",
         "No park entrance fee for Mojave transit to Apple Valley as written."
@@ -879,12 +853,7 @@
         "Long day (~590 km) — monitor fatigue; Cambria is a bail-out overnight if needed"
       ],
       "planB": "If fatigued by Cambria: stay at state park camp (Hwy 1 corridor) and ride Prewitt Ridge the next morning before continuing north.",
-      "babAlternateIds": [
-        "layla-sisney",
-        "anais-redlands",
-        "darlene-morro",
-        "jeff-rothman"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "Leo Carrillo State Park (CA): vehicle day-use fee required (California State Parks — 2026 pricing on parks.ca.gov; online day-use reservation recommended weekends/holidays).",
         "PCH / Big Sur: Julia Pfeiffer Burns SP and other CA state parks charge day-use or parking fees — check parks.ca.gov for each stop.",
@@ -913,10 +882,7 @@
         "Regional wildfire smoke can drop visibility and AQI with little warning — check smoke/air maps along the coast that morning."
       ],
       "planB": "",
-      "babAlternateIds": [
-        "darlene-morro",
-        "jeff-rothman"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "CA Hwy 1 / dispersed pin: confirm land manager (private / county / state) and any day-use or camping fee before paying or camping."
       ]
@@ -942,10 +908,7 @@
         "NorCal / redwoods corridor: summer wildfire smoke and poor AQI — have a shorter-day or inland detour mindset if maps go red."
       ],
       "planB": "",
-      "babAlternateIds": [
-        "jeff-rothman",
-        "jim-haines-shasta"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "Redwood National and State Parks: NPS units — no entrance fee for the federal Redwood areas (nps.gov/redw). Adjacent California state park units may charge day-use — pay if you enter those units."
       ]
@@ -970,10 +933,7 @@
         "Heavy smoke: favor shorter riding, more breaks, and indoor air when AQI is unhealthy — especially at altitude."
       ],
       "planB": "",
-      "babAlternateIds": [
-        "lisa-blue-bend",
-        "suze-riley-maupin"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "Crater Lake NP (optional detour): NPS entrance applies if you enter — motorcycle rate on nps.gov/crla; America the Beautiful accepted. Not on the 11-park US$100 surcharge list as published Jan 2026 (verify if policy updates)."
       ]
@@ -1007,12 +967,7 @@
         "Gorge crosswinds"
       ],
       "planB": "",
-      "babAlternateIds": [
-        "mosko-moto",
-        "david-kishpaugh",
-        "dave-katherine-cashmere",
-        "angela-east-wenatchee"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "Columbia River Gorge NSA / OR & WA state parks: some trailheads require Northwest Forest Pass or state day-use — check fs.usda.gov and Oregon/Washington park sites for the exact stop."
       ]
@@ -1052,13 +1007,7 @@
         "Splitting stays — pack light for moving between hosts"
       ],
       "planB": "Single hotel hub if multi-host logistics are tight.",
-      "babAlternateIds": [
-        "bob-combs",
-        "christe-smith-rainier",
-        "ob-graham",
-        "julie-lake-tapps",
-        "bill-darrington"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "Seattle metro: no NPS entrance for urban riding; paid parking garages may apply downtown."
       ]
@@ -1089,13 +1038,7 @@
         "PNW / interior BC smoke can funnel into mountain valleys — if AQI spikes, SR-20 vs I-90 isn’t just a snow decision; air quality matters for long climb days."
       ],
       "planB": "I-90 direct to eastern WA if SR-20 closed.",
-      "babAlternateIds": [
-        "bob-combs",
-        "dave-katherine-cashmere",
-        "mosko-moto",
-        "jeff-carrie-bob",
-        "david-rs-washougal"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "North Cascades National Park complex: no entrance fee to drive WA SR-20 (nps.gov/noca).",
         "If you use a fee trailhead or Sno-Park in season, Washington Sno-Park permit may apply in winter — June usually not applicable."
@@ -1126,11 +1069,7 @@
       ],
       "risks": [],
       "planB": "",
-      "babAlternateIds": [
-        "randy-rathdrum",
-        "betty-chewelah",
-        "dave-katherine-cashmere"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "Eastern WA / Spokane: no NPS fee for routing as written."
       ]
@@ -1164,11 +1103,7 @@
         "Loose gravel on forest roads"
       ],
       "planB": "US-12 services thin — fuel when you can.",
-      "babAlternateIds": [
-        "dustin-patton",
-        "karl-angie-stevensville",
-        "phyl-corvallis-mt"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "Lolo Pass / US-12: scenic highway — no national-park entrance fee for the pass transit itself."
       ]
@@ -1194,10 +1129,7 @@
         "Greater Yellowstone: wildfire smoke and park-wide haze can persist for days — watch NPS alerts and AQI before committing to long high-elevation legs."
       ],
       "planB": "",
-      "babAlternateIds": [
-        "kevin-island-park",
-        "daryn-engesser"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "Yellowstone NP: motorcycle 7-day entrance US$30 (nps.gov/yell). Yellowstone is on the 2026 non-resident surcharge list — without America the Beautiful, ages 16+ non-U.S. residents pay US$100/person in addition to entrance; valid America the Beautiful (including non-resident US$250 pass) covers entrance and surcharge for passholder presentation with ID per NPS.",
         "Keep receipt — 7-day Yellowstone entrance valid for re-entry.",
@@ -1231,10 +1163,7 @@
         "Smoke from regional fires can cut views and air quality inside the park — adjust expectations and rest if you feel tight-chested at altitude."
       ],
       "planB": "",
-      "babAlternateIds": [
-        "kevin-island-park",
-        "jolene-casper"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "Yellowstone NP: same 7-day entrance window if within validity from purchase — carry pass/receipt.",
         "Non-U.S. citizens (2026): America the Beautiful annual pass for non-residents US$250 (digital: recreation.gov/pass) — covers standard entrance fees where accepted and waives the US$100/person non-resident surcharge at the 11 high-visitation parks when you show valid pass + photo ID (see nps.gov/aboutus/nonresident-fees.htm). U.S. resident pass remains US$80."
@@ -1271,11 +1200,7 @@
         "Google Maps often prefers WY-310 / Cody corridor from the park — manually select US-212 via Cooke City and Red Lodge for the Beartooth"
       ],
       "planB": "If US-212 is closed, use NPS/MDT detour guidance (may include lower basin roads — not the same ride as the Beartooth).",
-      "babAlternateIds": [
-        "daryn-engesser",
-        "jolene-casper",
-        "dave-van-gorkom"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "Yellowstone NP: still inside 7-day window if continuous from prior entries — confirm dates on your pass stub.",
         "Beartooth Highway (US-212): scenic corridor — no separate ‘Beartooth pass’ beyond any NPS Yellowstone re-entry if you dip back in."
@@ -1301,9 +1226,7 @@
         "Crosswinds"
       ],
       "planB": "",
-      "babAlternateIds": [
-        "jolene-casper"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "Wyoming plains: no NPS fee for routing as written."
       ]
@@ -1328,11 +1251,7 @@
         "Tourist congestion"
       ],
       "planB": "Paid campground in Black Hills NF or Custer area.",
-      "babAlternateIds": [
-        "michelle-custer",
-        "dave-van-gorkom",
-        "lisa-redfield"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "Custer State Park (SD): park entrance license required for Wildlife Loop etc. — 2026: 7-day temporary license ~US$25/private vehicle or ~US$20/motorcycle (verify gfp.sd.gov/pel). Non-stop through-travel on designated US-16A through-route may be exempt — read posted rules.",
         "Black Hills National Forest: generally no entrance fee; amenity sites may charge.",
@@ -1376,9 +1295,7 @@
         "Great Plains: persistent wind grooves and open-deck bridges — relax grip, don’t fight the bars, and plan hand breaks."
       ],
       "planB": "Split into two shorter days if weather or energy is poor.",
-      "babAlternateIds": [
-        "lisa-redfield"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "I-90 Great Plains: possible toll segments (e.g. Illinois/Iowa depending on route) — verify GPS toll settings."
       ]
@@ -1458,9 +1375,7 @@
       ],
       "weatherNotes": "Late June in the Great Lakes region: typically warm (25–32 °C), possible afternoon thunderstorms. Check radar before departure.",
       "planB": "If John Cody Smith visit runs long or traffic is severe, skip London and stay in Sarnia/Windsor area instead.",
-      "babAlternateIds": [
-        "john-cody-smith"
-      ],
+      "babAlternateIds": [],
       "feesAndPasses": [
         "U.S. side: no national park entrance for I-94 day as written.",
         "Blue Water Bridge (Port Huron → Sarnia): toll per bridge authority — check current motorcycle/car rate and payment method.",
@@ -1534,7 +1449,7 @@
   "beforeYouGo": [
     "Trip window in this file: 2026-05-20 → 2026-06-24. If you move departure, update trip.startDate, trip.endDate, and every days[].date in sync (or regenerate from your spreadsheet).",
     "Maps: set GOOGLE_MAPS_API_KEY in .env (see .env.example), run npm run build, then serve. On Vercel, add the same variable under Environment Variables — build generates google-maps-config.js. Restrict the key by HTTP referrer (localhost + your Vercel URL). Re-check each leg in Maps after you set exact pins.",
-    "Daily plan lists stay name/address only; phone, email, and all Bunk a Biker backups are in the B.a.B. directory. Edit babAlternateIds per day in data/bab-hosts.json / trip.json if you trim the list.",
+    "Bunk a Biker stays: full host contact cards (phone, text, email, Gmail, draft message) render on each day that uses a host — primary hosts only in bab-hosts.json for this build.",
     "Confirm each host address, gate codes, and bike parking before arrival day.",
     "Arches NP: verify current entry and parking rules on nps.gov/arch for your dates (timed-entry reservations were discontinued as of 2026 research — lots can still fill).",
     "Yellowstone / Beartooth: verify pass opening and NPS alerts.",
