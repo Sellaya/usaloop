@@ -68,7 +68,7 @@ out.push({
 out.push({
   dayIndex: 2,
   date: isoAdd("2026-05-20", 1),
-  title: "Finger Lakes → New York",
+  title: "Clyde / I-90 NY → New York (Long Island)",
   distanceKm: 0,
   terrain: "NY Thruway / Hudson Valley approaches",
   highlights: ["Shorter leg before DC → Luray segment"],
@@ -137,9 +137,9 @@ data.trip.legs = {
   "3": "Seattle → Toronto · Days 24–36",
 };
 data.trip.overviewLead =
-  "36-day Canada ↔ USA motorcycle loop in three chapters: east → Texas home → west coast, Cascades, Yellowstone, and home through the plains. Includes a Finger Lakes → New York segment before DC and Luray.";
+  "36-day Canada ↔ USA motorcycle loop in three chapters: east → Texas home → west coast, Cascades, Yellowstone, and home through the plains. Opens with first US night at Clyde on I-90 (Wayne County), then metro New York before DC and Luray.";
 data.trip.summary =
-  "The ride strings together the Finger Lakes, a New York metro stop, Washington DC and Luray, southwest Virginia, Great Smoky approaches, Nashville–Memphis, Arkansas, a Fort Worth home stop, then the high plains and I-40 toward New Mexico. From there: San Juan Mountains and Million Dollar Highway, Utah (Mexican Hat, Page, Bryce, Moab, Arches, St. George), the California coast to the redwoods, Oregon and the Columbia River Gorge, Seattle, US-20 and Spokane, Lolo Pass, Yellowstone and the Beartooth corridor, and a long return through the Dakotas and Great Lakes to Ontario, with a final night in London before Toronto.";
+  "The ride strings together a first US night at Clyde on I-90 (Wayne County, NY), a New York metro stop, Washington DC and Luray, southwest Virginia, Great Smoky approaches, Nashville–Memphis, Arkansas, a Fort Worth home stop, then the high plains and I-40 toward New Mexico. From there: San Juan Mountains and Million Dollar Highway, Utah (Mexican Hat, Page, Bryce, Moab, Arches, St. George), the California coast to the redwoods, Oregon and the Columbia River Gorge, Seattle, US-20 and Spokane, Lolo Pass, Yellowstone and the Beartooth corridor, and a long return through the Dakotas and Great Lakes to Ontario, with a final night in London before Toronto.";
 
 fs.writeFileSync(tripPath, `${JSON.stringify(data, null, 2)}\n`);
 
@@ -154,7 +154,7 @@ newBy["2"] = {
   mapsDirectionsUrl:
     "https://www.google.com/maps/dir/?api=1&origin=Clyde%2C+NY+14433&destination=New+York%2C+NY&travelmode=driving",
   distanceNote:
-    "Finger Lakes to NYC metro — pick Southampton vs DC pacing in Maps after you choose host; tolls on Thruway/I-95 possible.",
+    "Clyde / I-90 NY toward NYC metro — pick Southampton vs DC pacing in Maps after you choose host; tolls on Thruway/I-95 possible.",
   recommendations: [
     { text: "If staying Southampton: adjust destination pin in Google Maps.", url: "" },
     {

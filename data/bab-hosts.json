@@ -3,7 +3,7 @@
     "mike-miller": {
       "name": "Mike Miller",
       "greetingName": "Mike",
-      "region": "Finger Lakes / I-90 corridor, NY",
+      "region": "Wayne County / I-90 corridor, NY (Clyde)",
       "listHighlight": true,
       "address": "414 Dublin Road, Clyde, NY 14433",
       "phone": "+13159757240",
@@ -11,7 +11,7 @@
       "contact": "email_or_text",
       "notes": "Second bedroom with queen-size bed; about an acre of land if you want to camp.",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=414+Dublin+Road%2C+Clyde%2C+NY+14433",
-      "routeGuidance": "Corridor: Leg 1 · Day 1 primary — Clyde sits just north of I-90 between Rochester and Syracuse (~10–20 km off Thruway exits depending on path).\nDistance: Use as your planned first US night after border when routing Finger Lakes / Thruway east.\nEarly stop: Confirm bike parking and arrival window — email or text both work per profile."
+      "routeGuidance": "Corridor: Leg 1 · Day 1 primary — Clyde sits just north of I-90 between Rochester and Syracuse (~10–20 km off Thruway exits depending on path).\nDistance: Use as your planned first US night after border when routing I-90 east into Wayne County.\nEarly stop: Confirm bike parking and arrival window — email or text both work per profile."
     },
     "frank-allen-pence": {
       "name": "Frank Allen Pence",
@@ -50,7 +50,7 @@
       "contact": "email",
       "notes": "Access to garage, tools, local info. Confirm full street address and bike parking before arrival.",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Southampton%2C+NY+11968",
-      "routeGuidance": "Corridor: Leg 1 · Day 2 (Finger Lakes → NY / LI). Southampton is a town-only pin — not a full street address.\nDistance: Large detour from I-90 Thruway if you stay upstate first; natural if you’re sweeping south/east toward NYC that day.\nMaps: You must confirm the exact street + bike parking by email before navigating — don’t rely on town-center routing alone."
+      "routeGuidance": "Corridor: Leg 1 · Day 2 (Clyde / I-90 NY → NY / LI). Southampton is a town-only pin — not a full street address.\nDistance: Large detour from I-90 Thruway if you stay upstate first; natural if you’re sweeping south/east toward NYC that day.\nMaps: You must confirm the exact street + bike parking by email before navigating — don’t rely on town-center routing alone."
     },
     "kelly-snyder": {
       "name": "Kelly Snyder (Route 66 Midpoint)",

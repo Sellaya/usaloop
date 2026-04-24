@@ -31,9 +31,9 @@
         "plate": ""
       }
     ],
-    "overviewLead": "36-day Canada ↔ USA motorcycle loop in three chapters: east → Texas home → west coast, Cascades, Yellowstone, and home through the plains. After Luray: Roanoke, a full Blue Ridge Parkway day to Bristol, Smokies plus Tail of the Dragon with a Kingston night, then Parsons before Arkansas.",
+    "overviewLead": "36-day Canada ↔ USA motorcycle loop in three chapters: east → Texas home → west coast, Cascades, Yellowstone, and home through the plains. Opens with border → first US night on I-90 at Clyde, NY (Wayne County, Bunk a Biker host Mike Miller), then metro New York and the Shenandoah arc. After Luray: Roanoke, a full Blue Ridge Parkway day to Bristol, Smokies plus Tail of the Dragon with a Kingston night, then Parsons before Arkansas.",
     "regionChips": [
-      "Finger Lakes",
+      "I-90 NY · Clyde",
       "New York / DC",
       "Virginia / Appalachia",
       "Smoky Mountains",
@@ -58,7 +58,7 @@
       "Summer wildfire smoke can hit NorCal, PNW, Rockies, and high plains on short notice — check AQI/smoke maps for your corridor the morning you ride; shorten or reroute when air is unhealthy.",
       "Every iOverlander / BLM / dispersed GPS pin: confirm land status, MVUM, and fire closures the same week you stay — crowdsourced pins are not permission to camp."
     ],
-    "summary": "36-day ride stringing together the Finger Lakes, a New York metro stop, Washington DC and Luray, then Roanoke, Blue Ridge Parkway to Bristol, Great Smoky approaches with Tail of the Dragon and a Kingston night, Parsons TN, then Nashville–Memphis–Arkansas, a Fort Worth home stop, then the high plains and I-40 toward New Mexico. From there: San Juan Mountains and Million Dollar Highway, Utah (Mexican Hat, Page, Bryce, Moab with a full rest day at Arches, St. George), the California coast (Leo Carrillo day stop, Big Sur, redwoods), Oregon and the Columbia River Gorge, Seattle, US-20 and Spokane, Lolo Pass, Yellowstone and the Beartooth corridor, and a long return through the Dakotas and Great Lakes to Ontario, with a final night in London before Toronto.",
+    "summary": "36-day ride stringing together a first US night at Clyde on I-90 in Wayne County, NY (Bunk a Biker host Mike Miller), a New York metro stop, Washington DC and Luray, then Roanoke, Blue Ridge Parkway to Bristol, Great Smoky approaches with Tail of the Dragon and a Kingston night, Parsons TN, then Nashville–Memphis–Arkansas, a Fort Worth home stop, then the high plains and I-40 toward New Mexico. From there: San Juan Mountains and Million Dollar Highway, Utah (Mexican Hat, Page, Bryce, Moab with a full rest day at Arches, St. George), the California coast (Leo Carrillo day stop, Big Sur, redwoods), Oregon and the Columbia River Gorge, Seattle, US-20 and Spokane, Lolo Pass, Yellowstone and the Beartooth corridor, and a long return through the Dakotas and Great Lakes to Ontario, with a final night in London before Toronto.",
     "riderName": "Ali",
     "riderEmail": "",
     "riderPhone": ""
@@ -71,12 +71,12 @@
     {
       "dayIndex": 1,
       "date": "2026-05-20",
-      "title": "Toronto → Finger Lakes (NY)",
+      "title": "Toronto → Clyde, NY (I-90 — first US night)",
       "distanceKm": 0,
       "difficulty": "MODERATE",
-      "routeLine": "Plan in your mapping app — typical: GTA → Niagara/Lewiston or Peace Bridge corridor → I-90 east into NY → Finger Lakes roads (verify crossing and tolls).",
-      "fuelNotes": "Fill in Ontario before the border if convenient; I-90 NY has frequent fuel after entry.",
-      "foodNotes": "Pack snacks for border queue; rural Finger Lakes — know dinner plan with hosts or town stop.",
+      "routeLine": "Plan in your mapping app — typical: GTA → Niagara/Lewiston or Peace Bridge corridor → I-90 east into NY → exit toward Clyde / Wayne County for 414 Dublin Road (verify crossing, tolls, and last-mile pin with Mike).",
+      "fuelNotes": "Fill in Ontario before the border if convenient; I-90 NY has frequent fuel after entry toward Rochester/Syracuse.",
+      "foodNotes": "Pack snacks for border queue; dinner in Clyde area, Rochester, or Syracuse suburbs — confirm timing with host.",
       "weatherNotes": "Lake breeze and frontal weather near Ontario / Erie — check wind on bridge approaches.",
       "keyNotes": [
         "Border: registration, insurance, declare tools/spares as needed; keep answers simple (touring).",
@@ -90,12 +90,12 @@
       ],
       "stops": [],
       "lodging": {
-        "heading": "Stay options",
+        "heading": "Stay (Bunk a Biker — Mike Miller)",
         "priority": true,
         "babMergeId": "mike-miller",
         "name": "Mike Miller",
         "address": "414 Dublin Road, Clyde, NY 14433",
-        "notes": "Confirm arrival time and bike parking (queen bedroom or camping on property)."
+        "notes": "Queen bedroom or camping on ~1 acre — confirm arrival window and bike parking (email or text per host profile). Full contact card below."
       },
       "risks": [
         "Border wait times",
@@ -112,7 +112,7 @@
     {
       "dayIndex": 2,
       "date": "2026-05-21",
-      "title": "Finger Lakes → New York",
+      "title": "Clyde / I-90 NY → New York (Long Island)",
       "distanceKm": 0,
       "terrain": "NY Thruway / Hudson Valley approaches",
       "weatherNotes": "Approaching NYC / Long Island in summer: heat + humidity in full gear — plan water, shade, and rest; don’t rely on “not thirsty yet.”",

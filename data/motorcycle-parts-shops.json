@@ -42,8 +42,8 @@
     },
     {
       "id": "new-york-metro",
-      "name": "New York — Finger Lakes & NYC corridor",
-      "routeDays": "Days 2–3 · Clyde / I-90, metro NYC",
+      "name": "New York — Clyde / I-90 & NYC corridor",
+      "routeDays": "Days 1–3 · Clyde first US night, metro NYC, Shenandoah approaches",
       "corridor": "I-90 / Thruway and down toward NJ — upstate + metro options.",
       "shops": [
         {

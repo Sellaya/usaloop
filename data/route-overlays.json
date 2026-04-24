@@ -6,8 +6,12 @@
   "byDay": {
     "1": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Toronto%2C+ON%2C+Canada&destination=414+Dublin+Rd%2C+Clyde%2C+NY+14433&travelmode=driving",
-      "distanceNote": "Driving km come from the Google Maps API for the same origin/destination as the link. Your chosen border crossing and pins can still change the route — confirm in Maps before you ride.",
+      "distanceNote": "Driving km come from the Google Maps API for the same origin/destination as the link (Toronto → 414 Dublin Rd, Clyde). Your chosen border crossing can still change the route — confirm in Maps before you ride.",
       "recommendations": [
+        {
+          "text": "First US night: confirm 414 Dublin Rd, Clyde pin and bike parking with Mike (Bunk a Biker) before you commit off I-90.",
+          "url": "https://www.google.com/maps/search/?api=1&query=414+Dublin+Road%2C+Clyde%2C+NY+14433"
+        },
         {
           "text": "Pre-clear eTA/ESTA not needed for US land — have passport, reg, insurance ready.",
           "url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html"
@@ -17,14 +21,14 @@
           "url": "https://www.google.com/maps/search/Niagara+Falls+State+Park+NY"
         },
         {
-          "text": "Watkins Glen State Park gorge (short hike) if you arrive with daylight.",
+          "text": "Watkins Glen State Park gorge (short hike) only if you add time south of Clyde — not on the direct Thruway run.",
           "url": "https://www.nps.gov/places/watkins-glen-state-park.htm"
         }
       ]
     },
     "2": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Clyde%2C+NY+14433&destination=New+York%2C+NY&travelmode=driving",
-      "distanceNote": "Finger Lakes to NYC metro — pick Southampton vs DC pacing in Maps after you choose host; tolls on Thruway/I-95 possible.",
+      "distanceNote": "Clyde / I-90 NY toward NYC metro — pick Southampton vs DC pacing in Maps after you choose host; tolls on Thruway/I-95 possible.",
       "recommendations": [
         {
           "text": "If staying Southampton: adjust destination pin in Google Maps.",

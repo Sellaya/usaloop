@@ -6,10 +6,10 @@
   <metadata>
     <name>Toronto ↔ Southwest loop — 36-day motorcycle itinerary</name>
     <desc>36 overnight waypoints from trip.json. Straight-line route is NOT the riding route — import into Garmin, Gaia, or Google Earth and plan roads separately.</desc>
-    <time>2026-04-23T18:31:05.127Z</time>
+    <time>2026-04-24T01:42:24.419Z</time>
   </metadata>
   <wpt lat="43.0308" lon="-76.8697">
-    <name>Day 1: Toronto → Finger Lakes (NY)</name>
+    <name>Day 1: Toronto → Clyde, NY (I-90 — first US night)</name>
     <desc>Date: 2026-05-20
 Stay: Mike Miller
 Address: 414 Dublin Road, Clyde, NY 14433
@@ -18,7 +18,7 @@ Waypoint note: Clyde, NY (414 Dublin Rd area — verify pin) (approximate)</desc
     <time>2026-05-20T12:00:00Z</time>
   </wpt>
   <wpt lat="40.8843" lon="-72.3895">
-    <name>Day 2: Finger Lakes → New York</name>
+    <name>Day 2: Clyde / I-90 NY → New York (Long Island)</name>
     <desc>Date: 2026-05-21
 Stay: Dan
 Address: Southampton, NY 11968
@@ -321,11 +321,11 @@ Waypoint note: Toronto, ON (approximate)</desc>
     <desc>Ordered overnight stops only.</desc>
     <rtept lat="43.0308" lon="-76.8697">
       <name>D1</name>
-      <desc>Day 1: Toronto → Finger Lakes (NY)</desc>
+      <desc>Day 1: Toronto → Clyde, NY (I-90 — first US night)</desc>
     </rtept>
     <rtept lat="40.8843" lon="-72.3895">
       <name>D2</name>
-      <desc>Day 2: Finger Lakes → New York</desc>
+      <desc>Day 2: Clyde / I-90 NY → New York (Long Island)</desc>
     </rtept>
     <rtept lat="38.6651" lon="-78.4594">
       <name>D3</name>
