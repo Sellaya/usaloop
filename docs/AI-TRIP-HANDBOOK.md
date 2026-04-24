@@ -87,7 +87,7 @@
 
 Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` in JSON means “use live Maps.” Stays marked **B.a.B.** resolve to `bab-hosts.json` via `babMergeId` or alternate ids.
 
-### Day 1 — 2026-05-20 — Toronto → Finger Lakes (NY)
+### Day 1 — 2026-05-20 — Toronto → Horseheads, NY (Southern Tier / Finger Lakes)
 
 - **Difficulty:** MODERATE
 - **Route line:** Plan in your mapping app — typical: GTA → Niagara/Lewiston or Peace Bridge corridor → I-90 east into NY → Finger Lakes roads (verify crossing and tolls).
@@ -95,10 +95,10 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Fuel:** Fill in Ontario before the border if convenient; I-90 NY has frequent fuel after entry.
 - **Food:** Pack snacks for border queue; rural Finger Lakes — know dinner plan with hosts or town stop.
 - **Weather:** Lake breeze and frontal weather near Ontario / Erie — check wind on bridge approaches.
-- **Lodging:** Stay options — **Mike Miller** — 414 Dublin Road, Clyde, NY 14433
-  - `babMergeId:` `mike-miller`
-- **Highlights:** US entry documentation ready; Evening near Clyde / I-90 corridor
-- **Key notes:** Border: registration, insurance, declare tools/spares as needed; keep answers simple (touring). | Save offline maps for NY Thruway and last-mile to Clyde.
+- **Lodging:** Stay (Bunk a Biker) — **Jimmy & Kaylee Comfort** — 34 West Sullivanville Road, Horseheads, NY 14845
+  - `babMergeId:` `jimmy-kaylee-comfort`
+- **Highlights:** US entry documentation ready; Evening in Horseheads / Southern Tier (Finger Lakes approaches)
+- **Key notes:** Border: registration, insurance, declare tools/spares as needed; keep answers simple (touring). | Save offline maps for NY Thruway and last-mile to Horseheads (Chemung County).
 - **Risks:** Border wait times; Weather over Lake Ontario corridor
 - **Fees / passes (3 lines):**
   - No U.S. national park entrance on this day.
@@ -581,7 +581,7 @@ Canonical JSON: `data/bab-hosts.json`. Each **host id** keys one object. Daily c
 
 | Host ID | Name | Address | Phone | Email | Contact prefs | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| `mike-miller` | Mike Miller | 414 Dublin Road, Clyde, NY 14433 | +13159757240 | Millertude2006@gmail.com | email_or_text | Second bedroom with queen-size bed; about an acre of land if you want to camp. |
+| `jimmy-kaylee-comfort` | Jimmy & Kaylee Comfort | 34 West Sullivanville Road, Horseheads, NY 14845 | +16073296876 | depuekaylee@gmail.com | text | Four dogs and a rabbit; tent or small camper in yard space away from animals (per host). Garage for bikes in storms; tools, lift; host works on bikes; trailer tow if needed. Yard welcome even if hosts are out—washer/dryer/shower when they’re home. Text is fastest. Shared food/drink when offered. **No drinking then riding.** 420 outside only; no hard drugs; 2A-friendly home. |
 | `frank-allen-pence` | Frank Allen Pence | Luray, VA 22835 | +15402449527 | Frankallenpence@yahoo.com | text | Heart of the Shenandoah Valley — about 15 minutes to Skyline Drive and Shenandoah National Park. Comfortable couch, shower and clean towels, full kitchen, meals on request. Safe parking. Text is best; say you found him through Bunk a Biker so he knows you’re from the site. Confirm exact street address before you ride. |
 | `vicky-cawley` | Vicky Cawley | 359 Shortridge Lane, Hardy, VA 24101 | +15403536058 | vcawleyhoa@gmail.com | call_or_text | Several acres near the Blue Ridge Parkway (~7 miles from milepost 112). Garage with fridge, washer, dryer; indoor space or outdoor tent camping. Motorcycle lift and tools for routine repairs/maintenance. Mountain views and quiet setting—deer and turkey common. If the hosts are away traveling, grounds stay available for tent camping with electricity and water. Call or text preferred. |
 | `dan-southampton` | Dan | Southampton, NY 11968 | — | danielprelato@yahoo.com | email | Access to garage, tools, local info. Confirm full street address and bike parking before arrival. |

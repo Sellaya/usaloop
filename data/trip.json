@@ -71,7 +71,7 @@
     {
       "dayIndex": 1,
       "date": "2026-05-20",
-      "title": "Toronto → Finger Lakes (NY)",
+      "title": "Toronto → Horseheads, NY (Southern Tier / Finger Lakes)",
       "distanceKm": 0,
       "difficulty": "MODERATE",
       "routeLine": "Plan in your mapping app — typical: GTA → Niagara/Lewiston or Peace Bridge corridor → I-90 east into NY → Finger Lakes roads (verify crossing and tolls).",
@@ -80,22 +80,22 @@
       "weatherNotes": "Lake breeze and frontal weather near Ontario / Erie — check wind on bridge approaches.",
       "keyNotes": [
         "Border: registration, insurance, declare tools/spares as needed; keep answers simple (touring).",
-        "Save offline maps for NY Thruway and last-mile to Clyde."
+        "Save offline maps for NY Thruway and last-mile to Horseheads (Chemung County)."
       ],
       "campingAccommodation": "Host contact (call, text, email, drafts) is on this day below the stay summary; keep a state-park backup in mind if plans slip.",
       "terrain": "Highway / border crossing",
       "highlights": [
         "US entry documentation ready",
-        "Evening near Clyde / I-90 corridor"
+        "Evening in Horseheads / Southern Tier (Finger Lakes approaches)"
       ],
       "stops": [],
       "lodging": {
-        "heading": "Stay options",
+        "heading": "Stay (Bunk a Biker)",
         "priority": true,
-        "babMergeId": "mike-miller",
-        "name": "Mike Miller",
-        "address": "414 Dublin Road, Clyde, NY 14433",
-        "notes": "Confirm arrival time and bike parking (queen bedroom or camping on property)."
+        "babMergeId": "jimmy-kaylee-comfort",
+        "name": "Jimmy & Kaylee Comfort",
+        "address": "34 West Sullivanville Road, Horseheads, NY 14845",
+        "notes": "Text fastest; yard camping or garage for bikes—confirm ETA and house rules (no drink-ride; 420 outside only). Full host profile on the contact card below."
       },
       "risks": [
         "Border wait times",

@@ -1,17 +1,17 @@
 {
   "hosts": {
-    "mike-miller": {
-      "name": "Mike Miller",
-      "greetingName": "Mike",
-      "region": "Finger Lakes / I-90 corridor, NY",
+    "jimmy-kaylee-comfort": {
+      "name": "Jimmy & Kaylee Comfort",
+      "greetingName": "Kaylee",
+      "region": "Finger Lakes — Horseheads, NY (Chemung County)",
       "listHighlight": true,
-      "address": "414 Dublin Road, Clyde, NY 14433",
-      "phone": "+13159757240",
-      "email": "Millertude2006@gmail.com",
-      "contact": "email_or_text",
-      "notes": "Second bedroom with queen-size bed; about an acre of land if you want to camp.",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=414+Dublin+Road%2C+Clyde%2C+NY+14433",
-      "routeGuidance": "Corridor: Leg 1 · Day 1 primary — Clyde sits just north of I-90 between Rochester and Syracuse (~10–20 km off Thruway exits depending on path).\nDistance: Use as your planned first US night after border when routing Finger Lakes / Thruway east.\nEarly stop: Confirm bike parking and arrival window — email or text both work per profile."
+      "address": "34 West Sullivanville Road, Horseheads, NY 14845",
+      "phone": "+16073296876",
+      "email": "depuekaylee@gmail.com",
+      "contact": "text",
+      "notes": "Four dogs and a rabbit; tent or small camper in yard space away from animals (per host). Garage for bikes in storms; tools, lift; host works on bikes; trailer tow if needed. Yard welcome even if hosts are out—washer/dryer/shower when they’re home. Text is fastest. Shared food/drink when offered. **No drinking then riding.** 420 outside only; no hard drugs; 2A-friendly home.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34+West+Sullivanville+Road%2C+Horseheads%2C+NY+14845",
+      "routeGuidance": "Corridor: Leg 1 · Day 1 primary — Horseheads is in the Southern Tier / Elmira area (Chemung County), typical routing after I-90 entry then toward I-86 and Finger Lakes approaches.\nDistance: Confirm last miles and gate/parking by text — rural Sullivanville Rd.\nEarly stop: Text ahead; respect host rules on drinking, 420 outside only, and no hard drugs (see profile notes)."
     },
     "frank-allen-pence": {
       "name": "Frank Allen Pence",
@@ -50,7 +50,7 @@
       "contact": "email",
       "notes": "Access to garage, tools, local info. Confirm full street address and bike parking before arrival.",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Southampton%2C+NY+11968",
-      "routeGuidance": "Corridor: Leg 1 · Day 2 (Finger Lakes → NY / LI). Southampton is a town-only pin — not a full street address.\nDistance: Large detour from I-90 Thruway if you stay upstate first; natural if you’re sweeping south/east toward NYC that day.\nMaps: You must confirm the exact street + bike parking by email before navigating — don’t rely on town-center routing alone."
+      "routeGuidance": "Corridor: Leg 1 · Day 2 (Horseheads / Southern Tier → NY / LI). Southampton is a town-only pin — not a full street address.\nDistance: Large detour from I-90 Thruway if you stay upstate first; natural if you’re sweeping south/east toward NYC that day.\nMaps: You must confirm the exact street + bike parking by email before navigating — don’t rely on town-center routing alone."
     },
     "kelly-snyder": {
       "name": "Kelly Snyder (Route 66 Midpoint)",

@@ -11,9 +11,9 @@ const j = JSON.parse(fs.readFileSync(p, "utf8"));
 
 /** @type {Record<string, string>} */
 const G = {
-  "mike-miller": `Corridor: Leg 1 · Day 1 primary — Clyde sits just north of I-90 between Rochester and Syracuse (~10–20 km off Thruway exits depending on path).
-Distance: Use as your planned first US night after border when routing Finger Lakes / Thruway east.
-Early stop: Confirm bike parking and arrival window — email or text both work per profile.`,
+  "jimmy-kaylee-comfort": `Corridor: Leg 1 · Day 1 primary — Horseheads is in the Southern Tier / Elmira area (Chemung County), typical routing after I-90 entry then toward I-86 and Finger Lakes approaches.
+Distance: Confirm last miles and gate/parking by text — rural Sullivanville Rd.
+Early stop: Text ahead; respect host rules on drinking, 420 outside only, and no hard drugs (see profile notes).`,
 
   "frank-allen-pence": `Corridor: Leg 1 · Day 3 primary — Luray is your Shenandoah gateway after the NYC / DC transit day.
 Distance: Listing is town/ZIP-level — host will give the full address by text; pin the house in Maps the day you ride.
@@ -23,7 +23,7 @@ Early stop: Beltway fatigue or storms — text ahead (preferred contact).`,
 Distance: Plan last miles from Luray/Roanoke corridor in Maps — rural driveway; confirm gate/parking for bikes.
 Early stop: Weather on the ridge or you want tools/garage before the next BRP day.`,
 
-  "dan-southampton": `Corridor: Leg 1 · Day 2 (Finger Lakes → NY / LI). Southampton is a town-only pin — not a full street address.
+  "dan-southampton": `Corridor: Leg 1 · Day 2 (Horseheads / Southern Tier → NY / LI). Southampton is a town-only pin — not a full street address.
 Distance: Large detour from I-90 Thruway if you stay upstate first; natural if you’re sweeping south/east toward NYC that day.
 Maps: You must confirm the exact street + bike parking by email before navigating — don’t rely on town-center routing alone.`,
 

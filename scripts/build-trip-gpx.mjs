@@ -19,7 +19,7 @@ const reMapsQ = /[?&]q=(-?\d+\.?\d*),(-?\d+\.?\d*)/;
 
 /** Centroids / city centers — verify against your final bookings. */
 const STATIC = {
-  1: [43.0308, -76.8697, "Clyde, NY (414 Dublin Rd area — verify pin)"],
+  1: [42.2017, -76.7921, "Horseheads, NY (34 W Sullivanville Rd area — verify pin)"],
   2: [40.8843, -72.3895, "Southampton, NY"],
   3: [38.6651, -78.4594, "Luray, VA"],
   4: [37.229, -79.811, "Hardy, VA (359 Shortridge Ln area — verify pin)"],

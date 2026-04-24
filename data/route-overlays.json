@@ -5,7 +5,7 @@
   },
   "byDay": {
     "1": {
-      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Toronto%2C+ON%2C+Canada&destination=414+Dublin+Rd%2C+Clyde%2C+NY+14433&travelmode=driving",
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Toronto%2C+ON%2C+Canada&destination=34+West+Sullivanville+Rd%2C+Horseheads%2C+NY+14845&travelmode=driving",
       "distanceNote": "Driving km come from the Google Maps API for the same origin/destination as the link. Your chosen border crossing and pins can still change the route — confirm in Maps before you ride.",
       "recommendations": [
         {
@@ -23,7 +23,7 @@
       ]
     },
     "2": {
-      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Clyde%2C+NY+14433&destination=New+York%2C+NY&travelmode=driving",
+      "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Horseheads%2C+NY+14845&destination=New+York%2C+NY&travelmode=driving",
       "distanceNote": "Finger Lakes to NYC metro — pick Southampton vs DC pacing in Maps after you choose host; tolls on Thruway/I-95 possible.",
       "recommendations": [
         {
