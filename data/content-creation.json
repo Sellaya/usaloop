@@ -7,17 +7,17 @@
   "days": [
     {
       "dayIndex": 1,
-      "videoTitle": "I Crossed Into the USA on a Motorcycle — Canada Border to Clyde, NY (I-90) | Day 1",
+      "videoTitle": "I Crossed Into the USA on a Motorcycle — Canada Border to Finger Lakes | Day 1",
       "hook": "You are not ‘living your best life.’ You are executing a controlled international port-of-entry on two wheels—with cameras rolling.",
-      "storyArc": "Act I — departure and approach geometry (time to port, fuel, paperwork). Act II — primary inspection as procedure, not drama. Act III — first American miles on I-90 toward Wayne County: verify connectivity, tire temps, mental reset. Denouement — arrival at Mike Miller’s in Clyde with enough light to read the ground you’ll sleep on.",
+      "storyArc": "Act I — departure and approach geometry (time to port, fuel, paperwork). Act II — primary inspection as procedure, not drama. Act III — first American miles: verify connectivity, tire temps, mental reset. Denouement — host arrival with enough light to read the ground you’ll sleep on.",
       "shots": [
         "Time-lapse leaving Toronto at dawn — CN Tower in background",
         "GoPro forward-facing on the 401 / QEW run to the border",
         "Passport check moment — wide shot showing the booths",
         "First American road sign after crossing — react on camera",
-        "I-90 entry ramp in New York — open tarmac stretching east toward Rochester/Syracuse corridor",
-        "Wayne County / Clyde approach — open farmland and Thruway-side towns (optional detour toward actual Finger Lakes troughs if you add time)",
-        "Arrival at Mike Miller’s — helmet off, handshake, relief on face"
+        "I-90 entry ramp in New York — open tarmac stretching east",
+        "Finger Lakes panoramic — lake between tree-covered hills",
+        "Arrival at host's — helmet off, handshake, relief on face"
       ],
       "facts": [
         "The Lewiston–Queenston Bridge (1962) carries I-190 over the Niagara River; its deck is roughly 305 ft above the river—wind exposure affects high-profile bikes.",
@@ -33,7 +33,7 @@
       "talkingPoints": [
         "VO: contrast CBP’s job (risk triage) with your job (clean narrative + clean paperwork).",
         "On-camera: show document sleeve and pannier map—teach, don’t perform surprise.",
-        "Explain why I-90 / Wayne County weather differs from Lake Ontario’s shore—wind, agriculture, and open corridor vs. glacial lake troughs farther south.",
+        "Explain glacial Finger Lakes as trenches—why weather stacks differently than flat Ontario.",
         "Close with one honest fear you had at the booth—specific, not performative."
       ],
       "cta": "Comment: What's one thing you'd pack for a 36-day US motorcycle loop? I'll reply to every comment on Day 1.",
@@ -43,7 +43,7 @@
         "3️⃣ Watch the vehicle ahead: engine-on vs engine-off rules differ by booth and shift. Match behaviour; don’t restart until waved—noise signals anxiety.",
         "4️⃣ Secondary inspection is rare for clean paperwork—usually agriculture, cash thresholds, or inconsistent story. Know every organic item in your kit (fruit, jerky, soil on boots).",
         "5️⃣ First hour US-side: confirm phone data actually roams before you film. Dead SIM 40 km in is a production failure, not a ‘story beat.’",
-        "6️⃣ Clyde on I-90: open corridor fog and deer at dusk are routine—arrive with real daylight for garage or tent setup at the host, not hero shots in the dark."
+        "6️⃣ Finger Lakes are narrow north–south trenches—post-sunset inversions and fog banks are routine. Arrive with real daylight for unload, tent, and hazard scan—not hero shots in the dark."
       ],
       "roadRules": [
         "Ontario (departure): speed limits in km/h; handheld device use while driving is prohibited—hands-free/voice only where permitted.",
@@ -56,11 +56,11 @@
     },
     {
       "dayIndex": 2,
-      "videoTitle": "Riding Into New York — Clyde / I-90 to Long Island on a DR650 | Day 2",
+      "videoTitle": "Riding Into New York — Finger Lakes to Long Island on a DR650 | Day 2",
       "hook": "Today isn’t scenery. It’s a lesson in how American road engineering changes when money and population density replace farmland.",
       "storyArc": "Open on a quiet lake metric (temperature, wind, dew point). Transition to lane mathematics and toll infrastructure. Land in a social environment where your bike is an anomaly—film the contrast as anthropology, not insecurity.",
       "shots": [
-        "Morning mist leaving the Clyde / I-90 corridor — wide Thruway light and low fields",
+        "Morning mist on one of the Finger Lakes — wide and slow",
         "NY Thruway open stretch — lanes wide, fields either side",
         "First 'Welcome to Long Island' or NYC-approaching sign",
         "George Washington Bridge if you route over it — iron arch over the Hudson",

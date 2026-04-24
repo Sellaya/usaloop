@@ -12,7 +12,7 @@ const j = JSON.parse(fs.readFileSync(p, "utf8"));
 /** @type {Record<string, string>} */
 const G = {
   "mike-miller": `Corridor: Leg 1 · Day 1 primary — Clyde sits just north of I-90 between Rochester and Syracuse (~10–20 km off Thruway exits depending on path).
-Distance: Use as your planned first US night after border when routing I-90 east into Wayne County.
+Distance: Use as your planned first US night after border when routing Finger Lakes / Thruway east.
 Early stop: Confirm bike parking and arrival window — email or text both work per profile.`,
 
   "frank-allen-pence": `Corridor: Leg 1 · Day 3 primary — Luray is your Shenandoah gateway after the NYC / DC transit day.
@@ -23,8 +23,8 @@ Early stop: Beltway fatigue or storms — text ahead (preferred contact).`,
 Distance: Plan last miles from Luray/Roanoke corridor in Maps — rural driveway; confirm gate/parking for bikes.
 Early stop: Weather on the ridge or you want tools/garage before the next BRP day.`,
 
-  "dan-southampton": `Corridor: Leg 1 · Day 2 (Clyde / I-90 NY → NY / LI). Southampton is a town-only pin — not a full street address.
-Distance: Day starts from the Clyde / Wayne County pin — Thruway and Hudson approaches into metro NY; tolls possible.
+  "dan-southampton": `Corridor: Leg 1 · Day 2 (Finger Lakes → NY / LI). Southampton is a town-only pin — not a full street address.
+Distance: Large detour from I-90 Thruway if you stay upstate first; natural if you’re sweeping south/east toward NYC that day.
 Maps: You must confirm the exact street + bike parking by email before navigating — don’t rely on town-center routing alone.`,
 
   "kelly-snyder": `Corridor: Leg 2 · Days 10–11 (Fort Worth → Amarillo → ABQ). Adrian TX midpoint is ON I-40 / Route 66 — your Day 10 primary merged stay.

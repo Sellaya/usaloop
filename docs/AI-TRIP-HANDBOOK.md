@@ -28,7 +28,7 @@
 
 ### Regions (chips)
 
-- I-90 NY · Clyde
+- Finger Lakes
 - New York / DC
 - Virginia / Appalachia
 - Smoky Mountains
@@ -48,7 +48,7 @@
 
 ### Narrative summary
 
-36-day ride stringing together a first US night at Clyde on I-90 in Wayne County, NY (Bunk a Biker host Mike Miller), a New York metro stop, Washington DC and Luray, then Roanoke, Blue Ridge Parkway to Bristol, Great Smoky approaches with Tail of the Dragon and a Kingston night, Parsons TN, then Nashville–Memphis–Arkansas, a Fort Worth home stop, then the high plains and I-40 toward New Mexico. From there: San Juan Mountains and Million Dollar Highway, Utah (Mexican Hat, Page, Bryce, Moab with a full rest day at Arches, St. George), the California coast (Leo Carrillo day stop, Big Sur, redwoods), Oregon and the Columbia River Gorge, Seattle, US-20 and Spokane, Lolo Pass, Yellowstone and the Beartooth corridor, and a long return through the Dakotas and Great Lakes to Ontario, with a final night in London before Toronto.
+36-day ride stringing together the Finger Lakes, a New York metro stop, Washington DC and Luray, then Roanoke, Blue Ridge Parkway to Bristol, Great Smoky approaches with Tail of the Dragon and a Kingston night, Parsons TN, then Nashville–Memphis–Arkansas, a Fort Worth home stop, then the high plains and I-40 toward New Mexico. From there: San Juan Mountains and Million Dollar Highway, Utah (Mexican Hat, Page, Bryce, Moab with a full rest day at Arches, St. George), the California coast (Leo Carrillo day stop, Big Sur, redwoods), Oregon and the Columbia River Gorge, Seattle, US-20 and Spokane, Lolo Pass, Yellowstone and the Beartooth corridor, and a long return through the Dakotas and Great Lakes to Ontario, with a final night in London before Toronto.
 
 ### Planning checklist (from trip.json)
 
@@ -87,15 +87,15 @@
 
 Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` in JSON means “use live Maps.” Stays marked **B.a.B.** resolve to `bab-hosts.json` via `babMergeId` or alternate ids.
 
-### Day 1 — 2026-05-20 — Toronto → Clyde, NY (I-90 — first US night)
+### Day 1 — 2026-05-20 — Toronto → Finger Lakes (NY)
 
 - **Difficulty:** MODERATE
-- **Route line:** Plan in your mapping app — typical: GTA → Niagara/Lewiston or Peace Bridge corridor → I-90 east into NY → exit toward Clyde / Wayne County for 414 Dublin Road (verify crossing, tolls, and last-mile pin with Mike).
+- **Route line:** Plan in your mapping app — typical: GTA → Niagara/Lewiston or Peace Bridge corridor → I-90 east into NY → Finger Lakes roads (verify crossing and tolls).
 - **Terrain:** Highway / border crossing
-- **Fuel:** Fill in Ontario before the border if convenient; I-90 NY has frequent fuel after entry toward Rochester/Syracuse.
-- **Food:** Pack snacks for border queue; dinner in Clyde area, Rochester, or Syracuse suburbs — confirm timing with host.
+- **Fuel:** Fill in Ontario before the border if convenient; I-90 NY has frequent fuel after entry.
+- **Food:** Pack snacks for border queue; rural Finger Lakes — know dinner plan with hosts or town stop.
 - **Weather:** Lake breeze and frontal weather near Ontario / Erie — check wind on bridge approaches.
-- **Lodging:** Stay (Bunk a Biker — Mike Miller) — **Mike Miller** — 414 Dublin Road, Clyde, NY 14433
+- **Lodging:** Stay options — **Mike Miller** — 414 Dublin Road, Clyde, NY 14433
   - `babMergeId:` `mike-miller`
 - **Highlights:** US entry documentation ready; Evening near Clyde / I-90 corridor
 - **Key notes:** Border: registration, insurance, declare tools/spares as needed; keep answers simple (touring). | Save offline maps for NY Thruway and last-mile to Clyde.
@@ -105,7 +105,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - Canada: no outbound park fee. U.S. entry: CBP inspection has no park-style fee.
   - NY Thruway (I-90) / crossings: tolls apply — E-ZPass or Tolls By Mail (plate billing); Peace Bridge / Lewiston–Queenston bridge tolls vary — set up payment before trip if needed.
 
-### Day 2 — 2026-05-21 — Clyde / I-90 NY → New York (Long Island)
+### Day 2 — 2026-05-21 — Finger Lakes → New York
 
 - **Terrain:** NY Thruway / Hudson Valley approaches
 - **Weather:** Approaching NYC / Long Island in summer: heat + humidity in full gear — plan water, shade, and rest; don’t rely on “not thirsty yet.”
