@@ -27,7 +27,11 @@
       "distanceNote": "Finger Lakes to NYC metro — pick Southampton vs DC pacing in Maps after you choose host; tolls on Thruway/I-95 possible.",
       "recommendations": [
         {
-          "text": "If staying Southampton: adjust destination pin in Google Maps.",
+          "text": "Paid camp option: Hither Hills State Park is in Montauk (~55+ mi east of Southampton). Economical vs Hamptons hotels if you skip the west-LI host night — book ReserveAmerica / NYS Parks; non-NY resident rates apply.",
+          "url": "https://parks.ny.gov/parks/hither-hills"
+        },
+        {
+          "text": "If staying Southampton (B.a.B.): adjust destination pin in Google Maps.",
           "url": ""
         },
         {

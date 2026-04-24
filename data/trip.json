@@ -129,6 +129,14 @@
       },
       "lodgingAlternatives": [
         {
+          "heading": "Paid camping (NYS — often cheaper than Hamptons hotels)",
+          "name": "Hither Hills State Park",
+          "address": "164 Old Montauk Highway, Montauk, NY 11954",
+          "notes": "~190 oceanfront campsites (West / East / J loops); hot showers, restrooms, dump station, camp store. **No pets** anywhere in the park. Permit holder **21+** must stay on site. **Montauk is ~55–70 mi east of Southampton** — only practical if you camp here instead of the LI host night, or you accept a long late-day ride. Book on **ReserveAmerica** (NYS contract) or **1-800-456-2267**; **same-day campsite booking until 3 p.m.** Walk-ins when sites exist. **Economy:** non–New York State residents pay **out-of-state campsite rates** (~2× resident posted price — check parks.ny.gov camping fees before you book). Add **~US$7.25 reservation fee** online; **second vehicle ~US$20** in overflow (one vehicle on pad). **Vehicle day-use fee** often applies in summer beach season (~**US$10**/vehicle during posted hours — verify on parks.ny.gov for your dates). Peak mid-summer: some loops **Sunday–Sunday 7-night** minimums; **J Loop** tent-only, **no generators**, **US$5 cash key-card deposit**. Off-peak late May: confirm **minimum-night** rules (non-peak can require **2 nights** online — call park or try walk-in for 1 night).",
+          "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Hither+Hills+State+Park+164+Old+Montauk+Hwy+Montauk+NY+11954",
+          "url": "https://parks.ny.gov/parks/hither-hills"
+        },
+        {
           "heading": "Stay option",
           "name": "Courtney Schrader",
           "address": "Washington, DC 20016",
@@ -136,13 +144,17 @@
         }
       ],
       "risks": [
-        "Metro traffic near NYC / Long Island"
+        "Metro traffic near NYC / Long Island",
+        "If camping Montauk same night as a west-LI host: unrealistic mileage — pick one region for the night."
       ],
-      "planB": "",
+      "planB": "If the Long Island host night falls through: try **Hither Hills** (reserve/walk-in) or a motel farther west on LI — budget time from Montauk.",
       "babAlternateIds": [],
       "feesAndPasses": [
         "No federal park entrance fee on routing described.",
-        "NYC / Hudson crossings (if used): many bridges/tunnels are cashless tolling to a registered plate or bill-by-mail — budget tolls; motorcycles follow posted rules per crossing."
+        "NYC / Hudson crossings (if used): many bridges/tunnels are cashless tolling to a registered plate or bill-by-mail — budget tolls; motorcycles follow posted rules per crossing.",
+        "**Hither Hills State Park (optional paid camp, Montauk):** NYS facility — official hub **parks.ny.gov/parks/hither-hills** and camping search **newyorkstateparks.reserveamerica.com** (park id on ReserveAmerica: **Hither Hills / NY**). **Non-resident** campers pay higher posted rates than NY residents (historically on the order of **~US$66 weekday / ~US$74 weekend** vs **~US$33 / ~US$37** resident for standard tent/RV sites — **verify current table** on **parks.ny.gov/camping/fees-rates** before you pay).",
+        "Hither Hills extras to budget: **~US$7.25** online reservation fee per booking; **~US$20** second registered vehicle; possible **~US$10 vehicle use fee** during summer beach gate hours (dates/hours on park page); **J Loop** key card **US$5 cash** deposit (lost card fee).",
+        "Hither Hills rules that hit riders: **no pets**; **21+** registered camper must be on site; **generators** restricted (forbidden in J Loop); **check-in 3 p.m. / out 11 a.m.** typical — confirm on your reservation. **Motorcycles:** count toward vehicle limits — confirm with park office if one tent pad + bike."
       ]
     },
     {

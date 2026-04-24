@@ -111,12 +111,16 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Weather:** Approaching NYC / Long Island in summer: heat + humidity in full gear — plan water, shade, and rest; don’t rely on “not thirsty yet.”
 - **Lodging:** Stay options — **Dan** — Southampton, NY 11968
   - `babMergeId:` `dan-southampton`
-- **Lodging alts:** Courtney Schrader
+- **Lodging alts:** Hither Hills State Park; Courtney Schrader
 - **Highlights:** Shorter leg before DC → Luray segment
-- **Risks:** Metro traffic near NYC / Long Island
-- **Fees / passes (2 lines):**
+- **Risks:** Metro traffic near NYC / Long Island; If camping Montauk same night as a west-LI host: unrealistic mileage — pick one region for the night.
+- **Plan B:** If the Long Island host night falls through: try **Hither Hills** (reserve/walk-in) or a motel farther west on LI — budget time from Montauk.
+- **Fees / passes (5 lines):**
   - No federal park entrance fee on routing described.
   - NYC / Hudson crossings (if used): many bridges/tunnels are cashless tolling to a registered plate or bill-by-mail — budget tolls; motorcycles follow posted rules per crossing.
+  - **Hither Hills State Park (optional paid camp, Montauk):** NYS facility — official hub **parks.ny.gov/parks/hither-hills** and camping search **newyorkstateparks.reserveamerica.com** (park id on ReserveAmerica: **Hither Hills / NY**). **Non-resident** campers pay higher posted rates than NY residents (historically on the order of **~US$66 weekday / ~US$74 weekend** vs **~US$33 / ~US$37** resident for standard tent/RV sites — **verify current table** on **parks.ny.gov/camping/fees-rates** before you pay).
+  - Hither Hills extras to budget: **~US$7.25** online reservation fee per booking; **~US$20** second registered vehicle; possible **~US$10 vehicle use fee** during summer beach gate hours (dates/hours on park page); **J Loop** key card **US$5 cash** deposit (lost card fee).
+  - Hither Hills rules that hit riders: **no pets**; **21+** registered camper must be on site; **generators** restricted (forbidden in J Loop); **check-in 3 p.m. / out 11 a.m.** typical — confirm on your reservation. **Motorcycles:** count toward vehicle limits — confirm with park office if one tent pad + bike.
 
 ### Day 3 — 2026-05-22 — New York → Washington, DC → Luray (VA)
 

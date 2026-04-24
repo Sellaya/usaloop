@@ -1637,7 +1637,45 @@ function renderStaySummary(body, day, babHostsMap) {
     alts.forEach((a) => {
       const row = el("div", { class: "stay-summary-alt" });
       if (a.name) row.appendChild(el("p", { class: "stay-summary-name", text: a.name }));
-      if (a.address) row.appendChild(el("p", { class: "stay-summary-address muted", text: a.address }));
+      if (a.address) {
+        const addr = el("p", { class: "stay-summary-address muted" });
+        addr.appendChild(document.createTextNode(a.address));
+        if (a.mapsUrl) {
+          addr.appendChild(document.createTextNode(" · "));
+          addr.appendChild(
+            el("a", {
+              href: a.mapsUrl,
+              class: "stay-summary-maps",
+              text: "Maps",
+              target: "_blank",
+              rel: "noopener noreferrer",
+            })
+          );
+        }
+        row.appendChild(addr);
+      } else if (a.mapsUrl) {
+        row.appendChild(
+          el("a", {
+            href: a.mapsUrl,
+            class: "stay-summary-maps",
+            text: "Open in Google Maps",
+            target: "_blank",
+            rel: "noopener noreferrer",
+          })
+        );
+      }
+      if (a.url) {
+        row.appendChild(
+          el("p", { class: "stay-summary-notes" }, [
+            el("a", {
+              href: a.url,
+              text: "Official page",
+              target: "_blank",
+              rel: "noopener noreferrer",
+            }),
+          ])
+        );
+      }
       const note = a.notes || a.profileNotes;
       if (note) row.appendChild(el("p", { class: "stay-summary-notes muted", text: note }));
       box.appendChild(row);
