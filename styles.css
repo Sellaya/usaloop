@@ -289,6 +289,28 @@ section {
   background: var(--surface2);
 }
 
+/* Non-interactive vignette: de-emphasizes Canada/Mexico at typical USA-loop zoom. */
+.map-embed-frame--usa-focus::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(
+    ellipse 90% 95% at 52% 44%,
+    rgba(26, 43, 64, 0) 40%,
+    rgba(26, 43, 64, 0.05) 58%,
+    rgba(26, 43, 64, 0.22) 100%
+  );
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+}
+
+.map-embed-frame--usa-focus .map-embed-canvas {
+  position: relative;
+  z-index: 0;
+}
+
 .map-embed-canvas {
   width: 100%;
   min-height: min(42dvh, 380px);
@@ -624,11 +646,153 @@ section > h2 {
   padding: 0;
 }
 
-.hero-doc__footer:has(#hero-route-total:not([hidden])),
-.hero-doc__footer:has(#hero-route-weather:not([hidden])) {
+.hero-doc__footer:has(#hero-route-total:not([hidden])) {
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+/* Hero live weather — mobile-first card grid (map corridor stops) */
+.hero-weather-cards {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-weather-cards__label {
+  margin: 0 0 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 224, 178, 0.95);
+}
+
+.hero-weather-cards__hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.hero-weather-cards__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+@media (min-width: 400px) {
+  .hero-weather-cards__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 640px) {
+  .hero-weather-cards__grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+}
+
+.hero-weather-card {
+  margin: 0;
+  padding: 0.55rem 0.5rem 0.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.22);
+  min-width: 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.hero-weather-card--leg-1 {
+  border-top: 3px solid #1e6fa2;
+}
+
+.hero-weather-card--leg-2 {
+  border-top: 3px solid #e8942c;
+}
+
+.hero-weather-card--leg-3 {
+  border-top: 3px solid #2f9f6a;
+}
+
+.hero-weather-card--alert {
+  border-color: rgba(255, 183, 77, 0.45);
+  background: rgba(198, 93, 0, 0.18);
+}
+
+.hero-weather-card--loading {
+  opacity: 0.75;
+  animation: hero-weather-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes hero-weather-pulse {
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-weather-card--loading {
+    animation: none;
+    opacity: 0.85;
+  }
+}
+
+.hero-weather-card__chip {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 0.2rem;
+}
+
+.hero-weather-card__place {
+  margin: 0 0 0.25rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #fff;
+  overflow-wrap: anywhere;
+}
+
+.hero-weather-card__temps {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.9);
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-weather-card__temps--muted {
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 500;
+}
+
+.hero-weather-card__ok {
+  margin: 0.2rem 0 0;
+  font-size: 0.68rem;
+  line-height: 1.3;
+  color: rgba(200, 230, 201, 0.9);
+}
+
+.hero-weather-card__alerts {
+  margin: 0.35rem 0 0;
+  padding-left: 0.95rem;
+  font-size: 0.65rem;
+  line-height: 1.35;
+  color: rgba(255, 236, 179, 0.95);
+}
+
+.hero-weather-card__alerts li + li {
+  margin-top: 0.15rem;
 }
 
 /* Concerning route weather only — compact strip, hidden when nothing to verify */
@@ -760,6 +924,20 @@ section > h2 {
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--doc-navy);
+}
+
+.dashboard-weather__conditions {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.dashboard-weather__hint {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
 }
 
 .dashboard-weather__warnings {
@@ -898,14 +1076,36 @@ section > h2 {
   border-radius: 10px;
 }
 
-.day-weather-google__subhead {
-  margin: 0.25rem 0 0;
-  font-size: 0.82rem;
-  line-height: 1.45;
+.day-weather-google__head .day-section-title {
+  margin: 0;
+}
+
+.day-weather-google__blocks {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 520px) {
+  .day-weather-google__blocks:has(.day-weather-block + .day-weather-block) {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+}
+
+.day-weather-block {
+  padding: 0.45rem 0.55rem;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.day-weather-block .day-weather-google__label {
+  margin-top: 0;
 }
 
 .day-weather-google__label {
-  margin: 0.75rem 0 0.15rem;
+  margin: 0 0 0.1rem;
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -946,12 +1146,6 @@ section > h2 {
   font-weight: 700;
   color: var(--doc-navy);
   line-height: 1.35;
-}
-
-.day-weather-warnings__intro {
-  margin: 0 0 0.45rem;
-  font-size: 0.8rem;
-  line-height: 1.4;
 }
 
 .day-weather-warnings__list {
@@ -1690,6 +1884,15 @@ section > h2 {
   line-height: 1.4;
 }
 
+.day-meta-chip--diff {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.28rem 0.55rem;
+  border-radius: 999px;
+}
+
 .day-meta-chip--placeholder {
   font-style: italic;
   opacity: 0.85;
@@ -1794,14 +1997,10 @@ section > h2 {
 }
 
 .day-route-line {
-  width: 100%;
-  flex-basis: 100%;
-  font-size: 0.88rem;
-  line-height: 1.45;
-  padding: 0.5rem 0 0.25rem;
-  border-top: 1px dashed var(--border);
-  margin-top: 0.15rem;
-  color: var(--muted);
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--doc-slate);
 }
 
 .distance-disclaimer {
@@ -1815,8 +2014,31 @@ section > h2 {
   color: var(--doc-slate);
 }
 
+.route-metrics,
+.route-actions {
+  margin: 0 0 0.5rem;
+}
+
+.route-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.85rem;
+}
+
+.route-actions .route-maps-link {
+  min-height: 40px;
+  margin-bottom: 0;
+}
+
+.route-actions .route-distance-note {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
 .route-metrics {
-  margin: 0.65rem 0 0.5rem;
   padding: 0.65rem 0.75rem;
   background: var(--surface2);
   border: 1px solid var(--border);
@@ -2729,8 +2951,104 @@ section > h2 {
 }
 
 /* —— Motorcycle parts directory —— */
+.parts-shops-section {
+  margin-top: 1.5rem;
+  padding-top: 0.25rem;
+  border-top: 1px solid var(--border-subtle, rgba(26, 43, 64, 0.1));
+}
+
+.parts-shops-section > h2 {
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+}
+
+.parts-shops-optional {
+  font-weight: 500;
+  font-size: 0.82em;
+  color: var(--muted, #5a6b7d);
+}
+
+.parts-shops-intro {
+  font-size: 0.88rem;
+  margin-bottom: 0.65rem;
+}
+
 .parts-root {
   padding: 1rem 1.25rem 1.25rem;
+}
+
+.parts-root--compact {
+  padding: 0.65rem 0.85rem 0.85rem;
+}
+
+.parts-root--compact .parts-region {
+  margin-bottom: 0.35rem;
+}
+
+.parts-root--compact .parts-region-body {
+  padding: 0.25rem 0.75rem 0.6rem;
+}
+
+.parts-root--compact .parts-shop {
+  padding: 0.55rem 0;
+}
+
+.parts-root--compact .parts-shop-name {
+  font-size: 0.98rem;
+  margin-bottom: 0.2rem;
+}
+
+.parts-root--compact .parts-shop-meta,
+.parts-root--compact .parts-shop-actions {
+  font-size: 0.86rem;
+}
+
+.parts-root--compact .parts-dr-note {
+  font-size: 0.82rem;
+  margin-top: 0.35rem;
+  padding: 0.4rem 0.55rem;
+}
+
+.parts-root--compact .parts-jump {
+  display: none;
+}
+
+.parts-lede {
+  font-size: 0.84rem;
+  margin: 0 0 0.65rem;
+  line-height: 1.4;
+}
+
+.parts-panel {
+  border: 1px solid var(--border-subtle, rgba(26, 43, 64, 0.12));
+  border-radius: 8px;
+  margin-bottom: 0.45rem;
+  background: var(--card-inner, rgba(255, 255, 255, 0.45));
+}
+
+.parts-panel-sum {
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  list-style: none;
+}
+
+.parts-panel-sum::-webkit-details-marker {
+  display: none;
+}
+
+.parts-panel[open] .parts-panel-sum {
+  border-bottom: 1px solid var(--border-subtle, rgba(26, 43, 64, 0.08));
+}
+
+.parts-panel-body {
+  padding: 0.5rem 0.75rem 0.7rem;
+  font-size: 0.9rem;
+}
+
+.parts-panel--info .parts-howto {
+  margin-bottom: 0;
 }
 
 .parts-disclaimer {
@@ -2784,13 +3102,22 @@ section > h2 {
 
 .parts-region-sum {
   cursor: pointer;
-  padding: 0.65rem 0.9rem;
+  padding: 0.5rem 0.75rem;
   font-weight: 600;
+  font-size: 0.92rem;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 0.25rem;
+  gap: 0.25rem 0.5rem;
+}
+
+.parts-region-count {
+  margin-left: auto;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted, #5a6b7d);
+  white-space: nowrap;
 }
 
 .parts-region-sum::-webkit-details-marker {

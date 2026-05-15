@@ -44,15 +44,14 @@
           <nav class="jump" aria-label="Jump to section">
             <a href="#glance">Calendar</a>
             <a href="#map-embed">Map</a>
-            <a href="#dashboard-weather">Today's wx</a>
+            <a href="#hero-root">Weather</a>
             <a href="#overview">Distance</a>
-            <a href="#route-weather">Weather</a>
             <a href="#days">Daily plan</a>
             <a href="#content">Content</a>
             <a href="#homework">Bike prep</a>
             <a href="#checklists">Packing</a>
-            <a href="#parts-shops">Parts</a>
             <a href="#links">Links</a>
+            <a href="#parts-shops">Parts</a>
           </nav>
         </div>
       </div>
@@ -68,7 +67,7 @@
         <p class="muted map-embed-intro">
           Tap a pin for the day. Colours match trip chapters; paths follow Google Directions plus pinned stops.
         </p>
-        <div class="map-embed-frame">
+        <div class="map-embed-frame map-embed-frame--usa-focus">
           <div id="map" class="map-embed-canvas" role="region" aria-label="Interactive route map"></div>
         </div>
       </section>
@@ -101,17 +100,6 @@
         </div>
       </section>
 
-      <section id="route-weather" aria-label="Corridor weather">
-        <h2>Weather along the route</h2>
-        <div class="card card--route-weather">
-          <p class="muted section-intro">
-            OpenWeather <strong>5-day</strong> outlook per pin (rolling from <strong>today</strong> on the calendar). For <strong>merged warnings for the current calendar date</strong>, open
-            <a href="#dashboard-weather">Today’s weather (dashboard)</a> (under the calendar). This grid summarizes the full window at each stop.
-          </p>
-          <div id="route-weather-root" class="route-weather-root" aria-live="polite"></div>
-        </div>
-      </section>
-
       <section id="links">
         <h2>Quick links</h2>
         <div class="card">
@@ -119,19 +107,10 @@
         </div>
       </section>
 
-      <section id="parts-shops">
-        <h2>Motorcycle parts & dealers along the route</h2>
-        <p class="muted section-intro">
-          By corridor — dealers and big-box parts first, <strong>DR650</strong> callouts where useful. Call ahead; OEM stock is not guaranteed same day.
-        </p>
-        <div id="parts-shops-root" class="parts-root card"></div>
-      </section>
-
       <section id="glance">
         <h2>Calendar at a glance</h2>
         <p class="muted section-intro">
-          Km from Google Directions; itinerary dates and sleep stops. For <strong>today’s</strong> riding conditions at corridor pins (not these itinerary dates), use
-          <a href="#dashboard-weather">Today’s weather (dashboard)</a> below.
+          Km from Google Directions; itinerary dates and sleep stops.
         </p>
         <div class="card card--table">
           <div class="table-scroll">
@@ -159,16 +138,6 @@
               </tfoot>
             </table>
           </div>
-        </div>
-      </section>
-
-      <section id="dashboard-weather" aria-label="Today's weather dashboard">
-        <h2>Today’s weather (dashboard)</h2>
-        <div class="card card--dashboard-weather">
-          <p class="muted section-intro">
-            Uses your device’s <strong>current calendar date</strong> at corridor route pins — <em>not</em> the trip itinerary dates. Shows merged riding warnings first, then each stop.
-          </p>
-          <div id="dashboard-weather-root" class="dashboard-weather-root" aria-live="polite"></div>
         </div>
       </section>
 
@@ -202,6 +171,14 @@
           <div id="checklist-root"></div>
         </div>
       </section>
+
+      <section id="parts-shops" class="parts-shops-section">
+        <h2>Parts &amp; dealers <span class="parts-shops-optional">(reference)</span></h2>
+        <p class="muted section-intro parts-shops-intro">
+          Corridor dealers and parts — <strong>DR650</strong> notes where useful. Call ahead; expand a region only when you need it.
+        </p>
+        <div id="parts-shops-root" class="parts-root parts-root--compact card"></div>
+      </section>
     </main>
 
     <script src="google-maps-config.stub.js"></script>
@@ -222,6 +199,8 @@
             window.__tripOverviewMap = new window.google.maps.Map(el, {
               center: { lat: 39.8283, lng: -98.5795 },
               zoom: 4,
+              minZoom: 3,
+              maxZoom: 15,
               mapTypeControl: true,
               mapTypeControlOptions: {
                 style: window.google.maps.MapTypeControlStyle.DEFAULT,
@@ -235,6 +214,16 @@
               gestureHandling: "greedy",
               clickableIcons: false,
               keyboardShortcuts: true,
+              /* Soft focus on continental USA; user can still pan slightly into neighbors. */
+              restriction: {
+                latLngBounds: {
+                  north: 51.2,
+                  south: 21.8,
+                  west: -129.2,
+                  east: -62.5,
+                },
+                strictBounds: false,
+              },
             });
           }
         } catch (e) {

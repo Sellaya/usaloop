@@ -52,6 +52,13 @@ const TRIP_MAP_BASE_STYLES = [
   { featureType: "water", elementType: "labels.text.stroke", stylers: [{ color: "#d4ecf5" }, { weight: 2 }] },
 ];
 
+/** Extra polish for route overview: calmer land/water so a frame vignette can emphasize the US view. */
+const TRIP_MAP_USA_FOCUS = [
+  { featureType: "administrative.country", elementType: "labels.text.fill", stylers: [{ color: "#6d6256" }] },
+  { featureType: "landscape", elementType: "geometry", stylers: [{ saturation: -12 }, { lightness: -4 }] },
+  { featureType: "water", elementType: "geometry", stylers: [{ saturation: -18 }, { lightness: -10 }] },
+];
+
 /** Chapter colours (align with overview legs: 1–9, 10–24, 25–36). */
 const ROUTE_LEG_PIN = {
   "1": { fill: "#1e6fa2", ring: "#0f3d5c", label: "#ffffff" },
@@ -149,8 +156,8 @@ function applyTripMapChrome(map) {
   if (!map || window.__tripMapChromeApplied) return;
   window.__tripMapChromeApplied = true;
   map.setOptions({
-    styles: TRIP_MAP_BASE_STYLES,
-    backgroundColor: "#f3ecdf",
+    styles: [...TRIP_MAP_BASE_STYLES, ...TRIP_MAP_USA_FOCUS],
+    backgroundColor: "#e8e1d4",
   });
   if (!window.__tripMapGlobalListeners) {
     window.__tripMapGlobalListeners = [];
@@ -439,6 +446,71 @@ function latLngTupleFromLatLng(loc) {
   return { lat: la, lng: ln };
 }
 
+/** LatLng literals from Directions `overview_path` (road-following polyline). */
+function overviewPathToLatLngPoints(route) {
+  const op = route?.overview_path;
+  if (!op) return [];
+  try {
+    if (typeof op.getArray === "function") {
+      return op.getArray().map(latLngLiteralFromMapsLatLng).filter(Boolean);
+    }
+  } catch {
+    return [];
+  }
+  return [];
+}
+
+function latLngLiteralFromMapsLatLng(ll) {
+  if (!ll) return null;
+  const lat = typeof ll.lat === "function" ? ll.lat() : ll.lat;
+  const lng = typeof ll.lng === "function" ? ll.lng() : ll.lng;
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+  return { lat, lng };
+}
+
+/** Cap point count so the overview map stays smooth on long loops. */
+function simplifyRoutePath(points, maxPts) {
+  if (!Array.isArray(points) || points.length <= maxPts) return points || [];
+  const step = Math.ceil(points.length / maxPts);
+  const out = [];
+  for (let i = 0; i < points.length; i += step) {
+    const p = points[i];
+    if (p && Number.isFinite(p.lat) && Number.isFinite(p.lng)) out.push({ lat: p.lat, lng: p.lng });
+  }
+  const last = points[points.length - 1];
+  const tail = out[out.length - 1];
+  if (
+    last &&
+    tail &&
+    (Math.abs(tail.lat - last.lat) > 1e-7 || Math.abs(tail.lng - last.lng) > 1e-7)
+  ) {
+    out.push({ lat: last.lat, lng: last.lng });
+  }
+  return out;
+}
+
+/** Join each day’s decoded Directions path in trip order for one continuous route line. */
+function concatDayOverviewPaths(days) {
+  const sorted = [...(days || [])].sort((a, b) => (a.dayIndex || 0) - (b.dayIndex || 0));
+  const out = [];
+  for (const day of sorted) {
+    const pts = day.googleRoutePathPoints;
+    if (!Array.isArray(pts) || pts.length < 2) continue;
+    for (const p of pts) {
+      if (!p || !Number.isFinite(p.lat) || !Number.isFinite(p.lng)) continue;
+      const prev = out[out.length - 1];
+      if (
+        prev &&
+        Math.abs(prev.lat - p.lat) < 1e-7 &&
+        Math.abs(prev.lng - p.lng) < 1e-7
+      )
+        continue;
+      out.push({ lat: p.lat, lng: p.lng });
+    }
+  }
+  return simplifyRoutePath(out, 12000);
+}
+
 function directionsRouteOnce(svc, request) {
   return new Promise((resolve, reject) => {
     let settled = false;
@@ -497,6 +569,9 @@ function directionsRouteOnce(svc, request) {
           }
         }
 
+        const rawOverview = overviewPathToLatLngPoints(result?.routes?.[0]);
+        const routePathPoints = simplifyRoutePath(rawOverview, 6500);
+
         resolve({
           meters,
           durationText: formatCombinedDurationSeconds(durationSeconds),
@@ -505,6 +580,7 @@ function directionsRouteOnce(svc, request) {
           endLng,
           legCount: legs.length,
           routeVertexPoints: dedupedVertices,
+          routePathPoints,
         });
       });
     };
@@ -591,6 +667,14 @@ function renderDayMetaChips(container, day) {
       el("span", { class: "day-meta-chip day-meta-chip--seat", text: `~${day.seatTimeHours} h seat` })
     );
   }
+  if (day.difficulty) {
+    container.appendChild(
+      el("span", {
+        class: `${difficultyPillClass(day.difficulty)} day-meta-chip day-meta-chip--diff`,
+        text: day.difficulty,
+      })
+    );
+  }
   if (day.terrain) {
     container.appendChild(el("span", { class: "day-meta-chip day-meta-chip--terrain", text: day.terrain }));
   }
@@ -628,22 +712,17 @@ function applyDayDistanceToDom(day) {
   if (kmLine) {
     kmLine.classList.remove("muted");
     if (day.googleDistanceKm != null) {
-      const f = formatDistanceKmMi(day.googleDistanceKm);
+      kmLine.hidden = true;
       kmLine.innerHTML = "";
-      kmLine.appendChild(el("strong", { text: f ? `≈ ${f.primaryLine}` : `≈ ${day.googleDistanceKm} km` }));
-      if (day.googleDurationText) {
-        kmLine.appendChild(
-          el("span", { class: "muted", text: ` · ~${day.googleDurationText}` })
-        );
-      }
     } else if (day.googleDistanceError) {
+      kmLine.hidden = false;
       kmLine.classList.add("muted");
-      kmLine.textContent = `Google Maps could not route this leg (${day.googleDistanceError}). Use the link below.`;
+      kmLine.textContent = `Could not route (${day.googleDistanceError}). Use Maps link.`;
     }
   }
 }
 
-/** Build ordered pins: Directions vertices per day, then stops with `maps?q=lat,lng`. */
+/** Build ordered pins: road route uses one end-of-day pin + stops; otherwise Directions leg vertices. */
 function collectTripMapPins(days) {
   const pins = [];
   for (const day of days || []) {
@@ -652,7 +731,31 @@ function collectTripMapPins(days) {
     const datePart = day.date ? ` · ${day.date}` : "";
     const headline = `Day ${di}${datePart}`;
 
-    if (Array.isArray(day.googleRouteVertexPoints) && day.googleRouteVertexPoints.length) {
+    const hasRoadPath =
+      Array.isArray(day.googleRoutePathPoints) && day.googleRoutePathPoints.length >= 2;
+
+    if (hasRoadPath) {
+      let elat = day.routeEndLat;
+      let elng = day.routeEndLng;
+      if (elat == null || elng == null) {
+        const last = day.googleRoutePathPoints[day.googleRoutePathPoints.length - 1];
+        if (last && Number.isFinite(last.lat) && Number.isFinite(last.lng)) {
+          elat = last.lat;
+          elng = last.lng;
+        }
+      }
+      if (elat != null && elng != null) {
+        pins.push({
+          lat: elat,
+          lng: elng,
+          dayIndex: di,
+          legKey,
+          kind: "route",
+          headline,
+          subline: "End of day (road route from Google Directions)",
+        });
+      }
+    } else if (Array.isArray(day.googleRouteVertexPoints) && day.googleRouteVertexPoints.length) {
       const tot = day.googleRouteVertexPoints.length;
       day.googleRouteVertexPoints.forEach((pt, i) => {
         pins.push({
@@ -728,6 +831,15 @@ function clearTripOverviewMapLayers() {
     });
   }
   window.__tripOverviewMarkers = [];
+  if (window.__tripRoutePolylineGlow) {
+    try {
+      window.google?.maps?.event?.clearInstanceListeners(window.__tripRoutePolylineGlow);
+      window.__tripRoutePolylineGlow.setMap(null);
+    } catch {
+      /* ignore */
+    }
+    window.__tripRoutePolylineGlow = null;
+  }
   if (window.__tripRoutePolyline) {
     try {
       window.google?.maps?.event?.clearInstanceListeners(window.__tripRoutePolyline);
@@ -747,53 +859,59 @@ function renderTripOverviewMap(days) {
   applyTripMapChrome(map);
 
   const pins = collectTripMapPins(days);
+  const mergedRoadPath = concatDayOverviewPaths(days);
   clearTripOverviewMapLayers();
 
-  if (!pins.length) return;
+  if (!pins.length && mergedRoadPath.length < 2) return;
 
   const compact = typeof window.matchMedia === "function" && window.matchMedia("(max-width: 520px)").matches;
   const bounds = new google.maps.LatLngBounds();
-  const path = [];
   const iw = getOrCreateTripMapInfoWindow();
-  const strokeW = typeof window.devicePixelRatio === "number" && window.devicePixelRatio >= 2 ? 4 : 3;
+  const strokeCore = typeof window.devicePixelRatio === "number" && window.devicePixelRatio >= 2 ? 5 : 4;
+  const strokeGlow = strokeCore + 5;
 
+  const pinPath = [];
   pins.forEach((p) => {
-    path.push({ lat: p.lat, lng: p.lng });
+    pinPath.push({ lat: p.lat, lng: p.lng });
     bounds.extend({ lat: p.lat, lng: p.lng });
   });
 
-  if (path.length >= 2) {
+  const useRoadGeometry = mergedRoadPath.length >= 2;
+  const drawPath = useRoadGeometry ? mergedRoadPath : pinPath;
+  const geodesic = !useRoadGeometry;
+
+  if (useRoadGeometry) {
+    drawPath.forEach((p) => bounds.extend(p));
+  }
+
+  if (drawPath.length >= 2) {
     try {
-      window.__tripRoutePolyline = new google.maps.Polyline({
-        path,
-        geodesic: true,
-        strokeColor: "#2f6474",
-        strokeOpacity: 0.62,
-        strokeWeight: strokeW,
+      window.__tripRoutePolylineGlow = new google.maps.Polyline({
+        path: drawPath,
+        geodesic,
+        strokeColor: "#ffffff",
+        strokeOpacity: useRoadGeometry ? 0.72 : 0.45,
+        strokeWeight: strokeGlow,
         zIndex: 1,
-        icons: [
-          {
-            icon: {
-              path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
-              scale: compact ? 2.2 : 2.7,
-              strokeColor: "#2f6474",
-              fillColor: "#2f6474",
-              fillOpacity: 0.9,
-            },
-            offset: "50%",
-            repeat: compact ? "100px" : "140px",
-          },
-        ],
+        map,
+      });
+      window.__tripRoutePolyline = new google.maps.Polyline({
+        path: drawPath,
+        geodesic,
+        strokeColor: "#1a73e8",
+        strokeOpacity: 0.94,
+        strokeWeight: strokeCore,
+        zIndex: 2,
         map,
       });
     } catch {
       window.__tripRoutePolyline = new google.maps.Polyline({
-        path,
-        geodesic: true,
-        strokeColor: "#2f6474",
-        strokeOpacity: 0.62,
-        strokeWeight: strokeW,
-        zIndex: 1,
+        path: drawPath,
+        geodesic,
+        strokeColor: "#1a73e8",
+        strokeOpacity: 0.9,
+        strokeWeight: strokeCore,
+        zIndex: 2,
         map,
       });
     }
@@ -822,11 +940,21 @@ function renderTripOverviewMap(days) {
 
   try {
     const pad = compact ? 16 : 28;
-    map.fitBounds(bounds, { top: pad + 8, right: pad, bottom: pad, left: pad });
+    if (!bounds.isEmpty()) {
+      map.fitBounds(bounds, { top: pad + 8, right: pad, bottom: pad, left: pad });
+    } else if (drawPath.length && drawPath[0]) {
+      map.setCenter(drawPath[0]);
+      map.setZoom(compact ? 4 : 5);
+    }
   } catch {
     try {
-      map.setCenter(bounds.getCenter());
-      map.setZoom(compact ? 4 : 5);
+      if (!bounds.isEmpty()) {
+        map.setCenter(bounds.getCenter());
+        map.setZoom(compact ? 4 : 5);
+      } else if (drawPath.length && drawPath[0]) {
+        map.setCenter(drawPath[0]);
+        map.setZoom(compact ? 4 : 5);
+      }
     } catch {
       /* ignore */
     }
@@ -863,6 +991,7 @@ async function fetchGoogleDistancesForDays(days) {
       day.routeEndLat = null;
       day.routeEndLng = null;
       day.googleRouteVertexPoints = [];
+      day.googleRoutePathPoints = [];
       day.googleDistanceError = "Unrecognized Maps URL";
       applyDayDistanceToDom(day);
       continue;
@@ -873,6 +1002,7 @@ async function fetchGoogleDistancesForDays(days) {
       day.routeEndLat = null;
       day.routeEndLng = null;
       day.googleRouteVertexPoints = [];
+      day.googleRoutePathPoints = [];
       day.googleDistanceError = "Maps API not ready";
       applyDayDistanceToDom(day);
       continue;
@@ -888,6 +1018,7 @@ async function fetchGoogleDistancesForDays(days) {
         endLng,
         legCount,
         routeVertexPoints,
+        routePathPoints,
       } = await directionsRouteWithRetry(svc, request);
       day.googleDistanceKm = Math.round(meters / 100) / 10;
       day.googleDurationText = durationText;
@@ -897,12 +1028,14 @@ async function fetchGoogleDistancesForDays(days) {
       day.routeEndLng = endLng;
       day.googleDirectionsLegCount = legCount ?? null;
       day.googleRouteVertexPoints = Array.isArray(routeVertexPoints) ? routeVertexPoints : [];
+      day.googleRoutePathPoints = Array.isArray(routePathPoints) ? routePathPoints : [];
     } catch (e) {
       day.googleDistanceKm = null;
       day.googleDirectionsLegCount = null;
       day.routeEndLat = null;
       day.routeEndLng = null;
       day.googleRouteVertexPoints = [];
+      day.googleRoutePathPoints = [];
       day.googleDistanceError = e?.message || "REQUEST_DENIED";
       if (list.indexOf(day) === 0) {
         console.warn(
@@ -1256,10 +1389,47 @@ function scoreMotorcycleRidingRisks(forecastDay) {
   if (gust != null && gust >= 45) lines.push(`wind gusts to ${Math.round(gust)} km/h`);
   else if (wind != null && wind >= 38) lines.push(`sustained wind ~${Math.round(wind)} km/h`);
   if (tmin != null && tmin <= 2) lines.push(`overnight low ~${Math.round(tmin)}°C (ice risk)`);
+  const tmax = forecastDay.maxTemperature?.degrees;
+  if (tmax != null && tmax >= 38) lines.push(`extreme heat ~${Math.round(tmax)}°C — hydration & shade breaks`);
+  else if (tmax != null && tmax >= 34) lines.push(`very hot riding ~${Math.round(tmax)}°C peak`);
   if (forecastDay.iceThickness?.thickness > 0) lines.push("ice thickness reported");
   if (/SNOW|ICE|HAIL|THUNDER|BLIZZARD|FREEZING/i.test(type)) lines.push(desc || type);
 
   return lines.length ? lines : null;
+}
+
+function todayItineraryDay(days) {
+  const todayIso = todayIsoLocal();
+  return (days || []).find((d) => d.date === todayIso) || null;
+}
+
+/** Motorcycle-relevant alerts (storms, wind, rain, heat, cold, visibility). */
+function collectMotorcycleRidingAlerts(cc, forecastDay) {
+  const out = [];
+  const seen = new Set();
+  const push = (line) => {
+    const t = String(line || "").trim();
+    if (!t) return;
+    const k = t.toLowerCase();
+    if (seen.has(k)) return;
+    seen.add(k);
+    out.push(t);
+  };
+  (collectHeroImportantNotes(cc, forecastDay) || []).forEach(push);
+  return out;
+}
+
+function weatherWindowForDay(day, cache, calendarIsoYmd) {
+  if (!day) return null;
+  if (day.googleWeather?.current || day.googleWeather?.forecastDay) {
+    return {
+      current: day.googleWeather.current || null,
+      forecastDay: day.googleWeather.forecastDay || null,
+      timeZoneId: day.googleWeather.timeZoneId || "",
+    };
+  }
+  if (day.routeEndLat == null || day.routeEndLng == null || !cache) return null;
+  return weatherWindowForPinAndDate(cache, day.routeEndLat, day.routeEndLng, calendarIsoYmd);
 }
 
 function attachWeatherToDay(day, cache) {
@@ -1339,501 +1509,187 @@ async function fetchAndRenderRouteWeather(days, trip) {
     applyDayWeatherToDom(day, trip || {});
   }
 
-  applyHeroRouteWeather(days);
-  renderMainRouteWeatherPanel(days);
-  renderDashboardTodayWeather(days, trip);
+  renderHeroWeatherCards(days, trip);
 }
 
 function scheduleRouteWeatherFetch(days, trip) {
-  const wxRoot = document.getElementById("route-weather-root");
-  if (wxRoot) {
-    wxRoot.replaceChildren();
-    wxRoot.appendChild(
-      el("p", {
-        class: "muted route-weather-panel__status",
-        text: "Loading OpenWeather 5-day snapshots for corridor stops…",
-      })
-    );
-  }
-  const dashRoot = document.getElementById("dashboard-weather-root");
-  if (dashRoot) {
-    dashRoot.replaceChildren();
-    dashRoot.appendChild(el("p", { class: "muted", text: "Loading today’s corridor weather…" }));
-  }
+  initHeroWeatherCardsBeforeFetch(days);
   fetchAndRenderRouteWeather(days, trip || {}).catch((e) => {
     console.error("[Weather]", e);
-    applyHeroRouteWeather(days);
-    renderMainRouteWeatherPanel(days);
-    renderDashboardTodayWeather(days, trip);
+    renderHeroWeatherCards(days, trip);
+    for (const day of days || []) {
+      applyDayWeatherToDom(day, trip || {});
+    }
   });
 }
 
-/** Up to three spread checkpoints: end of leg 1, mid-loop desert/west, end of leg 2 (PNW). */
-function pickHeroWeatherAnchorDays(days) {
+/** Five corridor pins on the map (Toronto → Fort Worth → west → Seattle → home). */
+function pickHeroWeatherCardDays(days) {
   const d = days || [];
+  const byIndex = (n) => d.find((x) => x.dayIndex === n);
   const lastOfLeg = (leg) => {
     const inLeg = d.filter((x) => inferLeg(x.dayIndex) === leg);
     return inLeg.reduce((best, x) => (!best || x.dayIndex > best.dayIndex ? x : best), null);
   };
-  const leg1 = lastOfLeg("1");
-  const leg2 = lastOfLeg("2");
-  const mid =
-    d.find((x) => x.dayIndex === 17) ||
-    d.find((x) => x.dayIndex === 16) ||
-    d.find((x) => x.dayIndex === Math.ceil(d.length / 2));
-  const ordered = [leg1, mid, leg2].filter(Boolean);
-  const seen = new Set();
-  const out = [];
-  for (const x of ordered) {
-    if (seen.has(x.dayIndex)) continue;
-    seen.add(x.dayIndex);
-    out.push(x);
-    if (out.length >= 3) break;
-  }
-  return out;
-}
-
-/** Hero strip: 3 checkpoints — **today’s calendar date** at each pin (not trip itinerary dates). */
-function applyHeroRouteWeather(days) {
-  const slot = document.getElementById("hero-route-weather");
-  if (!slot) return;
-
-  const anchors = pickHeroWeatherAnchorDays(days);
-  const cache = window.__routeWeatherCoordCache;
-  const todayIso = todayIsoLocal();
-  slot.replaceChildren();
-
-  if (!anchors.length) {
-    slot.hidden = true;
-    return;
-  }
-
-  slot.hidden = false;
-  slot.setAttribute("role", "region");
-  slot.setAttribute("aria-label", "Today’s weather at route checkpoints");
-
-  slot.appendChild(
-    el("p", {
-      class: "hero-route-weather__label",
-      text: "Today’s weather · 3 corridor checkpoints",
-    })
-  );
-  slot.appendChild(
-    el("p", {
-      class: "hero-route-weather__sub",
-      text: `Calendar date ${formatDate(todayIso)} — each line uses today’s forecast row (or current obs) at that pin, not your trip day on the itinerary.`,
-    })
-  );
-
-  const ul = el("ul", { class: "hero-route-weather__alerts" });
-  const linkPlaces = [];
-
-  for (const day of anchors) {
-    const place = legDestinationPlaceLabel(day);
-    linkPlaces.push(place);
-    const li = el("li", { class: "hero-route-weather__alert" });
-    const head = el("div", { class: "hero-route-weather__row-head" });
-    head.appendChild(
-      el("span", { class: "hero-route-weather__where", text: `${place} · Day ${day.dayIndex} pin` })
-    );
-    li.appendChild(head);
-
-    if (day.routeEndLat == null || day.routeEndLng == null) {
-      li.appendChild(
-        el("p", {
-          class: "hero-route-weather__temps hero-route-weather__temps--missing",
-          text: "Temps: — (route still loading)",
-        })
-      );
-      ul.appendChild(li);
-      continue;
-    }
-
-    const gw = cache ? weatherWindowForPinAndDate(cache, day.routeEndLat, day.routeEndLng, todayIso) : null;
-
-    if (!gw?.current && !gw?.forecastDay) {
-      li.appendChild(
-        el("p", {
-          class: "hero-route-weather__temps hero-route-weather__temps--missing",
-          text: !cache?.size
-            ? "Temps: — (weather cache empty — reload after /api/weather succeeds)"
-            : "Temps: — (set OPENWEATHER_API_KEY for /api/weather — see console)",
-        })
-      );
-      ul.appendChild(li);
-      continue;
-    }
-
-    const tempLine = formatHeroCheckpointTempLine(gw.current, gw.forecastDay);
-    li.appendChild(
-      el("p", {
-        class: "hero-route-weather__temps",
-        text: tempLine || "Temps: —",
-      })
-    );
-
-    const notes = collectHeroImportantNotes(gw.current, gw.forecastDay);
-    if (notes?.length) {
-      const imp = el("ul", { class: "hero-route-weather__important" });
-      notes.forEach((line) => imp.appendChild(el("li", { text: line })));
-      li.appendChild(imp);
-    }
-
-    ul.appendChild(li);
-  }
-
-  slot.appendChild(ul);
-
-  const linkRow = el("p", { class: "hero-route-weather__links" });
-  linkRow.appendChild(document.createTextNode("Forecasts: "));
-  linkPlaces.forEach((p, i) => {
-    if (i > 0) linkRow.appendChild(document.createTextNode(" · "));
-    linkRow.appendChild(
-      el("a", {
-        class: "hero-route-weather__link",
-        href: tenDayWeatherForecastSearchUrl(p),
-        target: "_blank",
-        rel: "noopener noreferrer",
-        text: p,
-      })
-    );
-  });
-  slot.appendChild(linkRow);
-}
-
-/** Spread sample days (unique overnight pins) for a main-page multi-day outlook — not tied to trip calendar. */
-function pickMainRouteWeatherCheckpoints(days) {
-  const d = days || [];
-  const lastOfLeg = (leg) => {
-    const inLeg = d.filter((x) => inferLeg(x.dayIndex) === leg);
-    return inLeg.reduce((best, x) => (!best || x.dayIndex > best.dayIndex ? x : best), null);
-  };
-  const ordered = [];
-  for (const idx of [3, 7, 9, 13, 17, 21, 24, 28, 32, 35]) {
-    const day = d.find((x) => x.dayIndex === idx);
-    if (day) ordered.push(day);
-  }
-  [lastOfLeg("1"), lastOfLeg("2"), lastOfLeg("3")].forEach((x) => {
-    if (x) ordered.push(x);
-  });
+  const ordered = [
+    byIndex(1),
+    lastOfLeg("1"),
+    byIndex(17) || byIndex(16) || byIndex(Math.ceil(d.length / 2)),
+    lastOfLeg("2"),
+    lastOfLeg("3"),
+  ].filter(Boolean);
   const out = [];
   const seen = new Set();
-  for (const day of ordered) {
-    if (day.routeEndLat == null || day.routeEndLng == null) continue;
-    const k = coordCacheKey(day.routeEndLat, day.routeEndLng);
-    if (!k || seen.has(k)) continue;
-    seen.add(k);
-    out.push(day);
-    if (out.length >= 6) break;
-  }
-  if (out.length < 6) {
-    for (const day of d) {
-      if (day.routeEndLat == null || day.routeEndLng == null) continue;
+  const tryAdd = (day) => {
+    if (!day) return;
+    if (day.routeEndLat != null && day.routeEndLng != null) {
       const k = coordCacheKey(day.routeEndLat, day.routeEndLng);
-      if (!k || seen.has(k)) continue;
-      seen.add(k);
-      out.push(day);
-      if (out.length >= 6) break;
+      if (k && seen.has(k)) return;
+      if (k) seen.add(k);
     }
-  }
-  return out;
-}
-
-/**
- * Summarize the rolling forecast window (OpenWeather: up to 5 aggregated days) for one coordinate.
- * Important-only: temperature envelope, storms, rain, wind; omits routine “nice weather”.
- */
-function aggregateTenDayOutlookForStation(forecastDays) {
-  if (!forecastDays?.length) return null;
-  const n = forecastDays.length;
-  let hiMax = -Infinity;
-  let loMin = Infinity;
-  let worstRain = 0;
-  let worstTs = 0;
-  let worstGust = 0;
-  const extraSeen = new Set();
-  const extras = [];
-
-  for (const fd of forecastDays) {
-    const hi = fd.maxTemperature?.degrees;
-    const lo = fd.minTemperature?.degrees;
-    if (Number.isFinite(hi)) hiMax = Math.max(hiMax, hi);
-    if (Number.isFinite(lo)) loMin = Math.min(loMin, lo);
-    const part = forecastDayPreferredPart(fd);
-    const pp = part?.precipitation?.probability?.percent;
-    const ts = part?.thunderstormProbability;
-    const gust = part?.wind?.gust?.value;
-    if (Number.isFinite(pp)) worstRain = Math.max(worstRain, pp);
-    if (Number.isFinite(ts)) worstTs = Math.max(worstTs, ts);
-    if (Number.isFinite(gust)) worstGust = Math.max(worstGust, gust);
-    const imp = collectHeroImportantNotes(null, fd);
-    for (const line of imp || []) {
-      const k = line.toLowerCase();
-      if (extraSeen.has(k)) continue;
-      extraSeen.add(k);
-      extras.push(line);
-    }
-  }
-
-  const hiOk = Number.isFinite(hiMax);
-  const loOk = Number.isFinite(loMin);
-  const iso0 = forecastDayToIso(forecastDays[0]);
-  const iso1 = forecastDayToIso(forecastDays[forecastDays.length - 1]);
-  const winFirst = iso0 ? formatDate(iso0) : "";
-  const winLast = iso1 ? formatDate(iso1) : "";
-  const win = winFirst && winLast ? `${winFirst}–${winLast}` : "";
-
-  const rangeLine =
-    hiOk && loOk && win
-      ? `Next ${n} days (${win}): lows ${Math.round(loMin)}°C · highs ${Math.round(hiMax)}°C`
-      : hiOk && loOk
-        ? `Next ${n} days: lows ${Math.round(loMin)}°C · highs ${Math.round(hiMax)}°C`
-        : `Next ${n} days at this pin${win ? ` (${win})` : ""}.`;
-
-  const alerts = [];
-  const push = (s) => {
-    const t = String(s || "").trim();
-    if (!t) return;
-    if (alerts.some((x) => x.toLowerCase() === t.toLowerCase())) return;
-    alerts.push(t);
+    out.push(day);
   };
-
-  for (const line of extras.slice(0, 2)) push(line);
-
-  if (hiOk && hiMax >= 38) push(`Extreme daytime heat — about ${Math.round(hiMax)}°C peak`);
-  else if (hiOk && hiMax >= 34) push(`Very hot for riding — peaks near ${Math.round(hiMax)}°C`);
-  else if (hiOk && hiMax >= 31) push(`Hot stretch — highs near ${Math.round(hiMax)}°C`);
-
-  if (loOk && loMin <= -2) push(`Hard freeze possible — lows near ${Math.round(loMin)}°C`);
-  else if (loOk && loMin <= 2) push(`Near-freezing nights — about ${Math.round(loMin)}°C`);
-  else if (loOk && loMin <= 6) push(`Cool starts — lows near ${Math.round(loMin)}°C`);
-
-  if (worstTs >= 35) push(`Thunderstorms likely one day (~${Math.round(worstTs)}% peak)`);
-  else if (worstTs >= 25) push("Thunderstorm risk on some days");
-
-  if (worstRain >= 70) push(`Heavy rain risk — up to ~${Math.round(worstRain)}% one day`);
-  else if (worstRain >= 55) push(`Elevated rain — near ${Math.round(worstRain)}% on the wettest day`);
-
-  if (worstGust >= 55) push(`Strong gusts — up to ~${Math.round(worstGust)} km/h`);
-  else if (worstGust >= 45) push(`Windy — gusts to about ${Math.round(worstGust)} km/h`);
-
-  while (alerts.length > 4) alerts.pop();
-
-  return { rangeLine, alerts, windowLabel: win };
-}
-
-function initMainRouteWeatherPanelBeforeFetch(days) {
-  const root = document.getElementById("route-weather-root");
-  if (root) {
-    root.replaceChildren();
-    const hasCoords = (days || []).some((d) => d.routeEndLat != null && d.routeEndLng != null);
-    root.appendChild(
-      el("p", {
-        class: "muted route-weather-panel__status",
-        text: hasCoords
-          ? "Loading OpenWeather 5-day outlook at corridor pins (from today, not your trip dates)…"
-          : "Weather needs overnight coordinates from Google Directions first (GOOGLE_MAPS_API_KEY + npm run dev). Forecasts use OPENWEATHER_API_KEY on /api/weather.",
-      })
-    );
+  for (const day of ordered) {
+    tryAdd(day);
+    if (out.length >= 5) break;
   }
-  const dash = document.getElementById("dashboard-weather-root");
-  if (dash) {
-    dash.replaceChildren();
-    dash.appendChild(
-      el("p", {
-        class: "muted",
-        text: "Today’s dashboard weather loads after OpenWeather data is fetched…",
-      })
-    );
-  }
-}
-
-function renderMainRouteWeatherPanel(days) {
-  const root = document.getElementById("route-weather-root");
-  if (!root) return;
-
-  const cache = window.__routeWeatherCoordCache;
-  const checkpoints = pickMainRouteWeatherCheckpoints(days);
-
-  if (!checkpoints.length) {
-    root.replaceChildren();
-    root.appendChild(
-      el("p", {
-        class: "muted",
-        text: "No route endpoints yet — open a day with a Directions link after distances load, or check route-overlays.json.",
-      })
-    );
-    return;
-  }
-
-  root.replaceChildren();
-  const grid = el("div", { class: "route-weather-grid" });
-  root.appendChild(grid);
-
-  for (const day of checkpoints) {
-    const place = legDestinationPlaceLabel(day);
-    const key = coordCacheKey(day.routeEndLat, day.routeEndLng);
-    const entry = cache instanceof Map && key ? cache.get(key) : null;
-    const fds = entry?.forecastDays || [];
-    const card = el("article", { class: "route-weather-card" });
-    const h = el("h3", { class: "route-weather-card__title", text: place });
-    const sub = el("p", {
-      class: "route-weather-card__meta muted",
-      text: `Overnight route end · Day ${day.dayIndex}`,
-    });
-    card.appendChild(h);
-    card.appendChild(sub);
-
-    if (!fds.length) {
-      card.appendChild(
-        el("p", {
-          class: "route-weather-card__body muted",
-          text: entry?.error
-            ? String(entry.error)
-            : "No forecast rows — check OPENWEATHER_API_KEY and /api/weather (OpenWeather subscription limits apply).",
-        })
-      );
-      grid.appendChild(card);
-      continue;
+  if (out.length < 5) {
+    for (const day of d) {
+      if (out.length >= 5) break;
+      tryAdd(day);
     }
-
-    const agg = aggregateTenDayOutlookForStation(fds);
-    card.appendChild(el("p", { class: "route-weather-card__range", text: agg.rangeLine }));
-    if (agg.alerts.length) {
-      const ul = el("ul", { class: "route-weather-card__alerts" });
-      agg.alerts.forEach((line) => ul.appendChild(el("li", { text: line })));
-      card.appendChild(ul);
-    } else {
-      card.appendChild(
-        el("p", {
-          class: "route-weather-card__calm muted",
-          text: "No strong heat, cold, wind, or storm signals in this 5-day window — still check radar day-of.",
-        })
-      );
-    }
-    card.appendChild(
-      el("p", { class: "route-weather-card__link" }, [
-        el("a", {
-          href: `https://openweathermap.org/weathermap?basemap=map&lon=${encodeURIComponent(String(day.routeEndLng))}&lat=${encodeURIComponent(String(day.routeEndLat))}&zoom=7`,
-          target: "_blank",
-          rel: "noopener noreferrer",
-          text: "Open on OpenWeather map",
-        }),
-      ])
-    );
-    grid.appendChild(card);
   }
+  return out.slice(0, 5);
 }
 
-/** Dashboard: merged warnings + stops for **today’s calendar date** at corridor pins (not trip dates). */
-function renderDashboardTodayWeather(days, trip) {
-  const root = document.getElementById("dashboard-weather-root");
+function heroWeatherCardPlaceLabel(day) {
+  const raw = (day.routeTo || legDestinationPlaceLabel(day) || "").trim();
+  const short = raw.split(/[,|·]/)[0].trim();
+  return short.length > 32 ? `${short.slice(0, 30)}…` : short || `Day ${day.dayIndex}`;
+}
+
+function initHeroWeatherCardsBeforeFetch(days) {
+  const root = document.getElementById("hero-weather-cards");
   if (!root) return;
-
-  const todayIso = todayIsoLocal();
-  const cache = window.__routeWeatherCoordCache;
-  const checkpoints = pickMainRouteWeatherCheckpoints(days);
-
   root.replaceChildren();
-
-  if (!checkpoints.length) {
-    root.appendChild(
-      el("p", {
-        class: "muted",
-        text: "Corridor coordinates appear after Google Directions loads — then today’s weather will show here.",
-      })
-    );
-    return;
-  }
-
+  const cardDays = pickHeroWeatherCardDays(days);
+  const hasCoords = (days || []).some((d) => d.routeEndLat != null && d.routeEndLng != null);
   root.appendChild(
     el("p", {
-      class: "dashboard-weather__kicker",
-      text: `Live look · ${formatDate(todayIso)} (${todayIso})`,
+      class: "hero-weather-cards__label",
+      text: "Live weather · loading…",
     })
   );
-
-  const mergedWarnings = [];
-  const seenWarn = new Set();
-  const pushWarn = (s) => {
-    const t = String(s || "").trim();
-    if (!t) return;
-    const k = t.toLowerCase();
-    if (seenWarn.has(k)) return;
-    seenWarn.add(k);
-    mergedWarnings.push(t);
-  };
-
-  for (const day of checkpoints) {
-    if (day.routeEndLat == null || day.routeEndLng == null) continue;
-    const gw = cache ? weatherWindowForPinAndDate(cache, day.routeEndLat, day.routeEndLng, todayIso) : null;
-    const cc = gw?.current || null;
-    const fd = gw?.forecastDay || null;
-    (collectHeroImportantNotes(cc, fd) || []).forEach(pushWarn);
-    (mergeRidingRiskLines(cc, fd) || []).forEach(pushWarn);
+  const grid = el("div", { class: "hero-weather-cards__grid" });
+  for (const day of cardDays) {
+    const leg = day ? inferLeg(day.dayIndex) : String((i % 3) + 1);
+    const sk = el("article", {
+      class: `hero-weather-card hero-weather-card--leg-${leg} hero-weather-card--loading`,
+    });
+    sk.appendChild(el("span", { class: "hero-weather-card__chip", text: day ? `Day ${day.dayIndex}` : "…" }));
+    sk.appendChild(el("p", { class: "hero-weather-card__place", text: day ? heroWeatherCardPlaceLabel(day) : "…" }));
+    sk.appendChild(el("p", { class: "hero-weather-card__temps muted", text: "…" }));
+    grid.appendChild(sk);
   }
-
-  if (mergedWarnings.length) {
-    const war = el("div", { class: "dashboard-weather__warnings", role: "alert" });
-    war.appendChild(
-      el("p", { class: "dashboard-weather__warnings-title", text: "Warnings & conditions (today, all corridor stops)" })
-    );
-    const wul = el("ul", { class: "dashboard-weather__warnings-list" });
-    mergedWarnings.slice(0, 14).forEach((w) => wul.appendChild(el("li", { text: w })));
-    war.appendChild(wul);
-    root.appendChild(war);
-  } else {
+  root.appendChild(grid);
+  if (!hasCoords) {
     root.appendChild(
       el("p", {
-        class: "dashboard-weather__calm muted",
-        text: "No strong heat, cold, wind, or storm flags across corridor stops for today’s forecast — still check radar and each leg below.",
+        class: "hero-weather-cards__hint muted",
+        text: "Needs Google Directions + OPENWEATHER_API_KEY.",
       })
     );
   }
-
-  const sub = el("p", { class: "dashboard-weather__subhead muted", text: "By stop (same calendar day at each pin):" });
-  root.appendChild(sub);
-
-  const ul = el("ul", { class: "dashboard-weather__stops" });
-  for (const day of checkpoints) {
-    const place = legDestinationPlaceLabel(day);
-    const li = el("li", { class: "dashboard-weather__stop" });
-    if (day.routeEndLat == null || day.routeEndLng == null) {
-      li.appendChild(el("strong", { text: place }));
-      li.appendChild(document.createTextNode(" — "));
-      li.appendChild(el("span", { class: "muted", text: "waiting for coordinates" }));
-      ul.appendChild(li);
-      continue;
-    }
-    const gw = cache ? weatherWindowForPinAndDate(cache, day.routeEndLat, day.routeEndLng, todayIso) : null;
-    const line =
-      gw?.current || gw?.forecastDay
-        ? formatHeroCheckpointTempLine(gw.current, gw.forecastDay) ||
-          formatCurrentConditionsSummary(gw.current) ||
-          "—"
-        : cache?.size
-          ? "No data for today’s row yet"
-          : "—";
-    const strong = el("strong", { text: place });
-    li.appendChild(strong);
-    li.appendChild(document.createTextNode(` — ${line}`));
-    if (gw?.forecastDay == null && gw?.current) {
-      li.appendChild(
-        el("span", { class: "muted", text: " (current obs only — no daily row for this calendar date in the 5-day feed)" })
-      );
-    }
-    ul.appendChild(li);
-  }
-  root.appendChild(ul);
 }
+
+function buildHeroWeatherCard(day, cache, todayIso) {
+  const leg = inferLeg(day.dayIndex);
+  const card = el("article", {
+    class: `hero-weather-card hero-weather-card--leg-${leg}`,
+  });
+  card.appendChild(el("span", { class: "hero-weather-card__chip", text: `Day ${day.dayIndex}` }));
+
+  const place = heroWeatherCardPlaceLabel(day);
+  card.appendChild(el("p", { class: "hero-weather-card__place", text: place }));
+
+  if (day.routeEndLat == null || day.routeEndLng == null) {
+    card.appendChild(
+      el("p", { class: "hero-weather-card__temps hero-weather-card__temps--muted", text: "Route loading…" })
+    );
+    return card;
+  }
+
+  const gw = weatherWindowForDay(day, cache, todayIso);
+  const tempLine =
+    gw &&
+    (formatHeroCheckpointTempLine(gw.current, gw.forecastDay) ||
+      formatCurrentConditionsSummary(gw.current));
+  card.appendChild(
+    el("p", {
+      class: "hero-weather-card__temps",
+      text: tempLine || (cache?.size ? "No row for today" : "—"),
+    })
+  );
+
+  const alerts = gw ? collectMotorcycleRidingAlerts(gw.current, gw.forecastDay) : [];
+  if (alerts.length) {
+    card.classList.add("hero-weather-card--alert");
+    const ul = el("ul", { class: "hero-weather-card__alerts" });
+    alerts.slice(0, 2).forEach((line) => ul.appendChild(el("li", { text: line })));
+    card.appendChild(ul);
+  } else if (tempLine) {
+    card.appendChild(el("p", { class: "hero-weather-card__ok muted", text: "OK to ride" }));
+  }
+
+  return card;
+}
+
+/** Live weather cards in the hero (map stops, today’s calendar date). */
+function renderHeroWeatherCards(days, trip) {
+  const root = document.getElementById("hero-weather-cards");
+  if (!root) return;
+
+  const todayIso = todayIsoLocal();
+  const cache = window.__routeWeatherCoordCache;
+  const cardDays = pickHeroWeatherCardDays(days);
+
+  root.replaceChildren();
+  root.appendChild(
+    el("p", {
+      class: "hero-weather-cards__label",
+      text: `Live weather · ${formatDate(todayIso)}`,
+    })
+  );
+
+  if (!cardDays.length) {
+    root.appendChild(
+      el("p", {
+        class: "hero-weather-cards__hint muted",
+        text: "Weather appears after route coordinates load.",
+      })
+    );
+    return;
+  }
+
+  const grid = el("div", { class: "hero-weather-cards__grid" });
+  for (const day of cardDays) {
+    grid.appendChild(buildHeroWeatherCard(day, cache, todayIso));
+  }
+  root.appendChild(grid);
+
+  void trip;
+}
+
 
 function applyDayWeatherToDom(day, trip) {
   const slot = document.querySelector(`[data-day-weather="${day.dayIndex}"]`);
+  const staticWeather = document.querySelector(`[data-day-static-weather="${day.dayIndex}"]`);
   if (!slot) return;
   const gw = day.googleWeather;
   if (!gw?.current && !gw?.forecastDay) {
     slot.hidden = true;
     slot.innerHTML = "";
+    if (staticWeather) staticWeather.hidden = false;
     return;
   }
 
@@ -1842,51 +1698,30 @@ function applyDayWeatherToDom(day, trip) {
 
   slot.hidden = false;
   slot.innerHTML = "";
+  if (staticWeather) staticWeather.hidden = true;
+
   const wrap = el("div", { class: "day-weather-google" });
-  wrap.appendChild(
-    el("h4", {
-      class: "day-section-title",
-      text: `🌤 Weather at ${place}`,
-    })
-  );
-  wrap.appendChild(
-    el("p", {
-      class: "day-weather-google__subhead muted",
-      text: `${place} · itinerary ${formatDate(day.date)}`,
-    })
-  );
-  wrap.appendChild(
-    el("p", {
-      class: "day-weather-google__ledger muted",
-    }, [
-      "The forecast block below is matched to this trip day’s date. For riding conditions on ",
-      el("a", { href: "#dashboard-weather", text: "today’s calendar date" }),
-      " at corridor pins, use Today’s weather (dashboard).",
-    ])
-  );
+  const head = el("div", { class: "day-weather-google__head" });
+  head.appendChild(el("h4", { class: "day-section-title", text: `Weather · ${place}` }));
+  wrap.appendChild(head);
+
+  const blocks = el("div", { class: "day-weather-google__blocks" });
 
   const cc = gw.current;
   if (cc) {
     const obs = formatCurrentObservedAt(cc);
-    const tz = gw.timeZoneId || cc.timeZone?.id || "";
-    wrap.appendChild(
-      el("p", {
-        class: "day-weather-google__label",
-        text: `Current · ${place}`,
-      })
-    );
-    wrap.appendChild(
-      el("p", {
-        class: "day-weather-google__meta muted",
-        text: [obs ? `Observed ${obs}` : null, tz || null].filter(Boolean).join(" · "),
-      })
-    );
-    wrap.appendChild(
+    const block = el("div", { class: "day-weather-block" });
+    block.appendChild(el("p", { class: "day-weather-google__label", text: "Now" }));
+    if (obs) {
+      block.appendChild(el("p", { class: "day-weather-google__meta muted", text: `Observed ${obs}` }));
+    }
+    block.appendChild(
       el("p", {
         class: "day-weather-google__body day-weather-google__body--current",
         text: formatCurrentConditionsSummary(cc) || "—",
       })
     );
+    blocks.appendChild(block);
   }
 
   const fd = gw.forecastDay;
@@ -1906,30 +1741,24 @@ function applyDayWeatherToDom(day, trip) {
         `High ${hi != null ? Math.round(hi) : "—"}°C · Low ${lo != null ? Math.round(lo) : "—"}°C`
       );
     }
-    if (rain != null) parts.push(`daytime rain chance ${rain}%`);
-    if (gust != null) parts.push(`gusts to ${Math.round(gust)} km/h`);
+    if (rain != null) parts.push(`${rain}% rain`);
+    if (gust != null) parts.push(`gusts ${Math.round(gust)} km/h`);
 
-    wrap.appendChild(
+    const block = el("div", { class: "day-weather-block" });
+    block.appendChild(
       el("p", {
         class: "day-weather-google__label",
-        text: rideMatched ? `Ride-day forecast · ${place}` : `Daily outlook · ${place}`,
+        text: rideMatched ? "Ride day" : "Forecast",
       })
     );
     const skew = gw.forecastDaySkewDays;
-    const metaBits = [rideMatched ? `Forecast ${fcLabel} (ride day)` : `Forecast ${fcLabel}`];
-    if (!rideMatched && skew != null && skew > 0) {
-      metaBits.push(
-        `closest day in the 5-day forecast window (${skew} calendar day${skew === 1 ? "" : "s"} from ${formatDate(day.date)})`
-      );
-    }
-    wrap.appendChild(
-      el("p", {
-        class: "day-weather-google__meta muted",
-        text: metaBits.join(" · "),
-      })
-    );
-    wrap.appendChild(el("p", { class: "day-weather-google__body", text: parts.join(" · ") }));
+    const metaBits = [rideMatched ? fcLabel : `${fcLabel}${skew != null && skew > 0 ? ` · nearest in 5-day window` : ""}`];
+    block.appendChild(el("p", { class: "day-weather-google__meta muted", text: metaBits.join(" · ") }));
+    block.appendChild(el("p", { class: "day-weather-google__body", text: parts.join(" · ") }));
+    blocks.appendChild(block);
   }
+
+  wrap.appendChild(blocks);
 
   const merged = mergeRidingRiskLines(cc, fd);
   if (merged?.length) {
@@ -1941,13 +1770,7 @@ function applyDayWeatherToDom(day, trip) {
     warn.appendChild(
       el("p", {
         class: "day-weather-warnings__title",
-        text: `⚠ When riding near ${place} (${bikeLabel})`,
-      })
-    );
-    warn.appendChild(
-      el("p", {
-        class: "day-weather-warnings__intro muted",
-        text: "Check wind, rain, and temperature before you ride.",
+        text: `Riding watch · ${bikeLabel}`,
       })
     );
     const ul = el("ul", { class: "day-weather-warnings__list" });
@@ -2064,11 +1887,6 @@ function updateTotalRouteDistanceUI(days) {
       overview.textContent = "No Directions URLs in route-overlays — nothing to sum.";
     }
     if (hero) hero.hidden = true;
-    const heroWx = document.getElementById("hero-route-weather");
-    if (heroWx) {
-      heroWx.hidden = true;
-      heroWx.replaceChildren();
-    }
     if (tfoot) tfoot.hidden = true;
     return;
   }
@@ -2262,12 +2080,6 @@ function legDestinationPlaceLabel(day) {
   return parts[parts.length - 1];
 }
 
-/** Search link for a place name (backup to map links that use lat/lon). */
-function tenDayWeatherForecastSearchUrl(place) {
-  const q = `weather ${place}`;
-  return `https://www.google.com/search?q=${encodeURIComponent(q)}`;
-}
-
 function primarySleepName(day) {
   if (day.lodging?.name) return day.lodging.name;
   const a = day.lodgingAlternatives?.[0];
@@ -2342,36 +2154,17 @@ function renderHero(trip) {
   });
   if (chips.childNodes.length) inner.appendChild(chips);
 
-  if (trip.legs && typeof trip.legs === "object") {
-    const legs = el("div", { class: "hero-legs", "aria-label": "Trip legs" });
-    let anyLeg = false;
-    ["1", "2", "3"].forEach((k) => {
-      const title = trip.legs[k];
-      if (!title) return;
-      anyLeg = true;
-      const row = el("div", { class: "hero-leg" });
-      row.appendChild(el("span", { class: "hero-leg__bar", "aria-hidden": "true" }));
-      const text = el("p", { class: "hero-leg__text" });
-      text.appendChild(el("strong", { class: "hero-leg__label", text: `Leg ${k}: ` }));
-      text.appendChild(document.createTextNode(title));
-      row.appendChild(text);
-      legs.appendChild(row);
-    });
-    if (anyLeg) {
-      inner.appendChild(el("div", { class: "hero-doc__divider", "aria-hidden": "true" }));
-      inner.appendChild(legs);
-    }
-  }
-
-  const foot = el("footer", { class: "hero-doc__footer" });
-  foot.appendChild(
+  inner.appendChild(el("div", { class: "hero-doc__divider", "aria-hidden": "true" }));
+  inner.appendChild(
     el("div", {
-      id: "hero-route-weather",
-      class: "hero-route-weather",
-      hidden: true,
-      "aria-live": "polite",
+      id: "hero-weather-cards",
+      class: "hero-weather-cards",
+      role: "region",
+      "aria-label": "Live weather at route stops",
     })
   );
+
+  const foot = el("footer", { class: "hero-doc__footer" });
   foot.appendChild(
     el("div", {
       class: "hero-route-total",
@@ -3049,18 +2842,21 @@ function applyRouteOverlays(days, overlayPack) {
 function appendRouteMetrics(body, day) {
   const o = day.routeOverlay;
   if (!o?.mapsDirectionsUrl) return;
-  const wrap = el("div", { class: "route-metrics" });
+  const wrap = el("div", { class: "route-actions" });
   const row = el("p", {
     class: "route-km-line",
     "data-route-km-line": String(day.dayIndex),
+    hidden: true,
   });
-  if (hasGoogleMapsApiKey()) {
+  if (hasGoogleMapsApiKey() && day.googleDistanceKm == null) {
+    row.hidden = false;
     row.textContent = window.google?.maps?.DirectionsService
-      ? "Loading distance from Google Maps…"
+      ? "Loading distance…"
       : "Waiting for Google Maps…";
-  } else {
+  } else if (!hasGoogleMapsApiKey()) {
+    row.hidden = false;
     row.classList.add("muted");
-    row.textContent = "Add GOOGLE_MAPS_API_KEY for distances. Weather uses OPENWEATHER_API_KEY on the server (/api/weather). You can still open Maps below.";
+    row.textContent = "Add GOOGLE_MAPS_API_KEY for distances.";
   }
   wrap.appendChild(row);
   wrap.appendChild(
@@ -3071,18 +2867,6 @@ function appendRouteMetrics(body, day) {
       rel: "noopener noreferrer",
       text: "Open in Google Maps",
     })
-  );
-  const destPlace = legDestinationPlaceLabel(day);
-  wrap.appendChild(
-    el("p", { class: "route-forecast-row" }, [
-      el("a", {
-        class: "route-maps-link",
-        href: tenDayWeatherForecastSearchUrl(destPlace),
-        target: "_blank",
-        rel: "noopener noreferrer",
-        text: `5-day forecast: ${destPlace}`,
-      }),
-    ])
   );
   if (o.distanceNote) wrap.appendChild(el("p", { class: "route-distance-note", text: o.distanceNote }));
   body.appendChild(wrap);
@@ -3138,7 +2922,7 @@ function renderTrip(data, babHostsMap, routeMeta) {
 
   renderOverviewSection(trip, days?.length);
 
-  initMainRouteWeatherPanelBeforeFetch(days);
+  initHeroWeatherCardsBeforeFetch(days);
 
   const discEl = document.getElementById("distance-disclaimer");
   if (discEl) {
@@ -3213,39 +2997,17 @@ function renderTrip(data, babHostsMap, routeMeta) {
 
     const b = el("div", { class: "day-body" });
 
-    const routeRow = el("div", { class: "day-route-row" });
-    routeRow.appendChild(
-      el("span", { class: "pill pill-leg", text: `Leg ${leg}`, title: legTitle })
-    );
-    if (day.difficulty) {
-      routeRow.appendChild(el("span", { class: difficultyPillClass(day.difficulty), text: day.difficulty }));
+    if (day.routeLine) {
+      b.appendChild(el("p", { class: "day-route-line", text: day.routeLine }));
     }
-    b.appendChild(routeRow);
-    if (day.routeLine) b.appendChild(el("div", { class: "day-route-line muted", text: day.routeLine }));
     appendRouteMetrics(b, day);
-    if (day.routeOverlay?.mapsDirectionsUrl) {
-      b.appendChild(
-        el("div", {
-          class: "day-weather-slot",
-          "data-day-weather": String(day.dayIndex),
-          hidden: true,
-        })
-      );
-    }
-    appendDayRecommendations(b, day);
-
-    if (day.highlights?.length) {
-      const hlContent = day.highlights.length > 1 ? day.highlights : day.highlights[0];
-      appendDayDetailSection(b, "✨", "Highlights", hlContent);
-    }
-    appendDayDetailSection(b, "⛽", "Fuel", day.fuelNotes);
-    appendDayDetailSection(b, "🥘", "Food", day.foodNotes);
-    appendDayDetailSection(b, "🌤", "Weather", day.weatherNotes);
-    appendDayDetailSection(b, "📌", "Key notes", day.keyNotes);
-    appendDayDetailSection(b, "💵", "Fees, passes & bookings (verify at ride time)", day.feesAndPasses);
-    appendDayDetailSection(b, "⛺", "Camping & accommodation", day.campingAccommodation);
-    if (day.terrain) appendDayDetailSection(b, "🛣", "Road / terrain", day.terrain);
-
+    b.appendChild(
+      el("div", {
+        class: "day-weather-slot",
+        "data-day-weather": String(day.dayIndex),
+        hidden: true,
+      })
+    );
     const stopList = day.stops || [];
     if (stopList.length) {
       b.appendChild(el("h4", { class: "day-section-title day-stops-heading", text: "📍 Stops & waypoints" }));
@@ -3277,6 +3039,38 @@ function renderTrip(data, babHostsMap, routeMeta) {
 
     renderStaySummary(b, day, babHostsMap);
     renderBabHostContactCardsInDay(b, day, trip, babHostsMap, babIndex);
+
+    if (day.highlights?.length) {
+      const hlContent = day.highlights.length > 1 ? day.highlights : day.highlights[0];
+      appendDayDetailSection(b, "✨", "Highlights", hlContent);
+    }
+    appendDayDetailSection(b, "⛽", "Fuel", day.fuelNotes);
+    appendDayDetailSection(b, "🥘", "Food", day.foodNotes);
+    if (day.weatherNotes) {
+      const wLines = Array.isArray(day.weatherNotes)
+        ? day.weatherNotes.filter(Boolean)
+        : [day.weatherNotes].filter(Boolean);
+      if (wLines.length) {
+        const wSec = el("div", {
+          class: "day-section",
+          "data-day-static-weather": String(day.dayIndex),
+        });
+        wSec.appendChild(el("h4", { class: "day-section-title", text: "🌤 Trip notes" }));
+        if (wLines.length > 1) {
+          const ul = document.createElement("ul");
+          wLines.forEach((t) => ul.appendChild(el("li", { text: t })));
+          wSec.appendChild(ul);
+        } else {
+          wSec.appendChild(el("p", { class: "day-section-body", text: wLines[0] }));
+        }
+        b.appendChild(wSec);
+      }
+    }
+    appendDayDetailSection(b, "📌", "Key notes", day.keyNotes);
+    appendDayDetailSection(b, "💵", "Fees, passes & bookings (verify at ride time)", day.feesAndPasses);
+    appendDayDetailSection(b, "⛺", "Camping & accommodation", day.campingAccommodation);
+
+    appendDayRecommendations(b, day);
 
     if (day.risks?.length) {
       const a = el("div", { class: "alert risk" });
@@ -3563,39 +3357,44 @@ function renderMotorcyclePartsShops(pack) {
   }
 
   const meta = pack.meta || {};
-  root.appendChild(
+  const regionCount = pack.regions.length;
+  const shopCount = pack.regions.reduce((n, r) => n + (r.shops?.length || 0), 0);
+
+  const infoPanel = el("details", { class: "parts-panel parts-panel--info" });
+  infoPanel.appendChild(el("summary", { class: "parts-panel-sum", text: "Planning notes & how to use" }));
+  const infoBody = el("div", { class: "parts-panel-body" });
+  infoBody.appendChild(
     el("div", { class: "parts-disclaimer", role: "note" }, [
       el("p", {}, [el("strong", { text: "Note. " }), meta.disclaimer || ""]),
     ])
   );
   if (meta.lastReviewed) {
-    root.appendChild(el("p", { class: "muted parts-reviewed", text: `Last reviewed: ${meta.lastReviewed}` }));
+    infoBody.appendChild(el("p", { class: "muted parts-reviewed", text: `Last reviewed: ${meta.lastReviewed}` }));
   }
-
-  const jump = el("nav", { class: "parts-jump", "aria-label": "Jump to corridor" });
-  jump.appendChild(el("span", { class: "parts-jump-label", text: "Jump to:" }));
-  pack.regions.forEach((reg) => {
-    const id = reg.id || "region";
-    jump.appendChild(
-      el("a", {
-        href: `#parts-${id}`,
-        text: reg.name.split("—")[0].trim(),
-      })
-    );
-  });
-  root.appendChild(jump);
-
   const how = el("ul", { class: "parts-howto" });
   (pack.howToUse || []).forEach((t) => how.appendChild(el("li", { text: t })));
-  root.appendChild(how);
+  infoBody.appendChild(how);
+  infoPanel.appendChild(infoBody);
+  root.appendChild(infoPanel);
+
+  root.appendChild(
+    el("p", {
+      class: "parts-lede muted",
+      text: `${regionCount} corridors · ${shopCount} stops — expand a region when you need dealers on that leg.`,
+    })
+  );
 
   pack.regions.forEach((reg) => {
     const id = reg.id || "region";
+    const stops = (reg.shops || []).length;
     const det = el("details", { class: "parts-region", id: `parts-${id}` });
     const sum = el("summary", { class: "parts-region-sum" });
     sum.appendChild(el("span", { class: "parts-region-title", text: reg.name || "Corridor" }));
     if (reg.routeDays) {
       sum.appendChild(el("span", { class: "muted parts-region-days", text: ` · ${reg.routeDays}` }));
+    }
+    if (stops) {
+      sum.appendChild(el("span", { class: "parts-region-count", text: `${stops} stop${stops === 1 ? "" : "s"}` }));
     }
     det.appendChild(sum);
     const body = el("div", { class: "parts-region-body" });
@@ -3644,45 +3443,45 @@ function renderMotorcyclePartsShops(pack) {
     root.appendChild(det);
   });
 
-  const mo = pack.mailOrderAndOem;
-  if (mo?.items?.length) {
-    root.appendChild(el("h3", { class: "parts-subsection-title", text: mo.title || "Mail-order & OEM" }));
+  function appendLinkListPanel(title, items, note) {
+    if (!items?.length && !note) return;
+    const panel = el("details", { class: "parts-panel" });
+    panel.appendChild(el("summary", { class: "parts-panel-sum", text: title }));
+    const body = el("div", { class: "parts-panel-body" });
+    if (note) body.appendChild(el("p", { class: "muted", text: note }));
     const ul = el("ul", { class: "parts-link-list" });
-    mo.items.forEach((item) => {
+    items.forEach((item) => {
       const li = document.createElement("li");
-      if (item.url) {
-        li.appendChild(
-          el("a", { href: item.url, target: "_blank", rel: "noopener noreferrer", text: item.name || item.url })
-        );
-        li.appendChild(document.createTextNode(` — ${item.note || ""}`));
+      const url = item.url;
+      const name = item.name || url || "";
+      const noteText = item.note || "";
+      if (url) {
+        li.appendChild(el("a", { href: url, target: "_blank", rel: "noopener noreferrer", text: name }));
+        if (noteText) li.appendChild(document.createTextNode(` — ${noteText}`));
       } else {
-        li.textContent = `${item.name || ""} — ${item.note || ""}`;
+        li.textContent = noteText ? `${name} — ${noteText}` : name;
       }
       ul.appendChild(li);
     });
-    root.appendChild(ul);
+    body.appendChild(ul);
+    panel.appendChild(body);
+    root.appendChild(panel);
+  }
+
+  const mo = pack.mailOrderAndOem;
+  if (mo?.items?.length) {
+    appendLinkListPanel(mo.title || "Mail-order & OEM", mo.items);
   }
 
   const nr = pack.nationalRetail;
-  if (nr) {
-    root.appendChild(el("h3", { class: "parts-subsection-title", text: nr.title || "National retail" }));
-    if (nr.note) root.appendChild(el("p", { class: "muted", text: nr.note }));
-    const ul = el("ul", { class: "parts-link-list" });
-    (nr.stores || []).forEach((s) => {
-      const li = document.createElement("li");
-      if (s.url) {
-        li.appendChild(el("a", { href: s.url, target: "_blank", rel: "noopener noreferrer", text: s.name || s.url }));
-        li.appendChild(document.createTextNode(` — ${s.note || ""}`));
-      } else {
-        li.textContent = `${s.name || ""} — ${s.note || ""}`;
-      }
-      ul.appendChild(li);
-    });
-    root.appendChild(ul);
+  if (nr?.stores?.length || nr?.note) {
+    appendLinkListPanel(nr.title || "National retail", nr.stores || [], nr.note);
   }
 
   if (pack.findingMore?.length) {
-    root.appendChild(el("h3", { class: "parts-subsection-title", text: "Finding more shops on the fly" }));
+    const panel = el("details", { class: "parts-panel" });
+    panel.appendChild(el("summary", { class: "parts-panel-sum", text: "Finding more shops on the fly" }));
+    const body = el("div", { class: "parts-panel-body" });
     const ul = el("ul", { class: "parts-bullets" });
     pack.findingMore.forEach((t) => {
       const li = document.createElement("li");
@@ -3705,7 +3504,9 @@ function renderMotorcyclePartsShops(pack) {
       }
       ul.appendChild(li);
     });
-    root.appendChild(ul);
+    body.appendChild(ul);
+    panel.appendChild(body);
+    root.appendChild(panel);
   }
 }
 
@@ -3713,10 +3514,9 @@ function renderMotorcyclePartsShops(pack) {
 function syncJumpNav() {
   const raw = window.location.hash.slice(1);
   const sectionIds = new Set([
+    "hero-root",
     "overview",
-    "route-weather",
     "glance",
-    "dashboard-weather",
     "days",
     "content",
     "homework",
