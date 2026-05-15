@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 /**
- * Writes google-maps-config.js from GOOGLE_MAPS_API_KEY.
- * Same env var powers Maps JS + Directions in the browser and (on Vercel) api/weather.js.
- * - Local: set the key in .env (see .env.example), then run: npm run build
- * - Vercel: add GOOGLE_MAPS_API_KEY in Project → Settings → Environment Variables
+ * Writes google-maps-config.js from GOOGLE_MAPS_API_KEY (browser: Maps JS + Directions).
+ * Weather uses api/weather.js with GOOGLE_MAPS_SERVER_KEY if set, else GOOGLE_MAPS_API_KEY
+ * (HTTP-referrer keys often fail from Node — use a separate server key; see .env.example).
+ *
+ * Vercel: expose GOOGLE_MAPS_API_KEY to the Build step (default). google-maps-config.js is
+ * gitignored; npm run build must run on deploy so the browser receives a non-empty key.
  */
 const fs = require("fs");
 const path = require("path");

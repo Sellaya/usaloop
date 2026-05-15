@@ -181,7 +181,7 @@
         s.src =
           "https://maps.googleapis.com/maps/api/js?key=" +
           encodeURIComponent(String(k).trim()) +
-          "&loading=async&callback=__onGmInit";
+          "&v=weekly&libraries=routes&loading=async&callback=__onGmInit";
         s.async = true;
         s.defer = true;
         s.onerror = function () {
@@ -192,7 +192,7 @@
           if (!window.__googleMapsJsReady) {
             signalMapsLoaderDone("load_timeout");
           }
-        }, 25000);
+        }, 45000);
       })();
     </script>
     <script src="app.js" type="module"></script>

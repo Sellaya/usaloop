@@ -13,8 +13,11 @@ let tripDisplayMeta = { units: "metric" };
 
 const KM_PER_MI = 1.609344;
 
-/** Google Weather API: only fetch this many daily forecast rows per location (plus current conditions). */
-const WEATHER_FORECAST_DAY_COUNT = 1;
+/**
+ * Google daily forecast returns up to 10 calendar days from “today” at the location.
+ * We must request the full window so each ride `day.date` can match `displayDate` (was broken at 1).
+ */
+const WEATHER_FORECAST_DAY_COUNT = 10;
 
 function setTripDisplayMeta(meta) {
   tripDisplayMeta = { units: meta?.units === "imperial" ? "imperial" : "metric" };
@@ -259,37 +262,66 @@ function latLngFromEnd(end) {
 
 function directionsRouteOnce(svc, request) {
   return new Promise((resolve, reject) => {
-    const timer = window.setTimeout(() => {
-      reject(new Error("TIMEOUT"));
+    let settled = false;
+    let timer = null;
+
+    const finish = (fn) => {
+      if (settled) return;
+      settled = true;
+      if (timer != null) window.clearTimeout(timer);
+      fn();
+    };
+
+    timer = window.setTimeout(() => {
+      finish(() => reject(new Error("TIMEOUT")));
     }, DIRECTIONS_CALL_TIMEOUT_MS);
-    svc.route(request, (result, status) => {
-      window.clearTimeout(timer);
-      const legs = result?.routes?.[0]?.legs;
-      if (status !== "OK" || !legs?.length) {
-        reject(new Error(status));
-        return;
-      }
-      let meters = 0;
-      let durationSeconds = 0;
-      for (const leg of legs) {
-        if (leg.distance?.value != null) meters += leg.distance.value;
-        if (leg.duration?.value != null) durationSeconds += leg.duration.value;
-      }
-      const lastLeg = legs[legs.length - 1];
-      if (lastLeg?.distance?.value == null) {
-        reject(new Error(status));
-        return;
-      }
-      const { endLat, endLng } = latLngFromEnd(lastLeg.end_location);
-      resolve({
-        meters,
-        durationText: formatCombinedDurationSeconds(durationSeconds),
-        durationSeconds,
-        endLat,
-        endLng,
-        legCount: legs.length,
+
+    const settleFromResult = (result, status) => {
+      finish(() => {
+        const legs = result?.routes?.[0]?.legs;
+        if (status !== "OK" || !legs?.length) {
+          reject(new Error(status || "NOT_OK"));
+          return;
+        }
+        let meters = 0;
+        let durationSeconds = 0;
+        for (const leg of legs) {
+          if (leg.distance?.value != null) meters += leg.distance.value;
+          if (leg.duration?.value != null) durationSeconds += leg.duration.value;
+        }
+        const lastLeg = legs[legs.length - 1];
+        if (lastLeg?.distance?.value == null) {
+          reject(new Error(status));
+          return;
+        }
+        const { endLat, endLng } = latLngFromEnd(lastLeg.end_location);
+        resolve({
+          meters,
+          durationText: formatCombinedDurationSeconds(durationSeconds),
+          durationSeconds,
+          endLat,
+          endLng,
+          legCount: legs.length,
+        });
       });
-    });
+    };
+
+    try {
+      const ret = svc.route(request, (result, status) => {
+        settleFromResult(result, status);
+      });
+      if (ret != null && typeof ret.then === "function") {
+        ret
+          .then((result) => settleFromResult(result, "OK"))
+          .catch((e) =>
+            finish(() => {
+              reject(e instanceof Error ? e : new Error(String(e?.message || e)));
+            })
+          );
+      }
+    } catch (e) {
+      finish(() => reject(e));
+    }
   });
 }
 
@@ -500,102 +532,107 @@ function forecastDayToIso(fd) {
   return `${y}-${m}-${day}`;
 }
 
-function forecastDisplayDateKey(fd) {
-  const d = fd?.displayDate;
-  if (!d) return "";
-  return `${d.year}-${d.month}-${d.day}`;
+function parseTripDateOnly(iso) {
+  if (!iso) return null;
+  const d = new Date(`${iso}T12:00:00Z`);
+  return Number.isNaN(d.getTime()) ? null : d;
+}
+
+function forecastDayAtNoonUtc(fd) {
+  const iso = forecastDayToIso(fd);
+  if (!iso) return null;
+  const d = new Date(`${iso}T12:00:00Z`);
+  return Number.isNaN(d.getTime()) ? null : d;
+}
+
+function calendarDaysDiff(a, b) {
+  return Math.round((a.getTime() - b.getTime()) / 86400000);
 }
 
 /**
- * Google’s days:lookup defaults pageSize to 5; follow nextPageToken until we have up to `nDays` rows.
+ * Match ride `day.date` to a `forecastDays[]` row (same calendar day at location), else closest day in the API window (max 10 days ahead).
  */
-async function fetchWeatherForecastPages(buildUrl, nDaysIn) {
-  const nDays = Math.min(10, Math.max(1, nDaysIn));
-  const mergedDays = [];
-  const seen = new Set();
-  let timeZone = null;
-  let pageToken = null;
-
-  do {
-    const u = buildUrl();
-    u.searchParams.set("days", String(nDays));
-    u.searchParams.set("pageSize", "10");
-    if (pageToken) u.searchParams.set("pageToken", pageToken);
-
-    const r = await fetch(u.toString(), { cache: "no-store" });
-    const data = await r.json().catch(() => ({}));
-    if (!r.ok) {
-      throw new Error(
-        data?.error?.message || data?.error || data?.message || `Weather HTTP ${r.status}`
-      );
+function pickForecastDayForRideDate(forecastDays, rideDateIso) {
+  if (!forecastDays?.length) return { fd: null, matched: false, skewDays: null };
+  for (const fd of forecastDays) {
+    if (forecastDayToIso(fd) === rideDateIso) {
+      return { fd, matched: true, skewDays: 0 };
     }
-    if (data.timeZone && !timeZone) timeZone = data.timeZone;
-    for (const fd of data.forecastDays || []) {
-      const k = forecastDisplayDateKey(fd);
-      if (!k || seen.has(k)) continue;
-      seen.add(k);
-      mergedDays.push(fd);
+  }
+  const ride = parseTripDateOnly(rideDateIso);
+  if (!ride) return { fd: forecastDays[0], matched: false, skewDays: null };
+  let best = forecastDays[0];
+  let bestAbs = Infinity;
+  for (const fd of forecastDays) {
+    const d = forecastDayAtNoonUtc(fd);
+    if (!d) continue;
+    const abs = Math.abs(calendarDaysDiff(d, ride));
+    if (abs < bestAbs) {
+      bestAbs = abs;
+      best = fd;
     }
-    pageToken = data.nextPageToken || null;
-    if (mergedDays.length >= nDays) pageToken = null;
-  } while (pageToken);
+  }
+  return {
+    fd: best,
+    matched: false,
+    skewDays: bestAbs === Infinity ? null : bestAbs,
+  };
+}
 
-  return { forecastDays: mergedDays, timeZone: timeZone || {} };
+/**
+ * Weather must use /api/weather — Google Weather REST is not callable from the browser (no CORS for this origin).
+ */
+async function fetchWeatherFromProxy(searchParams) {
+  const url = new URL("/api/weather", window.location.origin);
+  searchParams.forEach((value, key) => {
+    url.searchParams.set(key, value);
+  });
+  const proxyRes = await fetch(url.toString(), { cache: "no-store" });
+  const data = await proxyRes.json().catch(() => ({}));
+  if (proxyRes.ok) {
+    if (data && typeof data === "object" && data.error != null && !data.forecastDays && data.currentTime == null) {
+      const ge = data.error;
+      const em =
+        typeof ge === "string"
+          ? ge
+          : ge?.message || ge?.status || JSON.stringify(ge);
+      throw new Error(`Weather proxy returned error: ${em}`);
+    }
+    return data;
+  }
+
+  let msg =
+    (typeof data.error === "string" && data.error) ||
+    data.error?.message ||
+    data.message ||
+    `Weather proxy HTTP ${proxyRes.status}`;
+  if (proxyRes.status === 404) {
+    msg +=
+      " This host has no /api/weather route — use `npm run dev` locally or deploy to Vercel with api/weather.js.";
+  } else if (proxyRes.status === 400) {
+    msg +=
+      " If your Maps key is HTTP-referrer restricted, set GOOGLE_MAPS_SERVER_KEY for the proxy (no referrer restriction + Weather API only is fine).";
+  }
+  throw new Error(msg);
 }
 
 async function fetchDailyForecastFromGoogle(lat, lng, dayCount) {
   const nDays = Math.min(10, Math.max(1, dayCount ?? WEATHER_FORECAST_DAY_COUNT));
-  const proxyParams = new URLSearchParams({
+  const params = new URLSearchParams({
     lat: String(lat),
     lon: String(lng),
     days: String(nDays),
   });
-  const proxyRes = await fetch(`/api/weather?${proxyParams}`, { cache: "no-store" });
-  if (proxyRes.ok) return proxyRes.json();
-
-  if (!hasGoogleMapsApiKey()) {
-    const err = await proxyRes.json().catch(() => ({}));
-    throw new Error(err?.error?.message || err?.error || `Weather HTTP ${proxyRes.status}`);
-  }
-
-  const k = String(window.__GOOGLE_MAPS_API_KEY__).trim();
-  const buildUrl = () => {
-    const u = new URL("https://weather.googleapis.com/v1/forecast/days:lookup");
-    u.searchParams.set("key", k);
-    u.searchParams.set("location.latitude", String(lat));
-    u.searchParams.set("location.longitude", String(lng));
-    return u;
-  };
-  return fetchWeatherForecastPages(buildUrl, nDays);
+  return fetchWeatherFromProxy(params);
 }
 
 async function fetchCurrentConditionsFromGoogle(lat, lng) {
-  const proxyParams = new URLSearchParams({
+  const params = new URLSearchParams({
     lat: String(lat),
     lon: String(lng),
     current: "1",
   });
-  const proxyRes = await fetch(`/api/weather?${proxyParams}`, { cache: "no-store" });
-  if (proxyRes.ok) return proxyRes.json();
-
-  if (!hasGoogleMapsApiKey()) {
-    const err = await proxyRes.json().catch(() => ({}));
-    throw new Error(err?.error?.message || err?.error || `Weather HTTP ${proxyRes.status}`);
-  }
-
-  const k = String(window.__GOOGLE_MAPS_API_KEY__).trim();
-  const u = new URL("https://weather.googleapis.com/v1/currentConditions:lookup");
-  u.searchParams.set("key", k);
-  u.searchParams.set("location.latitude", String(lat));
-  u.searchParams.set("location.longitude", String(lng));
-  const r = await fetch(u.toString(), { cache: "no-store" });
-  const data = await r.json().catch(() => ({}));
-  if (!r.ok) {
-    throw new Error(
-      data?.error?.message || data?.error || data?.message || `Current weather HTTP ${r.status}`
-    );
-  }
-  return data;
+  return fetchWeatherFromProxy(params);
 }
 
 function formatCurrentObservedAt(cc) {
@@ -743,8 +780,9 @@ function collectHeroImportantNotes(cc, forecastDay) {
     considerCond(cc.weatherCondition);
   }
 
-  if (forecastDay?.daytimeForecast) {
-    considerCond(forecastDay.daytimeForecast.weatherCondition);
+  if (forecastDay) {
+    const part = forecastDayPreferredPart(forecastDay);
+    if (part) considerCond(part.weatherCondition);
   }
 
   const riding = mergeRidingRiskLines(cc, forecastDay) || [];
@@ -753,10 +791,16 @@ function collectHeroImportantNotes(cc, forecastDay) {
   return out.length ? out : null;
 }
 
+/** Daytime block preferred for riding; fall back to nighttime if API omits daytime. */
+function forecastDayPreferredPart(fd) {
+  if (!fd) return null;
+  return fd.daytimeForecast || fd.nighttimeForecast || null;
+}
+
 /** Riding concerns for a Suzuki DR650 / light adventure bike (metric). */
 function scoreMotorcycleRidingRisks(forecastDay) {
   if (!forecastDay) return null;
-  const d = forecastDay.daytimeForecast;
+  const d = forecastDayPreferredPart(forecastDay);
   if (!d) return null;
   const lines = [];
   const pp = d.precipitation?.probability?.percent;
@@ -795,18 +839,15 @@ function attachWeatherToDay(day, cache) {
     current: payload.current || null,
     forecastDay: null,
     rideDateMatched: false,
+    forecastDaySkewDays: null,
     timeZoneId: tz,
   };
 
   if (payload.forecastDays?.length) {
-    const exact = payload.forecastDays.find((fd) => forecastDayToIso(fd) === day.date);
-    if (exact) {
-      gw.forecastDay = exact;
-      gw.rideDateMatched = true;
-    } else {
-      gw.forecastDay = payload.forecastDays[0];
-      gw.rideDateMatched = false;
-    }
+    const pick = pickForecastDayForRideDate(payload.forecastDays, day.date);
+    gw.forecastDay = pick.fd;
+    gw.rideDateMatched = pick.matched;
+    gw.forecastDaySkewDays = pick.skewDays;
   }
 
   if (!gw.current && !gw.forecastDay) return;
@@ -949,7 +990,7 @@ function applyHeroRouteWeather(days) {
           text:
             day.routeEndLat == null
               ? "Temps: — (route still loading)"
-              : "Temps: — (no snapshot — reload or check key)",
+              : "Temps: — (weather needs /api/weather + server key — see browser console)",
         })
       );
       ul.appendChild(li);
@@ -1048,7 +1089,7 @@ function applyDayWeatherToDom(day, trip) {
 
   const fd = gw.forecastDay;
   if (fd) {
-    const d = fd.daytimeForecast;
+    const d = forecastDayPreferredPart(fd);
     const rideMatched = gw.rideDateMatched === true;
     const fcIso = forecastDayToIso(fd);
     const fcLabel = fcIso ? formatDate(fcIso) : "next day";
@@ -1069,13 +1110,20 @@ function applyDayWeatherToDom(day, trip) {
     wrap.appendChild(
       el("p", {
         class: "day-weather-google__label",
-        text: `Next-day outlook · ${place}`,
+        text: rideMatched ? `Ride-day forecast · ${place}` : `Daily outlook · ${place}`,
       })
     );
+    const skew = gw.forecastDaySkewDays;
+    const metaBits = [rideMatched ? `Forecast ${fcLabel} (ride day)` : `Forecast ${fcLabel}`];
+    if (!rideMatched && skew != null && skew > 0) {
+      metaBits.push(
+        `closest day in Google’s 10-day window (${skew} calendar day${skew === 1 ? "" : "s"} from ${formatDate(day.date)})`
+      );
+    }
     wrap.appendChild(
       el("p", {
         class: "day-weather-google__meta muted",
-        text: rideMatched ? `Forecast ${fcLabel} (ride day)` : `Forecast ${fcLabel}`,
+        text: metaBits.join(" · "),
       })
     );
     wrap.appendChild(el("p", { class: "day-weather-google__body", text: parts.join(" · ") }));
@@ -1314,6 +1362,15 @@ function scheduleGoogleDistanceFetch(days, trip) {
 
   let fetchStarted = false;
   let fetchFinished = false;
+  /** Debounce so safety-timeout + finally do not double-hit /api/weather. */
+  let weatherDebounce = null;
+  const queueWeatherAfterDistances = () => {
+    window.clearTimeout(weatherDebounce);
+    weatherDebounce = window.setTimeout(() => {
+      scheduleRouteWeatherFetch(days, trip);
+    }, 400);
+  };
+
   const run = async () => {
     if (fetchStarted) return;
     fetchStarted = true;
@@ -1324,48 +1381,64 @@ function scheduleGoogleDistanceFetch(days, trip) {
     } finally {
       fetchFinished = true;
       updateTotalRouteDistanceUI(days);
-      scheduleRouteWeatherFetch(days, trip);
+      queueWeatherAfterDistances();
     }
   };
 
+  let directionsPollId = null;
+
   const tryStart = () => {
     if (window.google?.maps?.DirectionsService) {
+      if (directionsPollId != null) {
+        window.clearInterval(directionsPollId);
+        directionsPollId = null;
+      }
       run();
       return true;
     }
     return false;
   };
 
-  /** Maps often finishes loading before trip.json fetch + render complete — event can fire with no listener yet. */
-  const startWhenMapsReady = () => {
-    if (tryStart()) return;
+  /**
+   * Wait for DirectionsService (can appear shortly after googlemapsjsready).
+   * Do not use { once: true }: the 45s script timeout can fire before the real callback; a late
+   * load must still be able to start routing.
+   */
+  const pollForDirectionsService = () => {
+    if (directionsPollId != null) return;
     let attempts = 0;
-    const id = window.setInterval(() => {
+    directionsPollId = window.setInterval(() => {
       if (tryStart()) {
-        window.clearInterval(id);
         return;
       }
-      if (++attempts > 300) {
-        window.clearInterval(id);
+      if (++attempts > 600) {
+        window.clearInterval(directionsPollId);
+        directionsPollId = null;
         updateTotalRouteDistanceUI(days);
-        scheduleRouteWeatherFetch(days, trip);
+        queueWeatherAfterDistances();
       }
     }, 50);
+  };
+
+  const onMapsJsReady = () => {
+    if (tryStart()) return;
+    pollForDirectionsService();
   };
 
   window.setTimeout(() => {
     if (!fetchFinished && fetchStarted) {
       console.warn("[Directions] Safety timeout — forcing UI refresh (some requests may still be pending).");
       updateTotalRouteDistanceUI(days);
+      queueWeatherAfterDistances();
     }
   }, 120000);
 
   if (tryStart()) return;
   if (window.__googleMapsJsReady) {
-    startWhenMapsReady();
+    onMapsJsReady();
     return;
   }
-  window.addEventListener("googlemapsjsready", startWhenMapsReady, { once: true });
+  window.addEventListener("googlemapsjsready", onMapsJsReady);
 }
 
 function parseRouteEndpoints(title) {
@@ -2867,6 +2940,12 @@ async function main() {
     if (routeRes.ok) {
       const pack = await routeRes.json();
       routeMeta = applyRouteOverlays(data.days, pack);
+    } else {
+      const disc = document.getElementById("distance-disclaimer");
+      if (disc) {
+        disc.hidden = false;
+        disc.textContent = `Could not load data/route-overlays.json (HTTP ${routeRes.status}). Per-day km and live weather need each day’s Google Directions URL from that file.`;
+      }
     }
     if (ccRes.ok) {
       const ccData = await ccRes.json();
