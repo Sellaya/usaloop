@@ -57,8 +57,8 @@ function svgStopPinDataUrl({ fill, ring, labelColor }) {
 
 function markerIconForPin(pin, compact) {
   const T = window.google.maps;
-  const w = compact ? 34 : 40;
-  const h = compact ? 44 : 52;
+  const w = compact ? 26 : 30;
+  const h = compact ? 34 : 40;
   const ax = w / 2;
   const ay = h;
   const pal = pin.kind === "stop" ? ROUTE_LEG_PIN.stop : ROUTE_LEG_PIN[pin.legKey] || ROUTE_LEG_PIN["1"];
@@ -752,7 +752,7 @@ function renderTripOverviewMap(days) {
           {
             icon: {
               path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
-              scale: compact ? 2.6 : 3.2,
+              scale: compact ? 2.2 : 2.7,
               strokeColor: "#1a5f7a",
               fillColor: "#1a5f7a",
               fillOpacity: 0.9,
