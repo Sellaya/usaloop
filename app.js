@@ -13,6 +13,10 @@ let tripDisplayMeta = { units: "metric" };
 
 const KM_PER_MI = 1.609344;
 
+function isOverviewDistanceOnly() {
+  return Boolean(document.querySelector(".card--overview.overview-card--distance-only"));
+}
+
 /** Travel-poster style: warm parchment land, coastal water, parks & attractions for touring. */
 const TRIP_MAP_BASE_STYLES = [
   { elementType: "geometry", stylers: [{ color: "#f3ecdf" }] },
@@ -158,10 +162,10 @@ function applyTripMapChrome(map) {
 }
 
 /**
- * Google daily forecast returns up to 10 calendar days from “today” at the location.
- * We must request the full window so each ride `day.date` can match `displayDate` (was broken at 1).
+ * OpenWeather (via /api/weather) returns up to 5 aggregated calendar days from the free 5-day/3h feed.
+ * Per-day ride matching still uses pickForecastDayForRideDate against that window.
  */
-const WEATHER_FORECAST_DAY_COUNT = 10;
+const WEATHER_FORECAST_DAY_COUNT = 5;
 
 function setTripDisplayMeta(meta) {
   tripDisplayMeta = { units: meta?.units === "imperial" ? "imperial" : "metric" };
@@ -956,7 +960,7 @@ function calendarDaysDiff(a, b) {
 }
 
 /**
- * Match ride `day.date` to a `forecastDays[]` row (same calendar day at location), else closest day in the API window (max 10 days ahead).
+ * Match ride `day.date` to a `forecastDays[]` row (same calendar day at location), else closest day in the API window (up to 5 days on OpenWeather free).
  */
 function pickForecastDayForRideDate(forecastDays, rideDateIso) {
   if (!forecastDays?.length) return { fd: null, matched: false, skewDays: null };
@@ -985,8 +989,34 @@ function pickForecastDayForRideDate(forecastDays, rideDateIso) {
   };
 }
 
+/** Forecast row for a calendar YYYY-MM-DD (e.g. today). No fallback to trip dates. */
+function pickForecastDayForCalendarDate(forecastDays, calendarIsoYmd) {
+  if (!forecastDays?.length || !calendarIsoYmd) return null;
+  for (const fd of forecastDays) {
+    if (forecastDayToIso(fd) === calendarIsoYmd) return fd;
+  }
+  return null;
+}
+
+/** Current + forecast row for `calendarIsoYmd` at this pin (from weather cache). */
+function weatherWindowForPinAndDate(cache, lat, lng, calendarIsoYmd) {
+  const key = coordCacheKey(lat, lng);
+  const payload = cache instanceof Map && key ? cache.get(key) : null;
+  if (!payload) return null;
+  const tz =
+    payload.timeZone?.id ||
+    payload.current?.timeZone?.id ||
+    "";
+  const fd = pickForecastDayForCalendarDate(payload.forecastDays || [], calendarIsoYmd);
+  return {
+    current: payload.current || null,
+    forecastDay: fd,
+    timeZoneId: tz,
+  };
+}
+
 /**
- * Weather must use /api/weather — Google Weather REST is not callable from the browser (no CORS for this origin).
+ * Weather uses /api/weather (OpenWeatherMap proxy — OPENWEATHER_API_KEY on the server).
  */
 async function fetchWeatherFromProxy(searchParams) {
   const url = new URL("/api/weather", window.location.origin);
@@ -1012,18 +1042,22 @@ async function fetchWeatherFromProxy(searchParams) {
     data.error?.message ||
     data.message ||
     `Weather proxy HTTP ${proxyRes.status}`;
+  if (data.hint) msg += ` ${data.hint}`;
   if (proxyRes.status === 404) {
     msg +=
       " This host has no /api/weather route — use `npm run dev` locally or deploy to Vercel with api/weather.js.";
   } else if (proxyRes.status === 400) {
     msg +=
-      " If your Maps key is HTTP-referrer restricted, set GOOGLE_MAPS_SERVER_KEY for the proxy (no referrer restriction + Weather API only is fine).";
+      " If your host returns HTTP 400, set OPENWEATHER_API_KEY for api/weather.js (see .env.example).";
+  } else if (proxyRes.status === 401) {
+    msg +=
+      " OpenWeather rejected the key — create a Default key at openweathermap.org/api_keys; new keys may take up to ~2 hours to work.";
   }
   throw new Error(msg);
 }
 
 async function fetchDailyForecastFromGoogle(lat, lng, dayCount) {
-  const nDays = Math.min(10, Math.max(1, dayCount ?? WEATHER_FORECAST_DAY_COUNT));
+  const nDays = Math.min(5, Math.max(1, dayCount ?? WEATHER_FORECAST_DAY_COUNT));
   const params = new URLSearchParams({
     lat: String(lat),
     lon: String(lng),
@@ -1261,8 +1295,6 @@ function attachWeatherToDay(day, cache) {
 }
 
 async function fetchAndRenderRouteWeather(days, trip) {
-  if (!hasGoogleMapsApiKey()) return;
-
   const unique = new Map();
   for (const day of days || []) {
     if (day.routeEndLat == null || day.routeEndLng == null) continue;
@@ -1295,9 +1327,12 @@ async function fetchAndRenderRouteWeather(days, trip) {
       current,
       forecastDays: forecast.forecastDays || [],
       timeZone: forecast.timeZone || current?.timeZone || {},
+      error: forecast.error || null,
     });
     await new Promise((r) => setTimeout(r, 120));
   }
+
+  window.__routeWeatherCoordCache = cache;
 
   for (const day of days || []) {
     attachWeatherToDay(day, cache);
@@ -1305,13 +1340,31 @@ async function fetchAndRenderRouteWeather(days, trip) {
   }
 
   applyHeroRouteWeather(days);
+  renderMainRouteWeatherPanel(days);
+  renderDashboardTodayWeather(days, trip);
 }
 
 function scheduleRouteWeatherFetch(days, trip) {
-  if (!hasGoogleMapsApiKey()) return;
+  const wxRoot = document.getElementById("route-weather-root");
+  if (wxRoot) {
+    wxRoot.replaceChildren();
+    wxRoot.appendChild(
+      el("p", {
+        class: "muted route-weather-panel__status",
+        text: "Loading OpenWeather 5-day snapshots for corridor stops…",
+      })
+    );
+  }
+  const dashRoot = document.getElementById("dashboard-weather-root");
+  if (dashRoot) {
+    dashRoot.replaceChildren();
+    dashRoot.appendChild(el("p", { class: "muted", text: "Loading today’s corridor weather…" }));
+  }
   fetchAndRenderRouteWeather(days, trip || {}).catch((e) => {
     console.error("[Weather]", e);
     applyHeroRouteWeather(days);
+    renderMainRouteWeatherPanel(days);
+    renderDashboardTodayWeather(days, trip);
   });
 }
 
@@ -1340,19 +1393,14 @@ function pickHeroWeatherAnchorDays(days) {
   return out;
 }
 
-/** Hero strip: 3 checkpoints — always show low/high (or current); important hazards when present. */
+/** Hero strip: 3 checkpoints — **today’s calendar date** at each pin (not trip itinerary dates). */
 function applyHeroRouteWeather(days) {
   const slot = document.getElementById("hero-route-weather");
   if (!slot) return;
-  if (!hasGoogleMapsApiKey()) {
-    slot.hidden = true;
-    slot.replaceChildren();
-    slot.removeAttribute("role");
-    slot.removeAttribute("aria-label");
-    return;
-  }
 
   const anchors = pickHeroWeatherAnchorDays(days);
+  const cache = window.__routeWeatherCoordCache;
+  const todayIso = todayIsoLocal();
   slot.replaceChildren();
 
   if (!anchors.length) {
@@ -1362,18 +1410,18 @@ function applyHeroRouteWeather(days) {
 
   slot.hidden = false;
   slot.setAttribute("role", "region");
-  slot.setAttribute("aria-label", "Route checkpoint weather");
+  slot.setAttribute("aria-label", "Today’s weather at route checkpoints");
 
   slot.appendChild(
     el("p", {
       class: "hero-route-weather__label",
-      text: "Route weather · 3 checkpoints",
+      text: "Today’s weather · 3 corridor checkpoints",
     })
   );
   slot.appendChild(
     el("p", {
       class: "hero-route-weather__sub",
-      text: "Low / high from forecast (or current temp if range missing). Important hazards called out below when reported.",
+      text: `Calendar date ${formatDate(todayIso)} — each line uses today’s forecast row (or current obs) at that pin, not your trip day on the itinerary.`,
     })
   );
 
@@ -1383,20 +1431,33 @@ function applyHeroRouteWeather(days) {
   for (const day of anchors) {
     const place = legDestinationPlaceLabel(day);
     linkPlaces.push(place);
-    const gw = day.googleWeather;
     const li = el("li", { class: "hero-route-weather__alert" });
     const head = el("div", { class: "hero-route-weather__row-head" });
-    head.appendChild(el("span", { class: "hero-route-weather__where", text: `${place} · Day ${day.dayIndex}` }));
+    head.appendChild(
+      el("span", { class: "hero-route-weather__where", text: `${place} · Day ${day.dayIndex} pin` })
+    );
     li.appendChild(head);
+
+    if (day.routeEndLat == null || day.routeEndLng == null) {
+      li.appendChild(
+        el("p", {
+          class: "hero-route-weather__temps hero-route-weather__temps--missing",
+          text: "Temps: — (route still loading)",
+        })
+      );
+      ul.appendChild(li);
+      continue;
+    }
+
+    const gw = cache ? weatherWindowForPinAndDate(cache, day.routeEndLat, day.routeEndLng, todayIso) : null;
 
     if (!gw?.current && !gw?.forecastDay) {
       li.appendChild(
         el("p", {
           class: "hero-route-weather__temps hero-route-weather__temps--missing",
-          text:
-            day.routeEndLat == null
-              ? "Temps: — (route still loading)"
-              : "Temps: — (weather needs /api/weather + server key — see browser console)",
+          text: !cache?.size
+            ? "Temps: — (weather cache empty — reload after /api/weather succeeds)"
+            : "Temps: — (set OPENWEATHER_API_KEY for /api/weather — see console)",
         })
       );
       ul.appendChild(li);
@@ -1440,6 +1501,332 @@ function applyHeroRouteWeather(days) {
   slot.appendChild(linkRow);
 }
 
+/** Spread sample days (unique overnight pins) for a main-page multi-day outlook — not tied to trip calendar. */
+function pickMainRouteWeatherCheckpoints(days) {
+  const d = days || [];
+  const lastOfLeg = (leg) => {
+    const inLeg = d.filter((x) => inferLeg(x.dayIndex) === leg);
+    return inLeg.reduce((best, x) => (!best || x.dayIndex > best.dayIndex ? x : best), null);
+  };
+  const ordered = [];
+  for (const idx of [3, 7, 9, 13, 17, 21, 24, 28, 32, 35]) {
+    const day = d.find((x) => x.dayIndex === idx);
+    if (day) ordered.push(day);
+  }
+  [lastOfLeg("1"), lastOfLeg("2"), lastOfLeg("3")].forEach((x) => {
+    if (x) ordered.push(x);
+  });
+  const out = [];
+  const seen = new Set();
+  for (const day of ordered) {
+    if (day.routeEndLat == null || day.routeEndLng == null) continue;
+    const k = coordCacheKey(day.routeEndLat, day.routeEndLng);
+    if (!k || seen.has(k)) continue;
+    seen.add(k);
+    out.push(day);
+    if (out.length >= 6) break;
+  }
+  if (out.length < 6) {
+    for (const day of d) {
+      if (day.routeEndLat == null || day.routeEndLng == null) continue;
+      const k = coordCacheKey(day.routeEndLat, day.routeEndLng);
+      if (!k || seen.has(k)) continue;
+      seen.add(k);
+      out.push(day);
+      if (out.length >= 6) break;
+    }
+  }
+  return out;
+}
+
+/**
+ * Summarize the rolling forecast window (OpenWeather: up to 5 aggregated days) for one coordinate.
+ * Important-only: temperature envelope, storms, rain, wind; omits routine “nice weather”.
+ */
+function aggregateTenDayOutlookForStation(forecastDays) {
+  if (!forecastDays?.length) return null;
+  const n = forecastDays.length;
+  let hiMax = -Infinity;
+  let loMin = Infinity;
+  let worstRain = 0;
+  let worstTs = 0;
+  let worstGust = 0;
+  const extraSeen = new Set();
+  const extras = [];
+
+  for (const fd of forecastDays) {
+    const hi = fd.maxTemperature?.degrees;
+    const lo = fd.minTemperature?.degrees;
+    if (Number.isFinite(hi)) hiMax = Math.max(hiMax, hi);
+    if (Number.isFinite(lo)) loMin = Math.min(loMin, lo);
+    const part = forecastDayPreferredPart(fd);
+    const pp = part?.precipitation?.probability?.percent;
+    const ts = part?.thunderstormProbability;
+    const gust = part?.wind?.gust?.value;
+    if (Number.isFinite(pp)) worstRain = Math.max(worstRain, pp);
+    if (Number.isFinite(ts)) worstTs = Math.max(worstTs, ts);
+    if (Number.isFinite(gust)) worstGust = Math.max(worstGust, gust);
+    const imp = collectHeroImportantNotes(null, fd);
+    for (const line of imp || []) {
+      const k = line.toLowerCase();
+      if (extraSeen.has(k)) continue;
+      extraSeen.add(k);
+      extras.push(line);
+    }
+  }
+
+  const hiOk = Number.isFinite(hiMax);
+  const loOk = Number.isFinite(loMin);
+  const iso0 = forecastDayToIso(forecastDays[0]);
+  const iso1 = forecastDayToIso(forecastDays[forecastDays.length - 1]);
+  const winFirst = iso0 ? formatDate(iso0) : "";
+  const winLast = iso1 ? formatDate(iso1) : "";
+  const win = winFirst && winLast ? `${winFirst}–${winLast}` : "";
+
+  const rangeLine =
+    hiOk && loOk && win
+      ? `Next ${n} days (${win}): lows ${Math.round(loMin)}°C · highs ${Math.round(hiMax)}°C`
+      : hiOk && loOk
+        ? `Next ${n} days: lows ${Math.round(loMin)}°C · highs ${Math.round(hiMax)}°C`
+        : `Next ${n} days at this pin${win ? ` (${win})` : ""}.`;
+
+  const alerts = [];
+  const push = (s) => {
+    const t = String(s || "").trim();
+    if (!t) return;
+    if (alerts.some((x) => x.toLowerCase() === t.toLowerCase())) return;
+    alerts.push(t);
+  };
+
+  for (const line of extras.slice(0, 2)) push(line);
+
+  if (hiOk && hiMax >= 38) push(`Extreme daytime heat — about ${Math.round(hiMax)}°C peak`);
+  else if (hiOk && hiMax >= 34) push(`Very hot for riding — peaks near ${Math.round(hiMax)}°C`);
+  else if (hiOk && hiMax >= 31) push(`Hot stretch — highs near ${Math.round(hiMax)}°C`);
+
+  if (loOk && loMin <= -2) push(`Hard freeze possible — lows near ${Math.round(loMin)}°C`);
+  else if (loOk && loMin <= 2) push(`Near-freezing nights — about ${Math.round(loMin)}°C`);
+  else if (loOk && loMin <= 6) push(`Cool starts — lows near ${Math.round(loMin)}°C`);
+
+  if (worstTs >= 35) push(`Thunderstorms likely one day (~${Math.round(worstTs)}% peak)`);
+  else if (worstTs >= 25) push("Thunderstorm risk on some days");
+
+  if (worstRain >= 70) push(`Heavy rain risk — up to ~${Math.round(worstRain)}% one day`);
+  else if (worstRain >= 55) push(`Elevated rain — near ${Math.round(worstRain)}% on the wettest day`);
+
+  if (worstGust >= 55) push(`Strong gusts — up to ~${Math.round(worstGust)} km/h`);
+  else if (worstGust >= 45) push(`Windy — gusts to about ${Math.round(worstGust)} km/h`);
+
+  while (alerts.length > 4) alerts.pop();
+
+  return { rangeLine, alerts, windowLabel: win };
+}
+
+function initMainRouteWeatherPanelBeforeFetch(days) {
+  const root = document.getElementById("route-weather-root");
+  if (root) {
+    root.replaceChildren();
+    const hasCoords = (days || []).some((d) => d.routeEndLat != null && d.routeEndLng != null);
+    root.appendChild(
+      el("p", {
+        class: "muted route-weather-panel__status",
+        text: hasCoords
+          ? "Loading OpenWeather 5-day outlook at corridor pins (from today, not your trip dates)…"
+          : "Weather needs overnight coordinates from Google Directions first (GOOGLE_MAPS_API_KEY + npm run dev). Forecasts use OPENWEATHER_API_KEY on /api/weather.",
+      })
+    );
+  }
+  const dash = document.getElementById("dashboard-weather-root");
+  if (dash) {
+    dash.replaceChildren();
+    dash.appendChild(
+      el("p", {
+        class: "muted",
+        text: "Today’s dashboard weather loads after OpenWeather data is fetched…",
+      })
+    );
+  }
+}
+
+function renderMainRouteWeatherPanel(days) {
+  const root = document.getElementById("route-weather-root");
+  if (!root) return;
+
+  const cache = window.__routeWeatherCoordCache;
+  const checkpoints = pickMainRouteWeatherCheckpoints(days);
+
+  if (!checkpoints.length) {
+    root.replaceChildren();
+    root.appendChild(
+      el("p", {
+        class: "muted",
+        text: "No route endpoints yet — open a day with a Directions link after distances load, or check route-overlays.json.",
+      })
+    );
+    return;
+  }
+
+  root.replaceChildren();
+  const grid = el("div", { class: "route-weather-grid" });
+  root.appendChild(grid);
+
+  for (const day of checkpoints) {
+    const place = legDestinationPlaceLabel(day);
+    const key = coordCacheKey(day.routeEndLat, day.routeEndLng);
+    const entry = cache instanceof Map && key ? cache.get(key) : null;
+    const fds = entry?.forecastDays || [];
+    const card = el("article", { class: "route-weather-card" });
+    const h = el("h3", { class: "route-weather-card__title", text: place });
+    const sub = el("p", {
+      class: "route-weather-card__meta muted",
+      text: `Overnight route end · Day ${day.dayIndex}`,
+    });
+    card.appendChild(h);
+    card.appendChild(sub);
+
+    if (!fds.length) {
+      card.appendChild(
+        el("p", {
+          class: "route-weather-card__body muted",
+          text: entry?.error
+            ? String(entry.error)
+            : "No forecast rows — check OPENWEATHER_API_KEY and /api/weather (OpenWeather subscription limits apply).",
+        })
+      );
+      grid.appendChild(card);
+      continue;
+    }
+
+    const agg = aggregateTenDayOutlookForStation(fds);
+    card.appendChild(el("p", { class: "route-weather-card__range", text: agg.rangeLine }));
+    if (agg.alerts.length) {
+      const ul = el("ul", { class: "route-weather-card__alerts" });
+      agg.alerts.forEach((line) => ul.appendChild(el("li", { text: line })));
+      card.appendChild(ul);
+    } else {
+      card.appendChild(
+        el("p", {
+          class: "route-weather-card__calm muted",
+          text: "No strong heat, cold, wind, or storm signals in this 5-day window — still check radar day-of.",
+        })
+      );
+    }
+    card.appendChild(
+      el("p", { class: "route-weather-card__link" }, [
+        el("a", {
+          href: `https://openweathermap.org/weathermap?basemap=map&lon=${encodeURIComponent(String(day.routeEndLng))}&lat=${encodeURIComponent(String(day.routeEndLat))}&zoom=7`,
+          target: "_blank",
+          rel: "noopener noreferrer",
+          text: "Open on OpenWeather map",
+        }),
+      ])
+    );
+    grid.appendChild(card);
+  }
+}
+
+/** Dashboard: merged warnings + stops for **today’s calendar date** at corridor pins (not trip dates). */
+function renderDashboardTodayWeather(days, trip) {
+  const root = document.getElementById("dashboard-weather-root");
+  if (!root) return;
+
+  const todayIso = todayIsoLocal();
+  const cache = window.__routeWeatherCoordCache;
+  const checkpoints = pickMainRouteWeatherCheckpoints(days);
+
+  root.replaceChildren();
+
+  if (!checkpoints.length) {
+    root.appendChild(
+      el("p", {
+        class: "muted",
+        text: "Corridor coordinates appear after Google Directions loads — then today’s weather will show here.",
+      })
+    );
+    return;
+  }
+
+  root.appendChild(
+    el("p", {
+      class: "dashboard-weather__kicker",
+      text: `Live look · ${formatDate(todayIso)} (${todayIso})`,
+    })
+  );
+
+  const mergedWarnings = [];
+  const seenWarn = new Set();
+  const pushWarn = (s) => {
+    const t = String(s || "").trim();
+    if (!t) return;
+    const k = t.toLowerCase();
+    if (seenWarn.has(k)) return;
+    seenWarn.add(k);
+    mergedWarnings.push(t);
+  };
+
+  for (const day of checkpoints) {
+    if (day.routeEndLat == null || day.routeEndLng == null) continue;
+    const gw = cache ? weatherWindowForPinAndDate(cache, day.routeEndLat, day.routeEndLng, todayIso) : null;
+    const cc = gw?.current || null;
+    const fd = gw?.forecastDay || null;
+    (collectHeroImportantNotes(cc, fd) || []).forEach(pushWarn);
+    (mergeRidingRiskLines(cc, fd) || []).forEach(pushWarn);
+  }
+
+  if (mergedWarnings.length) {
+    const war = el("div", { class: "dashboard-weather__warnings", role: "alert" });
+    war.appendChild(
+      el("p", { class: "dashboard-weather__warnings-title", text: "Warnings & conditions (today, all corridor stops)" })
+    );
+    const wul = el("ul", { class: "dashboard-weather__warnings-list" });
+    mergedWarnings.slice(0, 14).forEach((w) => wul.appendChild(el("li", { text: w })));
+    war.appendChild(wul);
+    root.appendChild(war);
+  } else {
+    root.appendChild(
+      el("p", {
+        class: "dashboard-weather__calm muted",
+        text: "No strong heat, cold, wind, or storm flags across corridor stops for today’s forecast — still check radar and each leg below.",
+      })
+    );
+  }
+
+  const sub = el("p", { class: "dashboard-weather__subhead muted", text: "By stop (same calendar day at each pin):" });
+  root.appendChild(sub);
+
+  const ul = el("ul", { class: "dashboard-weather__stops" });
+  for (const day of checkpoints) {
+    const place = legDestinationPlaceLabel(day);
+    const li = el("li", { class: "dashboard-weather__stop" });
+    if (day.routeEndLat == null || day.routeEndLng == null) {
+      li.appendChild(el("strong", { text: place }));
+      li.appendChild(document.createTextNode(" — "));
+      li.appendChild(el("span", { class: "muted", text: "waiting for coordinates" }));
+      ul.appendChild(li);
+      continue;
+    }
+    const gw = cache ? weatherWindowForPinAndDate(cache, day.routeEndLat, day.routeEndLng, todayIso) : null;
+    const line =
+      gw?.current || gw?.forecastDay
+        ? formatHeroCheckpointTempLine(gw.current, gw.forecastDay) ||
+          formatCurrentConditionsSummary(gw.current) ||
+          "—"
+        : cache?.size
+          ? "No data for today’s row yet"
+          : "—";
+    const strong = el("strong", { text: place });
+    li.appendChild(strong);
+    li.appendChild(document.createTextNode(` — ${line}`));
+    if (gw?.forecastDay == null && gw?.current) {
+      li.appendChild(
+        el("span", { class: "muted", text: " (current obs only — no daily row for this calendar date in the 5-day feed)" })
+      );
+    }
+    ul.appendChild(li);
+  }
+  root.appendChild(ul);
+}
+
 function applyDayWeatherToDom(day, trip) {
   const slot = document.querySelector(`[data-day-weather="${day.dayIndex}"]`);
   if (!slot) return;
@@ -1465,8 +1852,17 @@ function applyDayWeatherToDom(day, trip) {
   wrap.appendChild(
     el("p", {
       class: "day-weather-google__subhead muted",
-      text: `${place} · ${formatDate(day.date)}`,
+      text: `${place} · itinerary ${formatDate(day.date)}`,
     })
+  );
+  wrap.appendChild(
+    el("p", {
+      class: "day-weather-google__ledger muted",
+    }, [
+      "The forecast block below is matched to this trip day’s date. For riding conditions on ",
+      el("a", { href: "#dashboard-weather", text: "today’s calendar date" }),
+      " at corridor pins, use Today’s weather (dashboard).",
+    ])
   );
 
   const cc = gw.current;
@@ -1523,7 +1919,7 @@ function applyDayWeatherToDom(day, trip) {
     const metaBits = [rideMatched ? `Forecast ${fcLabel} (ride day)` : `Forecast ${fcLabel}`];
     if (!rideMatched && skew != null && skew > 0) {
       metaBits.push(
-        `closest day in Google’s 10-day window (${skew} calendar day${skew === 1 ? "" : "s"} from ${formatDate(day.date)})`
+        `closest day in the 5-day forecast window (${skew} calendar day${skew === 1 ? "" : "s"} from ${formatDate(day.date)})`
       );
     }
     wrap.appendChild(
@@ -1618,11 +2014,6 @@ function initRouteTotalsUI(phase) {
   }
 
   if (phase === "nokey") {
-    const heroWx = document.getElementById("hero-route-weather");
-    if (heroWx) {
-      heroWx.hidden = true;
-      heroWx.replaceChildren();
-    }
     if (hero) {
       hero.hidden = false;
       hero.classList.add("hero-route-total--muted", "hero-route-total--setup");
@@ -1632,7 +2023,7 @@ function initRouteTotalsUI(phase) {
       hint.appendChild(
         el("p", {
           class: "hero-route-total-setup__line",
-          text: "Add the key in .env (npm run dev) or Vercel env. Enable Maps JavaScript, Directions (Legacy), and Weather; billing on.",
+          text: "Add the key in .env (npm run dev) or Vercel env. Enable Maps JavaScript API and Directions API (Legacy); billing on.",
         })
       );
       hero.appendChild(hint);
@@ -1643,7 +2034,7 @@ function initRouteTotalsUI(phase) {
       overview.innerHTML = "";
       overview.appendChild(
         el("p", {
-          text: "Set GOOGLE_MAPS_API_KEY and reload for distances, totals, and weather.",
+          text: "Add GOOGLE_MAPS_API_KEY for distances and map pins. Live weather uses OPENWEATHER_API_KEY on /api/weather (npm run dev or Vercel).",
         })
       );
     }
@@ -1764,6 +2155,7 @@ function updateTotalRouteDistanceUI(days) {
 function scheduleGoogleDistanceFetch(days, trip) {
   if (!hasGoogleMapsApiKey()) {
     initRouteTotalsUI("nokey");
+    scheduleRouteWeatherFetch(days, trip);
     return;
   }
   initRouteTotalsUI("loading");
@@ -1870,9 +2262,9 @@ function legDestinationPlaceLabel(day) {
   return parts[parts.length - 1];
 }
 
-/** Opens a Google results page with a 10-day-style weather panel for the place. */
+/** Search link for a place name (backup to map links that use lat/lon). */
 function tenDayWeatherForecastSearchUrl(place) {
-  const q = `10 day weather forecast ${place}`;
+  const q = `weather ${place}`;
   return `https://www.google.com/search?q=${encodeURIComponent(q)}`;
 }
 
@@ -2566,6 +2958,10 @@ function renderContactCard(contact, day, trip, container, options = {}) {
 }
 
 function renderOverviewSection(trip, dayCount) {
+  if (isOverviewDistanceOnly()) {
+    return;
+  }
+
   const lead = document.getElementById("overview-lead");
   if (lead) lead.textContent = trip?.overviewLead || trip?.tagline || "";
 
@@ -2664,7 +3060,7 @@ function appendRouteMetrics(body, day) {
       : "Waiting for Google Maps…";
   } else {
     row.classList.add("muted");
-    row.textContent = "Add GOOGLE_MAPS_API_KEY to load distance and weather. You can still open Maps below.";
+    row.textContent = "Add GOOGLE_MAPS_API_KEY for distances. Weather uses OPENWEATHER_API_KEY on the server (/api/weather). You can still open Maps below.";
   }
   wrap.appendChild(row);
   wrap.appendChild(
@@ -2684,7 +3080,7 @@ function appendRouteMetrics(body, day) {
         href: tenDayWeatherForecastSearchUrl(destPlace),
         target: "_blank",
         rel: "noopener noreferrer",
-        text: `10-day forecast: ${destPlace}`,
+        text: `5-day forecast: ${destPlace}`,
       }),
     ])
   );
@@ -2742,9 +3138,14 @@ function renderTrip(data, babHostsMap, routeMeta) {
 
   renderOverviewSection(trip, days?.length);
 
+  initMainRouteWeatherPanelBeforeFetch(days);
+
   const discEl = document.getElementById("distance-disclaimer");
   if (discEl) {
-    if (routeMeta?.disclaimer) {
+    if (isOverviewDistanceOnly()) {
+      discEl.hidden = true;
+      discEl.textContent = "";
+    } else if (routeMeta?.disclaimer) {
       discEl.hidden = false;
       discEl.textContent = routeMeta.disclaimer;
     } else {
@@ -2822,7 +3223,7 @@ function renderTrip(data, babHostsMap, routeMeta) {
     b.appendChild(routeRow);
     if (day.routeLine) b.appendChild(el("div", { class: "day-route-line muted", text: day.routeLine }));
     appendRouteMetrics(b, day);
-    if (hasGoogleMapsApiKey() && day.routeOverlay?.mapsDirectionsUrl) {
+    if (day.routeOverlay?.mapsDirectionsUrl) {
       b.appendChild(
         el("div", {
           class: "day-weather-slot",
@@ -3308,12 +3709,14 @@ function renderMotorcyclePartsShops(pack) {
   }
 }
 
-/** Highlights jump nav to match current section hash (falls back to Overview). */
+/** Highlights jump nav to match current section hash (falls back to calendar). */
 function syncJumpNav() {
   const raw = window.location.hash.slice(1);
   const sectionIds = new Set([
     "overview",
+    "route-weather",
     "glance",
+    "dashboard-weather",
     "days",
     "content",
     "homework",
@@ -3322,7 +3725,7 @@ function syncJumpNav() {
     "links",
     "parts-shops",
   ]);
-  const active = raw && sectionIds.has(raw) ? raw : "overview";
+  const active = raw && sectionIds.has(raw) ? raw : "glance";
   document.querySelectorAll("nav.jump a").forEach((a) => {
     const href = a.getAttribute("href") || "";
     const id = href.startsWith("#") ? href.slice(1) : "";

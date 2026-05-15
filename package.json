@@ -6,9 +6,13 @@
     "docs:handbook": "node scripts/generate-ai-handbook.cjs",
     "dev": "npm run build && node scripts/dev-server.cjs",
     "env:pull": "vercel env pull .env --yes",
+    "env:push": "node scripts/push-env-to-vercel.mjs",
     "env:pull:production": "vercel env pull .env.production --environment production --yes",
     "env:pull:preview": "vercel env pull .env.preview --environment preview --yes",
     "serve:static": "npx --yes serve . -l 8765",
     "cc:documentary": "node scripts/apply-documentary-layer.cjs"
+  },
+  "devDependencies": {
+    "vercel": "^54.0.0"
   }
 }

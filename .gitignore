@@ -3,3 +3,4 @@
 .env
 google-maps-config.js
 .vercel
+node_modules/

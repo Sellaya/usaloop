@@ -48,15 +48,13 @@
 
 ### Narrative summary
 
-36-day ride stringing together the Finger Lakes, a New York metro stop, Washington DC and Luray, then Roanoke, Blue Ridge Parkway to Bristol, Great Smoky approaches with Tail of the Dragon and a Kingston night, Parsons TN, then Nashville–Memphis–Arkansas, a Fort Worth home stop, then the high plains and I-40 toward New Mexico. From there: San Juan Mountains and Million Dollar Highway, Utah (Mexican Hat, Page, Bryce, Moab with a full rest day at Arches, St. George), the California coast (Leo Carrillo day stop, Big Sur, redwoods), Oregon and the Columbia River Gorge, Seattle, US-20 and Spokane, Lolo Pass, Yellowstone and the Beartooth corridor, and a long return through the Dakotas and Great Lakes to Ontario, with a final night in London before Toronto.
+Finger Lakes / NYC corridor, DC and Luray, Blue Ridge and Smokies, Tennessee to Texas, high plains to Four Corners, Utah parks, California coast, Oregon, Seattle, Yellowstone / Beartooth, then Great Lakes home to Ontario.
 
 ### Planning checklist (from trip.json)
 
-- Confirm dates, host addresses, and camping fees before you roll.
-- Days marked TBD still need pins — use each day’s Google Maps link to lock distance.
-- Fill fuel / weather / key notes per day as you research (same idea as your Word plan).
-- Summer wildfire smoke can hit NorCal, PNW, Rockies, and high plains on short notice — check AQI/smoke maps for your corridor the morning you ride; shorten or reroute when air is unhealthy.
-- Every iOverlander / BLM / dispersed GPS pin: confirm land status, MVUM, and fire closures the same week you stay — crowdsourced pins are not permission to camp.
+- Confirm dates, host addresses, and camping bookings before you go.
+- Lock each day’s Google Maps pins (especially TBD stays) so distances match your ride.
+- Re-check smoke/AQI and dispersed-camping rules the week you stay — conditions change fast.
 
 ---
 
@@ -64,7 +62,8 @@
 
 - **Stack:** Static HTML/CSS/JS (`index.html`, `app.js`, `styles.css`). No React.
 - **Data:** JSON files under `data/` are loaded at runtime via `fetch()` — you need a local server (`npm run dev` or any static server).
-- **Maps:** `npm run build` runs `scripts/inject-maps-key.js` and writes `google-maps-config.js` from `GOOGLE_MAPS_API_KEY` and optional `GOOGLE_CLIENT_ID` (see `.env.example`). Use `GOOGLE_MAPS_SERVER_KEY` for the weather proxy. Distances/weather use Google Maps JS when keys are set.
+- **Maps:** `npm run build` runs `scripts/inject-maps-key.js` and writes `google-maps-config.js` from `GOOGLE_MAPS_API_KEY` and optional `GOOGLE_CLIENT_ID` (see `.env.example`). **Weather** uses OpenWeatherMap via `api/weather.js` with `OPENWEATHER_API_KEY` (server-side only). Distances use Google Maps JS when the browser key is set.
+- **Product layout:** `docs/TRIP-APP-GUIDE.md` maps the USA Loop plan to this static app; full spec: `docs/USA_Loop_Cursor_Project_Plan.md`.
 - **Deploy:** `vercel.json` — build command `npm run build`, output is project root.
 - **GPX:** `gpx/toronto-southwest-loop-2026.gpx`
 - **Weather link:** `https://www.weather.gov/`
@@ -115,12 +114,11 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Highlights:** Shorter leg before DC → Luray segment
 - **Risks:** Metro traffic near NYC / Long Island; If camping Montauk same night as a west-LI host: unrealistic mileage — pick one region for the night.
 - **Plan B:** If the Long Island host night falls through: try **Hither Hills** (reserve/walk-in) or a motel farther west on LI — budget time from Montauk.
-- **Fees / passes (5 lines):**
-  - No federal park entrance fee on routing described.
-  - NYC / Hudson crossings (if used): many bridges/tunnels are cashless tolling to a registered plate or bill-by-mail — budget tolls; motorcycles follow posted rules per crossing.
-  - **Hither Hills State Park (optional paid camp, Montauk):** NYS facility — official hub **parks.ny.gov/parks/hither-hills** and camping search **newyorkstateparks.reserveamerica.com** (park id on ReserveAmerica: **Hither Hills / NY**). **Non-resident** campers pay higher posted rates than NY residents (historically on the order of **~US$66 weekday / ~US$74 weekend** vs **~US$33 / ~US$37** resident for standard tent/RV sites — **verify current table** on **parks.ny.gov/camping/fees-rates** before you pay).
-  - Hither Hills extras to budget: **~US$7.25** online reservation fee per booking; **~US$20** second registered vehicle; possible **~US$10 vehicle use fee** during summer beach gate hours (dates/hours on park page); **J Loop** key card **US$5 cash** deposit (lost card fee).
-  - Hither Hills rules that hit riders: **no pets**; **21+** registered camper must be on site; **generators** restricted (forbidden in J Loop); **check-in 3 p.m. / out 11 a.m.** typical — confirm on your reservation. **Motorcycles:** count toward vehicle limits — confirm with park office if one tent pad + bike.
+- **Fees / passes (4 lines):**
+  - No federal park entrance on this routing.
+  - NYC / Hudson crossings: cashless tolls — register a plate or expect bill-by-mail.
+  - Hither Hills (optional): see parks.ny.gov/parks/hither-hills for rates, reservation fee, beach day-use, and generator/J-loop rules.
+  - Non-U.S. visitors: America the Beautiful annual pass US$250 (recreation.gov/pass) can waive add-on fees at busy NPS units with ID — confirm nps.gov/aboutus/nonresident-fees.htm before you go.
 
 ### Day 3 — 2026-05-22 — New York → Washington, DC → Luray (VA)
 
@@ -157,7 +155,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 ### Day 5 — 2026-05-24 — Roanoke → Bristol (VA/TN) — Blue Ridge Parkway day
 
 - **Difficulty:** MODERATE
-- **Route line:** Primary riding on Blue Ridge Parkway and short connectors — NOT I-81 as your main line. In Google Maps: set waypoints Roanoke → Rocky Knob / Mabry Mill (BRP) → Fancy Gap → Boone NC → secondary roads into Bristol TN/VA. Drag route off interstates; use ‘avoid highways’ if helpful. BRP max ~45 mph — full riding day.
+- **Route line:** BRP day: Roanoke → Rocky Knob / Mabry Mill → Fancy Gap → Boone → Bristol via parkway connectors (not I-81). Drag off interstates in Maps or use Avoid highways.
 - **Terrain:** Blue Ridge Parkway + Appalachian connectors
 - **Fuel:** BRP has limited fuel — tank in Roanoke; next reliable fuel often Boone or after BRP exit toward Bristol.
 - **Food:** Mabry Mill / visitor areas are limited — carry snacks.
@@ -192,7 +190,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
   - Great Smoky Mountains NP: no entrance fee, but a parking tag is required for any vehicle parked >15 minutes (2026: daily US$5, weekly US$15, annual US$40 — purchase/print via recreation.gov activity pass or in-park; display physical tag per nps.gov/grsm).
   - Smokies is not on the 2026 US$100 non-resident surcharge list — that applies only to the 11 parks listed on nps.gov/aboutus/nonresident-fees.htm.
   - Tail of the Dragon (US-129): public highway — no park entrance; obey enforcement and lane rules.
-  - Non-U.S. citizens (2026): America the Beautiful annual pass for non-residents US$250 (digital: recreation.gov/pass) — covers standard entrance fees where accepted and waives the US$100/person non-resident surcharge at the 11 high-visitation parks when you show valid pass + photo ID (see nps.gov/aboutus/nonresident-fees.htm). U.S. resident pass remains US$80.
+  - Non-U.S. visitors: America the Beautiful annual pass US$250 (recreation.gov/pass) can waive add-on fees at busy NPS units with ID — confirm nps.gov/aboutus/nonresident-fees.htm before you go.
 
 ### Day 7 — 2026-05-26 — Kingston → Parsons (TN)
 
@@ -299,11 +297,11 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Risks:** Very long mileage day; Deer at dawn/dusk
 - **Plan B:** Shorten: skip one sight or book paid campground inside Bryce area.
 - **Fees / passes (5 lines):**
-  - Bryce Canyon NP (NPS): motorcycle 7-day entrance US$30 (cashless at park — nps.gov/brca); private vehicle US$35. Bryce is on the 2026 non-resident surcharge list — without an America the Beautiful pass, ages 16+ non-U.S. residents pay an additional US$100/person at entry (with valid non-resident annual pass, entrance + surcharge covered for passholder per NPS rules — verify ID).
+  - Bryce Canyon NP: ~US$30 motorcycle week pass, cashless (nps.gov/brca). Non-U.S. visitors: check surcharge rules without America the Beautiful.
   - Horseshoe Bend overlook (City of Page): parking fee ~US$5 motorcycle / ~US$10 private vehicle (Page, AZ — not covered by federal passes; verify current rate at visitpage.com / city site).
   - Antelope Canyon: Navajo Nation guided tours — commercial pricing (often US$50–100+); book slots in advance; separate from NPS.
   - Glen Canyon NRA (Lake Powell area): if you use NRA fee areas, Glen Canyon has its own fee schedule — America the Beautiful applies to NPS-managed standard entrance (see nps.gov/glca).
-  - Non-U.S. citizens (2026): America the Beautiful annual pass for non-residents US$250 (digital: recreation.gov/pass) — covers standard entrance fees where accepted and waives the US$100/person non-resident surcharge at the 11 high-visitation parks when you show valid pass + photo ID (see nps.gov/aboutus/nonresident-fees.htm). U.S. resident pass remains US$80.
+  - Non-U.S. visitors: America the Beautiful annual pass US$250 (recreation.gov/pass) can waive add-on fees at busy NPS units with ID — confirm nps.gov/aboutus/nonresident-fees.htm before you go.
 
 ### Day 15 — 2026-06-03 — Bryce Canyon → Arches National Park (Moab, UT)
 
@@ -336,11 +334,11 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Risks:** Moab summer heat — Arches by 7 am, off trail by 11 am; Arches parking — popular trailheads fill early; carry park map offline; Dehydration risk on Delicate Arch hike — carry 2 L minimum
 - **Plan B:** If Arches is too crowded or lots are closed, Dead Horse Point + Canyonlands Island in the Sky is an equally spectacular full day.
 - **Fees / passes (5 lines):**
-  - Arches NP: motorcycle 7-day entrance US$25; private vehicle US$30 (nps.gov/arch, credit/debit at entrance). America the Beautiful covers standard entrance. 2026: timed-entry reservation for Arches was discontinued — verify current status on nps.gov/arch before travel (parking may still temporarily limit entry when lots are full).
+  - Arches NP: motorcycle ~US$25 / vehicle ~US$30 (nps.gov/arch). Timed-entry rules change — confirm before arrival. America the Beautiful covers standard entrance.
   - Fiery Furnace hikes: separate permit/ranger fees if you do those activities (nps.gov/arch).
   - Dead Horse Point State Park (Utah state): separate from NPS — motorcycle day-use ~US$10, private vehicle ~US$20 (stateparks.utah.gov — verify 2026). Not covered by federal annual pass.
   - Canyonlands Island in the Sky (optional): NPS entrance fee if you enter — motorcycle rate on nps.gov/cany.
-  - Non-U.S. citizens (2026): America the Beautiful annual pass for non-residents US$250 (digital: recreation.gov/pass) — covers standard entrance fees where accepted and waives the US$100/person non-resident surcharge at the 11 high-visitation parks when you show valid pass + photo ID (see nps.gov/aboutus/nonresident-fees.htm). U.S. resident pass remains US$80.
+  - Non-U.S. visitors: America the Beautiful annual pass US$250 (recreation.gov/pass) can waive add-on fees at busy NPS units with ID — confirm nps.gov/aboutus/nonresident-fees.htm before you go.
 
 ### Day 17 — 2026-06-05 — Moab → St. George (UT)
 
@@ -370,7 +368,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 ### Day 19 — 2026-06-07 — Barstow → Hollywood → Leo Carrillo (Day Stop) → Big Sur / Prewitt Ridge
 
 - **Difficulty:** EPIC
-- **Route line:** Barstow → I-15 S → CA-14 → LA basin → PCH (Hwy 1) north through Malibu → Leo Carrillo State Park (2-3 hr day stop) → PCH north through Big Sur → Prewitt Ridge Campground. ~590 km total — longest riding day of the California leg. Start by 6:30 am to clear LA traffic.
+- **Route line:** Barstow → LA basin → Malibu / Leo Carrillo day stop → Big Sur → Prewitt Ridge (~590 km). Start early for LA traffic; confirm BLM access for Prewitt.
 - **Terrain:** CA freeways to coast — read current California DMV / CHP lane-splitting guidance; only allowed in specific situations. PCH curves, tar snakes, patch pavement, damp fog — reduced grip even when dry. Prewitt Ridge final climb: rough dirt road.
 - **Fuel:** Fuel in Barstow before departure. Next reliable fuel: Cambria or San Simeon (before Big Sur no-services stretch). Fill there.
 - **Lodging:**  — **Prewitt Ridge Campground** — Confirm road conditions for loaded DR650; carry 4 L water. Final climb is rough BLM dirt. Arrive before dark.
@@ -474,9 +472,9 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Highlights:** West Yellowstone or north entrance options depending on route
 - **Risks:** Bison / elk on roadway; Altitude fatigue; Greater Yellowstone: wildfire smoke and park-wide haze can persist for days — watch NPS alerts and AQI before committing to long high-elevation legs.
 - **Fees / passes (3 lines):**
-  - Yellowstone NP: motorcycle 7-day entrance US$30 (nps.gov/yell). Yellowstone is on the 2026 non-resident surcharge list — without America the Beautiful, ages 16+ non-U.S. residents pay US$100/person in addition to entrance; valid America the Beautiful (including non-resident US$250 pass) covers entrance and surcharge for passholder presentation with ID per NPS.
+  - Yellowstone NP: motorcycle 7-day US$30 (nps.gov/yell). Non-U.S. visitors may face surcharge + entrance without America the Beautiful — read current rules before the gate.
   - Keep receipt — 7-day Yellowstone entrance valid for re-entry.
-  - Non-U.S. citizens (2026): America the Beautiful annual pass for non-residents US$250 (digital: recreation.gov/pass) — covers standard entrance fees where accepted and waives the US$100/person non-resident surcharge at the 11 high-visitation parks when you show valid pass + photo ID (see nps.gov/aboutus/nonresident-fees.htm). U.S. resident pass remains US$80.
+  - Non-U.S. visitors: America the Beautiful annual pass US$250 (recreation.gov/pass) can waive add-on fees at busy NPS units with ID — confirm nps.gov/aboutus/nonresident-fees.htm before you go.
 
 ### Day 29 — 2026-06-17 — Yellowstone National Park — full day
 
@@ -488,11 +486,11 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Risks:** Sudden weather; Thermal area foot traffic; Smoke from regional fires can cut views and air quality inside the park — adjust expectations and rest if you feel tight-chested at altitude.
 - **Fees / passes (2 lines):**
   - Yellowstone NP: same 7-day entrance window if within validity from purchase — carry pass/receipt.
-  - Non-U.S. citizens (2026): America the Beautiful annual pass for non-residents US$250 (digital: recreation.gov/pass) — covers standard entrance fees where accepted and waives the US$100/person non-resident surcharge at the 11 high-visitation parks when you show valid pass + photo ID (see nps.gov/aboutus/nonresident-fees.htm). U.S. resident pass remains US$80.
+  - Non-U.S. visitors: America the Beautiful annual pass US$250 (recreation.gov/pass) can waive add-on fees at busy NPS units with ID — confirm nps.gov/aboutus/nonresident-fees.htm before you go.
 
 ### Day 30 — 2026-06-18 — Yellowstone → Beartooth Highway → Powell, WY
 
-- **Route line:** Morning: ride Yellowstone’s Grand Loop toward the Northeast Entrance (from wherever you stayed — e.g. Old Faithful area). At Cooke City, MT, pick up US-212 (Beartooth Highway) over the pass to Red Lodge — not WY-310 (Chief Joseph toward Cody) unless 212 is closed. Continue into the Bighorn Basin to Powell, WY for the night. The app’s Maps distance (~316 km) is the Cooke City → Red Lodge → Powell leg only; add your in-park miles separately.
+- **Route line:** Yellowstone Grand Loop toward Cooke City, then US-212 Beartooth to Red Lodge (avoid WY-310 Chief Joseph detour unless US-212 is closed). Watch weather and fuel.
 - **Terrain:** US-212 high alpine — snow/ice possible early season; do not confuse with lower WY-310 corridor
 - **Fuel:** Fill before leaving the park interior; top up in Cooke City or Red Lodge; Powell has services before overnight.
 - **Lodging:** Stay option — **Daryn Engesser** — Powell, WY
@@ -522,7 +520,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 - **Risks:** Bison herds on park roads; Tourist congestion
 - **Plan B:** Paid campground in Black Hills NF or Custer area.
 - **Fees / passes (3 lines):**
-  - Custer State Park (SD): park entrance license required for Wildlife Loop etc. — 2026: 7-day temporary license ~US$25/private vehicle or ~US$20/motorcycle (verify gfp.sd.gov/pel). Non-stop through-travel on designated US-16A through-route may be exempt — read posted rules.
+  - Custer State Park (SD): Wildlife Loop etc. need a park license (~US$20–25 motorcycle; verify gfp.sd.gov/pel). Through-routes may differ — check signs.
   - Black Hills National Forest: generally no entrance fee; amenity sites may charge.
   - Mount Rushmore NM: parking is a private concession fee (not covered by America the Beautiful for the parking structure) — budget separately if you visit.
 
@@ -551,7 +549,7 @@ Distances are driven by Google when API + overlays are loaded; `distanceKm: 0` i
 ### Day 35 — 2026-06-23 — Oconomowoc → Benton Harbor (Day Stop, John Cody Smith) → London, ON
 
 - **Difficulty:** LONG
-- **Route line:** Oconomowoc, WI → I-94 E → Benton Harbor, MI (visit John Cody Smith, 2 hr lunch stop) → US-12 or I-94 E → Port Huron, MI → Blue Water Bridge → Sarnia, ON → Hwy 402 E → London, ON. ~530 km total. Border crossing same day (late June) — check CBSA wait times; summer weekday traffic on I-94 can be heavy.
+- **Route line:** Oconomowoc → I-94 → Benton Harbor (John Cody Smith lunch) → Port Huron → Blue Water Bridge → Sarnia → Hwy 402 → London (~530 km). Same-day border — check CBSA waits.
 - **Terrain:** I-94 corridor — flat Midwest freeway. Blue Water Bridge (Port Huron–Sarnia): active CBSA crossing. Highway 402 to London: Ontario freeway, smooth.
 - **Fuel:** Fuel in Oconomowoc before departure. Fill again at Port Huron before the border — Canadian fuel is priced in litres and typically higher. Cross with a full tank.
 - **Weather:** Late June in the Great Lakes region: typically warm (25–32 °C), possible afternoon thunderstorms. Check radar before departure.
@@ -648,7 +646,7 @@ Each host in JSON also has a multi-line `routeGuidance` string (corridor, distan
 ### beforeYouGo (maintenance reminders for the project)
 
 - Trip window in this file: 2026-05-20 → 2026-06-24. If you move departure, update trip.startDate, trip.endDate, and every days[].date in sync (or regenerate from your spreadsheet).
-- Maps: set GOOGLE_MAPS_API_KEY (browser map) and GOOGLE_MAPS_SERVER_KEY (weather proxy) in .env — see .env.example. Run npm run build, then serve. On Vercel, add those plus GOOGLE_CLIENT_ID for the build so google-maps-config.js is generated. Restrict the browser key by HTTP referrer (localhost + your deploy URL). Re-check each leg in Maps after you set exact pins.
+- Maps: set GOOGLE_MAPS_API_KEY in .env for the browser map and Directions (see .env.example). Set OPENWEATHER_API_KEY for live weather via /api/weather. Run npm run build, then use npm run dev (or Vercel) so the weather proxy runs. Restrict the Maps key by HTTP referrer.
 - Bunk a Biker stays: full host contact cards (phone, text, email, Gmail, draft message) render on each day that uses a host — primary hosts only in bab-hosts.json for this build.
 - Confirm each host address, gate codes, and bike parking before arrival day.
 - Arches NP: verify current entry and parking rules on nps.gov/arch for your dates (timed-entry reservations were discontinued as of 2026 research — lots can still fill).

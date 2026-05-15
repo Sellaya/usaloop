@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Local dev: static files + /api/weather (same handler as Vercel).
+ * Local dev: static files + /api/weather (OpenWeatherMap proxy; same handler as Vercel).
  * Plain `serve` cannot run serverless routes; this matches production so weather works.
  */
 const http = require("http");
@@ -150,10 +150,53 @@ const server = http.createServer(async (nodeReq, nodeRes) => {
 });
 
 const port = parseInt(String(process.env.PORT || "8765"), 10) || 8765;
+
+function readOpenWeatherKeyForCheck() {
+  let k = (process.env.OPENWEATHER_API_KEY || "").trim();
+  if ((k.startsWith('"') && k.endsWith('"')) || (k.startsWith("'") && k.endsWith("'"))) {
+    k = k.slice(1, -1).trim();
+  }
+  return k;
+}
+
+/** One request to confirm the key works (name in OWM UI, e.g. “usaloop”, is not sent to the API). */
+async function verifyOpenWeatherKeyOnce() {
+  const k = readOpenWeatherKeyForCheck();
+  if (!k) return;
+  try {
+    const u = new URL("https://api.openweathermap.org/data/2.5/weather");
+    u.searchParams.set("lat", "43.6532");
+    u.searchParams.set("lon", "-79.3832");
+    u.searchParams.set("units", "metric");
+    u.searchParams.set("appid", k);
+    const r = await fetch(u);
+    const data = await r.json().catch(() => ({}));
+    const ok = r.ok && (Number(data.cod) === 200 || data.cod === "200");
+    if (ok) {
+      console.log(
+        'OpenWeather: API key accepted. (The label in your dashboard, e.g. “usaloop”, is only for you — requests use the key value from OPENWEATHER_API_KEY.)'
+      );
+    } else {
+      console.warn(
+        `OpenWeather: key not accepted (HTTP ${r.status}, ${data.message || JSON.stringify(data.cod)}). ` +
+          "Re-copy the key from https://home.openweathermap.org/api_keys or wait up to ~2h after creation. https://openweathermap.org/faq#error401"
+      );
+    }
+  } catch (e) {
+    console.warn("OpenWeather: verification request failed:", e?.message || e);
+  }
+}
+
 server.listen(port, () => {
-  const keyOk = Boolean((process.env.GOOGLE_MAPS_API_KEY || "").trim());
+  const mapsOk = Boolean((process.env.GOOGLE_MAPS_API_KEY || "").trim());
+  const owmOk = Boolean(readOpenWeatherKeyForCheck());
   console.log(`Dev server http://127.0.0.1:${port}/  (static + /api/weather)`);
-  if (!keyOk) {
-    console.warn("GOOGLE_MAPS_API_KEY is empty — set .env and run npm run build for Maps + weather.");
+  if (!mapsOk) {
+    console.warn("GOOGLE_MAPS_API_KEY is empty — set .env and run npm run build for Maps + Directions.");
+  }
+  if (!owmOk) {
+    console.warn("OPENWEATHER_API_KEY is empty — /api/weather will return 400 until you add it to .env.");
+  } else {
+    setImmediate(() => verifyOpenWeatherKeyOnce());
   }
 });

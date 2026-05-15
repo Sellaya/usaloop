@@ -1,12 +1,12 @@
 {
   "meta": {
     "title": "Per-day route metrics & ideas",
-    "disclaimer": "Distances from Google Directions (driving, metric): each day sums all legs in that link; the full-route row sums those days. No live traffic—confirm in Maps before riding."
+    "disclaimer": "Distances use Google Directions (no live traffic). Confirm each leg in Maps before you ride."
   },
   "byDay": {
     "1": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Toronto%2C+ON%2C+Canada&destination=34+West+Sullivanville+Rd%2C+Horseheads%2C+NY+14845&travelmode=driving",
-      "distanceNote": "Driving km come from the Google Maps API for the same origin/destination as the link. Your chosen border crossing and pins can still change the route — confirm in Maps before you ride.",
+      "distanceNote": "Km from Google for the same origin/destination as the link — your pins and crossing can still change the route.",
       "recommendations": [
         {
           "text": "Pre-clear eTA/ESTA not needed for US land — have passport, reg, insurance ready.",
@@ -27,7 +27,7 @@
       "distanceNote": "Finger Lakes to NYC metro — pick Southampton vs DC pacing in Maps after you choose host; tolls on Thruway/I-95 possible.",
       "recommendations": [
         {
-          "text": "Paid camp option: Hither Hills State Park is in Montauk (~55+ mi east of Southampton). Economical vs Hamptons hotels if you skip the west-LI host night — book ReserveAmerica / NYS Parks; non-NY resident rates apply.",
+          "text": "Paid camp: Hither Hills SP (Montauk) — far east of Southampton; book ahead if skipping LI host.",
           "url": "https://parks.ny.gov/parks/hither-hills"
         },
         {
@@ -42,7 +42,7 @@
     },
     "3": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=New+York%2C+NY&waypoints=Washington%2C+DC&destination=Luray%2C+VA&travelmode=driving",
-      "distanceNote": "Full day as titled: NYC metro → DC → Luray. If you actually leave from Long Island (Day 2), change origin in Maps to your Southampton pin — distances will shorten slightly vs this NYC centroid.",
+      "distanceNote": "NYC → DC → Luray. If you stayed on Long Island Day 2, change the origin pin to Southampton so km match your drive.",
       "recommendations": [
         {
           "text": "Shenandoah approaches — Skyline Dr is a detour with fee.",
@@ -231,7 +231,7 @@
       "distanceNote": "Local Moab-area loop for map + weather (Moab → Arches → Dead Horse Point). Not a touring day — use for pins and 10-day forecast; actual mileage is short.",
       "recommendations": [
         {
-          "text": "Arches NP: verify current entry rules on nps.gov/arch (timed-entry reservations were discontinued as of 2026 research — parking can still cap access when lots are full).",
+          "text": "Arches: confirm entry and parking on nps.gov/arch before you go.",
           "url": "https://www.nps.gov/arch/planyourvisit/hours.htm"
         },
         {
@@ -241,14 +241,6 @@
         {
           "text": "Canyonlands NP Island in the Sky — optional add-on, ~30 min from Dead Horse Point.",
           "url": "https://www.nps.gov/cany/"
-        },
-        {
-          "text": "Moab town resupply: gear shops, laundry, bike wash, grocery (City Market on Main St).",
-          "url": ""
-        },
-        {
-          "text": "Start Delicate Arch hike by 7 am — 3.2 mi round trip, 480 ft gain. Full sun and exposed by 10 am.",
-          "url": ""
         }
       ]
     },
@@ -282,7 +274,7 @@
     },
     "19": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Barstow%2C+CA&destination=Prewitt+Ridge+Campground%2C+Big+Sur%2C+CA&waypoints=Leo+Carrillo+State+Park%2C+Malibu%2C+CA&travelmode=driving",
-      "distanceNote": "Barstow → LA basin → Leo Carrillo (PCH/Malibu) → Big Sur → Prewitt Ridge. ~590 km total — longest California day. CA-14 into LA, then PCH north. Slow curves on Hwy 1 Big Sur add time beyond distance.",
+      "distanceNote": "Barstow → LA → Malibu day stop → Big Sur → Prewitt Ridge (~590 km). Longest CA day — leave Barstow early.",
       "recommendations": [
         {
           "text": "Depart Barstow by 6:30 am — miss most LA freeway traffic; PCH before 10 am is much cleaner.",
@@ -294,22 +286,6 @@
         },
         {
           "text": "Fuel stop: Cambria / San Simeon — last reliable gas before long Big Sur stretch.",
-          "url": ""
-        },
-        {
-          "text": "McWay Falls / Julia Pfeiffer Burns SP — short walk to waterfall into ocean.",
-          "url": "https://www.parks.ca.gov/?page_id=582"
-        },
-        {
-          "text": "Bixby Creek Bridge — pull over on north side for arch-over-coast photo.",
-          "url": ""
-        },
-        {
-          "text": "Nacimiento-Fergusson Rd to Fort Hunter Liggett — ADV detour only (rough). Skip if fatigued on a long day.",
-          "url": ""
-        },
-        {
-          "text": "California Aqueduct vista along CA-14 — optional industrial landmark before hitting the coast.",
           "url": ""
         }
       ]
@@ -456,7 +432,7 @@
     },
     "30": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/45.018871,-109.926270/45.185899,-109.247017/44.7589,-108.7573?api=1&travelmode=driving",
-      "distanceNote": "~316 km (typical): Cooke City, MT (Yellowstone NE gate) → Red Lodge via US-212 Beartooth → Powell, WY. This is the Beartooth+Bighorn link the app totals — cross-park miles from Old Faithful / Canyon to Cooke are extra (~120–180 km); plan that leg separately.",
+      "distanceNote": "~316 km: Cooke City → US-212 Beartooth → Red Lodge → Powell. High pass — check NPS road status and fuel.",
       "recommendations": [
         {
           "text": "Beartooth Hwy (US-212) status — snow/weather.",
@@ -526,7 +502,7 @@
     },
     "35": {
       "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&origin=Oconomowoc%2C+WI&destination=London%2C+ON%2C+Canada&waypoints=Coloma%2C+MI&travelmode=driving",
-      "distanceNote": "Oconomowoc → Benton Harbor/Coloma area (~142 mi) + Benton Harbor → Port Huron → Sarnia → London ON (~200 mi). Total ~530 km. Border crossing Jul 5 — check CBSA waits; post–Jul 4 weekend can be busy.",
+      "distanceNote": "Oconomowoc → Coloma lunch stop → Port Huron → Blue Water Bridge → London (~530 km). Same-day border — check CBSA waits.",
       "recommendations": [
         {
           "text": "Plan Benton Harbor stop 11 am–1 pm — allow buffer for I-94 traffic out of Milwaukee.",
@@ -539,14 +515,6 @@
         {
           "text": "CBSA ArriveCAN / ROVR — confirm current entry requirements before crossing.",
           "url": "https://www.cbsa-asfc.gc.ca/travel-voyage/rovr-irvr/menu-eng.html"
-        },
-        {
-          "text": "Fuel in Port Huron before border — fill tank in USD before switching to CAD prices.",
-          "url": ""
-        },
-        {
-          "text": "Lake Michigan ferry (Muskegon–Milwaukee) is an alternate scenic route; not used on this day.",
-          "url": "https://www.lakeexpress.com/"
         }
       ]
     },

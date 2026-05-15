@@ -42,15 +42,17 @@
       <div class="header-nav-row">
         <div class="header-inner header-inner--nav">
           <nav class="jump" aria-label="Jump to section">
-            <a href="#overview">Overview</a>
-            <a href="#links">Links</a>
-            <a href="#parts-shops">Parts</a>
             <a href="#glance">Calendar</a>
-            <a href="#days">Days</a>
-            <a href="#content">Content</a>
-            <a href="#homework">Homework</a>
-            <a href="#checklists">Packing</a>
             <a href="#map-embed">Map</a>
+            <a href="#dashboard-weather">Today's wx</a>
+            <a href="#overview">Distance</a>
+            <a href="#route-weather">Weather</a>
+            <a href="#days">Daily plan</a>
+            <a href="#content">Content</a>
+            <a href="#homework">Bike prep</a>
+            <a href="#checklists">Packing</a>
+            <a href="#parts-shops">Parts</a>
+            <a href="#links">Links</a>
           </nav>
         </div>
       </div>
@@ -61,9 +63,19 @@
 
       <div id="hero-root" class="hero-doc" hidden></div>
 
+      <section id="map-embed" aria-label="Map">
+        <h2 class="map-embed-title">Route overview</h2>
+        <p class="muted map-embed-intro">
+          Tap a pin for the day. Colours match trip chapters; paths follow Google Directions plus pinned stops.
+        </p>
+        <div class="map-embed-frame">
+          <div id="map" class="map-embed-canvas" role="region" aria-label="Interactive route map"></div>
+        </div>
+      </section>
+
       <section id="overview">
-        <h2>Overview</h2>
-        <div class="card card--overview">
+        <h2>Route distance</h2>
+        <div class="card card--overview overview-card--distance-only">
           <p class="overview-lead" id="overview-lead"></p>
           <div class="overview-stats" id="overview-stats" aria-label="Trip stats"></div>
           <div id="overview-route-total" class="overview-route-total" aria-live="polite" hidden></div>
@@ -89,6 +101,17 @@
         </div>
       </section>
 
+      <section id="route-weather" aria-label="Corridor weather">
+        <h2>Weather along the route</h2>
+        <div class="card card--route-weather">
+          <p class="muted section-intro">
+            OpenWeather <strong>5-day</strong> outlook per pin (rolling from <strong>today</strong> on the calendar). For <strong>merged warnings for the current calendar date</strong>, open
+            <a href="#dashboard-weather">Today’s weather (dashboard)</a> (under the calendar). This grid summarizes the full window at each stop.
+          </p>
+          <div id="route-weather-root" class="route-weather-root" aria-live="polite"></div>
+        </div>
+      </section>
+
       <section id="links">
         <h2>Quick links</h2>
         <div class="card">
@@ -99,8 +122,7 @@
       <section id="parts-shops">
         <h2>Motorcycle parts & dealers along the route</h2>
         <p class="muted section-intro">
-          Organized by corridor on your 36-day loop — Suzuki dealers and large parts retailers first, with
-          <strong>DR650</strong> notes where it matters. Call ahead: same-day DR650 OEM stock is never guaranteed.
+          By corridor — dealers and big-box parts first, <strong>DR650</strong> callouts where useful. Call ahead; OEM stock is not guaranteed same day.
         </p>
         <div id="parts-shops-root" class="parts-root card"></div>
       </section>
@@ -108,7 +130,8 @@
       <section id="glance">
         <h2>Calendar at a glance</h2>
         <p class="muted section-intro">
-          Per-day km and weather use Google (with API key). Table footer is the full-route total. Each day links to a 10-day forecast for that leg’s end.
+          Km from Google Directions; itinerary dates and sleep stops. For <strong>today’s</strong> riding conditions at corridor pins (not these itinerary dates), use
+          <a href="#dashboard-weather">Today’s weather (dashboard)</a> below.
         </p>
         <div class="card card--table">
           <div class="table-scroll">
@@ -139,6 +162,16 @@
         </div>
       </section>
 
+      <section id="dashboard-weather" aria-label="Today's weather dashboard">
+        <h2>Today’s weather (dashboard)</h2>
+        <div class="card card--dashboard-weather">
+          <p class="muted section-intro">
+            Uses your device’s <strong>current calendar date</strong> at corridor route pins — <em>not</em> the trip itinerary dates. Shows merged riding warnings first, then each stop.
+          </p>
+          <div id="dashboard-weather-root" class="dashboard-weather-root" aria-live="polite"></div>
+        </div>
+      </section>
+
       <section id="days">
         <h2>Daily plan</h2>
         <p class="muted section-intro">
@@ -150,7 +183,7 @@
       <section id="content">
         <h2>🎬 YouTube Content Guide</h2>
         <p class="muted section-intro">
-          Documentary-style episode briefs: field notes, cold open, act structure, <strong>road &amp; legal rules for that day’s states/provinces</strong>, camera coverage, VO beats, verified facts, and expanded culture (laws, cities, Indigenous context). Not legal advice—verify statutes at ride time.
+          Episode briefs: structure, shots, facts, and <strong>that day’s road rules by state/province</strong>. Culture notes are context only — verify laws before you ride.
         </p>
         <div id="content-list"></div>
       </section>
@@ -158,7 +191,7 @@
       <section id="homework">
         <h2>Homework</h2>
         <p class="muted section-intro">
-          DR650 mechanics &amp; learning resources, trip tools, and region-by-region risks (people, weather, bike, wildlife, gaps).
+          DR650 learning, trip tools, and regional risk notes (weather, wildlife, people, bike).
         </p>
         <div id="homework-root" class="homework-root card"></div>
       </section>
@@ -167,16 +200,6 @@
         <h2>Packing & prep</h2>
         <div class="card">
           <div id="checklist-root"></div>
-        </div>
-      </section>
-
-      <section id="map-embed" aria-label="Map">
-        <h2 class="map-embed-title">Route overview</h2>
-        <p class="muted map-embed-intro">
-          Tap a pin for details. Colours follow trip chapters (east → Texas → home). Pins use each day’s Directions path and any stop links with exact coordinates.
-        </p>
-        <div class="map-embed-frame">
-          <div id="map" class="map-embed-canvas" role="region" aria-label="Interactive route map"></div>
         </div>
       </section>
     </main>
