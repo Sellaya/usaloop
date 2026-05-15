@@ -219,6 +219,26 @@ function parseGoogleMapsDirectionsUrl(href) {
   }
 }
 
+/** `?q=lat,lng` or `?q=-lat,lng` on Google Maps / search URLs — only when q is a bare coordinate pair. */
+function parseLatLngFromGoogleMapsUrl(href) {
+  if (href == null || !String(href).trim()) return null;
+  try {
+    const u = new URL(href, "https://www.google.com");
+    const q = u.searchParams.get("q");
+    if (q == null || !String(q).trim()) return null;
+    const s = String(q).trim();
+    const m = s.match(/^(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)$/);
+    if (!m) return null;
+    const lat = Number(m[1]);
+    const lng = Number(m[2]);
+    if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+    if (lat < -90 || lat > 90 || lng < -180 || lng > 180) return null;
+    return { lat, lng };
+  } catch {
+    return null;
+  }
+}
+
 /** Directions request: metric, browser language — no fixed region bias (avoids mismatches vs Maps web). */
 function buildDirectionsRequest(parsed, travelMode) {
   const U = window.google.maps.UnitSystem;
@@ -260,6 +280,17 @@ function latLngFromEnd(end) {
   return { endLat, endLng };
 }
 
+/** `{ lat, lng }` from a Maps LatLng / LatLngLiteral, or null if invalid. */
+function latLngTupleFromLatLng(loc) {
+  if (!loc) return null;
+  const lat = typeof loc.lat === "function" ? loc.lat() : loc.lat;
+  const lng = typeof loc.lng === "function" ? loc.lng() : loc.lng;
+  const la = typeof lat === "number" && Number.isFinite(lat) ? lat : null;
+  const ln = typeof lng === "number" && Number.isFinite(lng) ? lng : null;
+  if (la == null || ln == null) return null;
+  return { lat: la, lng: ln };
+}
+
 function directionsRouteOnce(svc, request) {
   return new Promise((resolve, reject) => {
     let settled = false;
@@ -295,6 +326,29 @@ function directionsRouteOnce(svc, request) {
           return;
         }
         const { endLat, endLng } = latLngFromEnd(lastLeg.end_location);
+
+        const routeVertexPoints = [];
+        for (let i = 0; i < legs.length; i++) {
+          const leg = legs[i];
+          if (i === 0) {
+            const st = latLngTupleFromLatLng(leg.start_location);
+            if (st) routeVertexPoints.push(st);
+          }
+          const en = latLngTupleFromLatLng(leg.end_location);
+          if (en) routeVertexPoints.push(en);
+        }
+        const dedupedVertices = [];
+        for (const p of routeVertexPoints) {
+          const prev = dedupedVertices[dedupedVertices.length - 1];
+          if (
+            !prev ||
+            Math.round(prev.lat * 1e4) !== Math.round(p.lat * 1e4) ||
+            Math.round(prev.lng * 1e4) !== Math.round(p.lng * 1e4)
+          ) {
+            dedupedVertices.push(p);
+          }
+        }
+
         resolve({
           meters,
           durationText: formatCombinedDurationSeconds(durationSeconds),
@@ -302,6 +356,7 @@ function directionsRouteOnce(svc, request) {
           endLat,
           endLng,
           legCount: legs.length,
+          routeVertexPoints: dedupedVertices,
         });
       });
     };
@@ -440,6 +495,133 @@ function applyDayDistanceToDom(day) {
   }
 }
 
+/** Build ordered pins: Directions vertices per day, then stops with `maps?q=lat,lng`. */
+function collectTripMapPins(days) {
+  const pins = [];
+  for (const day of days || []) {
+    const di = day.dayIndex;
+    const dayLabel = `Day ${di}${day.date ? ` · ${day.date}` : ""}`;
+
+    if (Array.isArray(day.googleRouteVertexPoints) && day.googleRouteVertexPoints.length) {
+      day.googleRouteVertexPoints.forEach((pt, i) => {
+        pins.push({
+          lat: pt.lat,
+          lng: pt.lng,
+          title: `${dayLabel} — route ${i + 1}/${day.googleRouteVertexPoints.length}`,
+        });
+      });
+    } else if (day.routeEndLat != null && day.routeEndLng != null) {
+      pins.push({
+        lat: day.routeEndLat,
+        lng: day.routeEndLng,
+        title: `${dayLabel} — end of day (Directions)`,
+      });
+    }
+
+    for (const st of day.stops || []) {
+      const ll = parseLatLngFromGoogleMapsUrl(st.mapsUrl);
+      if (ll) {
+        pins.push({
+          lat: ll.lat,
+          lng: ll.lng,
+          title: `${dayLabel} — ${st.label || "Stop"}${st.place ? `: ${st.place}` : ""}`,
+        });
+      }
+    }
+  }
+
+  const merged = [];
+  const byKey = new Map();
+  for (const p of pins) {
+    const k = `${Math.round(p.lat * 1e4)},${Math.round(p.lng * 1e4)}`;
+    if (byKey.has(k)) {
+      const prev = byKey.get(k);
+      prev.title = `${prev.title} · ${p.title}`;
+      continue;
+    }
+    byKey.set(k, p);
+    merged.push(p);
+  }
+  return merged;
+}
+
+function clearTripOverviewMapLayers() {
+  if (Array.isArray(window.__tripOverviewMarkers)) {
+    window.__tripOverviewMarkers.forEach((m) => {
+      try {
+        m.setMap(null);
+      } catch {
+        /* ignore */
+      }
+    });
+  }
+  window.__tripOverviewMarkers = [];
+  if (window.__tripRoutePolyline) {
+    try {
+      window.__tripRoutePolyline.setMap(null);
+    } catch {
+      /* ignore */
+    }
+    window.__tripRoutePolyline = null;
+  }
+}
+
+/** After per-day Directions runs, plot pins (and a light polyline) on `#map`. */
+function renderTripOverviewMap(days) {
+  const map = window.__tripOverviewMap;
+  if (!map || !window.google?.maps?.Marker) return;
+
+  const pins = collectTripMapPins(days);
+  clearTripOverviewMapLayers();
+
+  if (!pins.length) return;
+
+  const bounds = new google.maps.LatLngBounds();
+  const path = [];
+
+  window.__tripOverviewMarkers = pins.map((p) => {
+    const pos = { lat: p.lat, lng: p.lng };
+    path.push(pos);
+    bounds.extend(pos);
+    return new google.maps.Marker({
+      map,
+      position: pos,
+      title: p.title,
+      optimized: true,
+    });
+  });
+
+  if (path.length >= 2) {
+    window.__tripRoutePolyline = new google.maps.Polyline({
+      path,
+      geodesic: true,
+      strokeColor: "#1a5f7a",
+      strokeOpacity: 0.75,
+      strokeWeight: 2,
+      map,
+    });
+  }
+
+  try {
+    map.fitBounds(bounds);
+  } catch {
+    try {
+      map.setCenter(bounds.getCenter());
+      map.setZoom(5);
+    } catch {
+      /* ignore */
+    }
+  }
+}
+
+/** Called from `index.html` initMap after the embed exists — covers map-ready after Directions finished. */
+window.__renderTripOverviewMapIfReady = function () {
+  const days = window.__tripDaysForMap;
+  if (days && window.__tripOverviewMap) {
+    renderTripOverviewMap(days);
+  }
+};
+
 async function fetchGoogleDistancesForDays(days) {
   if (!window.google?.maps?.DirectionsService) return;
   const svc = new google.maps.DirectionsService();
@@ -461,6 +643,7 @@ async function fetchGoogleDistancesForDays(days) {
       day.googleDirectionsLegCount = null;
       day.routeEndLat = null;
       day.routeEndLng = null;
+      day.googleRouteVertexPoints = [];
       day.googleDistanceError = "Unrecognized Maps URL";
       applyDayDistanceToDom(day);
       continue;
@@ -470,6 +653,7 @@ async function fetchGoogleDistancesForDays(days) {
       day.googleDirectionsLegCount = null;
       day.routeEndLat = null;
       day.routeEndLng = null;
+      day.googleRouteVertexPoints = [];
       day.googleDistanceError = "Maps API not ready";
       applyDayDistanceToDom(day);
       continue;
@@ -477,10 +661,15 @@ async function fetchGoogleDistancesForDays(days) {
 
     try {
       const request = buildDirectionsRequest(parsed, travelMode);
-      const { meters, durationText, durationSeconds, endLat, endLng, legCount } = await directionsRouteWithRetry(
-        svc,
-        request
-      );
+      const {
+        meters,
+        durationText,
+        durationSeconds,
+        endLat,
+        endLng,
+        legCount,
+        routeVertexPoints,
+      } = await directionsRouteWithRetry(svc, request);
       day.googleDistanceKm = Math.round(meters / 100) / 10;
       day.googleDurationText = durationText;
       day.googleDurationSeconds = durationSeconds;
@@ -488,11 +677,13 @@ async function fetchGoogleDistancesForDays(days) {
       day.routeEndLat = endLat;
       day.routeEndLng = endLng;
       day.googleDirectionsLegCount = legCount ?? null;
+      day.googleRouteVertexPoints = Array.isArray(routeVertexPoints) ? routeVertexPoints : [];
     } catch (e) {
       day.googleDistanceKm = null;
       day.googleDirectionsLegCount = null;
       day.routeEndLat = null;
       day.routeEndLng = null;
+      day.googleRouteVertexPoints = [];
       day.googleDistanceError = e?.message || "REQUEST_DENIED";
       if (list.indexOf(day) === 0) {
         console.warn(
@@ -1383,6 +1574,7 @@ function scheduleGoogleDistanceFetch(days, trip) {
     } finally {
       fetchFinished = true;
       updateTotalRouteDistanceUI(days);
+      renderTripOverviewMap(days);
       queueWeatherAfterDistances();
     }
   };
@@ -1417,6 +1609,7 @@ function scheduleGoogleDistanceFetch(days, trip) {
         window.clearInterval(directionsPollId);
         directionsPollId = null;
         updateTotalRouteDistanceUI(days);
+        renderTripOverviewMap(days);
         queueWeatherAfterDistances();
       }
     }, 50);
@@ -1431,6 +1624,7 @@ function scheduleGoogleDistanceFetch(days, trip) {
     if (!fetchFinished && fetchStarted) {
       console.warn("[Directions] Safety timeout — forcing UI refresh (some requests may still be pending).");
       updateTotalRouteDistanceUI(days);
+      renderTripOverviewMap(days);
       queueWeatherAfterDistances();
     }
   }, 120000);
@@ -2909,6 +3103,7 @@ function syncJumpNav() {
     "content",
     "homework",
     "checklists",
+    "map-embed",
     "links",
     "parts-shops",
   ]);
@@ -2980,6 +3175,7 @@ async function main() {
       if (pr) pr.appendChild(el("p", { class: "muted", text: "Parts directory did not load (check data/motorcycle-parts-shops.json)." }));
     }
     renderTrip(data, babHostsMap, routeMeta);
+    window.__tripDaysForMap = data.days;
     scheduleGoogleDistanceFetch(data.days, data.trip);
     syncJumpNav();
     window.addEventListener("hashchange", () => {

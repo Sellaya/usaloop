@@ -50,6 +50,7 @@
             <a href="#content">Content</a>
             <a href="#homework">Homework</a>
             <a href="#checklists">Packing</a>
+            <a href="#map-embed">Map</a>
           </nav>
         </div>
       </div>
@@ -170,6 +171,10 @@
       </section>
 
       <section id="map-embed" aria-label="Map">
+        <h2 class="map-embed-title">Route overview</h2>
+        <p class="muted map-embed-intro">
+          Pins from each day’s Google Directions leg (when available) plus any stop links that include exact coordinates.
+        </p>
         <div id="map" style="height: 500px; width: 100%;"></div>
       </section>
     </main>
@@ -188,7 +193,7 @@
         try {
           var el = document.getElementById("map");
           if (el && window.google && window.google.maps) {
-            new window.google.maps.Map(el, {
+            window.__tripOverviewMap = new window.google.maps.Map(el, {
               center: { lat: 39.8283, lng: -98.5795 },
               zoom: 4,
               mapTypeControl: true,
@@ -198,6 +203,9 @@
           console.error("[Map embed]", e);
         }
         window.dispatchEvent(new CustomEvent("googlemapsjsready"));
+        if (typeof window.__renderTripOverviewMapIfReady === "function") {
+          window.__renderTripOverviewMapIfReady();
+        }
       };
       (function loadGoogleMapsJs() {
         var k = window.__GOOGLE_MAPS_API_KEY__;

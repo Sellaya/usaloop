@@ -257,6 +257,19 @@ section {
   margin-bottom: 2.35rem;
 }
 
+.map-embed-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--doc-navy);
+}
+
+.map-embed-intro {
+  margin: 0 0 0.75rem;
+  font-size: 0.8125rem;
+  max-width: 42rem;
+}
+
 #map-embed #map {
   border-radius: 10px;
   overflow: hidden;
