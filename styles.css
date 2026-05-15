@@ -266,15 +266,129 @@ section {
 
 .map-embed-intro {
   margin: 0 0 0.75rem;
-  font-size: 0.8125rem;
+  font-size: clamp(0.75rem, 2.8vw, 0.8125rem);
   max-width: 42rem;
+  line-height: 1.45;
 }
 
-#map-embed #map {
-  border-radius: 10px;
+#map-embed {
+  margin-bottom: max(2.35rem, env(safe-area-inset-bottom, 0px));
+}
+
+.map-embed-frame {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--border);
-  box-sizing: border-box;
+  box-shadow: var(--shadow);
+  background: var(--surface2);
+}
+
+.map-embed-canvas {
+  width: 100%;
+  min-height: min(52dvh, 520px);
+  height: clamp(300px, 58dvh, 560px);
+  touch-action: pan-x pan-y pinch-zoom;
+}
+
+/* Global `img { max-width: 100% }` breaks Google map tiles — reset inside embed only. */
+.map-embed-canvas .gm-style img,
+.map-embed-canvas img {
+  max-width: none !important;
+}
+
+@media (max-width: 520px) {
+  .map-embed-title {
+    font-size: clamp(0.95rem, 4.2vw, 1.05rem);
+  }
+
+  .map-embed-canvas {
+    min-height: 260px;
+    height: clamp(260px, 50dvh, 480px);
+  }
+}
+
+/* InfoWindow content (rendered in map overlay, uses our class names) */
+.map-iw {
+  font-family: var(--font);
+  padding: 0.15rem 0.1rem 0.25rem;
+  min-width: min(13.5rem, 78vw);
+  max-width: min(18rem, 90vw);
+}
+
+.map-iw-chip {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
+  margin-bottom: 0.45rem;
+  color: #fff;
+}
+
+.map-iw-chip--leg-1 {
+  background: linear-gradient(135deg, #1e6fa2, #155a87);
+}
+
+.map-iw-chip--leg-2 {
+  background: linear-gradient(135deg, #e8942c, #c9781a);
+  color: #1a1208;
+}
+
+.map-iw-chip--leg-3 {
+  background: linear-gradient(135deg, #2f9f6a, #248056);
+}
+
+.map-iw-chip--stop {
+  background: linear-gradient(135deg, #7c4fe0, #5f3dc4);
+}
+
+.map-iw-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--doc-navy);
+  line-height: 1.25;
+  margin-bottom: 0.35rem;
+}
+
+.map-iw-sub {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  line-height: 1.4;
+  margin-bottom: 0.65rem;
+}
+
+.map-iw-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.map-iw-btn {
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--doc-navy);
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.map-iw-btn:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--doc-navy);
+}
+
+.map-iw-btn:active {
+  transform: scale(0.98);
 }
 
 /* Hash links land below sticky header + notch */

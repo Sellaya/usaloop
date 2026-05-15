@@ -173,9 +173,11 @@
       <section id="map-embed" aria-label="Map">
         <h2 class="map-embed-title">Route overview</h2>
         <p class="muted map-embed-intro">
-          Pins from each day’s Google Directions leg (when available) plus any stop links that include exact coordinates.
+          Tap a pin for details. Colours follow trip chapters (east → Texas → home). Pins use each day’s Directions path and any stop links with exact coordinates.
         </p>
-        <div id="map" style="height: 500px; width: 100%;"></div>
+        <div class="map-embed-frame">
+          <div id="map" class="map-embed-canvas" role="region" aria-label="Interactive route map"></div>
+        </div>
       </section>
     </main>
 
@@ -193,10 +195,23 @@
         try {
           var el = document.getElementById("map");
           if (el && window.google && window.google.maps) {
+            var P = window.google.maps.ControlPosition;
             window.__tripOverviewMap = new window.google.maps.Map(el, {
               center: { lat: 39.8283, lng: -98.5795 },
               zoom: 4,
               mapTypeControl: true,
+              mapTypeControlOptions: {
+                style: window.google.maps.MapTypeControlStyle.DEFAULT,
+                position: P.TOP_LEFT,
+              },
+              zoomControl: true,
+              zoomControlOptions: { position: P.RIGHT_CENTER },
+              fullscreenControl: true,
+              fullscreenControlOptions: { position: P.BOTTOM_RIGHT },
+              streetViewControl: false,
+              gestureHandling: "greedy",
+              clickableIcons: false,
+              keyboardShortcuts: true,
             });
           }
         } catch (e) {

@@ -13,6 +13,131 @@ let tripDisplayMeta = { units: "metric" };
 
 const KM_PER_MI = 1.609344;
 
+/** Subtle base map — matches site greys; keeps roads + water, quiets POI clutter. */
+const TRIP_MAP_BASE_STYLES = [
+  { elementType: "geometry", stylers: [{ color: "#eef1f5" }] },
+  { elementType: "labels.text.fill", stylers: [{ color: "#4a5d6f" }] },
+  { elementType: "labels.text.stroke", stylers: [{ color: "#ffffff" }, { weight: 3 }] },
+  { featureType: "administrative", elementType: "geometry.stroke", stylers: [{ color: "#c5ced9" }, { weight: 0.6 }] },
+  { featureType: "road", elementType: "geometry", stylers: [{ color: "#ffffff" }] },
+  { featureType: "road", elementType: "geometry.stroke", stylers: [{ color: "#d0d8e3" }, { weight: 0.7 }] },
+  { featureType: "road.highway", elementType: "geometry.stroke", stylers: [{ color: "#b8c4d4" }, { weight: 0.9 }] },
+  { featureType: "water", elementType: "geometry", stylers: [{ color: "#b8cfe0" }] },
+  { featureType: "poi", stylers: [{ visibility: "off" }] },
+  { featureType: "poi.park", stylers: [{ visibility: "on" }] },
+  { featureType: "poi.park", elementType: "geometry", stylers: [{ color: "#c8dcc8" }] },
+  { featureType: "transit", stylers: [{ visibility: "off" }] },
+];
+
+/** Chapter colours (align with overview legs: 1–9, 10–24, 25–36). */
+const ROUTE_LEG_PIN = {
+  "1": { fill: "#1e6fa2", ring: "#0f3d5c", label: "#ffffff" },
+  "2": { fill: "#e8942c", ring: "#8a5208", label: "#1a1208" },
+  "3": { fill: "#2f9f6a", ring: "#145236", label: "#ffffff" },
+  stop: { fill: "#7c4fe0", ring: "#3d1f7a", label: "#ffffff" },
+};
+
+function pinGlyphFor(kind, dayIndex) {
+  if (kind === "stop") return "\u2605";
+  const n = Number(dayIndex);
+  if (!Number.isFinite(n) || n < 1) return "\u2022";
+  return n > 99 ? "99" : String(n);
+}
+
+function svgRoutePinDataUrl({ fill, ring, labelColor, glyph }) {
+  const g = String(glyph).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="52" viewBox="0 0 40 52"><defs><filter id="sd" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#1a2b40" flood-opacity="0.22"/></filter></defs><path filter="url(#sd)" d="M20 3C11.7 3 5 9.5 5 17.4c0 7.8 6.3 18.4 15 31.6 9-13.2 15-23.8 15-31.6C35 9.5 28.3 3 20 3z" fill="${fill}" stroke="${ring}" stroke-width="1.75"/><ellipse cx="20" cy="17.5" rx="9" ry="9" fill="rgba(255,255,255,0.92)"/><text x="20" y="21.5" text-anchor="middle" font-family="DM Sans,system-ui,sans-serif" font-size="12" font-weight="700" fill="${labelColor}">${g}</text></svg>`;
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+}
+
+function svgStopPinDataUrl({ fill, ring, labelColor }) {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="52" viewBox="0 0 40 52"><defs><filter id="sd2" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#1a2b40" flood-opacity="0.22"/></filter></defs><path filter="url(#sd2)" d="M20 3C11.7 3 5 9.5 5 17.4c0 7.8 6.3 18.4 15 31.6 9-13.2 15-23.8 15-31.6C35 9.5 28.3 3 20 3z" fill="${fill}" stroke="${ring}" stroke-width="1.75"/><circle cx="20" cy="17.5" r="8.5" fill="rgba(255,255,255,0.94)"/><text x="20" y="22" text-anchor="middle" font-family="DM Sans,system-ui,sans-serif" font-size="13" font-weight="700" fill="${labelColor}">\u2605</text></svg>`;
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+}
+
+function markerIconForPin(pin, compact) {
+  const T = window.google.maps;
+  const w = compact ? 34 : 40;
+  const h = compact ? 44 : 52;
+  const ax = w / 2;
+  const ay = h;
+  const pal = pin.kind === "stop" ? ROUTE_LEG_PIN.stop : ROUTE_LEG_PIN[pin.legKey] || ROUTE_LEG_PIN["1"];
+  const glyph = pinGlyphFor(pin.kind, pin.dayIndex);
+  const url =
+    pin.kind === "stop"
+      ? svgStopPinDataUrl({ fill: pal.fill, ring: pal.ring, labelColor: pal.label })
+      : svgRoutePinDataUrl({
+          fill: pal.fill,
+          ring: pal.ring,
+          labelColor: pal.label,
+          glyph,
+        });
+  return {
+    url,
+    scaledSize: new T.Size(w, h),
+    anchor: new T.Point(ax, ay),
+  };
+}
+
+function getOrCreateTripMapInfoWindow() {
+  const T = window.google.maps;
+  if (!window.__tripMapInfoWindow && T?.InfoWindow) {
+    window.__tripMapInfoWindow = new T.InfoWindow({
+      maxWidth: 300,
+      ariaLabel: "Route pin",
+    });
+  }
+  return window.__tripMapInfoWindow;
+}
+
+function buildTripMapInfoDom(pin) {
+  const root = el("div", { class: "map-iw" });
+  const chip = el("span", {
+    class: `map-iw-chip map-iw-chip--${pin.kind === "stop" ? "stop" : `leg-${pin.legKey || "1"}`}`,
+    text: pin.kind === "stop" ? "Stop" : `Chapter ${pin.legKey}`,
+  });
+  root.appendChild(chip);
+  root.appendChild(el("div", { class: "map-iw-title", text: pin.headline }));
+  root.appendChild(el("div", { class: "map-iw-sub", text: pin.subline }));
+  const row = el("div", { class: "map-iw-actions" });
+  const id = `day-${pin.dayIndex}`;
+  const jump = el("button", {
+    type: "button",
+    class: "map-iw-btn",
+    text: "Open in itinerary",
+  });
+  jump.addEventListener("click", () => {
+    const iw = window.__tripMapInfoWindow;
+    if (iw) iw.close();
+    const det = document.getElementById(id);
+    if (det && det.tagName === "DETAILS") {
+      det.open = true;
+      window.location.hash = id;
+      syncDayDetailsFromHash();
+      det.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+  row.appendChild(jump);
+  root.appendChild(row);
+  return root;
+}
+
+function applyTripMapChrome(map) {
+  if (!map || window.__tripMapChromeApplied) return;
+  window.__tripMapChromeApplied = true;
+  map.setOptions({
+    styles: TRIP_MAP_BASE_STYLES,
+    backgroundColor: "#eef1f5",
+  });
+  if (!window.__tripMapGlobalListeners) {
+    window.__tripMapGlobalListeners = [];
+    const closeIw = () => {
+      if (window.__tripMapInfoWindow) window.__tripMapInfoWindow.close();
+    };
+    window.__tripMapGlobalListeners.push(map.addListener("click", closeIw));
+  }
+}
+
 /**
  * Google daily forecast returns up to 10 calendar days from “today” at the location.
  * We must request the full window so each ride `day.date` can match `displayDate` (was broken at 1).
@@ -500,21 +625,32 @@ function collectTripMapPins(days) {
   const pins = [];
   for (const day of days || []) {
     const di = day.dayIndex;
-    const dayLabel = `Day ${di}${day.date ? ` · ${day.date}` : ""}`;
+    const legKey = inferLeg(di);
+    const datePart = day.date ? ` · ${day.date}` : "";
+    const headline = `Day ${di}${datePart}`;
 
     if (Array.isArray(day.googleRouteVertexPoints) && day.googleRouteVertexPoints.length) {
+      const tot = day.googleRouteVertexPoints.length;
       day.googleRouteVertexPoints.forEach((pt, i) => {
         pins.push({
           lat: pt.lat,
           lng: pt.lng,
-          title: `${dayLabel} — route ${i + 1}/${day.googleRouteVertexPoints.length}`,
+          dayIndex: di,
+          legKey,
+          kind: "route",
+          headline,
+          subline: `Route point ${i + 1} of ${tot} this day`,
         });
       });
     } else if (day.routeEndLat != null && day.routeEndLng != null) {
       pins.push({
         lat: day.routeEndLat,
         lng: day.routeEndLng,
-        title: `${dayLabel} — end of day (Directions)`,
+        dayIndex: di,
+        legKey,
+        kind: "route",
+        headline,
+        subline: "End of day (Google Directions)",
       });
     }
 
@@ -524,7 +660,11 @@ function collectTripMapPins(days) {
         pins.push({
           lat: ll.lat,
           lng: ll.lng,
-          title: `${dayLabel} — ${st.label || "Stop"}${st.place ? `: ${st.place}` : ""}`,
+          dayIndex: di,
+          legKey,
+          kind: "stop",
+          headline,
+          subline: `${st.label || "Stop"}${st.place ? ` — ${st.place}` : ""}`,
         });
       }
     }
@@ -536,7 +676,8 @@ function collectTripMapPins(days) {
     const k = `${Math.round(p.lat * 1e4)},${Math.round(p.lng * 1e4)}`;
     if (byKey.has(k)) {
       const prev = byKey.get(k);
-      prev.title = `${prev.title} · ${p.title}`;
+      prev.subline = `${prev.subline} · ${p.subline}`;
+      if (p.kind === "stop" || prev.kind === "stop") prev.kind = "stop";
       continue;
     }
     byKey.set(k, p);
@@ -546,9 +687,17 @@ function collectTripMapPins(days) {
 }
 
 function clearTripOverviewMapLayers() {
+  if (window.__tripMapInfoWindow) {
+    try {
+      window.__tripMapInfoWindow.close();
+    } catch {
+      /* ignore */
+    }
+  }
   if (Array.isArray(window.__tripOverviewMarkers)) {
     window.__tripOverviewMarkers.forEach((m) => {
       try {
+        window.google?.maps?.event?.clearInstanceListeners(m);
         m.setMap(null);
       } catch {
         /* ignore */
@@ -558,6 +707,7 @@ function clearTripOverviewMapLayers() {
   window.__tripOverviewMarkers = [];
   if (window.__tripRoutePolyline) {
     try {
+      window.google?.maps?.event?.clearInstanceListeners(window.__tripRoutePolyline);
       window.__tripRoutePolyline.setMap(null);
     } catch {
       /* ignore */
@@ -571,43 +721,89 @@ function renderTripOverviewMap(days) {
   const map = window.__tripOverviewMap;
   if (!map || !window.google?.maps?.Marker) return;
 
+  applyTripMapChrome(map);
+
   const pins = collectTripMapPins(days);
   clearTripOverviewMapLayers();
 
   if (!pins.length) return;
 
+  const compact = typeof window.matchMedia === "function" && window.matchMedia("(max-width: 520px)").matches;
   const bounds = new google.maps.LatLngBounds();
   const path = [];
+  const iw = getOrCreateTripMapInfoWindow();
+  const strokeW = typeof window.devicePixelRatio === "number" && window.devicePixelRatio >= 2 ? 4 : 3;
 
-  window.__tripOverviewMarkers = pins.map((p) => {
-    const pos = { lat: p.lat, lng: p.lng };
-    path.push(pos);
-    bounds.extend(pos);
-    return new google.maps.Marker({
-      map,
-      position: pos,
-      title: p.title,
-      optimized: true,
-    });
+  pins.forEach((p) => {
+    path.push({ lat: p.lat, lng: p.lng });
+    bounds.extend({ lat: p.lat, lng: p.lng });
   });
 
   if (path.length >= 2) {
-    window.__tripRoutePolyline = new google.maps.Polyline({
-      path,
-      geodesic: true,
-      strokeColor: "#1a5f7a",
-      strokeOpacity: 0.75,
-      strokeWeight: 2,
-      map,
-    });
+    try {
+      window.__tripRoutePolyline = new google.maps.Polyline({
+        path,
+        geodesic: true,
+        strokeColor: "#1a5f7a",
+        strokeOpacity: 0.55,
+        strokeWeight: strokeW,
+        zIndex: 1,
+        icons: [
+          {
+            icon: {
+              path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+              scale: compact ? 2.6 : 3.2,
+              strokeColor: "#1a5f7a",
+              fillColor: "#1a5f7a",
+              fillOpacity: 0.9,
+            },
+            offset: "50%",
+            repeat: compact ? "100px" : "140px",
+          },
+        ],
+        map,
+      });
+    } catch {
+      window.__tripRoutePolyline = new google.maps.Polyline({
+        path,
+        geodesic: true,
+        strokeColor: "#1a5f7a",
+        strokeOpacity: 0.55,
+        strokeWeight: strokeW,
+        zIndex: 1,
+        map,
+      });
+    }
   }
 
+  window.__tripOverviewMarkers = pins.map((p, idx) => {
+    const pos = { lat: p.lat, lng: p.lng };
+    const z =
+      p.kind === "stop"
+        ? 800 + (p.dayIndex || 0) * 3 + (idx % 4)
+        : 200 + (p.dayIndex || 0) * 4 + (idx % 4);
+    const m = new google.maps.Marker({
+      map,
+      position: pos,
+      icon: markerIconForPin(p, compact),
+      zIndex: z,
+      optimized: false,
+      animation: pins.length <= 20 ? google.maps.Animation.DROP : undefined,
+    });
+    m.addListener("click", () => {
+      iw.setContent(buildTripMapInfoDom(p));
+      iw.open({ map, anchor: m });
+    });
+    return m;
+  });
+
   try {
-    map.fitBounds(bounds);
+    const pad = compact ? 16 : 28;
+    map.fitBounds(bounds, { top: pad + 8, right: pad, bottom: pad, left: pad });
   } catch {
     try {
       map.setCenter(bounds.getCenter());
-      map.setZoom(5);
+      map.setZoom(compact ? 4 : 5);
     } catch {
       /* ignore */
     }
