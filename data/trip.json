@@ -1460,7 +1460,7 @@
   },
   "beforeYouGo": [
     "Trip window in this file: 2026-05-20 → 2026-06-24. If you move departure, update trip.startDate, trip.endDate, and every days[].date in sync (or regenerate from your spreadsheet).",
-    "Maps: set GOOGLE_MAPS_API_KEY in .env (see .env.example), run npm run build, then serve. On Vercel, add the same variable under Environment Variables — build generates google-maps-config.js. Restrict the key by HTTP referrer (localhost + your Vercel URL). Re-check each leg in Maps after you set exact pins.",
+    "Maps: set GOOGLE_MAPS_API_KEY (browser map) and GOOGLE_MAPS_SERVER_KEY (weather proxy) in .env — see .env.example. Run npm run build, then serve. On Vercel, add those plus GOOGLE_CLIENT_ID for the build so google-maps-config.js is generated. Restrict the browser key by HTTP referrer (localhost + your deploy URL). Re-check each leg in Maps after you set exact pins.",
     "Bunk a Biker stays: full host contact cards (phone, text, email, Gmail, draft message) render on each day that uses a host — primary hosts only in bab-hosts.json for this build.",
     "Confirm each host address, gate codes, and bike parking before arrival day.",
     "Arches NP: verify current entry and parking rules on nps.gov/arch for your dates (timed-entry reservations were discontinued as of 2026 research — lots can still fill).",

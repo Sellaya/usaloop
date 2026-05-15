@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 /**
  * Writes google-maps-config.js from env:
- * - GOOGLE_MAPS_API_KEY — browser Maps JS + Directions.
+ * - GOOGLE_MAPS_API_KEY — browser Maps JS + Directions + Places (referrer-restricted key).
+ * - GOOGLE_MAPS_SERVER_KEY — optional; Weather proxy (api/weather.js) prefers this server key.
  * - GOOGLE_CLIENT_ID — optional OAuth web client id as window.__GOOGLE_OAUTH_CLIENT_ID__
- *   (public; safe in the bundle; never put GOOGLE_CLIENT_SECRET here).
+ *   (public in the bundle). Never put GOOGLE_CLIENT_SECRET in generated JS.
  *
  * Weather uses api/weather.js with GOOGLE_MAPS_SERVER_KEY if set, else GOOGLE_MAPS_API_KEY
  * (HTTP-referrer keys often fail from Node — use a separate server key; see .env.example).

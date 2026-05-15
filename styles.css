@@ -257,6 +257,13 @@ section {
   margin-bottom: 2.35rem;
 }
 
+#map-embed #map {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-sizing: border-box;
+}
+
 /* Hash links land below sticky header + notch */
 main > section[id] {
   scroll-margin-top: var(--scroll-margin);

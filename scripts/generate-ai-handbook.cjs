@@ -62,7 +62,7 @@ md += "- **Stack:** Static HTML/CSS/JS (`index.html`, `app.js`, `styles.css`). N
 md +=
   "- **Data:** JSON files under `data/` are loaded at runtime via `fetch()` — you need a local server (`npm run dev` or any static server).\n";
 md +=
-  "- **Maps:** `npm run build` runs `scripts/inject-maps-key.js` and writes `google-maps-config.js` from `GOOGLE_MAPS_API_KEY` (see `.env.example`). Distances/weather use Google Maps JS when the key is present.\n";
+  "- **Maps:** `npm run build` runs `scripts/inject-maps-key.js` and writes `google-maps-config.js` from `GOOGLE_MAPS_API_KEY` and optional `GOOGLE_CLIENT_ID` (see `.env.example`). Use `GOOGLE_MAPS_SERVER_KEY` for the weather proxy. Distances/weather use Google Maps JS when keys are set.\n";
 md += '- **Deploy:** `vercel.json` — build command `npm run build`, output is project root.\n';
 md += `- **GPX:** \`${esc(trip.links?.gpxFolder)}\`\n`;
 md += `- **Weather link:** \`${esc(trip.links?.weather)}\`\n\n`;

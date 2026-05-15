@@ -64,7 +64,7 @@
 
 - **Stack:** Static HTML/CSS/JS (`index.html`, `app.js`, `styles.css`). No React.
 - **Data:** JSON files under `data/` are loaded at runtime via `fetch()` — you need a local server (`npm run dev` or any static server).
-- **Maps:** `npm run build` runs `scripts/inject-maps-key.js` and writes `google-maps-config.js` from `GOOGLE_MAPS_API_KEY` (see `.env.example`). Distances/weather use Google Maps JS when the key is present.
+- **Maps:** `npm run build` runs `scripts/inject-maps-key.js` and writes `google-maps-config.js` from `GOOGLE_MAPS_API_KEY` and optional `GOOGLE_CLIENT_ID` (see `.env.example`). Use `GOOGLE_MAPS_SERVER_KEY` for the weather proxy. Distances/weather use Google Maps JS when keys are set.
 - **Deploy:** `vercel.json` — build command `npm run build`, output is project root.
 - **GPX:** `gpx/toronto-southwest-loop-2026.gpx`
 - **Weather link:** `https://www.weather.gov/`
@@ -648,7 +648,7 @@ Each host in JSON also has a multi-line `routeGuidance` string (corridor, distan
 ### beforeYouGo (maintenance reminders for the project)
 
 - Trip window in this file: 2026-05-20 → 2026-06-24. If you move departure, update trip.startDate, trip.endDate, and every days[].date in sync (or regenerate from your spreadsheet).
-- Maps: set GOOGLE_MAPS_API_KEY in .env (see .env.example), run npm run build, then serve. On Vercel, add the same variable under Environment Variables — build generates google-maps-config.js. Restrict the key by HTTP referrer (localhost + your Vercel URL). Re-check each leg in Maps after you set exact pins.
+- Maps: set GOOGLE_MAPS_API_KEY (browser map) and GOOGLE_MAPS_SERVER_KEY (weather proxy) in .env — see .env.example. Run npm run build, then serve. On Vercel, add those plus GOOGLE_CLIENT_ID for the build so google-maps-config.js is generated. Restrict the browser key by HTTP referrer (localhost + your deploy URL). Re-check each leg in Maps after you set exact pins.
 - Bunk a Biker stays: full host contact cards (phone, text, email, Gmail, draft message) render on each day that uses a host — primary hosts only in bab-hosts.json for this build.
 - Confirm each host address, gate codes, and bike parking before arrival day.
 - Arches NP: verify current entry and parking rules on nps.gov/arch for your dates (timed-entry reservations were discontinued as of 2026 research — lots can still fill).

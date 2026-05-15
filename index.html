@@ -168,14 +168,35 @@
           <div id="checklist-root"></div>
         </div>
       </section>
+
+      <section id="map-embed" aria-label="Map">
+        <div id="map" style="height: 500px; width: 100%;"></div>
+      </section>
     </main>
 
     <script src="google-maps-config.stub.js"></script>
     <script src="google-maps-config.js"></script>
     <script>
-      window.__onGmInit = function () {
+      window.gm_authFailure = function () {
+        window.__googleMapsLoadIssue = "auth_failure";
+        window.__googleMapsJsReady = false;
+        window.dispatchEvent(new CustomEvent("googlemapsjsready"));
+      };
+      window.initMap = function () {
         window.__googleMapsJsReady = true;
         window.__googleMapsLoadIssue = undefined;
+        try {
+          var el = document.getElementById("map");
+          if (el && window.google && window.google.maps) {
+            new window.google.maps.Map(el, {
+              center: { lat: 39.8283, lng: -98.5795 },
+              zoom: 4,
+              mapTypeControl: true,
+            });
+          }
+        } catch (e) {
+          console.error("[Map embed]", e);
+        }
         window.dispatchEvent(new CustomEvent("googlemapsjsready"));
       };
       (function loadGoogleMapsJs() {
@@ -191,7 +212,7 @@
         s.src =
           "https://maps.googleapis.com/maps/api/js?key=" +
           encodeURIComponent(String(k).trim()) +
-          "&v=weekly&libraries=routes&loading=async&callback=__onGmInit";
+          "&v=weekly&libraries=routes,places&loading=async&callback=initMap";
         s.async = true;
         s.defer = true;
         s.onerror = function () {

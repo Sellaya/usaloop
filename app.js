@@ -1279,13 +1279,15 @@ function updateTotalRouteDistanceUI(days) {
   if (legsOk === 0) {
     const issue = window.__googleMapsLoadIssue;
     const err =
-      issue === "script_error"
-        ? "Google Maps script did not load (blocked or network). Allow maps.googleapis.com and reload."
-        : issue === "load_timeout"
-          ? "Google Maps loaded too slowly. Check connection and ad blockers; ensure your API key allows this site’s referrer."
-          : !window.google?.maps?.DirectionsService
-            ? "Maps JavaScript API did not initialize. Verify the API key and HTTP referrer restrictions (127.0.0.1, localhost, your deploy URL)."
-            : "No driving distances returned. In Google Cloud enable Directions API (Legacy) for this project — same key as Maps JS — plus billing. See browser console for the first leg’s status.";
+      issue === "auth_failure"
+        ? "Google Maps rejected the API key (InvalidKeyMapError / auth). Use a Browser key with Maps JavaScript API enabled, billing on, and Application restriction → HTTP referrers including this origin (e.g. http://127.0.0.1:8765/* and your deploy URL). Do not use the OAuth client id as the Maps key — GOOGLE_MAPS_API_KEY must be an API key from Credentials."
+        : issue === "script_error"
+          ? "Google Maps script did not load (blocked or network). Allow maps.googleapis.com and reload."
+          : issue === "load_timeout"
+            ? "Google Maps loaded too slowly. Check connection and ad blockers; ensure your API key allows this site’s referrer."
+            : !window.google?.maps?.DirectionsService
+              ? "Maps JavaScript API did not initialize. Verify the API key and HTTP referrer restrictions (127.0.0.1, localhost, your deploy URL)."
+              : "No driving distances returned. In Google Cloud enable Directions API (Legacy) for this project — same key as Maps JS — plus billing. See browser console for the first leg’s status.";
     if (hero) {
       hero.hidden = false;
       hero.classList.add("hero-route-total--muted");
