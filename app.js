@@ -13,20 +13,39 @@ let tripDisplayMeta = { units: "metric" };
 
 const KM_PER_MI = 1.609344;
 
-/** Subtle base map — matches site greys; keeps roads + water, quiets POI clutter. */
+/** Travel-poster style: warm parchment land, coastal water, parks & attractions for touring. */
 const TRIP_MAP_BASE_STYLES = [
-  { elementType: "geometry", stylers: [{ color: "#eef1f5" }] },
-  { elementType: "labels.text.fill", stylers: [{ color: "#4a5d6f" }] },
-  { elementType: "labels.text.stroke", stylers: [{ color: "#ffffff" }, { weight: 3 }] },
-  { featureType: "administrative", elementType: "geometry.stroke", stylers: [{ color: "#c5ced9" }, { weight: 0.6 }] },
-  { featureType: "road", elementType: "geometry", stylers: [{ color: "#ffffff" }] },
-  { featureType: "road", elementType: "geometry.stroke", stylers: [{ color: "#d0d8e3" }, { weight: 0.7 }] },
-  { featureType: "road.highway", elementType: "geometry.stroke", stylers: [{ color: "#b8c4d4" }, { weight: 0.9 }] },
-  { featureType: "water", elementType: "geometry", stylers: [{ color: "#b8cfe0" }] },
+  { elementType: "geometry", stylers: [{ color: "#f3ecdf" }] },
+  { elementType: "labels.icon", stylers: [{ visibility: "off" }] },
+  { elementType: "labels.text.fill", stylers: [{ color: "#5a4d3f" }] },
+  { elementType: "labels.text.stroke", stylers: [{ color: "#faf6f0" }, { weight: 3 }] },
+
+  { featureType: "administrative", elementType: "geometry.stroke", stylers: [{ color: "#d4c4ae" }, { weight: 0.5 }] },
+  { featureType: "administrative.province", elementType: "geometry.stroke", stylers: [{ color: "#cbb69e" }, { weight: 0.55 }] },
+
+  { featureType: "landscape", elementType: "geometry", stylers: [{ color: "#e9e3d6" }] },
+  { featureType: "landscape.natural", elementType: "geometry", stylers: [{ color: "#dde6d6" }] },
+  { featureType: "landscape.natural.terrain", elementType: "geometry", stylers: [{ color: "#d8e0d2" }] },
+
   { featureType: "poi", stylers: [{ visibility: "off" }] },
   { featureType: "poi.park", stylers: [{ visibility: "on" }] },
-  { featureType: "poi.park", elementType: "geometry", stylers: [{ color: "#c8dcc8" }] },
+  { featureType: "poi.park", elementType: "geometry", stylers: [{ color: "#b8d4a8" }] },
+  { featureType: "poi.park", elementType: "labels.text.fill", stylers: [{ color: "#3d5c34" }] },
+  { featureType: "poi.attraction", stylers: [{ visibility: "simplified" }] },
+  { featureType: "poi.attraction", elementType: "labels.text.fill", stylers: [{ color: "#6b4f2a" }] },
+
+  { featureType: "road", elementType: "geometry", stylers: [{ color: "#fffcf7" }] },
+  { featureType: "road", elementType: "geometry.stroke", stylers: [{ color: "#ddd2c2" }, { weight: 0.65 }] },
+  { featureType: "road.highway", elementType: "geometry", stylers: [{ color: "#fff4e3" }] },
+  { featureType: "road.highway", elementType: "geometry.stroke", stylers: [{ color: "#d9a673" }, { weight: 1 }] },
+  { featureType: "road.highway.controlled_access", elementType: "geometry", stylers: [{ color: "#ffe8cc" }] },
+  { featureType: "road.highway.controlled_access", elementType: "geometry.stroke", stylers: [{ color: "#c4925c" }] },
+
   { featureType: "transit", stylers: [{ visibility: "off" }] },
+
+  { featureType: "water", elementType: "geometry", stylers: [{ color: "#6fa9c4" }] },
+  { featureType: "water", elementType: "labels.text.fill", stylers: [{ color: "#3a6a82" }] },
+  { featureType: "water", elementType: "labels.text.stroke", stylers: [{ color: "#d4ecf5" }, { weight: 2 }] },
 ];
 
 /** Chapter colours (align with overview legs: 1–9, 10–24, 25–36). */
@@ -127,7 +146,7 @@ function applyTripMapChrome(map) {
   window.__tripMapChromeApplied = true;
   map.setOptions({
     styles: TRIP_MAP_BASE_STYLES,
-    backgroundColor: "#eef1f5",
+    backgroundColor: "#f3ecdf",
   });
   if (!window.__tripMapGlobalListeners) {
     window.__tripMapGlobalListeners = [];
@@ -744,8 +763,8 @@ function renderTripOverviewMap(days) {
       window.__tripRoutePolyline = new google.maps.Polyline({
         path,
         geodesic: true,
-        strokeColor: "#1a5f7a",
-        strokeOpacity: 0.55,
+        strokeColor: "#2f6474",
+        strokeOpacity: 0.62,
         strokeWeight: strokeW,
         zIndex: 1,
         icons: [
@@ -753,8 +772,8 @@ function renderTripOverviewMap(days) {
             icon: {
               path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
               scale: compact ? 2.2 : 2.7,
-              strokeColor: "#1a5f7a",
-              fillColor: "#1a5f7a",
+              strokeColor: "#2f6474",
+              fillColor: "#2f6474",
               fillOpacity: 0.9,
             },
             offset: "50%",
@@ -767,8 +786,8 @@ function renderTripOverviewMap(days) {
       window.__tripRoutePolyline = new google.maps.Polyline({
         path,
         geodesic: true,
-        strokeColor: "#1a5f7a",
-        strokeOpacity: 0.55,
+        strokeColor: "#2f6474",
+        strokeOpacity: 0.62,
         strokeWeight: strokeW,
         zIndex: 1,
         map,
